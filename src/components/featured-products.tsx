@@ -1,7 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ShoppingCart, Beaker } from "lucide-react";
-import { GradientBlob, GlowLine } from "./bg-patterns";
 
 const products = [
   {
@@ -48,16 +47,10 @@ const products = [
 
 export function FeaturedProducts() {
   return (
-    <section className="relative py-20 sm:py-24 overflow-hidden">
-      {/* Subtle blue glow behind products */}
-      <GradientBlob position="center" color="#4A90D9" size="xl" className="opacity-30" />
-
-      <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+    <section className="py-20 sm:py-24">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         {/* Section header */}
         <div className="text-center mb-12">
-          <p className="text-xs font-semibold text-[#4A90D9] uppercase tracking-[0.2em] mb-3">
-            Our Products
-          </p>
           <h2 className="text-3xl font-bold tracking-tight text-[#1a2a3a] dark:text-white sm:text-4xl">
             Featured Research Kits
           </h2>
