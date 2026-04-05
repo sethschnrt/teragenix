@@ -1,7 +1,8 @@
-import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ShoppingCart } from "lucide-react";
+
+const BASE_PATH = process.env.NODE_ENV === "production" ? "/teragenix" : "";
 
 const products = [
   {
@@ -74,12 +75,11 @@ export function FeaturedProducts() {
             >
               {/* Product image */}
               <div className="relative aspect-square bg-[#0a0a0a] flex items-center justify-center overflow-hidden">
-                <Image
-                  src={product.image}
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={`${BASE_PATH}${product.image}`}
                   alt={product.name}
-                  fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-300"
-                  sizes="(max-width: 640px) 50vw, 25vw"
+                  className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                 />
                 <Badge
                   className={`absolute top-3 left-3 ${product.badgeColor} text-white text-[10px] font-semibold border-0`}
