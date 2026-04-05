@@ -6,6 +6,7 @@ const nextConfig: NextConfig = {
   output: "export",
   basePath: isProd ? "/teragenix" : "",
   assetPrefix: isProd ? "/teragenix/" : "",
+  trailingSlash: true,
   images: {
     unoptimized: true,
   },
