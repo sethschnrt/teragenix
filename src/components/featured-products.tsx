@@ -1,6 +1,7 @@
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { ShoppingCart, Beaker } from "lucide-react";
+import { ShoppingCart } from "lucide-react";
 
 const products = [
   {
@@ -12,6 +13,7 @@ const products = [
       "5mg BPC-157 + bacteriostatic water + syringes + alcohol swabs. Complete reconstitution kit.",
     badge: "Best Seller",
     badgeColor: "bg-[#4A90D9]",
+    image: "/images/product-bpc157.png",
   },
   {
     name: "Semaglutide Research Kit",
@@ -22,6 +24,7 @@ const products = [
       "5mg Semaglutide + bacteriostatic water + insulin syringes + alcohol swabs. Research-ready.",
     badge: "Popular",
     badgeColor: "bg-emerald-600",
+    image: "/images/product-semaglutide.png",
   },
   {
     name: "Tirzepatide Research Kit",
@@ -32,6 +35,7 @@ const products = [
       "10mg Tirzepatide + bacteriostatic water + insulin syringes + alcohol swabs. Premium grade.",
     badge: "Premium",
     badgeColor: "bg-amber-600",
+    image: "/images/product-tirzepatide.png",
   },
   {
     name: "Recovery Stack",
@@ -42,6 +46,7 @@ const products = [
       "BPC-157 + TB-500 combo kit with all supplies. The complete recovery research bundle.",
     badge: "Save 28%",
     badgeColor: "bg-rose-600",
+    image: "/images/product-recovery-stack.png",
   },
 ];
 
@@ -67,9 +72,15 @@ export function FeaturedProducts() {
               key={product.name}
               className="group relative flex flex-col overflow-hidden rounded-xl border bg-card text-card-foreground ring-1 ring-foreground/10 transition-all hover:shadow-lg hover:border-[#4A90D9]/30"
             >
-              {/* Product image placeholder — flush to top, no padding */}
-              <div className="relative aspect-square bg-gradient-to-br from-muted to-muted/50 flex items-center justify-center">
-                <Beaker className="h-16 w-16 text-muted-foreground/30 group-hover:text-[#4A90D9]/40 transition-colors" />
+              {/* Product image */}
+              <div className="relative aspect-square bg-[#0a0a0a] flex items-center justify-center overflow-hidden">
+                <Image
+                  src={product.image}
+                  alt={product.name}
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-300"
+                  sizes="(max-width: 640px) 50vw, 25vw"
+                />
                 <Badge
                   className={`absolute top-3 left-3 ${product.badgeColor} text-white text-[10px] font-semibold border-0`}
                 >
