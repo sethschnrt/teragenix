@@ -1,9 +1,11 @@
 import type { NextConfig } from "next";
 
+const isProd = process.env.NODE_ENV === "production";
+
 const nextConfig: NextConfig = {
   output: "export",
-  basePath: "/teragenix",
-  assetPrefix: "/teragenix/",
+  basePath: isProd ? "/teragenix" : "",
+  assetPrefix: isProd ? "/teragenix/" : "",
 };
 
 export default nextConfig;
