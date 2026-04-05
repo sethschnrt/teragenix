@@ -6,8 +6,9 @@ export function generateStaticParams() {
   return products.map((p) => ({ slug: p.slug }));
 }
 
-export function generateMetadata({ params }: { params: { slug: string } }) {
-  const product = getProductBySlug(params.slug);
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const product = getProductBySlug(slug);
   if (!product) return { title: "Product Not Found" };
   return {
     title: `${product.name} — Teragenix¹²`,
@@ -15,8 +16,9 @@ export function generateMetadata({ params }: { params: { slug: string } }) {
   };
 }
 
-export default function ProductPage({ params }: { params: { slug: string } }) {
-  const product = getProductBySlug(params.slug);
+export default async function ProductPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const product = getProductBySlug(slug);
   if (!product) notFound();
 
   const related = product.relatedProductSlugs
