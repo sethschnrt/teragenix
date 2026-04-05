@@ -61,7 +61,7 @@ export function FeaturedProducts() {
         </div>
 
         {/* Product grid */}
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid grid-cols-2 gap-4 sm:gap-6 lg:grid-cols-4">
           {products.map((product) => (
             <div
               key={product.name}
@@ -83,7 +83,7 @@ export function FeaturedProducts() {
                   <p className="text-xs font-medium text-[#4A90D9] uppercase tracking-wider">
                     {product.category}
                   </p>
-                  <h3 className="text-base font-semibold text-foreground leading-tight mt-1">
+                  <h3 className="text-sm sm:text-base font-semibold text-foreground leading-tight mt-1">
                     {product.name}
                   </h3>
                 </div>
@@ -95,10 +95,10 @@ export function FeaturedProducts() {
                 {/* Price + cart — vertically centered */}
                 <div className="flex items-center justify-between pt-2">
                   <div className="flex items-center gap-2">
-                    <span className="text-lg font-bold text-foreground">
+                    <span className="text-base sm:text-lg font-bold text-foreground">
                       ${product.price}
                     </span>
-                    <span className="text-sm text-muted-foreground line-through">
+                    <span className="text-xs sm:text-sm text-muted-foreground line-through">
                       ${product.originalPrice}
                     </span>
                   </div>
