@@ -1,57 +1,17 @@
+"use client";
+
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ShoppingCart } from "lucide-react";
+import { featuredProducts } from "@/data/products";
 
 const BASE_PATH = process.env.NODE_ENV === "production" ? "/teragenix" : "";
 
-const products = [
-  {
-    name: "BPC-157 Research Kit",
-    category: "Recovery",
-    price: 89.99,
-    originalPrice: 119.99,
-    description:
-      "5mg BPC-157 + bacteriostatic water + syringes + alcohol swabs. Complete reconstitution kit.",
-    badge: "Best Seller",
-    badgeColor: "bg-[#4A90D9]",
-    image: "/images/product-bpc157.png",
-  },
-  {
-    name: "Semaglutide Research Kit",
-    category: "Metabolic",
-    price: 129.99,
-    originalPrice: 169.99,
-    description:
-      "5mg Semaglutide + bacteriostatic water + insulin syringes + alcohol swabs. Research-ready.",
-    badge: "Popular",
-    badgeColor: "bg-emerald-600",
-    image: "/images/product-semaglutide.png",
-  },
-  {
-    name: "Tirzepatide Research Kit",
-    category: "Metabolic",
-    price: 149.99,
-    originalPrice: 199.99,
-    description:
-      "10mg Tirzepatide + bacteriostatic water + insulin syringes + alcohol swabs. Premium grade.",
-    badge: "Premium",
-    badgeColor: "bg-amber-600",
-    image: "/images/product-tirzepatide.png",
-  },
-  {
-    name: "Recovery Stack",
-    category: "Bundle",
-    price: 199.99,
-    originalPrice: 279.99,
-    description:
-      "BPC-157 + TB-500 combo kit with all supplies. The complete recovery research bundle.",
-    badge: "Save 28%",
-    badgeColor: "bg-rose-600",
-    image: "/images/product-recovery-stack.png",
-  },
-];
-
 export function FeaturedProducts() {
+  // Show first 4 featured products (ones with badges)
+  const displayed = featuredProducts.slice(0, 4);
+
   return (
     <section className="py-20 sm:py-24">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
@@ -68,9 +28,10 @@ export function FeaturedProducts() {
 
         {/* Product grid */}
         <div className="grid grid-cols-2 gap-4 sm:gap-6 lg:grid-cols-4">
-          {products.map((product) => (
-            <div
-              key={product.name}
+          {displayed.map((product) => (
+            <Link
+              key={product.slug}
+              href={`/shop/${product.slug}`}
               className="group relative flex flex-col overflow-hidden rounded-xl border bg-card text-card-foreground ring-1 ring-foreground/10 transition-all hover:shadow-lg hover:border-[#4A90D9]/30"
             >
               {/* Product image */}
@@ -81,11 +42,13 @@ export function FeaturedProducts() {
                   alt={product.name}
                   className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                 />
-                <Badge
-                  className={`absolute top-3 left-3 ${product.badgeColor} text-white text-[10px] font-semibold border-0`}
-                >
-                  {product.badge}
-                </Badge>
+                {product.badge && (
+                  <Badge
+                    className={`absolute top-3 left-3 ${product.badgeColor} text-white text-[10px] font-semibold border-0`}
+                  >
+                    {product.badge}
+                  </Badge>
+                )}
               </div>
 
               {/* Info section */}
@@ -116,12 +79,13 @@ export function FeaturedProducts() {
                   <Button
                     size="sm"
                     className="bg-[#4A90D9] hover:bg-[#3A7BC8] text-white"
+                    onClick={(e) => e.preventDefault()}
                   >
                     <ShoppingCart className="h-4 w-4" />
                   </Button>
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>
