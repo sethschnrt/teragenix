@@ -9,6 +9,8 @@ const poppins = Poppins({
   weight: ["300", "400", "500", "600", "700"],
 });
 
+export const dynamic = "force-static";
+
 export const metadata: Metadata = {
   title: "Teragenix¹² — Research-Grade Peptide Kits",
   description:
