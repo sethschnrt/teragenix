@@ -33,7 +33,7 @@ export const products: Product[] = [
       "BPC-157 (Body Protection Compound-157) is a synthetic pentadecapeptide derived from human gastric juice. This research kit provides everything needed for laboratory reconstitution and study. BPC-157 has been the subject of extensive in-vitro and in-vivo research for its potential role in tissue repair, wound healing, and gastrointestinal protection. Our kit ships with pharmaceutical-grade bacteriostatic water, precision syringes, and sterile alcohol swabs — no separate purchases required.",
     badge: "Best Seller",
     badgeColor: "bg-[#4A90D9]",
-    image: "/images/product-bpc157.png",
+    image: "/images/vials/bpc-157.png",
     specifications: {
       purity: "99%+",
       quantity: "5mg per vial",
@@ -59,7 +59,7 @@ export const products: Product[] = [
       "5mg TB-500 + bacteriostatic water + syringes + alcohol swabs. Research-ready recovery peptide.",
     longDescription:
       "TB-500 (Thymosin Beta-4) is a naturally occurring peptide found in virtually all human and animal cells. It plays a critical role in tissue repair, cell migration, and inflammation regulation. This complete research kit includes pharmaceutical-grade TB-500 alongside all the supplies needed for reconstitution. Researchers studying wound healing, muscle repair, and cellular regeneration will find this kit provides a convenient all-in-one solution for laboratory investigation.",
-    image: "/images/product-tb-500.png",
+    image: "/images/vials/tb-500.png",
     specifications: {
       purity: "99%+",
       quantity: "5mg per vial",
@@ -87,7 +87,7 @@ export const products: Product[] = [
       "The Recovery Stack combines two of the most researched recovery peptides — BPC-157 and TB-500 — in a single comprehensive kit. Researchers studying synergistic peptide interactions for tissue repair, inflammation modulation, and cellular recovery will appreciate the convenience and cost savings of this bundle. Both peptides arrive with their own bacteriostatic water, syringes, and swabs, allowing independent reconstitution and dosing protocols. Save 28% compared to purchasing each kit separately.",
     badge: "Save 28%",
     badgeColor: "bg-rose-600",
-    image: "/images/product-recovery-stack.png",
+    image: "/images/vials/recovery-stack.png",
     specifications: {
       purity: "99%+",
       quantity: "5mg BPC-157 + 5mg TB-500",
@@ -118,7 +118,7 @@ export const products: Product[] = [
       "Semaglutide is a glucagon-like peptide-1 (GLP-1) receptor agonist that has generated significant research interest for its role in metabolic regulation, appetite modulation, and glucose homeostasis. This complete research kit provides pharmaceutical-grade semaglutide alongside precision insulin syringes optimized for accurate sub-milligram dosing. Whether studying incretin pathways, metabolic signaling, or receptor binding kinetics, this kit delivers everything needed for rigorous laboratory research.",
     badge: "Popular",
     badgeColor: "bg-emerald-600",
-    image: "/images/product-semaglutide.png",
+    image: "/images/vials/semaglutide.png",
     specifications: {
       purity: "99%+",
       quantity: "5mg per vial",
@@ -146,7 +146,7 @@ export const products: Product[] = [
       "Tirzepatide is a dual glucose-dependent insulinotropic polypeptide (GIP) and GLP-1 receptor agonist representing the next generation of metabolic research compounds. With 10mg per vial — double the standard offering — this premium kit supports extended research protocols. The dual-agonist mechanism makes tirzepatide a compelling subject for studies examining synergistic incretin signaling, metabolic pathway modulation, and comparative efficacy research against single-agonist compounds.",
     badge: "Premium",
     badgeColor: "bg-amber-600",
-    image: "/images/product-tirzepatide.png",
+    image: "/images/vials/tirzepatide.png",
     specifications: {
       purity: "99%+",
       quantity: "10mg per vial",
@@ -176,7 +176,7 @@ export const products: Product[] = [
       "Semax is a synthetic peptide derived from a fragment of adrenocorticotropic hormone (ACTH 4-10). Originally developed for neurological research, Semax has become a subject of extensive study for its potential roles in cognitive function, neuroprotection, and neurotrophic factor modulation. This kit includes a nasal spray bottle optimized for intranasal delivery research, along with bacteriostatic water and sterile swabs. The 30mg quantity supports multi-week research protocols.",
     badge: "New",
     badgeColor: "bg-violet-600",
-    image: "/images/product-semax.png",
+    image: "/images/vials/semax.png",
     specifications: {
       purity: "99%+",
       quantity: "30mg per vial",
@@ -202,7 +202,7 @@ export const products: Product[] = [
       "20mg Selank + bacteriostatic water + nasal spray bottle + alcohol swabs. Anxiolytic research peptide.",
     longDescription:
       "Selank is a synthetic analogue of the naturally occurring immunomodulatory peptide tuftsin. Developed as a companion to Semax, Selank has attracted research interest for its potential anxiolytic, nootropic, and immunomodulatory properties. Studies have explored its influence on GABA receptor expression, serotonin metabolism, and brain-derived neurotrophic factor (BDNF) levels. This kit provides a nasal spray bottle for intranasal delivery research alongside all reconstitution supplies.",
-    image: "/images/product-selank.png",
+    image: "/images/vials/selank.png",
     specifications: {
       purity: "99%+",
       quantity: "20mg per vial",
@@ -230,7 +230,7 @@ export const products: Product[] = [
       "10mg PT-141 + bacteriostatic water + syringes + alcohol swabs. Melanocortin receptor research.",
     longDescription:
       "PT-141 (Bremelanotide) is a synthetic melanocortin receptor agonist derived from Melanotan II. It acts on MC3R and MC4R receptors in the central nervous system, making it a subject of significant research interest in melanocortin signaling, sexual function pathways, and neuroendocrine regulation. Unlike PDE5 inhibitors that act peripherally, PT-141 operates through central mechanisms, providing researchers with a unique tool for studying CNS-mediated physiological responses. This kit includes everything needed for laboratory reconstitution.",
-    image: "/images/product-pt-141.png",
+    image: "/images/vials/pt-141.png",
     specifications: {
       purity: "99%+",
       quantity: "10mg per vial",
@@ -258,7 +258,7 @@ export const products: Product[] = [
       "50mg GHK-Cu + bacteriostatic water + syringes + alcohol swabs. Copper peptide research kit.",
     longDescription:
       "GHK-Cu (Copper Peptide GHK-Cu) is a naturally occurring tripeptide with high affinity for copper(II) ions. Found in human plasma, saliva, and urine, GHK-Cu has been extensively studied for its roles in wound healing, collagen synthesis, fibroblast stimulation, and antioxidant enzyme regulation. Research suggests it may influence over 4,000 genes, with implications for tissue remodeling, anti-inflammatory signaling, and cellular regeneration. The 50mg quantity provides ample material for extended research protocols.",
-    image: "/images/product-ghk-cu.png",
+    image: "/images/vials/ghk-cu.png",
     specifications: {
       purity: "99%+",
       quantity: "50mg per vial",
@@ -284,7 +284,7 @@ export const products: Product[] = [
       "50mg Epithalon + bacteriostatic water + syringes + alcohol swabs. Telomerase research peptide.",
     longDescription:
       "Epithalon (Epitalon) is a synthetic tetrapeptide based on the natural peptide epithalamin, produced by the pineal gland. It has attracted considerable research interest for its potential role in telomerase activation, telomere elongation, and circadian rhythm regulation. Studies have investigated its effects on melatonin production, antioxidant enzyme expression, and cellular senescence. The 50mg kit provides researchers with sufficient material for longitudinal studies examining aging-related biomarkers and telomere dynamics.",
-    image: "/images/product-epithalon.png",
+    image: "/images/vials/epithalon.png",
     specifications: {
       purity: "99%+",
       quantity: "50mg per vial",
