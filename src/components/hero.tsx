@@ -2,12 +2,15 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ArrowRight, Microscope } from "lucide-react";
 import Link from "next/link";
+import { MolecularGrid, GradientBlob } from "./bg-patterns";
 
 export function Hero() {
   return (
     <section className="relative overflow-hidden">
-      {/* Subtle gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#4A90D9]/5 via-transparent to-transparent" />
+      {/* Design language layers */}
+      <MolecularGrid className="text-[#4A90D9]" />
+      <GradientBlob position="top-right" color="#4A90D9" size="xl" className="opacity-80" />
+      <GradientBlob position="bottom-left" color="#4A90D9" size="lg" className="opacity-60" />
 
       <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 pt-20 pb-24 sm:pt-28 sm:pb-32">
         <div className="flex flex-col items-center text-center">

@@ -1,4 +1,5 @@
 import { Search, Package, Truck } from "lucide-react";
+import { DotGrid, GlowLine } from "./bg-patterns";
 
 const steps = [
   {
@@ -26,10 +27,19 @@ const steps = [
 
 export function HowItWorks() {
   return (
-    <section id="how-it-works" className="py-20 sm:py-24 bg-muted/30">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+    <section id="how-it-works" className="relative py-20 sm:py-24 bg-muted/30 overflow-hidden">
+      {/* Dot grid texture */}
+      <DotGrid className="text-[#1a2a3a]" />
+
+      {/* Top glow line */}
+      <GlowLine />
+
+      <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         {/* Section header */}
         <div className="text-center mb-16">
+          <p className="text-xs font-semibold text-[#4A90D9] uppercase tracking-[0.2em] mb-3">
+            Simple Process
+          </p>
           <h2 className="text-3xl font-bold tracking-tight text-[#1a2a3a] dark:text-white sm:text-4xl">
             How It Works
           </h2>
@@ -44,11 +54,17 @@ export function HowItWorks() {
             <div key={item.step} className="relative flex flex-col items-center text-center">
               {/* Connector line (desktop only) */}
               {index < steps.length - 1 && (
-                <div className="hidden md:block absolute top-8 left-[calc(50%+40px)] w-[calc(100%-80px)] h-px bg-border" />
+                <div
+                  className="hidden md:block absolute top-8 left-[calc(50%+40px)] w-[calc(100%-80px)] h-px"
+                  style={{
+                    background:
+                      "linear-gradient(90deg, #4A90D930 0%, #4A90D910 100%)",
+                  }}
+                />
               )}
 
               {/* Icon circle */}
-              <div className="relative flex h-16 w-16 items-center justify-center rounded-2xl bg-[#4A90D9] text-white mb-6">
+              <div className="relative flex h-16 w-16 items-center justify-center rounded-2xl bg-[#4A90D9] text-white mb-6 shadow-lg shadow-[#4A90D9]/20">
                 <item.icon className="h-7 w-7" />
                 <span className="absolute -top-2 -right-2 flex h-6 w-6 items-center justify-center rounded-full bg-[#1a2a3a] text-[10px] font-bold text-white">
                   {item.step}
@@ -65,6 +81,9 @@ export function HowItWorks() {
           ))}
         </div>
       </div>
+
+      {/* Bottom glow line */}
+      <GlowLine className="absolute bottom-0 left-0" />
     </section>
   );
 }
