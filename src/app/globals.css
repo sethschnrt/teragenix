@@ -51,11 +51,31 @@
   --color-tera-blue-dark: #3A7BC8;
   --color-tera-charcoal: #1a2a3a;
   --color-tera-charcoal-light: #2d3d4d;
+  /* Medvi-exact palette for Teragenix */
+  --color-cg-cream: #fcf9f7;
+  --color-cg-cream-warm: #faf9f7;
+  --color-cg-ink: #242220;
+  --color-cg-ink-soft: #171a18;
+  --color-cg-sage: #779d7c;
+  --color-cg-sage-dark: #2e936f;
+  --color-cg-sage-deep: #1b6549;
+  --color-cg-forest: #112111;
+  --color-cg-mint-halo: #d6f2da;
+  --color-cg-mint-card: #deeda4;
+  /* Section accent colors (exactly from Medvi) */
+  --color-cg-sky: #7aa5c9;
+  --color-cg-sky-halo: #e5f2f2;
+  --color-cg-pink: #c27ba0;
+  --color-cg-pink-halo: #f2e6ec;
+  --color-cg-sand: #c6a673;
+  --color-cg-sand-halo: #f2ebe1;
+  --color-cg-lav: #956bad;
+  --color-cg-lav-halo: #efe5f5;
 }
 
 :root {
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
+  --background: #faf9f7;
+  --foreground: #171a18;
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
@@ -127,13 +147,64 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground;
+    background-color: #ffffff;
+    color: #242220;
     font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
+    font-feature-settings: "ss01", "ss02";
   }
   html {
     @apply font-sans;
   }
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
+    color: #242220;
+  }
+  .font-display {
+    font-family: var(--font-display), system-ui, sans-serif;
+  }
+  /* Medvi-exact typography scale */
+  .cg-h1 {
+    font-size: 70px;
+    line-height: 70px;
+    font-weight: 600;
+    letter-spacing: -1.4px;
+  }
+  .cg-h2 {
+    font-size: 50px;
+    line-height: 54px;
+    font-weight: 600;
+    letter-spacing: -1px;
+  }
+  .cg-h3 {
+    font-size: 30px;
+    line-height: 36px;
+    font-weight: 600;
+    letter-spacing: -0.6px;
+  }
+  .cg-body {
+    font-size: 16px;
+    line-height: 25px;
+    font-weight: 400;
+    color: #242220;
+  }
+  .cg-eyebrow {
+    font-size: 12px;
+    line-height: 14px;
+    font-weight: 600;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+  }
+  @media (max-width: 768px) {
+    .cg-h1 { font-size: 46px; line-height: 48px; letter-spacing: -0.9px; }
+    .cg-h2 { font-size: 34px; line-height: 38px; letter-spacing: -0.7px; }
+    .cg-h3 { font-size: 24px; line-height: 30px; }
+  }
+  /* Medvi-style ticker marquee */
+  @keyframes cg-ticker {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+  .cg-ticker {
+    animation: cg-ticker 40s linear infinite;
   }
 }

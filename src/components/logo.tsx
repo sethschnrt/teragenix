@@ -7,25 +7,31 @@ interface LogoProps {
 }
 
 const sizeClasses = {
-  sm: "text-xl",
-  md: "text-2xl",
-  lg: "text-4xl",
+  sm: "text-[18px]",
+  md: "text-[22px]",
+  lg: "text-[34px]",
 };
 
 export function Logo({ className, size = "md", theme = "default" }: LogoProps) {
+  const isLight = theme === "light";
   return (
     <span
       className={cn(
-        "font-bold tracking-tight select-none",
+        "font-display font-semibold tracking-[-0.01em] select-none",
         sizeClasses[size],
         className
       )}
     >
-      <span className="text-[#4A90D9]">TERA</span>
-      <span className={theme === "light" ? "text-white" : "text-[#1a2a3a] dark:text-white"}>
-        GENIX
+      <span className={isLight ? "text-white" : "text-[#171a18]"}>tera</span>
+      <span className={isLight ? "italic text-[#c9e3c5]" : "italic text-[#1b6549]"}>
+        genix
       </span>
-      <sup className="text-[0.45em] text-[#4A90D9] font-semibold ml-[1px] -top-[0.9em]">
+      <sup
+        className={cn(
+          "ml-0.5 align-top text-[0.42em] font-semibold",
+          isLight ? "text-white/70" : "text-[#1b6549]"
+        )}
+      >
         12
       </sup>
     </span>

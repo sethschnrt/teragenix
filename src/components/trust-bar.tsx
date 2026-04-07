@@ -1,38 +1,27 @@
-import { FileCheck, ShieldCheck, Truck, PackageCheck } from "lucide-react";
-
-const trustItems = [
-  {
-    icon: ShieldCheck,
-    title: "99%+ Purity",
-  },
-  {
-    icon: FileCheck,
-    title: "COA Verified",
-  },
-  {
-    icon: Truck,
-    title: "Fast USA Shipping",
-  },
-  {
-    icon: PackageCheck,
-    title: "Complete Kits",
-  },
+const tickerItems = [
+  "LAB-TESTED PURITY ≥ 99%",
+  "COA WITH EVERY BATCH",
+  "COMPLETE RESEARCH KITS",
+  "DISCREET DOMESTIC SHIPPING",
+  "SHIPPED WITHIN 24 HOURS",
+  "FREE SHIPPING OVER $150",
 ];
 
 export function TrustBar() {
+  // Duplicate for seamless loop
+  const loop = [...tickerItems, ...tickerItems];
   return (
-    <section className="border-y border-slate-200 bg-white">
-      <div className="mx-auto max-w-6xl px-4 pt-18 pb-5 sm:px-6 sm:pt-20 lg:px-8 lg:pb-6">
-        <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-4 text-center sm:gap-x-8 lg:gap-x-10">
-          {trustItems.map((item) => (
-            <div key={item.title} className="flex items-center gap-3 text-sm font-medium text-slate-700">
-              <div className="flex h-9 w-9 items-center justify-center rounded-full bg-[#4A90D9]/10">
-                <item.icon className="h-4.5 w-4.5 text-[#4A90D9]" />
-              </div>
-              <span>{item.title}</span>
-            </div>
-          ))}
-        </div>
+    <section className="relative overflow-hidden border-y border-[#ebe5dc] bg-[#faf9f7] py-5">
+      <div className="cg-ticker flex whitespace-nowrap">
+        {loop.map((item, i) => (
+          <div
+            key={`${item}-${i}`}
+            className="flex shrink-0 items-center gap-10 px-5 font-display text-[11px] font-medium tracking-[0.22em] text-[#171a18]"
+          >
+            <span>{item}</span>
+            <span className="flex h-1.5 w-1.5 rounded-full bg-[#779d7c]" />
+          </div>
+        ))}
       </div>
     </section>
   );

@@ -9,7 +9,7 @@ import {
   SheetTrigger,
   SheetTitle,
 } from "@/components/ui/sheet";
-import { Menu, ShoppingCart } from "lucide-react";
+import { Menu, ShoppingBag } from "lucide-react";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
 
@@ -26,28 +26,26 @@ export function Navbar() {
 
   return (
     <header
-      className={`sticky top-0 z-50 w-full border-b backdrop-blur supports-[backdrop-filter]:backdrop-blur-xl ${
-        isHome
-          ? "border-transparent bg-[#07111a]/70 supports-[backdrop-filter]:bg-[#07111a]/55"
-          : "bg-background/95 supports-[backdrop-filter]:bg-background/60"
+      className={`absolute top-0 z-50 w-full ${
+        isHome ? "bg-transparent" : "sticky border-b border-[#ebe5dc] bg-[#faf9f7]/92 backdrop-blur supports-[backdrop-filter]:bg-[#faf9f7]/75"
       }`}
     >
-      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto flex h-16 max-w-[1240px] items-center justify-between px-5 sm:px-8 lg:px-12">
         {/* Logo */}
         <Link href="/" className="flex items-center">
           <Logo size="md" theme={isHome ? "light" : "default"} />
         </Link>
 
         {/* Desktop nav */}
-        <nav className="hidden md:flex items-center gap-8">
+        <nav className="hidden md:flex items-center gap-9">
           {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className={`text-sm font-medium transition-colors ${
+              className={`text-[13px] font-medium tracking-tight transition-colors ${
                 isHome
-                  ? "text-white/72 hover:text-white"
-                  : "text-muted-foreground hover:text-foreground"
+                  ? "text-white/80 hover:text-white"
+                  : "text-[#242220]/70 hover:text-[#171a18]"
               }`}
             >
               {link.label}
@@ -56,14 +54,29 @@ export function Navbar() {
         </nav>
 
         {/* Right side */}
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-3">
+          <Link
+            href="/shop"
+            className={`hidden sm:inline-flex h-9 items-center rounded-full px-4 text-[13px] font-semibold tracking-tight transition ${
+              isHome
+                ? "bg-white text-[#171a18] hover:bg-[#f2f0ed]"
+                : "bg-[#1b6549] text-white hover:bg-[#2e936f]"
+            }`}
+          >
+            Shop kits
+          </Link>
+
           <Button
             variant="ghost"
             size="icon"
-            className={`relative ${isHome ? "text-white hover:bg-white/10 hover:text-white" : ""}`}
+            className={`relative h-9 w-9 rounded-full ${
+              isHome
+                ? "text-white hover:bg-white/12 hover:text-white"
+                : "text-[#171a18] hover:bg-[#f2f0ed]"
+            }`}
           >
-            <ShoppingCart className="h-5 w-5" />
-            <span className="absolute -top-1 -right-1 h-4 w-4 rounded-full bg-[#4A90D9] text-[10px] font-bold text-white flex items-center justify-center">
+            <ShoppingBag className="h-4.5 w-4.5" />
+            <span className="absolute -right-0.5 -top-0.5 flex h-4 w-4 items-center justify-center rounded-full bg-[#eb8771] text-[9px] font-bold text-white">
               0
             </span>
           </Button>
@@ -71,22 +84,22 @@ export function Navbar() {
           {/* Mobile menu */}
           <Sheet open={open} onOpenChange={setOpen}>
             <SheetTrigger
-              className={`md:hidden inline-flex shrink-0 items-center justify-center rounded-lg h-8 w-8 transition-colors ${
-                isHome ? "text-white hover:bg-white/10" : "hover:bg-muted"
+              className={`md:hidden inline-flex shrink-0 items-center justify-center rounded-full h-9 w-9 transition-colors ${
+                isHome ? "text-white hover:bg-white/12" : "text-[#171a18] hover:bg-[#f2f0ed]"
               }`}
             >
               <Menu className="h-5 w-5" />
             </SheetTrigger>
-            <SheetContent side="right" className="w-[280px]">
+            <SheetContent side="right" className="w-[280px] bg-[#faf9f7]">
               <SheetTitle className="sr-only">Navigation menu</SheetTitle>
-              <div className="flex flex-col gap-6 mt-8 px-4">
+              <div className="mt-8 flex flex-col gap-6 px-4">
                 <Logo size="lg" />
                 {navLinks.map((link) => (
                   <Link
                     key={link.href}
                     href={link.href}
                     onClick={() => setOpen(false)}
-                    className="text-lg font-medium text-foreground hover:text-[#4A90D9] transition-colors"
+                    className="text-lg font-medium text-[#171a18] transition-colors hover:text-[#1b6549]"
                   >
                     {link.label}
                   </Link>

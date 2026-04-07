@@ -1,101 +1,137 @@
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { ArrowRight, Beaker, Microscope, PackageCheck, Sparkles, Waves } from "lucide-react";
 import Link from "next/link";
+import { Droplets, Sparkles, Leaf, FlaskConical } from "lucide-react";
 
-const heroCards = [
+const heroTiles = [
   {
-    title: "Metabolic",
-    description: "Retatrutide and Tesamorelin kits for in-demand lab workflows.",
+    title: "Weight Loss",
     href: "/shop?category=metabolic",
-    icon: Waves,
+    icon: Droplets,
+    tone: "#deede0",
+    iconTone: "#2e936f",
+  },
+  {
+    title: "Peptides & Longevity",
+    href: "/shop?category=longevity",
+    icon: Leaf,
+    tone: "#e5f2f2",
+    iconTone: "#4a7088",
+  },
+  {
+    title: "Beauty & Skin",
+    href: "/shop?category=beauty",
+    icon: Sparkles,
+    tone: "#f2e6ec",
+    iconTone: "#a8497b",
   },
   {
     title: "Research",
-    description: "Specialty compounds like Melanotan II, packaged for cleaner prep.",
     href: "/shop?category=research",
-    icon: Beaker,
-  },
-  {
-    title: "Beauty",
-    description: "Glow 70 and Glutathione kits for cosmetic-adjacent studies.",
-    href: "/shop?category=beauty",
-    icon: Sparkles,
-  },
-  {
-    title: "Complete Kits",
-    description: "Water, syringes, and swabs are already included with the vial.",
-    href: "/shop",
-    icon: PackageCheck,
+    icon: FlaskConical,
+    tone: "#f2ebe1",
+    iconTone: "#8b6330",
   },
 ] as const;
 
 export function Hero() {
   return (
-    <section className="relative overflow-visible bg-[#07111a] text-white">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(74,144,217,0.28),_transparent_35%),linear-gradient(180deg,_#0b1723_0%,_#07111a_48%,_#091521_100%)]" />
-      <div className="absolute inset-x-0 top-0 h-px bg-white/12" />
-      <div className="absolute left-1/2 top-24 h-72 w-72 -translate-x-1/2 rounded-full bg-[#4A90D9]/18 blur-3xl" />
-      <div className="absolute inset-0 opacity-[0.08] [background-image:linear-gradient(rgba(255,255,255,0.12)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.12)_1px,transparent_1px)] [background-size:40px_40px]" />
-
-      <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 pt-28 pb-12 sm:pt-36 sm:pb-18">
-        <div className="mx-auto flex max-w-4xl flex-col items-center text-center">
-          <Badge
-            variant="secondary"
-            className="mb-6 border border-white/12 bg-white/8 px-4 py-1.5 text-[11px] font-medium tracking-[0.24em] uppercase text-white backdrop-blur"
+    <section className="relative">
+      {/* Forest gradient canvas — exact Medvi dimensions */}
+      <div className="relative h-[560px] overflow-hidden bg-[linear-gradient(166deg,_#1b6549_0%,_#112111_100%)]">
+        {/* Massive Montserrat wordmark ghost — Medvi's signature */}
+        <div className="pointer-events-none absolute inset-x-0 bottom-[-80px] flex justify-center overflow-hidden">
+          <p
+            className="font-display font-extrabold text-[#2e936f]/50 select-none whitespace-nowrap"
+            style={{
+              fontSize: "340px",
+              lineHeight: "300px",
+              letterSpacing: "-10px",
+              transform: "translateY(20px)",
+            }}
           >
-            <Microscope className="mr-2 h-3.5 w-3.5" />
-            Research-use-only peptide kits
-          </Badge>
-
-          <h1 className="max-w-4xl text-5xl font-semibold tracking-[-0.05em] text-white sm:text-6xl lg:text-[5.4rem] lg:leading-[0.98]">
-            Peptide kits,
-            <br />
-            built for real research.
-          </h1>
-
-          <p className="mt-6 max-w-2xl text-base leading-7 text-white/74 sm:text-[1.15rem] sm:leading-8">
-            Premium compounds, discreet domestic shipping, and the core supplies already in the box. No piecing together lab prep from five different stores.
+            teragenix
           </p>
-
-          <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-            <Link href="/shop">
-              <Button
-                size="lg"
-                className="h-12 bg-[#4A90D9] px-8 text-base font-semibold text-white hover:bg-[#3A7BC8]"
-              >
-                Shop Research Kits
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
-            </Link>
-            <Link href="#featured-products">
-              <Button
-                variant="outline"
-                size="lg"
-                className="h-12 border-white/14 bg-white/6 px-8 text-base font-semibold text-white hover:bg-white/10 hover:text-white"
-              >
-                Browse Top Sellers
-              </Button>
-            </Link>
-          </div>
         </div>
 
-        <div className="relative z-10 mx-auto mt-18 mb-[-4.6rem] grid max-w-5xl gap-5 md:grid-cols-2 xl:max-w-none xl:grid-cols-4 xl:gap-5">
-          {heroCards.map((card) => (
-            <Link
-              key={card.title}
-              href={card.href}
-              className="group rounded-[1.85rem] border border-slate-200/85 bg-white/97 px-6 py-6 text-left text-slate-950 shadow-[0_24px_44px_-34px_rgba(3,10,18,0.72)] transition-transform duration-200 hover:-translate-y-1"
+        {/* Content container */}
+        <div className="relative z-10 mx-auto max-w-[1240px] px-5 pt-[190px] sm:px-8 lg:px-12">
+          {/* Join eyebrow */}
+          <div className="mb-5 text-center">
+            <p
+              className="text-white"
+              style={{ fontSize: "14px", lineHeight: "25px", letterSpacing: "0.28px" }}
             >
-              <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-[#4A90D9]/10 text-[#4A90D9]">
-                <card.icon className="h-5 w-5" />
+              Join{" "}
+              <span style={{ fontWeight: 700 }}>12,000+</span>{" "}
+              <span style={{ fontWeight: 500 }}>Teragenix researchers</span>
+            </p>
+          </div>
+
+          {/* Headline — Red Hat Text 70/70 weight 600 */}
+          <h1 className="mx-auto max-w-5xl text-center">
+            <p className="cg-h1 text-white">Peptide research,</p>
+            <p className="cg-h1 text-white">
+              <span style={{ color: "#779d7c" }}>redefined</span> for your lab.
+            </p>
+          </h1>
+
+          {/* Subhead — Red Hat Text 16/25 regular white */}
+          <p
+            className="mx-auto mt-5 max-w-xl text-center text-white/95"
+            style={{ fontSize: "16px", lineHeight: "25px", fontWeight: 400 }}
+          >
+            Premium 99%+ purity peptides delivered as complete kits—bacteriostatic water, precision syringes, and prep supplies already in the box.
+          </p>
+        </div>
+      </div>
+
+      {/* Category tiles — overhang the section seam like Medvi */}
+      <div className="relative z-20 mx-auto -mt-[85px] max-w-[1240px] px-5 sm:px-8 lg:px-12">
+        <div className="grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-5">
+          {heroTiles.map((tile) => (
+            <Link
+              key={tile.title}
+              href={tile.href}
+              className="group relative flex flex-col overflow-hidden rounded-[20px] bg-[#fafafa] shadow-[0_30px_60px_-35px_rgba(17,33,17,0.55)] transition-transform hover:-translate-y-1"
+            >
+              {/* Top pastel image panel */}
+              <div
+                className="relative flex h-[170px] items-center justify-center"
+                style={{ backgroundColor: tile.tone }}
+              >
+                <div
+                  className="absolute inset-0"
+                  style={{
+                    backgroundImage:
+                      "radial-gradient(ellipse at 50% 35%, rgba(255,255,255,0.55), transparent 65%)",
+                  }}
+                />
+                <div
+                  className="relative flex h-[76px] w-[76px] items-center justify-center rounded-[20px] bg-white/90 shadow-[0_12px_30px_-12px_rgba(17,33,17,0.25)]"
+                  style={{ color: tile.iconTone }}
+                >
+                  <tile.icon className="h-[34px] w-[34px]" strokeWidth={1.6} />
+                </div>
               </div>
-              <h3 className="mt-5 text-lg font-semibold tracking-tight text-slate-950 sm:text-xl">
-                {card.title}
-              </h3>
-              <p className="mt-2.5 text-sm leading-6 text-slate-600">
-                {card.description}
-              </p>
+
+              {/* Label bar */}
+              <div className="flex items-center justify-between px-5 py-4">
+                <p
+                  className="text-[#242220]"
+                  style={{
+                    fontSize: "16px",
+                    fontWeight: 600,
+                    lineHeight: "20px",
+                    letterSpacing: "-0.32px",
+                  }}
+                >
+                  {tile.title}
+                </p>
+                <span className="flex h-7 w-7 items-center justify-center rounded-full bg-[#f2f0ed] text-[#242220] transition group-hover:bg-[#1b6549] group-hover:text-white">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M7 17 17 7M7 7h10v10" />
+                  </svg>
+                </span>
+              </div>
             </Link>
           ))}
         </div>
