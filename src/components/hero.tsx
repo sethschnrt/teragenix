@@ -6,7 +6,7 @@ const heroTiles = [
   {
     title: "Fat Loss",
     href: "/shop?category=metabolic",
-    image: "/images/generated/life-benefits-v13/confidence-jeans-belt.png",
+    image: "/images/generated/life-benefits-v13-cutout/confidence-jeans-belt.png",
     tone: "#f1f8f2",
     imageClassName: "h-[236px] w-auto",
   },
@@ -27,7 +27,7 @@ const heroTiles = [
   {
     title: "Vitality",
     href: "/shop?category=research",
-    image: "/images/generated/life-benefits-v13/active-life-pickleball.png",
+    image: "/images/generated/life-benefits-v13-cutout/active-life-pickleball.png",
     tone: "#eff6f2",
     imageClassName: "h-[228px] w-auto",
   },
