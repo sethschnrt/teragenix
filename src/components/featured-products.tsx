@@ -13,7 +13,7 @@ export function FeaturedProducts() {
   const displayed = featuredProducts.slice(0, 4);
 
   return (
-    <section className="py-20 sm:py-24">
+    <section id="featured-products" className="pb-20 pt-12 sm:pb-24 sm:pt-14">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         {/* Section header */}
         <div className="text-center mb-12">

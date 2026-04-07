@@ -11,6 +11,7 @@ import {
 } from "@/components/ui/sheet";
 import { Menu, ShoppingCart } from "lucide-react";
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 
 const navLinks = [
   { label: "Shop", href: "/shop" },
@@ -20,13 +21,21 @@ const navLinks = [
 
 export function Navbar() {
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
+  const isHome = pathname === "/";
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <header
+      className={`sticky top-0 z-50 w-full border-b backdrop-blur supports-[backdrop-filter]:backdrop-blur-xl ${
+        isHome
+          ? "border-transparent bg-[#07111a]/70 supports-[backdrop-filter]:bg-[#07111a]/55"
+          : "bg-background/95 supports-[backdrop-filter]:bg-background/60"
+      }`}
+    >
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6 lg:px-8">
         {/* Logo */}
         <Link href="/" className="flex items-center">
-          <Logo size="md" />
+          <Logo size="md" theme={isHome ? "light" : "default"} />
         </Link>
 
         {/* Desktop nav */}
@@ -35,7 +44,11 @@ export function Navbar() {
             <Link
               key={link.href}
               href={link.href}
-              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+              className={`text-sm font-medium transition-colors ${
+                isHome
+                  ? "text-white/72 hover:text-white"
+                  : "text-muted-foreground hover:text-foreground"
+              }`}
             >
               {link.label}
             </Link>
@@ -44,7 +57,11 @@ export function Navbar() {
 
         {/* Right side */}
         <div className="flex items-center gap-4">
-          <Button variant="ghost" size="icon" className="relative">
+          <Button
+            variant="ghost"
+            size="icon"
+            className={`relative ${isHome ? "text-white hover:bg-white/10 hover:text-white" : ""}`}
+          >
             <ShoppingCart className="h-5 w-5" />
             <span className="absolute -top-1 -right-1 h-4 w-4 rounded-full bg-[#4A90D9] text-[10px] font-bold text-white flex items-center justify-center">
               0
@@ -53,7 +70,11 @@ export function Navbar() {
 
           {/* Mobile menu */}
           <Sheet open={open} onOpenChange={setOpen}>
-            <SheetTrigger className="md:hidden inline-flex shrink-0 items-center justify-center rounded-lg h-8 w-8 hover:bg-muted transition-colors">
+            <SheetTrigger
+              className={`md:hidden inline-flex shrink-0 items-center justify-center rounded-lg h-8 w-8 transition-colors ${
+                isHome ? "text-white hover:bg-white/10" : "hover:bg-muted"
+              }`}
+            >
               <Menu className="h-5 w-5" />
             </SheetTrigger>
             <SheetContent side="right" className="w-[280px]">
