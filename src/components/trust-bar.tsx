@@ -25,19 +25,19 @@ const trustItems = [
 
 export function TrustBar() {
   return (
-    <section className="py-6 sm:py-8">
-      <div className="medvi-shell">
-        <div className="medvi-card grid grid-cols-2 gap-6 px-6 py-8 sm:px-8 md:grid-cols-4">
+    <section className="border-y bg-muted/30">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-10">
+        <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
           {trustItems.map((item) => (
-            <div key={item.title} className="flex flex-col items-center text-center gap-3 rounded-[24px] px-2 py-2">
-              <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#eef5fb] shadow-inner">
+            <div key={item.title} className="flex flex-col items-center text-center gap-3">
+              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#4A90D9]/10">
                 <item.icon className="h-6 w-6 text-[#4A90D9]" />
               </div>
               <div>
-                <h3 className="text-sm font-semibold text-[#193042]">
+                <h3 className="text-sm font-semibold text-foreground">
                   {item.title}
                 </h3>
-                <p className="mt-1 text-xs text-[#6c8194]">
+                <p className="text-xs text-muted-foreground mt-1">
                   {item.description}
                 </p>
               </div>

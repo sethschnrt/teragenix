@@ -7,28 +7,30 @@ const BASE_PATH = process.env.NODE_ENV === "production" ? "/teragenix" : "";
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden py-6 sm:py-10">
-      <div className="medvi-shell">
-        <div className="medvi-card grid gap-12 overflow-hidden px-6 py-10 sm:px-10 sm:py-14 lg:grid-cols-[1.05fr_0.95fr] lg:gap-10 lg:px-14 lg:py-16 items-center">
+    <section className="relative overflow-hidden">
+      <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 pt-16 pb-20 sm:pt-20 sm:pb-28">
+        <div className="grid gap-12 lg:grid-cols-2 lg:gap-8 items-center">
           {/* Left — Text content */}
           <div className="flex flex-col items-start text-left">
             {/* Badge */}
             <Badge
               variant="secondary"
-              className="mb-6 rounded-full border border-[#d9e7f5] bg-white px-5 py-2 text-[11px] font-semibold tracking-[0.18em] uppercase text-[#4A90D9] shadow-sm"
+              className="mb-6 px-4 py-1.5 text-xs font-medium tracking-wide uppercase"
             >
               <Microscope className="mr-1.5 h-3 w-3" />
               Research-Grade Peptides
             </Badge>
 
             {/* Headline */}
-            <h1 className="max-w-2xl text-4xl font-semibold tracking-[-0.04em] text-[#193042] sm:text-5xl lg:text-[4.2rem] lg:leading-[1.02]">
-              Premium peptide care for a <span className="text-[#4A90D9]">more intentional</span> research experience
+            <h1 className="text-4xl font-bold tracking-tight text-[#1a2a3a] dark:text-white sm:text-5xl lg:text-6xl">
+              Precision compounds for{" "}
+              <span className="text-[#4A90D9]">serious research</span>
             </h1>
 
             {/* Subheadline */}
-            <p className="mt-6 max-w-xl text-lg leading-8 text-[#607487] sm:text-xl">
-              A softer, more trustworthy way to shop research compounds. Curated kits, clean presentation, and premium packaging designed to feel medical, modern, and discreet.
+            <p className="mt-6 max-w-xl text-lg text-muted-foreground sm:text-xl leading-relaxed">
+              99%+ purity peptides, bundled with everything you need.
+              Bacteriostatic water, syringes, and alcohol swabs — all in one kit.
             </p>
 
             {/* CTAs */}
@@ -36,7 +38,7 @@ export function Hero() {
               <Link href="/shop">
                 <Button
                   size="lg"
-                  className="rounded-full bg-[#4A90D9] px-8 text-base font-semibold text-white shadow-[0_12px_30px_rgba(74,144,217,0.28)] hover:bg-[#3A7BC8]"
+                  className="bg-[#4A90D9] hover:bg-[#3A7BC8] text-white px-8 text-base font-semibold"
                 >
                   Shop Peptides
                   <ArrowRight className="ml-2 h-4 w-4" />
@@ -46,7 +48,7 @@ export function Hero() {
                 <Button
                   variant="outline"
                   size="lg"
-                  className="rounded-full border-[#d9e7f5] bg-white px-8 text-base font-semibold text-[#193042] shadow-sm"
+                  className="px-8 text-base font-semibold"
                 >
                   How It Works
                 </Button>
@@ -54,7 +56,7 @@ export function Hero() {
             </div>
 
             {/* Micro trust signals */}
-            <div className="mt-8 flex flex-wrap items-center gap-4 text-sm text-[#607487]">
+            <div className="mt-8 flex items-center gap-6 text-sm text-muted-foreground">
               <span className="flex items-center gap-1.5">
                 <span className="h-1.5 w-1.5 rounded-full bg-green-500" />
                 Free shipping over $150
@@ -68,12 +70,12 @@ export function Hero() {
 
           {/* Right — Doctor image */}
           <div className="relative hidden lg:block">
-            <div className="relative aspect-[4/5] overflow-hidden rounded-[32px] bg-[#eef5fb] p-3 shadow-[0_24px_60px_rgba(27,47,79,0.10)]">
+            <div className="relative aspect-[4/5] overflow-hidden rounded-2xl">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={`${BASE_PATH}/images/hero-doctor.png`}
                 alt="Research scientist in laboratory"
-                className="h-full w-full rounded-[26px] object-cover object-top"
+                className="w-full h-full object-cover object-top"
               />
             </div>
           </div>
