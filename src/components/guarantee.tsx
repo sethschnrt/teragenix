@@ -29,19 +29,19 @@ export function Guarantee() {
     <section className="relative overflow-hidden bg-white py-24 sm:py-28 lg:py-[120px]">
       <div className="mx-auto max-w-[1240px] px-5 sm:px-8 lg:px-[160px]">
         <div className="mb-16 text-center">
-          <p className="cg-eyebrow mb-6" style={{ color: "#1b6549" }}>
+          <p className="tg-eyebrow mb-6" style={{ color: "#3b6ed6" }}>
             THE TERAGENIX GUARANTEE
           </p>
-          <h2 className="cg-h2 mx-auto max-w-3xl" style={{ color: "#242220" }}>
+          <h2 className="tg-h2 mx-auto max-w-3xl" style={{ color: "#0d262d" }}>
             Everything your lab needs, in{" "}
-            <span style={{ color: "#1b6549" }}>one kit.</span>
+            <span style={{ color: "#3b6ed6" }}>one kit.</span>
           </h2>
           <p
             className="mx-auto mt-6 max-w-xl"
             style={{
               fontSize: "16px",
               lineHeight: "25px",
-              color: "#242220",
+              color: "#0d262d",
               fontWeight: 400,
             }}
           >
@@ -53,9 +53,9 @@ export function Guarantee() {
           {promises.map((p) => (
             <div
               key={p.title}
-              className="group relative flex flex-col rounded-[30px] bg-[#faf9f7] p-8 transition hover:-translate-y-1"
+              className="group relative flex flex-col rounded-[30px] bg-[#f4f8ff] p-8 transition hover:-translate-y-1"
             >
-              <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-[#d6f2da] text-[#1b6549]">
+              <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-[#dbeafe] text-[#3b6ed6]">
                 <p.icon className="h-6 w-6" strokeWidth={1.75} />
               </div>
               <h3
@@ -63,7 +63,7 @@ export function Guarantee() {
                   fontSize: "20px",
                   lineHeight: "26px",
                   fontWeight: 600,
-                  color: "#242220",
+                  color: "#0d262d",
                   letterSpacing: "-0.4px",
                 }}
               >
@@ -74,7 +74,7 @@ export function Guarantee() {
                 style={{
                   fontSize: "14px",
                   lineHeight: "22px",
-                  color: "#242220",
+                  color: "#0d262d",
                   fontWeight: 400,
                 }}
               >
@@ -85,11 +85,11 @@ export function Guarantee() {
         </div>
 
         {/* CTA band */}
-        <div className="mt-20 flex flex-col items-center justify-between gap-6 rounded-[40px] bg-[linear-gradient(166deg,_#1b6549_0%,_#112111_100%)] px-10 py-14 sm:flex-row sm:px-16 sm:py-16 lg:px-20">
+        <div className="mt-20 flex flex-col items-center justify-between gap-6 rounded-[40px] bg-[linear-gradient(166deg,_#3b6ed6_0%,_#0d262d_100%)] px-10 py-14 sm:flex-row sm:px-16 sm:py-16 lg:px-20">
           <div>
             <p
-              className="cg-eyebrow mb-4"
-              style={{ color: "#779d7c" }}
+              className="tg-eyebrow mb-4"
+              style={{ color: "#4a8dd9" }}
             >
               READY TO GET STARTED
             </p>
@@ -108,7 +108,7 @@ export function Guarantee() {
           </div>
           <Link
             href="/shop"
-            className="inline-flex h-14 shrink-0 items-center rounded-full bg-white px-8 text-[#242220] transition hover:bg-[#f2f0ed]"
+            className="inline-flex h-14 shrink-0 items-center rounded-full bg-white px-8 text-[#0d262d] transition hover:bg-[#eef4fc]"
             style={{
               fontSize: "15px",
               fontWeight: 600,

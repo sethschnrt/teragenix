@@ -21,21 +21,21 @@ const steps = [
 
 export function HowItWorks() {
   return (
-    <section id="how-it-works" className="relative bg-[#f2f0ed] py-24 sm:py-28">
+    <section id="how-it-works" className="relative bg-[#eef4fc] py-24 sm:py-28">
       <div className="mx-auto max-w-[1240px] px-5 sm:px-8 lg:px-12">
         {/* Split header — editorial */}
         <div className="mb-16 grid gap-10 sm:mb-20 lg:grid-cols-[1.1fr_1fr] lg:items-end lg:gap-16">
           <div>
-            <p className="mb-5 font-display text-[11px] font-medium tracking-[0.22em] text-[#1b6549]">
+            <p className="mb-5 font-sans text-[11px] font-medium tracking-[0.22em] text-[#3b6ed6]">
               HOW IT WORKS
             </p>
-            <h2 className="font-display text-[2.5rem] font-semibold leading-[1.04] tracking-[-0.03em] text-[#171a18] sm:text-[3.6rem]">
+            <h2 className="font-sans text-[2.5rem] font-semibold leading-[1.04] tracking-[-0.03em] text-[#0d262d] sm:text-[3.6rem]">
               Lab-prep,{" "}
-              <span className="italic text-[#1b6549]">simplified</span>{" "}
+              <span className="italic text-[#3b6ed6]">simplified</span>{" "}
               from order to bench.
             </h2>
           </div>
-          <p className="text-[1.05rem] leading-7 text-[#242220]/70 lg:pb-3">
+          <p className="text-[1.05rem] leading-7 text-[#0d262d]/70 lg:pb-3">
             Teragenix removes the five-vendor scavenger hunt. Order one kit, get a complete research-ready workflow delivered to your door — no missing supplies, no half-finished protocols.
           </p>
         </div>
@@ -45,22 +45,22 @@ export function HowItWorks() {
           {steps.map((step) => (
             <div
               key={step.num}
-              className="group relative flex flex-col rounded-[1.75rem] bg-white p-8 ring-1 ring-[#ebe5dc] transition hover:-translate-y-1 hover:shadow-[0_30px_50px_-30px_rgba(17,33,17,0.2)]"
+              className="group relative flex flex-col rounded-[1.75rem] bg-white p-8 ring-1 ring-[#e3e8ef] transition hover:-translate-y-1 hover:shadow-[0_30px_50px_-30px_rgba(17,33,17,0.2)]"
             >
               <div className="mb-8 flex items-center justify-between">
-                <span className="font-display text-[11px] font-medium tracking-[0.22em] text-[#1b6549]">
+                <span className="font-sans text-[11px] font-medium tracking-[0.22em] text-[#3b6ed6]">
                   STEP {step.num}
                 </span>
-                <span className="flex h-10 w-10 items-center justify-center rounded-full bg-[#deede0] text-[#1b6549] transition group-hover:bg-[#1b6549] group-hover:text-white">
+                <span className="flex h-10 w-10 items-center justify-center rounded-full bg-[#dbeafe] text-[#3b6ed6] transition group-hover:bg-[#3b6ed6] group-hover:text-white">
                   <ArrowUpRight className="h-4 w-4" />
                 </span>
               </div>
 
-              <h3 className="font-display text-[1.55rem] font-semibold leading-tight tracking-tight text-[#171a18]">
+              <h3 className="font-sans text-[1.55rem] font-semibold leading-tight tracking-tight text-[#0d262d]">
                 {step.title}
               </h3>
 
-              <p className="mt-4 text-[14px] leading-relaxed text-[#242220]/65">
+              <p className="mt-4 text-[14px] leading-relaxed text-[#0d262d]/65">
                 {step.body}
               </p>
             </div>
@@ -68,18 +68,18 @@ export function HowItWorks() {
         </div>
 
         {/* Bottom CTA band */}
-        <div className="mt-16 flex flex-col items-center gap-5 rounded-[2rem] bg-[linear-gradient(166deg,_#1b6549_0%,_#112111_100%)] px-8 py-12 text-center sm:mt-20 sm:flex-row sm:justify-between sm:text-left lg:px-14">
+        <div className="mt-16 flex flex-col items-center gap-5 rounded-[2rem] bg-[linear-gradient(166deg,_#3b6ed6_0%,_#0d262d_100%)] px-8 py-12 text-center sm:mt-20 sm:flex-row sm:justify-between sm:text-left lg:px-14">
           <div>
-            <p className="mb-2 font-display text-[11px] font-medium tracking-[0.22em] text-[#c9e3c5]">
+            <p className="mb-2 font-sans text-[11px] font-medium tracking-[0.22em] text-[#c9e3c5]">
               READY TO START
             </p>
-            <h3 className="font-display text-[1.8rem] font-semibold leading-tight tracking-tight text-white sm:text-[2.2rem]">
+            <h3 className="font-sans text-[1.8rem] font-semibold leading-tight tracking-tight text-white sm:text-[2.2rem]">
               Everything your lab needs, in <span className="italic text-[#c9e3c5]">one</span> kit.
             </h3>
           </div>
           <Link
             href="/shop"
-            className="inline-flex h-12 items-center rounded-full bg-white px-7 text-[14px] font-semibold tracking-tight text-[#171a18] transition hover:bg-[#f2f0ed]"
+            className="inline-flex h-12 items-center rounded-full bg-white px-7 text-[14px] font-semibold tracking-tight text-[#0d262d] transition hover:bg-[#eef4fc]"
           >
             Shop all kits
             <ArrowUpRight className="ml-2 h-4 w-4" />

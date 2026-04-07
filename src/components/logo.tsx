@@ -6,34 +6,36 @@ interface LogoProps {
   theme?: "default" | "light";
 }
 
-const sizeClasses = {
-  sm: "text-[18px]",
-  md: "text-[22px]",
-  lg: "text-[34px]",
+// Use the actual Teragenix logo PNGs shipped with the repo.
+// The same PNG works on both light and dark surfaces, but we keep the theme prop
+// for API compatibility and for picking the right asset if we add an inverted variant.
+const sizeHeight: Record<NonNullable<LogoProps["size"]>, number> = {
+  sm: 22,
+  md: 30,
+  lg: 44,
 };
 
+const BASE_PATH = process.env.NODE_ENV === "production" ? "/teragenix" : "";
+
 export function Logo({ className, size = "md", theme = "default" }: LogoProps) {
-  const isLight = theme === "light";
+  const h = sizeHeight[size];
+  // Logo PNG is 2619x742 → aspect 3.53
+  const w = Math.round(h * 3.53);
+  // Light variant (for dark backgrounds) uses white "genix". Default uses dark navy.
+  // We only have the dark-variant PNG in the repo, so for light theme we swap to the raw/white render.
+  const src =
+    theme === "light"
+      ? `${BASE_PATH}/images/teragenix-logo-light.png`
+      : `${BASE_PATH}/images/teragenix-logo-dark.png`;
   return (
-    <span
-      className={cn(
-        "font-display font-semibold tracking-[-0.01em] select-none",
-        sizeClasses[size],
-        className
-      )}
-    >
-      <span className={isLight ? "text-white" : "text-[#171a18]"}>tera</span>
-      <span className={isLight ? "italic text-[#c9e3c5]" : "italic text-[#1b6549]"}>
-        genix
-      </span>
-      <sup
-        className={cn(
-          "ml-0.5 align-top text-[0.42em] font-semibold",
-          isLight ? "text-white/70" : "text-[#1b6549]"
-        )}
-      >
-        12
-      </sup>
-    </span>
+    // eslint-disable-next-line @next/next/no-img-element
+    <img
+      src={src}
+      alt="Teragenix"
+      width={w}
+      height={h}
+      className={cn("select-none object-contain", className)}
+      style={{ height: `${h}px`, width: "auto" }}
+    />
   );
 }

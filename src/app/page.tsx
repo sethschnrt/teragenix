@@ -5,22 +5,33 @@ import { Guarantee } from "@/components/guarantee";
 import { DisclaimerBanner } from "@/components/disclaimer-banner";
 import { Footer } from "@/components/footer";
 
+// Brand blue accents (all sections stay within Teragenix blue family)
+const BLUE_PRIMARY = "#3b6ed6";
+const BLUE_DEEP = "#1e4a9e";
+const BLUE_STEEL = "#2d5bbf";
+const BLUE_SKY = "#4a8dd9";
+
+const HALO_SKY = "#dbeafe";
+const HALO_ICE = "#e6f2fb";
+const HALO_CLOUD = "#eef4fc";
+const HALO_STEEL = "#dde5f0";
+
 export default function Home() {
   return (
     <main>
       <Hero />
       <TrustBar />
 
-      {/* Section 1 — Weight Loss (Metabolic) */}
+      {/* Section 1 — Metabolic */}
       <EditorialSection
         eyebrow="RESEARCH-GRADE GLP-1 COMPOUNDS"
         headline="Metabolic research, made easier."
         accentPhrase="made easier"
-        accentColor="#2e936f"
-        haloColor="#d6f2da"
+        accentColor={BLUE_PRIMARY}
+        haloColor={HALO_SKY}
         bodyText="Teragenix's metabolic kits bring together the highest-purity GLP-1 peptides with every prep essential your lab needs. No piecing supplies together — order once, work immediately."
-        subheading="A smarter way to run your metabolic lab workflow"
-        subbody="Every retatrutide, tirzepatide, and tesamorelin kit arrives with bacteriostatic water, precision syringes, alcohol swabs, and a reconstitution card. Ready the moment it lands on the bench."
+        subheading="A smarter way to run your metabolic workflow"
+        subbody="Every retatrutide, tirzepatide, and semaglutide kit arrives with bacteriostatic water, precision syringes, alcohol swabs, and a reconstitution card. Ready the moment it lands on the bench."
         features={[
           "99%+ purity lab-verified",
           "COA with every batch",
@@ -31,20 +42,20 @@ export default function Home() {
         cardTitle="Everything you need — included:"
         ctaLabel="Shop metabolic kits"
         ctaHref="/shop?category=metabolic"
-        image1="/images/vials/tg/retatrutide.png"
-        image2="/images/vials/tg/tesamorelin.png"
-        image3="/images/vials/tg/tirzepatide.png"
+        image1="/images/hero-vial.png"
+        image2="/images/product-semaglutide.png"
+        image3="/images/product-tirzepatide.png"
         badgeLabel="BEST SELLER"
         background="white"
       />
 
-      {/* Section 2 — Peptides & Longevity */}
+      {/* Section 2 — Peptides & Recovery */}
       <EditorialSection
-        eyebrow="PEPTIDES & LONGEVITY"
+        eyebrow="PEPTIDES & RECOVERY"
         headline="Targeted support for recovery and performance."
         accentPhrase="Targeted support"
-        accentColor="#7aa5c9"
-        haloColor="#e5f2f2"
+        accentColor={BLUE_DEEP}
+        haloColor={HALO_ICE}
         bodyText="From recovery-focused BPC-157 and TB-500 to growth-pathway workhorses like Sermorelin and Ipamorelin — every kit is laboratory-ready from the moment it arrives."
         subheading="Support that works below the surface"
         subbody="Peptide therapy is studied for how the body recovers, performs, and repairs over time. Teragenix pairs pharmaceutical-grade compounds with the prep tools your research protocol demands."
@@ -58,62 +69,62 @@ export default function Home() {
         cardTitle="Targeted compounds for every protocol:"
         ctaLabel="Shop peptides"
         ctaHref="/shop?category=longevity"
-        image1="/images/vials/tg/bpc-157.png"
-        image2="/images/vials/tg/tb-500.png"
-        image3="/images/vials/tg/recovery-stack.png"
+        image1="/images/product-bpc157.png"
+        image2="/images/product-recovery-stack.png"
+        image3="/images/hero-vial.png"
         reverse
         background="cream"
       />
 
-      {/* Section 3 — Beauty & Skin */}
+      {/* Section 3 — Complete Kits */}
       <EditorialSection
-        eyebrow="BEAUTY & SKIN"
-        headline="Radiant research, backed by the lab."
-        accentPhrase="Radiant research"
-        accentColor="#c27ba0"
-        haloColor="#f2e6ec"
-        bodyText="Glutathione, GHK-Cu, and the Teragenix Glow-70 stack — the beauty and skin peptides pharmaceutical research teams reach for, bundled clean and ready for the bench."
-        subheading="Studied for luminous, lasting results"
-        subbody="Teragenix's beauty kits include high-purity compounds for skin-tone research, oxidative stress studies, and longevity-focused protocols. All sourced from audited facilities."
+        eyebrow="COMPLETE RESEARCH KITS"
+        headline="One box. Everything your lab needs."
+        accentPhrase="Everything"
+        accentColor={BLUE_STEEL}
+        haloColor={HALO_CLOUD}
+        bodyText="Every Teragenix kit ships with the compound, bacteriostatic water, precision syringes, and alcohol swabs — inspected and bundled before it leaves the lab. No scavenger hunt across five vendors, no missing supplies."
+        subheading="Lab-ready from the moment it arrives"
+        subbody="Every kit is inspected, sealed, and tracked. When your box lands, you open it and run your protocol — no delays, no half-finished setups, no waiting on bac water from a second supplier."
         features={[
-          "Glutathione (antioxidant pathways)",
-          "GHK-Cu (collagen research)",
-          "Melanotan II (pigmentation studies)",
-          "Glow-70 complete stack",
-          "Sealed, batch-tested delivery",
+          "Compound vial (99%+ purity)",
+          "Bacteriostatic water",
+          "Precision insulin syringes",
+          "Alcohol prep pads",
+          "Reconstitution reference card",
         ]}
-        cardTitle="Beauty protocol kits, ready to run:"
-        ctaLabel="Shop beauty & skin"
-        ctaHref="/shop?category=beauty"
-        image1="/images/vials/tg/glutathione.png"
-        image2="/images/vials/tg/ghk-cu.png"
-        image3="/images/vials/tg/melanotan-ii.png"
+        cardTitle="Inside every Teragenix kit:"
+        ctaLabel="Browse all kits"
+        ctaHref="/shop"
+        image1="/images/product-recovery-stack.png"
+        image2="/images/product-bpc157.png"
+        image3="/images/product-semaglutide.png"
         background="white"
       />
 
-      {/* Section 4 — Research Specialty */}
+      {/* Section 4 — Quality standards */}
       <EditorialSection
-        eyebrow="RESEARCH SPECIALTY"
-        headline="Specialty compounds, lab-ready from day one."
-        accentPhrase="lab-ready"
-        accentColor="#c6a673"
-        haloColor="#f2ebe1"
-        bodyText="Epithalon, Semax, Selank, PT-141 — the specialty compounds your lab needs for nootropic, neuropeptide, and exploratory protocols, all delivered complete."
-        subheading="Small, focused batches — serious standards"
-        subbody="Every Teragenix specialty kit ships with third-party COA documentation, HPLC-verified purity, and the prep supplies your team expects — so research time isn't lost to logistics."
+        eyebrow="QUALITY STANDARDS"
+        headline="Lab-verified. Independently tested."
+        accentPhrase="Independently tested"
+        accentColor={BLUE_SKY}
+        haloColor={HALO_STEEL}
+        bodyText="Every batch is HPLC-verified, third-party COA documented, and traced from audited manufacturer to sealed delivery. The standards your research deserves."
+        subheading="Serious compounds, serious standards"
+        subbody="Our suppliers are audited. Our batches are HPLC-tested. Every kit carries a certificate of analysis, so your research starts with documentation, not guesswork."
         features={[
-          "Epithalon (longevity studies)",
-          "PT-141 (exploratory research)",
-          "Semax & Selank (nootropic research)",
-          "HPLC-verified batches",
-          "Third-party COA with every kit",
+          "HPLC-verified purity",
+          "Third-party COA per batch",
+          "Audited manufacturer network",
+          "Chain-of-custody tracked",
+          "Sealed, tamper-evident packaging",
         ]}
-        cardTitle="Specialty kits for focused research:"
-        ctaLabel="Shop research compounds"
-        ctaHref="/shop?category=research"
-        image1="/images/vials/tg/epithalon.png"
-        image2="/images/vials/tg/pt-141.png"
-        image3="/images/vials/tg/semax.png"
+        cardTitle="Our quality promise:"
+        ctaLabel="Read quality standards"
+        ctaHref="/about"
+        image1="/images/product-tirzepatide.png"
+        image2="/images/hero-vial.png"
+        image3="/images/product-bpc157.png"
         reverse
         background="cream"
       />

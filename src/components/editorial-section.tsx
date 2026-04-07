@@ -46,7 +46,7 @@ export function EditorialSection({
   // Split headline on accentPhrase to render it in accent color
   const headlineParts = headline.split(accentPhrase);
 
-  const bgClass = background === "cream" ? "bg-[#faf9f7]" : "bg-white";
+  const bgClass = background === "cream" ? "bg-[#f4f8ff]" : "bg-white";
 
   // For twin frames at the bottom: use image2 and image3 (or image1 as fallback)
   const twinA = image2;
@@ -89,7 +89,7 @@ export function EditorialSection({
                   fontSize: "20px",
                   lineHeight: "26px",
                   fontWeight: 600,
-                  color: "#242220",
+                  color: "#0d262d",
                   letterSpacing: "-0.4px",
                 }}
               >
@@ -120,7 +120,7 @@ export function EditorialSection({
                         fontSize: "15px",
                         lineHeight: "22px",
                         fontWeight: 500,
-                        color: "#242220",
+                        color: "#0d262d",
                         letterSpacing: "-0.3px",
                       }}
                     >
@@ -134,11 +134,11 @@ export function EditorialSection({
 
           {/* RIGHT COLUMN — eyebrow + headline + body + twin images + sub-block */}
           <div>
-            <p className="cg-eyebrow mb-6" style={{ color: accentColor }}>
+            <p className="tg-eyebrow mb-6" style={{ color: accentColor }}>
               {eyebrow}
             </p>
 
-            <h2 className="cg-h2 max-w-[600px]">
+            <h2 className="tg-h2 max-w-[600px]">
               {headlineParts.length === 2 ? (
                 <>
                   {headlineParts[0]}
@@ -153,9 +153,9 @@ export function EditorialSection({
             <p
               className="mt-6 max-w-[540px]"
               style={{
-                fontSize: "16px",
-                lineHeight: "26px",
-                color: "#242220",
+                fontSize: "17px",
+                lineHeight: "28px",
+                color: "#475967",
                 fontWeight: 400,
               }}
             >
@@ -202,13 +202,13 @@ export function EditorialSection({
 
             {/* Subheading + body */}
             <div className="mt-14 max-w-[540px]">
-              <h3 className="cg-h3">{subheading}</h3>
+              <h3 className="tg-h3">{subheading}</h3>
               <p
                 className="mt-4"
                 style={{
-                  fontSize: "15px",
-                  lineHeight: "24px",
-                  color: "#242220",
+                  fontSize: "16px",
+                  lineHeight: "26px",
+                  color: "#475967",
                   fontWeight: 400,
                 }}
               >

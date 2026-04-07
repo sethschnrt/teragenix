@@ -25,13 +25,13 @@ const footerLinks = {
 
 export function Footer() {
   return (
-    <footer className="relative overflow-hidden bg-[linear-gradient(166deg,_#1b6549_0%,_#112111_100%)] text-white">
+    <footer className="relative overflow-hidden bg-[linear-gradient(166deg,_#1e4a9e_0%,_#0d262d_100%)] text-white">
       {/* faint sage glow */}
-      <div className="pointer-events-none absolute -left-32 top-0 h-[420px] w-[420px] rounded-full bg-[#2e936f]/18 blur-[120px]" />
+      <div className="pointer-events-none absolute -left-32 top-0 h-[420px] w-[420px] rounded-full bg-[#2d5bbf]/18 blur-[120px]" />
 
       {/* decorative wordmark */}
       <div className="pointer-events-none absolute inset-x-0 bottom-[-5rem] flex justify-center">
-        <span className="select-none whitespace-nowrap font-display text-[16rem] font-extrabold leading-none tracking-[-0.05em] text-white/[0.04] sm:text-[20rem]">
+        <span className="select-none whitespace-nowrap font-sans text-[16rem] font-extrabold leading-none tracking-[-0.05em] text-white/[0.04] sm:text-[20rem]">
           teragenix
         </span>
       </div>
@@ -49,7 +49,7 @@ export function Footer() {
           {/* Link columns */}
           {Object.entries(footerLinks).map(([category, links]) => (
             <div key={category}>
-              <h4 className="mb-5 font-display text-[11px] font-medium uppercase tracking-[0.22em] text-[#c9e3c5]">
+              <h4 className="mb-5 font-sans text-[11px] font-medium uppercase tracking-[0.22em] text-[#a8c5f5]">
                 {category}
               </h4>
               <ul className="space-y-3.5">

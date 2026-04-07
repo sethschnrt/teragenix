@@ -1,18 +1,12 @@
 import type { Metadata } from "next";
-import { Red_Hat_Text, Montserrat } from "next/font/google";
+import { Poppins } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/navbar";
 
-const redHat = Red_Hat_Text({
+const poppins = Poppins({
   variable: "--font-sans",
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
-});
-
-const montserrat = Montserrat({
-  variable: "--font-display",
-  subsets: ["latin"],
-  weight: ["600", "700", "800", "900"],
+  weight: ["300", "400", "500", "600", "700", "800", "900"],
 });
 
 export const dynamic = "force-static";
@@ -31,7 +25,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${redHat.variable} ${montserrat.variable} antialiased`}
+        className={`${poppins.variable} antialiased`}
+        style={{ fontFamily: "var(--font-sans), system-ui, sans-serif" }}
       >
         <Navbar />
         {children}

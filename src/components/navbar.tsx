@@ -27,7 +27,7 @@ export function Navbar() {
   return (
     <header
       className={`absolute top-0 z-50 w-full ${
-        isHome ? "bg-transparent" : "sticky border-b border-[#ebe5dc] bg-[#faf9f7]/92 backdrop-blur supports-[backdrop-filter]:bg-[#faf9f7]/75"
+        isHome ? "bg-transparent" : "sticky border-b border-[#e3e8ef] bg-white/92 backdrop-blur supports-[backdrop-filter]:bg-white/75"
       }`}
     >
       <div className="mx-auto flex h-16 max-w-[1240px] items-center justify-between px-5 sm:px-8 lg:px-12">
@@ -44,8 +44,8 @@ export function Navbar() {
               href={link.href}
               className={`text-[13px] font-medium tracking-tight transition-colors ${
                 isHome
-                  ? "text-white/80 hover:text-white"
-                  : "text-[#242220]/70 hover:text-[#171a18]"
+                  ? "text-white/85 hover:text-white"
+                  : "text-[#475967] hover:text-[#0d262d]"
               }`}
             >
               {link.label}
@@ -59,8 +59,8 @@ export function Navbar() {
             href="/shop"
             className={`hidden sm:inline-flex h-9 items-center rounded-full px-4 text-[13px] font-semibold tracking-tight transition ${
               isHome
-                ? "bg-white text-[#171a18] hover:bg-[#f2f0ed]"
-                : "bg-[#1b6549] text-white hover:bg-[#2e936f]"
+                ? "bg-white text-[#0d262d] hover:bg-[#eef4fc]"
+                : "bg-[#3b6ed6] text-white hover:bg-[#2d5bbf]"
             }`}
           >
             Shop kits
@@ -72,7 +72,7 @@ export function Navbar() {
             className={`relative h-9 w-9 rounded-full ${
               isHome
                 ? "text-white hover:bg-white/12 hover:text-white"
-                : "text-[#171a18] hover:bg-[#f2f0ed]"
+                : "text-[#0d262d] hover:bg-[#eef4fc]"
             }`}
           >
             <ShoppingBag className="h-4.5 w-4.5" />
@@ -85,12 +85,12 @@ export function Navbar() {
           <Sheet open={open} onOpenChange={setOpen}>
             <SheetTrigger
               className={`md:hidden inline-flex shrink-0 items-center justify-center rounded-full h-9 w-9 transition-colors ${
-                isHome ? "text-white hover:bg-white/12" : "text-[#171a18] hover:bg-[#f2f0ed]"
+                isHome ? "text-white hover:bg-white/12" : "text-[#0d262d] hover:bg-[#eef4fc]"
               }`}
             >
               <Menu className="h-5 w-5" />
             </SheetTrigger>
-            <SheetContent side="right" className="w-[280px] bg-[#faf9f7]">
+            <SheetContent side="right" className="w-[280px] bg-white">
               <SheetTitle className="sr-only">Navigation menu</SheetTitle>
               <div className="mt-8 flex flex-col gap-6 px-4">
                 <Logo size="lg" />
@@ -99,7 +99,7 @@ export function Navbar() {
                     key={link.href}
                     href={link.href}
                     onClick={() => setOpen(false)}
-                    className="text-lg font-medium text-[#171a18] transition-colors hover:text-[#1b6549]"
+                    className="text-lg font-medium text-[#0d262d] transition-colors hover:text-[#3b6ed6]"
                   >
                     {link.label}
                   </Link>
