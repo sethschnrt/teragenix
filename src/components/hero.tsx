@@ -48,14 +48,13 @@ export function Hero() {
           }}
         />
 
-        {/* Giant background "teragenix" ghost wordmark */}
-        <div className="pointer-events-none absolute inset-x-0 bottom-[-60px] flex justify-center overflow-hidden">
+        {/* Giant background "teragenix" ghost wordmark — fits viewport, subtle */}
+        <div className="pointer-events-none absolute inset-x-0 bottom-[40px] flex justify-center">
           <p
-            className="select-none whitespace-nowrap font-black text-white/[0.07]"
+            className="select-none whitespace-nowrap font-black text-white/[0.018] leading-none"
             style={{
-              fontSize: "340px",
-              lineHeight: "280px",
-              letterSpacing: "-12px",
+              fontSize: "clamp(100px, 13vw, 180px)",
+              letterSpacing: "-0.04em",
             }}
           >
             teragenix
