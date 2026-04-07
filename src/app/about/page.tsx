@@ -10,7 +10,6 @@ import {
   CheckCircle2,
   Beaker,
 } from "lucide-react";
-import Link from "next/link";
 
 const values = [
   {
@@ -205,12 +204,12 @@ export default function AboutPage() {
             Browse our complete catalog of research-grade peptide kits.
             Everything you need, nothing you don&apos;t.
           </p>
-          <Link
+          <a
             href="/shop"
             className="inline-flex items-center justify-center rounded-lg bg-[#4A90D9] px-8 py-3 text-sm font-semibold text-white hover:bg-[#3A7BC8] transition-colors"
           >
             Browse Research Kits
-          </Link>
+          </a>
         </div>
       </section>
 
