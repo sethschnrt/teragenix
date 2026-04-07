@@ -42,9 +42,9 @@ export default function Home() {
         cardTitle="Everything you need — included:"
         ctaLabel="Shop metabolic kits"
         ctaHref="/shop?category=metabolic"
-        image1="/images/hero-vial.png"
-        image2="/images/product-semaglutide.png"
-        image3="/images/product-tirzepatide.png"
+        image1="/images/vials/tg/retatrutide.png"
+        image2="/images/vials/tg/semaglutide.png"
+        image3="/images/vials/tg/tirzepatide.png"
         badgeLabel="BEST SELLER"
         background="white"
       />
@@ -69,9 +69,9 @@ export default function Home() {
         cardTitle="Targeted compounds for every protocol:"
         ctaLabel="Shop peptides"
         ctaHref="/shop?category=longevity"
-        image1="/images/product-bpc157.png"
-        image2="/images/product-recovery-stack.png"
-        image3="/images/hero-vial.png"
+        image1="/images/vials/tg/bpc-157.png"
+        image2="/images/vials/tg/tb-500.png"
+        image3="/images/vials/tg/tesamorelin.png"
         reverse
         background="cream"
       />
@@ -96,9 +96,9 @@ export default function Home() {
         cardTitle="Inside every Teragenix kit:"
         ctaLabel="Browse all kits"
         ctaHref="/shop"
-        image1="/images/product-recovery-stack.png"
-        image2="/images/product-bpc157.png"
-        image3="/images/product-semaglutide.png"
+        image1="/images/vials/tg/recovery-stack.png"
+        image2="/images/vials/tg/bpc-157.png"
+        image3="/images/vials/tg/semaglutide.png"
         background="white"
       />
 
@@ -122,9 +122,9 @@ export default function Home() {
         cardTitle="Our quality promise:"
         ctaLabel="Read quality standards"
         ctaHref="/about"
-        image1="/images/product-tirzepatide.png"
-        image2="/images/hero-vial.png"
-        image3="/images/product-bpc157.png"
+        image1="/images/vials/tg/tirzepatide.png"
+        image2="/images/vials/tg/melanotan-ii.png"
+        image3="/images/vials/tg/glutathione.png"
         reverse
         background="cream"
       />
