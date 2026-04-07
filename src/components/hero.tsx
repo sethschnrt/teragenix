@@ -53,7 +53,7 @@ export function Hero() {
           <p
             className="select-none whitespace-nowrap font-black text-white/[0.018] leading-none"
             style={{
-              fontSize: "clamp(100px, 13vw, 180px)",
+              fontSize: "clamp(140px, 16vw, 230px)",
               letterSpacing: "-0.04em",
             }}
           >
