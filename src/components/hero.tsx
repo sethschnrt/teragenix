@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { Droplets, Sparkles, Leaf, FlaskConical } from "lucide-react";
 
 const BASE_PATH = process.env.NODE_ENV === "production" ? "/teragenix" : "";
 
@@ -7,30 +6,22 @@ const heroTiles = [
   {
     title: "Metabolic",
     href: "/shop?category=metabolic",
-    icon: Droplets,
-    tone: "#dbeafe",
-    iconTone: "#1e4a9e",
+    image: "/images/product-semaglutide.png",
   },
   {
     title: "Peptides & Recovery",
     href: "/shop?category=longevity",
-    icon: Leaf,
-    tone: "#e6f2fb",
-    iconTone: "#2d5bbf",
+    image: "/images/product-bpc157.png",
   },
   {
     title: "Complete Kits",
     href: "/shop",
-    icon: Sparkles,
-    tone: "#eef4fc",
-    iconTone: "#3b6ed6",
+    image: "/images/product-recovery-stack.png",
   },
   {
     title: "Research",
     href: "/shop?category=research",
-    icon: FlaskConical,
-    tone: "#dde5f0",
-    iconTone: "#1a3a44",
+    image: "/images/product-tirzepatide.png",
   },
 ] as const;
 
@@ -121,7 +112,7 @@ export function Hero() {
         </div>
       </div>
 
-      {/* Category tiles — overhang the hero seam */}
+      {/* Category cards — photo on top, label bar below, Medvi pattern */}
       <div className="relative z-20 mx-auto -mt-[90px] max-w-[1240px] px-5 sm:px-8 lg:px-12">
         <div className="grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-5">
           {heroTiles.map((tile) => (
@@ -130,28 +121,21 @@ export function Hero() {
               href={tile.href}
               className="group relative flex flex-col overflow-hidden rounded-[20px] bg-white shadow-[0_30px_60px_-30px_rgba(13,38,45,0.55)] ring-1 ring-[#e3e8ef] transition-transform hover:-translate-y-1"
             >
-              {/* Top pastel image panel */}
+              {/* Photo top — square-ish aspect like Medvi (0.92) */}
               <div
-                className="relative flex h-[170px] items-center justify-center"
-                style={{ backgroundColor: tile.tone }}
+                className="relative w-full overflow-hidden"
+                style={{ aspectRatio: "0.92" }}
               >
-                <div
-                  className="absolute inset-0"
-                  style={{
-                    backgroundImage:
-                      "radial-gradient(ellipse at 50% 35%, rgba(255,255,255,0.6), transparent 65%)",
-                  }}
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={`${BASE_PATH}${tile.image}`}
+                  alt={tile.title}
+                  className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
-                <div
-                  className="relative flex h-[76px] w-[76px] items-center justify-center rounded-[20px] bg-white shadow-[0_12px_30px_-12px_rgba(13,38,45,0.25)]"
-                  style={{ color: tile.iconTone }}
-                >
-                  <tile.icon className="h-[34px] w-[34px]" strokeWidth={1.6} />
-                </div>
               </div>
 
-              {/* Label bar */}
-              <div className="flex items-center justify-between px-5 py-4">
+              {/* White label bar at bottom */}
+              <div className="flex items-center justify-between bg-white px-5 py-4">
                 <p
                   className="text-[#0d262d]"
                   style={{
