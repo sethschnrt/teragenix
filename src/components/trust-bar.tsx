@@ -22,8 +22,8 @@ const trustItems = [
 export function TrustBar() {
   return (
     <section className="border-y border-slate-200 bg-white">
-      <div className="mx-auto max-w-6xl px-4 pt-24 pb-4 sm:px-6 sm:pt-28 lg:px-8 lg:pb-5">
-        <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-3 text-center sm:gap-x-8 lg:gap-x-10">
+      <div className="mx-auto max-w-6xl px-4 pt-18 pb-5 sm:px-6 sm:pt-20 lg:px-8 lg:pb-6">
+        <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-4 text-center sm:gap-x-8 lg:gap-x-10">
           {trustItems.map((item) => (
             <div key={item.title} className="flex items-center gap-3 text-sm font-medium text-slate-700">
               <div className="flex h-9 w-9 items-center justify-center rounded-full bg-[#4A90D9]/10">
