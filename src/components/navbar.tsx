@@ -22,20 +22,20 @@ export function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6 lg:px-8">
+    <header className="sticky top-0 z-50 w-full border-b border-white/60 bg-white/80 backdrop-blur-xl supports-[backdrop-filter]:bg-white/70">
+      <div className="medvi-shell flex h-20 items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center">
           <Logo size="md" />
         </Link>
 
         {/* Desktop nav */}
-        <nav className="hidden md:flex items-center gap-8">
+        <nav className="hidden md:flex items-center gap-8 rounded-full border border-[#d9e7f5] bg-white/90 px-6 py-3 shadow-sm">
           {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+              className="text-sm font-medium text-[#5e7187] hover:text-[#193042] transition-colors"
             >
               {link.label}
             </Link>
@@ -44,7 +44,7 @@ export function Navbar() {
 
         {/* Right side */}
         <div className="flex items-center gap-4">
-          <Button variant="ghost" size="icon" className="relative">
+          <Button variant="ghost" size="icon" className="relative rounded-full border border-[#d9e7f5] bg-white text-[#193042] shadow-sm hover:bg-[#f4f8fc]">
             <ShoppingCart className="h-5 w-5" />
             <span className="absolute -top-1 -right-1 h-4 w-4 rounded-full bg-[#4A90D9] text-[10px] font-bold text-white flex items-center justify-center">
               0

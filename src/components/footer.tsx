@@ -25,13 +25,13 @@ const footerLinks = {
 
 export function Footer() {
   return (
-    <footer className="bg-[#1a2a3a] text-white">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-16">
+    <footer className="mt-8 bg-[#17314a] text-white">
+      <div className="medvi-shell py-16">
         <div className="grid gap-12 md:grid-cols-4">
           {/* Brand column */}
           <div className="md:col-span-1">
             <Logo size="lg" className="[&>span:last-of-type]:!text-white" />
-            <p className="mt-4 text-sm text-white/60 leading-relaxed">
+            <p className="mt-4 text-sm leading-relaxed text-white/70">
               Research-grade peptides with everything you need, bundled in one
               kit. 99%+ purity, COA verified.
             </p>
