@@ -8,28 +8,24 @@ const heroTiles = [
     href: "/shop?category=metabolic",
     image: "/images/generated/life-benefits-v13-cutout/confidence-jeans-belt.png",
     tone: "#f1f8f2",
-    imageClassName: "h-[236px] w-auto",
   },
   {
     title: "Recovery",
     href: "/shop?category=longevity",
     image: "/images/generated/hero-cards-v9-cutout/man-33-blue-halfturn.png",
     tone: "#f4f7fa",
-    imageClassName: "h-[228px] w-auto",
   },
   {
     title: "Longevity",
     href: "/shop",
     image: "/images/generated/hero-cards-v9-cutout/woman-47-cream-seated.png",
     tone: "#fbf6f0",
-    imageClassName: "h-[228px] w-auto",
   },
   {
     title: "Vitality",
     href: "/shop?category=research",
     image: "/images/generated/life-benefits-v13-cutout/active-life-pickleball.png",
     tone: "#eff6f2",
-    imageClassName: "h-[228px] w-auto",
   },
 ] as const;
 
@@ -120,17 +116,53 @@ export function Hero() {
         </div>
       </div>
 
-      {/* Category cards — actual Medvi-style structure */}
+      {/* Category cards — Medvi-style responsive structure */}
       <div className="relative z-20 mx-auto -mt-[92px] max-w-[1240px] px-5 sm:px-8 lg:px-12">
         <div className="rounded-[28px] bg-white p-4 ring-1 ring-[#edf1f5] sm:p-5">
-          <div className="grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-5">
+          {/* Mobile: 1-col horizontal cards. Tablet/Desktop: grid with overflowing images */}
+          <div className="flex flex-col gap-3 sm:grid sm:grid-cols-2 sm:gap-4 lg:grid-cols-4 lg:gap-5">
             {heroTiles.map((tile) => (
               <Link
                 key={tile.title}
                 href={tile.href}
-                className="group relative rounded-[22px] bg-white transition-transform hover:-translate-y-1"
+                className="group relative block rounded-[20px] bg-white transition-transform hover:-translate-y-1 sm:rounded-[22px]"
               >
-                <div className="relative h-[244px] overflow-visible rounded-[22px] bg-white">
+                {/* MOBILE: horizontal layout (image left, label right) */}
+                <div className="flex h-[110px] items-center gap-3 overflow-hidden rounded-[20px] bg-[#f2f3f3] pr-4 sm:hidden">
+                  <div
+                    className="relative flex h-full w-[130px] flex-shrink-0 items-center justify-center rounded-[18px]"
+                    style={{ backgroundColor: tile.tone }}
+                  >
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={`${BASE_PATH}${tile.image}`}
+                      alt={tile.title}
+                      className="h-[105%] w-auto max-w-[140%] object-contain"
+                    />
+                  </div>
+                  <div className="flex flex-1 items-center justify-between gap-3">
+                    <p
+                      className="text-[#242220]"
+                      style={{
+                        fontSize: "15px",
+                        fontWeight: 600,
+                        lineHeight: "20px",
+                        letterSpacing: "-0.02em",
+                      }}
+                    >
+                      {tile.title}
+                    </p>
+                    <span className="flex h-7 w-7 items-center justify-center text-[#242220]">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M5 12h14" />
+                        <path d="M13 5l7 7-7 7" />
+                      </svg>
+                    </span>
+                  </div>
+                </div>
+
+                {/* TABLET & DESKTOP: vertical card with overflowing image */}
+                <div className="relative hidden h-[244px] overflow-visible rounded-[22px] bg-white sm:block">
                   {/* Pastel image field */}
                   <div
                     className="absolute inset-x-0 top-[16px] h-[160px] rounded-[22px]"
@@ -143,7 +175,7 @@ export function Hero() {
                     <img
                       src={`${BASE_PATH}${tile.image}`}
                       alt={tile.title}
-                      className={tile.imageClassName}
+                      className="h-[236px] w-auto max-w-[90%] object-contain"
                     />
                   </div>
 
