@@ -38,7 +38,7 @@ export function Hero() {
   return (
     <section className="relative">
       {/* Teragenix blue → navy gradient hero */}
-      <div className="relative h-[620px] overflow-hidden bg-[linear-gradient(162deg,_#1e4a9e_0%,_#0d262d_100%)]">
+      <div className="relative h-[680px] overflow-hidden bg-[linear-gradient(162deg,_#1e4a9e_0%,_#0d262d_100%)]">
         {/* Subtle radial glow behind the headline */}
         <div
           className="pointer-events-none absolute inset-0"
@@ -62,29 +62,10 @@ export function Hero() {
           </p>
         </div>
 
-        {/* Hero vial floating on the right — mix-blend-mode:screen erases the dark PNG bg */}
-        <div
-          className="pointer-events-none absolute right-[6%] top-[80px] hidden lg:block"
-          style={{
-            mixBlendMode: "screen",
-            maskImage:
-              "radial-gradient(ellipse at 50% 55%, black 45%, transparent 78%)",
-            WebkitMaskImage:
-              "radial-gradient(ellipse at 50% 55%, black 45%, transparent 78%)",
-          }}
-        >
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src={`${BASE_PATH}/images/hero-vial.png`}
-            alt=""
-            className="h-[480px] w-auto object-contain"
-          />
-        </div>
-
-        {/* Content container */}
-        <div className="relative z-10 mx-auto max-w-[1240px] px-5 pt-[150px] sm:px-8 lg:px-12">
+        {/* Content container — centered */}
+        <div className="relative z-10 mx-auto max-w-[1240px] px-5 pt-[130px] sm:px-8 lg:px-12">
           {/* Eyebrow */}
-          <div className="mb-6 lg:text-left">
+          <div className="mb-6 flex justify-center">
             <p
               className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-white backdrop-blur-sm ring-1 ring-white/20"
               style={{
@@ -100,8 +81,8 @@ export function Hero() {
             </p>
           </div>
 
-          {/* Headline */}
-          <h1 className="max-w-[720px] lg:text-left">
+          {/* Headline — centered */}
+          <h1 className="mx-auto max-w-[900px] text-center">
             <span className="tg-h1 block text-white">
               Peptide research,
             </span>
@@ -110,16 +91,16 @@ export function Hero() {
             </span>
           </h1>
 
-          {/* Subhead */}
+          {/* Subhead — centered */}
           <p
-            className="mt-6 max-w-[540px] text-white/85 lg:text-left"
+            className="mx-auto mt-6 max-w-[560px] text-center text-white/85"
             style={{ fontSize: "17px", lineHeight: "1.65", fontWeight: 400 }}
           >
             Premium 99%+ purity peptides delivered as complete kits — bacteriostatic water, precision syringes, and prep supplies already in the box.
           </p>
 
-          {/* CTA row */}
-          <div className="mt-8 flex flex-wrap items-center gap-4">
+          {/* CTA row — centered */}
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
             <Link
               href="/shop"
               className="group inline-flex h-12 items-center rounded-full bg-white px-7 text-[#0d262d] transition hover:bg-white/90"
