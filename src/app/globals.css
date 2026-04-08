@@ -195,11 +195,12 @@
     .tg-h2 { font-size: 32px; }
     .tg-h3 { font-size: 22px; }
   }
-  @keyframes tg-ticker {
+  @keyframes tg-marquee {
     from { transform: translateX(0); }
     to { transform: translateX(-50%); }
   }
-  .tg-ticker {
-    animation: tg-ticker 40s linear infinite;
+  .tg-marquee {
+    animation: tg-marquee 24s linear infinite;
+    will-change: transform;
   }
 }
