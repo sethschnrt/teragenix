@@ -26,9 +26,9 @@ export type ShopCategory = (typeof shopCategories)[number];
 
 const heroCategoryTagClasses: Record<Product["heroCategory"], string> = {
   "Fat Loss": "bg-[#cfe8d7] text-[#2e6c49]",
-  Recovery: "bg-[#dbe8f6] text-[#325b85]",
+  Recovery: "bg-[#dceff3] text-[#2f6b78]",
   Longevity: "bg-[#f3e4d3] text-[#86572a]",
-  Vitality: "bg-[#dde8fb] text-[#355b92]",
+  Vitality: "bg-[#e6e0fb] text-[#5a46a3]",
 };
 
 export const products: Product[] = [
