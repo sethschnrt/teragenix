@@ -6,36 +6,35 @@ interface LogoProps {
   theme?: "default" | "light";
 }
 
-// Use the actual Teragenix logo PNGs shipped with the repo.
-// The same PNG works on both light and dark surfaces, but we keep the theme prop
-// for API compatibility and for picking the right asset if we add an inverted variant.
-const sizeHeight: Record<NonNullable<LogoProps["size"]>, number> = {
-  sm: 22,
-  md: 30,
-  lg: 44,
+const sizeMap: Record<NonNullable<LogoProps["size"]>, { word: number; sup: number }> = {
+  sm: { word: 22, sup: 9 },
+  md: { word: 30, sup: 12 },
+  lg: { word: 44, sup: 17 },
 };
 
-const BASE_PATH = process.env.NODE_ENV === "production" ? "/teragenix" : "";
-
 export function Logo({ className, size = "md", theme = "default" }: LogoProps) {
-  const h = sizeHeight[size];
-  // Logo PNG is 2619x742 → aspect 3.53
-  const w = Math.round(h * 3.53);
-  // Light variant (for dark backgrounds) uses white "genix". Default uses dark navy.
-  // We only have the dark-variant PNG in the repo, so for light theme we swap to the raw/white render.
-  const src =
-    theme === "light"
-      ? `${BASE_PATH}/images/teragenix-logo-light.png`
-      : `${BASE_PATH}/images/teragenix-logo-dark.png`;
+  const { word, sup } = sizeMap[size];
+  const genixColor = theme === "light" ? "#ffffff" : "#0d262d";
+
   return (
-    // eslint-disable-next-line @next/next/no-img-element
-    <img
-      src={src}
-      alt="Teragenix"
-      width={w}
-      height={h}
-      className={cn("select-none object-contain", className)}
-      style={{ height: `${h}px`, width: "auto" }}
-    />
+    <span
+      aria-label="Teragenix"
+      className={cn("inline-flex select-none items-start font-semibold leading-none tracking-[-0.06em]", className)}
+      style={{ fontSize: `${word}px` }}
+    >
+      <span style={{ color: "#3b6ed6" }}>tera</span>
+      <span style={{ color: genixColor }}>genix</span>
+      <span
+        aria-hidden="true"
+        className="ml-[0.08em] inline-block align-top font-semibold tracking-[-0.04em]"
+        style={{
+          color: genixColor,
+          fontSize: `${sup}px`,
+          transform: "translateY(-0.38em)",
+        }}
+      >
+        12
+      </span>
+    </span>
   );
 }
