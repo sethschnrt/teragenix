@@ -2,7 +2,19 @@ import Link from "next/link";
 
 const BASE_PATH = process.env.NODE_ENV === "production" ? "/teragenix" : "";
 
-const heroTiles = [
+type HeroTile = {
+  title: string;
+  href: string;
+  image: string;
+  desktopImage?: string;
+  tone: string;
+  mobileImageAlign: "center" | "bottom";
+  desktopImageAlign: "bottom" | "desktop-bottom";
+  mobileImageClass: string;
+  desktopImageClass: string;
+};
+
+const heroTiles: HeroTile[] = [
   {
     title: "Fat Loss",
     href: "/shop?category=metabolic",
@@ -37,13 +49,14 @@ const heroTiles = [
     title: "Vitality",
     href: "/shop?category=research",
     image: "/images/generated/life-benefits-v13-cutout/active-life-pickleball-centered.png",
+    desktopImage: "/images/generated/life-benefits-v13-cutout/active-life-pickleball-desktop-bottom.png",
     tone: "#eff6f2",
     mobileImageAlign: "center",
     desktopImageAlign: "desktop-bottom",
     mobileImageClass: "h-[98%] w-auto max-w-[110%] object-contain",
     desktopImageClass: "h-[214px] max-w-[98%] lg:h-[150px] lg:max-w-[98%]",
   },
-] as const;
+];
 
 export function Hero() {
   return (
@@ -201,7 +214,7 @@ export function Hero() {
                     >
                       {/* eslint-disable-next-line @next/next/no-img-element */}
                       <img
-                        src={`${BASE_PATH}${tile.image}`}
+                        src={`${BASE_PATH}${tile.desktopImage ?? tile.image}`}
                         alt={tile.title}
                         className={`w-auto object-contain ${tile.desktopImageClass}`}
                       />
