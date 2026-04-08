@@ -6,6 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { ShoppingCart, ArrowLeft, ArrowUpRight, Check, ChevronRight } from "lucide-react";
 import { Footer } from "@/components/footer";
 import type { Product } from "@/data/products";
+import { getHeroCategoryTagClasses } from "@/data/products";
 
 const BASE_PATH = process.env.NODE_ENV === "production" ? "/teragenix" : "";
 
@@ -42,13 +43,11 @@ export function ProductDetail({ product, relatedProducts }: ProductDetailProps) 
                 alt={product.name}
                 className="w-full h-full object-cover"
               />
-              {product.badge && (
-                <Badge
-                  className={`absolute top-4 left-4 ${product.badgeColor} text-white text-xs font-semibold border-0 px-3 py-1`}
-                >
-                  {product.badge}
-                </Badge>
-              )}
+              <Badge
+                className={`absolute left-4 top-4 border-0 px-3 py-1.5 text-[10px] font-semibold tracking-[0.16em] ${getHeroCategoryTagClasses(product.heroCategory)}`}
+              >
+                {product.heroCategory.toUpperCase()}
+              </Badge>
             </div>
 
             {/* Right — Info */}
@@ -157,20 +156,15 @@ export function ProductDetail({ product, relatedProducts }: ProductDetailProps) 
                         alt={rp.name}
                         className="tg-link-card-media absolute inset-0 h-full w-full object-cover"
                       />
-                      {rp.badge && (
-                        <Badge
-                          className={`absolute top-3 left-3 ${rp.badgeColor} text-white text-[10px] font-semibold border-0`}
-                        >
-                          {rp.badge}
-                        </Badge>
-                      )}
+                      <Badge
+                        className={`absolute left-3 top-3 border-0 px-3 py-1.5 text-[10px] font-semibold tracking-[0.16em] ${getHeroCategoryTagClasses(rp.heroCategory)}`}
+                      >
+                        {rp.heroCategory.toUpperCase()}
+                      </Badge>
                     </div>
                     <div className="flex flex-col flex-1 px-4 pt-3 pb-4 gap-2">
                       <div>
-                        <p className="text-xs font-medium text-[#4A90D9] uppercase tracking-wider">
-                          {rp.heroCategory}
-                        </p>
-                        <h3 className="text-sm sm:text-base font-semibold text-foreground leading-tight mt-1">
+                        <h3 className="text-sm sm:text-base font-semibold text-foreground leading-tight">
                           {rp.name}
                         </h3>
                       </div>

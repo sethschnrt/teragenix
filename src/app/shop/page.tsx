@@ -6,7 +6,7 @@ import { useSearchParams } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ArrowLeft, ArrowUpRight, ChevronDown } from "lucide-react";
-import { products, shopCategories, normalizeCategoryParam, type ShopCategory } from "@/data/products";
+import { products, shopCategories, normalizeCategoryParam, getHeroCategoryTagClasses, type ShopCategory } from "@/data/products";
 import { Footer } from "@/components/footer";
 
 const BASE_PATH = process.env.NODE_ENV === "production" ? "/teragenix" : "";
@@ -161,22 +161,17 @@ export default function ShopPage() {
                     alt={product.name}
                     className="tg-link-card-media absolute inset-0 h-full w-full object-cover"
                   />
-                  {product.badge && (
-                    <Badge
-                      className={`absolute top-3 left-3 ${product.badgeColor} text-white text-[10px] font-semibold border-0`}
-                    >
-                      {product.badge}
-                    </Badge>
-                  )}
+                  <Badge
+                    className={`absolute left-3 top-3 border-0 px-3 py-1.5 text-[10px] font-semibold tracking-[0.16em] ${getHeroCategoryTagClasses(product.heroCategory)}`}
+                  >
+                    {product.heroCategory.toUpperCase()}
+                  </Badge>
                 </div>
 
                 {/* Info section */}
                 <div className="flex flex-col flex-1 px-4 pt-3 pb-4 gap-2">
                   <div>
-                    <p className="text-xs font-medium text-[#4A90D9] uppercase tracking-wider">
-                      {product.heroCategory}
-                    </p>
-                    <h3 className="text-sm sm:text-base font-semibold text-foreground leading-tight mt-1">
+                    <h3 className="text-sm sm:text-base font-semibold text-foreground leading-tight">
                       {product.name}
                     </h3>
                   </div>

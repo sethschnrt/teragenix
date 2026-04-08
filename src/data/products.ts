@@ -24,6 +24,13 @@ export const shopCategories = ["All", "Fat Loss", "Recovery", "Longevity", "Vita
 
 export type ShopCategory = (typeof shopCategories)[number];
 
+const heroCategoryTagClasses: Record<Product["heroCategory"], string> = {
+  "Fat Loss": "bg-[#cfe8d7] text-[#2e6c49]",
+  Recovery: "bg-[#dbe8f6] text-[#325b85]",
+  Longevity: "bg-[#f3e4d3] text-[#86572a]",
+  Vitality: "bg-[#d8ece4] text-[#2d6657]",
+};
+
 export const products: Product[] = [
   {
     slug: "retatrutide",
@@ -203,4 +210,8 @@ export function getProductBySlug(slug: string): Product | undefined {
 export function getProductsByCategory(category: ShopCategory): Product[] {
   if (category === "All") return products;
   return products.filter((p) => p.heroCategory === category);
+}
+
+export function getHeroCategoryTagClasses(category: Product["heroCategory"]): string {
+  return heroCategoryTagClasses[category];
 }

@@ -1,8 +1,9 @@
 "use client";
 
 import Link from "next/link";
+import { Badge } from "@/components/ui/badge";
 import { ArrowUpRight } from "lucide-react";
-import { featuredProducts } from "@/data/products";
+import { featuredProducts, getHeroCategoryTagClasses } from "@/data/products";
 
 const BASE_PATH = process.env.NODE_ENV === "production" ? "/teragenix" : "";
 
@@ -69,18 +70,11 @@ export function FeaturedProducts() {
                     style={{ transform: "scale(1.08)" }}
                   />
 
-                  {product.badge && (
-                    <span
-                      className="absolute left-4 top-4 rounded-full bg-white px-3 py-1.5 font-sans text-[10px] font-semibold tracking-[0.16em] shadow-lg"
-                      style={{ color: tone.ink }}
-                    >
-                      {product.badge.toUpperCase()}
-                    </span>
-                  )}
-
-                  <span className="absolute bottom-4 left-4 rounded-full border border-white/18 bg-white/10 px-2.5 py-1 font-sans text-[9px] font-medium tracking-[0.2em] text-white/88 backdrop-blur">
+                  <Badge
+                    className={`absolute left-4 top-4 border-0 px-3 py-1.5 text-[10px] font-semibold tracking-[0.16em] shadow-lg ${getHeroCategoryTagClasses(product.heroCategory)}`}
+                  >
                     {product.heroCategory.toUpperCase()}
-                  </span>
+                  </Badge>
 
                   <div
                     className="absolute inset-x-0 bottom-0 h-1"
