@@ -63,7 +63,7 @@ export function Hero() {
   return (
     <section className="relative">
       {/* Teragenix blue → navy gradient hero */}
-      <div className="relative h-[640px] overflow-hidden bg-[linear-gradient(162deg,_#1e4a9e_0%,_#0d262d_100%)] lg:h-[500px]">
+      <div className="relative h-[668px] overflow-hidden bg-[linear-gradient(162deg,_#1e4a9e_0%,_#0d262d_100%)] lg:h-[536px]">
         {/* Subtle radial glow behind the headline */}
         <div
           className="pointer-events-none absolute inset-0"
@@ -90,7 +90,7 @@ export function Hero() {
         <div className="relative z-10 mx-auto flex h-full max-w-[1240px] items-center justify-center px-5 pb-[92px] pt-[72px] sm:px-8 sm:pb-[104px] sm:pt-[88px] lg:px-12 lg:pb-[72px] lg:pt-[40px]">
           <div className="mx-auto max-w-[900px] text-center lg:max-w-[760px]">
             {/* Eyebrow */}
-            <div className="mb-3 flex justify-center lg:mb-3">
+            <div className="mb-5 flex justify-center lg:mb-4">
               <p
                 className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-white backdrop-blur-sm ring-1 ring-white/20"
                 style={{
@@ -118,14 +118,14 @@ export function Hero() {
 
             {/* Subhead */}
             <p
-              className="mx-auto mt-4 max-w-[560px] text-center text-white/85 lg:mt-2 lg:max-w-[600px]"
+              className="mx-auto mt-5 max-w-[560px] text-center text-white/85 lg:mt-3 lg:max-w-[600px]"
               style={{ fontSize: "15px", lineHeight: "1.5", fontWeight: 400 }}
             >
               Premium peptides designed to support fat loss, recovery, performance, and long-term vitality, delivered discreetly with a simpler, better experience.
             </p>
 
             {/* CTA row */}
-            <div className="mt-5 flex flex-wrap items-center justify-center gap-4 lg:mt-4">
+            <div className="mt-7 flex flex-wrap items-center justify-center gap-4 lg:mt-5">
               <Link
                 href="/shop"
                 className="group inline-flex h-12 items-center rounded-full bg-white px-7 text-[#0d262d] transition hover:bg-white/90"
