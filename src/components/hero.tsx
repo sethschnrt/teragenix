@@ -36,8 +36,8 @@ const heroTiles = [
     image: "/images/generated/life-benefits-v13-cutout/active-life-pickleball.png",
     tone: "#eff6f2",
     imageAlign: "center",
-    mobileImageClass: "h-[68%] w-auto max-w-[82%] object-contain",
-    desktopImageClass: "lg:h-[72px] lg:max-w-[58%]",
+    mobileImageClass: "h-[82%] w-auto max-w-[96%] object-contain",
+    desktopImageClass: "lg:h-[94px] lg:max-w-[74%]",
   },
 ] as const;
 
