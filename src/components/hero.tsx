@@ -33,7 +33,7 @@ export function Hero() {
   return (
     <section className="relative">
       {/* Teragenix blue → navy gradient hero */}
-      <div className="relative h-[680px] overflow-hidden bg-[linear-gradient(162deg,_#1e4a9e_0%,_#0d262d_100%)]">
+      <div className="relative h-[640px] overflow-hidden bg-[linear-gradient(162deg,_#1e4a9e_0%,_#0d262d_100%)] lg:h-[500px]">
         {/* Subtle radial glow behind the headline */}
         <div
           className="pointer-events-none absolute inset-0"
@@ -44,7 +44,7 @@ export function Hero() {
         />
 
         {/* Giant background "teragenix" ghost wordmark — fits viewport, subtle */}
-        <div className="pointer-events-none absolute inset-x-0 bottom-[40px] flex justify-center">
+        <div className="pointer-events-none absolute inset-x-0 bottom-[18px] flex justify-center lg:bottom-[10px]">
           <p
             className="select-none whitespace-nowrap font-black text-white/[0.018] leading-none"
             style={{
@@ -57,9 +57,9 @@ export function Hero() {
         </div>
 
         {/* Content container — centered */}
-        <div className="relative z-10 mx-auto max-w-[1240px] px-5 pt-[130px] sm:px-8 lg:px-12">
+        <div className="relative z-10 mx-auto max-w-[1240px] px-5 pt-[118px] sm:px-8 lg:px-12 lg:pt-[62px]">
           {/* Eyebrow */}
-          <div className="mb-6 flex justify-center">
+          <div className="mb-5 flex justify-center lg:mb-4">
             <p
               className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-white backdrop-blur-sm ring-1 ring-white/20"
               style={{
@@ -77,24 +77,24 @@ export function Hero() {
 
           {/* Headline — centered */}
           <h1 className="mx-auto max-w-[900px] text-center">
-            <span className="tg-h1 block text-white">
+            <span className="block text-[48px] font-bold leading-[0.98] tracking-[-0.03em] text-white sm:text-[60px] lg:text-[54px]">
               Peptides,
             </span>
-            <span className="tg-h1 block text-white">
+            <span className="block text-[48px] font-bold leading-[0.98] tracking-[-0.03em] text-white sm:text-[60px] lg:text-[54px]">
               <span className="text-[#a8c5f5] italic">redefined</span> for real life.
             </span>
           </h1>
 
           {/* Subhead — centered */}
           <p
-            className="mx-auto mt-6 max-w-[560px] text-center text-white/85"
-            style={{ fontSize: "17px", lineHeight: "1.65", fontWeight: 400 }}
+            className="mx-auto mt-5 max-w-[560px] text-center text-white/85 lg:mt-3 lg:max-w-[600px]"
+            style={{ fontSize: "15px", lineHeight: "1.5", fontWeight: 400 }}
           >
             Premium peptides designed to support fat loss, recovery, performance, and long-term vitality, delivered discreetly with a simpler, better experience.
           </p>
 
           {/* CTA row — centered */}
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
+          <div className="mt-7 flex flex-wrap items-center justify-center gap-4 lg:mt-5">
             <Link
               href="/shop"
               className="group inline-flex h-12 items-center rounded-full bg-white px-7 text-[#0d262d] transition hover:bg-white/90"
@@ -117,8 +117,8 @@ export function Hero() {
       </div>
 
       {/* Category cards — Medvi-style responsive structure */}
-      <div className="relative z-20 mx-auto -mt-[92px] max-w-[1240px] px-5 sm:px-8 lg:px-12">
-        <div className="rounded-[28px] bg-white p-4 ring-1 ring-[#edf1f5] sm:p-5">
+      <div className="relative z-20 mx-auto -mt-[84px] max-w-[1240px] px-5 sm:px-8 lg:-mt-[42px] lg:px-12">
+        <div className="rounded-[28px] bg-white p-4 ring-1 ring-[#edf1f5] sm:p-5 lg:rounded-[24px] lg:p-4">
           {/* Mobile: 1-col horizontal cards. Tablet/Desktop: grid with overflowing images */}
           <div className="flex flex-col gap-3 sm:grid sm:grid-cols-2 sm:gap-4 lg:grid-cols-4 lg:gap-5">
             {heroTiles.map((tile) => (
@@ -162,25 +162,25 @@ export function Hero() {
                 </div>
 
                 {/* TABLET & DESKTOP: vertical card with overflowing image */}
-                <div className="relative hidden h-[244px] overflow-visible rounded-[22px] bg-white sm:block">
+                <div className="relative hidden h-[244px] overflow-visible rounded-[22px] bg-white sm:block lg:h-[170px]">
                   {/* Pastel image field */}
                   <div
-                    className="absolute inset-x-0 top-[16px] h-[160px] rounded-[22px]"
+                    className="absolute inset-x-0 top-[16px] h-[160px] rounded-[22px] lg:top-[8px] lg:h-[98px] lg:rounded-[18px]"
                     style={{ backgroundColor: tile.tone }}
                   />
 
                   {/* Subject cutout overflowing ABOVE the card */}
-                  <div className="pointer-events-none absolute inset-x-0 top-[-52px] z-10 flex justify-center">
+                  <div className="pointer-events-none absolute inset-x-0 top-[-52px] z-10 flex justify-center lg:top-[-18px]">
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
                       src={`${BASE_PATH}${tile.image}`}
                       alt={tile.title}
-                      className="h-[236px] w-auto max-w-[90%] object-contain"
+                      className="h-[236px] w-auto max-w-[90%] object-contain lg:h-[136px] lg:max-w-[84%]"
                     />
                   </div>
 
                   {/* Light grey content area flush to the bottom */}
-                  <div className="absolute inset-x-0 bottom-0 rounded-t-[18px] rounded-b-[22px] bg-[#f2f3f3] px-4 py-4">
+                  <div className="absolute inset-x-0 bottom-0 rounded-t-[18px] rounded-b-[22px] bg-[#f2f3f3] px-4 py-4 lg:rounded-t-[14px] lg:rounded-b-[18px] lg:px-3 lg:py-2.5">
                     <div className="flex items-center justify-between gap-3">
                       <p
                         className="text-[#242220]"
