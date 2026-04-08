@@ -54,7 +54,7 @@ function TrustItem({ label, icon }: (typeof tickerItems)[number]) {
 
 export function TrustBar() {
   return (
-    <section className="relative overflow-hidden bg-white py-4 lg:py-3">
+    <section className="relative overflow-hidden bg-white pb-4 pt-6 lg:pb-3 lg:pt-5">
       <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-10 bg-linear-to-r from-white to-transparent lg:w-16" />
       <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-10 bg-linear-to-l from-white to-transparent lg:w-16" />
 
