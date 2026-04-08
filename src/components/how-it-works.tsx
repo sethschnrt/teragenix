@@ -45,13 +45,13 @@ export function HowItWorks() {
           {steps.map((step) => (
             <div
               key={step.num}
-              className="group relative flex flex-col rounded-[1.75rem] bg-white p-8 ring-1 ring-[#e3e8ef] transition hover:-translate-y-1 hover:shadow-[0_30px_50px_-30px_rgba(17,33,17,0.2)]"
+              className="relative flex flex-col rounded-[1.75rem] bg-white p-8 ring-1 ring-[#e3e8ef]"
             >
               <div className="mb-8 flex items-center justify-between">
                 <span className="font-sans text-[11px] font-medium tracking-[0.22em] text-[#3b6ed6]">
                   STEP {step.num}
                 </span>
-                <span className="flex h-10 w-10 items-center justify-center rounded-full bg-[#dbeafe] text-[#3b6ed6] transition group-hover:bg-[#3b6ed6] group-hover:text-white">
+                <span className="flex h-10 w-10 items-center justify-center rounded-full bg-[#dbeafe] text-[#3b6ed6]">
                   <ArrowUpRight className="h-4 w-4" />
                 </span>
               </div>
@@ -79,10 +79,10 @@ export function HowItWorks() {
           </div>
           <Link
             href="/shop"
-            className="inline-flex h-12 items-center rounded-full bg-white px-7 text-[14px] font-semibold tracking-tight text-[#0d262d] transition hover:bg-[#eef4fc]"
+            className="tg-link-pill inline-flex h-12 items-center rounded-full bg-white px-7 text-[14px] font-semibold tracking-tight text-[#0d262d] hover:bg-[#eef4fc]"
           >
             Shop all kits
-            <ArrowUpRight className="ml-2 h-4 w-4" />
+            <ArrowUpRight className="tg-link-pill-icon ml-2 h-4 w-4" />
           </Link>
         </div>
       </div>

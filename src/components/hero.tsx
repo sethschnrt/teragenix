@@ -128,17 +128,17 @@ export function Hero() {
             <div className="mt-7 flex flex-wrap items-center justify-center gap-4 lg:mt-5">
               <Link
                 href="/shop"
-                className="group inline-flex h-12 items-center rounded-full bg-white px-7 text-[#0d262d] transition hover:bg-white/90"
+                className="tg-link-pill group inline-flex h-12 items-center rounded-full bg-white px-7 text-[#0d262d] hover:bg-white/90"
                 style={{ fontSize: "14px", fontWeight: 600, letterSpacing: "-0.02em" }}
               >
                 Shop all kits
-                <svg className="ml-2 h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <svg className="tg-link-pill-icon ml-2 h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M5 12h14M13 5l7 7-7 7" />
                 </svg>
               </Link>
               <Link
                 href="/about"
-                className="inline-flex h-12 items-center rounded-full px-7 text-white ring-1 ring-white/40 transition hover:bg-white/10"
+                className="tg-link-pill inline-flex h-12 items-center rounded-full px-7 text-white ring-1 ring-white/40 hover:bg-white/10"
                 style={{ fontSize: "14px", fontWeight: 600, letterSpacing: "-0.02em" }}
               >
                 How it works
@@ -157,7 +157,7 @@ export function Hero() {
               <Link
                 key={tile.title}
                 href={tile.href}
-                className="group relative block rounded-[20px] bg-white transition-transform hover:-translate-y-1 sm:rounded-[22px]"
+                className="tg-link-card group relative block rounded-[20px] bg-white sm:rounded-[22px]"
               >
                 {/* MOBILE: horizontal layout (image left, label right) */}
                 <div className="flex h-[110px] items-center gap-3 overflow-hidden rounded-[20px] bg-[#f2f3f3] pr-4 sm:hidden">
@@ -174,7 +174,7 @@ export function Hero() {
                       <img
                         src={`${BASE_PATH}${tile.image}`}
                         alt={tile.title}
-                        className={tile.mobileImageClass}
+                        className={`tg-link-card-media ${tile.mobileImageClass}`}
                       />
                     </div>
                   </div>
@@ -217,7 +217,7 @@ export function Hero() {
                       <img
                         src={`${BASE_PATH}${tile.desktopImage ?? tile.image}`}
                         alt={tile.title}
-                        className={`w-auto object-contain ${tile.desktopImageClass}`}
+                        className={`tg-link-card-media w-auto object-contain ${tile.desktopImageClass}`}
                       />
                     </div>
                   </div>

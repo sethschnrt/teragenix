@@ -9,7 +9,7 @@ export function DisclaimerBanner() {
           <p className="text-[12px] leading-5 text-[#0d262d]/70 sm:text-[13px]">
             <span className="font-semibold text-[#0d262d]">Research Use Only.</span>{" "}
             All Teragenix products are sold strictly for in-vitro research and laboratory use. Not for human consumption. By purchasing, you agree to our{" "}
-            <a href="/terms" className="font-medium text-[#3b6ed6] underline underline-offset-2 hover:text-[#2d5bbf]">
+            <a href="/terms" className="tg-link-text font-medium text-[#3b6ed6] underline underline-offset-2 hover:text-[#2d5bbf]">
               Terms of Service
             </a>
             .

@@ -36,10 +36,10 @@ export function FeaturedProducts() {
 
           <Link
             href="/shop"
-            className="inline-flex h-12 items-center self-start rounded-full border border-[#3b6ed6] bg-transparent px-6 text-[13px] font-semibold tracking-tight text-[#3b6ed6] transition hover:bg-[#3b6ed6] hover:text-white sm:self-end"
+            className="tg-link-pill inline-flex h-12 items-center self-start rounded-full border border-[#3b6ed6] bg-transparent px-6 text-[13px] font-semibold tracking-tight text-[#3b6ed6] hover:bg-[#3b6ed6] hover:text-white sm:self-end"
           >
             View full catalog
-            <ArrowUpRight className="ml-2 h-4 w-4" />
+            <ArrowUpRight className="tg-link-pill-icon ml-2 h-4 w-4" />
           </Link>
         </div>
 
@@ -51,7 +51,7 @@ export function FeaturedProducts() {
               <Link
                 key={product.slug}
                 href={`/shop/${product.slug}`}
-                className="group relative flex flex-col overflow-hidden rounded-[1.75rem] bg-white ring-1 ring-[#e3e8ef] transition-all hover:-translate-y-1 hover:shadow-[0_30px_50px_-30px_rgba(17,33,17,0.25)]"
+                className="tg-link-card group relative flex flex-col overflow-hidden rounded-[1.75rem] bg-white ring-1 ring-[#e3e8ef]"
               >
                 <div className="relative aspect-square overflow-hidden bg-[#050505]">
                   <div
@@ -65,7 +65,7 @@ export function FeaturedProducts() {
                   <img
                     src={`${BASE_PATH}${product.image}`}
                     alt={product.name}
-                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.04]"
+                    className="tg-link-card-media h-full w-full object-cover"
                     style={{ transform: "scale(1.08)" }}
                   />
 

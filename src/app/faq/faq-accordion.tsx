@@ -145,7 +145,7 @@ function AccordionItem({ item }: { item: FaqItem }) {
     <div className="border-b last:border-b-0">
       <button
         onClick={() => setOpen(!open)}
-        className="flex w-full items-center justify-between py-4 text-left transition-colors hover:text-[#4A90D9]"
+        className="flex w-full items-center justify-between py-4 text-left"
       >
         <span className="text-sm sm:text-base font-medium text-foreground pr-4">
           {item.question}
@@ -197,7 +197,7 @@ export function FaqAccordion() {
           </p>
           <a
             href="mailto:support@teragenix.com"
-            className="inline-flex items-center justify-center rounded-lg bg-[#4A90D9] px-6 py-2.5 text-sm font-semibold text-white hover:bg-[#3A7BC8] transition-colors"
+            className="tg-link-pill inline-flex items-center justify-center rounded-lg bg-[#4A90D9] px-6 py-2.5 text-sm font-semibold text-white hover:bg-[#3A7BC8]"
           >
             Contact Support
           </a>

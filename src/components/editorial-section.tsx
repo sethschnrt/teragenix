@@ -228,17 +228,17 @@ export function EditorialSection({
               {/* CTA pill */}
               <Link
                 href={ctaHref}
-                className="mt-8 inline-flex h-12 items-center rounded-full px-7 text-white transition hover:brightness-110"
+                className="tg-link-pill mt-8 inline-flex h-12 items-center rounded-full px-7 text-white hover:brightness-110"
                 style={{
                   backgroundColor: accentColor,
                   fontSize: "14px",
                   fontWeight: 600,
                   letterSpacing: "-0.28px",
                 }}
-              >
+                >
                 {ctaLabel}
                 <svg
-                  className="ml-2 h-4 w-4"
+                  className="tg-link-pill-icon ml-2 h-4 w-4"
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"

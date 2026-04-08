@@ -42,7 +42,7 @@ export function Navbar() {
             <Link
               key={link.href}
               href={link.href}
-              className={`text-[13px] font-medium tracking-tight transition-colors ${
+              className={`tg-link-text text-[13px] font-medium tracking-tight ${
                 isHome
                   ? "text-white/85 hover:text-white"
                   : "text-[#475967] hover:text-[#0d262d]"
@@ -57,7 +57,7 @@ export function Navbar() {
         <div className="flex items-center gap-3">
           <Link
             href="/shop"
-            className={`hidden sm:inline-flex h-9 items-center rounded-full px-4 text-[13px] font-semibold tracking-tight transition ${
+            className={`tg-link-pill hidden sm:inline-flex h-9 items-center rounded-full px-4 text-[13px] font-semibold tracking-tight ${
               isHome
                 ? "bg-white text-[#0d262d] hover:bg-[#eef4fc]"
                 : "bg-[#3b6ed6] text-white hover:bg-[#2d5bbf]"
@@ -71,8 +71,8 @@ export function Navbar() {
             size="icon"
             className={`relative h-9 w-9 rounded-full ${
               isHome
-                ? "text-white hover:bg-white/12 hover:text-white"
-                : "text-[#0d262d] hover:bg-[#eef4fc]"
+                ? "text-white hover:bg-transparent hover:text-white"
+                : "text-[#0d262d] hover:bg-transparent hover:text-[#0d262d]"
             }`}
           >
             <ShoppingBag className="h-4.5 w-4.5" />
@@ -84,8 +84,8 @@ export function Navbar() {
           {/* Mobile menu */}
           <Sheet open={open} onOpenChange={setOpen}>
             <SheetTrigger
-              className={`md:hidden inline-flex shrink-0 items-center justify-center rounded-full h-9 w-9 transition-colors ${
-                isHome ? "text-white hover:bg-white/12" : "text-[#0d262d] hover:bg-[#eef4fc]"
+              className={`md:hidden inline-flex shrink-0 items-center justify-center rounded-full h-9 w-9 ${
+                isHome ? "text-white hover:bg-transparent" : "text-[#0d262d] hover:bg-transparent"
               }`}
             >
               <Menu className="h-5 w-5" />
@@ -99,7 +99,7 @@ export function Navbar() {
                     key={link.href}
                     href={link.href}
                     onClick={() => setOpen(false)}
-                    className="text-lg font-medium text-[#0d262d] transition-colors hover:text-[#3b6ed6]"
+                    className="tg-link-text text-lg font-medium text-[#0d262d] hover:text-[#3b6ed6]"
                   >
                     {link.label}
                   </Link>

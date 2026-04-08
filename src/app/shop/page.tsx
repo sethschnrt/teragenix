@@ -4,7 +4,7 @@ import { useState, useMemo } from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { ShoppingCart, ChevronDown, ArrowLeft, Store } from "lucide-react";
+import { ChevronDown, ArrowLeft, ArrowUpRight, Store } from "lucide-react";
 import { products, categories, type Category } from "@/data/products";
 import { Footer } from "@/components/footer";
 
@@ -96,7 +96,7 @@ export default function ShopPage() {
                   className={`px-4 py-1.5 rounded-full text-sm font-medium transition-colors ${
                     activeCategory === cat
                       ? "bg-[#4A90D9] text-white"
-                      : "bg-muted text-muted-foreground hover:bg-muted/80"
+                      : "bg-muted text-muted-foreground"
                   }`}
                 >
                   {cat}
@@ -108,7 +108,7 @@ export default function ShopPage() {
             <div className="relative">
               <button
                 onClick={() => setSortOpen(!sortOpen)}
-                className="flex items-center gap-2 px-4 py-2 rounded-lg border text-sm font-medium bg-card text-foreground hover:bg-muted transition-colors"
+                className="flex items-center gap-2 rounded-lg border bg-card px-4 py-2 text-sm font-medium text-foreground transition-colors"
               >
                 {sortLabels[sortBy]}
                 <ChevronDown
@@ -127,7 +127,7 @@ export default function ShopPage() {
                       className={`block w-full text-left px-4 py-2.5 text-sm transition-colors ${
                         sortBy === option
                           ? "bg-[#4A90D9]/10 text-[#4A90D9] font-medium"
-                          : "text-foreground hover:bg-muted"
+                          : "text-foreground"
                       } first:rounded-t-lg last:rounded-b-lg`}
                     >
                       {sortLabels[option]}
@@ -149,7 +149,7 @@ export default function ShopPage() {
               <Link
                 key={product.slug}
                 href={`/shop/${product.slug}`}
-                className="group relative flex flex-col overflow-hidden rounded-xl border bg-card text-card-foreground ring-1 ring-foreground/10 transition-all hover:shadow-lg hover:border-[#4A90D9]/30"
+                className="tg-link-card group relative flex flex-col overflow-hidden rounded-xl border bg-card text-card-foreground ring-1 ring-foreground/10"
               >
                 {/* Product image */}
                 <div className="relative aspect-square bg-[#0a0a0a] flex items-center justify-center overflow-hidden">
@@ -157,7 +157,7 @@ export default function ShopPage() {
                   <img
                     src={`${BASE_PATH}${product.image}`}
                     alt={product.name}
-                    className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    className="tg-link-card-media absolute inset-0 h-full w-full object-cover"
                   />
                   {product.badge && (
                     <Badge
@@ -193,13 +193,9 @@ export default function ShopPage() {
                         ${product.originalPrice}
                       </span>
                     </div>
-                    <Button
-                      size="sm"
-                      className="bg-[#4A90D9] hover:bg-[#3A7BC8] text-white"
-                      onClick={(e) => e.preventDefault()}
-                    >
-                      <ShoppingCart className="h-4 w-4" />
-                    </Button>
+                    <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[#eef4fc] text-[#0d262d]">
+                      <ArrowUpRight className="h-4 w-4" />
+                    </span>
                   </div>
                 </div>
               </Link>
@@ -214,7 +210,7 @@ export default function ShopPage() {
               </p>
               <Button
                 variant="outline"
-                className="mt-4"
+                className="mt-4 transition-none hover:bg-background hover:text-foreground"
                 onClick={() => setActiveCategory("All")}
               >
                 <ArrowLeft className="mr-2 h-4 w-4" />

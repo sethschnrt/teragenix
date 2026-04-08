@@ -53,7 +53,7 @@ export function Guarantee() {
           {promises.map((p) => (
             <div
               key={p.title}
-              className="group relative flex flex-col rounded-[30px] bg-[#f4f8ff] p-8 transition hover:-translate-y-1"
+              className="relative flex flex-col rounded-[30px] bg-[#f4f8ff] p-8"
             >
               <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-[#dbeafe] text-[#3b6ed6]">
                 <p.icon className="h-6 w-6" strokeWidth={1.75} />
@@ -108,16 +108,16 @@ export function Guarantee() {
           </div>
           <Link
             href="/shop"
-            className="inline-flex h-14 shrink-0 items-center rounded-full bg-white px-8 text-[#0d262d] transition hover:bg-[#eef4fc]"
+            className="tg-link-pill inline-flex h-14 shrink-0 items-center rounded-full bg-white px-8 text-[#0d262d] hover:bg-[#eef4fc]"
             style={{
               fontSize: "15px",
               fontWeight: 600,
               letterSpacing: "-0.3px",
             }}
-          >
-            Shop all kits
-            <svg
-              className="ml-2.5 h-4 w-4"
+            >
+              Shop all kits
+              <svg
+              className="tg-link-pill-icon ml-2.5 h-4 w-4"
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"

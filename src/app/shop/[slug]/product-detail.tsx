@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { ShoppingCart, ArrowLeft, Check, ChevronRight } from "lucide-react";
+import { ShoppingCart, ArrowLeft, ArrowUpRight, Check, ChevronRight } from "lucide-react";
 import { Footer } from "@/components/footer";
 import type { Product } from "@/data/products";
 
@@ -21,11 +21,11 @@ export function ProductDetail({ product, relatedProducts }: ProductDetailProps) 
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           {/* Breadcrumb */}
           <nav className="flex items-center gap-2 text-sm text-muted-foreground mb-8">
-            <Link href="/" className="hover:text-foreground transition-colors">
+            <Link href="/" className="tg-link-text hover:text-foreground">
               Home
             </Link>
             <ChevronRight className="h-3.5 w-3.5" />
-            <Link href="/shop" className="hover:text-foreground transition-colors">
+            <Link href="/shop" className="tg-link-text hover:text-foreground">
               Shop
             </Link>
             <ChevronRight className="h-3.5 w-3.5" />
@@ -79,7 +79,7 @@ export function ProductDetail({ product, relatedProducts }: ProductDetailProps) 
               {/* Add to cart */}
               <Button
                 size="lg"
-                className="mt-8 bg-[#4A90D9] hover:bg-[#3A7BC8] text-white px-8 text-base font-semibold w-full sm:w-auto"
+                className="mt-8 w-full bg-[#4A90D9] px-8 text-base font-semibold text-white transition-none hover:bg-[#4A90D9] sm:w-auto"
               >
                 <ShoppingCart className="mr-2 h-5 w-5" />
                 Add to Cart
@@ -148,14 +148,14 @@ export function ProductDetail({ product, relatedProducts }: ProductDetailProps) 
                   <Link
                     key={rp.slug}
                     href={`/shop/${rp.slug}`}
-                    className="group relative flex flex-col overflow-hidden rounded-xl border bg-card text-card-foreground ring-1 ring-foreground/10 transition-all hover:shadow-lg hover:border-[#4A90D9]/30"
+                    className="tg-link-card group relative flex flex-col overflow-hidden rounded-xl border bg-card text-card-foreground ring-1 ring-foreground/10"
                   >
                     <div className="relative aspect-square bg-[#0a0a0a] flex items-center justify-center overflow-hidden">
                       {/* eslint-disable-next-line @next/next/no-img-element */}
                       <img
                         src={`${BASE_PATH}${rp.image}`}
                         alt={rp.name}
-                        className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                        className="tg-link-card-media absolute inset-0 h-full w-full object-cover"
                       />
                       {rp.badge && (
                         <Badge
@@ -186,13 +186,9 @@ export function ProductDetail({ product, relatedProducts }: ProductDetailProps) 
                             ${rp.originalPrice}
                           </span>
                         </div>
-                        <Button
-                          size="sm"
-                          className="bg-[#4A90D9] hover:bg-[#3A7BC8] text-white"
-                          onClick={(e) => e.preventDefault()}
-                        >
-                          <ShoppingCart className="h-4 w-4" />
-                        </Button>
+                        <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[#eef4fc] text-[#0d262d]">
+                          <ArrowUpRight className="h-4 w-4" />
+                        </span>
                       </div>
                     </div>
                   </Link>
@@ -204,7 +200,7 @@ export function ProductDetail({ product, relatedProducts }: ProductDetailProps) 
           {/* Back to shop */}
           <div className="mt-12">
             <Link href="/shop">
-              <Button variant="outline" className="text-sm font-medium">
+              <Button variant="outline" className="tg-link-pill text-sm font-medium">
                 <ArrowLeft className="mr-2 h-4 w-4" />
                 Back to Shop
               </Button>

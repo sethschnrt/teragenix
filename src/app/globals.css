@@ -204,3 +204,55 @@
     will-change: transform;
   }
 }
+
+@layer components {
+  .tg-link-card {
+    transition:
+      transform 220ms cubic-bezier(0.22, 1, 0.36, 1),
+      box-shadow 220ms cubic-bezier(0.22, 1, 0.36, 1),
+      border-color 220ms ease;
+  }
+
+  .tg-link-card-media {
+    transition: transform 320ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .tg-link-pill {
+    transition:
+      transform 180ms cubic-bezier(0.22, 1, 0.36, 1),
+      box-shadow 180ms cubic-bezier(0.22, 1, 0.36, 1),
+      background-color 180ms ease,
+      color 180ms ease,
+      border-color 180ms ease,
+      opacity 180ms ease;
+  }
+
+  .tg-link-pill-icon {
+    transition: transform 180ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .tg-link-text {
+    transition: color 180ms ease, opacity 180ms ease;
+  }
+
+  @media (hover: hover) {
+    .tg-link-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 28px 48px -32px rgba(13, 38, 45, 0.28) !important;
+      border-color: rgba(59, 110, 214, 0.22);
+    }
+
+    .tg-link-card:hover .tg-link-card-media {
+      transform: scale(1.035);
+    }
+
+    .tg-link-pill:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 16px 28px -22px rgba(59, 110, 214, 0.55);
+    }
+
+    .tg-link-pill:hover .tg-link-pill-icon {
+      transform: translate3d(2px, -1px, 0);
+    }
+  }
+}

@@ -206,7 +206,7 @@ export default function AboutPage() {
           </p>
           <a
             href="/shop"
-            className="inline-flex items-center justify-center rounded-lg bg-[#4A90D9] px-8 py-3 text-sm font-semibold text-white hover:bg-[#3A7BC8] transition-colors"
+            className="tg-link-pill inline-flex items-center justify-center rounded-lg bg-[#4A90D9] px-8 py-3 text-sm font-semibold text-white hover:bg-[#3A7BC8]"
           >
             Browse Research Kits
           </a>
