@@ -62,22 +62,20 @@ export function EditorialSection({
         >
           {/* LEFT COLUMN — image + feature card */}
           <div className="relative flex flex-col items-center">
-            {/* Halo circle background (subtle ring behind the framed photo) */}
+            {/* Halo circle background */}
             <div
-              className="pointer-events-none absolute left-1/2 top-[40px] h-[460px] w-[460px] -translate-x-1/2 rounded-full"
+              className="pointer-events-none absolute left-1/2 top-[60px] h-[420px] w-[420px] -translate-x-1/2 rounded-full"
               style={{ backgroundColor: haloColor }}
             />
 
-            {/* Hero lifestyle image — round-framed inside the halo */}
-            <div className="relative z-10 flex h-[480px] w-[420px] items-center justify-center">
-              <div className="relative h-[420px] w-[420px] overflow-hidden rounded-full shadow-[0_30px_60px_-20px_rgba(17,33,17,0.28)] ring-1 ring-white/40">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={`${BASE_PATH}${image1}`}
-                  alt=""
-                  className="h-full w-full object-cover"
-                />
-              </div>
+            {/* Hero cutout image */}
+            <div className="relative z-10 flex h-[480px] w-[360px] items-center justify-center">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={`${BASE_PATH}${image1}`}
+                alt=""
+                className="max-h-[460px] w-auto object-contain drop-shadow-[0_24px_40px_rgba(17,33,17,0.18)]"
+              />
             </div>
 
             {/* Feature card — pale-tinted checklist */}

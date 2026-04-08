@@ -69,7 +69,7 @@ export default function Home() {
         cardTitle="Targeted compounds for every protocol:"
         ctaLabel="Shop peptides"
         ctaHref="/shop?category=longevity"
-        image1="/images/generated/lifestyle-v1/recovery-1-hero.png"
+        image1="/images/generated/lifestyle-v1-cutout/recovery-1-hero.png"
         image2="/images/generated/lifestyle-v1/recovery-2-trail-run.png"
         image3="/images/generated/lifestyle-v1/recovery-3-foam-roll.png"
         reverse
@@ -96,7 +96,7 @@ export default function Home() {
         cardTitle="Inside every Teragenix kit:"
         ctaLabel="Browse all kits"
         ctaHref="/shop"
-        image1="/images/generated/lifestyle-v1/kits-1-hero.png"
+        image1="/images/generated/lifestyle-v1-cutout/kits-1-hero.png"
         image2="/images/generated/lifestyle-v1/kits-2-pipette.png"
         image3="/images/generated/lifestyle-v1/kits-3-coa-paper.png"
         background="white"
@@ -122,7 +122,7 @@ export default function Home() {
         cardTitle="Our quality promise:"
         ctaLabel="Read quality standards"
         ctaHref="/about"
-        image1="/images/generated/lifestyle-v1/quality-1-hero.png"
+        image1="/images/generated/lifestyle-v1-cutout/quality-1-hero.png"
         image2="/images/generated/lifestyle-v1/quality-2-glassware.png"
         image3="/images/generated/lifestyle-v1/quality-3-yoga-couple.png"
         reverse
