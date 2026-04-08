@@ -8,28 +8,36 @@ const heroTiles = [
     href: "/shop?category=metabolic",
     image: "/images/generated/life-benefits-v13-cutout/confidence-jeans-belt.png",
     tone: "#f1f8f2",
-    desktopImageClass: "lg:h-[136px] lg:max-w-[84%]",
+    imageAlign: "bottom",
+    mobileImageClass: "h-[100%] w-auto max-w-[135%] object-contain",
+    desktopImageClass: "lg:h-[82px] lg:max-w-[72%]",
   },
   {
     title: "Recovery",
     href: "/shop?category=longevity",
     image: "/images/generated/hero-cards-v2-cutout/recovery-man-31.png",
     tone: "#f4f7fa",
-    desktopImageClass: "lg:h-[136px] lg:max-w-[84%]",
+    imageAlign: "bottom",
+    mobileImageClass: "h-[102%] w-auto max-w-[138%] object-contain",
+    desktopImageClass: "lg:h-[92px] lg:max-w-[74%]",
   },
   {
     title: "Longevity",
     href: "/shop",
     image: "/images/generated/hero-cards-v9-cutout/woman-47-cream-seated.png",
     tone: "#fbf6f0",
-    desktopImageClass: "lg:h-[136px] lg:max-w-[84%]",
+    imageAlign: "bottom",
+    mobileImageClass: "h-[100%] w-auto max-w-[138%] object-contain",
+    desktopImageClass: "lg:h-[88px] lg:max-w-[76%]",
   },
   {
     title: "Vitality",
     href: "/shop?category=research",
     image: "/images/generated/life-benefits-v13-cutout/active-life-pickleball.png",
     tone: "#eff6f2",
-    desktopImageClass: "lg:h-[136px] lg:max-w-[84%]",
+    imageAlign: "center",
+    mobileImageClass: "h-[68%] w-auto max-w-[82%] object-contain",
+    desktopImageClass: "lg:h-[72px] lg:max-w-[58%]",
   },
 ] as const;
 
@@ -134,15 +142,21 @@ export function Hero() {
                 {/* MOBILE: horizontal layout (image left, label right) */}
                 <div className="flex h-[110px] items-center gap-3 overflow-hidden rounded-[20px] bg-[#f2f3f3] pr-4 sm:hidden">
                   <div
-                    className="relative flex h-full w-[130px] flex-shrink-0 items-center justify-center rounded-[18px]"
+                    className="relative h-full w-[130px] flex-shrink-0 overflow-hidden rounded-[18px]"
                     style={{ backgroundColor: tile.tone }}
                   >
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img
-                      src={`${BASE_PATH}${tile.image}`}
-                      alt={tile.title}
-                      className="h-[105%] w-auto max-w-[140%] object-contain"
-                    />
+                    <div
+                      className={`absolute inset-0 flex justify-center ${
+                        tile.imageAlign === "center" ? "items-center" : "items-end"
+                      }`}
+                    >
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img
+                        src={`${BASE_PATH}${tile.image}`}
+                        alt={tile.title}
+                        className={tile.mobileImageClass}
+                      />
+                    </div>
                   </div>
                   <div className="flex flex-1 items-center justify-between gap-3">
                     <p
@@ -169,18 +183,21 @@ export function Hero() {
                 <div className="relative hidden h-[244px] overflow-visible rounded-[22px] bg-white sm:block lg:h-[170px]">
                   {/* Pastel image field */}
                   <div
-                    className="absolute inset-x-0 top-[16px] h-[160px] rounded-[22px] lg:top-[8px] lg:h-[98px] lg:rounded-[18px]"
+                    className="absolute inset-x-0 top-[16px] h-[160px] overflow-hidden rounded-[22px] lg:top-[8px] lg:h-[98px] lg:rounded-[18px]"
                     style={{ backgroundColor: tile.tone }}
-                  />
-
-                  {/* Subject cutout overflowing ABOVE the card */}
-                  <div className="pointer-events-none absolute inset-x-0 top-[-52px] z-10 flex justify-center lg:top-[-18px]">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img
-                      src={`${BASE_PATH}${tile.image}`}
-                      alt={tile.title}
-                      className={`h-[236px] w-auto max-w-[90%] object-contain ${tile.desktopImageClass}`}
-                    />
+                  >
+                    <div
+                      className={`pointer-events-none absolute inset-0 z-10 flex justify-center ${
+                        tile.imageAlign === "center" ? "items-center" : "items-end"
+                      }`}
+                    >
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img
+                        src={`${BASE_PATH}${tile.image}`}
+                        alt={tile.title}
+                        className={`h-[236px] w-auto max-w-[90%] object-contain ${tile.desktopImageClass}`}
+                      />
+                    </div>
                   </div>
 
                   {/* Light grey content area flush to the bottom */}
