@@ -19,6 +19,7 @@ const heroTiles: HeroTile[] = [
     title: "Fat Loss",
     href: "/shop?category=metabolic",
     image: "/images/generated/life-benefits-v13-cutout/confidence-jeans-belt.png",
+    desktopImage: "/images/generated/life-benefits-v13-cutout/confidence-jeans-belt-desktop-bottom.png",
     tone: "#f1f8f2",
     mobileImageAlign: "bottom",
     desktopImageAlign: "bottom",
