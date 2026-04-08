@@ -8,24 +8,28 @@ const heroTiles = [
     href: "/shop?category=metabolic",
     image: "/images/generated/life-benefits-v13-cutout/confidence-jeans-belt.png",
     tone: "#f1f8f2",
+    desktopImageClass: "lg:h-[136px] lg:max-w-[84%]",
   },
   {
     title: "Recovery",
     href: "/shop?category=longevity",
     image: "/images/generated/hero-cards-v9-cutout/man-33-blue-halfturn.png",
     tone: "#f4f7fa",
+    desktopImageClass: "lg:h-[124px] lg:max-w-[78%]",
   },
   {
     title: "Longevity",
     href: "/shop",
     image: "/images/generated/hero-cards-v9-cutout/woman-47-cream-seated.png",
     tone: "#fbf6f0",
+    desktopImageClass: "lg:h-[136px] lg:max-w-[84%]",
   },
   {
     title: "Vitality",
     href: "/shop?category=research",
     image: "/images/generated/life-benefits-v13-cutout/active-life-pickleball.png",
     tone: "#eff6f2",
+    desktopImageClass: "lg:h-[136px] lg:max-w-[84%]",
   },
 ] as const;
 
@@ -175,7 +179,7 @@ export function Hero() {
                     <img
                       src={`${BASE_PATH}${tile.image}`}
                       alt={tile.title}
-                      className="h-[236px] w-auto max-w-[90%] object-contain lg:h-[136px] lg:max-w-[84%]"
+                      className={`h-[236px] w-auto max-w-[90%] object-contain ${tile.desktopImageClass}`}
                     />
                   </div>
 
