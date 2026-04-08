@@ -8,7 +8,8 @@ const heroTiles = [
     href: "/shop?category=metabolic",
     image: "/images/generated/life-benefits-v13-cutout/confidence-jeans-belt.png",
     tone: "#f1f8f2",
-    imageAlign: "bottom",
+    mobileImageAlign: "bottom",
+    desktopImageAlign: "bottom",
     mobileImageClass: "h-[100%] w-auto max-w-[135%] object-contain",
     desktopImageClass: "h-[228px] max-w-[96%] lg:h-[150px] lg:max-w-[96%]",
   },
@@ -17,7 +18,8 @@ const heroTiles = [
     href: "/shop?category=longevity",
     image: "/images/generated/hero-cards-v2-cutout/recovery-man-31.png",
     tone: "#f4f7fa",
-    imageAlign: "bottom",
+    mobileImageAlign: "bottom",
+    desktopImageAlign: "bottom",
     mobileImageClass: "h-[102%] w-auto max-w-[138%] object-contain",
     desktopImageClass: "h-[236px] max-w-[94%] lg:h-[164px] lg:max-w-[94%]",
   },
@@ -26,7 +28,8 @@ const heroTiles = [
     href: "/shop",
     image: "/images/generated/hero-cards-v9-cutout/woman-47-cream-seated.png",
     tone: "#fbf6f0",
-    imageAlign: "bottom",
+    mobileImageAlign: "bottom",
+    desktopImageAlign: "bottom",
     mobileImageClass: "h-[100%] w-auto max-w-[138%] object-contain",
     desktopImageClass: "h-[232px] max-w-[95%] lg:h-[158px] lg:max-w-[95%]",
   },
@@ -35,7 +38,8 @@ const heroTiles = [
     href: "/shop?category=research",
     image: "/images/generated/life-benefits-v13-cutout/active-life-pickleball-centered.png",
     tone: "#eff6f2",
-    imageAlign: "center",
+    mobileImageAlign: "center",
+    desktopImageAlign: "desktop-bottom",
     mobileImageClass: "h-[98%] w-auto max-w-[110%] object-contain",
     desktopImageClass: "h-[214px] max-w-[98%] lg:h-[150px] lg:max-w-[98%]",
   },
@@ -149,7 +153,7 @@ export function Hero() {
                   >
                     <div
                       className={`absolute inset-0 flex justify-center ${
-                        tile.imageAlign === "center" ? "items-center" : "items-end"
+                        tile.mobileImageAlign === "center" ? "items-center" : "items-end"
                       }`}
                     >
                       {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -190,7 +194,9 @@ export function Hero() {
                   >
                     <div
                       className={`pointer-events-none absolute inset-0 z-10 flex justify-center ${
-                        tile.imageAlign === "center" ? "items-center" : "items-end"
+                        tile.desktopImageAlign === "desktop-bottom"
+                          ? "items-center lg:items-end"
+                          : "items-end"
                       }`}
                     >
                       {/* eslint-disable-next-line @next/next/no-img-element */}
