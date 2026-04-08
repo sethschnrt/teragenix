@@ -5,10 +5,9 @@ import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { ChevronDown, ArrowLeft, ArrowUpRight, Store } from "lucide-react";
+import { ArrowLeft, ArrowUpRight } from "lucide-react";
 import { products, categories, getHeroCategoryLabel, normalizeCategoryParam, type Category } from "@/data/products";
 import { Footer } from "@/components/footer";
-import { PageHero } from "@/components/page-hero";
 
 const BASE_PATH = process.env.NODE_ENV === "production" ? "/teragenix" : "";
 
@@ -25,7 +24,8 @@ export default function ShopPage() {
   const searchParams = useSearchParams();
   const [activeCategory, setActiveCategory] = useState<Category>("All");
   const [sortBy, setSortBy] = useState<SortOption>("featured");
-  const [sortOpen, setSortOpen] = useState(false);
+
+  const sortOptions: SortOption[] = ["featured", "price-asc", "price-desc", "name-asc"];
 
   useEffect(() => {
     const categoryFromUrl = normalizeCategoryParam(searchParams.get("category"));
@@ -75,34 +75,93 @@ export default function ShopPage() {
 
   return (
     <main>
-      <PageHero
-        icon={Store}
-        eyebrow="SHOP TERAGENIX"
-        title="Choose the right kit faster, without the vendor maze."
-        description="Browse premium research kits by goal, compare pricing quickly, and filter into the compounds that fit your workflow. Every listing includes the essentials needed to start cleanly."
-        variant="shop"
-        highlights={[
-          { label: "Fat Loss", href: "/shop?category=metabolic" },
-          { label: "Vitality", href: "/shop?category=research" },
-          { label: "Longevity", href: "/shop?category=beauty" },
-          { label: "All kits", href: "/shop" },
-        ]}
-        panelEyebrow="WHY THIS PAGE WORKS"
-        panelTitle="Less browsing friction, better decision support."
-        panelItems={[
-          { label: "Purity standard", value: "99%+ verified" },
-          { label: "Included in every kit", value: "Water, syringes, swabs" },
-          { label: "Live product count", value: `${filtered.length} visible now` },
-          { label: "Shipping style", value: "Fast and discreet" },
-        ]}
-      />
+      <section className="relative overflow-hidden bg-[linear-gradient(162deg,_#173f85_0%,_#0d262d_100%)] pt-24 sm:pt-28">
+        <div
+          className="pointer-events-none absolute inset-0"
+          style={{
+            backgroundImage:
+              "radial-gradient(circle at 76% 18%, rgba(168,197,245,0.18), transparent 28%), radial-gradient(circle at 18% 18%, rgba(255,255,255,0.06), transparent 24%)",
+          }}
+        />
 
-      <section className="py-10 sm:py-14">
+        <div className="relative mx-auto max-w-[1240px] px-5 pb-7 sm:px-8 sm:pb-8 lg:px-12">
+          <div className="max-w-3xl">
+            <div className="mb-4 flex flex-wrap items-center gap-3">
+              <span className="inline-flex items-center rounded-full bg-white/10 px-3.5 py-2 text-[11px] font-medium tracking-[0.18em] text-white/84 ring-1 ring-white/14 backdrop-blur-sm">
+                SHOP TERAGENIX
+              </span>
+              <span className="text-[12px] text-white/60">
+                99%+ purity, complete kits, fast discreet shipping
+              </span>
+            </div>
+
+            <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
+              <div>
+                <h1 className="text-[2.15rem] font-semibold leading-[0.96] tracking-[-0.035em] text-white sm:text-[2.8rem]">
+                  Research kits, without the clutter.
+                </h1>
+                <p className="mt-3 max-w-2xl text-[0.98rem] leading-6 text-white/72 sm:text-[1.02rem]">
+                  Filter by goal, compare fast, and get straight into the products.
+                </p>
+              </div>
+
+              <div className="flex flex-wrap gap-2 lg:justify-end">
+                <Link
+                  href="/shop?category=metabolic"
+                  className="tg-link-pill inline-flex items-center rounded-full border border-white/16 bg-white/10 px-3.5 py-2 text-[12px] font-medium text-white/88 backdrop-blur-sm hover:bg-white/16"
+                >
+                  Fat Loss
+                </Link>
+                <Link
+                  href="/shop?category=research"
+                  className="tg-link-pill inline-flex items-center rounded-full border border-white/16 bg-white/10 px-3.5 py-2 text-[12px] font-medium text-white/88 backdrop-blur-sm hover:bg-white/16"
+                >
+                  Vitality
+                </Link>
+                <Link
+                  href="/shop?category=beauty"
+                  className="tg-link-pill inline-flex items-center rounded-full border border-white/16 bg-white/10 px-3.5 py-2 text-[12px] font-medium text-white/88 backdrop-blur-sm hover:bg-white/16"
+                >
+                  Longevity
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-6 sm:py-8">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-          {/* Filters row */}
-          <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between mb-8">
-            {/* Category tabs */}
-            <div className="flex flex-wrap gap-2">
+          <div className="mb-6 rounded-[1.5rem] border border-[#e3e8ef] bg-white p-4 shadow-[0_12px_30px_rgba(17,33,17,0.04)] sm:p-5">
+            <div className="flex flex-col gap-4">
+              <div className="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
+                <div>
+                  <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-[#3b6ed6]">
+                    Browse by category
+                  </p>
+                  <p className="mt-1 text-sm text-[#0d262d]/60">
+                    Showing {filtered.length} product{filtered.length !== 1 ? "s" : ""}
+                  </p>
+                </div>
+
+                <div className="flex flex-wrap gap-2">
+                  {sortOptions.map((option) => (
+                    <button
+                      key={option}
+                      onClick={() => setSortBy(option)}
+                      className={`rounded-full px-3.5 py-2 text-[12px] font-medium transition-colors ${
+                        sortBy === option
+                          ? "bg-[#0d262d] text-white"
+                          : "bg-[#f4f6f8] text-[#475967]"
+                      }`}
+                    >
+                      {sortLabels[option]}
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              <div className="flex flex-wrap gap-2">
               {categories.map((cat) => (
                 <button
                   key={cat}
@@ -116,46 +175,9 @@ export default function ShopPage() {
                   {cat}
                 </button>
               ))}
-            </div>
-
-            {/* Sort dropdown */}
-            <div className="relative">
-              <button
-                onClick={() => setSortOpen(!sortOpen)}
-                className="flex items-center gap-2 rounded-lg border bg-card px-4 py-2 text-sm font-medium text-foreground transition-colors"
-              >
-                {sortLabels[sortBy]}
-                <ChevronDown
-                  className={`h-4 w-4 transition-transform ${sortOpen ? "rotate-180" : ""}`}
-                />
-              </button>
-              {sortOpen && (
-                <div className="absolute right-0 mt-2 w-48 rounded-lg border bg-card shadow-lg z-10">
-                  {(Object.keys(sortLabels) as SortOption[]).map((option) => (
-                    <button
-                      key={option}
-                      onClick={() => {
-                        setSortBy(option);
-                        setSortOpen(false);
-                      }}
-                      className={`block w-full text-left px-4 py-2.5 text-sm transition-colors ${
-                        sortBy === option
-                          ? "bg-[#4A90D9]/10 text-[#4A90D9] font-medium"
-                          : "text-foreground"
-                      } first:rounded-t-lg last:rounded-b-lg`}
-                    >
-                      {sortLabels[option]}
-                    </button>
-                  ))}
-                </div>
-              )}
+              </div>
             </div>
           </div>
-
-          {/* Product count */}
-          <p className="text-sm text-muted-foreground mb-6">
-            Showing {filtered.length} product{filtered.length !== 1 ? "s" : ""}
-          </p>
 
           {/* Product grid — same style as FeaturedProducts */}
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-4">

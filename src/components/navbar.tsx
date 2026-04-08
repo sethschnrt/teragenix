@@ -19,21 +19,23 @@ const navLinks = [
   { label: "FAQ", href: "/faq" },
 ];
 
+const heroNavPaths = ["/", "/shop", "/about", "/faq"];
+
 export function Navbar() {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
-  const isHome = pathname === "/";
+  const useHeroNav = heroNavPaths.includes(pathname);
 
   return (
     <header
       className={`absolute top-0 z-50 w-full ${
-        isHome ? "bg-transparent" : "sticky border-b border-[#e3e8ef] bg-white/92 backdrop-blur supports-[backdrop-filter]:bg-white/75"
+        useHeroNav ? "bg-transparent" : "sticky border-b border-[#e3e8ef] bg-white/92 backdrop-blur supports-[backdrop-filter]:bg-white/75"
       }`}
     >
       <div className="mx-auto flex h-16 max-w-[1240px] items-center justify-between px-5 sm:px-8 lg:px-12">
         {/* Logo */}
         <Link href="/" className="flex items-center">
-          <Logo size="md" theme={isHome ? "light" : "default"} />
+          <Logo size="md" theme={useHeroNav ? "light" : "default"} />
         </Link>
 
         {/* Desktop nav */}
@@ -43,7 +45,7 @@ export function Navbar() {
               key={link.href}
               href={link.href}
               className={`tg-link-text text-[13px] font-medium tracking-tight ${
-                isHome
+                useHeroNav
                   ? "text-white/85 hover:text-white"
                   : "text-[#475967] hover:text-[#0d262d]"
               }`}
@@ -58,7 +60,7 @@ export function Navbar() {
           <Link
             href="/shop"
             className={`tg-link-pill hidden sm:inline-flex h-9 items-center rounded-full px-4 text-[13px] font-semibold tracking-tight ${
-              isHome
+              useHeroNav
                 ? "bg-white text-[#0d262d] hover:bg-[#eef4fc]"
                 : "bg-[#3b6ed6] text-white hover:bg-[#2d5bbf]"
             }`}
@@ -70,7 +72,7 @@ export function Navbar() {
             variant="ghost"
             size="icon"
             className={`relative h-9 w-9 rounded-full ${
-              isHome
+              useHeroNav
                 ? "text-white hover:bg-transparent hover:text-white"
                 : "text-[#0d262d] hover:bg-transparent hover:text-[#0d262d]"
             }`}
@@ -85,7 +87,7 @@ export function Navbar() {
           <Sheet open={open} onOpenChange={setOpen}>
             <SheetTrigger
               className={`md:hidden inline-flex shrink-0 items-center justify-center rounded-full h-9 w-9 ${
-                isHome ? "text-white hover:bg-transparent" : "text-[#0d262d] hover:bg-transparent"
+                useHeroNav ? "text-white hover:bg-transparent" : "text-[#0d262d] hover:bg-transparent"
               }`}
             >
               <Menu className="h-5 w-5" />
