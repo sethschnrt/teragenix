@@ -28,7 +28,7 @@ const heroCategoryTagClasses: Record<Product["heroCategory"], string> = {
   "Fat Loss": "bg-[#cfe8d7] text-[#2e6c49]",
   Recovery: "bg-[#dbe8f6] text-[#325b85]",
   Longevity: "bg-[#f3e4d3] text-[#86572a]",
-  Vitality: "bg-[#d8ece4] text-[#2d6657]",
+  Vitality: "bg-[#dde8fb] text-[#355b92]",
 };
 
 export const products: Product[] = [

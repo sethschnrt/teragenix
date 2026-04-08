@@ -51,7 +51,7 @@ const heroTiles: HeroTile[] = [
     href: "/shop?category=vitality",
     image: "/images/generated/life-benefits-v13-cutout/active-life-pickleball-centered.png",
     desktopImage: "/images/generated/life-benefits-v13-cutout/active-life-pickleball-desktop-bottom.png",
-    tone: "#eff6f2",
+    tone: "#e7eefc",
     mobileImageAlign: "center",
     desktopImageAlign: "desktop-bottom",
     mobileImageClass: "h-[98%] w-auto max-w-[110%] object-contain",
