@@ -10,7 +10,7 @@ const heroTiles = [
     tone: "#f1f8f2",
     imageAlign: "bottom",
     mobileImageClass: "h-[100%] w-auto max-w-[135%] object-contain",
-    desktopImageClass: "lg:h-[82px] lg:max-w-[72%]",
+    desktopImageClass: "lg:h-[104px] lg:max-w-[80%]",
   },
   {
     title: "Recovery",
@@ -19,7 +19,7 @@ const heroTiles = [
     tone: "#f4f7fa",
     imageAlign: "bottom",
     mobileImageClass: "h-[102%] w-auto max-w-[138%] object-contain",
-    desktopImageClass: "lg:h-[92px] lg:max-w-[74%]",
+    desktopImageClass: "lg:h-[112px] lg:max-w-[82%]",
   },
   {
     title: "Longevity",
@@ -28,7 +28,7 @@ const heroTiles = [
     tone: "#fbf6f0",
     imageAlign: "bottom",
     mobileImageClass: "h-[100%] w-auto max-w-[138%] object-contain",
-    desktopImageClass: "lg:h-[88px] lg:max-w-[76%]",
+    desktopImageClass: "lg:h-[108px] lg:max-w-[82%]",
   },
   {
     title: "Vitality",
@@ -36,8 +36,8 @@ const heroTiles = [
     image: "/images/generated/life-benefits-v13-cutout/active-life-pickleball-centered.png",
     tone: "#eff6f2",
     imageAlign: "center",
-    mobileImageClass: "h-[90%] w-auto max-w-[100%] object-contain",
-    desktopImageClass: "lg:h-[104px] lg:max-w-[82%]",
+    mobileImageClass: "h-[98%] w-auto max-w-[110%] object-contain",
+    desktopImageClass: "lg:h-[114px] lg:max-w-[88%]",
   },
 ] as const;
 
