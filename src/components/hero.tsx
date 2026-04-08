@@ -87,7 +87,7 @@ export function Hero() {
         </div>
 
         {/* Content container — centered independently from background wordmark */}
-        <div className="relative z-10 mx-auto flex h-full max-w-[1240px] items-center justify-center px-5 pb-[92px] pt-[72px] sm:px-8 sm:pb-[104px] sm:pt-[88px] lg:px-12 lg:pb-[72px] lg:pt-[40px]">
+        <div className="relative z-10 mx-auto flex h-full max-w-[1240px] items-center justify-center px-5 pb-[100px] pt-[80px] sm:px-8 sm:pb-[112px] sm:pt-[96px] lg:px-12 lg:pb-[80px] lg:pt-[48px]">
           <div className="mx-auto max-w-[900px] text-center lg:max-w-[760px]">
             {/* Eyebrow */}
             <div className="mb-5 flex justify-center lg:mb-4">
