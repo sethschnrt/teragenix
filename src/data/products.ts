@@ -179,6 +179,26 @@ export function getHeroCategoryLabel(category: string): string {
   return heroCategoryLabels[category] ?? category;
 }
 
+const categoryParamMap: Record<string, Category> = {
+  all: "All",
+  metabolic: "Metabolic",
+  research: "Research",
+  beauty: "Beauty",
+  bundles: "Bundles",
+  "fat-loss": "Metabolic",
+  fatloss: "Metabolic",
+  "weight-loss": "Metabolic",
+  vitality: "Research",
+  longevity: "Beauty",
+  "beauty-skin": "Beauty",
+};
+
+export function normalizeCategoryParam(category: string | null): Category | undefined {
+  if (!category) return undefined;
+
+  return categoryParamMap[category.trim().toLowerCase()];
+}
+
 /** Get a product by its slug */
 export function getProductBySlug(slug: string): Product | undefined {
   return products.find((p) => p.slug === slug);

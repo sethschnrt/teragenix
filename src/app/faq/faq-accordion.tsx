@@ -17,6 +17,7 @@ interface FaqSection {
 const faqData: FaqSection[] = [
   {
     title: "General",
+    id: "general",
     items: [
       {
         question: "What are peptides?",
@@ -42,6 +43,7 @@ const faqData: FaqSection[] = [
   },
   {
     title: "Ordering",
+    id: "ordering",
     items: [
       {
         question: "How do I place an order?",
@@ -93,6 +95,7 @@ const faqData: FaqSection[] = [
   },
   {
     title: "Products",
+    id: "products",
     items: [
       {
         question: "How should I store my peptides?",
@@ -118,6 +121,7 @@ const faqData: FaqSection[] = [
   },
   {
     title: "Returns & Refunds",
+    id: "returns-refunds",
     items: [
       {
         question: "What is your refund policy?",

@@ -2,25 +2,32 @@ import { Footer } from "@/components/footer";
 import { DisclaimerBanner } from "@/components/disclaimer-banner";
 import { HelpCircle } from "lucide-react";
 import { FaqAccordion } from "./faq-accordion";
+import { PageHero } from "@/components/page-hero";
 
 export default function FaqPage() {
   return (
     <main>
-      {/* Hero */}
-      <section className="bg-[#1a2a3a] text-white">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
-          <div className="flex items-center gap-3 mb-4">
-            <HelpCircle className="h-8 w-8 text-[#4A90D9]" />
-            <h1 className="text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl">
-              Frequently Asked Questions
-            </h1>
-          </div>
-          <p className="text-lg text-white/70 max-w-2xl">
-            Everything you need to know about our research peptide kits,
-            ordering, and shipping.
-          </p>
-        </div>
-      </section>
+      <PageHero
+        icon={HelpCircle}
+        eyebrow="FAQ"
+        title="Straight answers, before you place the order."
+        description="Get clear answers on research use, ordering, shipping, storage, and refunds without digging through the whole site. Start with the topic you need and move fast."
+        variant="faq"
+        highlights={[
+          { label: "General", href: "#general" },
+          { label: "Ordering", href: "#ordering" },
+          { label: "Shipping", href: "#shipping" },
+          { label: "Returns", href: "#returns-refunds" },
+        ]}
+        panelEyebrow="POPULAR TOPICS"
+        panelTitle="Jump to the section you actually need."
+        panelItems={[
+          { label: "Ordering & payments", href: "#ordering" },
+          { label: "Shipping timelines", href: "#shipping" },
+          { label: "Storage & product care", href: "#products" },
+          { label: "Returns & refunds", href: "#returns-refunds" },
+        ]}
+      />
 
       <FaqAccordion />
 

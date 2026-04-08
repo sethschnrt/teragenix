@@ -1,5 +1,6 @@
 import { Footer } from "@/components/footer";
 import { DisclaimerBanner } from "@/components/disclaimer-banner";
+import { PageHero } from "@/components/page-hero";
 import {
   Shield,
   Microscope,
@@ -48,24 +49,24 @@ const stats = [
 export default function AboutPage() {
   return (
     <main>
-      {/* Hero */}
-      <section className="bg-[#1a2a3a] text-white">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
-          <div className="flex items-center gap-3 mb-4">
-            <FlaskConical className="h-8 w-8 text-[#4A90D9]" />
-            <h1 className="text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl">
-              About Teragenix
-            </h1>
-          </div>
-          <p className="text-lg text-white/70 max-w-2xl">
-            Founded by researchers, for researchers. We believe access to
-            high-quality peptides shouldn&apos;t require a procurement department.
-          </p>
-        </div>
-      </section>
+      <PageHero
+        icon={FlaskConical}
+        eyebrow="ABOUT TERAGENIX"
+        title="Built for researchers who want fewer vendors and better standards."
+        description="Teragenix exists to remove sourcing friction without lowering the bar. We combine research-grade compounds, prep essentials, and documented quality standards into one cleaner buying experience."
+        variant="about"
+        highlights={[
+          { label: "Our mission", href: "#mission" },
+          { label: "Core principles", href: "#principles" },
+          { label: "Quality promise", href: "#quality-promise" },
+        ]}
+        panelEyebrow="AT A GLANCE"
+        panelTitle="The standards behind every Teragenix kit."
+        panelItems={stats.map((stat) => ({ label: stat.label, value: stat.value }))}
+      />
 
       {/* Mission */}
-      <section className="py-16 sm:py-20">
+      <section id="mission" className="py-16 sm:py-20">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="grid gap-12 lg:grid-cols-2 items-center">
             <div>
@@ -117,7 +118,7 @@ export default function AboutPage() {
       </section>
 
       {/* Values */}
-      <section className="py-16 sm:py-20 bg-muted/30">
+      <section id="principles" className="py-16 sm:py-20 bg-muted/30">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <p className="text-sm font-semibold text-[#4A90D9] uppercase tracking-wider mb-2">
@@ -150,7 +151,7 @@ export default function AboutPage() {
       </section>
 
       {/* Quality Promise */}
-      <section className="py-16 sm:py-20">
+      <section id="quality-promise" className="py-16 sm:py-20">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="rounded-2xl bg-[#1a2a3a] text-white p-8 sm:p-12">
             <div className="grid gap-8 lg:grid-cols-2 items-center">

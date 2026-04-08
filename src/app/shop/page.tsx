@@ -1,12 +1,14 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import Link from "next/link";
+import { useSearchParams } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ChevronDown, ArrowLeft, ArrowUpRight, Store } from "lucide-react";
-import { products, categories, getHeroCategoryLabel, type Category } from "@/data/products";
+import { products, categories, getHeroCategoryLabel, normalizeCategoryParam, type Category } from "@/data/products";
 import { Footer } from "@/components/footer";
+import { PageHero } from "@/components/page-hero";
 
 const BASE_PATH = process.env.NODE_ENV === "production" ? "/teragenix" : "";
 
@@ -20,9 +22,15 @@ const sortLabels: Record<SortOption, string> = {
 };
 
 export default function ShopPage() {
+  const searchParams = useSearchParams();
   const [activeCategory, setActiveCategory] = useState<Category>("All");
   const [sortBy, setSortBy] = useState<SortOption>("featured");
   const [sortOpen, setSortOpen] = useState(false);
+
+  useEffect(() => {
+    const categoryFromUrl = normalizeCategoryParam(searchParams.get("category"));
+    setActiveCategory(categoryFromUrl ?? "All");
+  }, [searchParams]);
 
   const filtered = useMemo(() => {
     let result = [...products];
@@ -67,21 +75,27 @@ export default function ShopPage() {
 
   return (
     <main>
-      {/* Hero header */}
-      <section className="bg-[#1a2a3a] text-white">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
-          <div className="flex items-center gap-3 mb-4">
-            <Store className="h-8 w-8 text-[#4A90D9]" />
-            <h1 className="text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl">
-              Research Kits
-            </h1>
-          </div>
-          <p className="text-lg text-white/70 max-w-2xl">
-            Premium 99%+ purity peptides, each bundled with bacteriostatic
-            water, syringes, and alcohol swabs. Everything you need in one box.
-          </p>
-        </div>
-      </section>
+      <PageHero
+        icon={Store}
+        eyebrow="SHOP TERAGENIX"
+        title="Choose the right kit faster, without the vendor maze."
+        description="Browse premium research kits by goal, compare pricing quickly, and filter into the compounds that fit your workflow. Every listing includes the essentials needed to start cleanly."
+        variant="shop"
+        highlights={[
+          { label: "Fat Loss", href: "/shop?category=metabolic" },
+          { label: "Vitality", href: "/shop?category=research" },
+          { label: "Longevity", href: "/shop?category=beauty" },
+          { label: "All kits", href: "/shop" },
+        ]}
+        panelEyebrow="WHY THIS PAGE WORKS"
+        panelTitle="Less browsing friction, better decision support."
+        panelItems={[
+          { label: "Purity standard", value: "99%+ verified" },
+          { label: "Included in every kit", value: "Water, syringes, swabs" },
+          { label: "Live product count", value: `${filtered.length} visible now` },
+          { label: "Shipping style", value: "Fast and discreet" },
+        ]}
+      />
 
       <section className="py-10 sm:py-14">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
