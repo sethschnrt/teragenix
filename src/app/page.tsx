@@ -2,6 +2,7 @@ import { Hero } from "@/components/hero";
 import { TrustBar } from "@/components/trust-bar";
 import { EditorialSection } from "@/components/editorial-section";
 import { Guarantee } from "@/components/guarantee";
+import { Testimonials } from "@/components/testimonials";
 import { DisclaimerBanner } from "@/components/disclaimer-banner";
 import { Footer } from "@/components/footer";
 
@@ -130,6 +131,7 @@ export default function Home() {
         background="cream"
       />
 
+      <Testimonials />
       <Guarantee />
       <DisclaimerBanner />
       <Footer />
