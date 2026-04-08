@@ -185,13 +185,11 @@ export function Hero() {
                 <div className="relative hidden h-[244px] overflow-visible rounded-[22px] bg-white sm:block lg:h-[170px]">
                   {/* Pastel image field */}
                   <div
-                    className="absolute inset-x-0 top-[16px] h-[160px] rounded-[22px] lg:top-[8px] lg:h-[98px] lg:rounded-[18px]"
+                    className="absolute inset-x-0 top-[16px] h-[160px] overflow-visible rounded-[22px] lg:top-[8px] lg:h-[98px] lg:rounded-[18px]"
                     style={{ backgroundColor: tile.tone }}
-                  />
-
-                  <div className="pointer-events-none absolute inset-x-0 top-[-52px] z-10 flex justify-center lg:top-[-44px]">
+                  >
                     <div
-                      className={`flex w-full justify-center ${
+                      className={`pointer-events-none absolute inset-0 z-10 flex justify-center ${
                         tile.imageAlign === "center" ? "items-center" : "items-end"
                       }`}
                     >
