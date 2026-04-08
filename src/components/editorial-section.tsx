@@ -19,6 +19,7 @@ interface EditorialSectionProps {
   reverse?: boolean;
   background?: "white" | "cream";
   badgeLabel?: string;
+  heroMode?: "cutout" | "framed";
 }
 
 const BASE_PATH = process.env.NODE_ENV === "production" ? "/teragenix" : "";
@@ -42,6 +43,7 @@ export function EditorialSection({
   reverse = false,
   background = "white",
   badgeLabel,
+  heroMode = "cutout",
 }: EditorialSectionProps) {
   // Split headline on accentPhrase to render it in accent color
   const headlineParts = headline.split(accentPhrase);
@@ -68,14 +70,27 @@ export function EditorialSection({
               style={{ backgroundColor: haloColor }}
             />
 
-            {/* Hero cutout image */}
+            {/* Hero image */}
             <div className="relative z-10 flex h-[290px] w-[250px] items-center justify-center sm:h-[360px] sm:w-[300px] lg:h-[510px] lg:w-[395px]">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src={`${BASE_PATH}${image1}`}
-                alt=""
-                className="max-h-[270px] w-auto object-contain drop-shadow-[0_24px_40px_rgba(17,33,17,0.18)] sm:max-h-[340px] lg:max-h-[500px]"
-              />
+              {heroMode === "framed" ? (
+                <div className="h-[285px] w-[230px] overflow-hidden rounded-[34px] bg-white shadow-[0_24px_40px_rgba(17,33,17,0.12)] sm:h-[350px] sm:w-[280px] lg:h-[500px] lg:w-[370px] lg:rounded-[42px]">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={`${BASE_PATH}${image1}`}
+                    alt=""
+                    className="h-full w-full object-cover"
+                  />
+                </div>
+              ) : (
+                <>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={`${BASE_PATH}${image1}`}
+                    alt=""
+                    className="max-h-[270px] w-auto object-contain drop-shadow-[0_24px_40px_rgba(17,33,17,0.18)] sm:max-h-[340px] lg:max-h-[500px]"
+                  />
+                </>
+              )}
             </div>
 
             {/* Feature card — pale-tinted checklist */}

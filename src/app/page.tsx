@@ -42,9 +42,10 @@ export default function Home() {
         cardTitle="Everything you need — included:"
         ctaLabel="Shop metabolic kits"
         ctaHref="/shop?category=metabolic"
-        image1="/images/generated/lifestyle-v1-cutout/metabolic-1-hero.png"
+        image1="/images/generated/refresh-v1/metabolic-hero-tight.png"
         image2="/images/generated/lifestyle-v1/metabolic-2-couple-walking.png"
         image3="/images/generated/lifestyle-v1/metabolic-3-family-dinner.png"
+        heroMode="framed"
         badgeLabel="BEST SELLER"
         background="white"
       />
@@ -96,9 +97,10 @@ export default function Home() {
         cardTitle="Inside every Teragenix kit:"
         ctaLabel="Browse all kits"
         ctaHref="/shop"
-        image1="/images/generated/lifestyle-v1-cutout/kits-1-hero.png"
+        image1="/images/generated/refresh-v1/kits-hero-tight.png"
         image2="/images/generated/lifestyle-v1/kits-2-pipette.png"
         image3="/images/generated/lifestyle-v1/kits-3-coa-paper.png"
+        heroMode="framed"
         background="white"
       />
 
