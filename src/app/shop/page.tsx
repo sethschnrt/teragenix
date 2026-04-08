@@ -164,7 +164,7 @@ export default function ShopPage() {
           </div>
 
           {/* Product grid — same style as FeaturedProducts */}
-          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 sm:gap-7 lg:grid-cols-4 lg:gap-8">
+          <div className="grid grid-cols-2 gap-4 sm:grid-cols-2 sm:gap-7 lg:grid-cols-4 lg:gap-8">
             {filtered.map((product) => {
               const productTheme = getHeroCategoryTheme(product.heroCategory);
 
