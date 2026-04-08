@@ -65,10 +65,12 @@ export function EditorialSection({
             }`}
           >
             {/* Halo circle background */}
-            <div
-              className="pointer-events-none absolute left-1/2 top-[26px] h-[250px] w-[250px] -translate-x-1/2 rounded-full sm:top-[42px] sm:h-[320px] sm:w-[320px] lg:top-[60px] lg:h-[420px] lg:w-[420px]"
-              style={{ backgroundColor: haloColor }}
-            />
+            {heroMode === "cutout" && (
+              <div
+                className="pointer-events-none absolute left-1/2 top-[26px] h-[250px] w-[250px] -translate-x-1/2 rounded-full sm:top-[42px] sm:h-[320px] sm:w-[320px] lg:top-[60px] lg:h-[420px] lg:w-[420px]"
+                style={{ backgroundColor: haloColor }}
+              />
+            )}
 
             {/* Hero image */}
             <div className="relative z-10 flex h-[290px] w-[250px] items-center justify-center sm:h-[360px] sm:w-[300px] lg:h-[510px] lg:w-[395px]">
