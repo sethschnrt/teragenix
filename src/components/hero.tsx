@@ -73,12 +73,12 @@ export function Hero() {
           }}
         />
 
-        {/* Giant background "teragenix" ghost wordmark — fits viewport, subtle */}
-        <div className="pointer-events-none absolute inset-x-0 bottom-[18px] flex justify-center lg:bottom-[10px]">
+        {/* Giant background "teragenix" ghost wordmark — pushed lower behind cards like Medvi */}
+        <div className="pointer-events-none absolute inset-x-0 bottom-[-18px] flex justify-center lg:bottom-[-44px]">
           <p
-            className="select-none whitespace-nowrap font-black text-white/[0.018] leading-none"
+            className="select-none whitespace-nowrap font-black text-white/[0.026] leading-none"
             style={{
-              fontSize: "clamp(140px, 16vw, 230px)",
+              fontSize: "clamp(185px, 21vw, 350px)",
               letterSpacing: "-0.04em",
             }}
           >
@@ -149,7 +149,7 @@ export function Hero() {
       </div>
 
       {/* Category cards — Medvi-style responsive structure */}
-      <div className="relative z-20 mx-auto -mt-[84px] max-w-[1240px] px-5 sm:px-8 lg:-mt-[42px] lg:px-12">
+      <div className="relative z-20 mx-auto -mt-[112px] max-w-[1240px] px-5 sm:-mt-[122px] sm:px-8 lg:-mt-[86px] lg:px-12">
         <div className="rounded-[28px] bg-white p-4 ring-1 ring-[#edf1f5] sm:p-5 lg:rounded-[24px] lg:p-4">
           {/* Mobile: 1-col horizontal cards. Tablet/Desktop: grid with overflowing images */}
           <div className="flex flex-col gap-3 sm:grid sm:grid-cols-2 sm:gap-4 lg:grid-cols-4 lg:gap-5">
