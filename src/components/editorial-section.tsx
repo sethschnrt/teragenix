@@ -162,7 +162,7 @@ export function EditorialSection({
               {bodyText}
             </p>
 
-            {/* Twin product images */}
+            {/* Twin lifestyle images (full-bleed) */}
             <div className="mt-12 grid max-w-[620px] grid-cols-2 gap-5">
               {[twinA, twinB].map((src, i) => (
                 <div
@@ -170,18 +170,11 @@ export function EditorialSection({
                   className="relative aspect-[306/452] overflow-hidden rounded-[24px]"
                   style={{ backgroundColor: haloColor }}
                 >
-                  <div
-                    className="absolute inset-0"
-                    style={{
-                      backgroundImage:
-                        "radial-gradient(ellipse at 50% 35%, rgba(255,255,255,0.6), transparent 70%)",
-                    }}
-                  />
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src={`${BASE_PATH}${src}`}
                     alt=""
-                    className="absolute inset-0 h-full w-full object-contain p-8 drop-shadow-[0_18px_30px_rgba(17,33,17,0.15)]"
+                    className="absolute inset-0 h-full w-full object-cover"
                   />
                   {badgeLabel && i === 0 && (
                     <span
