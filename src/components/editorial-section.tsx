@@ -55,32 +55,32 @@ export function EditorialSection({
   return (
     <section className={`relative overflow-hidden ${bgClass}`}>
       <div className="mx-auto max-w-[1240px] px-5 py-24 sm:px-8 sm:py-28 lg:px-[120px] lg:py-[140px]">
-        <div
-          className={`relative grid items-start gap-16 lg:grid-cols-[440px_1fr] lg:gap-20 ${
-            reverse ? "lg:[&>*:first-child]:order-2" : ""
-          }`}
-        >
+        <div className="relative grid items-start gap-16 lg:grid-cols-[440px_1fr] lg:gap-20">
           {/* LEFT COLUMN — image + feature card */}
-          <div className="relative flex flex-col items-center">
+          <div
+            className={`relative order-2 flex flex-col items-center ${
+              reverse ? "lg:order-2" : "lg:order-1"
+            }`}
+          >
             {/* Halo circle background */}
             <div
-              className="pointer-events-none absolute left-1/2 top-[60px] h-[420px] w-[420px] -translate-x-1/2 rounded-full"
+              className="pointer-events-none absolute left-1/2 top-[26px] h-[250px] w-[250px] -translate-x-1/2 rounded-full sm:top-[42px] sm:h-[320px] sm:w-[320px] lg:top-[60px] lg:h-[420px] lg:w-[420px]"
               style={{ backgroundColor: haloColor }}
             />
 
             {/* Hero cutout image */}
-            <div className="relative z-10 flex h-[510px] w-[395px] items-center justify-center">
+            <div className="relative z-10 flex h-[290px] w-[250px] items-center justify-center sm:h-[360px] sm:w-[300px] lg:h-[510px] lg:w-[395px]">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={`${BASE_PATH}${image1}`}
                 alt=""
-                className="max-h-[500px] w-auto object-contain drop-shadow-[0_24px_40px_rgba(17,33,17,0.18)]"
+                className="max-h-[270px] w-auto object-contain drop-shadow-[0_24px_40px_rgba(17,33,17,0.18)] sm:max-h-[340px] lg:max-h-[500px]"
               />
             </div>
 
             {/* Feature card — pale-tinted checklist */}
             <div
-              className="relative z-20 -mt-10 w-full max-w-[420px] rounded-[40px] px-9 py-8 shadow-[0_30px_50px_-30px_rgba(17,33,17,0.18)]"
+              className="relative z-20 -mt-6 w-full max-w-[340px] rounded-[28px] px-6 py-6 shadow-[0_30px_50px_-30px_rgba(17,33,17,0.18)] sm:-mt-8 sm:max-w-[380px] sm:rounded-[34px] sm:px-7 sm:py-7 lg:-mt-10 lg:max-w-[420px] lg:rounded-[40px] lg:px-9 lg:py-8"
               style={{ backgroundColor: haloColor }}
             >
               <p
@@ -133,7 +133,7 @@ export function EditorialSection({
           </div>
 
           {/* RIGHT COLUMN — eyebrow + headline + body + twin images + sub-block */}
-          <div>
+          <div className={`${reverse ? "order-1 lg:order-1" : "order-1 lg:order-2"}`}>
             <p className="tg-eyebrow mb-6" style={{ color: accentColor }}>
               {eyebrow}
             </p>
