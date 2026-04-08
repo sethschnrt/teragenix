@@ -6,7 +6,6 @@ import { Badge } from "@/components/ui/badge";
 import { ShoppingCart, ArrowLeft, ArrowUpRight, Check, ChevronRight } from "lucide-react";
 import { Footer } from "@/components/footer";
 import type { Product } from "@/data/products";
-import { getHeroCategoryLabel } from "@/data/products";
 
 const BASE_PATH = process.env.NODE_ENV === "production" ? "/teragenix" : "";
 
@@ -55,7 +54,7 @@ export function ProductDetail({ product, relatedProducts }: ProductDetailProps) 
             {/* Right — Info */}
             <div className="flex flex-col">
               <p className="text-sm font-medium text-[#4A90D9] uppercase tracking-wider">
-                {getHeroCategoryLabel(product.category)}
+                {product.heroCategory}
               </p>
               <h1 className="mt-2 text-3xl font-bold tracking-tight text-[#1a2a3a] dark:text-white sm:text-4xl">
                 {product.name}
@@ -169,7 +168,7 @@ export function ProductDetail({ product, relatedProducts }: ProductDetailProps) 
                     <div className="flex flex-col flex-1 px-4 pt-3 pb-4 gap-2">
                       <div>
                         <p className="text-xs font-medium text-[#4A90D9] uppercase tracking-wider">
-                          {getHeroCategoryLabel(rp.category)}
+                          {rp.heroCategory}
                         </p>
                         <h3 className="text-sm sm:text-base font-semibold text-foreground leading-tight mt-1">
                           {rp.name}

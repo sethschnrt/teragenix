@@ -4,10 +4,10 @@ import Link from "next/link";
 const footerLinks = {
   Shop: [
     { label: "All Products", href: "/shop" },
-    { label: "Weight Loss", href: "/shop?category=metabolic" },
+    { label: "Fat Loss", href: "/shop?category=fat-loss" },
+    { label: "Recovery", href: "/shop?category=recovery" },
     { label: "Longevity", href: "/shop?category=longevity" },
-    { label: "Beauty & Skin", href: "/shop?category=beauty" },
-    { label: "Research", href: "/shop?category=research" },
+    { label: "Vitality", href: "/shop?category=vitality" },
   ],
   Support: [
     { label: "FAQ", href: "/faq" },

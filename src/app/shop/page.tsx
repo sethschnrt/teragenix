@@ -6,7 +6,7 @@ import { useSearchParams } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ArrowLeft, ArrowUpRight, ChevronDown } from "lucide-react";
-import { products, categories, getHeroCategoryLabel, normalizeCategoryParam, type Category } from "@/data/products";
+import { products, shopCategories, normalizeCategoryParam, type ShopCategory } from "@/data/products";
 import { Footer } from "@/components/footer";
 
 const BASE_PATH = process.env.NODE_ENV === "production" ? "/teragenix" : "";
@@ -22,7 +22,7 @@ const sortLabels: Record<SortOption, string> = {
 
 export default function ShopPage() {
   const searchParams = useSearchParams();
-  const [activeCategory, setActiveCategory] = useState<Category>("All");
+  const [activeCategory, setActiveCategory] = useState<ShopCategory>("All");
   const [sortBy, setSortBy] = useState<SortOption>("featured");
   const sortOptions: SortOption[] = ["featured", "price-asc", "price-desc", "name-asc"];
 
@@ -36,15 +36,7 @@ export default function ShopPage() {
 
     // Filter by category
     if (activeCategory !== "All") {
-      if (activeCategory === "Bundles") {
-        result = result.filter(
-          (p) =>
-            p.slug === "recovery-stack" ||
-            p.name.toLowerCase().includes("stack")
-        );
-      } else {
-        result = result.filter((p) => p.category === activeCategory);
-      }
+      result = result.filter((p) => p.heroCategory === activeCategory);
     }
 
     // Sort
@@ -136,7 +128,7 @@ export default function ShopPage() {
               </div>
 
               <div className="flex flex-wrap gap-2">
-              {categories.map((cat) => (
+              {shopCategories.map((cat) => (
                 <button
                   key={cat}
                   onClick={() => setActiveCategory(cat)}
@@ -182,7 +174,7 @@ export default function ShopPage() {
                 <div className="flex flex-col flex-1 px-4 pt-3 pb-4 gap-2">
                   <div>
                     <p className="text-xs font-medium text-[#4A90D9] uppercase tracking-wider">
-                      {getHeroCategoryLabel(product.category)}
+                      {product.heroCategory}
                     </p>
                     <h3 className="text-sm sm:text-base font-semibold text-foreground leading-tight mt-1">
                       {product.name}

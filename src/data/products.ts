@@ -2,6 +2,7 @@ export interface Product {
   slug: string;
   name: string;
   category: string;
+  heroCategory: "Fat Loss" | "Recovery" | "Longevity" | "Vitality";
   price: number;
   originalPrice: number;
   description: string;
@@ -19,18 +20,16 @@ export interface Product {
   relatedProductSlugs: string[];
 }
 
-const heroCategoryLabels: Record<string, string> = {
-  Metabolic: "Fat Loss",
-  Longevity: "Recovery",
-  Beauty: "Longevity",
-  Research: "Vitality",
-};
+export const shopCategories = ["All", "Fat Loss", "Recovery", "Longevity", "Vitality"] as const;
+
+export type ShopCategory = (typeof shopCategories)[number];
 
 export const products: Product[] = [
   {
     slug: "retatrutide",
     name: "Retatrutide Research Kit",
     category: "Metabolic",
+    heroCategory: "Fat Loss",
     price: 189.99,
     originalPrice: 239.99,
     description:
@@ -59,6 +58,7 @@ export const products: Product[] = [
     slug: "tesamorelin",
     name: "Tesamorelin Research Kit",
     category: "Metabolic",
+    heroCategory: "Fat Loss",
     price: 149.99,
     originalPrice: 189.99,
     description:
@@ -87,6 +87,7 @@ export const products: Product[] = [
     slug: "melanotan-ii",
     name: "Melanotan II Research Kit",
     category: "Research",
+    heroCategory: "Vitality",
     price: 79.99,
     originalPrice: 99.99,
     description:
@@ -115,6 +116,7 @@ export const products: Product[] = [
     slug: "glow-70",
     name: "Glow 70 Research Kit",
     category: "Beauty",
+    heroCategory: "Longevity",
     price: 119.99,
     originalPrice: 149.99,
     description:
@@ -143,6 +145,7 @@ export const products: Product[] = [
     slug: "glutathione",
     name: "Glutathione Research Kit",
     category: "Beauty",
+    heroCategory: "Recovery",
     price: 69.99,
     originalPrice: 89.99,
     description:
@@ -170,30 +173,22 @@ export const products: Product[] = [
 /** Products with badges — used on the homepage featured section */
 export const featuredProducts = products.filter((p) => p.badge);
 
-/** All unique categories */
-export const categories = ["All", "Metabolic", "Research", "Beauty", "Bundles"] as const;
-
-export type Category = (typeof categories)[number];
-
-export function getHeroCategoryLabel(category: string): string {
-  return heroCategoryLabels[category] ?? category;
-}
-
-const categoryParamMap: Record<string, Category> = {
+const categoryParamMap: Record<string, ShopCategory> = {
   all: "All",
-  metabolic: "Metabolic",
-  research: "Research",
-  beauty: "Beauty",
-  bundles: "Bundles",
-  "fat-loss": "Metabolic",
-  fatloss: "Metabolic",
-  "weight-loss": "Metabolic",
-  vitality: "Research",
-  longevity: "Beauty",
-  "beauty-skin": "Beauty",
+  metabolic: "Fat Loss",
+  research: "Vitality",
+  beauty: "Longevity",
+  bundles: "All",
+  "fat-loss": "Fat Loss",
+  fatloss: "Fat Loss",
+  "weight-loss": "Fat Loss",
+  recovery: "Recovery",
+  longevity: "Longevity",
+  vitality: "Vitality",
+  "beauty-skin": "Longevity",
 };
 
-export function normalizeCategoryParam(category: string | null): Category | undefined {
+export function normalizeCategoryParam(category: string | null): ShopCategory | undefined {
   if (!category) return undefined;
 
   return categoryParamMap[category.trim().toLowerCase()];
@@ -204,9 +199,8 @@ export function getProductBySlug(slug: string): Product | undefined {
   return products.find((p) => p.slug === slug);
 }
 
-/** Get products by category */
-export function getProductsByCategory(category: Category): Product[] {
+/** Get products by public-facing shop category */
+export function getProductsByCategory(category: ShopCategory): Product[] {
   if (category === "All") return products;
-  if (category === "Bundles") return products.filter((p) => p.name.toLowerCase().includes("stack") || p.name.toLowerCase().includes("bundle"));
-  return products.filter((p) => p.category === category);
+  return products.filter((p) => p.heroCategory === category);
 }
