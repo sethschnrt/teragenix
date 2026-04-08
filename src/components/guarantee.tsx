@@ -86,7 +86,7 @@ export function Guarantee() {
 
         {/* CTA band */}
         <div className="mt-20 flex flex-col items-center justify-between gap-6 rounded-[40px] bg-[linear-gradient(166deg,_#3b6ed6_0%,_#0d262d_100%)] px-10 py-14 sm:flex-row sm:px-16 sm:py-16 lg:px-20">
-          <div>
+          <div className="text-center sm:text-left">
             <p
               className="tg-eyebrow mb-4"
               style={{ color: "#4a8dd9" }}
