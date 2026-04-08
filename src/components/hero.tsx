@@ -33,11 +33,11 @@ const heroTiles = [
   {
     title: "Vitality",
     href: "/shop?category=research",
-    image: "/images/generated/life-benefits-v13-cutout/active-life-pickleball.png",
+    image: "/images/generated/life-benefits-v13-cutout/active-life-pickleball-centered.png",
     tone: "#eff6f2",
     imageAlign: "center",
-    mobileImageClass: "h-[82%] w-auto max-w-[96%] object-contain",
-    desktopImageClass: "lg:h-[94px] lg:max-w-[74%]",
+    mobileImageClass: "h-[90%] w-auto max-w-[100%] object-contain",
+    desktopImageClass: "lg:h-[104px] lg:max-w-[82%]",
   },
 ] as const;
 
