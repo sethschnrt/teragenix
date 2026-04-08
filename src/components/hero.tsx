@@ -68,62 +68,64 @@ export function Hero() {
           </p>
         </div>
 
-        {/* Content container — centered */}
+        {/* Content container — centered on mobile, independent layout on desktop */}
         <div className="relative z-10 mx-auto max-w-[1240px] px-5 pt-[118px] sm:px-8 lg:px-12 lg:pt-[62px]">
-          {/* Eyebrow */}
-          <div className="mb-5 flex justify-center lg:mb-4">
+          <div className="mx-auto max-w-[900px] lg:mx-0 lg:max-w-[640px]">
+            {/* Eyebrow */}
+            <div className="mb-5 flex justify-center lg:mb-4 lg:justify-start">
+              <p
+                className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-white backdrop-blur-sm ring-1 ring-white/20"
+                style={{
+                  fontSize: "13px",
+                  fontWeight: 500,
+                  letterSpacing: "0.02em",
+                }}
+              >
+                <span
+                  className="inline-block h-1.5 w-1.5 rounded-full bg-white"
+                />
+                Join <span style={{ fontWeight: 700 }}>12,000+</span> Teragenix researchers
+              </p>
+            </div>
+
+            {/* Headline */}
+            <h1 className="mx-auto max-w-[900px] text-center lg:mx-0 lg:max-w-[640px] lg:text-left">
+              <span className="block text-[48px] font-bold leading-[0.98] tracking-[-0.03em] text-white sm:text-[60px] lg:text-[54px]">
+                Peptides,
+              </span>
+              <span className="block text-[48px] font-bold leading-[0.98] tracking-[-0.03em] text-white sm:text-[60px] lg:text-[54px]">
+                <span className="text-[#a8c5f5] italic">redefined</span> for real life.
+              </span>
+            </h1>
+
+            {/* Subhead */}
             <p
-              className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-white backdrop-blur-sm ring-1 ring-white/20"
-              style={{
-                fontSize: "13px",
-                fontWeight: 500,
-                letterSpacing: "0.02em",
-              }}
+              className="mx-auto mt-5 max-w-[560px] text-center text-white/85 lg:mx-0 lg:mt-3 lg:max-w-[600px] lg:text-left"
+              style={{ fontSize: "15px", lineHeight: "1.5", fontWeight: 400 }}
             >
-              <span
-                className="inline-block h-1.5 w-1.5 rounded-full bg-white"
-              />
-              Join <span style={{ fontWeight: 700 }}>12,000+</span> Teragenix researchers
+              Premium peptides designed to support fat loss, recovery, performance, and long-term vitality, delivered discreetly with a simpler, better experience.
             </p>
-          </div>
 
-          {/* Headline — centered */}
-          <h1 className="mx-auto max-w-[900px] text-center">
-            <span className="block text-[48px] font-bold leading-[0.98] tracking-[-0.03em] text-white sm:text-[60px] lg:text-[54px]">
-              Peptides,
-            </span>
-            <span className="block text-[48px] font-bold leading-[0.98] tracking-[-0.03em] text-white sm:text-[60px] lg:text-[54px]">
-              <span className="text-[#a8c5f5] italic">redefined</span> for real life.
-            </span>
-          </h1>
-
-          {/* Subhead — centered */}
-          <p
-            className="mx-auto mt-5 max-w-[560px] text-center text-white/85 lg:mt-3 lg:max-w-[600px]"
-            style={{ fontSize: "15px", lineHeight: "1.5", fontWeight: 400 }}
-          >
-            Premium peptides designed to support fat loss, recovery, performance, and long-term vitality, delivered discreetly with a simpler, better experience.
-          </p>
-
-          {/* CTA row — centered */}
-          <div className="mt-7 flex flex-wrap items-center justify-center gap-4 lg:mt-5">
-            <Link
-              href="/shop"
-              className="group inline-flex h-12 items-center rounded-full bg-white px-7 text-[#0d262d] transition hover:bg-white/90"
-              style={{ fontSize: "14px", fontWeight: 600, letterSpacing: "-0.02em" }}
-            >
-              Shop all kits
-              <svg className="ml-2 h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M5 12h14M13 5l7 7-7 7" />
-              </svg>
-            </Link>
-            <Link
-              href="/about"
-              className="inline-flex h-12 items-center rounded-full px-7 text-white ring-1 ring-white/40 transition hover:bg-white/10"
-              style={{ fontSize: "14px", fontWeight: 600, letterSpacing: "-0.02em" }}
-            >
-              How it works
-            </Link>
+            {/* CTA row */}
+            <div className="mt-7 flex flex-wrap items-center justify-center gap-4 lg:mt-5 lg:justify-start">
+              <Link
+                href="/shop"
+                className="group inline-flex h-12 items-center rounded-full bg-white px-7 text-[#0d262d] transition hover:bg-white/90"
+                style={{ fontSize: "14px", fontWeight: 600, letterSpacing: "-0.02em" }}
+              >
+                Shop all kits
+                <svg className="ml-2 h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M5 12h14M13 5l7 7-7 7" />
+                </svg>
+              </Link>
+              <Link
+                href="/about"
+                className="inline-flex h-12 items-center rounded-full px-7 text-white ring-1 ring-white/40 transition hover:bg-white/10"
+                style={{ fontSize: "14px", fontWeight: 600, letterSpacing: "-0.02em" }}
+              >
+                How it works
+              </Link>
+            </div>
           </div>
         </div>
       </div>
