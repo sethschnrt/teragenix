@@ -1,44 +1,46 @@
 import Link from "next/link";
-
-const testimonials = [
-  {
-    quote:
-      "The ordering flow felt cleaner and more professional than every other peptide site I looked at. Fast shipping, clear documentation, and no guessing what was included.",
-    role: "Metabolic kit customer",
-    tag: "Fast shipping",
-    featured: true,
-  },
-  {
-    quote:
-      "What sold me was the kit completeness. Compound, bac water, syringes, swabs, and the COA all arrived together, which made the whole process way easier.",
-    role: "Repeat Teragenix customer",
-    tag: "All-in-one kits",
-  },
-  {
-    quote:
-      "The packaging felt premium, the checkout was straightforward, and the brand finally looks as polished as the product quality it claims.",
-    role: "Recovery kit customer",
-    tag: "Premium experience",
-  },
-] as const;
+import { BadgeCheck, FileCheck2, FlaskConical, Truck } from "lucide-react";
 
 const proofPills = ["12,000+ researchers", "COA with every batch", "Discreet tracked shipping"] as const;
 
-export function Testimonials() {
-  const [featured, ...secondary] = testimonials;
+const standards = [
+  "99%+ purity with HPLC verification",
+  "Third-party COA documentation",
+  "Bacteriostatic water and prep essentials included",
+  "Straightforward ordering with no hidden fees",
+] as const;
 
+const proofCards = [
+  {
+    icon: FileCheck2,
+    title: "Documentation first",
+    body: "Every batch is paired with a certificate of analysis, so the quality story is backed by paperwork, not vibes.",
+  },
+  {
+    icon: FlaskConical,
+    title: "Kit-ready from day one",
+    body: "No piecing together supplies from multiple vendors. Your compound, bac water, syringes, and swabs land together.",
+  },
+  {
+    icon: Truck,
+    title: "A cleaner buying experience",
+    body: "Discreet tracked shipping, simple checkout, and support that actually answers without turning the process into a scavenger hunt.",
+  },
+] as const;
+
+export function Testimonials() {
   return (
     <section className="relative overflow-hidden bg-[#f4f8ff] py-24 sm:py-28 lg:py-[132px]">
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_18%_18%,rgba(219,234,254,0.9),transparent_38%),radial-gradient(circle_at_82%_28%,rgba(230,242,251,0.9),transparent_34%)]" />
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_18%_18%,rgba(219,234,254,0.95),transparent_38%),radial-gradient(circle_at_82%_28%,rgba(230,242,251,0.9),transparent_34%)]" />
 
       <div className="relative mx-auto max-w-[1240px] px-5 sm:px-8 lg:px-12">
         <div className="mb-14 flex flex-col gap-8 lg:mb-16 lg:flex-row lg:items-end lg:justify-between">
           <div className="max-w-2xl">
             <p className="tg-eyebrow mb-6" style={{ color: "#3b6ed6" }}>
-              TESTIMONIALS
+              CLINICAL CREDIBILITY
             </p>
             <h2 className="tg-h2 max-w-[760px]">
-              The experience should feel as premium as the <span style={{ color: "#3b6ed6" }}>product.</span>
+              Trust should come from standards you can <span style={{ color: "#3b6ed6" }}>verify.</span>
             </h2>
             <p
               className="mt-6 max-w-[640px]"
@@ -49,7 +51,7 @@ export function Testimonials() {
                 fontWeight: 400,
               }}
             >
-              Researchers notice the difference when ordering feels straightforward, kits arrive complete, and every touchpoint feels built for trust.
+              Instead of gimmicky doctor ads, Teragenix should win on what serious buyers actually care about: documentation, kit completeness, and a cleaner overall experience.
             </p>
           </div>
 
@@ -65,63 +67,75 @@ export function Testimonials() {
           </div>
         </div>
 
-        <div className="grid gap-5 lg:grid-cols-[1.15fr_0.85fr]">
-          <article className="relative overflow-hidden rounded-[36px] bg-[linear-gradient(160deg,_#3b6ed6_0%,_#0d262d_100%)] px-8 py-8 shadow-[0_32px_60px_-36px_rgba(17,33,17,0.35)] sm:px-10 sm:py-10 lg:min-h-[420px] lg:px-12 lg:py-12">
-            <div className="mb-8 flex h-14 w-14 items-center justify-center rounded-[20px] bg-white/12 text-[40px] font-semibold leading-none text-white/90 backdrop-blur-sm">
-              “
+        <div className="grid gap-5 lg:grid-cols-[1.08fr_0.92fr]">
+          <article className="relative overflow-hidden rounded-[36px] bg-[linear-gradient(160deg,_#3b6ed6_0%,_#0d262d_100%)] px-8 py-8 shadow-[0_32px_60px_-36px_rgba(17,33,17,0.35)] sm:px-10 sm:py-10 lg:min-h-[430px] lg:px-12 lg:py-12">
+            <div className="mb-8 flex h-14 w-14 items-center justify-center rounded-[20px] bg-white/12 text-white backdrop-blur-sm">
+              <BadgeCheck className="h-7 w-7" strokeWidth={2} />
             </div>
 
-            <p
-              className="max-w-[560px] text-white"
-              style={{
-                fontSize: "28px",
-                lineHeight: "1.22",
-                fontWeight: 600,
-                letterSpacing: "-0.03em",
-              }}
-            >
-              {featured.quote}
+            <p className="max-w-[560px] text-[29px] leading-[1.16] font-semibold tracking-[-0.03em] text-white">
+              Built for researchers who want premium presentation, but stay for the proof.
             </p>
 
-            <div className="mt-10 flex flex-wrap items-center gap-3">
-              <span className="inline-flex rounded-full bg-white/14 px-4 py-2 text-[12px] font-semibold tracking-[0.14em] text-white/88 uppercase backdrop-blur-sm">
-                {featured.role}
-              </span>
-              <span className="inline-flex rounded-full border border-white/18 bg-white/8 px-4 py-2 text-[12px] font-medium tracking-[0.08em] text-white/72 backdrop-blur-sm">
-                {featured.tag}
-              </span>
+            <ul className="mt-9 space-y-3.5">
+              {standards.map((item) => (
+                <li key={item} className="flex items-start gap-3 text-white/88">
+                  <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-white/16">
+                    <svg
+                      width="12"
+                      height="12"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="3"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <polyline points="20 6 9 17 4 12" />
+                    </svg>
+                  </span>
+                  <span className="text-[15px] leading-[24px] font-medium tracking-[-0.01em]">{item}</span>
+                </li>
+              ))}
+            </ul>
+
+            <div className="mt-10 inline-flex rounded-full border border-white/14 bg-white/10 px-4 py-2 text-[12px] font-semibold tracking-[0.14em] text-white/80 uppercase backdrop-blur-sm">
+              Supportable claims, cleaner trust signals
             </div>
           </article>
 
           <div className="grid gap-5">
-            {secondary.map((item) => (
+            {proofCards.map((card) => (
               <article
-                key={item.quote}
+                key={card.title}
                 className="rounded-[32px] bg-white px-7 py-7 shadow-[0_24px_50px_-34px_rgba(17,33,17,0.18)] ring-1 ring-[#e8eef7] sm:px-8 sm:py-8"
               >
-                <div className="mb-5 flex items-center justify-between gap-3">
-                  <span className="flex h-11 w-11 items-center justify-center rounded-[16px] bg-[#eef4fc] text-[30px] leading-none text-[#3b6ed6]">
-                    “
-                  </span>
-                  <span className="inline-flex rounded-full bg-[#f4f8ff] px-3 py-1.5 text-[11px] font-semibold tracking-[0.12em] text-[#3b6ed6] uppercase">
-                    {item.tag}
-                  </span>
+                <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-[16px] bg-[#eef4fc] text-[#3b6ed6]">
+                  <card.icon className="h-5 w-5" strokeWidth={1.9} />
                 </div>
 
-                <p
+                <h3
                   style={{
-                    fontSize: "18px",
-                    lineHeight: "29px",
+                    fontSize: "21px",
+                    lineHeight: "27px",
                     color: "#0d262d",
-                    fontWeight: 500,
+                    fontWeight: 600,
                     letterSpacing: "-0.02em",
                   }}
                 >
-                  {item.quote}
-                </p>
+                  {card.title}
+                </h3>
 
-                <p className="mt-6 text-[13px] font-semibold tracking-[0.12em] text-[#475967] uppercase">
-                  {item.role}
+                <p
+                  className="mt-3"
+                  style={{
+                    fontSize: "16px",
+                    lineHeight: "27px",
+                    color: "#475967",
+                    fontWeight: 400,
+                  }}
+                >
+                  {card.body}
                 </p>
               </article>
             ))}
