@@ -6,12 +6,12 @@ from PIL import Image
 from rembg import remove, new_session
 
 ROOT = Path(__file__).resolve().parent.parent
-SRC_DIR = ROOT / "public/images/generated/lifestyle-v1"
+SRC_DIR = ROOT / "public/images/generated/lifestyle-v2"
 DST_DIR = ROOT / "public/images/generated/lifestyle-v1-cutout"
 
 # (source_file, dest_file, alpha_matting)
 JOBS = [
-    ("quality-1-hero.png", "quality-1-hero.png", True),
+    ("kits-1-hero-alt-a.png", "kits-1-hero.png", True),
 ]
 
 def main():
