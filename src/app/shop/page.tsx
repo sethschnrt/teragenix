@@ -82,7 +82,7 @@ export default function ShopPage() {
           }}
         />
 
-        <div className="relative mx-auto max-w-[1240px] px-5 pb-5 sm:px-8 sm:pb-6 lg:px-12">
+        <div className="relative mx-auto max-w-[1240px] px-5 pb-7 sm:px-8 sm:pb-8 lg:px-12">
           <div className="max-w-2xl">
             <div className="mb-3 flex flex-wrap items-center gap-3">
               <span className="inline-flex items-center rounded-full bg-white/10 px-3 py-1.5 text-[11px] font-medium tracking-[0.18em] text-white/84 ring-1 ring-white/14 backdrop-blur-sm">
@@ -103,10 +103,10 @@ export default function ShopPage() {
         </div>
       </section>
 
-      <section className="py-4 sm:py-5">
+      <section className="py-6 sm:py-8">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-          <div className="mb-5 rounded-[1.35rem] border border-[#e3e8ef] bg-white p-4 shadow-[0_12px_30px_rgba(17,33,17,0.04)] sm:p-5">
-            <div className="flex flex-col gap-4">
+          <div className="mb-7 rounded-[1.5rem] border border-[#e3e8ef] bg-white p-5 shadow-[0_12px_30px_rgba(17,33,17,0.04)] sm:p-6">
+            <div className="flex flex-col gap-5">
               <div className="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
                 <div>
                   <p className="text-[11px] font-medium uppercase tracking-[0.18em]" style={{ color: currentTheme.accent }}>
@@ -138,7 +138,7 @@ export default function ShopPage() {
                 </label>
               </div>
 
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap gap-2.5">
               {shopCategories.map((cat) => (
                 <button
                   key={cat}
@@ -164,7 +164,7 @@ export default function ShopPage() {
           </div>
 
           {/* Product grid — same style as FeaturedProducts */}
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-4">
+          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 sm:gap-7 lg:grid-cols-4 lg:gap-8">
             {filtered.map((product) => {
               const productTheme = getHeroCategoryTheme(product.heroCategory);
 
@@ -196,7 +196,7 @@ export default function ShopPage() {
                 </div>
 
                 {/* Info section */}
-                <div className="flex flex-col flex-1 px-4 pt-3 pb-4 gap-2">
+                <div className="flex flex-col flex-1 gap-2.5 px-5 pb-5 pt-4">
                   <div>
                     <h3 className="text-sm sm:text-base font-semibold text-foreground leading-tight">
                       {product.name}
@@ -208,7 +208,7 @@ export default function ShopPage() {
                   </p>
 
                   {/* Price + cart */}
-                  <div className="flex items-center justify-between pt-2">
+                  <div className="flex items-center justify-between pt-3">
                     <div className="flex items-center gap-2">
                       <span className="text-base sm:text-lg font-bold text-foreground">
                         ${product.price}
