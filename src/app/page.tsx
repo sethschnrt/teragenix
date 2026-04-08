@@ -46,7 +46,6 @@ export default function Home() {
         image2="/images/generated/lifestyle-v1/metabolic-2-couple-walking.png"
         image3="/images/generated/lifestyle-v1/metabolic-3-family-dinner.png"
         heroMode="framed"
-        badgeLabel="BEST SELLER"
         background="white"
       />
 
