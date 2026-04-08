@@ -13,9 +13,9 @@ const heroTiles = [
   {
     title: "Recovery",
     href: "/shop?category=longevity",
-    image: "/images/generated/hero-cards-v9-cutout/man-33-blue-halfturn.png",
+    image: "/images/generated/hero-cards-v2-cutout/recovery-man-31.png",
     tone: "#f4f7fa",
-    desktopImageClass: "lg:h-[124px] lg:max-w-[78%]",
+    desktopImageClass: "lg:h-[136px] lg:max-w-[84%]",
   },
   {
     title: "Longevity",
