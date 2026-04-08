@@ -10,7 +10,7 @@ const heroTiles = [
     tone: "#f1f8f2",
     imageAlign: "bottom",
     mobileImageClass: "h-[100%] w-auto max-w-[135%] object-contain",
-    desktopImageClass: "lg:h-[104px] lg:max-w-[80%]",
+    desktopImageClass: "h-[228px] max-w-[96%] lg:h-[150px] lg:max-w-[96%]",
   },
   {
     title: "Recovery",
@@ -19,7 +19,7 @@ const heroTiles = [
     tone: "#f4f7fa",
     imageAlign: "bottom",
     mobileImageClass: "h-[102%] w-auto max-w-[138%] object-contain",
-    desktopImageClass: "lg:h-[112px] lg:max-w-[82%]",
+    desktopImageClass: "h-[236px] max-w-[94%] lg:h-[164px] lg:max-w-[94%]",
   },
   {
     title: "Longevity",
@@ -28,7 +28,7 @@ const heroTiles = [
     tone: "#fbf6f0",
     imageAlign: "bottom",
     mobileImageClass: "h-[100%] w-auto max-w-[138%] object-contain",
-    desktopImageClass: "lg:h-[108px] lg:max-w-[82%]",
+    desktopImageClass: "h-[232px] max-w-[95%] lg:h-[158px] lg:max-w-[95%]",
   },
   {
     title: "Vitality",
@@ -37,7 +37,7 @@ const heroTiles = [
     tone: "#eff6f2",
     imageAlign: "center",
     mobileImageClass: "h-[98%] w-auto max-w-[110%] object-contain",
-    desktopImageClass: "lg:h-[114px] lg:max-w-[88%]",
+    desktopImageClass: "h-[214px] max-w-[98%] lg:h-[150px] lg:max-w-[98%]",
   },
 ] as const;
 
@@ -183,11 +183,13 @@ export function Hero() {
                 <div className="relative hidden h-[244px] overflow-visible rounded-[22px] bg-white sm:block lg:h-[170px]">
                   {/* Pastel image field */}
                   <div
-                    className="absolute inset-x-0 top-[16px] h-[160px] overflow-hidden rounded-[22px] lg:top-[8px] lg:h-[98px] lg:rounded-[18px]"
+                    className="absolute inset-x-0 top-[16px] h-[160px] rounded-[22px] lg:top-[8px] lg:h-[98px] lg:rounded-[18px]"
                     style={{ backgroundColor: tile.tone }}
-                  >
+                  />
+
+                  <div className="pointer-events-none absolute inset-x-0 top-[-52px] z-10 flex justify-center lg:top-[-44px]">
                     <div
-                      className={`pointer-events-none absolute inset-0 z-10 flex justify-center ${
+                      className={`flex w-full justify-center ${
                         tile.imageAlign === "center" ? "items-center" : "items-end"
                       }`}
                     >
@@ -195,7 +197,7 @@ export function Hero() {
                       <img
                         src={`${BASE_PATH}${tile.image}`}
                         alt={tile.title}
-                        className={`h-[236px] w-auto max-w-[90%] object-contain ${tile.desktopImageClass}`}
+                        className={`w-auto object-contain ${tile.desktopImageClass}`}
                       />
                     </div>
                   </div>
