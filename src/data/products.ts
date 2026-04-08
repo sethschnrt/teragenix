@@ -243,6 +243,13 @@ const categoryParamMap: Record<string, ShopCategory> = {
   "beauty-skin": "Longevity",
 };
 
+const heroCategoryHrefMap: Record<HeroCategory, string> = {
+  "Fat Loss": "fat-loss",
+  Recovery: "recovery",
+  Longevity: "longevity",
+  Vitality: "vitality",
+};
+
 export function normalizeCategoryParam(category: string | null): ShopCategory | undefined {
   if (!category) return undefined;
 
@@ -267,4 +274,8 @@ export function getHeroCategoryTheme(category: HeroCategory | ShopCategory): Cat
 
 export function getHeroCategoryTagClasses(category: HeroCategory): string {
   return getHeroCategoryTheme(category).tagClass;
+}
+
+export function getHeroCategoryHrefParam(category: HeroCategory): string {
+  return heroCategoryHrefMap[category];
 }
