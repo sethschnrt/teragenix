@@ -6,7 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { ShoppingCart, ArrowLeft, ArrowUpRight, Check, ChevronRight } from "lucide-react";
 import { Footer } from "@/components/footer";
 import type { Product } from "@/data/products";
-import { getHeroCategoryTagClasses } from "@/data/products";
+import { getHeroCategoryTagClasses, getHeroCategoryTheme } from "@/data/products";
 
 const BASE_PATH = process.env.NODE_ENV === "production" ? "/teragenix" : "";
 
@@ -16,6 +16,8 @@ interface ProductDetailProps {
 }
 
 export function ProductDetail({ product, relatedProducts }: ProductDetailProps) {
+  const productTheme = getHeroCategoryTheme(product.heroCategory);
+
   return (
     <main>
       <section className="py-8 sm:py-12">
@@ -52,8 +54,8 @@ export function ProductDetail({ product, relatedProducts }: ProductDetailProps) 
 
             {/* Right — Info */}
             <div className="flex flex-col">
-              <p className="text-sm font-medium text-[#4A90D9] uppercase tracking-wider">
-                {product.heroCategory}
+              <p className="text-sm font-medium uppercase tracking-wider">
+                <span style={{ color: productTheme.accent }}>{product.heroCategory}</span>
               </p>
               <h1 className="mt-2 text-3xl font-bold tracking-tight text-[#1a2a3a] dark:text-white sm:text-4xl">
                 {product.name}
@@ -70,7 +72,7 @@ export function ProductDetail({ product, relatedProducts }: ProductDetailProps) 
                 <span className="text-lg text-muted-foreground line-through">
                   ${product.originalPrice}
                 </span>
-                <Badge variant="secondary" className="text-xs font-semibold">
+                <Badge className="border-0 text-xs font-semibold" style={{ backgroundColor: productTheme.softAlt, color: productTheme.accent }}>
                   Save ${(product.originalPrice - product.price).toFixed(0)}
                 </Badge>
               </div>
@@ -78,7 +80,8 @@ export function ProductDetail({ product, relatedProducts }: ProductDetailProps) 
               {/* Add to cart */}
               <Button
                 size="lg"
-                className="mt-8 w-full bg-[#4A90D9] px-8 text-base font-semibold text-white transition-none hover:bg-[#4A90D9] sm:w-auto"
+                className="mt-8 w-full px-8 text-base font-semibold text-white transition-none sm:w-auto"
+                style={{ backgroundColor: productTheme.accent }}
               >
                 <ShoppingCart className="mr-2 h-5 w-5" />
                 Add to Cart
@@ -93,7 +96,8 @@ export function ProductDetail({ product, relatedProducts }: ProductDetailProps) 
                   {Object.entries(product.specifications).map(([key, value]) => (
                     <div
                       key={key}
-                      className="rounded-lg border bg-muted/30 px-4 py-3"
+                      className="rounded-lg border px-4 py-3"
+                      style={{ backgroundColor: productTheme.softAlt, borderColor: productTheme.soft }}
                     >
                       <p className="text-xs font-medium text-muted-foreground uppercase tracking-wider">
                         {key}
@@ -117,7 +121,7 @@ export function ProductDetail({ product, relatedProducts }: ProductDetailProps) 
                       key={item}
                       className="flex items-start gap-2.5 text-sm text-foreground"
                     >
-                      <Check className="h-4 w-4 text-[#4A90D9] mt-0.5 shrink-0" />
+                      <Check className="mt-0.5 h-4 w-4 shrink-0" style={{ color: productTheme.accent }} />
                       {item}
                     </li>
                   ))}
@@ -143,13 +147,22 @@ export function ProductDetail({ product, relatedProducts }: ProductDetailProps) 
                 Related Products
               </h2>
               <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
-                {relatedProducts.slice(0, 3).map((rp) => (
+                {relatedProducts.slice(0, 3).map((rp) => {
+                  const relatedTheme = getHeroCategoryTheme(rp.heroCategory);
+
+                  return (
                   <Link
                     key={rp.slug}
                     href={`/shop/${rp.slug}`}
                     className="tg-link-card group relative flex flex-col overflow-hidden rounded-xl border bg-card text-card-foreground ring-1 ring-foreground/10"
                   >
-                    <div className="relative aspect-square bg-[#0a0a0a] flex items-center justify-center overflow-hidden">
+                    <div className="relative aspect-square flex items-center justify-center overflow-hidden" style={{ backgroundColor: relatedTheme.heroTone }}>
+                      <div
+                        className="absolute inset-0 opacity-60"
+                        style={{
+                          backgroundImage: `radial-gradient(circle at 50% 18%, ${relatedTheme.soft} 0%, transparent 44%)`,
+                        }}
+                      />
                       {/* eslint-disable-next-line @next/next/no-img-element */}
                       <img
                         src={`${BASE_PATH}${rp.image}`}
@@ -180,13 +193,13 @@ export function ProductDetail({ product, relatedProducts }: ProductDetailProps) 
                             ${rp.originalPrice}
                           </span>
                         </div>
-                        <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[#eef4fc] text-[#0d262d]">
+                        <span className="flex h-9 w-9 items-center justify-center rounded-full" style={{ backgroundColor: relatedTheme.softAlt, color: relatedTheme.accent }}>
                           <ArrowUpRight className="h-4 w-4" />
                         </span>
                       </div>
                     </div>
                   </Link>
-                ))}
+                )})}
               </div>
             </div>
           )}

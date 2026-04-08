@@ -3,16 +3,9 @@
 import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
 import { ArrowUpRight } from "lucide-react";
-import { featuredProducts, getHeroCategoryTagClasses } from "@/data/products";
+import { featuredProducts, getHeroCategoryTagClasses, getHeroCategoryTheme } from "@/data/products";
 
 const BASE_PATH = process.env.NODE_ENV === "production" ? "/teragenix" : "";
-
-const cardTones = [
-  { bg: "#dbeafe", ink: "#3b6ed6" },
-  { bg: "#ebf6ff", ink: "#3a5d8c" },
-  { bg: "#f2e6ec", ink: "#9a3a66" },
-  { bg: "#f2ebe1", ink: "#7b5522" },
-];
 
 export function FeaturedProducts() {
   const displayed = featuredProducts.slice(0, 4);
@@ -46,19 +39,19 @@ export function FeaturedProducts() {
 
         {/* Product grid */}
         <div className="grid grid-cols-2 gap-4 sm:gap-5 lg:grid-cols-4">
-          {displayed.map((product, i) => {
-            const tone = cardTones[i % cardTones.length];
+          {displayed.map((product) => {
+            const theme = getHeroCategoryTheme(product.heroCategory);
             return (
               <Link
                 key={product.slug}
                 href={`/shop/${product.slug}`}
                 className="tg-link-card group relative flex flex-col overflow-hidden rounded-[1.75rem] bg-white ring-1 ring-[#e3e8ef]"
               >
-                <div className="relative aspect-square overflow-hidden bg-[#050505]">
+                <div className="relative aspect-square overflow-hidden" style={{ backgroundColor: theme.heroTone }}>
                   <div
                     className="absolute inset-0 opacity-35"
                     style={{
-                      backgroundImage: `radial-gradient(circle at 50% 20%, ${tone.bg} 0%, transparent 46%)`,
+                      backgroundImage: `radial-gradient(circle at 50% 20%, ${theme.soft} 0%, transparent 46%)`,
                     }}
                   />
 
@@ -78,7 +71,7 @@ export function FeaturedProducts() {
 
                   <div
                     className="absolute inset-x-0 bottom-0 h-1"
-                    style={{ backgroundColor: tone.bg }}
+                    style={{ backgroundColor: theme.accent }}
                   />
                 </div>
 
@@ -102,7 +95,7 @@ export function FeaturedProducts() {
                       </span>
                     </div>
 
-                    <div className="flex h-9 w-9 items-center justify-center rounded-full bg-[#eef4fc] text-[#0d262d] transition group-hover:bg-[#3b6ed6] group-hover:text-white">
+                    <div className="flex h-9 w-9 items-center justify-center rounded-full transition" style={{ backgroundColor: theme.softAlt, color: theme.accent }}>
                       <ArrowUpRight className="h-4 w-4" />
                     </div>
                   </div>

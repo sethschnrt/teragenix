@@ -6,7 +6,7 @@ import { useSearchParams } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ArrowLeft, ArrowUpRight, ChevronDown } from "lucide-react";
-import { products, shopCategories, normalizeCategoryParam, getHeroCategoryTagClasses, type ShopCategory } from "@/data/products";
+import { products, shopCategories, normalizeCategoryParam, getHeroCategoryTagClasses, getHeroCategoryTheme, type ShopCategory } from "@/data/products";
 import { Footer } from "@/components/footer";
 
 const BASE_PATH = process.env.NODE_ENV === "production" ? "/teragenix" : "";
@@ -64,14 +64,21 @@ export default function ShopPage() {
     return result;
   }, [activeCategory, sortBy]);
 
+  const currentTheme = getHeroCategoryTheme(activeCategory);
+
   return (
     <main>
-      <section className="relative overflow-hidden bg-[linear-gradient(162deg,_#173f85_0%,_#0d262d_100%)] pt-24 sm:pt-28">
+      <section
+        className="relative overflow-hidden pt-24 sm:pt-28"
+        style={{
+          background: `linear-gradient(162deg, ${currentTheme.accentDeep} 0%, #0d262d 100%)`,
+        }}
+      >
         <div
           className="pointer-events-none absolute inset-0"
           style={{
             backgroundImage:
-              "radial-gradient(circle at 76% 18%, rgba(168,197,245,0.18), transparent 28%), radial-gradient(circle at 18% 18%, rgba(255,255,255,0.06), transparent 24%)",
+              `radial-gradient(circle at 76% 18%, ${currentTheme.soft}55, transparent 28%), radial-gradient(circle at 18% 18%, rgba(255,255,255,0.06), transparent 24%)`,
           }}
         />
 
@@ -102,7 +109,7 @@ export default function ShopPage() {
             <div className="flex flex-col gap-4">
               <div className="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
                 <div>
-                  <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-[#3b6ed6]">
+                  <p className="text-[11px] font-medium uppercase tracking-[0.18em]" style={{ color: currentTheme.accent }}>
                     Browse by category
                   </p>
                   <p className="mt-1 text-sm text-[#0d262d]/60">
@@ -115,7 +122,11 @@ export default function ShopPage() {
                   <select
                     value={sortBy}
                     onChange={(e) => setSortBy(e.target.value as SortOption)}
-                    className="w-full appearance-none rounded-full border border-[#d9e2ec] bg-[#f8fafc] px-4 py-2.5 pr-10 text-sm font-medium text-[#0d262d] outline-none transition focus:border-[#3b6ed6]"
+                    className="w-full appearance-none rounded-full px-4 py-2.5 pr-10 text-sm font-medium text-[#0d262d] outline-none transition"
+                    style={{
+                      borderColor: currentTheme.soft,
+                      backgroundColor: currentTheme.softAlt,
+                    }}
                   >
                     {sortOptions.map((option) => (
                       <option key={option} value={option}>
@@ -132,11 +143,18 @@ export default function ShopPage() {
                 <button
                   key={cat}
                   onClick={() => setActiveCategory(cat)}
-                  className={`px-4 py-1.5 rounded-full text-sm font-medium transition-colors ${
+                  className="rounded-full px-4 py-1.5 text-sm font-medium transition-colors"
+                  style={
                     activeCategory === cat
-                      ? "bg-[#4A90D9] text-white"
-                      : "bg-muted text-muted-foreground"
-                  }`}
+                      ? {
+                          backgroundColor: getHeroCategoryTheme(cat).accent,
+                          color: "#ffffff",
+                        }
+                      : {
+                          backgroundColor: getHeroCategoryTheme(cat).softAlt,
+                          color: getHeroCategoryTheme(cat).accent,
+                        }
+                  }
                 >
                   {cat}
                 </button>
@@ -147,14 +165,23 @@ export default function ShopPage() {
 
           {/* Product grid — same style as FeaturedProducts */}
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-4">
-            {filtered.map((product) => (
+            {filtered.map((product) => {
+              const productTheme = getHeroCategoryTheme(product.heroCategory);
+
+              return (
               <Link
                 key={product.slug}
                 href={`/shop/${product.slug}`}
                 className="tg-link-card group relative flex flex-col overflow-hidden rounded-xl border bg-card text-card-foreground ring-1 ring-foreground/10"
               >
                 {/* Product image */}
-                <div className="relative aspect-square bg-[#0a0a0a] flex items-center justify-center overflow-hidden">
+                <div className="relative aspect-square flex items-center justify-center overflow-hidden" style={{ backgroundColor: productTheme.heroTone }}>
+                  <div
+                    className="absolute inset-0 opacity-60"
+                    style={{
+                      backgroundImage: `radial-gradient(circle at 50% 18%, ${productTheme.soft} 0%, transparent 44%)`,
+                    }}
+                  />
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src={`${BASE_PATH}${product.image}`}
@@ -190,13 +217,13 @@ export default function ShopPage() {
                         ${product.originalPrice}
                       </span>
                     </div>
-                    <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[#eef4fc] text-[#0d262d]">
+                    <span className="flex h-9 w-9 items-center justify-center rounded-full" style={{ backgroundColor: productTheme.softAlt, color: productTheme.accent }}>
                       <ArrowUpRight className="h-4 w-4" />
                     </span>
                   </div>
                 </div>
               </Link>
-            ))}
+            )})}
           </div>
 
           {/* Empty state */}

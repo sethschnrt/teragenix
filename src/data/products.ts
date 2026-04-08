@@ -24,11 +24,59 @@ export const shopCategories = ["All", "Fat Loss", "Recovery", "Longevity", "Vita
 
 export type ShopCategory = (typeof shopCategories)[number];
 
-const heroCategoryTagClasses: Record<Product["heroCategory"], string> = {
-  "Fat Loss": "bg-[#cfe8d7] text-[#2e6c49]",
-  Recovery: "bg-[#dceff3] text-[#2f6b78]",
-  Longevity: "bg-[#f3e4d3] text-[#86572a]",
-  Vitality: "bg-[#e6e0fb] text-[#5a46a3]",
+export type HeroCategory = Product["heroCategory"];
+
+export type CategoryTheme = {
+  accent: string;
+  accentDeep: string;
+  soft: string;
+  softAlt: string;
+  heroTone: string;
+  tagClass: string;
+};
+
+const heroCategoryThemes: Record<HeroCategory, CategoryTheme> = {
+  "Fat Loss": {
+    accent: "#2e6c49",
+    accentDeep: "#214d37",
+    soft: "#cfe8d7",
+    softAlt: "#e8f3ec",
+    heroTone: "#e7f3ea",
+    tagClass: "bg-[#cfe8d7] text-[#2e6c49]",
+  },
+  Recovery: {
+    accent: "#2f6b78",
+    accentDeep: "#204f5a",
+    soft: "#dceff3",
+    softAlt: "#e9f6f8",
+    heroTone: "#e4f3f5",
+    tagClass: "bg-[#dceff3] text-[#2f6b78]",
+  },
+  Longevity: {
+    accent: "#86572a",
+    accentDeep: "#69431f",
+    soft: "#f3e4d3",
+    softAlt: "#f8efe6",
+    heroTone: "#f7eee2",
+    tagClass: "bg-[#f3e4d3] text-[#86572a]",
+  },
+  Vitality: {
+    accent: "#5a46a3",
+    accentDeep: "#433184",
+    soft: "#e6e0fb",
+    softAlt: "#f1edfd",
+    heroTone: "#eee7fb",
+    tagClass: "bg-[#e6e0fb] text-[#5a46a3]",
+  },
+};
+
+const allCategoryTheme: CategoryTheme = {
+  accent: "#3b6ed6",
+  accentDeep: "#173f85",
+  soft: "#dbeafe",
+  softAlt: "#eef4fc",
+  heroTone: "#e9f0fc",
+  tagClass: "bg-[#dbeafe] text-[#3b6ed6]",
 };
 
 export const products: Product[] = [
@@ -212,6 +260,11 @@ export function getProductsByCategory(category: ShopCategory): Product[] {
   return products.filter((p) => p.heroCategory === category);
 }
 
-export function getHeroCategoryTagClasses(category: Product["heroCategory"]): string {
-  return heroCategoryTagClasses[category];
+export function getHeroCategoryTheme(category: HeroCategory | ShopCategory): CategoryTheme {
+  if (category === "All") return allCategoryTheme;
+  return heroCategoryThemes[category];
+}
+
+export function getHeroCategoryTagClasses(category: HeroCategory): string {
+  return getHeroCategoryTheme(category).tagClass;
 }
