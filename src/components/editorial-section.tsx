@@ -69,12 +69,12 @@ export function EditorialSection({
             />
 
             {/* Hero cutout image */}
-            <div className="relative z-10 flex h-[480px] w-[360px] items-center justify-center">
+            <div className="relative z-10 flex h-[510px] w-[395px] items-center justify-center">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={`${BASE_PATH}${image1}`}
                 alt=""
-                className="max-h-[460px] w-auto object-contain drop-shadow-[0_24px_40px_rgba(17,33,17,0.18)]"
+                className="max-h-[500px] w-auto object-contain drop-shadow-[0_24px_40px_rgba(17,33,17,0.18)]"
               />
             </div>
 
