@@ -9,30 +9,18 @@ OUT_DIR.mkdir(parents=True, exist_ok=True)
 
 JOBS = [
     {
-        'slug': 'confidence-jeans-belt',
-        'prompt': (
-            'Luxury e-commerce product photography on a PURE WHITE seamless background. '
-            'A single pair of premium dark-blue denim jeans, folded ONCE flat (like on a retail display shelf) so you see the hem and the clean rectangular folded shape. '
-            'A tan leather belt coiled into a neat circle sits centered on top of the folded jeans. '
-            'The jeans rest on top of a clean minimalist square white cube pedestal (NOT a ramp, NOT a slanted block — a PERFECT upright cube-shaped white display plinth). '
-            'Camera: eye-level front view, NOT from above, so the cube pedestal clearly shows as a 3D cube. '
-            'Nothing else in frame. Studio lighting with a soft shadow beneath the cube on the white floor. '
-            'Ultra-sharp commercial product shot. NO text, NO logos, NO branding, NO patterns, PURE WHITE BACKGROUND ONLY. '
-            'Square 1:1 composition, subject centered, realistic physical proportions.'
-        )
-    },
-    {
         'slug': 'active-life-pickleball',
         'prompt': (
-            'Luxury e-commerce product photography on a PURE WHITE seamless background. '
-            'A SOLID BLACK pickleball paddle (completely plain matte black surface, NO logos, NO text, NO markings, NO graphics whatsoever) standing upright, '
-            'two bright neon-yellow pickleballs resting in front of it, '
-            'a neatly folded white cotton gym towel lying flat to the left, '
-            'and a simple clear glass water bottle (plain, unbranded) standing upright to the right. '
-            'All four objects arranged as a cohesive centered product group. '
-            'Camera: eye-level front view. Studio lighting with soft shadows on the white floor. '
-            'Ultra-sharp commercial product shot. Absolutely NO text, NO logos, NO branding, NO markings — PURE WHITE BACKGROUND ONLY. '
-            'Square 1:1 composition, subject centered, realistic physical proportions.'
+            'Premium editorial commercial product photography on a PURE WHITE seamless studio background. '
+            'A clean modern pickleball paddle with a matte light-blue face and a black wrapped grip, leaning upright against a small folded white cotton gym towel on the LEFT side. '
+            'Two bright neon-yellow pickleballs resting on the floor in front of the paddle. '
+            'A simple plain unbranded clear glass water bottle with a polished silver cap standing upright on the RIGHT side. '
+            'All objects grouped tightly together as one cohesive athletic still life, professionally arranged, centered in the frame. '
+            'Camera: slightly elevated front view (about 15 degrees), so you can see the tops of the balls and the cap of the bottle. '
+            'Studio lighting with soft natural shadows on the white floor beneath each item. '
+            'Ultra-sharp focus, high-end magazine quality, photorealistic, NO text, NO logos, NO brand markings of any kind, NO patterns, '
+            'PURE WHITE seamless background ONLY — white wall + white floor with no visible horizon line. '
+            'Square 1:1 composition. Realistic physical proportions and lighting.'
         )
     },
 ]

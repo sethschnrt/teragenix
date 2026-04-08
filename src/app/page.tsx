@@ -42,9 +42,9 @@ export default function Home() {
         cardTitle="Everything you need — included:"
         ctaLabel="Shop metabolic kits"
         ctaHref="/shop?category=metabolic"
-        image1="/images/vials/tg/retatrutide.png"
-        image2="/images/vials/tg/semaglutide.png"
-        image3="/images/vials/tg/tirzepatide.png"
+        image1="/images/generated/lifestyle-v1/metabolic-1-hero.png"
+        image2="/images/generated/lifestyle-v1/metabolic-2-couple-walking.png"
+        image3="/images/generated/lifestyle-v1/metabolic-3-family-dinner.png"
         badgeLabel="BEST SELLER"
         background="white"
       />
@@ -69,9 +69,9 @@ export default function Home() {
         cardTitle="Targeted compounds for every protocol:"
         ctaLabel="Shop peptides"
         ctaHref="/shop?category=longevity"
-        image1="/images/vials/tg/bpc-157.png"
-        image2="/images/vials/tg/tb-500.png"
-        image3="/images/vials/tg/tesamorelin.png"
+        image1="/images/generated/lifestyle-v1/recovery-1-hero.png"
+        image2="/images/generated/lifestyle-v1/recovery-2-trail-run.png"
+        image3="/images/generated/lifestyle-v1/recovery-3-foam-roll.png"
         reverse
         background="cream"
       />
@@ -96,9 +96,9 @@ export default function Home() {
         cardTitle="Inside every Teragenix kit:"
         ctaLabel="Browse all kits"
         ctaHref="/shop"
-        image1="/images/vials/tg/recovery-stack.png"
-        image2="/images/vials/tg/bpc-157.png"
-        image3="/images/vials/tg/semaglutide.png"
+        image1="/images/generated/lifestyle-v1/kits-1-hero.png"
+        image2="/images/generated/lifestyle-v1/kits-2-pipette.png"
+        image3="/images/generated/lifestyle-v1/kits-3-coa-paper.png"
         background="white"
       />
 
@@ -122,9 +122,9 @@ export default function Home() {
         cardTitle="Our quality promise:"
         ctaLabel="Read quality standards"
         ctaHref="/about"
-        image1="/images/vials/tg/tirzepatide.png"
-        image2="/images/vials/tg/melanotan-ii.png"
-        image3="/images/vials/tg/glutathione.png"
+        image1="/images/generated/lifestyle-v1/quality-1-hero.png"
+        image2="/images/generated/lifestyle-v1/quality-2-glassware.png"
+        image3="/images/generated/lifestyle-v1/quality-3-yoga-couple.png"
         reverse
         background="cream"
       />
