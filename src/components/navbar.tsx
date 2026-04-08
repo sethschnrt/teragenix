@@ -24,7 +24,8 @@ const heroNavPaths = ["/", "/shop", "/about", "/faq"];
 export function Navbar() {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
-  const useHeroNav = heroNavPaths.includes(pathname);
+  const normalizedPath = (pathname.replace(/^\/teragenix(?=\/|$)/, "") || "/").replace(/\/$/, "") || "/";
+  const useHeroNav = heroNavPaths.includes(normalizedPath);
 
   return (
     <header

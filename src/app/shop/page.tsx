@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { ArrowLeft, ArrowUpRight } from "lucide-react";
+import { ArrowLeft, ArrowUpRight, ChevronDown } from "lucide-react";
 import { products, categories, getHeroCategoryLabel, normalizeCategoryParam, type Category } from "@/data/products";
 import { Footer } from "@/components/footer";
 
@@ -24,7 +24,6 @@ export default function ShopPage() {
   const searchParams = useSearchParams();
   const [activeCategory, setActiveCategory] = useState<Category>("All");
   const [sortBy, setSortBy] = useState<SortOption>("featured");
-
   const sortOptions: SortOption[] = ["featured", "price-asc", "price-desc", "name-asc"];
 
   useEffect(() => {
@@ -84,10 +83,10 @@ export default function ShopPage() {
           }}
         />
 
-        <div className="relative mx-auto max-w-[1240px] px-5 pb-7 sm:px-8 sm:pb-8 lg:px-12">
-          <div className="max-w-3xl">
-            <div className="mb-4 flex flex-wrap items-center gap-3">
-              <span className="inline-flex items-center rounded-full bg-white/10 px-3.5 py-2 text-[11px] font-medium tracking-[0.18em] text-white/84 ring-1 ring-white/14 backdrop-blur-sm">
+        <div className="relative mx-auto max-w-[1240px] px-5 pb-5 sm:px-8 sm:pb-6 lg:px-12">
+          <div className="max-w-2xl">
+            <div className="mb-3 flex flex-wrap items-center gap-3">
+              <span className="inline-flex items-center rounded-full bg-white/10 px-3 py-1.5 text-[11px] font-medium tracking-[0.18em] text-white/84 ring-1 ring-white/14 backdrop-blur-sm">
                 SHOP TERAGENIX
               </span>
               <span className="text-[12px] text-white/60">
@@ -95,44 +94,19 @@ export default function ShopPage() {
               </span>
             </div>
 
-            <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
-              <div>
-                <h1 className="text-[2.15rem] font-semibold leading-[0.96] tracking-[-0.035em] text-white sm:text-[2.8rem]">
-                  Research kits, without the clutter.
-                </h1>
-                <p className="mt-3 max-w-2xl text-[0.98rem] leading-6 text-white/72 sm:text-[1.02rem]">
-                  Filter by goal, compare fast, and get straight into the products.
-                </p>
-              </div>
-
-              <div className="flex flex-wrap gap-2 lg:justify-end">
-                <Link
-                  href="/shop?category=metabolic"
-                  className="tg-link-pill inline-flex items-center rounded-full border border-white/16 bg-white/10 px-3.5 py-2 text-[12px] font-medium text-white/88 backdrop-blur-sm hover:bg-white/16"
-                >
-                  Fat Loss
-                </Link>
-                <Link
-                  href="/shop?category=research"
-                  className="tg-link-pill inline-flex items-center rounded-full border border-white/16 bg-white/10 px-3.5 py-2 text-[12px] font-medium text-white/88 backdrop-blur-sm hover:bg-white/16"
-                >
-                  Vitality
-                </Link>
-                <Link
-                  href="/shop?category=beauty"
-                  className="tg-link-pill inline-flex items-center rounded-full border border-white/16 bg-white/10 px-3.5 py-2 text-[12px] font-medium text-white/88 backdrop-blur-sm hover:bg-white/16"
-                >
-                  Longevity
-                </Link>
-              </div>
-            </div>
+            <h1 className="text-[2rem] font-semibold leading-[0.96] tracking-[-0.035em] text-white sm:text-[2.45rem]">
+              Research kits, without the clutter.
+            </h1>
+            <p className="mt-2 max-w-xl text-[0.96rem] leading-6 text-white/72">
+              Filter by goal, sort fast, and get straight into the products.
+            </p>
           </div>
         </div>
       </section>
 
-      <section className="py-6 sm:py-8">
+      <section className="py-4 sm:py-5">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-          <div className="mb-6 rounded-[1.5rem] border border-[#e3e8ef] bg-white p-4 shadow-[0_12px_30px_rgba(17,33,17,0.04)] sm:p-5">
+          <div className="mb-5 rounded-[1.35rem] border border-[#e3e8ef] bg-white p-4 shadow-[0_12px_30px_rgba(17,33,17,0.04)] sm:p-5">
             <div className="flex flex-col gap-4">
               <div className="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
                 <div>
@@ -144,21 +118,21 @@ export default function ShopPage() {
                   </p>
                 </div>
 
-                <div className="flex flex-wrap gap-2">
-                  {sortOptions.map((option) => (
-                    <button
-                      key={option}
-                      onClick={() => setSortBy(option)}
-                      className={`rounded-full px-3.5 py-2 text-[12px] font-medium transition-colors ${
-                        sortBy === option
-                          ? "bg-[#0d262d] text-white"
-                          : "bg-[#f4f6f8] text-[#475967]"
-                      }`}
-                    >
-                      {sortLabels[option]}
-                    </button>
-                  ))}
-                </div>
+                <label className="relative inline-flex w-full max-w-[220px] items-center lg:w-[220px]">
+                  <span className="sr-only">Sort products</span>
+                  <select
+                    value={sortBy}
+                    onChange={(e) => setSortBy(e.target.value as SortOption)}
+                    className="w-full appearance-none rounded-full border border-[#d9e2ec] bg-[#f8fafc] px-4 py-2.5 pr-10 text-sm font-medium text-[#0d262d] outline-none transition focus:border-[#3b6ed6]"
+                  >
+                    {sortOptions.map((option) => (
+                      <option key={option} value={option}>
+                        Sort: {sortLabels[option]}
+                      </option>
+                    ))}
+                  </select>
+                  <ChevronDown className="pointer-events-none absolute right-4 h-4 w-4 text-[#475967]" />
+                </label>
               </div>
 
               <div className="flex flex-wrap gap-2">
