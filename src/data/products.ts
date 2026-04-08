@@ -19,6 +19,13 @@ export interface Product {
   relatedProductSlugs: string[];
 }
 
+const heroCategoryLabels: Record<string, string> = {
+  Metabolic: "Fat Loss",
+  Longevity: "Recovery",
+  Beauty: "Longevity",
+  Research: "Vitality",
+};
+
 export const products: Product[] = [
   {
     slug: "retatrutide",
@@ -167,6 +174,10 @@ export const featuredProducts = products.filter((p) => p.badge);
 export const categories = ["All", "Metabolic", "Research", "Beauty", "Bundles"] as const;
 
 export type Category = (typeof categories)[number];
+
+export function getHeroCategoryLabel(category: string): string {
+  return heroCategoryLabels[category] ?? category;
+}
 
 /** Get a product by its slug */
 export function getProductBySlug(slug: string): Product | undefined {

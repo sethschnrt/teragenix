@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
-import { featuredProducts } from "@/data/products";
+import { featuredProducts, getHeroCategoryLabel } from "@/data/products";
 
 const BASE_PATH = process.env.NODE_ENV === "production" ? "/teragenix" : "";
 
@@ -79,7 +79,7 @@ export function FeaturedProducts() {
                   )}
 
                   <span className="absolute bottom-4 left-4 rounded-full border border-white/18 bg-white/10 px-2.5 py-1 font-sans text-[9px] font-medium tracking-[0.2em] text-white/88 backdrop-blur">
-                    {product.category.toUpperCase()}
+                    {getHeroCategoryLabel(product.category).toUpperCase()}
                   </span>
 
                   <div

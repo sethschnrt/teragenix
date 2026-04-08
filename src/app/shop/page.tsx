@@ -5,7 +5,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ChevronDown, ArrowLeft, ArrowUpRight, Store } from "lucide-react";
-import { products, categories, type Category } from "@/data/products";
+import { products, categories, getHeroCategoryLabel, type Category } from "@/data/products";
 import { Footer } from "@/components/footer";
 
 const BASE_PATH = process.env.NODE_ENV === "production" ? "/teragenix" : "";
@@ -172,7 +172,7 @@ export default function ShopPage() {
                 <div className="flex flex-col flex-1 px-4 pt-3 pb-4 gap-2">
                   <div>
                     <p className="text-xs font-medium text-[#4A90D9] uppercase tracking-wider">
-                      {product.category}
+                      {getHeroCategoryLabel(product.category)}
                     </p>
                     <h3 className="text-sm sm:text-base font-semibold text-foreground leading-tight mt-1">
                       {product.name}
