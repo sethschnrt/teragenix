@@ -53,13 +53,11 @@ export function FeaturedProducts() {
                 href={`/shop/${product.slug}`}
                 className="group relative flex flex-col overflow-hidden rounded-[1.75rem] bg-white ring-1 ring-[#e3e8ef] transition-all hover:-translate-y-1 hover:shadow-[0_30px_50px_-30px_rgba(17,33,17,0.25)]"
               >
-                {/* Dark product photo panel with pastel accent bar */}
-                <div className="relative flex aspect-[5/4] items-center justify-center overflow-hidden bg-[#0a1510]">
-                  {/* pastel gradient wash behind vial */}
+                <div className="relative aspect-square overflow-hidden bg-[#050505]">
                   <div
-                    className="absolute inset-0 opacity-40"
+                    className="absolute inset-0 opacity-35"
                     style={{
-                      backgroundImage: `radial-gradient(circle at 50% 45%, ${tone.bg} 0%, transparent 60%)`,
+                      backgroundImage: `radial-gradient(circle at 50% 20%, ${tone.bg} 0%, transparent 46%)`,
                     }}
                   />
 
@@ -67,7 +65,8 @@ export function FeaturedProducts() {
                   <img
                     src={`${BASE_PATH}${product.image}`}
                     alt={product.name}
-                    className="relative h-[90%] w-auto object-contain transition-transform duration-500 group-hover:scale-[1.05]"
+                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.04]"
+                    style={{ transform: "scale(1.08)" }}
                   />
 
                   {product.badge && (
@@ -79,14 +78,10 @@ export function FeaturedProducts() {
                     </span>
                   )}
 
-                  {/* category chip bottom-left */}
-                  <span
-                    className="absolute bottom-4 left-4 rounded-full border border-white/20 bg-white/10 px-2.5 py-1 font-sans text-[9px] font-medium tracking-[0.2em] text-white/85 backdrop-blur"
-                  >
+                  <span className="absolute bottom-4 left-4 rounded-full border border-white/18 bg-white/10 px-2.5 py-1 font-sans text-[9px] font-medium tracking-[0.2em] text-white/88 backdrop-blur">
                     {product.category.toUpperCase()}
                   </span>
 
-                  {/* colored accent stripe bottom */}
                   <div
                     className="absolute inset-x-0 bottom-0 h-1"
                     style={{ backgroundColor: tone.bg }}
