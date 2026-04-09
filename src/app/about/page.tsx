@@ -78,8 +78,8 @@ export default function AboutPage() {
       <PageHero
         icon={FlaskConical}
         eyebrow="ABOUT TERAGENIX"
-        title="A cleaner research storefront, built around complete kits."
-        description="Teragenix is being shaped into a more coherent buying experience where category structure, product presentation, and quality framing all work together."
+        title="Why Teragenix exists."
+        description="A tighter storefront for research kits, with clearer structure, cleaner product framing, and more obvious standards."
         variant="about"
         highlights={[
           { label: "Why it exists", href: "#why" },
