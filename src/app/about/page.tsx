@@ -76,48 +76,36 @@ export default function AboutPage() {
           </span>
         </div>
 
-        <div className="relative mx-auto max-w-[1240px] px-5 pb-12 sm:px-8 lg:px-12 lg:pb-14">
-          <div className="grid gap-8 lg:grid-cols-[0.92fr_1.08fr] lg:items-center lg:gap-12">
-            <div className="max-w-xl">
-              <div className="inline-flex items-center gap-3 rounded-full bg-white/10 px-4 py-2.5 ring-1 ring-white/16 backdrop-blur-sm">
-                <Microscope className="h-4.5 w-4.5 text-[#a8c5f5]" />
-                <span className="text-[11px] font-medium tracking-[0.18em] text-white/86">
-                  ABOUT TERAGENIX
-                </span>
-              </div>
-
-              <h1 className="mt-6 max-w-lg text-[2.75rem] font-semibold leading-[0.95] tracking-[-0.05em] text-white sm:text-[3.5rem] lg:text-[4.15rem]">
-                A cleaner standard for research kits.
-              </h1>
-
-              <p className="mt-5 max-w-xl text-[1rem] leading-7 text-white/74 sm:text-[1.05rem]">
-                Teragenix is building a calmer, more credible storefront where kit presentation, product clarity, and quality cues feel intentional from the first glance.
-              </p>
-
-              <div className="mt-7 flex flex-wrap gap-3">
-                <Link
-                  href="#why"
-                  className="tg-link-pill inline-flex items-center rounded-full bg-white px-4 py-2.5 text-[12px] font-semibold tracking-[0.04em] text-[#12366f]"
-                >
-                  Why it exists
-                </Link>
-                <Link
-                  href="#quality-promise"
-                  className="tg-link-pill inline-flex items-center rounded-full bg-white/10 px-4 py-2.5 text-[12px] font-medium tracking-[0.04em] text-white ring-1 ring-white/14 backdrop-blur-sm"
-                >
-                  Quality system
-                </Link>
-              </div>
+        <div className="relative mx-auto max-w-[1240px] px-5 pb-14 sm:px-8 lg:px-12 lg:pb-18">
+          <div className="mx-auto flex max-w-[760px] flex-col items-center text-center">
+            <div className="inline-flex items-center gap-3 rounded-full bg-white/10 px-4 py-2.5 ring-1 ring-white/16 backdrop-blur-sm">
+              <Microscope className="h-4.5 w-4.5 text-[#a8c5f5]" />
+              <span className="text-[11px] font-medium tracking-[0.18em] text-white/86">
+                ABOUT TERAGENIX
+              </span>
             </div>
 
-            <div className="relative mx-auto flex w-full max-w-[640px] items-end justify-center pt-4 lg:pt-0">
-              <div className="pointer-events-none absolute inset-x-12 top-12 h-[76%] rounded-full bg-[radial-gradient(circle,rgba(168,197,245,0.34),rgba(168,197,245,0.08)_42%,transparent_72%)] blur-3xl" />
-              <div className="pointer-events-none absolute bottom-6 h-14 w-[72%] rounded-full bg-[#081a31]/40 blur-2xl" />
-              <img
-                src={`${BASE_PATH}/images/generated/lifestyle-v1-cutout/quality-1-hero.png`}
-                alt="Research professional holding documentation"
-                className="relative z-10 h-[340px] w-auto object-contain drop-shadow-[0_28px_60px_rgba(5,16,34,0.38)] sm:h-[420px] lg:h-[500px]"
-              />
+            <h1 className="mt-6 max-w-[12ch] text-[2.85rem] font-semibold leading-[0.95] tracking-[-0.05em] text-white sm:text-[3.65rem] lg:text-[4.5rem]">
+              A cleaner standard for research kits.
+            </h1>
+
+            <p className="mt-5 max-w-[640px] text-[1rem] leading-7 text-white/74 sm:text-[1.08rem]">
+              Teragenix is building a calmer, more credible storefront where kit presentation, product clarity, and quality cues feel intentional from the first glance.
+            </p>
+
+            <div className="mt-7 flex flex-wrap justify-center gap-3">
+              <Link
+                href="#why"
+                className="tg-link-pill inline-flex items-center rounded-full bg-white px-4 py-2.5 text-[12px] font-semibold tracking-[0.04em] text-[#12366f]"
+              >
+                Why it exists
+              </Link>
+              <Link
+                href="#quality-promise"
+                className="tg-link-pill inline-flex items-center rounded-full bg-white/10 px-4 py-2.5 text-[12px] font-medium tracking-[0.04em] text-white ring-1 ring-white/14 backdrop-blur-sm"
+              >
+                Quality system
+              </Link>
             </div>
           </div>
         </div>
