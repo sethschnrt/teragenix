@@ -34,12 +34,13 @@ export function ProductDetail({ product, relatedProducts }: ProductDetailProps) 
     <main>
       <section
         className="relative overflow-hidden pt-24 sm:pt-28"
-        style={{ background: `linear-gradient(162deg, ${theme.accentDeep} 0%, #0d262d 100%)` }}
+        style={{ background: "linear-gradient(162deg, #1e4a9e 0%, #0d262d 100%)" }}
       >
         <div
           className="pointer-events-none absolute inset-0"
           style={{
-            backgroundImage: `radial-gradient(circle at 78% 18%, ${theme.soft}55, transparent 28%), radial-gradient(circle at 18% 20%, rgba(255,255,255,0.06), transparent 24%)`,
+            backgroundImage:
+              "radial-gradient(circle at 78% 18%, rgba(168,197,245,0.22), transparent 28%), radial-gradient(circle at 18% 20%, rgba(255,255,255,0.06), transparent 24%)",
           }}
         />
 
@@ -58,10 +59,10 @@ export function ProductDetail({ product, relatedProducts }: ProductDetailProps) 
 
           <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:gap-12">
             <div className="overflow-hidden rounded-[2rem] border border-white/10 bg-white/8 p-4 backdrop-blur-sm sm:p-5">
-              <div className="relative aspect-square overflow-hidden rounded-[1.5rem]" style={{ backgroundColor: theme.heroTone }}>
+              <div className="relative aspect-square overflow-hidden rounded-[1.5rem]" style={{ backgroundColor: "#e9f0fc" }}>
                 <div
                   className="absolute inset-0 opacity-70"
-                  style={{ backgroundImage: `radial-gradient(circle at 50% 18%, ${theme.soft} 0%, transparent 44%)` }}
+                  style={{ backgroundImage: "radial-gradient(circle at 50% 18%, rgba(168,197,245,0.95) 0%, transparent 44%)" }}
                 />
 
                 {/* eslint-disable-next-line @next/next/no-img-element */}
