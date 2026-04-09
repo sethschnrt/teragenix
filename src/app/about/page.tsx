@@ -110,17 +110,14 @@ export default function AboutPage() {
               </div>
             </div>
 
-            <div className="relative mx-auto w-full max-w-[640px]">
-              <div className="absolute inset-0 rounded-[2rem] bg-[radial-gradient(circle_at_50%_25%,rgba(168,197,245,0.34),transparent_58%)] blur-2xl" />
-              <div className="relative overflow-hidden rounded-[2rem] border border-white/14 bg-white/8 p-3 shadow-[0_30px_80px_rgba(4,12,24,0.28)] backdrop-blur-md sm:p-4">
-                <div className="overflow-hidden rounded-[1.5rem] bg-[linear-gradient(180deg,rgba(255,255,255,0.16),rgba(255,255,255,0.04))] ring-1 ring-white/10">
-                  <img
-                    src={`${BASE_PATH}/images/generated/lifestyle-v1/quality-2-glassware.png`}
-                    alt="Laboratory glassware styled in the Teragenix brand aesthetic"
-                    className="h-[340px] w-full object-cover object-center sm:h-[420px] lg:h-[460px]"
-                  />
-                </div>
-              </div>
+            <div className="relative mx-auto flex w-full max-w-[640px] items-end justify-center pt-4 lg:pt-0">
+              <div className="pointer-events-none absolute inset-x-12 top-12 h-[76%] rounded-full bg-[radial-gradient(circle,rgba(168,197,245,0.34),rgba(168,197,245,0.08)_42%,transparent_72%)] blur-3xl" />
+              <div className="pointer-events-none absolute bottom-6 h-14 w-[72%] rounded-full bg-[#081a31]/40 blur-2xl" />
+              <img
+                src={`${BASE_PATH}/images/generated/lifestyle-v1-cutout/quality-1-hero.png`}
+                alt="Research professional holding documentation"
+                className="relative z-10 h-[340px] w-auto object-contain drop-shadow-[0_28px_60px_rgba(5,16,34,0.38)] sm:h-[420px] lg:h-[500px]"
+              />
             </div>
           </div>
         </div>
