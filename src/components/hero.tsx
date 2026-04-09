@@ -157,7 +157,7 @@ export function Hero() {
               <Link
                 key={tile.title}
                 href={tile.href}
-                className="tg-link-card group relative block rounded-[20px] bg-white sm:rounded-[22px]"
+                className="tg-link-card tg-hero-card group relative block rounded-[20px] bg-white sm:rounded-[22px]"
               >
                 {/* MOBILE: horizontal layout (image left, label right) */}
                 <div className="flex h-[110px] items-center gap-3 overflow-hidden rounded-[20px] bg-[#f2f3f3] pr-4 sm:hidden">

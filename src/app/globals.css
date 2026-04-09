@@ -242,6 +242,12 @@
       border-color: rgba(59, 110, 214, 0.22);
     }
 
+    .tg-hero-card:hover {
+      transform: none;
+      box-shadow: none !important;
+      border-color: transparent;
+    }
+
     .tg-link-card:hover .tg-link-card-media {
       transform: scale(1.035);
     }
