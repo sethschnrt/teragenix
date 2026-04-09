@@ -17,33 +17,33 @@ const values = [
     icon: Shield,
     title: "Uncompromising Quality",
     description:
-      "Every batch undergoes rigorous HPLC testing to verify 99%+ purity. We publish Certificates of Analysis for full transparency.",
+      "Quality should be communicated clearly, with product pages and batch documentation that feel serious and easy to evaluate.",
   },
   {
     icon: Package,
     title: "Complete Kits",
     description:
-      "No hunting for supplies. Each kit includes bacteriostatic water, precision syringes, and alcohol swabs — research-ready out of the box.",
+      "The storefront is built around complete kit presentation, so included components are easy to understand at a glance.",
   },
   {
     icon: Award,
     title: "Third-Party Verified",
     description:
-      "Independent labs validate every product. We never self-certify. If it doesn't pass, it doesn't ship.",
+      "Documentation, quality framing, and product clarity should work together instead of relying on exaggerated trust language.",
   },
   {
     icon: Users,
     title: "Researcher Support",
     description:
-      "Questions about reconstitution, storage, or protocols? Our team has the expertise to help you get it right.",
+      "Important product information should be surfaced clearly across the storefront, not buried behind vague or inconsistent copy.",
   },
 ];
 
 const stats = [
-  { value: "99%+", label: "Purity Guaranteed" },
-  { value: "10+", label: "Research Compounds" },
-  { value: "48hr", label: "Average Ship Time" },
-  { value: "100%", label: "COA Documented" },
+  { value: "4", label: "Storefront Categories" },
+  { value: "Kit", label: "Bundled Format" },
+  { value: "COA", label: "Documentation-Led" },
+  { value: "RUO", label: "Research Use Only" },
 ];
 
 export default function AboutPage() {
@@ -52,8 +52,8 @@ export default function AboutPage() {
       <PageHero
         icon={FlaskConical}
         eyebrow="ABOUT TERAGENIX"
-        title="Built for researchers who want fewer vendors and better standards."
-        description="Teragenix exists to remove sourcing friction without lowering the bar. We combine research-grade compounds, prep essentials, and documented quality standards into one cleaner buying experience."
+        title="Built for researchers who want a cleaner storefront and clearer standards."
+        description="Teragenix is being shaped into a tighter storefront where category structure, kit presentation, and quality positioning all feel more coherent."
         variant="about"
         highlights={[
           { label: "Our mission", href: "#mission" },
@@ -78,21 +78,20 @@ export default function AboutPage() {
               </h2>
               <div className="space-y-4 text-muted-foreground leading-relaxed">
                 <p>
-                  Teragenix was born from a simple frustration: sourcing
-                  research-grade peptides shouldn&apos;t mean juggling multiple
-                  vendors for vials, solvents, and supplies.
+                  Teragenix is being built around a simple idea: the storefront
+                  should make it easier to compare compounds, understand the kit
+                  format, and move through the catalog without friction.
                 </p>
                 <p>
-                  We started as a small team of biochemistry researchers who
-                  spent too many hours tracking down bacteriostatic water and
-                  the right gauge syringes. So we built the solution we wished
-                  existed — complete, ready-to-use research kits with
-                  everything in one box.
+                  Instead of leaning on noisy claims or cluttered product
+                  pages, the goal is a cleaner system built around category
+                  clarity, stronger product presentation, and documentation-led
+                  trust.
                 </p>
                 <p>
-                  Every compound we offer is synthesized to pharmaceutical-grade
-                  standards, independently tested, and shipped with full
-                  documentation. No guesswork. No compromises.
+                  This phase is focused on making the storefront feel polished,
+                  coherent, and easier to navigate from first impression to
+                  product detail.
                 </p>
               </div>
             </div>
@@ -166,22 +165,21 @@ export default function AboutPage() {
                   Every Vial Tells a Story
                 </h2>
                 <p className="text-white/70 leading-relaxed">
-                  We don&apos;t cut corners. Every product ships with a
-                  Certificate of Analysis documenting exact purity levels,
-                  molecular weight confirmation, and endotoxin testing results.
-                  If a batch doesn&apos;t meet our standards, it gets destroyed
-                  — not discounted.
+                  The quality story should feel clean and credible. That means
+                  clearer documentation language, better product framing, and a
+                  storefront that signals standards without relying on inflated
+                  promises.
                 </p>
               </div>
 
               <div className="space-y-4">
                 {[
-                  "HPLC purity testing on every batch",
-                  "Mass spectrometry molecular verification",
-                  "Endotoxin screening (LAL method)",
-                  "Independent third-party lab validation",
-                  "Full COA included with every order",
-                  "Proper cold-chain shipping when required",
+                  "Documentation-led quality positioning",
+                  "Cleaner product page hierarchy",
+                  "Clearer kit format communication",
+                  "Less cluttered trust language",
+                  "Stronger category-to-product flow",
+                  "A more coherent storefront system",
                 ].map((item) => (
                   <div key={item} className="flex items-center gap-3">
                     <CheckCircle2 className="h-5 w-5 text-[#4A90D9] shrink-0" />
@@ -199,11 +197,11 @@ export default function AboutPage() {
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 text-center">
           <Beaker className="h-10 w-10 text-[#4A90D9] mx-auto mb-4" />
           <h2 className="text-2xl sm:text-3xl font-bold tracking-tight mb-4">
-            Ready to Start Your Research?
+            Browse the Storefront
           </h2>
           <p className="text-muted-foreground max-w-lg mx-auto mb-8">
-            Browse our complete catalog of research-grade peptide kits.
-            Everything you need, nothing you don&apos;t.
+            Explore the current catalog and review the product pages that are
+            already in progress.
           </p>
           <a
             href="/shop"

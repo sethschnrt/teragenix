@@ -2,14 +2,13 @@
 
 import Link from "next/link";
 import { Logo } from "./logo";
-import { Button } from "@/components/ui/button";
 import {
   Sheet,
   SheetContent,
   SheetTrigger,
   SheetTitle,
 } from "@/components/ui/sheet";
-import { Menu, ShoppingBag } from "lucide-react";
+import { Menu } from "lucide-react";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
 
@@ -21,11 +20,15 @@ const navLinks = [
 
 const heroNavPaths = ["/", "/shop", "/about", "/faq"];
 
+function isHeroNavPath(pathname: string) {
+  return heroNavPaths.includes(pathname) || pathname.startsWith("/shop/");
+}
+
 export function Navbar() {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
   const normalizedPath = (pathname.replace(/^\/teragenix(?=\/|$)/, "") || "/").replace(/\/$/, "") || "/";
-  const useHeroNav = heroNavPaths.includes(normalizedPath);
+  const useHeroNav = isHeroNavPath(normalizedPath);
 
   return (
     <header
@@ -68,21 +71,6 @@ export function Navbar() {
           >
             Shop kits
           </Link>
-
-          <Button
-            variant="ghost"
-            size="icon"
-            className={`relative h-9 w-9 rounded-full ${
-              useHeroNav
-                ? "text-white hover:bg-transparent hover:text-white"
-                : "text-[#0d262d] hover:bg-transparent hover:text-[#0d262d]"
-            }`}
-          >
-            <ShoppingBag className="h-4.5 w-4.5" />
-            <span className="absolute -right-0.5 -top-0.5 flex h-4 w-4 items-center justify-center rounded-full bg-[#eb8771] text-[9px] font-bold text-white">
-              0
-            </span>
-          </Button>
 
           {/* Mobile menu */}
           <Sheet open={open} onOpenChange={setOpen}>

@@ -102,7 +102,7 @@ export function Hero() {
                 <span
                   className="inline-block h-1.5 w-1.5 rounded-full bg-white"
                 />
-                Join <span style={{ fontWeight: 700 }}>12,000+</span> Teragenix researchers
+                Research-grade kits, cleaner storefront
               </p>
             </div>
 

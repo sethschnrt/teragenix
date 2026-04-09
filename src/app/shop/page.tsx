@@ -89,7 +89,7 @@ export default function ShopPage() {
                 SHOP TERAGENIX
               </span>
               <span className="text-[12px] text-white/60">
-                99%+ purity, complete kits, fast discreet shipping
+                Category-led browsing, complete-kit storefront
               </span>
             </div>
 
@@ -164,7 +164,7 @@ export default function ShopPage() {
           </div>
 
           {/* Product grid — same style as FeaturedProducts */}
-          <div className="grid grid-cols-2 gap-4 sm:grid-cols-2 sm:gap-7 lg:grid-cols-4 lg:gap-8">
+          <div className="flex flex-wrap justify-center gap-4 sm:gap-7 lg:gap-8">
             {filtered.map((product) => {
               const productTheme = getHeroCategoryTheme(product.heroCategory);
 
@@ -172,7 +172,7 @@ export default function ShopPage() {
               <Link
                 key={product.slug}
                 href={`/shop/${product.slug}`}
-                className="tg-link-card group relative flex flex-col overflow-hidden rounded-xl border bg-card text-card-foreground ring-1 ring-foreground/10"
+                className="tg-link-card group relative flex w-[calc(50%-0.5rem)] min-w-0 flex-col overflow-hidden rounded-xl border bg-card text-card-foreground ring-1 ring-foreground/10 sm:w-[calc(50%-0.875rem)] lg:w-[280px]"
               >
                 {/* Product image */}
                 <div className="relative aspect-square flex items-center justify-center overflow-hidden" style={{ backgroundColor: productTheme.heroTone }}>

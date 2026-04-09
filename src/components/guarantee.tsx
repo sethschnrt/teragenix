@@ -4,23 +4,23 @@ import { Shield, Truck, FlaskConical, Mail } from "lucide-react";
 const promises = [
   {
     icon: Truck,
-    title: "Free expedited shipping",
-    body: "Orders over $150 ship free with tracked, insured delivery in discreet plain packaging.",
+    title: "Cleaner storefront flow",
+    body: "Homepage, catalog, and product pages are being tightened into a more coherent path.",
   },
   {
     icon: FlaskConical,
-    title: "99%+ verified purity",
-    body: "Every batch is HPLC-tested and arrives with a third-party Certificate of Analysis.",
+    title: "Documentation-led trust",
+    body: "Quality positioning is strongest when product pages and supporting documentation do the heavy lifting.",
   },
   {
     icon: Shield,
-    title: "No hidden fees",
-    body: "What you see is what you pay. No surprise surcharges, handling fees, or subscription traps.",
+    title: "Complete kit framing",
+    body: "The storefront is built to make the kit format easier to understand at a glance.",
   },
   {
     icon: Mail,
-    title: "Direct support",
-    body: "Real humans answer within 24 hours. Email our lab team at support@teragenix.com.",
+    title: "Clearer product detail",
+    body: "Important information should be visible in the storefront instead of hidden behind vague promises.",
   },
 ];
 
@@ -30,11 +30,11 @@ export function Guarantee() {
       <div className="mx-auto max-w-[1240px] px-5 sm:px-8 lg:px-[160px]">
         <div className="mb-16 text-center">
           <p className="tg-eyebrow mb-6" style={{ color: "#3b6ed6" }}>
-            THE TERAGENIX GUARANTEE
+            STOREFRONT PRINCIPLES
           </p>
           <h2 className="tg-h2 mx-auto max-w-3xl" style={{ color: "#0d262d" }}>
-            Everything your lab needs, in{" "}
-            <span style={{ color: "#3b6ed6" }}>one kit.</span>
+            A cleaner storefront, built around{" "}
+            <span style={{ color: "#3b6ed6" }}>complete kits.</span>
           </h2>
           <p
             className="mx-auto mt-6 max-w-xl"
@@ -45,7 +45,7 @@ export function Guarantee() {
               fontWeight: 400,
             }}
           >
-            Teragenix exists to make research-grade peptide sourcing effortless. Four promises, every kit, every time.
+            Four design principles guiding the current storefront phase.
           </p>
         </div>
 

@@ -9,17 +9,17 @@ const footerLinks = {
     { label: "Longevity", href: "/shop?category=longevity" },
     { label: "Vitality", href: "/shop?category=vitality" },
   ],
-  Support: [
+  Explore: [
+    { label: "About", href: "/about" },
     { label: "FAQ", href: "/faq" },
-    { label: "Order Tracking", href: "/tracking" },
-    { label: "Shipping Info", href: "/faq#shipping" },
-    { label: "Contact Us", href: "/contact" },
+    { label: "Shipping FAQ", href: "/faq#shipping" },
+    { label: "Research Use", href: "/faq#general" },
   ],
-  Legal: [
-    { label: "Terms of Service", href: "/terms" },
-    { label: "Privacy Policy", href: "/privacy" },
-    { label: "Refund Policy", href: "/refunds" },
-    { label: "Disclaimer", href: "/disclaimer" },
+  Storefront: [
+    { label: "Featured Kits", href: "/#featured" },
+    { label: "Browse Catalog", href: "/shop" },
+    { label: "How It Works", href: "/#how-it-works" },
+    { label: "Quality Standards", href: "/about#quality-promise" },
   ],
 };
 
@@ -42,7 +42,7 @@ export function Footer() {
           <div className="md:col-span-1">
             <Logo size="lg" theme="light" />
             <p className="mt-5 max-w-xs text-[14px] leading-relaxed text-white/65">
-              Research-grade peptide kits, bundled with everything your lab needs. 99%+ purity, COA verified, shipped fast.
+              Research-grade peptide kits with a cleaner storefront, tighter category structure, and documentation-first positioning.
             </p>
           </div>
 

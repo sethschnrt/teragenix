@@ -4,18 +4,18 @@ import { ArrowUpRight } from "lucide-react";
 const steps = [
   {
     num: "01",
-    title: "Pick your protocol",
-    body: "Browse Teragenix's 99%+ purity research peptides across metabolic, longevity, beauty, and specialty categories. Each listing comes with complete specs and third-party COA.",
+    title: "Pick your category",
+    body: "Browse the storefront by goal, compare compounds quickly, and use the product pages to understand the kit format before going deeper.",
   },
   {
     num: "02",
     title: "We bundle the prep",
-    body: "Every kit arrives with bacteriostatic water, precision insulin syringes, and alcohol swabs — already dialed in for laboratory reconstitution workflows.",
+    body: "Each kit is positioned as a complete format, with product pages focused on what is included, how it fits the category, and what makes it different.",
   },
   {
     num: "03",
-    title: "Discreet, fast shipping",
-    body: "Plain, unmarked packaging. Tracked domestic delivery within 24 hours. Free shipping on research orders over $150.",
+    title: "Move through a cleaner flow",
+    body: "The goal of this storefront is simple product discovery, clearer kit comparison, and a more polished path from homepage to catalog to product detail.",
   },
 ];
 
@@ -36,7 +36,7 @@ export function HowItWorks() {
             </h2>
           </div>
           <p className="text-[1.05rem] leading-7 text-[#0d262d]/70 lg:pb-3">
-            Teragenix removes the five-vendor scavenger hunt. Order one kit, get a complete research-ready workflow delivered to your door — no missing supplies, no half-finished protocols.
+            Teragenix is being designed to make product discovery feel cleaner, faster, and more coherent across the full storefront.
           </p>
         </div>
 
@@ -74,7 +74,7 @@ export function HowItWorks() {
               READY TO START
             </p>
             <h3 className="font-sans text-[1.8rem] font-semibold leading-tight tracking-tight text-white sm:text-[2.2rem]">
-              Everything your lab needs, in <span className="italic text-[#c9e3c5]">one</span> kit.
+              A cleaner storefront, built around <span className="italic text-[#c9e3c5]">complete</span> kits.
             </h3>
           </div>
           <Link

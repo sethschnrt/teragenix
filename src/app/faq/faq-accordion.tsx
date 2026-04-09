@@ -32,12 +32,12 @@ const faqData: FaqSection[] = [
       {
         question: "What is a Certificate of Analysis (COA)?",
         answer:
-          "A COA is a document from an independent laboratory that verifies the identity, purity, and quality of a compound. Every Teragenix product ships with a COA showing HPLC purity results, mass spectrometry data, and endotoxin testing. This ensures you receive exactly what's listed on the label.",
+          "A COA is a quality document used to support a compound's identity and batch information. On this storefront, COAs are part of how quality is framed and communicated across the product experience.",
       },
       {
         question: "How do your kits differ from buying peptides alone?",
         answer:
-          "Most suppliers sell just the peptide vial. Our kits include everything needed for reconstitution: bacteriostatic water, precision syringes, and sterile alcohol swabs. No separate orders, no waiting on multiple shipments — one box, fully research-ready.",
+          "The storefront is organized around complete kit presentation, so buyers can quickly understand the intended format, included components, and category fit without piecing the story together themselves.",
       },
     ],
   },
@@ -48,17 +48,17 @@ const faqData: FaqSection[] = [
       {
         question: "How do I place an order?",
         answer:
-          "Browse our shop, add items to your cart, and proceed to checkout. We accept all major credit cards and process orders within 24 hours on business days.",
+          "Use the shop to browse by category, compare product pages, and review kit details. The current phase is focused on making that browsing flow cleaner and easier to evaluate.",
       },
       {
         question: "Do you offer bulk or institutional pricing?",
         answer:
-          "Yes. For orders of 10+ units or institutional accounts, contact us at orders@teragenix.com for custom pricing. We offer volume discounts and can accommodate purchase orders from verified research institutions.",
+          "Bulk and institutional purchasing details are not the focus of the current storefront phase. If those options are added later, they should be surfaced clearly on-site.",
       },
       {
         question: "Can I modify or cancel my order?",
         answer:
-          "Orders can be modified or cancelled within 2 hours of placement. After that, orders enter fulfillment and cannot be changed. Contact support immediately if you need to make changes.",
+          "Order-policy specifics should only be presented once the purchase flow and supporting operations are fully defined.",
       },
     ],
   },
@@ -69,27 +69,27 @@ const faqData: FaqSection[] = [
       {
         question: "How long does shipping take?",
         answer:
-          "Standard shipping is 3-5 business days within the continental US. Expedited (1-2 day) shipping is available at checkout. Orders placed before 2 PM EST on business days ship same-day.",
+          "Shipping language on the storefront should stay high-level until fulfillment details are finalized and ready to support exact promises.",
       },
       {
         question: "Do you ship internationally?",
         answer:
-          "Currently we ship within the United States only. International shipping is coming soon. Sign up for our newsletter to be notified when we expand to your region.",
+          "Shipping availability should be communicated clearly once fulfillment coverage is finalized. For now, the storefront should avoid over-specific shipping claims.",
       },
       {
         question: "Is shipping discreet?",
         answer:
-          "Yes. All orders ship in plain, unmarked packaging with no indication of contents. The return label shows our corporate name only — no product references.",
+          "Fulfillment language should stay straightforward and credible, without leaning on promises that are more specific than the current operating setup supports.",
       },
       {
         question: "How are temperature-sensitive items shipped?",
         answer:
-          "Products requiring cold storage ship with insulated packaging and cold packs to maintain appropriate temperatures during transit. Expedited shipping is recommended for these items during summer months.",
+          "Product handling and storage guidance should be stated clearly on the relevant product pages, with operational specifics added only when they are fully defined.",
       },
       {
         question: "Will I receive tracking information?",
         answer:
-          "Yes. You'll receive a tracking number via email as soon as your order ships. You can also check order status through your account dashboard.",
+          "Tracking and order-status details should be introduced when the supporting purchase and fulfillment flow is actually in place.",
       },
     ],
   },
@@ -105,7 +105,7 @@ const faqData: FaqSection[] = [
       {
         question: "What purity level are your peptides?",
         answer:
-          "All Teragenix peptides are synthesized to 99%+ purity as verified by HPLC analysis. The exact purity percentage for each batch is documented on the included Certificate of Analysis.",
+          "Purity and quality claims should be presented carefully, with the product page and supporting documentation doing the heavy lifting instead of exaggerated marketing copy.",
       },
       {
         question: "How long do peptides last?",
@@ -126,17 +126,17 @@ const faqData: FaqSection[] = [
       {
         question: "What is your refund policy?",
         answer:
-          "We offer a full refund on unopened, unused products returned within 30 days of delivery. Due to the nature of research compounds, opened products cannot be returned. Contact support@teragenix.com to initiate a return.",
+          "Return and refund policy details should be shown only when the supporting purchase flow and policies are finalized.",
       },
       {
         question: "What if my order arrives damaged?",
         answer:
-          "If your order arrives damaged or compromised, contact us within 48 hours with photos of the damage. We'll ship a replacement at no cost — no need to return the damaged items.",
+          "Issue-resolution language should stay general until the underlying support and fulfillment process is formally defined.",
       },
       {
         question: "What if I receive the wrong product?",
         answer:
-          "Contact us immediately. We'll arrange a prepaid return label and ship the correct product via expedited shipping at our expense. Mistakes happen rarely, but we make them right fast.",
+          "Order-correction details should be added once the storefront moves beyond design phase and the relevant support workflow is real.",
       },
     ],
   },
@@ -197,13 +197,13 @@ export function FaqAccordion() {
             Still have questions?
           </h3>
           <p className="text-sm text-muted-foreground mb-4">
-            Our team is here to help with any research-related inquiries.
+            Start with the shop and product pages, then use this FAQ for the current storefront context.
           </p>
           <a
-            href="mailto:support@teragenix.com"
+            href="/shop"
             className="tg-link-pill inline-flex items-center justify-center rounded-lg bg-[#4A90D9] px-6 py-2.5 text-sm font-semibold text-white hover:bg-[#3A7BC8]"
           >
-            Contact Support
+            Browse the Catalog
           </a>
         </div>
       </div>

@@ -10,22 +10,22 @@ export default function FaqPage() {
       <PageHero
         icon={HelpCircle}
         eyebrow="FAQ"
-        title="Straight answers, before you place the order."
-        description="Get clear answers on research use, ordering, shipping, storage, and refunds without digging through the whole site. Start with the topic you need and move fast."
+        title="Straight answers, before you choose a kit."
+        description="Use this page to understand research-use positioning, product format, category flow, and the current storefront structure without digging through the whole site."
         variant="faq"
         highlights={[
           { label: "General", href: "#general" },
           { label: "Ordering", href: "#ordering" },
           { label: "Shipping", href: "#shipping" },
-          { label: "Returns", href: "#returns-refunds" },
+          { label: "Products", href: "#products" },
         ]}
         panelEyebrow="POPULAR TOPICS"
         panelTitle="Jump to the section you actually need."
         panelItems={[
-          { label: "Ordering & payments", href: "#ordering" },
-          { label: "Shipping timelines", href: "#shipping" },
+          { label: "Catalog flow", href: "#ordering" },
+          { label: "Storefront details", href: "#shipping" },
           { label: "Storage & product care", href: "#products" },
-          { label: "Returns & refunds", href: "#returns-refunds" },
+          { label: "Research use", href: "#general" },
         ]}
       />
 

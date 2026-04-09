@@ -87,7 +87,7 @@ export function ProductDetail({ product, relatedProducts }: ProductDetailProps) 
                 {product.name}
               </h1>
               <p className="mt-5 max-w-2xl text-[1rem] leading-7 text-white/74 sm:text-[1.05rem]">
-                {product.description}
+                {product.longDescription}
               </p>
 
               <div className="mt-7 flex flex-wrap items-end gap-x-4 gap-y-3">
@@ -107,9 +107,9 @@ export function ProductDetail({ product, relatedProducts }: ProductDetailProps) 
 
               <div className="mt-8 flex flex-wrap gap-3">
                 {[
-                  "COA documented",
-                  "Prep essentials included",
-                  "Discreet shipping",
+                  "Documentation-led",
+                  "Complete kit format",
+                  "Research use only",
                 ].map((item) => (
                   <span
                     key={item}
@@ -145,7 +145,7 @@ export function ProductDetail({ product, relatedProducts }: ProductDetailProps) 
       </section>
 
       <section className="py-12 sm:py-14 lg:py-16">
-        <div className="mx-auto grid max-w-[1240px] gap-8 px-5 sm:px-8 lg:grid-cols-[1.05fr_0.95fr] lg:gap-10 lg:px-12">
+        <div className="mx-auto grid max-w-[1240px] gap-8 px-5 sm:px-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-start lg:gap-10 lg:px-12">
           <div className="rounded-[2rem] bg-white p-6 ring-1 ring-[#e3e8ef] sm:p-8">
             <p className="text-[11px] font-medium uppercase tracking-[0.22em]" style={{ color: theme.accent }}>
               About this kit

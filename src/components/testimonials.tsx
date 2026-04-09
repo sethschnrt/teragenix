@@ -1,30 +1,30 @@
 import Link from "next/link";
 import { BadgeCheck, FileCheck2, FlaskConical, Truck } from "lucide-react";
 
-const proofPills = ["12,000+ researchers", "COA with every batch", "Discreet tracked shipping"] as const;
+const proofPills = ["Research use only", "COA-backed batches", "Complete kit format"] as const;
 
 const standards = [
-  "99%+ purity with HPLC verification",
-  "Third-party COA documentation",
-  "Bacteriostatic water and prep essentials included",
-  "Straightforward ordering with no hidden fees",
+  "Clear category-led browsing",
+  "COA-first quality positioning",
+  "Complete kit presentation",
+  "More coherent product discovery",
 ] as const;
 
 const proofCards = [
   {
     icon: FileCheck2,
     title: "Documentation first",
-    body: "Every batch is paired with a certificate of analysis, so the quality story is backed by paperwork, not vibes.",
+    body: "Quality positioning should be supported by documentation, clear product details, and language that feels credible instead of inflated.",
   },
   {
     icon: FlaskConical,
     title: "Kit-ready from day one",
-    body: "No piecing together supplies from multiple vendors. Your compound, bac water, syringes, and swabs land together.",
+    body: "The storefront should make the kit format obvious fast, so buyers understand what is included without digging through scattered copy.",
   },
   {
     icon: Truck,
     title: "A cleaner buying experience",
-    body: "Discreet tracked shipping, simple checkout, and support that actually answers without turning the process into a scavenger hunt.",
+    body: "Clear category paths, stronger product pages, and tighter merchandising make the storefront easier to move through from first click to product detail.",
   },
 ] as const;
 

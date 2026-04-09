@@ -20,11 +20,11 @@ export function FeaturedProducts() {
               FEATURED KITS
             </p>
             <h2 className="font-sans text-[2.5rem] font-semibold leading-[1.04] tracking-[-0.03em] text-[#0d262d] sm:text-[3.6rem]">
-              Research-ready, <br className="hidden sm:block" />
-              <span className="italic text-[#3b6ed6]">straight</span> out of the box.
+              Complete kits, <br className="hidden sm:block" />
+              <span className="italic text-[#3b6ed6]">cleanly</span> merchandised.
             </h2>
             <p className="mt-6 max-w-xl text-[1.05rem] leading-7 text-[#0d262d]/65">
-              Every Teragenix kit ships with the compound, bacteriostatic water, precision syringes, and alcohol swabs — inspected and bundled before it leaves the lab.
+              The featured grid is meant to make category, price, and kit format easy to scan without overexplaining the products.
             </p>
           </div>
 

@@ -14,7 +14,7 @@ export const dynamic = "force-static";
 export const metadata: Metadata = {
   title: "Teragenix — Research-Grade Peptide Kits, Redefined",
   description:
-    "Premium 99%+ purity peptide research kits bundled with bacteriostatic water, syringes, and alcohol swabs. Shipped fast, discreet, complete.",
+    "A cleaner storefront for browsing peptide research kits by category, comparing products faster, and moving through a more coherent catalog experience.",
 };
 
 export default function RootLayout({
