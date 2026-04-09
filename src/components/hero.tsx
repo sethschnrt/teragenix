@@ -160,7 +160,7 @@ export function Hero() {
                 className="tg-link-card tg-hero-card group relative block rounded-[20px] bg-white sm:rounded-[22px]"
               >
                 {/* MOBILE: horizontal layout (image left, label right) */}
-                <div className="flex h-[110px] items-center gap-3 overflow-hidden rounded-[20px] bg-[#f2f3f3] pr-4 sm:hidden">
+                <div className="tg-hero-card-panel flex h-[110px] items-center gap-3 overflow-hidden rounded-[20px] bg-[#f2f3f3] pr-4 sm:hidden">
                   <div
                     className="tg-hero-card-surface relative h-full w-[130px] flex-shrink-0 overflow-hidden rounded-[18px]"
                     style={{ backgroundColor: tile.tone }}
@@ -223,7 +223,7 @@ export function Hero() {
                   </div>
 
                   {/* Light grey content area flush to the bottom */}
-                  <div className="absolute inset-x-0 bottom-0 rounded-t-[18px] rounded-b-[22px] bg-[#f2f3f3] px-4 py-4 lg:rounded-t-[14px] lg:rounded-b-[18px] lg:px-3 lg:py-2.5">
+                  <div className="tg-hero-card-panel absolute inset-x-0 bottom-0 rounded-t-[18px] rounded-b-[22px] bg-[#f2f3f3] px-4 py-4 lg:rounded-t-[14px] lg:rounded-b-[18px] lg:px-3 lg:py-2.5">
                     <div className="flex items-center justify-between gap-3">
                       <p
                         className="text-[#242220]"

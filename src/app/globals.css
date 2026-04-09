@@ -236,6 +236,7 @@
   }
 
   .tg-hero-card-surface,
+  .tg-hero-card-panel,
   .tg-hero-card-action {
     transition:
       transform 220ms cubic-bezier(0.22, 1, 0.36, 1),
@@ -263,6 +264,11 @@
     .tg-hero-card:hover .tg-hero-card-surface {
       transform: translateY(-3px);
       box-shadow: 0 18px 32px -24px rgba(13, 38, 45, 0.28);
+    }
+
+    .tg-hero-card:hover .tg-hero-card-panel {
+      transform: translateY(-3px);
+      box-shadow: 0 16px 28px -24px rgba(13, 38, 45, 0.18);
     }
 
     .tg-hero-card:hover .tg-hero-card-action {
