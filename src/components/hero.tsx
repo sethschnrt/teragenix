@@ -162,7 +162,7 @@ export function Hero() {
                 {/* MOBILE: horizontal layout (image left, label right) */}
                 <div className="flex h-[110px] items-center gap-3 overflow-hidden rounded-[20px] bg-[#f2f3f3] pr-4 sm:hidden">
                   <div
-                    className="relative h-full w-[130px] flex-shrink-0 overflow-hidden rounded-[18px]"
+                    className="tg-hero-card-surface relative h-full w-[130px] flex-shrink-0 overflow-hidden rounded-[18px]"
                     style={{ backgroundColor: tile.tone }}
                   >
                     <div
@@ -174,7 +174,7 @@ export function Hero() {
                       <img
                         src={`${BASE_PATH}${tile.image}`}
                         alt={tile.title}
-                        className={`tg-link-card-media ${tile.mobileImageClass}`}
+                        className={`tg-link-card-media tg-hero-card-media ${tile.mobileImageClass}`}
                       />
                     </div>
                   </div>
@@ -190,7 +190,7 @@ export function Hero() {
                     >
                       {tile.title}
                     </p>
-                    <span className="flex h-7 w-7 items-center justify-center text-[#242220]">
+                    <span className="tg-hero-card-action flex h-7 w-7 items-center justify-center rounded-full text-[#242220]">
                       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                         <path d="M5 12h14" />
                         <path d="M13 5l7 7-7 7" />
@@ -203,7 +203,7 @@ export function Hero() {
                 <div className="relative hidden h-[244px] overflow-visible rounded-[22px] bg-white sm:block lg:h-[170px]">
                   {/* Pastel image field */}
                   <div
-                    className="absolute inset-x-0 top-[16px] h-[160px] overflow-visible rounded-[22px] lg:top-[8px] lg:h-[98px] lg:rounded-[18px]"
+                    className="tg-hero-card-surface absolute inset-x-0 top-[16px] h-[160px] overflow-visible rounded-[22px] lg:top-[8px] lg:h-[98px] lg:rounded-[18px]"
                     style={{ backgroundColor: tile.tone }}
                   >
                     <div
@@ -217,7 +217,7 @@ export function Hero() {
                       <img
                         src={`${BASE_PATH}${tile.desktopImage ?? tile.image}`}
                         alt={tile.title}
-                        className={`tg-link-card-media w-auto object-contain ${tile.desktopImageClass}`}
+                        className={`tg-link-card-media tg-hero-card-media w-auto object-contain ${tile.desktopImageClass}`}
                       />
                     </div>
                   </div>
@@ -236,7 +236,7 @@ export function Hero() {
                       >
                         {tile.title}
                       </p>
-                      <span className="flex h-7 w-7 items-center justify-center text-[#242220]">
+                      <span className="tg-hero-card-action flex h-7 w-7 items-center justify-center rounded-full text-[#242220]">
                         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                           <path d="M5 12h14" />
                           <path d="M13 5l7 7-7 7" />

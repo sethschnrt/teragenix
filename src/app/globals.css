@@ -235,6 +235,18 @@
     transition: color 180ms ease, opacity 180ms ease;
   }
 
+  .tg-hero-card-surface,
+  .tg-hero-card-action {
+    transition:
+      transform 220ms cubic-bezier(0.22, 1, 0.36, 1),
+      box-shadow 220ms cubic-bezier(0.22, 1, 0.36, 1),
+      background-color 220ms ease;
+  }
+
+  .tg-hero-card-media {
+    transition: transform 320ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
   @media (hover: hover) {
     .tg-link-card:hover {
       transform: translateY(-4px);
@@ -248,8 +260,23 @@
       border-color: transparent;
     }
 
+    .tg-hero-card:hover .tg-hero-card-surface {
+      transform: translateY(-3px);
+      box-shadow: 0 18px 32px -24px rgba(13, 38, 45, 0.28);
+    }
+
+    .tg-hero-card:hover .tg-hero-card-action {
+      transform: translateY(-2px);
+      background-color: rgba(255, 255, 255, 0.72);
+      box-shadow: 0 14px 24px -22px rgba(13, 38, 45, 0.22);
+    }
+
     .tg-link-card:hover .tg-link-card-media {
       transform: scale(1.035);
+    }
+
+    .tg-link-card.tg-hero-card:hover .tg-hero-card-media {
+      transform: scale(1.035) translateY(-2px);
     }
 
     .tg-link-pill:hover {

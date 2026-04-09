@@ -70,11 +70,11 @@ export function HowItWorks() {
         {/* Bottom CTA band */}
         <div className="mt-16 flex flex-col items-center gap-5 rounded-[2rem] bg-[linear-gradient(166deg,_#3b6ed6_0%,_#0d262d_100%)] px-8 py-12 text-center sm:mt-20 sm:flex-row sm:justify-between sm:text-left lg:px-14">
           <div>
-            <p className="mb-2 font-sans text-[11px] font-medium tracking-[0.22em] text-[#a8c5f5]">
+            <p className="mb-2 font-sans text-[11px] font-medium tracking-[0.22em] text-[#dbeafe]">
               READY TO START
             </p>
             <h3 className="font-sans text-[1.8rem] font-semibold leading-tight tracking-tight text-white sm:text-[2.2rem]">
-              A cleaner storefront, built around <span className="italic text-[#a8c5f5]">complete</span> kits.
+              A cleaner storefront, built around <span className="italic text-[#dbeafe]">complete</span> kits.
             </h3>
           </div>
           <Link
