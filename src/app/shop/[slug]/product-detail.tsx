@@ -84,10 +84,10 @@ export function ProductDetail({ product, relatedProducts }: ProductDetailProps) 
               <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-white/72">
                 {product.heroCategory}
               </p>
-              <h1 className="mt-3 max-w-3xl text-[2.5rem] font-semibold leading-[0.96] tracking-[-0.04em] text-white sm:text-[3.8rem]">
+              <h1 className="mt-3 max-w-3xl text-[2.2rem] font-semibold leading-[0.96] tracking-[-0.04em] text-white sm:text-[3.8rem]">
                 {product.name}
               </h1>
-              <p className="mt-5 max-w-2xl text-[1rem] leading-7 text-white/74 sm:text-[1.05rem]">
+              <p className="mt-4 max-w-2xl text-[0.96rem] leading-6 text-white/74 sm:mt-5 sm:text-[1.05rem] sm:leading-7">
                 {product.longDescription}
               </p>
 

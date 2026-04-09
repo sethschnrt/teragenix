@@ -56,8 +56,8 @@ export function EditorialSection({
 
   return (
     <section className={`relative overflow-hidden ${bgClass}`}>
-      <div className="mx-auto max-w-[1240px] px-5 py-24 sm:px-8 sm:py-28 lg:px-[120px] lg:py-[140px]">
-        <div className="relative grid items-start gap-16 lg:grid-cols-[440px_1fr] lg:gap-20">
+      <div className="mx-auto max-w-[1240px] px-5 py-18 sm:px-8 sm:py-24 lg:px-[120px] lg:py-[140px]">
+        <div className="relative grid items-start gap-14 lg:grid-cols-[440px_1fr] lg:gap-20">
           {/* LEFT COLUMN — image + feature card */}
           <div
             className={`relative order-2 flex flex-col items-center ${
@@ -180,7 +180,7 @@ export function EditorialSection({
             </p>
 
             {/* Twin lifestyle images (full-bleed) */}
-            <div className="mt-12 grid max-w-[620px] grid-cols-2 gap-5">
+            <div className="mt-10 grid max-w-[620px] grid-cols-1 gap-4 sm:mt-12 sm:grid-cols-2 sm:gap-5">
               {[twinA, twinB].map((src, i) => (
                 <div
                   key={i}
