@@ -71,14 +71,14 @@ export default function ShopPage() {
       <section
         className="relative overflow-hidden pt-24 sm:pt-28"
         style={{
-          background: `linear-gradient(162deg, ${currentTheme.accentDeep} 0%, #0d262d 100%)`,
+          background: "linear-gradient(162deg, #1e4a9e 0%, #0d262d 100%)",
         }}
       >
         <div
           className="pointer-events-none absolute inset-0"
           style={{
             backgroundImage:
-              `radial-gradient(circle at 76% 18%, ${currentTheme.soft}55, transparent 28%), radial-gradient(circle at 18% 18%, rgba(255,255,255,0.06), transparent 24%)`,
+              "radial-gradient(circle at 76% 18%, rgba(168,197,245,0.22), transparent 28%), radial-gradient(circle at 18% 18%, rgba(255,255,255,0.06), transparent 24%)",
           }}
         />
 
