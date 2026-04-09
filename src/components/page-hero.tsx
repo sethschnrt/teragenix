@@ -34,7 +34,7 @@ const variantStyles = {
   },
   about: {
     section: "bg-[linear-gradient(165deg,_#1e4a9e_0%,_#102e5d_48%,_#0d262d_100%)]",
-    halo: "radial-gradient(circle at 80% 22%, rgba(201,227,197,0.18), transparent 30%), radial-gradient(circle at 18% 16%, rgba(255,255,255,0.08), transparent 24%)",
+    halo: "radial-gradient(circle at 80% 22%, rgba(168,197,245,0.24), transparent 30%), radial-gradient(circle at 18% 16%, rgba(255,255,255,0.08), transparent 24%)",
     panel: "bg-white/9 ring-white/16",
     pill: "bg-white/10 text-white/88 ring-white/14 hover:bg-white/16",
     stat: "bg-white/8 ring-white/12",
@@ -111,7 +111,7 @@ export function PageHero({
           {(panelTitle || panelItems.length > 0) && (
             <div className={`rounded-[2rem] p-6 ring-1 backdrop-blur-md sm:p-7 ${styles.panel}`}>
               {panelEyebrow && (
-                <p className="mb-3 text-[11px] font-medium tracking-[0.22em] text-[#c9e3c5]">
+                <p className="mb-3 text-[11px] font-medium tracking-[0.22em] text-[#dbeafe]">
                   {panelEyebrow}
                 </p>
               )}
