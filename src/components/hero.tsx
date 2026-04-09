@@ -108,11 +108,11 @@ export function Hero() {
 
             {/* Headline */}
             <h1 className="mx-auto max-w-[900px] text-center lg:max-w-[760px]">
-              <span className="block text-[48px] font-bold leading-[0.98] tracking-[-0.03em] text-white sm:text-[60px] lg:text-[54px]">
-                Peptides,
+              <span className="block text-[48px] font-bold italic leading-[0.98] tracking-[-0.03em] text-[#a8c5f5] sm:text-[60px] lg:text-[54px]">
+                The Quality of Your Life,
               </span>
-              <span className="block text-[48px] font-bold leading-[0.98] tracking-[-0.03em] text-white sm:text-[60px] lg:text-[54px]">
-                <span className="text-[#a8c5f5] italic">redefined</span> for real life.
+              <span className="block text-[48px] font-bold italic leading-[0.98] tracking-[-0.03em] text-[#a8c5f5] sm:text-[60px] lg:text-[54px]">
+                Multiplied.
               </span>
             </h1>
 

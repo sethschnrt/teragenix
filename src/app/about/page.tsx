@@ -15,21 +15,8 @@ import {
 
 const heroStats = [
   { value: "4", label: "Focus categories" },
-  { value: "Kit", label: "Complete format" },
-  { value: "COA", label: "Documentation-led" },
-  { value: "RUO", label: "Research use only" },
-];
-
-const heroPainPoints = [
-  "Cluttered category flow",
-  "Weak kit framing",
-  "Trust language doing too much",
-];
-
-const heroDirection = [
-  "Clearer category paths",
-  "More merchandised kit pages",
-  "Calmer documentation-led trust",
+  { value: "Kit", label: "Merchandised format" },
+  { value: "COA", label: "Documentation first" },
 ];
 
 const workflowCards = [
@@ -85,16 +72,16 @@ const qualityPoints = [
 export default function AboutPage() {
   return (
     <main>
-      <section className="relative overflow-hidden bg-[linear-gradient(160deg,_#173f85_0%,_#12366f_38%,_#0d262d_100%)] pt-24 text-white sm:pt-28 lg:pt-32">
-        <div className="pointer-events-none absolute inset-0 opacity-70 [background-image:radial-gradient(circle_at_18%_16%,rgba(255,255,255,0.1),transparent_22%),radial-gradient(circle_at_82%_20%,rgba(168,197,245,0.2),transparent_28%),linear-gradient(rgba(255,255,255,0.06)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.05)_1px,transparent_1px)] [background-size:auto,auto,32px_32px,32px_32px]" />
-        <div className="pointer-events-none absolute inset-x-0 bottom-[-3.5rem] flex justify-center">
-          <span className="select-none whitespace-nowrap font-sans text-[5rem] font-extrabold leading-none tracking-[-0.06em] text-white/[0.05] sm:text-[7rem] lg:text-[9rem]">
+      <section className="relative overflow-hidden bg-[linear-gradient(160deg,_#173f85_0%,_#12366f_42%,_#0d262d_100%)] pt-24 text-white sm:pt-28 lg:pt-32">
+        <div className="pointer-events-none absolute inset-0 opacity-60 [background-image:radial-gradient(circle_at_18%_16%,rgba(255,255,255,0.09),transparent_20%),radial-gradient(circle_at_82%_18%,rgba(168,197,245,0.18),transparent_26%)]" />
+        <div className="pointer-events-none absolute inset-x-0 bottom-[-3rem] flex justify-center">
+          <span className="select-none whitespace-nowrap font-sans text-[5rem] font-extrabold leading-none tracking-[-0.06em] text-white/[0.045] sm:text-[7rem] lg:text-[8.5rem]">
             teragenix
           </span>
         </div>
 
-        <div className="relative mx-auto max-w-[1240px] px-5 pb-10 sm:px-8 lg:px-12 lg:pb-12">
-          <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:gap-10">
+        <div className="relative mx-auto max-w-[1240px] px-5 pb-12 sm:px-8 lg:px-12 lg:pb-14">
+          <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:gap-12">
             <div className="max-w-xl">
               <div className="inline-flex items-center gap-3 rounded-full bg-white/10 px-4 py-2.5 ring-1 ring-white/16 backdrop-blur-sm">
                 <Microscope className="h-4.5 w-4.5 text-[#a8c5f5]" />
@@ -103,12 +90,12 @@ export default function AboutPage() {
                 </span>
               </div>
 
-              <h1 className="mt-6 max-w-lg text-[2.7rem] font-semibold leading-[0.94] tracking-[-0.05em] text-white sm:text-[3.4rem] lg:text-[4.3rem]">
-                More signal. Less clutter. Better kit pages.
+              <h1 className="mt-6 max-w-lg text-[2.75rem] font-semibold leading-[0.95] tracking-[-0.05em] text-white sm:text-[3.5rem] lg:text-[4.15rem]">
+                A cleaner standard for research kits.
               </h1>
 
-              <p className="mt-5 max-w-xl text-[1rem] leading-7 text-white/74 sm:text-[1.06rem]">
-                Teragenix is being shaped into a sharper research storefront where category flow, kit presentation, and quality cues feel deliberate instead of generic.
+              <p className="mt-5 max-w-xl text-[1rem] leading-7 text-white/74 sm:text-[1.05rem]">
+                Teragenix is being shaped into a calmer, sharper storefront where products are easier to scan, kits are easier to understand, and quality cues feel more credible.
               </p>
 
               <div className="mt-7 flex flex-wrap gap-3">
@@ -124,78 +111,45 @@ export default function AboutPage() {
                 >
                   Quality system
                 </Link>
-                <Link
-                  href="/shop"
-                  className="tg-link-pill inline-flex items-center rounded-full bg-white/10 px-4 py-2.5 text-[12px] font-medium tracking-[0.04em] text-white ring-1 ring-white/14 backdrop-blur-sm"
-                >
-                  Browse kits
-                  <ArrowUpRight className="tg-link-pill-icon ml-2 h-3.5 w-3.5" />
-                </Link>
               </div>
             </div>
 
-            <div className="relative">
-              <div className="absolute -top-4 right-5 rounded-full bg-[#a8c5f5] px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-[#12366f] shadow-[0_10px_30px_rgba(9,20,40,0.2)]">
-                current storefront pass
+            <div className="rounded-[2rem] bg-white/10 p-5 ring-1 ring-white/14 backdrop-blur-md sm:p-6">
+              <p className="text-[11px] font-medium tracking-[0.2em] text-[#dbeafe]">
+                THE TERAGENIX SHIFT
+              </p>
+              <h2 className="mt-3 max-w-md text-[1.7rem] font-semibold leading-tight tracking-[-0.03em] text-white sm:text-[2rem]">
+                Less noise, better structure.
+              </h2>
+
+              <div className="mt-6 space-y-3">
+                {[
+                  ["Category browsing", "Sharper, easier to scan"],
+                  ["Kit presentation", "More complete and merchandised"],
+                  ["Quality language", "Calmer and documentation-led"],
+                ].map(([label, value]) => (
+                  <div
+                    key={label}
+                    className="flex items-center justify-between gap-4 rounded-[1.25rem] bg-[#0d2a56]/58 px-4 py-4 ring-1 ring-white/10"
+                  >
+                    <span className="text-sm font-medium text-white/66">{label}</span>
+                    <span className="text-sm font-semibold text-white">{value}</span>
+                  </div>
+                ))}
               </div>
 
-              <div className="rounded-[2rem] bg-white/10 p-4 ring-1 ring-white/14 backdrop-blur-md sm:p-5">
-                <div className="grid gap-4 lg:grid-cols-[0.78fr_1.22fr]">
-                  <div className="rounded-[1.5rem] bg-[#0c2346]/70 p-5 ring-1 ring-white/8">
-                    <p className="text-[11px] font-medium tracking-[0.18em] text-white/54">
-                      WHAT WE ARE LEAVING BEHIND
+              <div className="mt-5 grid gap-3 sm:grid-cols-3">
+                {heroStats.map((stat) => (
+                  <div
+                    key={stat.label}
+                    className="rounded-[1.15rem] bg-white/7 px-4 py-3.5 ring-1 ring-white/10"
+                  >
+                    <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-white/52">
+                      {stat.label}
                     </p>
-                    <div className="mt-4 space-y-3">
-                      {heroPainPoints.map((item) => (
-                        <div
-                          key={item}
-                          className="rounded-[1rem] border border-white/8 bg-white/6 px-3.5 py-3 text-sm leading-5 text-white/72"
-                        >
-                          {item}
-                        </div>
-                      ))}
-                    </div>
+                    <p className="mt-2 text-[1rem] font-semibold text-white">{stat.value}</p>
                   </div>
-
-                  <div className="rounded-[1.5rem] bg-white/[0.08] p-5 ring-1 ring-white/10">
-                    <div className="flex items-center justify-between gap-4">
-                      <div>
-                        <p className="text-[11px] font-medium tracking-[0.18em] text-[#dbeafe]">
-                          WHAT MAKES IT DIFFERENT
-                        </p>
-                        <h2 className="mt-2 max-w-sm text-[1.55rem] font-semibold leading-tight tracking-[-0.03em] text-white sm:text-[1.8rem]">
-                          A storefront system, not a pile of product cards.
-                        </h2>
-                      </div>
-                    </div>
-
-                    <div className="mt-5 grid gap-3 sm:grid-cols-3">
-                      {heroDirection.map((item) => (
-                        <div
-                          key={item}
-                          className="rounded-[1.15rem] bg-white/7 p-3.5 ring-1 ring-white/10"
-                        >
-                          <CheckCircle2 className="h-4.5 w-4.5 text-[#a8c5f5]" />
-                          <p className="mt-3 text-sm leading-5 text-white/86">{item}</p>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-
-                <div className="mt-4 grid gap-3 sm:grid-cols-4">
-                  {heroStats.map((stat) => (
-                    <div
-                      key={stat.label}
-                      className="rounded-[1.15rem] bg-white/7 px-4 py-3.5 ring-1 ring-white/10"
-                    >
-                      <p className="text-[0.9rem] font-medium uppercase tracking-[0.16em] text-white/54">
-                        {stat.label}
-                      </p>
-                      <p className="mt-2 text-[1.1rem] font-semibold text-white">{stat.value}</p>
-                    </div>
-                  ))}
-                </div>
+                ))}
               </div>
             </div>
           </div>
