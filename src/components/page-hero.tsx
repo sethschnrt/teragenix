@@ -17,7 +17,8 @@ type PageHeroProps = {
   eyebrow: string;
   title: string;
   description: string;
-  variant?: "shop" | "about" | "faq";
+  variant?: "shop" | "subpage";
+  detail?: string;
   highlights?: HeroLink[];
   panelEyebrow?: string;
   panelTitle?: string;
@@ -34,26 +35,18 @@ const variantStyles = {
     stat: "bg-white/8 ring-white/12",
     title: "text-[2.85rem] sm:text-[4.1rem] lg:text-[4.65rem]",
     contentPb: "pb-16 sm:pb-20 lg:pb-24",
+    showWordmark: true,
   },
-  about: {
-    section: "bg-[linear-gradient(165deg,_#1e4a9e_0%,_#102e5d_48%,_#0d262d_100%)]",
-    padding: "pt-24 sm:pt-26",
-    halo: "radial-gradient(circle at 80% 22%, rgba(168,197,245,0.24), transparent 30%), radial-gradient(circle at 18% 16%, rgba(255,255,255,0.08), transparent 24%)",
-    panel: "bg-white/9 ring-white/16",
-    pill: "bg-white/10 text-white/88 ring-white/14 hover:bg-white/16",
-    stat: "bg-white/8 ring-white/12",
-    title: "text-[2.25rem] sm:text-[3rem] lg:text-[3.35rem]",
-    contentPb: "pb-12 sm:pb-14 lg:pb-16",
-  },
-  faq: {
-    section: "bg-[linear-gradient(165deg,_#102f63_0%,_#17457e_45%,_#0d262d_100%)]",
-    padding: "pt-28 sm:pt-32",
-    halo: "radial-gradient(circle at 82% 18%, rgba(219,234,254,0.22), transparent 28%), radial-gradient(circle at 16% 22%, rgba(255,255,255,0.08), transparent 24%)",
+  subpage: {
+    section: "bg-[linear-gradient(162deg,_#173f85_0%,_#0d262d_100%)]",
+    padding: "pt-24 sm:pt-28",
+    halo: "radial-gradient(circle at 76% 18%, rgba(168,197,245,0.22), transparent 28%), radial-gradient(circle at 18% 18%, rgba(255,255,255,0.06), transparent 24%)",
     panel: "bg-white/10 ring-white/18",
     pill: "bg-white/10 text-white/88 ring-white/14 hover:bg-white/16",
     stat: "bg-white/8 ring-white/12",
-    title: "text-[2.85rem] sm:text-[4.1rem] lg:text-[4.65rem]",
-    contentPb: "pb-16 sm:pb-20 lg:pb-24",
+    title: "text-[2rem] sm:text-[2.45rem]",
+    contentPb: "pb-7 sm:pb-8",
+    showWordmark: false,
   },
 } as const;
 
@@ -63,12 +56,14 @@ export function PageHero({
   title,
   description,
   variant = "shop",
+  detail,
   highlights = [],
   panelEyebrow,
   panelTitle,
   panelItems = [],
 }: PageHeroProps) {
   const styles = variantStyles[variant];
+  const hasPanel = Boolean(panelTitle || panelItems.length > 0);
 
   return (
     <section className={`relative overflow-hidden ${styles.section} ${styles.padding} text-white`}>
@@ -77,32 +72,41 @@ export function PageHero({
         style={{ backgroundImage: styles.halo }}
       />
 
-      <div className="pointer-events-none absolute inset-x-0 bottom-[-3.5rem] flex justify-center">
-        <span className="select-none whitespace-nowrap font-sans text-[6rem] font-extrabold leading-none tracking-[-0.05em] text-white/[0.04] sm:text-[8rem] lg:text-[10rem]">
-          teragenix
-        </span>
-      </div>
+      {styles.showWordmark && (
+        <div className="pointer-events-none absolute inset-x-0 bottom-[-3.5rem] flex justify-center">
+          <span className="select-none whitespace-nowrap font-sans text-[6rem] font-extrabold leading-none tracking-[-0.05em] text-white/[0.04] sm:text-[8rem] lg:text-[10rem]">
+            teragenix
+          </span>
+        </div>
+      )}
 
       <div className={`relative mx-auto max-w-[1240px] px-5 sm:px-8 lg:px-12 ${styles.contentPb}`}>
-        <div className="grid gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:items-end lg:gap-12">
+        <div
+          className={
+            hasPanel
+              ? "grid gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:items-end lg:gap-12"
+              : "max-w-2xl"
+          }
+        >
           <div className="max-w-3xl">
-            <div className="mb-6 inline-flex items-center gap-3 rounded-full bg-white/10 px-4 py-2.5 ring-1 ring-white/16 backdrop-blur-sm">
-              <Icon className="h-4.5 w-4.5 text-[#a8c5f5]" />
-              <span className="text-[11px] font-medium tracking-[0.18em] text-white/86">
+            <div className="mb-3 flex flex-wrap items-center gap-3">
+              <span className="inline-flex items-center rounded-full bg-white/10 px-3 py-1.5 text-[11px] font-medium tracking-[0.18em] text-white/84 ring-1 ring-white/14 backdrop-blur-sm">
+                <Icon className="mr-2 h-3.5 w-3.5 text-[#a8c5f5]" />
                 {eyebrow}
               </span>
+              {detail && <span className="text-[12px] text-white/60">{detail}</span>}
             </div>
 
             <h1 className={`max-w-3xl font-semibold leading-[0.98] tracking-[-0.035em] text-white ${styles.title}`}>
               {title}
             </h1>
 
-            <p className="mt-6 max-w-2xl text-[1.02rem] leading-7 text-white/74 sm:text-[1.08rem]">
+            <p className="mt-2 max-w-2xl text-[0.96rem] leading-6 text-white/72 sm:text-[1rem]">
               {description}
             </p>
 
             {highlights.length > 0 && (
-              <div className="mt-8 flex flex-wrap gap-3">
+              <div className="mt-5 flex flex-wrap gap-3">
                 {highlights.map((item) => (
                   <Link
                     key={`${item.label}-${item.href}`}
@@ -117,7 +121,7 @@ export function PageHero({
             )}
           </div>
 
-          {(panelTitle || panelItems.length > 0) && (
+          {hasPanel && (
             <div className={`rounded-[2rem] p-6 ring-1 backdrop-blur-md sm:p-7 ${styles.panel}`}>
               {panelEyebrow && (
                 <p className="mb-3 text-[11px] font-medium tracking-[0.22em] text-[#dbeafe]">

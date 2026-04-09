@@ -10,23 +10,10 @@ export default function FaqPage() {
       <PageHero
         icon={HelpCircle}
         eyebrow="FAQ"
+        detail="Research-use answers and ordering basics"
         title="Straight answers, before you choose a kit."
         description="Use this page to understand research-use positioning, product format, category flow, and the current storefront structure without digging through the whole site."
-        variant="faq"
-        highlights={[
-          { label: "General", href: "#general" },
-          { label: "Ordering", href: "#ordering" },
-          { label: "Shipping", href: "#shipping" },
-          { label: "Products", href: "#products" },
-        ]}
-        panelEyebrow="POPULAR TOPICS"
-        panelTitle="Jump to the section you actually need."
-        panelItems={[
-          { label: "Catalog flow", href: "#ordering" },
-          { label: "Storefront details", href: "#shipping" },
-          { label: "Storage & product care", href: "#products" },
-          { label: "Research use", href: "#general" },
-        ]}
+        variant="subpage"
       />
 
       <FaqAccordion />
