@@ -41,9 +41,9 @@ export default function Home() {
         cardTitle="Everything you need — included:"
         ctaLabel="Shop metabolic kits"
         ctaHref="/shop?category=fat-loss"
-        image1="/images/generated/refresh-v1/metabolic-hero-tight.png"
-        image2="/images/generated/lifestyle-v1/metabolic-2-couple-walking.png"
-        image3="/images/generated/lifestyle-v1/metabolic-3-family-dinner.png"
+        image1="/images/generated/refresh-v1/metabolic-hero-tight.webp"
+        image2="/images/generated/lifestyle-v1/metabolic-2-couple-walking.webp"
+        image3="/images/generated/lifestyle-v1/metabolic-3-family-dinner.webp"
         heroMode="framed"
         background="white"
       />
@@ -68,9 +68,9 @@ export default function Home() {
         cardTitle="Our quality promise:"
         ctaLabel="Read quality standards"
         ctaHref="/about"
-        image1="/images/generated/lifestyle-v1-cutout/quality-1-hero.png"
-        image2="/images/generated/lifestyle-v1/quality-2-glassware.png"
-        image3="/images/generated/lifestyle-v1/quality-3-yoga-couple.png"
+        image1="/images/generated/lifestyle-v1-cutout/quality-1-hero.webp"
+        image2="/images/generated/lifestyle-v1/quality-2-glassware.webp"
+        image3="/images/generated/lifestyle-v1/quality-3-yoga-couple.webp"
         reverse
         background="cream"
       />

@@ -93,7 +93,7 @@ export const products: Product[] = [
       "Retatrutide is a multi-receptor metabolic research peptide studied for its activity across incretin-related pathways. This complete kit includes 10mg lyophilized compound, bacteriostatic water, syringes, and swabs for laboratory handling and reconstitution workflows.",
     badge: "Popular",
     badgeColor: "bg-[#4A90D9]",
-    image: "/images/vials/retatrutide.png",
+    image: "/images/vials/retatrutide.webp",
     specifications: {
       purity: "99%+",
       quantity: "10mg per vial",
@@ -122,7 +122,7 @@ export const products: Product[] = [
       "Tesamorelin is a GHRH analog widely discussed in metabolic and body composition research. This ready-to-study kit includes 10mg lyophilized peptide, bacteriostatic water, syringes, and swabs for clean lab preparation.",
     badge: "Best Seller",
     badgeColor: "bg-emerald-600",
-    image: "/images/vials/tesamorelin.png",
+    image: "/images/vials/tesamorelin.webp",
     specifications: {
       purity: "99%+",
       quantity: "10mg per vial",
@@ -151,7 +151,7 @@ export const products: Product[] = [
       "Melanotan II is a melanocortin research peptide studied in pigmentation and receptor-signaling contexts. This complete kit includes 10mg lyophilized compound and the reconstitution essentials needed for research workflows.",
     badge: "New",
     badgeColor: "bg-violet-600",
-    image: "/images/vials/melanotan-ii.png",
+    image: "/images/vials/melanotan-ii.webp",
     specifications: {
       purity: "99%+",
       quantity: "10mg per vial",
@@ -180,7 +180,7 @@ export const products: Product[] = [
       "Glow 70 is a beauty-focused research blend designed for customers interested in cosmetic peptide categories. This kit includes a 70mg lyophilized vial plus the reconstitution supplies needed for consistent lab prep.",
     badge: "Trending",
     badgeColor: "bg-rose-600",
-    image: "/images/vials/glow-70.png",
+    image: "/images/vials/glow-70.webp",
     specifications: {
       purity: "99%+",
       quantity: "70mg per vial",
@@ -207,7 +207,7 @@ export const products: Product[] = [
       "600mg Glutathione + bacteriostatic water + syringes + alcohol swabs. Antioxidant research kit.",
     longDescription:
       "Glutathione is a widely known antioxidant compound that appears in recovery and cosmetic-adjacent research conversations. This kit includes a 600mg vial with core reconstitution supplies for convenient lab setup.",
-    image: "/images/vials/glutathione.png",
+    image: "/images/vials/glutathione.webp",
     specifications: {
       purity: "99%+",
       quantity: "600mg per vial",

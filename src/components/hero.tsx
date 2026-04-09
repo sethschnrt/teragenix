@@ -18,8 +18,8 @@ const heroTiles: HeroTile[] = [
   {
     title: "Fat Loss",
     href: "/shop?category=fat-loss",
-    image: "/images/generated/life-benefits-v13-cutout/confidence-jeans-belt.png",
-    desktopImage: "/images/generated/life-benefits-v13-cutout/confidence-jeans-belt-desktop-bottom.png",
+    image: "/images/generated/life-benefits-v13-cutout/confidence-jeans-belt.webp",
+    desktopImage: "/images/generated/life-benefits-v13-cutout/confidence-jeans-belt-desktop-bottom.webp",
     tone: "#e7f3ea",
     mobileImageAlign: "bottom",
     desktopImageAlign: "bottom",
@@ -29,7 +29,7 @@ const heroTiles: HeroTile[] = [
   {
     title: "Recovery",
     href: "/shop?category=recovery",
-    image: "/images/generated/hero-cards-v2-cutout/recovery-man-31.png",
+    image: "/images/generated/hero-cards-v2-cutout/recovery-man-31.webp",
     tone: "#e4f3f5",
     mobileImageAlign: "bottom",
     desktopImageAlign: "bottom",
@@ -39,7 +39,7 @@ const heroTiles: HeroTile[] = [
   {
     title: "Longevity",
     href: "/shop?category=longevity",
-    image: "/images/generated/hero-cards-v9-cutout/woman-47-cream-seated.png",
+    image: "/images/generated/hero-cards-v9-cutout/woman-47-cream-seated.webp",
     tone: "#f7eee2",
     mobileImageAlign: "bottom",
     desktopImageAlign: "bottom",
@@ -49,8 +49,8 @@ const heroTiles: HeroTile[] = [
   {
     title: "Vitality",
     href: "/shop?category=vitality",
-    image: "/images/generated/life-benefits-v13-cutout/active-life-pickleball-centered.png",
-    desktopImage: "/images/generated/life-benefits-v13-cutout/active-life-pickleball-desktop-bottom.png",
+    image: "/images/generated/life-benefits-v13-cutout/active-life-pickleball-centered.webp",
+    desktopImage: "/images/generated/life-benefits-v13-cutout/active-life-pickleball-desktop-bottom.webp",
     tone: "#eee7fb",
     mobileImageAlign: "center",
     desktopImageAlign: "desktop-bottom",
