@@ -13,11 +13,7 @@ import {
   CheckCircle2,
 } from "lucide-react";
 
-const heroStats = [
-  { value: "4", label: "Focus categories" },
-  { value: "Kit", label: "Merchandised format" },
-  { value: "COA", label: "Documentation first" },
-];
+const BASE_PATH = process.env.NODE_ENV === "production" ? "/teragenix" : "";
 
 const workflowCards = [
   {
@@ -81,7 +77,7 @@ export default function AboutPage() {
         </div>
 
         <div className="relative mx-auto max-w-[1240px] px-5 pb-12 sm:px-8 lg:px-12 lg:pb-14">
-          <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:gap-12">
+          <div className="grid gap-8 lg:grid-cols-[0.92fr_1.08fr] lg:items-center lg:gap-12">
             <div className="max-w-xl">
               <div className="inline-flex items-center gap-3 rounded-full bg-white/10 px-4 py-2.5 ring-1 ring-white/16 backdrop-blur-sm">
                 <Microscope className="h-4.5 w-4.5 text-[#a8c5f5]" />
@@ -95,7 +91,7 @@ export default function AboutPage() {
               </h1>
 
               <p className="mt-5 max-w-xl text-[1rem] leading-7 text-white/74 sm:text-[1.05rem]">
-                Teragenix is being shaped into a calmer, sharper storefront where products are easier to scan, kits are easier to understand, and quality cues feel more credible.
+                Teragenix is building a calmer, more credible storefront where kit presentation, product clarity, and quality cues feel intentional from the first glance.
               </p>
 
               <div className="mt-7 flex flex-wrap gap-3">
@@ -114,42 +110,16 @@ export default function AboutPage() {
               </div>
             </div>
 
-            <div className="rounded-[2rem] bg-white/10 p-5 ring-1 ring-white/14 backdrop-blur-md sm:p-6">
-              <p className="text-[11px] font-medium tracking-[0.2em] text-[#dbeafe]">
-                THE TERAGENIX SHIFT
-              </p>
-              <h2 className="mt-3 max-w-md text-[1.7rem] font-semibold leading-tight tracking-[-0.03em] text-white sm:text-[2rem]">
-                Less noise, better structure.
-              </h2>
-
-              <div className="mt-6 space-y-3">
-                {[
-                  ["Category browsing", "Sharper, easier to scan"],
-                  ["Kit presentation", "More complete and merchandised"],
-                  ["Quality language", "Calmer and documentation-led"],
-                ].map(([label, value]) => (
-                  <div
-                    key={label}
-                    className="flex items-center justify-between gap-4 rounded-[1.25rem] bg-[#0d2a56]/58 px-4 py-4 ring-1 ring-white/10"
-                  >
-                    <span className="text-sm font-medium text-white/66">{label}</span>
-                    <span className="text-sm font-semibold text-white">{value}</span>
-                  </div>
-                ))}
-              </div>
-
-              <div className="mt-5 grid gap-3 sm:grid-cols-3">
-                {heroStats.map((stat) => (
-                  <div
-                    key={stat.label}
-                    className="rounded-[1.15rem] bg-white/7 px-4 py-3.5 ring-1 ring-white/10"
-                  >
-                    <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-white/52">
-                      {stat.label}
-                    </p>
-                    <p className="mt-2 text-[1rem] font-semibold text-white">{stat.value}</p>
-                  </div>
-                ))}
+            <div className="relative mx-auto w-full max-w-[640px]">
+              <div className="absolute inset-0 rounded-[2rem] bg-[radial-gradient(circle_at_50%_25%,rgba(168,197,245,0.34),transparent_58%)] blur-2xl" />
+              <div className="relative overflow-hidden rounded-[2rem] border border-white/14 bg-white/8 p-3 shadow-[0_30px_80px_rgba(4,12,24,0.28)] backdrop-blur-md sm:p-4">
+                <div className="overflow-hidden rounded-[1.5rem] bg-[linear-gradient(180deg,rgba(255,255,255,0.16),rgba(255,255,255,0.04))] ring-1 ring-white/10">
+                  <img
+                    src={`${BASE_PATH}/images/generated/lifestyle-v1/quality-2-glassware.png`}
+                    alt="Laboratory glassware styled in the Teragenix brand aesthetic"
+                    className="h-[340px] w-full object-cover object-center sm:h-[420px] lg:h-[460px]"
+                  />
+                </div>
               </div>
             </div>
           </div>
