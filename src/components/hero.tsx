@@ -23,7 +23,7 @@ const heroTiles: HeroTile[] = [
     tone: "#e7f3ea",
     mobileImageAlign: "bottom",
     desktopImageAlign: "bottom",
-    mobileImageClass: "h-[100%] w-auto max-w-[135%] object-contain",
+    mobileImageClass: "h-[100%] w-auto max-w-[135%] translate-y-[10px] object-contain",
     desktopImageClass: "h-[228px] max-w-[96%] lg:h-[150px] lg:max-w-[96%]",
   },
   {
