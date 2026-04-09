@@ -208,16 +208,16 @@ export default function ShopPage() {
                   </p>
 
                   {/* Price + cart */}
-                  <div className="flex items-center justify-between pt-3">
-                    <div className="flex items-center gap-2">
-                      <span className="text-base sm:text-lg font-bold text-foreground">
+                  <div className="flex items-end justify-between gap-3 pt-3">
+                    <div className="min-w-0">
+                      <span className="block text-base font-bold text-foreground sm:text-lg">
                         ${product.price}
                       </span>
-                      <span className="text-xs sm:text-sm text-muted-foreground line-through">
+                      <span className="mt-1 block text-xs text-muted-foreground line-through sm:mt-0 sm:text-sm">
                         ${product.originalPrice}
                       </span>
                     </div>
-                    <span className="flex h-9 w-9 items-center justify-center rounded-full" style={{ backgroundColor: productTheme.softAlt, color: productTheme.accent }}>
+                    <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full sm:h-9 sm:w-9" style={{ backgroundColor: productTheme.softAlt, color: productTheme.accent }}>
                       <ArrowUpRight className="h-4 w-4" />
                     </span>
                   </div>

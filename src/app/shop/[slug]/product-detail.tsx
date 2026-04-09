@@ -258,12 +258,12 @@ export function ProductDetail({ product, relatedProducts }: ProductDetailProps) 
                     <div className="flex flex-1 flex-col gap-2.5 px-5 pb-5 pt-4">
                       <h3 className="text-base font-semibold leading-tight text-[#0d262d]">{rp.name}</h3>
                       <p className="flex-1 text-[13px] leading-6 text-[#0d262d]/62">{rp.description}</p>
-                      <div className="flex items-center justify-between pt-3">
-                        <div className="flex items-baseline gap-2">
-                          <span className="text-lg font-semibold text-[#0d262d]">${rp.price}</span>
-                          <span className="text-xs text-[#0d262d]/38 line-through">${rp.originalPrice}</span>
+                      <div className="flex items-end justify-between gap-3 pt-3">
+                        <div className="min-w-0">
+                          <span className="block text-lg font-semibold text-[#0d262d]">${rp.price}</span>
+                          <span className="mt-1 block text-xs text-[#0d262d]/38 line-through sm:mt-0">${rp.originalPrice}</span>
                         </div>
-                        <span className="flex h-9 w-9 items-center justify-center rounded-full" style={{ backgroundColor: relatedTheme.softAlt, color: relatedTheme.accent }}>
+                        <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full sm:h-9 sm:w-9" style={{ backgroundColor: relatedTheme.softAlt, color: relatedTheme.accent }}>
                           <ArrowUpRight className="h-4 w-4" />
                         </span>
                       </div>

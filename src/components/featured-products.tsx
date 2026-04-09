@@ -85,17 +85,17 @@ export function FeaturedProducts() {
                     {product.description}
                   </p>
 
-                  <div className="mt-auto flex items-end justify-between pt-4">
-                    <div className="flex items-baseline gap-2">
-                      <span className="text-xl font-semibold tracking-tight text-[#0d262d]">
+                  <div className="mt-auto flex items-end justify-between gap-3 pt-4">
+                    <div className="min-w-0">
+                      <span className="block text-xl font-semibold tracking-tight text-[#0d262d]">
                         ${product.price}
                       </span>
-                      <span className="text-xs text-[#0d262d]/40 line-through">
+                      <span className="mt-1 block text-xs text-[#0d262d]/40 line-through sm:mt-0">
                         ${product.originalPrice}
                       </span>
                     </div>
 
-                    <div className="flex h-9 w-9 items-center justify-center rounded-full transition" style={{ backgroundColor: theme.softAlt, color: theme.accent }}>
+                    <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full transition sm:h-9 sm:w-9" style={{ backgroundColor: theme.softAlt, color: theme.accent }}>
                       <ArrowUpRight className="h-4 w-4" />
                     </div>
                   </div>
