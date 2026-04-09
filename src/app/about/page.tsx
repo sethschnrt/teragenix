@@ -68,16 +68,11 @@ const qualityPoints = [
 export default function AboutPage() {
   return (
     <main>
-      <section className="relative overflow-hidden bg-[linear-gradient(160deg,_#173f85_0%,_#12366f_42%,_#0d262d_100%)] pt-24 text-white sm:pt-28 lg:pt-32">
+      <section className="relative overflow-hidden bg-[linear-gradient(160deg,_#173f85_0%,_#12366f_42%,_#0d262d_100%)] pt-20 text-white sm:pt-24 lg:pt-28">
         <div className="pointer-events-none absolute inset-0 opacity-60 [background-image:radial-gradient(circle_at_18%_16%,rgba(255,255,255,0.09),transparent_20%),radial-gradient(circle_at_82%_18%,rgba(168,197,245,0.18),transparent_26%)]" />
-        <div className="pointer-events-none absolute inset-x-0 bottom-[-3rem] flex justify-center">
-          <span className="select-none whitespace-nowrap font-sans text-[5rem] font-extrabold leading-none tracking-[-0.06em] text-white/[0.045] sm:text-[7rem] lg:text-[8.5rem]">
-            teragenix
-          </span>
-        </div>
 
-        <div className="relative mx-auto max-w-[1240px] px-5 pb-14 sm:px-8 lg:px-12 lg:pb-18">
-          <div className="mx-auto flex max-w-[760px] flex-col items-center text-center">
+        <div className="relative mx-auto max-w-[1240px] px-5 pb-10 sm:px-8 sm:pb-12 lg:px-12 lg:pb-14">
+          <div className="mx-auto flex max-w-[720px] flex-col items-center text-center">
             <div className="inline-flex items-center gap-3 rounded-full bg-white/10 px-4 py-2.5 ring-1 ring-white/16 backdrop-blur-sm">
               <Microscope className="h-4.5 w-4.5 text-[#a8c5f5]" />
               <span className="text-[11px] font-medium tracking-[0.18em] text-white/86">
@@ -85,15 +80,15 @@ export default function AboutPage() {
               </span>
             </div>
 
-            <h1 className="mt-6 max-w-[12ch] text-[2.85rem] font-semibold leading-[0.95] tracking-[-0.05em] text-white sm:text-[3.65rem] lg:text-[4.5rem]">
+            <h1 className="mt-5 max-w-[11ch] text-[2.85rem] font-semibold leading-[0.95] tracking-[-0.05em] text-white sm:text-[3.55rem] lg:text-[4.3rem]">
               A cleaner standard for research kits.
             </h1>
 
-            <p className="mt-5 max-w-[640px] text-[1rem] leading-7 text-white/74 sm:text-[1.08rem]">
+            <p className="mt-4 max-w-[620px] text-[1rem] leading-7 text-white/74 sm:text-[1.05rem]">
               Teragenix is building a calmer, more credible storefront where kit presentation, product clarity, and quality cues feel intentional from the first glance.
             </p>
 
-            <div className="mt-7 flex flex-wrap justify-center gap-3">
+            <div className="mt-6 flex flex-wrap justify-center gap-3">
               <Link
                 href="#why"
                 className="tg-link-pill inline-flex items-center rounded-full bg-white px-4 py-2.5 text-[12px] font-semibold tracking-[0.04em] text-[#12366f]"
