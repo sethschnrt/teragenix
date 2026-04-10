@@ -41,7 +41,7 @@ export function Footer() {
         <div className="grid gap-14 lg:grid-cols-[1.2fr_0.95fr_0.95fr_1.05fr]">
           {/* Brand column */}
           <div className="md:col-span-1">
-            <Logo size="lg" theme="light" />
+            <Logo size="md" theme="light" />
             <p className="mt-5 max-w-xs text-[14px] leading-relaxed text-white/65">
               Research-grade peptide kits with a cleaner storefront, tighter category structure, and documentation-first positioning.
             </p>
