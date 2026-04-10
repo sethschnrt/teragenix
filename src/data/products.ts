@@ -17,6 +17,14 @@ export interface Product {
     form: string;
     storage: string;
   };
+  documentation: {
+    sku: string;
+    batchCode: string;
+    coaStatus: string;
+    hplcStatus: string;
+    msStatus: string;
+    releaseWindow: string;
+  };
   kitIncludes: string[];
   relatedProductSlugs: string[];
 }
@@ -102,6 +110,14 @@ export const products: Product[] = [
       form: "Lyophilized powder",
       storage: "Refrigerate after reconstitution (2-8°C)",
     },
+    documentation: {
+      sku: "TGX-RETA-10",
+      batchCode: "RTA-LAUNCH-01",
+      coaStatus: "Launch batch COA upload pending",
+      hplcStatus: "HPLC summary publishing with launch batch",
+      msStatus: "MS summary publishing with launch batch",
+      releaseWindow: "Launch batch publishing queue",
+    },
     kitIncludes: [
       "1× Retatrutide (10mg lyophilized)",
       "1× Bacteriostatic water (30mL)",
@@ -131,6 +147,14 @@ export const products: Product[] = [
       quantity: "10mg per vial",
       form: "Lyophilized powder",
       storage: "Refrigerate after reconstitution (2-8°C)",
+    },
+    documentation: {
+      sku: "TGX-TESA-10",
+      batchCode: "TES-LAUNCH-01",
+      coaStatus: "Launch batch COA upload pending",
+      hplcStatus: "HPLC summary publishing with launch batch",
+      msStatus: "MS summary publishing with launch batch",
+      releaseWindow: "Launch batch publishing queue",
     },
     kitIncludes: [
       "1× Tesamorelin (10mg lyophilized)",
@@ -162,6 +186,14 @@ export const products: Product[] = [
       form: "Lyophilized powder",
       storage: "Refrigerate after reconstitution (2-8°C)",
     },
+    documentation: {
+      sku: "TGX-MT2-10",
+      batchCode: "MT2-LAUNCH-01",
+      coaStatus: "Launch batch COA upload pending",
+      hplcStatus: "HPLC summary publishing with launch batch",
+      msStatus: "MS summary publishing with launch batch",
+      releaseWindow: "Launch batch publishing queue",
+    },
     kitIncludes: [
       "1× Melanotan II (10mg lyophilized)",
       "1× Bacteriostatic water (30mL)",
@@ -192,6 +224,14 @@ export const products: Product[] = [
       form: "Lyophilized powder",
       storage: "Refrigerate after reconstitution (2-8°C)",
     },
+    documentation: {
+      sku: "TGX-GLOW70-70",
+      batchCode: "GLW-LAUNCH-01",
+      coaStatus: "Launch batch COA upload pending",
+      hplcStatus: "HPLC summary publishing with launch batch",
+      msStatus: "MS summary publishing with launch batch",
+      releaseWindow: "Launch batch publishing queue",
+    },
     kitIncludes: [
       "1× Glow 70 (70mg lyophilized)",
       "1× Bacteriostatic water (30mL)",
@@ -219,6 +259,14 @@ export const products: Product[] = [
       quantity: "600mg per vial",
       form: "Lyophilized powder",
       storage: "Refrigerate after reconstitution (2-8°C)",
+    },
+    documentation: {
+      sku: "TGX-GLUT-600",
+      batchCode: "GLT-LAUNCH-01",
+      coaStatus: "Launch batch COA upload pending",
+      hplcStatus: "HPLC summary publishing with launch batch",
+      msStatus: "MS summary publishing with launch batch",
+      releaseWindow: "Launch batch publishing queue",
     },
     kitIncludes: [
       "1× Glutathione (600mg lyophilized)",

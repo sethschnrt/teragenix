@@ -9,6 +9,7 @@ import {
   ChevronRight,
   FileCheck2,
   FlaskConical,
+  ScanSearch,
   ShieldCheck,
   Snowflake,
 } from "lucide-react";
@@ -40,9 +41,24 @@ export function ProductDetail({ product, relatedProducts }: ProductDetailProps) 
   const savings = (product.originalPrice - product.price).toFixed(0);
   const documentationItems = [
     {
-      label: "Spec sheet",
-      value: `${product.specifications.purity} purity target, ${product.specifications.quantity.toLowerCase()}, ${product.specifications.form.toLowerCase()}.`,
+      label: "SKU",
+      value: product.documentation.sku,
       icon: FileCheck2,
+    },
+    {
+      label: "Batch code",
+      value: product.documentation.batchCode,
+      icon: ScanSearch,
+    },
+    {
+      label: "COA status",
+      value: product.documentation.coaStatus,
+      icon: FileCheck2,
+    },
+    {
+      label: "HPLC + MS status",
+      value: `${product.documentation.hplcStatus}. ${product.documentation.msStatus}.`,
+      icon: FlaskConical,
     },
     {
       label: "Storage guidance",
@@ -50,15 +66,18 @@ export function ProductDetail({ product, relatedProducts }: ProductDetailProps) 
       icon: Snowflake,
     },
     {
-      label: "Kit checklist",
-      value: "Every kit lists the compound, bacteriostatic water, syringes, swabs, and guide directly on the page.",
-      icon: FlaskConical,
-    },
-    {
-      label: "Support + policy access",
-      value: "FAQ, shipping, refund, and research-disclaimer pages are linked below so operational details stay easy to verify.",
+      label: "Release window",
+      value: product.documentation.releaseWindow,
       icon: ShieldCheck,
     },
+  ];
+
+  const supportLinks = [
+    { label: "COA + Batch Docs", href: "/coa" },
+    { label: "FAQ", href: "/faq" },
+    { label: "Shipping Policy", href: "/shipping-policy" },
+    { label: "Refund Policy", href: "/refund-policy" },
+    { label: "Research Disclaimer", href: "/research-disclaimer" },
   ];
 
   return (
@@ -140,7 +159,7 @@ export function ProductDetail({ product, relatedProducts }: ProductDetailProps) 
               <div className="mt-8 flex flex-wrap gap-3">
                 {[
                   "Visible specs",
-                  "Complete kit format",
+                  "Batch-linked docs",
                   "Research use only",
                 ].map((item) => (
                   <span
@@ -194,8 +213,8 @@ export function ProductDetail({ product, relatedProducts }: ProductDetailProps) 
               <ul className="mt-4 space-y-3">
                 {[
                   "One product page instead of piecing key details together across the site.",
-                  "Category-matched discovery that stays consistent from homepage to catalog.",
-                  "Specs, prep essentials, and policy links visible before checkout decisions.",
+                  "Batch code, SKU, and documentation status stay tied to the exact product.",
+                  "Specs, prep essentials, and support links stay visible before checkout decisions.",
                 ].map((item) => (
                   <li key={item} className="flex items-start gap-2.5 text-[14px] leading-6 text-[#0d262d]/68">
                     <Check className="mt-1 h-4 w-4 shrink-0" style={{ color: theme.accent }} />
@@ -243,7 +262,10 @@ export function ProductDetail({ product, relatedProducts }: ProductDetailProps) 
 
             <div className="rounded-[2rem] bg-white p-6 ring-1 ring-[#e3e8ef] sm:p-8">
               <p className="text-[11px] font-medium uppercase tracking-[0.22em]" style={{ color: theme.accent }}>
-                Documentation + handling
+                Batch documentation
+              </p>
+              <p className="mt-3 text-[14px] leading-6 text-[#0d262d]/68">
+                This product now carries a batch code, SKU reference, and documentation status so the trust layer feels closer to the product instead of buried in support pages.
               </p>
               <div className="mt-5 grid gap-3">
                 {documentationItems.map((item) => (
@@ -269,6 +291,24 @@ export function ProductDetail({ product, relatedProducts }: ProductDetailProps) 
                   </div>
                 ))}
               </div>
+
+              <div className="mt-5 flex flex-wrap gap-2.5">
+                <Link
+                  href="/coa"
+                  className="tg-link-pill inline-flex items-center rounded-full border px-4 py-2 text-[12px] font-semibold text-[#0d262d]"
+                  style={{ borderColor: theme.soft, backgroundColor: theme.softAlt }}
+                >
+                  View COA hub
+                  <ArrowUpRight className="tg-link-pill-icon ml-2 h-3.5 w-3.5" />
+                </Link>
+                <Link
+                  href="/faq"
+                  className="tg-link-pill inline-flex items-center rounded-full border px-4 py-2 text-[12px] font-semibold text-[#0d262d]"
+                  style={{ borderColor: theme.soft, backgroundColor: theme.softAlt }}
+                >
+                  Read support FAQ
+                </Link>
+              </div>
             </div>
 
             <div className="rounded-[2rem] bg-white p-6 ring-1 ring-[#e3e8ef] sm:p-8">
@@ -276,16 +316,11 @@ export function ProductDetail({ product, relatedProducts }: ProductDetailProps) 
                 Support pages
               </p>
               <p className="mt-3 text-[14px] leading-6 text-[#0d262d]/68">
-                Need more than the product summary? Use the FAQ and policy pages for shipping, refund, and research-use details without leaving the trust layer to guesswork.
+                Need more than the product summary? Use the COA hub, FAQ, and policy pages for shipping, refund, and research-use details without leaving the trust layer to guesswork.
               </p>
 
               <div className="mt-5 flex flex-wrap gap-2.5">
-                {[
-                  { label: "FAQ", href: "/faq" },
-                  { label: "Shipping Policy", href: "/shipping-policy" },
-                  { label: "Refund Policy", href: "/refund-policy" },
-                  { label: "Research Disclaimer", href: "/research-disclaimer" },
-                ].map((link) => (
+                {supportLinks.map((link) => (
                   <Link
                     key={link.href}
                     href={link.href}
