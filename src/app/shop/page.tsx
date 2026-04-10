@@ -30,6 +30,7 @@ export default function ShopPage() {
   useEffect(() => {
     const categoryFromUrl = normalizeCategoryParam(searchParams.get("category"));
     setActiveCategory(categoryFromUrl ?? "All");
+    setSearchQuery(searchParams.get("q") ?? "");
   }, [searchParams]);
 
   const filtered = useMemo(() => {

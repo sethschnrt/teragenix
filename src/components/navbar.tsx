@@ -8,9 +8,9 @@ import {
   SheetTrigger,
   SheetTitle,
 } from "@/components/ui/sheet";
-import { Menu } from "lucide-react";
-import { useState } from "react";
-import { usePathname } from "next/navigation";
+import { Menu, Search } from "lucide-react";
+import { FormEvent, useState } from "react";
+import { usePathname, useRouter } from "next/navigation";
 
 const navLinks = [
   { label: "Shop", href: "/shop" },
@@ -36,9 +36,18 @@ function isHeroNavPath(pathname: string) {
 
 export function Navbar() {
   const [open, setOpen] = useState(false);
+  const [query, setQuery] = useState("");
   const pathname = usePathname();
+  const router = useRouter();
   const normalizedPath = (pathname.replace(/^\/teragenix(?=\/|$)/, "") || "/").replace(/\/$/, "") || "/";
   const useHeroNav = isHeroNavPath(normalizedPath);
+
+  function submitSearch(event?: FormEvent<HTMLFormElement>) {
+    event?.preventDefault();
+    const trimmed = query.trim();
+    router.push(trimmed ? `/shop?q=${encodeURIComponent(trimmed)}` : "/shop");
+    setOpen(false);
+  }
 
   return (
     <header
@@ -57,7 +66,7 @@ export function Navbar() {
         </Link>
 
         {/* Desktop nav */}
-        <nav className="hidden md:flex items-center gap-9">
+        <nav className="hidden md:flex items-center gap-7 lg:gap-9">
           {navLinks.map((link) => (
             <Link
               key={link.href}
@@ -71,6 +80,23 @@ export function Navbar() {
               {link.label}
             </Link>
           ))}
+
+          <form onSubmit={submitSearch} className="hidden lg:block">
+            <label className="relative block w-[250px]">
+              <span className="sr-only">Search the site</span>
+              <Search className={`pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 ${useHeroNav ? "text-white/60" : "text-[#64748b]"}`} />
+              <input
+                value={query}
+                onChange={(e) => setQuery(e.target.value)}
+                placeholder="Search compounds"
+                className={`h-10 w-full rounded-full border pl-10 pr-4 text-sm outline-none transition ${
+                  useHeroNav
+                    ? "border-white/16 bg-white/10 text-white placeholder:text-white/55"
+                    : "border-[#dbe6f5] bg-[#f8fbff] text-[#0d262d] placeholder:text-[#64748b]"
+                }`}
+              />
+            </label>
+          </form>
         </nav>
 
         {/* Right side */}
@@ -99,6 +125,20 @@ export function Navbar() {
               <SheetTitle className="sr-only">Navigation menu</SheetTitle>
               <div className="mt-8 flex flex-col gap-6 px-4">
                 <Logo size="lg" className="w-[140px]" />
+
+                <form onSubmit={submitSearch} className="mb-2">
+                  <label className="relative block">
+                    <span className="sr-only">Search the site</span>
+                    <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-[#64748b]" />
+                    <input
+                      value={query}
+                      onChange={(e) => setQuery(e.target.value)}
+                      placeholder="Search compounds"
+                      className="h-11 w-full rounded-full border border-[#dbe6f5] bg-[#f8fbff] pl-10 pr-4 text-sm text-[#0d262d] outline-none"
+                    />
+                  </label>
+                </form>
+
                 {navLinks.map((link) => (
                   <Link
                     key={link.href}
