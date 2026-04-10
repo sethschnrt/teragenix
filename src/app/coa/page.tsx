@@ -55,13 +55,13 @@ export default function CoaPage() {
         ]}
       />
 
-      <section className="py-14 sm:py-18 lg:py-20">
+      <section className="py-10 sm:py-12 lg:py-14">
         <div className="mx-auto max-w-[1240px] px-5 sm:px-8 lg:px-12">
-          <div className="grid gap-4 sm:grid-cols-3">
+          <div className="grid gap-4 lg:grid-cols-3">
             {standards.map((card) => (
               <div
                 key={card.title}
-                className="rounded-[1.75rem] bg-white p-6 ring-1 ring-[#e3e8ef]"
+                className="rounded-[1.5rem] bg-white p-5 ring-1 ring-[#e3e8ef]"
               >
                 <div className="flex h-11 w-11 items-center justify-center rounded-[1rem] bg-[#e9f0fc]">
                   <card.icon className="h-5 w-5 text-[#3b6ed6]" />
@@ -74,9 +74,9 @@ export default function CoaPage() {
         </div>
       </section>
 
-      <section className="bg-[#fafbfc] py-14 sm:py-18 lg:py-20">
+      <section className="bg-[#fafbfc] py-10 sm:py-12 lg:py-14">
         <div className="mx-auto max-w-[1240px] px-5 sm:px-8 lg:px-12">
-          <div className="mb-8 max-w-2xl">
+          <div className="mb-6 max-w-3xl">
             <p className="tg-eyebrow">TRACKED PRODUCTS</p>
             <h2 className="mt-3 text-[2rem] font-semibold leading-tight tracking-[-0.03em] text-[#0d262d] sm:text-[2.45rem]">
               Batch visibility for the current catalog.
@@ -86,16 +86,13 @@ export default function CoaPage() {
             </p>
           </div>
 
-          <div className="grid gap-5 lg:grid-cols-[1.15fr_0.85fr] lg:items-start">
-            <div className="grid gap-4 sm:grid-cols-2">
+          <div className="grid gap-5 xl:grid-cols-[1.28fr_0.72fr] xl:items-start">
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3">
               {products.map((product) => {
                 const theme = getHeroCategoryTheme(product.heroCategory);
 
                 return (
-                  <div
-                    key={product.slug}
-                    className="rounded-[1.8rem] bg-white p-6 ring-1 ring-[#e3e8ef]"
-                  >
+                  <div key={product.slug} className="rounded-[1.55rem] bg-white p-5 ring-1 ring-[#e3e8ef]">
                     <div className="flex items-start justify-between gap-3">
                       <div>
                         <Badge
@@ -103,7 +100,7 @@ export default function CoaPage() {
                         >
                           {product.heroCategory.toUpperCase()}
                         </Badge>
-                        <h3 className="mt-4 text-[1.2rem] font-semibold leading-snug text-[#0d262d]">
+                        <h3 className="mt-3 text-[1.05rem] font-semibold leading-snug text-[#0d262d]">
                           {product.name}
                         </h3>
                       </div>
@@ -115,7 +112,7 @@ export default function CoaPage() {
                       </div>
                     </div>
 
-                    <div className="mt-5 grid gap-3">
+                    <div className="mt-4 grid gap-2.5">
                       {[
                         { label: "SKU", value: product.documentation.sku, icon: FileCheck2 },
                         { label: "Batch code", value: product.documentation.batchCode, icon: ScanSearch },
@@ -124,7 +121,7 @@ export default function CoaPage() {
                       ].map((item) => (
                         <div
                           key={`${product.slug}-${item.label}`}
-                          className="rounded-[1.2rem] border px-4 py-4"
+                          className="rounded-[1.05rem] border px-3.5 py-3.5"
                           style={{ borderColor: theme.soft, backgroundColor: theme.softAlt }}
                         >
                           <div className="flex items-start gap-3">
@@ -141,14 +138,14 @@ export default function CoaPage() {
                               >
                                 {item.label}
                               </p>
-                              <p className="mt-2 text-[14px] leading-6 text-[#0d262d]/70">{item.value}</p>
+                              <p className="mt-1.5 text-[13px] leading-5 text-[#0d262d]/70">{item.value}</p>
                             </div>
                           </div>
                         </div>
                       ))}
                     </div>
 
-                    <div className="mt-5 flex flex-wrap gap-2.5">
+                    <div className="mt-4 flex flex-wrap gap-2.5">
                       <Link
                         href={`/shop/${product.slug}`}
                         className="tg-link-pill inline-flex items-center rounded-full border px-4 py-2 text-[12px] font-semibold text-[#0d262d]"
@@ -163,7 +160,7 @@ export default function CoaPage() {
               })}
             </div>
 
-            <div className="rounded-[2rem] bg-white p-7 ring-1 ring-[#e3e8ef] sm:p-8">
+            <div className="rounded-[1.8rem] bg-white p-6 ring-1 ring-[#e3e8ef] sm:p-7 xl:sticky xl:top-24">
               <p className="tg-eyebrow">HOW THIS PAGE WORKS</p>
               <h2 className="mt-3 text-[1.9rem] font-semibold leading-tight tracking-[-0.03em] text-[#0d262d] sm:text-[2.3rem]">
                 Launch batches get visible status before full file hosting.

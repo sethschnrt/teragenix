@@ -81,7 +81,7 @@ export default function ShopPage() {
   return (
     <main>
       <section
-        className="relative overflow-hidden pt-24 sm:pt-28"
+        className="relative overflow-hidden pt-20 sm:pt-[5.5rem]"
         style={{
           background: "linear-gradient(162deg, #1e4a9e 0%, #0d262d 100%)",
         }}
@@ -94,7 +94,7 @@ export default function ShopPage() {
           }}
         />
 
-        <div className="relative mx-auto max-w-[1240px] px-5 pb-7 sm:px-8 sm:pb-8 lg:px-12">
+        <div className="relative mx-auto max-w-[1240px] px-5 pb-5 sm:px-8 sm:pb-6 lg:px-12">
           <div className="max-w-2xl">
             <div className="mb-3 flex flex-wrap items-center gap-3">
               <span className="inline-flex items-center rounded-full bg-white/10 px-3 py-1.5 text-[11px] font-medium tracking-[0.18em] text-white/84 ring-1 ring-white/14 backdrop-blur-sm">
@@ -115,9 +115,9 @@ export default function ShopPage() {
         </div>
       </section>
 
-      <section className="py-6 sm:py-8">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-          <div className="mb-7 rounded-[1.5rem] border border-[#e3e8ef] bg-white p-5 shadow-[0_12px_30px_rgba(17,33,17,0.04)] sm:p-6">
+      <section className="py-5 sm:py-6">
+        <div className="mx-auto max-w-[1240px] px-5 sm:px-8 lg:px-12">
+          <div className="mb-5 rounded-[1.5rem] border border-[#e3e8ef] bg-white p-4 shadow-[0_12px_30px_rgba(17,33,17,0.04)] sm:p-5">
             <div className="flex flex-col gap-5">
               <div className="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
                 <div>
@@ -203,7 +203,7 @@ export default function ShopPage() {
           </div>
 
           {/* Product grid — same style as FeaturedProducts */}
-          <div className="flex flex-wrap justify-center gap-4 sm:gap-7 lg:gap-8">
+          <div className="grid grid-cols-2 gap-4 sm:gap-5 lg:grid-cols-4 xl:grid-cols-5">
             {filtered.map((product) => {
               const productTheme = getHeroCategoryTheme(product.heroCategory);
 
@@ -211,7 +211,7 @@ export default function ShopPage() {
               <Link
                 key={product.slug}
                 href={`/shop/${product.slug}`}
-                className="tg-link-card group relative flex w-[calc(50%-0.5rem)] min-w-0 flex-col overflow-hidden rounded-xl border bg-card text-card-foreground ring-1 ring-foreground/10 sm:w-[calc(50%-0.875rem)] lg:w-[280px]"
+                className="tg-link-card group relative flex min-w-0 flex-col overflow-hidden rounded-xl border bg-card text-card-foreground ring-1 ring-foreground/10"
               >
                 {/* Product image */}
                 <div className="relative aspect-square flex items-center justify-center overflow-hidden" style={{ backgroundColor: productTheme.heroTone }}>

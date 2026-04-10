@@ -39,13 +39,13 @@ const variantStyles = {
   },
   subpage: {
     section: "bg-[linear-gradient(162deg,_#173f85_0%,_#0d262d_100%)]",
-    padding: "pt-24 sm:pt-28",
+    padding: "pt-20 sm:pt-[5.5rem]",
     halo: "radial-gradient(circle at 76% 18%, rgba(168,197,245,0.22), transparent 28%), radial-gradient(circle at 18% 18%, rgba(255,255,255,0.06), transparent 24%)",
     panel: "bg-white/10 ring-white/18",
     pill: "bg-white/10 text-white/88 ring-white/14 hover:bg-white/16",
     stat: "bg-white/8 ring-white/12",
-    title: "text-[2rem] sm:text-[2.45rem]",
-    contentPb: "pb-7 sm:pb-8",
+    title: "text-[2.15rem] sm:text-[2.7rem]",
+    contentPb: "pb-5 sm:pb-6",
     showWordmark: false,
   },
 } as const;
@@ -84,8 +84,8 @@ export function PageHero({
         <div
           className={
             hasPanel
-              ? "grid gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:items-end lg:gap-12"
-              : "max-w-2xl"
+              ? "grid gap-7 lg:grid-cols-[1.08fr_0.92fr] lg:items-end lg:gap-8"
+              : "max-w-3xl"
           }
         >
           <div className="max-w-3xl">
@@ -135,7 +135,7 @@ export function PageHero({
               )}
 
               {panelItems.length > 0 && (
-                <div className="mt-6 grid gap-3 sm:grid-cols-2">
+                <div className="mt-5 grid gap-3 sm:grid-cols-2">
                   {panelItems.map((item) => {
                     const content = (
                       <>

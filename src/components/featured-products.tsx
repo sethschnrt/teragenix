@@ -11,10 +11,10 @@ export function FeaturedProducts() {
   const displayed = featuredProducts.slice(0, 4);
 
   return (
-    <section id="featured" className="relative bg-[#f4f8ff] pb-24 pt-24 sm:pb-28 sm:pt-28">
+    <section id="featured" className="relative bg-[#f4f8ff] pb-16 pt-16 sm:pb-[4.5rem] sm:pt-[4.5rem]">
       <div className="mx-auto max-w-[1240px] px-5 sm:px-8 lg:px-12">
         {/* Editorial header */}
-        <div className="mb-16 flex flex-col gap-8 sm:mb-20 sm:flex-row sm:items-end sm:justify-between">
+        <div className="mb-10 flex flex-col gap-6 sm:mb-12 sm:flex-row sm:items-end sm:justify-between">
           <div className="max-w-2xl">
             <p className="mb-5 font-sans text-[11px] font-medium tracking-[0.22em] text-[#3b6ed6]">
               FEATURED KITS
