@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { FormEvent, useMemo, useState } from "react";
 import { usePathname, useRouter } from "next/navigation";
-import { Menu, Search } from "lucide-react";
+import { ArrowUpRight, Menu, Search } from "lucide-react";
 import { products } from "@/data/products";
 import { Logo } from "./logo";
 import {
@@ -125,8 +125,9 @@ function SearchBox({
                   </div>
                   <div className="shrink-0 text-right">
                     <span className="block text-sm font-semibold text-[#3b6ed6]">${product.price}</span>
-                    <span className="mt-1 block text-[11px] font-medium text-[#64748b] transition-transform duration-200 group-hover:translate-x-0.5 group-hover:text-[#173f85]">
-                      View →
+                    <span className="mt-1 inline-flex items-center text-[11px] font-medium text-[#64748b] transition-colors group-hover:text-[#173f85]">
+                      View
+                      <ArrowUpRight className="ml-1 h-3 w-3 transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
                     </span>
                   </div>
                 </Link>
@@ -142,7 +143,7 @@ function SearchBox({
             className="flex w-full items-center justify-between border-t border-[#eef3f9] px-4 py-3 text-left text-sm font-semibold text-[#173f85] hover:bg-[#f8fbff]"
           >
             <span>View all results for “{query.trim()}”</span>
-            <span>→</span>
+            <ArrowUpRight className="h-3.5 w-3.5" />
           </button>
         </div>
       ) : null}
