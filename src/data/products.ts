@@ -1,6 +1,7 @@
 export interface Product {
   slug: string;
   name: string;
+  shortName: string;
   category: string;
   heroCategory: "Fat Loss" | "Recovery" | "Longevity" | "Vitality";
   price: number;
@@ -83,6 +84,7 @@ export const products: Product[] = [
   {
     slug: "retatrutide",
     name: "Retatrutide Research Kit",
+    shortName: "Retatrutide",
     category: "Metabolic",
     heroCategory: "Fat Loss",
     price: 189.99,
@@ -112,6 +114,7 @@ export const products: Product[] = [
   {
     slug: "tesamorelin",
     name: "Tesamorelin Research Kit",
+    shortName: "Tesamorelin",
     category: "Metabolic",
     heroCategory: "Fat Loss",
     price: 149.99,
@@ -141,6 +144,7 @@ export const products: Product[] = [
   {
     slug: "melanotan-ii",
     name: "Melanotan II Research Kit",
+    shortName: "Melanotan II",
     category: "Research",
     heroCategory: "Vitality",
     price: 79.99,
@@ -170,6 +174,7 @@ export const products: Product[] = [
   {
     slug: "glow-70",
     name: "Glow 70 Research Kit",
+    shortName: "Glow 70",
     category: "Beauty",
     heroCategory: "Longevity",
     price: 119.99,
@@ -199,6 +204,7 @@ export const products: Product[] = [
   {
     slug: "glutathione",
     name: "Glutathione Research Kit",
+    shortName: "Glutathione",
     category: "Beauty",
     heroCategory: "Recovery",
     price: 69.99,

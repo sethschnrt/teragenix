@@ -57,7 +57,11 @@ function SearchBox({
     if (!trimmed) return [];
 
     return products
-      .filter((product) => product.name.toLowerCase().includes(trimmed))
+      .filter(
+        (product) =>
+          product.name.toLowerCase().includes(trimmed) ||
+          product.shortName.toLowerCase().includes(trimmed),
+      )
       .slice(0, 6);
   }, [query]);
 
@@ -107,15 +111,23 @@ function SearchBox({
                     setFocused(false);
                     onResultClick?.();
                   }}
-                  className="tg-link-text flex items-center justify-between gap-3 px-4 py-3 hover:bg-[#f8fbff]"
+                  className="tg-link-text group flex items-center justify-between gap-3 px-4 py-3 transition-colors hover:bg-[#f8fbff]"
                 >
-                  <div className="min-w-0">
-                    <p className="truncate text-sm font-semibold text-[#0d262d]">{product.name}</p>
-                    <p className="mt-1 text-xs uppercase tracking-[0.14em] text-[#64748b]">
-                      {product.heroCategory}
-                    </p>
+                  <div className="min-w-0 flex-1">
+                    <div className="flex items-center gap-2">
+                      <p className="text-sm font-semibold text-[#0d262d]">{product.shortName}</p>
+                      <span className="rounded-full bg-[#eef4fc] px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.12em] text-[#3b6ed6]">
+                        {product.heroCategory}
+                      </span>
+                    </div>
+                    <p className="mt-1 text-xs text-[#64748b]">Research kit</p>
                   </div>
-                  <span className="text-sm font-semibold text-[#3b6ed6]">${product.price}</span>
+                  <div className="flex items-center gap-3">
+                    <span className="text-sm font-semibold text-[#3b6ed6]">${product.price}</span>
+                    <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[#eef4fc] text-[#3b6ed6] transition-transform duration-200 group-hover:translate-x-0.5">
+                      →
+                    </span>
+                  </div>
                 </Link>
               ))}
             </div>
