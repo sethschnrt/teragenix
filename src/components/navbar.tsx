@@ -80,7 +80,10 @@ export function Navbar() {
               {link.label}
             </Link>
           ))}
+        </nav>
 
+        {/* Right side */}
+        <div className="flex items-center gap-3">
           <form onSubmit={submitSearch} className="hidden lg:block">
             <label className="relative block w-[250px]">
               <span className="sr-only">Search the site</span>
@@ -97,10 +100,7 @@ export function Navbar() {
               />
             </label>
           </form>
-        </nav>
 
-        {/* Right side */}
-        <div className="flex items-center gap-3">
           <Link
             href="/shop"
             className={`tg-link-pill hidden sm:inline-flex h-9 items-center rounded-full px-4 text-[13px] font-semibold tracking-tight ${
