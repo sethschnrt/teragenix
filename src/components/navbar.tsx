@@ -111,21 +111,22 @@ function SearchBox({
                     setFocused(false);
                     onResultClick?.();
                   }}
-                  className="tg-link-text group flex items-center justify-between gap-3 px-4 py-3 transition-colors hover:bg-[#f8fbff]"
+                  className="tg-link-text group grid grid-cols-[minmax(0,1fr)_auto] items-center gap-3 px-4 py-3 transition-colors hover:bg-[#f8fbff]"
                 >
-                  <div className="min-w-0 flex-1">
-                    <div className="flex items-center gap-2">
-                      <p className="text-sm font-semibold text-[#0d262d]">{product.shortName}</p>
-                      <span className="rounded-full bg-[#eef4fc] px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.12em] text-[#3b6ed6]">
+                  <div className="min-w-0">
+                    <p className="truncate text-sm font-semibold text-[#0d262d]">{product.shortName}</p>
+                    <div className="mt-1 flex items-center gap-2 text-[11px] text-[#64748b]">
+                      <span className="uppercase tracking-[0.12em] text-[#3b6ed6]">
                         {product.heroCategory}
                       </span>
+                      <span className="text-[#c5cfdb]">•</span>
+                      <span>Research kit</span>
                     </div>
-                    <p className="mt-1 text-xs text-[#64748b]">Research kit</p>
                   </div>
-                  <div className="flex items-center gap-3">
-                    <span className="text-sm font-semibold text-[#3b6ed6]">${product.price}</span>
-                    <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[#eef4fc] text-[#3b6ed6] transition-transform duration-200 group-hover:translate-x-0.5">
-                      →
+                  <div className="shrink-0 text-right">
+                    <span className="block text-sm font-semibold text-[#3b6ed6]">${product.price}</span>
+                    <span className="mt-1 block text-[11px] font-medium text-[#64748b] transition-transform duration-200 group-hover:translate-x-0.5 group-hover:text-[#173f85]">
+                      View →
                     </span>
                   </div>
                 </Link>
