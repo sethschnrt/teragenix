@@ -13,13 +13,20 @@ const footerLinks = {
     { label: "About", href: "/about" },
     { label: "FAQ", href: "/faq" },
     { label: "Shipping FAQ", href: "/faq#shipping" },
-    { label: "Research Use", href: "/faq#general" },
+    { label: "Quality Standards", href: "/about#quality-promise" },
+  ],
+  Legal: [
+    { label: "Privacy Policy", href: "/privacy-policy" },
+    { label: "Terms of Use", href: "/terms-of-use" },
+    { label: "Shipping Policy", href: "/shipping-policy" },
+    { label: "Refund Policy", href: "/refund-policy" },
+    { label: "Research Disclaimer", href: "/research-disclaimer" },
   ],
   Storefront: [
     { label: "Featured Kits", href: "/#featured" },
     { label: "Browse Catalog", href: "/shop" },
     { label: "How It Works", href: "/#how-it-works" },
-    { label: "Quality Standards", href: "/about#quality-promise" },
+    { label: "Research Use FAQ", href: "/faq#general" },
   ],
 };
 
@@ -37,12 +44,15 @@ export function Footer() {
       </div>
 
       <div className="relative mx-auto max-w-[1240px] px-5 py-20 sm:px-8 lg:px-12">
-        <div className="grid gap-14 md:grid-cols-[1.3fr_1fr_1fr_1fr]">
+        <div className="grid gap-14 lg:grid-cols-[1.2fr_0.9fr_0.9fr_1fr_0.9fr]">
           {/* Brand column */}
           <div className="md:col-span-1">
             <Logo size="lg" theme="light" />
             <p className="mt-5 max-w-xs text-[14px] leading-relaxed text-white/65">
               Research-grade peptide kits with a cleaner storefront, tighter category structure, and documentation-first positioning.
+            </p>
+            <p className="mt-4 max-w-sm text-[12px] leading-6 text-white/48">
+              Pre-launch legal pages are live now and will be updated with final business details before checkout goes live.
             </p>
           </div>
 
