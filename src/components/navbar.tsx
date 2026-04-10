@@ -49,7 +49,11 @@ export function Navbar() {
       <div className="mx-auto flex h-16 max-w-[1240px] items-center justify-between px-5 sm:px-8 lg:px-12">
         {/* Logo */}
         <Link href="/" className="flex items-center">
-          <Logo size="md" theme={useHeroNav ? "light" : "default"} />
+          <Logo
+            size="sm"
+            theme={useHeroNav ? "light" : "default"}
+            className="w-[78px] sm:w-[98px]"
+          />
         </Link>
 
         {/* Desktop nav */}
@@ -94,7 +98,7 @@ export function Navbar() {
             <SheetContent side="right" className="w-[280px] bg-white">
               <SheetTitle className="sr-only">Navigation menu</SheetTitle>
               <div className="mt-8 flex flex-col gap-6 px-4">
-                <Logo size="lg" />
+                <Logo size="lg" className="w-[140px]" />
                 {navLinks.map((link) => (
                   <Link
                     key={link.href}
