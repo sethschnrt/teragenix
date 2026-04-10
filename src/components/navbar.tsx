@@ -178,7 +178,7 @@ export function Navbar() {
           : "sticky border-b border-[#e3e8ef] bg-white/92 backdrop-blur supports-[backdrop-filter]:bg-white/75"
       }`}
     >
-      <div className="mx-auto flex h-16 max-w-[1240px] items-center justify-between px-5 sm:px-8 lg:px-12">
+      <div className="mx-auto flex h-16 max-w-[1240px] items-center gap-6 px-5 sm:px-8 lg:px-12">
         <Link href="/" className="flex items-center">
           <Logo
             size="sm"
@@ -187,7 +187,31 @@ export function Navbar() {
           />
         </Link>
 
-        <div className="flex items-center gap-3">
+        <nav className="hidden md:flex md:flex-1 md:items-center md:justify-center md:gap-6 lg:gap-8">
+          {navLinks.map((link) => {
+            const active = normalizedPath === link.href;
+
+            return (
+              <Link
+                key={link.href}
+                href={link.href}
+                className={`text-[13px] font-semibold tracking-[0.08em] transition ${
+                  useHeroNav
+                    ? active
+                      ? "text-white"
+                      : "text-white/72 hover:text-white"
+                    : active
+                      ? "text-[#173f85]"
+                      : "text-[#475967] hover:text-[#173f85]"
+                }`}
+              >
+                {link.label.toUpperCase()}
+              </Link>
+            );
+          })}
+        </nav>
+
+        <div className="ml-auto flex items-center gap-3">
           <div className="hidden w-[250px] lg:block xl:w-[280px]">
             <SearchBox
               query={query}
@@ -210,7 +234,7 @@ export function Navbar() {
 
           <Sheet open={open} onOpenChange={setOpen}>
             <SheetTrigger
-              className={`inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full ${
+              className={`inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full md:hidden ${
                 useHeroNav ? "text-white hover:bg-transparent" : "text-[#0d262d] hover:bg-transparent"
               }`}
             >
