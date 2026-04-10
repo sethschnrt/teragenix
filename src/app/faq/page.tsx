@@ -10,10 +10,22 @@ export default function FaqPage() {
       <PageHero
         icon={HelpCircle}
         eyebrow="FAQ"
-        detail="Research-use answers and ordering basics"
+        detail="Research-use answers, kit basics, and policy shortcuts"
         title="Straight answers, before you choose a kit."
-        description="Use this page to understand research-use positioning, product format, category flow, and the current storefront structure without digging through the whole site."
+        description="Use this page to understand research-use positioning, kit format, category flow, and the policy layer without digging through the whole site."
         variant="subpage"
+        highlights={[
+          { label: "Browse kits", href: "/shop" },
+          { label: "Quality standards", href: "/about#quality-promise" },
+        ]}
+        panelEyebrow="QUICK LINKS"
+        panelTitle="Policy pages, without the hunt"
+        panelItems={[
+          { label: "Shipping Policy", href: "/shipping-policy" },
+          { label: "Refund Policy", href: "/refund-policy" },
+          { label: "Research Disclaimer", href: "/research-disclaimer" },
+          { label: "Terms of Use", href: "/terms-of-use" },
+        ]}
       />
 
       <FaqAccordion />

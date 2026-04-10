@@ -21,10 +21,10 @@ export function FeaturedProducts() {
             </p>
             <h2 className="font-sans text-[2.5rem] font-semibold leading-[1.04] tracking-[-0.03em] text-[#0d262d] sm:text-[3.6rem]">
               Complete kits, <br className="hidden sm:block" />
-              <span className="italic text-[#3b6ed6]">cleanly</span> merchandised.
+              <span className="italic text-[#3b6ed6]">easier</span> to compare.
             </h2>
             <p className="mt-6 max-w-xl text-[1.05rem] leading-7 text-[#0d262d]/65">
-              The featured grid is meant to make category, price, and kit format easy to scan without overexplaining the products.
+              Featured kits give buyers the fastest read on category, box format, and price before they ever open the full product page.
             </p>
           </div>
 
@@ -81,8 +81,12 @@ export function FeaturedProducts() {
                     {product.name}
                   </h3>
 
+                  <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-[#3b6ed6]/90">
+                    {product.specifications.quantity} • {product.specifications.form}
+                  </p>
+
                   <p className="line-clamp-2 text-[13px] leading-relaxed text-[#0d262d]/60">
-                    {product.description}
+                    Complete prep kit with {product.shortName}, bacteriostatic water, syringes, swabs, and a guide.
                   </p>
 
                   <div className="mt-auto flex items-end justify-between gap-3 pt-4">

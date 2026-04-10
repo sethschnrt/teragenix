@@ -28,17 +28,17 @@ const faqData: FaqSection[] = [
       {
         question: "What comes in a Teragenix research kit?",
         answer:
-          "Each product page lists its exact kit contents, but the general format includes the lyophilized compound plus core prep items like bacteriostatic water, syringes, swabs, and a reconstitution guide.",
+          "Every product page lists the exact box contents. In most cases, that means the lyophilized compound plus the core prep items researchers expect to see, including bacteriostatic water, syringes, swabs, and a reconstitution guide.",
       },
       {
         question: "Why sell kits instead of standalone vials?",
         answer:
-          "The storefront is built around complete-kit framing so the format is easier to understand at a glance. Instead of piecing supplies together across multiple orders, the product page shows the full setup in one place.",
+          "Because the full prep format should be easy to evaluate in one place. Instead of making buyers assemble basics across multiple listings, Teragenix shows the compound, supplies, and setup together on the product page.",
       },
       {
         question: "Where do I compare compounds quickly?",
         answer:
-          "Start on the Shop page. You can browse by category, sort the catalog, and now search by compound or kit name before drilling into the product detail page.",
+          "Start on the Shop page. Browse by category, search by compound or kit name, and use the product page for the deeper read on specs, contents, and handling details.",
       },
     ],
   },
@@ -49,7 +49,7 @@ const faqData: FaqSection[] = [
       {
         question: "What documentation is shown on product pages?",
         answer:
-          "Each product page is structured to surface the core things buyers look for first: kit contents, technical specs, storage guidance, and research-use framing. The goal is to make that information visible without making people hunt for it.",
+          "Product pages are structured to surface the details serious buyers look for first: kit contents, technical specs, storage guidance, and research-use framing. The goal is to make the important information visible without turning the page into clutter.",
       },
       {
         question: "What does the purity spec mean?",
@@ -59,7 +59,7 @@ const faqData: FaqSection[] = [
       {
         question: "Are COA and testing details part of the storefront?",
         answer:
-          "Yes, that is part of the documentation-first direction for the site. The storefront is being structured so batch, spec, and testing context can live closer to the product instead of being buried behind vague trust language.",
+          "That is the direction. Teragenix is being structured so batch, spec, and testing context can live closer to the product instead of being buried behind vague trust language as those materials are finalized.",
       },
     ],
   },
@@ -75,12 +75,12 @@ const faqData: FaqSection[] = [
       {
         question: "Do product pages include reconstitution-related supplies?",
         answer:
-          "Yes. Teragenix kit pages are designed to show not just the peptide itself, but the included prep essentials such as bacteriostatic water, syringes, swabs, and a guide when applicable.",
+          "Yes. Teragenix kit pages are designed to show not just the compound itself, but the prep essentials included with the kit, such as bacteriostatic water, syringes, swabs, and a guide when applicable.",
       },
       {
         question: "Where will shipping details live?",
         answer:
-          "Shipping terms live in the Shipping Policy and related support pages. Those pages are already linked in the footer so storefront visitors can find the operational side without leaving the site guessing.",
+          "Shipping terms live in the Shipping Policy and related support pages. The FAQ, footer, and product-page support links all point buyers there so the operational side stays easy to find.",
       },
     ],
   },
@@ -91,12 +91,12 @@ const faqData: FaqSection[] = [
       {
         question: "Is Teragenix checkout live yet?",
         answer:
-          "Not yet. The current site is a pre-launch storefront pass focused on stronger merchandising, clearer product pages, and better documentation structure before full order processing goes live.",
+          "Not yet. The current site is a pre-launch catalog and trust pass focused on stronger product pages, clearer merchandising, and better documentation structure before full order processing goes live.",
       },
       {
         question: "Where do I find refund, shipping, and research-use terms?",
         answer:
-          "Use the linked policy pages in the footer: Shipping Policy, Refund Policy, Terms of Use, Privacy Policy, and Research Disclaimer. Those pages are there so the storefront has a real policy framework instead of leaving core questions unanswered.",
+          "Use the linked policy pages throughout the site: Shipping Policy, Refund Policy, Terms of Use, Privacy Policy, and Research Disclaimer. Those pages give the storefront a real policy framework instead of leaving the important questions unanswered.",
       },
       {
         question: "What should I read before choosing a kit?",
@@ -171,7 +171,7 @@ export function FaqAccordion() {
           >
             <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#4A90D9]">Catalog</p>
             <h3 className="mt-2 text-base font-semibold text-[#0d262d]">Browse research kits</h3>
-            <p className="mt-2 text-sm leading-6 text-[#475967]">Search, sort, and compare products by category before opening a product page.</p>
+            <p className="mt-2 text-sm leading-6 text-[#475967]">Start with category, then compare compounds, kit format, and price before you open the full product page.</p>
           </Link>
 
           <Link
@@ -180,7 +180,7 @@ export function FaqAccordion() {
           >
             <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#4A90D9]">Quality</p>
             <h3 className="mt-2 text-base font-semibold text-[#0d262d]">Read quality standards</h3>
-            <p className="mt-2 text-sm leading-6 text-[#475967]">See how Teragenix frames documentation, product structure, and technical clarity.</p>
+            <p className="mt-2 text-sm leading-6 text-[#475967]">See how Teragenix approaches visible specs, documentation language, and proof-first product framing.</p>
           </Link>
 
           <Link
@@ -189,7 +189,7 @@ export function FaqAccordion() {
           >
             <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#4A90D9]">Policies</p>
             <h3 className="mt-2 text-base font-semibold text-[#0d262d]">Check shipping + policy pages</h3>
-            <p className="mt-2 text-sm leading-6 text-[#475967]">Shipping, refund, and research-use terms are linked so visitors can answer the boring important questions fast.</p>
+            <p className="mt-2 text-sm leading-6 text-[#475967]">Use the policy layer for shipping, refund, privacy, and research-use terms when you want the operational read fast.</p>
           </Link>
         </div>
       </div>
