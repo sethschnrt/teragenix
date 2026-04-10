@@ -4,23 +4,23 @@ import { Shield, Truck, FlaskConical, Mail } from "lucide-react";
 const promises = [
   {
     icon: Truck,
-    title: "Cleaner storefront flow",
-    body: "Homepage, catalog, and product pages are being tightened into a more coherent path.",
+    title: "Category-led shopping",
+    body: "Browse by goal first, then compare products inside a tighter, easier-to-scan catalog.",
   },
   {
     icon: FlaskConical,
-    title: "Documentation-led trust",
-    body: "Quality positioning is strongest when product pages and supporting documentation do the heavy lifting.",
+    title: "Visible kit contents",
+    body: "Each product page makes the full box format easy to understand before checkout ever enters the picture.",
   },
   {
     icon: Shield,
-    title: "Complete kit framing",
-    body: "The storefront is built to make the kit format easier to understand at a glance.",
+    title: "Proof-first standards",
+    body: "Specs, storage guidance, and documentation language stay close to the product instead of hiding behind hype.",
   },
   {
     icon: Mail,
-    title: "Clearer product detail",
-    body: "Important information should be visible in the storefront instead of hidden behind vague promises.",
+    title: "Support surfaces built in",
+    body: "FAQ, shipping, refund, and research-use pages are linked clearly so buyers can verify the operational side fast.",
   },
 ];
 
@@ -30,11 +30,11 @@ export function Guarantee() {
       <div className="mx-auto max-w-[1240px] px-5 sm:px-8 lg:px-[160px]">
         <div className="mb-16 text-center">
           <p className="tg-eyebrow mb-6" style={{ color: "#3b6ed6" }}>
-            STOREFRONT PRINCIPLES
+            WHY IT FEELS TRUSTWORTHY
           </p>
           <h2 className="tg-h2 mx-auto max-w-3xl" style={{ color: "#0d262d" }}>
-            A cleaner storefront, built around{" "}
-            <span style={{ color: "#3b6ed6" }}>complete kits.</span>
+            A cleaner buying path, built around{" "}
+            <span style={{ color: "#3b6ed6" }}>proof and clarity.</span>
           </h2>
           <p
             className="mx-auto mt-6 max-w-xl"
@@ -45,7 +45,7 @@ export function Guarantee() {
               fontWeight: 400,
             }}
           >
-            Four design principles guiding the current storefront phase.
+            Four things that make the Teragenix experience feel more credible without cluttering the design.
           </p>
         </div>
 

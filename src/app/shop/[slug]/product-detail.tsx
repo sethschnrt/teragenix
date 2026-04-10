@@ -51,12 +51,12 @@ export function ProductDetail({ product, relatedProducts }: ProductDetailProps) 
     },
     {
       label: "Kit checklist",
-      value: "The full box contents are listed on-page so the format is obvious before checkout goes live.",
+      value: "Every kit lists the compound, bacteriostatic water, syringes, swabs, and guide directly on the page.",
       icon: FlaskConical,
     },
     {
-      label: "Research-use framing",
-      value: "This listing is presented for in-vitro research and laboratory use only.",
+      label: "Support + policy access",
+      value: "FAQ, shipping, refund, and research-disclaimer pages are linked below so operational details stay easy to verify.",
       icon: ShieldCheck,
     },
   ];
@@ -139,7 +139,7 @@ export function ProductDetail({ product, relatedProducts }: ProductDetailProps) 
 
               <div className="mt-8 flex flex-wrap gap-3">
                 {[
-                  "Documentation-led",
+                  "Visible specs",
                   "Complete kit format",
                   "Research use only",
                 ].map((item) => (
@@ -183,7 +183,7 @@ export function ProductDetail({ product, relatedProducts }: ProductDetailProps) 
               About this kit
             </p>
             <h2 className="mt-3 text-[1.85rem] font-semibold leading-tight tracking-[-0.03em] text-[#0d262d] sm:text-[2.2rem]">
-              Research-ready from the moment it arrives.
+              Built for cleaner evaluation before you buy.
             </h2>
             <p className="mt-5 text-[15px] leading-7 text-[#0d262d]/68 sm:text-[16px]">
               {product.longDescription}
@@ -193,9 +193,9 @@ export function ProductDetail({ product, relatedProducts }: ProductDetailProps) 
               <p className="text-sm font-semibold text-[#0d262d]">Why this setup works better</p>
               <ul className="mt-4 space-y-3">
                 {[
-                  "One order instead of piecing supplies together across vendors.",
-                  "Category-matched product discovery that stays consistent across the site.",
-                  "Complete documentation and prep essentials included in the box.",
+                  "One product page instead of piecing key details together across the site.",
+                  "Category-matched discovery that stays consistent from homepage to catalog.",
+                  "Specs, prep essentials, and policy links visible before checkout decisions.",
                 ].map((item) => (
                   <li key={item} className="flex items-start gap-2.5 text-[14px] leading-6 text-[#0d262d]/68">
                     <Check className="mt-1 h-4 w-4 shrink-0" style={{ color: theme.accent }} />
@@ -276,7 +276,7 @@ export function ProductDetail({ product, relatedProducts }: ProductDetailProps) 
                 Support pages
               </p>
               <p className="mt-3 text-[14px] leading-6 text-[#0d262d]/68">
-                Need more than the product summary? Use the FAQ and policy pages for shipping, refund, and research-use details.
+                Need more than the product summary? Use the FAQ and policy pages for shipping, refund, and research-use details without leaving the trust layer to guesswork.
               </p>
 
               <div className="mt-5 flex flex-wrap gap-2.5">

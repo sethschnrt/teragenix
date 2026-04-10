@@ -102,7 +102,7 @@ export function Hero() {
                 <span
                   className="inline-block h-1.5 w-1.5 rounded-full bg-white"
                 />
-                Research-grade kits, cleaner storefront
+                Research-use kits with clear specs
               </p>
             </div>
 
@@ -121,7 +121,7 @@ export function Hero() {
               className="mx-auto mt-5 max-w-[560px] text-center text-white/85 lg:mt-3 lg:max-w-[600px]"
               style={{ fontSize: "15px", lineHeight: "1.5", fontWeight: 400 }}
             >
-              Premium peptides designed to support fat loss, recovery, performance, and long-term vitality, delivered discreetly with a simpler, better experience.
+              Research peptides organized into complete kits with visible specs, storage guidance, and documentation-first product pages.
             </p>
 
             {/* CTA row */}
@@ -141,7 +141,7 @@ export function Hero() {
                 className="tg-link-pill inline-flex h-12 items-center rounded-full px-7 text-white ring-1 ring-white/40 hover:bg-white/10"
                 style={{ fontSize: "14px", fontWeight: 600, letterSpacing: "-0.02em" }}
               >
-                How it works
+                Quality standards
               </Link>
             </div>
           </div>

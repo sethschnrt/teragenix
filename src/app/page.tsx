@@ -23,22 +23,22 @@ export default function Home() {
 
       {/* Section 1 — Metabolic */}
       <EditorialSection
-        eyebrow="RESEARCH-GRADE GLP-1 COMPOUNDS"
-        headline="Metabolic research, made easier."
-        accentPhrase="made easier"
+        eyebrow="METABOLIC RESEARCH KITS"
+        headline="Metabolic research, organized for faster comparison."
+        accentPhrase="faster comparison"
         accentColor={BLUE_PRIMARY}
         haloColor={HALO_SKY}
-        bodyText="Teragenix's metabolic kits are being presented as a cleaner, easier-to-compare storefront category with stronger product framing and less clutter."
-        subheading="A smarter way to run your metabolic workflow"
-        subbody="Retatrutide, tirzepatide, and semaglutide are positioned here as a focused category with clearer product hierarchy and more readable kit presentation."
+        bodyText="Retatrutide, tesamorelin, and adjacent metabolic compounds are grouped into complete kits with visible specs, prep essentials, and a cleaner comparison flow."
+        subheading="Built to reduce guesswork"
+        subbody="Instead of making researchers piece together basics across multiple listings, Teragenix presents each kit as a complete lab-ready format with clearer documentation and easier category scanning."
         features={[
-          "Clear category framing",
-          "Documentation-led trust",
-          "Complete kit positioning",
-          "Stronger product hierarchy",
-          "Cleaner storefront flow",
+          "Visible purity + quantity specs",
+          "Full kit contents on-page",
+          "Clear storage guidance",
+          "Category-first browsing",
+          "Research-use framing",
         ]}
-        cardTitle="Everything you need — included:"
+        cardTitle="What you see up front:"
         ctaLabel="Shop metabolic kits"
         ctaHref="/shop?category=fat-loss"
         image1="/images/generated/refresh-v1/metabolic-hero-tight.webp"
@@ -51,21 +51,21 @@ export default function Home() {
       {/* Section 2 — Quality standards */}
       <EditorialSection
         eyebrow="QUALITY STANDARDS"
-        headline="Lab-verified. Independently tested."
-        accentPhrase="Independently tested"
+        headline="Proof-first. Cleaner standards."
+        accentPhrase="Cleaner standards"
         accentColor={BLUE_SKY}
         haloColor={HALO_STEEL}
-        bodyText="The quality story should feel clear, documented, and visually consistent across the storefront instead of relying on inflated trust language."
-        subheading="Serious compounds, serious standards"
-        subbody="This section is meant to communicate standards through cleaner structure, clearer documentation language, and better merchandising discipline."
+        bodyText="Trust should come from batch context, handling guidance, and product pages that show exactly what is included, not inflated claims."
+        subheading="What serious buyers actually look for"
+        subbody="The strongest quality signal is simple: clear specs, visible kit contents, consistent research-use language, and documentation positioned close to the product."
         features={[
-          "Quality-first framing",
-          "Clearer documentation language",
-          "More credible trust signals",
-          "Tighter visual hierarchy",
-          "Less cluttered messaging",
+          "Purity targets shown on-page",
+          "Batch and handling context",
+          "Complete kit breakdowns",
+          "Support pages linked clearly",
+          "Credible language over hype",
         ]}
-        cardTitle="Our quality promise:"
+        cardTitle="Standards that matter:"
         ctaLabel="Read quality standards"
         ctaHref="/about"
         image1="/images/generated/lifestyle-v1-cutout/quality-1-hero.webp"
