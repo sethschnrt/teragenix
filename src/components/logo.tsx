@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { cn } from "@/lib/utils";
 
 interface LogoProps {
@@ -6,36 +7,28 @@ interface LogoProps {
   theme?: "default" | "light";
 }
 
-const sizeMap: Record<NonNullable<LogoProps["size"]>, { word: number; sup: number }> = {
-  sm: { word: 22, sup: 9 },
-  md: { word: 30, sup: 12 },
-  lg: { word: 44, sup: 17 },
+const sizeMap: Record<NonNullable<LogoProps["size"]>, { width: number; height: number }> = {
+  sm: { width: 120, height: 34 },
+  md: { width: 170, height: 48 },
+  lg: { width: 240, height: 68 },
+};
+
+const srcMap: Record<NonNullable<LogoProps["theme"]>, string> = {
+  default: "/images/teragenix-logo-dark.png",
+  light: "/images/teragenix-logo-light.png",
 };
 
 export function Logo({ className, size = "md", theme = "default" }: LogoProps) {
-  const { word, sup } = sizeMap[size];
-  const logoColor = theme === "light" ? "#ffffff" : "#0d262d";
-  const teraColor = theme === "light" ? "#ffffff" : "#3b6ed6";
+  const { width, height } = sizeMap[size];
 
   return (
-    <span
-      aria-label="Teragenix"
-      className={cn("inline-flex select-none items-start font-semibold leading-none tracking-[-0.06em]", className)}
-      style={{ fontSize: `${word}px` }}
-    >
-      <span style={{ color: teraColor }}>tera</span>
-      <span style={{ color: logoColor }}>genix</span>
-      <span
-        aria-hidden="true"
-        className="ml-[0.08em] inline-block align-top font-semibold tracking-[-0.04em]"
-        style={{
-          color: logoColor,
-          fontSize: `${sup}px`,
-          transform: "translateY(-0.38em)",
-        }}
-      >
-        12
-      </span>
-    </span>
+    <Image
+      src={srcMap[theme]}
+      alt="Teragenix"
+      width={width}
+      height={height}
+      className={cn("h-auto w-auto max-w-full select-none", className)}
+      priority
+    />
   );
 }
