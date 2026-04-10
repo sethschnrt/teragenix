@@ -22,12 +22,6 @@ const footerLinks = {
     { label: "Refund Policy", href: "/refund-policy" },
     { label: "Research Disclaimer", href: "/research-disclaimer" },
   ],
-  Storefront: [
-    { label: "Featured Kits", href: "/#featured" },
-    { label: "Browse Catalog", href: "/shop" },
-    { label: "How It Works", href: "/#how-it-works" },
-    { label: "Research Use FAQ", href: "/faq#general" },
-  ],
 };
 
 export function Footer() {
@@ -44,7 +38,7 @@ export function Footer() {
       </div>
 
       <div className="relative mx-auto max-w-[1240px] px-5 py-20 sm:px-8 lg:px-12">
-        <div className="grid gap-14 lg:grid-cols-[1.2fr_0.9fr_0.9fr_1fr_0.9fr]">
+        <div className="grid gap-14 lg:grid-cols-[1.2fr_0.95fr_0.95fr_1.05fr]">
           {/* Brand column */}
           <div className="md:col-span-1">
             <Logo size="lg" theme="light" />
