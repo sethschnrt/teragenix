@@ -2,7 +2,16 @@
 
 import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
-import { ArrowLeft, ArrowUpRight, Check, ChevronRight } from "lucide-react";
+import {
+  ArrowLeft,
+  ArrowUpRight,
+  Check,
+  ChevronRight,
+  FileCheck2,
+  FlaskConical,
+  ShieldCheck,
+  Snowflake,
+} from "lucide-react";
 import { Footer } from "@/components/footer";
 import {
   getHeroCategoryHrefParam,
@@ -29,6 +38,28 @@ export function ProductDetail({ product, relatedProducts }: ProductDetailProps) 
   const theme = getHeroCategoryTheme(product.heroCategory);
   const categoryHref = `/shop?category=${getHeroCategoryHrefParam(product.heroCategory)}`;
   const savings = (product.originalPrice - product.price).toFixed(0);
+  const documentationItems = [
+    {
+      label: "Spec sheet",
+      value: `${product.specifications.purity} purity target, ${product.specifications.quantity.toLowerCase()}, ${product.specifications.form.toLowerCase()}.`,
+      icon: FileCheck2,
+    },
+    {
+      label: "Storage guidance",
+      value: product.specifications.storage,
+      icon: Snowflake,
+    },
+    {
+      label: "Kit checklist",
+      value: "The full box contents are listed on-page so the format is obvious before checkout goes live.",
+      icon: FlaskConical,
+    },
+    {
+      label: "Research-use framing",
+      value: "This listing is presented for in-vitro research and laboratory use only.",
+      icon: ShieldCheck,
+    },
+  ];
 
   return (
     <main>
@@ -206,6 +237,63 @@ export function ProductDetail({ product, relatedProducts }: ProductDetailProps) 
                     </p>
                     <p className="mt-2 text-[15px] font-medium leading-6 text-[#0d262d]">{value}</p>
                   </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="rounded-[2rem] bg-white p-6 ring-1 ring-[#e3e8ef] sm:p-8">
+              <p className="text-[11px] font-medium uppercase tracking-[0.22em]" style={{ color: theme.accent }}>
+                Documentation + handling
+              </p>
+              <div className="mt-5 grid gap-3">
+                {documentationItems.map((item) => (
+                  <div
+                    key={item.label}
+                    className="rounded-[1.2rem] border px-4 py-4"
+                    style={{ backgroundColor: "#ffffff", borderColor: theme.soft }}
+                  >
+                    <div className="flex items-start gap-3">
+                      <div
+                        className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full"
+                        style={{ backgroundColor: theme.softAlt, color: theme.accent }}
+                      >
+                        <item.icon className="h-4.5 w-4.5" />
+                      </div>
+                      <div>
+                        <p className="text-[11px] font-medium uppercase tracking-[0.18em]" style={{ color: theme.accent }}>
+                          {item.label}
+                        </p>
+                        <p className="mt-2 text-[14px] leading-6 text-[#0d262d]/68">{item.value}</p>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="rounded-[2rem] bg-white p-6 ring-1 ring-[#e3e8ef] sm:p-8">
+              <p className="text-[11px] font-medium uppercase tracking-[0.22em]" style={{ color: theme.accent }}>
+                Support pages
+              </p>
+              <p className="mt-3 text-[14px] leading-6 text-[#0d262d]/68">
+                Need more than the product summary? Use the FAQ and policy pages for shipping, refund, and research-use details.
+              </p>
+
+              <div className="mt-5 flex flex-wrap gap-2.5">
+                {[
+                  { label: "FAQ", href: "/faq" },
+                  { label: "Shipping Policy", href: "/shipping-policy" },
+                  { label: "Refund Policy", href: "/refund-policy" },
+                  { label: "Research Disclaimer", href: "/research-disclaimer" },
+                ].map((link) => (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className="tg-link-pill inline-flex items-center rounded-full border px-4 py-2 text-[12px] font-semibold text-[#0d262d]"
+                    style={{ borderColor: theme.soft, backgroundColor: theme.softAlt }}
+                  >
+                    {link.label}
+                  </Link>
                 ))}
               </div>
             </div>

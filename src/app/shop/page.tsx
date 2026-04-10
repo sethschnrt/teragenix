@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { ArrowLeft, ArrowUpRight, ChevronDown } from "lucide-react";
+import { ArrowLeft, ArrowUpRight, ChevronDown, Search, X } from "lucide-react";
 import { products, shopCategories, normalizeCategoryParam, getHeroCategoryTagClasses, getHeroCategoryTheme, type ShopCategory } from "@/data/products";
 import { Footer } from "@/components/footer";
 
@@ -24,6 +24,7 @@ export default function ShopPage() {
   const searchParams = useSearchParams();
   const [activeCategory, setActiveCategory] = useState<ShopCategory>("All");
   const [sortBy, setSortBy] = useState<SortOption>("featured");
+  const [searchQuery, setSearchQuery] = useState("");
   const sortOptions: SortOption[] = ["featured", "price-asc", "price-desc", "name-asc"];
 
   useEffect(() => {
@@ -33,6 +34,16 @@ export default function ShopPage() {
 
   const filtered = useMemo(() => {
     let result = [...products];
+
+    const query = searchQuery.trim().toLowerCase();
+
+    if (query) {
+      result = result.filter((p) =>
+        [p.name, p.description, p.category, p.heroCategory, p.slug].some((value) =>
+          value.toLowerCase().includes(query),
+        ),
+      );
+    }
 
     // Filter by category
     if (activeCategory !== "All") {
@@ -62,7 +73,7 @@ export default function ShopPage() {
     }
 
     return result;
-  }, [activeCategory, sortBy]);
+  }, [activeCategory, searchQuery, sortBy]);
 
   const currentTheme = getHeroCategoryTheme(activeCategory);
 
@@ -117,25 +128,52 @@ export default function ShopPage() {
                   </p>
                 </div>
 
-                <label className="relative inline-flex w-full max-w-[220px] items-center lg:w-[220px]">
-                  <span className="sr-only">Sort products</span>
-                  <select
-                    value={sortBy}
-                    onChange={(e) => setSortBy(e.target.value as SortOption)}
-                    className="w-full appearance-none rounded-full px-4 py-2.5 pr-10 text-sm font-medium text-[#0d262d] outline-none transition"
-                    style={{
-                      borderColor: currentTheme.soft,
-                      backgroundColor: currentTheme.softAlt,
-                    }}
-                  >
-                    {sortOptions.map((option) => (
-                      <option key={option} value={option}>
-                        Sort: {sortLabels[option]}
-                      </option>
-                    ))}
-                  </select>
-                  <ChevronDown className="pointer-events-none absolute right-4 h-4 w-4 text-[#475967]" />
-                </label>
+                <div className="flex w-full flex-col gap-3 sm:flex-row lg:w-auto">
+                  <label className="relative inline-flex w-full items-center sm:min-w-[280px] lg:w-[320px]">
+                    <span className="sr-only">Search products</span>
+                    <Search className="pointer-events-none absolute left-4 h-4 w-4 text-[#64748b]" />
+                    <input
+                      value={searchQuery}
+                      onChange={(e) => setSearchQuery(e.target.value)}
+                      placeholder="Search compounds or kits"
+                      className="w-full rounded-full border px-11 py-2.5 pr-10 text-sm text-[#0d262d] outline-none transition"
+                      style={{
+                        borderColor: currentTheme.soft,
+                        backgroundColor: "#ffffff",
+                      }}
+                    />
+                    {searchQuery ? (
+                      <button
+                        type="button"
+                        onClick={() => setSearchQuery("")}
+                        className="absolute right-3 inline-flex h-7 w-7 items-center justify-center rounded-full text-[#64748b]"
+                        aria-label="Clear search"
+                      >
+                        <X className="h-4 w-4" />
+                      </button>
+                    ) : null}
+                  </label>
+
+                  <label className="relative inline-flex w-full items-center sm:max-w-[220px] lg:w-[220px]">
+                    <span className="sr-only">Sort products</span>
+                    <select
+                      value={sortBy}
+                      onChange={(e) => setSortBy(e.target.value as SortOption)}
+                      className="w-full appearance-none rounded-full px-4 py-2.5 pr-10 text-sm font-medium text-[#0d262d] outline-none transition"
+                      style={{
+                        borderColor: currentTheme.soft,
+                        backgroundColor: currentTheme.softAlt,
+                      }}
+                    >
+                      {sortOptions.map((option) => (
+                        <option key={option} value={option}>
+                          Sort: {sortLabels[option]}
+                        </option>
+                      ))}
+                    </select>
+                    <ChevronDown className="pointer-events-none absolute right-4 h-4 w-4 text-[#475967]" />
+                  </label>
+                </div>
               </div>
 
               <div className="flex flex-wrap gap-2.5">
