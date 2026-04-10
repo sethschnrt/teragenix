@@ -187,22 +187,8 @@ export function Navbar() {
           />
         </Link>
 
-        <nav className="hidden items-center gap-7 md:flex lg:gap-9">
-          {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className={`tg-link-text text-[13px] font-medium tracking-tight ${
-                useHeroNav ? "text-white/85 hover:text-white" : "text-[#475967] hover:text-[#0d262d]"
-              }`}
-            >
-              {link.label}
-            </Link>
-          ))}
-        </nav>
-
         <div className="flex items-center gap-3">
-          <div className="hidden w-[250px] lg:block">
+          <div className="hidden w-[250px] lg:block xl:w-[280px]">
             <SearchBox
               query={query}
               setQuery={setQuery}
@@ -224,13 +210,13 @@ export function Navbar() {
 
           <Sheet open={open} onOpenChange={setOpen}>
             <SheetTrigger
-              className={`inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full md:hidden ${
+              className={`inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full ${
                 useHeroNav ? "text-white hover:bg-transparent" : "text-[#0d262d] hover:bg-transparent"
               }`}
             >
               <Menu className="h-5 w-5" />
             </SheetTrigger>
-            <SheetContent side="right" className="w-[280px] bg-white">
+            <SheetContent side="right" className="w-[280px] bg-white sm:w-[320px]">
               <SheetTitle className="sr-only">Navigation menu</SheetTitle>
               <div className="mt-8 flex flex-col gap-6 px-4">
                 <Logo size="lg" className="w-[140px]" />
