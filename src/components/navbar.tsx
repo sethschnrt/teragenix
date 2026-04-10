@@ -18,7 +18,17 @@ const navLinks = [
   { label: "FAQ", href: "/faq" },
 ];
 
-const heroNavPaths = ["/", "/shop", "/about", "/faq"];
+const heroNavPaths = [
+  "/",
+  "/shop",
+  "/about",
+  "/faq",
+  "/privacy-policy",
+  "/terms-of-use",
+  "/shipping-policy",
+  "/refund-policy",
+  "/research-disclaimer",
+];
 
 function isHeroNavPath(pathname: string) {
   return heroNavPaths.includes(pathname) || pathname.startsWith("/shop/");

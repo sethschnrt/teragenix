@@ -37,35 +37,33 @@ export function LegalPageTemplate({
         title={title}
         description={description}
         variant="subpage"
-        panelEyebrow="PRE-LAUNCH STATUS"
-        panelTitle="Drafted to be transparent now, finalized before checkout goes live."
-        panelItems={[
-          {
-            label: "Operator details",
-            value: "Legal business name, mailing address, and support contact will be added before launch.",
-          },
-          {
-            label: "Order operations",
-            value: "Shipping, refund, and support workflows will be tightened before live fulfillment begins.",
-          },
-          {
-            label: "What this means",
-            value: "These pages are meant to avoid fake promises while still setting a real policy structure.",
-          },
-          {
-            label: "Research use",
-            value: "Nothing here changes the site-wide research-use-only positioning.",
-          },
-        ]}
       />
 
       <section className="bg-[#fafbfc] py-12 sm:py-14 lg:py-16">
         <div className="mx-auto max-w-[980px] px-5 sm:px-8 lg:px-12">
           <div className="rounded-[2rem] border border-[#dbe6f5] bg-[#f4f8ff] p-6 sm:p-7">
             <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#3b6ed6]">
-              IMPORTANT
+              PRE-LAUNCH STATUS
             </p>
-            <div className="mt-3 space-y-4 text-[15px] leading-7 text-[#475967] sm:text-[16px]">
+            <h2 className="mt-3 text-[1.45rem] font-semibold leading-tight tracking-[-0.02em] text-[#0d262d] sm:text-[1.65rem]">
+              Drafted to be transparent now, finalized before checkout goes live.
+            </h2>
+            <div className="mt-4 grid gap-3 sm:grid-cols-2">
+              {[
+                "Legal business name, mailing address, and support contact will be added before launch.",
+                "Shipping, refund, and support workflows will be tightened before live fulfillment begins.",
+                "These pages are meant to avoid fake promises while still setting a real policy structure.",
+                "Nothing here changes the site-wide research-use-only positioning.",
+              ].map((item) => (
+                <div
+                  key={item}
+                  className="rounded-[1.25rem] border border-[#dbe6f5] bg-white px-4 py-3 text-sm leading-6 text-[#475967]"
+                >
+                  {item}
+                </div>
+              ))}
+            </div>
+            <div className="mt-5 space-y-4 text-[15px] leading-7 text-[#475967] sm:text-[16px]">
               {intro.map((paragraph) => (
                 <p key={paragraph}>{paragraph}</p>
               ))}
