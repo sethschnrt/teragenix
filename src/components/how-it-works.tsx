@@ -5,17 +5,17 @@ const steps = [
   {
     num: "01",
     title: "Pick your category",
-    body: "Browse the storefront by goal, compare compounds quickly, and use the product pages to understand the kit format before going deeper.",
+    body: "Start with the goal, compare compounds quickly, and use the product pages to confirm the kit format before going deeper.",
   },
   {
     num: "02",
-    title: "We bundle the prep",
-    body: "Each kit is positioned as a complete format, with product pages focused on what is included, how it fits the category, and what makes it different.",
+    title: "Review the full kit",
+    body: "Each listing shows what is included, the key specs, and the handling context needed to evaluate the product cleanly.",
   },
   {
     num: "03",
-    title: "Move through a cleaner flow",
-    body: "The goal of this storefront is simple product discovery, clearer kit comparison, and a more polished path from homepage to catalog to product detail.",
+    title: "Verify the details",
+    body: "Use the FAQ and policy pages to check shipping, refund, and research-use details before making a final decision.",
   },
 ];
 
@@ -36,7 +36,7 @@ export function HowItWorks() {
             </h2>
           </div>
           <p className="text-[1.05rem] leading-7 text-[#0d262d]/70 lg:pb-3">
-            Teragenix is being designed to make product discovery feel cleaner, faster, and more coherent across the full storefront.
+            Teragenix is built to make category browsing, kit evaluation, and documentation review feel cleaner from first click to product detail.
           </p>
         </div>
 
@@ -74,7 +74,7 @@ export function HowItWorks() {
               READY TO START
             </p>
             <h3 className="font-sans text-[1.8rem] font-semibold leading-tight tracking-tight text-white sm:text-[2.2rem]">
-              A cleaner storefront, built around <span className="italic text-[#dbeafe]">complete</span> kits.
+              A cleaner buying path, built around <span className="italic text-[#dbeafe]">complete</span> kits.
             </h3>
           </div>
           <Link

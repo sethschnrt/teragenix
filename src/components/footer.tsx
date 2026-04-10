@@ -43,7 +43,7 @@ export function Footer() {
           <div className="md:col-span-1">
             <Logo size="md" theme="light" className="w-[112px] sm:w-[128px]" />
             <p className="mt-5 max-w-xs text-[14px] leading-relaxed text-white/65">
-              Research-grade peptide kits with a cleaner storefront, tighter category structure, and documentation-first positioning.
+              Research peptide kits built around visible specs, complete kit formats, and documentation-first product pages.
             </p>
             <p className="mt-4 max-w-sm text-[12px] leading-6 text-white/48">
               Pre-launch legal pages are live now and will be updated with final business details before checkout goes live.
