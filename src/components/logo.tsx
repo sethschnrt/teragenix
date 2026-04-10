@@ -9,9 +9,9 @@ interface LogoProps {
 const BASE_PATH = process.env.NODE_ENV === "production" ? "/teragenix" : "";
 
 const sizeMap: Record<NonNullable<LogoProps["size"]>, { width: number; height: number }> = {
-  sm: { width: 120, height: 34 },
-  md: { width: 170, height: 48 },
-  lg: { width: 240, height: 68 },
+  sm: { width: 96, height: 27 },
+  md: { width: 128, height: 36 },
+  lg: { width: 196, height: 55 },
 };
 
 const srcMap: Record<NonNullable<LogoProps["theme"]>, string> = {
