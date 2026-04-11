@@ -131,14 +131,14 @@ export const products: Product[] = [
     slug: "tesamorelin",
     name: "Tesamorelin Research Kit",
     shortName: "Tesamorelin",
-    category: "Metabolic",
-    heroCategory: "Metabolic",
+    category: "Melanocortin",
+    heroCategory: "Melanocortin",
     price: 149.99,
     originalPrice: 189.99,
     description:
-      "10mg Tesamorelin kit for growth-hormone and body-composition research, with prep essentials included.",
+      "10mg Tesamorelin kit for longevity and body-composition focused protocols, with prep essentials included.",
     longDescription:
-      "This Tesamorelin research kit is framed for growth-hormone and body-composition research, with the compound, prep essentials, and storage guidance kept together in one place. Each kit includes a 10mg lyophilized vial, bacteriostatic water, syringes, and swabs for a clean lab workflow.",
+      "This Tesamorelin research kit is positioned for longevity and body-composition focused protocols, with the compound, prep essentials, and storage guidance kept together in one place. Each kit includes a 10mg lyophilized vial, bacteriostatic water, syringes, and swabs for a clean lab workflow.",
     badge: "Best Seller",
     badgeColor: "bg-emerald-600",
     image: "/images/vials/tesamorelin.webp",
@@ -169,14 +169,14 @@ export const products: Product[] = [
     slug: "melanotan-ii",
     name: "Melanotan II Research Kit",
     shortName: "Melanotan II",
-    category: "Melanocortin",
-    heroCategory: "Melanocortin",
+    category: "Cosmetic",
+    heroCategory: "Cosmetic",
     price: 79.99,
     originalPrice: 99.99,
     description:
-      "10mg Melanotan II kit for tanning and pigmentation research, with bacteriostatic water, syringes, and swabs included.",
+      "10mg Melanotan II kit for aesthetics and pigmentation-focused protocols, with prep essentials included.",
     longDescription:
-      "This Melanotan II research kit is positioned for tanning and pigmentation research, with the compound, prep essentials, and handling context kept together in one box. Each kit includes a 10mg lyophilized vial plus the reconstitution supplies needed for consistent lab prep.",
+      "This Melanotan II research kit is positioned for aesthetics and pigmentation-focused protocols, with the compound, prep essentials, and handling context kept together in one box. Each kit includes a 10mg lyophilized vial plus the reconstitution supplies needed for consistent lab prep.",
     badge: "New",
     badgeColor: "bg-violet-600",
     image: "/images/vials/melanotan-ii.webp",
@@ -212,9 +212,9 @@ export const products: Product[] = [
     price: 119.99,
     originalPrice: 149.99,
     description:
-      "70mg skin-glow blend with bacteriostatic water, syringes, and swabs for beauty-focused research.",
+      "70mg Glow 70 blend for aesthetics-focused protocols, with prep essentials included.",
     longDescription:
-      "This Glow 70 research kit is framed around skin-glow and beauty-focused research, with the blend, prep essentials, and storage notes kept together in one box. Each kit includes a 70mg lyophilized vial plus the reconstitution supplies needed for consistent lab prep.",
+      "This Glow 70 research kit is framed around aesthetics-focused protocols, with the blend, prep essentials, and storage notes kept together in one box. Each kit includes a 70mg lyophilized vial plus the reconstitution supplies needed for consistent lab prep.",
     badge: "Trending",
     badgeColor: "bg-rose-600",
     image: "/images/vials/glow-70.webp",
@@ -250,9 +250,9 @@ export const products: Product[] = [
     price: 69.99,
     originalPrice: 89.99,
     description:
-      "600mg Glutathione kit for antioxidant and recovery-focused research, with prep essentials included.",
+      "600mg Glutathione kit for recovery-focused protocols, with prep essentials included.",
     longDescription:
-      "This Glutathione research kit is positioned for antioxidant and recovery-focused research, with the compound, prep essentials, and storage guidance kept together for easier evaluation. Each kit includes a 600mg lyophilized vial plus the reconstitution supplies needed for a clean prep workflow.",
+      "This Glutathione research kit is positioned for recovery-focused protocols, with the compound, prep essentials, and storage guidance kept together for easier evaluation. Each kit includes a 600mg lyophilized vial plus the reconstitution supplies needed for a clean prep workflow.",
     image: "/images/vials/glutathione.webp",
     specifications: {
       purity: "99%+",
@@ -285,8 +285,8 @@ export const featuredProducts = products.filter((p) => p.badge);
 const heroCategoryLabelMap: Record<HeroCategory, string> = {
   Metabolic: "Fat Loss",
   Antioxidant: "Recovery",
-  Cosmetic: "Skin Glow",
-  Melanocortin: "Tanning",
+  Cosmetic: "Aesthetics",
+  Melanocortin: "Longevity",
 };
 
 const shopCategoryLabelMap: Record<ShopCategory, string> = {
@@ -308,24 +308,24 @@ const categoryParamMap: Record<string, ShopCategory> = {
   "weight-loss": "Metabolic",
   recovery: "Antioxidant",
   antioxidant: "Antioxidant",
-  longevity: "Cosmetic",
+  longevity: "Melanocortin",
+  aesthetics: "Cosmetic",
   cosmetic: "Cosmetic",
-  "skin-glow": "Cosmetic",
+  appearance: "Cosmetic",
   skin: "Cosmetic",
   glow: "Cosmetic",
   vitality: "Melanocortin",
   melanocortin: "Melanocortin",
-  tanning: "Melanocortin",
-  pigment: "Melanocortin",
-  pigmentation: "Melanocortin",
+  aging: "Melanocortin",
+  performance: "Melanocortin",
   "beauty-skin": "Cosmetic",
 };
 
 const heroCategoryHrefMap: Record<HeroCategory, string> = {
   Metabolic: "fat-loss",
   Antioxidant: "recovery",
-  Cosmetic: "skin-glow",
-  Melanocortin: "tanning",
+  Cosmetic: "aesthetics",
+  Melanocortin: "longevity",
 };
 
 export function normalizeCategoryParam(category: string | null): ShopCategory | undefined {

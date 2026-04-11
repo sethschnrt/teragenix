@@ -37,8 +37,8 @@ const heroTiles: HeroTile[] = [
     desktopImageClass: "h-[236px] max-w-[94%] lg:h-[164px] lg:max-w-[94%]",
   },
   {
-    title: "Skin Glow",
-    href: "/shop?category=skin-glow",
+    title: "Aesthetics",
+    href: "/shop?category=aesthetics",
     image: "/images/generated/hero-cards-v9-cutout/woman-47-cream-seated.webp",
     tone: "#f7eee2",
     mobileImageAlign: "bottom",
@@ -47,8 +47,8 @@ const heroTiles: HeroTile[] = [
     desktopImageClass: "h-[232px] max-w-[95%] lg:h-[158px] lg:max-w-[95%]",
   },
   {
-    title: "Tanning",
-    href: "/shop?category=tanning",
+    title: "Longevity",
+    href: "/shop?category=longevity",
     image: "/images/generated/life-benefits-v13-cutout/active-life-pickleball-centered.webp",
     desktopImage: "/images/generated/life-benefits-v13-cutout/active-life-pickleball-desktop-bottom.webp",
     tone: "#eee7fb",
@@ -102,17 +102,17 @@ export function Hero() {
                 <span
                   className="inline-block h-1.5 w-1.5 rounded-full bg-white"
                 />
-                Fat loss, recovery, glow, and tanning-focused research kits
+                Premium peptide kits for specific outcomes
               </p>
             </div>
 
             {/* Headline */}
             <h1 className="mx-auto max-w-[900px] text-center lg:max-w-[760px]">
               <span className="block text-[48px] font-bold leading-[0.98] tracking-[-0.03em] text-white sm:text-[60px] lg:text-[54px]">
-                Product-led research kits,
+                What Better Peptides
               </span>
               <span className="block text-[48px] font-bold leading-[0.98] tracking-[-0.03em] text-white sm:text-[60px] lg:text-[54px]">
-                built around <span className="italic text-[#a8c5f5]">real goals</span>.
+                <span className="italic text-[#a8c5f5]">Make Possible.</span>
               </span>
             </h1>
 
@@ -121,7 +121,7 @@ export function Hero() {
               className="mx-auto mt-5 max-w-[560px] text-center text-white/85 lg:mt-3 lg:max-w-[600px]"
               style={{ fontSize: "15px", lineHeight: "1.5", fontWeight: 400 }}
             >
-              Explore kits for fat loss, recovery, skin glow, and tanning-focused research with visible specs, included prep essentials, and clear storage guidance.
+              Premium peptide kits for fat loss, recovery, longevity, and aesthetics, complete with prep essentials, visible specs, and supporting documentation.
             </p>
 
             {/* CTA row */}
@@ -131,7 +131,7 @@ export function Hero() {
                 className="tg-link-pill group inline-flex h-12 items-center rounded-full bg-white px-7 text-[#0d262d] hover:bg-white/90"
                 style={{ fontSize: "14px", fontWeight: 600, letterSpacing: "-0.02em" }}
               >
-                Shop all kits
+                Shop premium kits
                 <svg className="tg-link-pill-icon ml-2 h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M5 12h14M13 5l7 7-7 7" />
                 </svg>
@@ -141,7 +141,7 @@ export function Hero() {
                 className="tg-link-pill inline-flex h-12 items-center rounded-full px-7 text-white ring-1 ring-white/40 hover:bg-white/10"
                 style={{ fontSize: "14px", fontWeight: 600, letterSpacing: "-0.02em" }}
               >
-                Quality standards
+                Explore outcomes
               </Link>
             </div>
           </div>

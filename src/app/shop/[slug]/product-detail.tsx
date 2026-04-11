@@ -204,19 +204,19 @@ export function ProductDetail({ product, relatedProducts }: ProductDetailProps) 
               About this kit
             </p>
             <h2 className="mt-3 text-[1.85rem] font-semibold leading-tight tracking-[-0.03em] text-[#0d262d] sm:text-[2.2rem]">
-              Everything you need to evaluate this kit quickly.
+              Built around a better peptide purchase.
             </h2>
             <p className="mt-5 text-[15px] leading-7 text-[#0d262d]/68 sm:text-[16px]">
               {product.longDescription}
             </p>
 
             <div className="mt-8 rounded-[1.5rem] p-5" style={{ backgroundColor: theme.softAlt }}>
-              <p className="text-sm font-semibold text-[#0d262d]">Why researchers choose full kits</p>
+              <p className="text-sm font-semibold text-[#0d262d]">Why the kit feels premium</p>
               <ul className="mt-4 space-y-3">
                 {[
-                  "Core prep supplies are listed up front, so there is less guesswork.",
+                  "The peptide and prep essentials arrive as one complete purchase.",
                   "Batch code, SKU, and documentation status stay tied to the exact product.",
-                  "Specs, storage guidance, and support links are all one scroll away.",
+                  "Specs, storage guidance, and support links stay close to the kit.",
                 ].map((item) => (
                   <li key={item} className="flex items-start gap-2.5 text-[14px] leading-6 text-[#0d262d]/68">
                     <Check className="mt-1 h-4 w-4 shrink-0" style={{ color: theme.accent }} />
@@ -267,7 +267,7 @@ export function ProductDetail({ product, relatedProducts }: ProductDetailProps) 
                 Batch documentation
               </p>
               <p className="mt-3 text-[14px] leading-6 text-[#0d262d]/68">
-                Batch code, SKU, COA status, and testing references stay tied to this product so the documentation layer is easier to verify.
+                Batch code, SKU, COA status, and testing references stay tied to this product so the premium promise has visible support behind it.
               </p>
               <div className="mt-5 grid gap-3">
                 {documentationItems.map((item) => (
@@ -318,7 +318,7 @@ export function ProductDetail({ product, relatedProducts }: ProductDetailProps) 
                 Support pages
               </p>
               <p className="mt-3 text-[14px] leading-6 text-[#0d262d]/68">
-                Need more than the product summary? Use the COA hub, FAQ, and policy pages for shipping, refund, and research-use details without having to hunt for answers.
+                Need more than the product summary? Use the COA hub, FAQ, and policy pages to confirm shipping, refund, and research-use details before you buy.
               </p>
 
               <div className="mt-5 flex flex-wrap gap-2.5">

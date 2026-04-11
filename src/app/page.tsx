@@ -23,22 +23,22 @@ export default function Home() {
 
       {/* Section 1 — Metabolic */}
       <EditorialSection
-        eyebrow="FAT LOSS RESEARCH"
-        headline="Metabolic and body-composition research, built into complete kits."
-        accentPhrase="complete kits"
+        eyebrow="BODY COMPOSITION"
+        headline="Premium peptides for body-composition focused protocols."
+        accentPhrase="body-composition focused protocols"
         accentColor={BLUE_PRIMARY}
         haloColor={HALO_SKY}
-        bodyText="Retatrutide and tesamorelin kits are positioned for metabolic and body-composition research, with the compound, prep essentials, and key specs kept together in one box."
-        subheading="Built for cleaner prep"
-        subbody="Instead of chasing down supplies separately, each kit keeps the essentials together so the product benefit stays front and center from the first glance."
+        bodyText="Retatrutide and tesamorelin are positioned for buyers chasing a sharper body-composition edge, with the compound, prep essentials, and key specs kept together in one premium kit."
+        subheading="Why the kit matters"
+        subbody="When the peptide, prep supplies, and specs all show up together, the product feels more serious, more complete, and easier to act on."
         features={[
-          "Metabolic research focus",
+          "Premium compounds for leaner protocols",
           "Included prep essentials",
           "Clear storage guidance",
           "Visible format + quantity",
-          "Research-use-only framing",
+          "Supporting documentation status",
         ]}
-        cardTitle="Why these kits stand out:"
+        cardTitle="What you get in one box:"
         ctaLabel="Browse fat loss kits"
         ctaHref="/shop?category=fat-loss"
         image1="/images/generated/refresh-v1/metabolic-hero-tight.webp"
@@ -50,20 +50,21 @@ export default function Home() {
 
       {/* Section 2 — Quality standards */}
       <EditorialSection
-        eyebrow="PRODUCT CONFIDENCE"
-        headline="Purity, storage, and batch visibility where they matter."
-        accentPhrase="where they matter"
+        eyebrow="PREMIUM STANDARD"
+        headline="Better compounds. Better kits. Better supporting proof."
+        accentPhrase="Better supporting proof"
         accentColor={BLUE_SKY}
         haloColor={HALO_STEEL}
-        bodyText="The strongest product story is simple: visible specs, batch-linked documentation status, and clear handling guidance tied directly to the kit."
-        subheading="Why buyers care"
-        subbody="When purity, storage, and documentation stay close to the product, confidence comes from what the kit actually offers, not from inflated marketing language."
+        bodyText="Teragenix is strongest when the product itself does the selling: premium peptides, complete kits, visible specs, and batch-linked documentation that backs up the promise."
+        subheading="The selling point, in one line"
+        subbody="You are not buying a loose vial and a bunch of question marks. You are buying a more complete peptide kit with clearer proof behind it."
         features={[
-          "Purity and format shown clearly",
+          "Premium compounds for specific goals",
+          "Complete kit format",
           "Batch-linked documentation status",
           "Storage notes on-page",
           "Kit contents shown upfront",
-          "Calm, specific product language",
+          "Visible purity + format",
         ]}
         cardTitle="What builds confidence:"
         ctaLabel="View batch docs"

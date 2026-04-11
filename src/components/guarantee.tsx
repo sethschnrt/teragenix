@@ -4,23 +4,23 @@ import { Shield, Truck, FlaskConical, Mail } from "lucide-react";
 const promises = [
   {
     icon: Truck,
-    title: "Complete prep in one box",
-    body: "Each kit pairs the compound with the core prep essentials, so setup feels cleaner from the start.",
+    title: "Premium kits, not loose vials",
+    body: "Each kit pairs the peptide with the prep essentials, turning a simple purchase into a more complete protocol-ready package.",
   },
   {
     icon: FlaskConical,
-    title: "Product benefits, clearly framed",
-    body: "Fat loss, recovery, glow, and tanning-focused kits are grouped in a way that makes the use case obvious fast.",
+    title: "Built for specific outcomes",
+    body: "Fat loss, recovery, longevity, and aesthetics are the guiding outcomes, so the product promise is clear before you ever open the kit.",
   },
   {
     icon: Shield,
-    title: "Specs that support the product",
-    body: "Purity, storage notes, and documentation status stay close to the kit, making product confidence easier to earn.",
+    title: "Specs that justify the price",
+    body: "Purity, storage notes, and documentation status stay close to the product, so premium positioning has real support behind it.",
   },
   {
     icon: Mail,
-    title: "Answers before checkout",
-    body: "Support, shipping, refund, and research-use details are easy to reach when you need to verify the operational side.",
+    title: "Clarity before commitment",
+    body: "Support, shipping, refund, and research-use details stay easy to reach when you want to verify the operational side before buying.",
   },
 ];
 
@@ -30,10 +30,10 @@ export function Guarantee() {
       <div className="mx-auto max-w-[1240px] px-5 sm:px-8 lg:px-[160px]">
         <div className="mb-16 text-center">
           <p className="tg-eyebrow mb-6" style={{ color: "#3b6ed6" }}>
-            WHY THE KITS LAND
+            WHY TERAGENIX WORKS
           </p>
           <h2 className="tg-h2 mx-auto max-w-3xl" style={{ color: "#0d262d" }}>
-            Better product framing, <span style={{ color: "#3b6ed6" }}>less guesswork</span> before checkout.
+            Premium peptides, <span style={{ color: "#3b6ed6" }}>complete kits</span>, clearer proof.
           </h2>
           <p
             className="mx-auto mt-6 max-w-xl"
@@ -44,7 +44,7 @@ export function Guarantee() {
               fontWeight: 400,
             }}
           >
-            The compound, included supplies, specs, and support details all work together to make the products easier to trust.
+            The difference is not the website. It is better peptides, better kit presentation, and better support behind the purchase.
           </p>
         </div>
 
@@ -102,7 +102,7 @@ export function Guarantee() {
                 letterSpacing: "-0.76px",
               }}
             >
-              Explore the full product lineup.
+              Shop the full premium lineup.
             </h3>
           </div>
           <Link

@@ -101,15 +101,15 @@ export default function ShopPage() {
                 SHOP TERAGENIX
               </span>
               <span className="text-[12px] text-white/60">
-                Fat loss, recovery, skin glow, and tanning-focused kits
+                Premium peptide kits built around specific outcomes
               </span>
             </div>
 
             <h1 className="text-[2rem] font-semibold leading-[0.96] tracking-[-0.035em] text-white sm:text-[2.45rem]">
-              Shop by product goal.
+              Premium peptides for specific outcomes.
             </h1>
             <p className="mt-2 max-w-xl text-[0.96rem] leading-6 text-white/72">
-              Explore kits for fat loss, recovery, skin glow, and tanning-focused research, then compare specs and included supplies fast.
+              Shop peptide kits for fat loss, recovery, longevity, and aesthetics, complete with prep essentials, visible specs, and supporting proof.
             </p>
           </div>
         </div>

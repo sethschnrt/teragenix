@@ -20,11 +20,11 @@ export function FeaturedProducts() {
               FEATURED KITS
             </p>
             <h2 className="font-sans text-[2.5rem] font-semibold leading-[1.04] tracking-[-0.03em] text-[#0d262d] sm:text-[3.6rem]">
-              Best sellers, <br className="hidden sm:block" />
-              built around <span className="italic text-[#3b6ed6]">real goals</span>.
+              Better peptides, <br className="hidden sm:block" />
+              built into <span className="italic text-[#3b6ed6]">premium kits</span>.
             </h2>
             <p className="mt-6 max-w-xl text-[1.05rem] leading-7 text-[#0d262d]/65">
-              From fat loss and recovery to skin glow and tanning-focused research, these kits pair the compound with the prep essentials in one clean box.
+              These are the core kits buyers come for first: premium peptides paired with prep essentials, visible specs, and a cleaner all-in-one format.
             </p>
           </div>
 

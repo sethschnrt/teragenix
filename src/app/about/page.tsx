@@ -70,16 +70,16 @@ export default function AboutPage() {
       <PageHero
         icon={Microscope}
         eyebrow="ABOUT TERAGENIX"
-        detail="Research-kit standards, documentation, and buyer clarity"
-        title="A clearer way to evaluate research kits."
-        description="Teragenix is built around complete kits, visible specs, and documentation that helps buyers compare faster and verify details sooner."
+        detail="Premium peptides, complete kits, and supporting proof"
+        title="What better peptides make possible."
+        description="Teragenix is built around premium peptides for specific outcomes, complete kit formats, and the proof serious buyers expect to see."
         variant="subpage"
         panelEyebrow="BUYER SYSTEM"
-        panelTitle="What shoppers should understand fast."
+        panelTitle="What makes Teragenix different."
         panelItems={[
+          { label: "Premium peptides", value: "Built for outcomes" },
           { label: "Complete kits", value: "Included supplies up front" },
           { label: "Documentation", value: "Specs close to product" },
-          { label: "Category flow", value: "Find the right fit faster" },
           { label: "Support path", value: "FAQ + policy pages", href: "/faq" },
         ]}
       />
@@ -90,17 +90,17 @@ export default function AboutPage() {
             <div className="rounded-[2rem] bg-white p-7 ring-1 ring-[#e3e8ef] sm:p-8">
               <p className="tg-eyebrow">WHY TERAGENIX EXISTS</p>
               <h2 className="mt-3 text-[2rem] font-semibold leading-tight tracking-[-0.03em] text-[#0d262d] sm:text-[2.5rem]">
-                Research kits should be easier to compare from the start.
+                Teragenix sells premium peptides for specific outcomes.
               </h2>
               <div className="mt-5 space-y-4 text-[15px] leading-7 text-[#475967] sm:text-[16px]">
                 <p>
-                  Teragenix exists to make research kits easier to compare, easier to understand, and easier to verify before checkout.
+                  The core promise is simple: better peptides, complete kits, and clearer proof behind the purchase.
                 </p>
                 <p>
-                  That means clear kit structure, visible specs, included supplies shown up front, and documentation that stays close to the product.
+                  Instead of selling loose vials with vague positioning, Teragenix frames each product around the outcome, the peptide, and the supporting details that justify it.
                 </p>
                 <p>
-                  The goal is simple: less guesswork, faster evaluation, and more confidence while moving through the catalog.
+                  That is what the site should communicate on every page, from the homepage headline to the product detail and documentation layer.
                 </p>
               </div>
             </div>

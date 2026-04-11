@@ -20,7 +20,7 @@ const tickerItems = [
     ),
   },
   {
-    label: "FAT LOSS • RECOVERY • GLOW • TANNING",
+    label: "FAT LOSS • RECOVERY • LONGEVITY • AESTHETICS",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4">
         <path d="M12 3v18" />
