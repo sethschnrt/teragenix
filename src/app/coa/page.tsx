@@ -16,18 +16,18 @@ import {
 const standards = [
   {
     icon: ScanSearch,
-    title: "Batch-linked references",
-    body: "Each product now carries a SKU and batch code so support, documentation, and the product page all point to the same reference line.",
+    title: "Product-linked references",
+    body: "Each product carries a SKU and batch code so documentation questions can be answered faster and more accurately.",
   },
   {
     icon: FileCheck2,
-    title: "COA-first structure",
-    body: "This page is designed to hold COA, HPLC, and MS visibility in one place instead of scattering trust details across checkout copy.",
+    title: "COA visibility in one place",
+    body: "COA, HPLC, and MS status are surfaced together, making quality review easier without bouncing between pages.",
   },
   {
     icon: ShieldCheck,
     title: "Honest status states",
-    body: "Launch-batch documentation is shown with real upload states. No fake PDFs, no pretending files exist when they do not.",
+    body: "Documentation states stay accurate, so buyers can see what is ready now and what is still pending.",
   },
 ];
 
@@ -37,16 +37,16 @@ export default function CoaPage() {
       <PageHero
         icon={Microscope}
         eyebrow="COA + BATCH DOCS"
-        detail="Product-linked documentation, batch references, and upload status"
-        title="Documentation should be easy to find."
-        description="This hub keeps SKU references, batch codes, and documentation status tied to each Teragenix product so the quality layer feels visible before checkout goes live."
+        detail="SKU references, batch codes, and documentation status"
+        title="Batch documentation, easier to find."
+        description="Use this hub to check SKU references, batch codes, and documentation status without bouncing between product and support pages."
         variant="subpage"
         highlights={[
           { label: "Browse research kits", href: "/shop" },
           { label: "Read support FAQ", href: "/faq" },
         ]}
         panelEyebrow="DOCUMENTATION SYSTEM"
-        panelTitle="The trust layer now has a real home."
+        panelTitle="The quality layer lives here."
         panelItems={[
           { label: "Products tracked", value: String(products.length) },
           { label: "Docs surfaced", value: "COA, HPLC, MS" },
@@ -79,10 +79,10 @@ export default function CoaPage() {
           <div className="mb-6 max-w-3xl">
             <p className="tg-eyebrow">TRACKED PRODUCTS</p>
             <h2 className="mt-3 text-[2rem] font-semibold leading-tight tracking-[-0.03em] text-[#0d262d] sm:text-[2.45rem]">
-              Batch visibility for the current catalog.
+              Documentation visibility for the current catalog.
             </h2>
             <p className="mt-4 text-[15px] leading-7 text-[#475967] sm:text-[16px]">
-              Successful research-kit stores make documentation visible close to the product. This page mirrors that structure while keeping upload states honest during the launch phase.
+              Keep SKU references, batch codes, and documentation status close to the product so quality review is faster and easier.
             </p>
           </div>
 
@@ -163,22 +163,22 @@ export default function CoaPage() {
             <div className="rounded-[1.8rem] bg-white p-6 ring-1 ring-[#e3e8ef] sm:p-7 xl:sticky xl:top-24">
               <p className="tg-eyebrow">HOW THIS PAGE WORKS</p>
               <h2 className="mt-3 text-[1.9rem] font-semibold leading-tight tracking-[-0.03em] text-[#0d262d] sm:text-[2.3rem]">
-                Launch batches get visible status before full file hosting.
+                See what is ready before you buy.
               </h2>
               <div className="mt-5 space-y-4 text-[15px] leading-7 text-[#475967]">
                 <p>
-                  Right now the page establishes the structure serious stores use: product-linked SKU references, batch codes, and documentation states tied to the exact item.
+                  This page keeps documentation status easy to check now, with product-linked SKU references and batch codes tied to the exact kit.
                 </p>
                 <p>
-                  As batch files are uploaded, this hub can expand into direct COA, HPLC, and MS downloads without redesigning the product system again.
+                  As files are published, the same structure can expand into direct COA, HPLC, and MS access without forcing buyers to relearn the system.
                 </p>
               </div>
 
               <div className="mt-7 space-y-3">
                 {[
-                  "COA / HPLC / MS visibility tied to the product, not buried in footer copy.",
+                  "COA / HPLC / MS visibility tied to the product where it is easiest to use.",
                   "Batch code and SKU reference visible before support questions start.",
-                  "Honest upload-state language until final launch files are ready.",
+                  "Honest status language until final launch files are ready.",
                 ].map((item) => (
                   <div key={item} className="rounded-[1.25rem] bg-[#f4f8ff] p-4 ring-1 ring-[#dbe6f5]">
                     <p className="text-sm leading-6 text-[#475967]">{item}</p>

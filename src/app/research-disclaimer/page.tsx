@@ -12,50 +12,55 @@ export default function ResearchDisclaimerPage() {
     <LegalPageTemplate
       icon={FlaskConical}
       eyebrow="RESEARCH USE DISCLAIMER"
-      title="A serious boundary around what these products are, and are not."
-      description="This disclaimer is here to make the Teragenix position unmistakably clear: the site and its products are framed for research and laboratory use only."
-      lastUpdated="April 9, 2026"
+      title="Research use only means exactly that."
+      description="All products presented by Teragenix are intended solely for lawful in-vitro research and laboratory use by qualified persons or entities."
+      lastUpdated="April 11, 2026"
       intro={[
-        "Teragenix is positioning its catalog around in-vitro research and laboratory use only. That is not decorative language. It is a core restriction that should be stated clearly across the storefront, support content, and product detail pages.",
-        "Nothing on this site should be interpreted as medical advice, treatment guidance, dosing guidance, or a representation that any product is approved for human or veterinary use.",
+        "Teragenix presents its catalog for lawful in-vitro research and laboratory use only. Products shown on this site are not offered for human consumption, human injection, veterinary use, household use, or recreational use.",
+        "Nothing on this site, including product pages, specifications, storage notes, category copy, or support content, should be read as medical advice, dosing guidance, treatment instruction, or a representation that any item is approved for human or animal use.",
       ]}
       sections={[
         {
-          title: "1. Research use only",
+          title: "1. Scope of the restriction",
           body: [
-            "All Teragenix products are intended solely for lawful in-vitro research and laboratory use by qualified persons or entities. They are not intended for human consumption, injection into humans or animals, household use, or recreational use.",
+            "All products listed by Teragenix are intended only for controlled laboratory and research settings, handled by qualified persons or entities operating lawfully in their jurisdiction.",
+            "Any use outside that scope is inconsistent with the stated purpose of the site and falls outside the basis of any future transaction with Teragenix.",
           ],
         },
         {
-          title: "2. No medical or therapeutic claims",
-          body: [
-            "Nothing on the Teragenix website should be understood as medical advice, treatment advice, diagnosis, prevention guidance, or therapeutic instruction. Product descriptions, category labels, and informational content are not a substitute for professional medical or legal advice.",
-          ],
-        },
-        {
-          title: "3. Buyer and user responsibility",
+          title: "2. No human or veterinary use",
           bullets: [
-            "You are responsible for determining whether your access to the site and any future purchase is lawful in your jurisdiction.",
-            "You are responsible for ensuring that any product is handled only by appropriately qualified personnel in a proper research setting.",
-            "You are responsible for reviewing applicable safety information, storage instructions, handling requirements, and lab procedures before use.",
+            "Products are not intended for human consumption, self-experimentation, compounding, or administration to humans or animals.",
+            "Products are not presented as drugs, supplements, foods, cosmetics, or medical devices.",
+            "Products are not intended to diagnose, treat, cure, mitigate, or prevent any disease or medical condition.",
           ],
         },
         {
-          title: "4. No unlawful or off-label use",
+          title: "3. No medical claims or instructions",
           body: [
-            "Teragenix does not authorize, encourage, or support any unlawful, unsafe, or off-label use of the products presented on this site. Any attempt to use products in a manner inconsistent with the stated research-use restriction is outside the scope of the site and any future transaction.",
+            "Teragenix does not provide medical advice, treatment advice, veterinary guidance, or clinical instructions. No statement on this site should be interpreted that way.",
+            "References to purity, handling, storage, batch documentation, or research categories are provided to support laboratory review only. They do not change the research-use-only restriction.",
           ],
         },
         {
-          title: "5. Right to restrict or refuse business",
-          body: [
-            "Once live ordering is enabled, Teragenix may refuse, cancel, or limit any order if it reasonably believes the purchase may violate the stated research-use restriction, applicable law, or the site’s Terms of Use.",
+          title: "4. Purchaser and user responsibility",
+          bullets: [
+            "You are responsible for verifying that access to the site and any future purchase is lawful in your jurisdiction.",
+            "You are responsible for ensuring that products are handled only by appropriately qualified personnel in a proper research setting.",
+            "You are responsible for reviewing all labeling, documentation, storage requirements, handling instructions, and applicable safety procedures before use.",
+            "You are responsible for compliance with applicable institutional, local, state, and federal rules.",
           ],
         },
         {
-          title: "6. Future compliance details",
+          title: "5. Right to screen, limit, or refuse business",
           body: [
-            "Before launch, this page should be revisited alongside product-page copy, category language, and support materials so the site’s legal and compliance posture is consistent from top to bottom.",
+            "Teragenix reserves the right to decline, cancel, refund, or restrict any order or inquiry that appears inconsistent with the site’s research-use-only position, applicable law, or internal compliance standards.",
+          ],
+        },
+        {
+          title: "6. Future updates",
+          body: [
+            "As Teragenix moves toward live checkout, this page may be refined to add final entity details, contact information, and supplemental compliance language. The core rule will remain the same: products are presented for research use only.",
           ],
         },
       ]}

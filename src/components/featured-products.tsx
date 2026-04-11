@@ -20,11 +20,11 @@ export function FeaturedProducts() {
               FEATURED KITS
             </p>
             <h2 className="font-sans text-[2.5rem] font-semibold leading-[1.04] tracking-[-0.03em] text-[#0d262d] sm:text-[3.6rem]">
-              Complete kits, <br className="hidden sm:block" />
-              <span className="italic text-[#3b6ed6]">easier</span> to compare.
+              Ready-to-run kits, <br className="hidden sm:block" />
+              <span className="italic text-[#3b6ed6]">easier</span> to choose.
             </h2>
             <p className="mt-6 max-w-xl text-[1.05rem] leading-7 text-[#0d262d]/65">
-              Featured kits give buyers the fastest read on category, box format, and price before they ever open the full product page.
+              Compare format, included essentials, and price in one quick scan, so finding the right research kit takes less digging.
             </p>
           </div>
 
@@ -86,7 +86,7 @@ export function FeaturedProducts() {
                   </p>
 
                   <p className="line-clamp-2 text-[13px] leading-relaxed text-[#0d262d]/60">
-                    Complete prep kit with {product.shortName}, bacteriostatic water, syringes, swabs, and a guide.
+                    One box with {product.shortName}, bacteriostatic water, syringes, swabs, and a guide for faster lab prep.
                   </p>
 
                   <div className="mt-auto flex items-end justify-between gap-3 pt-4">

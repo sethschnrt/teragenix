@@ -98,9 +98,9 @@ export const products: Product[] = [
     price: 189.99,
     originalPrice: 239.99,
     description:
-      "10mg Retatrutide + bacteriostatic water + insulin syringes + alcohol swabs. Reference-compound research kit.",
+      "10mg Retatrutide kit with bacteriostatic water, insulin syringes, and swabs for faster lab prep.",
     longDescription:
-      "Retatrutide is presented here as a reference peptide compound for laboratory handling and reconstitution workflows. This complete kit includes 10mg lyophilized compound, bacteriostatic water, syringes, and swabs for consistent lab prep.",
+      "This Retatrutide research kit brings the compound, prep essentials, and storage context together in one place, making evaluation faster before lab work begins. Each kit includes a 10mg lyophilized vial, bacteriostatic water, syringes, and swabs for a cleaner prep workflow.",
     badge: "Popular",
     badgeColor: "bg-[#4A90D9]",
     image: "/images/vials/retatrutide.webp",
@@ -136,9 +136,9 @@ export const products: Product[] = [
     price: 149.99,
     originalPrice: 189.99,
     description:
-      "10mg Tesamorelin + bacteriostatic water + insulin syringes + alcohol swabs. Synthetic peptide research kit.",
+      "10mg Tesamorelin kit with bacteriostatic water, insulin syringes, and swabs for streamlined lab prep.",
     longDescription:
-      "Tesamorelin is presented here as a synthetic peptide reference compound for laboratory handling and reconstitution workflows. This ready-to-study kit includes 10mg lyophilized peptide, bacteriostatic water, syringes, and swabs for clean lab prep.",
+      "This Tesamorelin research kit keeps the compound, prep essentials, and storage guidance together, making it easier to compare and easier to prep. Each kit includes a 10mg lyophilized vial, bacteriostatic water, syringes, and swabs for a clean lab workflow.",
     badge: "Best Seller",
     badgeColor: "bg-emerald-600",
     image: "/images/vials/tesamorelin.webp",
@@ -174,9 +174,9 @@ export const products: Product[] = [
     price: 79.99,
     originalPrice: 99.99,
     description:
-      "10mg Melanotan II + bacteriostatic water + insulin syringes + alcohol swabs. Melanocortin research kit.",
+      "10mg Melanotan II kit with bacteriostatic water, insulin syringes, and swabs for streamlined lab prep.",
     longDescription:
-      "Melanotan II is presented here as a melanocortin reference compound for laboratory workflows. This complete kit includes 10mg lyophilized compound and the reconstitution essentials needed for research prep.",
+      "This Melanotan II research kit keeps the compound, prep essentials, and handling context together, so comparison is quicker and setup is clearer. Each kit includes a 10mg lyophilized vial plus the reconstitution supplies needed for consistent lab prep.",
     badge: "New",
     badgeColor: "bg-violet-600",
     image: "/images/vials/melanotan-ii.webp",
@@ -212,9 +212,9 @@ export const products: Product[] = [
     price: 119.99,
     originalPrice: 149.99,
     description:
-      "70mg Glow 70 blend + bacteriostatic water + syringes + alcohol swabs. Multi-compound research kit.",
+      "70mg multi-compound kit with bacteriostatic water, syringes, and swabs for all-in-one lab prep.",
     longDescription:
-      "Glow 70 is presented as a multi-compound research blend. This kit includes a 70mg lyophilized vial plus the reconstitution supplies needed for consistent lab prep.",
+      "This Glow 70 research kit brings the blend and core prep supplies together in one box, making it easier to review format, included essentials, and storage notes before you choose. Each kit includes a 70mg lyophilized vial plus the reconstitution supplies needed for consistent lab prep.",
     badge: "Trending",
     badgeColor: "bg-rose-600",
     image: "/images/vials/glow-70.webp",
@@ -250,9 +250,9 @@ export const products: Product[] = [
     price: 69.99,
     originalPrice: 89.99,
     description:
-      "600mg Glutathione + bacteriostatic water + syringes + alcohol swabs. Laboratory research kit.",
+      "600mg Glutathione kit with bacteriostatic water, syringes, and swabs for straightforward lab setup.",
     longDescription:
-      "Glutathione is a widely referenced laboratory compound. This kit includes a 600mg vial with core reconstitution supplies for consistent lab setup.",
+      "This Glutathione research kit keeps the compound, prep essentials, and storage guidance together, so lab setup is easier to evaluate before selection. Each kit includes a 600mg lyophilized vial plus the reconstitution supplies needed for a clean prep workflow.",
     image: "/images/vials/glutathione.webp",
     specifications: {
       purity: "99%+",

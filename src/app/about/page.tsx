@@ -17,18 +17,18 @@ import {
 const workflowCards = [
   {
     icon: LayoutGrid,
-    title: "Category-first browsing",
-    body: "Researchers can start with the goal, then narrow into products without scanning a cluttered catalog.",
+    title: "Start with the right category",
+    body: "Move from research goal to product faster by narrowing the catalog before comparing individual kits.",
   },
   {
     icon: Package,
-    title: "Complete kit format",
-    body: "Each listing is framed as a full prep kit, not a disconnected vial with missing context.",
+    title: "See the full kit upfront",
+    body: "Each listing shows the compound and included prep essentials together, so you know what is in the box faster.",
   },
   {
     icon: ScanSearch,
-    title: "Important details up front",
-    body: "Specs, pricing, kit contents, and handling guidance should be visible without digging through filler copy.",
+    title: "Verify details sooner",
+    body: "Specs, pricing, kit contents, and storage guidance stay visible without digging through filler copy.",
   },
 ];
 
@@ -36,32 +36,32 @@ const principleCards = [
   {
     icon: Shield,
     title: "Credible standards",
-    body: "Quality language should feel calm, specific, and easy to evaluate at a glance.",
+    body: "Trust should come from specific, supportable details that buyers can evaluate quickly.",
   },
   {
     icon: FileCheck2,
-    title: "Documentation first",
-    body: "Specs, batch context, and handling notes should carry trust instead of inflated marketing promises.",
+    title: "Documentation close by",
+    body: "Specs, batch context, and handling notes should live near the product where they actually help.",
   },
   {
     icon: Package,
     title: "Complete kits",
-    body: "Products should feel intentional and ready for lab prep from the first glance down the page.",
+    body: "Products should feel ready for lab prep from the first glance, not like pieces spread across the catalog.",
   },
   {
     icon: Microscope,
-    title: "Research context",
-    body: "The experience stays focused on lab use, preparation, and technical clarity from page to page.",
+    title: "Research-first framing",
+    body: "Every page should stay grounded in lab use, technical clarity, and easier product evaluation.",
   },
 ];
 
 const qualityPoints = [
   "Visible purity, quantity, and format specs",
-  "Cleaner batch and handling framing",
+  "Batch-linked documentation status",
   "Less hype, more supportable language",
   "Kit contents shown before checkout",
-  "A tighter path from category to product detail",
-  "Support pages linked as part of the buying flow",
+  "A faster path from category to product detail",
+  "Support pages linked where buyers need them",
 ];
 
 export default function AboutPage() {
@@ -70,16 +70,16 @@ export default function AboutPage() {
       <PageHero
         icon={Microscope}
         eyebrow="ABOUT TERAGENIX"
-        detail="Quality standards, kit framing, and buyer clarity"
-        title="A clearer standard for research kits."
-        description="Teragenix is built around complete kits, visible specs, and documentation that stays close to the product so the buying experience feels easier to trust."
+        detail="Research-kit standards, documentation, and buyer clarity"
+        title="A clearer way to evaluate research kits."
+        description="Teragenix is built around complete kits, visible specs, and documentation that helps buyers compare faster and verify details sooner."
         variant="subpage"
         panelEyebrow="BUYER SYSTEM"
-        panelTitle="What the storefront should communicate fast."
+        panelTitle="What shoppers should understand fast."
         panelItems={[
-          { label: "Complete kits", value: "Visible prep format" },
+          { label: "Complete kits", value: "Included supplies up front" },
           { label: "Documentation", value: "Specs close to product" },
-          { label: "Category flow", value: "Scan faster, compare faster" },
+          { label: "Category flow", value: "Find the right fit faster" },
           { label: "Support path", value: "FAQ + policy pages", href: "/faq" },
         ]}
       />
@@ -90,17 +90,17 @@ export default function AboutPage() {
             <div className="rounded-[2rem] bg-white p-7 ring-1 ring-[#e3e8ef] sm:p-8">
               <p className="tg-eyebrow">WHY TERAGENIX EXISTS</p>
               <h2 className="mt-3 text-[2rem] font-semibold leading-tight tracking-[-0.03em] text-[#0d262d] sm:text-[2.5rem]">
-                Research kits should feel easier to evaluate, not harder.
+                Research kits should be easier to compare from the start.
               </h2>
               <div className="mt-5 space-y-4 text-[15px] leading-7 text-[#475967] sm:text-[16px]">
                 <p>
-                  Teragenix exists to make research compounds easier to compare, kit contents easier to understand, and standards easier to verify.
+                  Teragenix exists to make research kits easier to compare, easier to understand, and easier to verify before checkout.
                 </p>
                 <p>
-                  Instead of noisy layouts and vague claims, the brand is built around tighter product structure, clearer documentation surfaces, and more disciplined language.
+                  That means clear kit structure, visible specs, included supplies shown up front, and documentation that stays close to the product.
                 </p>
                 <p>
-                  That means the homepage, catalog, product pages, and support pages all need to work together as one coherent trust system.
+                  The goal is simple: less guesswork, faster evaluation, and more confidence while moving through the catalog.
                 </p>
               </div>
             </div>
@@ -128,9 +128,9 @@ export default function AboutPage() {
       <section className="bg-[#fafbfc] py-10 sm:py-12 lg:py-14">
         <div className="mx-auto max-w-[1240px] px-5 sm:px-8 lg:px-12">
           <div className="mb-6 max-w-2xl">
-            <p className="tg-eyebrow">STOREFRONT PRINCIPLES</p>
+            <p className="tg-eyebrow">BUYING PRINCIPLES</p>
             <h2 className="mt-3 text-[2rem] font-semibold leading-tight tracking-[-0.03em] text-[#0d262d] sm:text-[2.45rem]">
-              The rules shaping the Teragenix buying experience.
+              The rules behind a faster, clearer buying flow.
             </h2>
           </div>
 
@@ -165,10 +165,10 @@ export default function AboutPage() {
                   </span>
                 </div>
                 <h2 className="mt-5 text-[2rem] font-semibold leading-tight tracking-[-0.03em] text-white sm:text-[2.5rem]">
-                  The quality story should feel calm, serious, and obvious.
+                  Quality should be easy to check at a glance.
                 </h2>
                 <p className="mt-5 max-w-xl text-[15px] leading-7 text-white/72 sm:text-[16px]">
-                  Teragenix should communicate standards through visible specs, clearer documentation language, and better product presentation, not hype.
+                  Teragenix builds confidence through visible specs, clearer documentation language, and better product presentation, not hype.
                 </p>
               </div>
 
@@ -194,13 +194,13 @@ export default function AboutPage() {
         <div className="mx-auto max-w-[1240px] px-5 sm:px-8 lg:px-12">
           <div className="grid gap-5 lg:grid-cols-[1.05fr_0.95fr]">
             <div className="rounded-[2rem] bg-white p-7 ring-1 ring-[#e3e8ef] sm:p-8">
-              <p className="tg-eyebrow">HOW TO READ THE SITE</p>
+              <p className="tg-eyebrow">HOW TO SHOP TERAGENIX</p>
               <h2 className="mt-3 text-[1.9rem] font-semibold leading-tight tracking-[-0.03em] text-[#0d262d] sm:text-[2.35rem]">
-                Start with category, then move into the kit.
+                Start with the category, then verify the kit.
               </h2>
               <div className="mt-6 space-y-4">
                 {[
-                  "Browse by category first so the catalog feels easier to scan.",
+                  "Browse by category first so you can narrow down the right kits faster.",
                   "Use the product page to confirm the full kit format, specs, and storage guidance.",
                   "Use the FAQ and policy pages to validate shipping, refund, and research-use details.",
                 ].map((item, index) => (
@@ -217,10 +217,10 @@ export default function AboutPage() {
             <div className="rounded-[2rem] bg-white p-7 ring-1 ring-[#e3e8ef] sm:p-8">
               <p className="tg-eyebrow">NEXT STEP</p>
               <h2 className="mt-3 text-[1.9rem] font-semibold leading-tight tracking-[-0.03em] text-[#0d262d] sm:text-[2.35rem]">
-                Browse the current catalog.
+                Browse the catalog.
               </h2>
               <p className="mt-4 text-[15px] leading-7 text-[#475967] sm:text-[16px]">
-                The fastest way to understand the brand is to move through the live catalog, then drop into a product page and support pages from there.
+                The fastest way to understand Teragenix is to browse the catalog, open a product page, and verify the support details from there.
               </p>
 
               <div className="mt-8 space-y-3">

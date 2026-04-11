@@ -12,63 +12,63 @@ export default function ShippingPolicyPage() {
     <LegalPageTemplate
       icon={Truck}
       eyebrow="SHIPPING POLICY"
-      title="How Teragenix intends to handle fulfillment."
-      description="This page sets the shipping-policy structure for Teragenix without pretending that fulfillment details are already more finalized than they really are."
-      lastUpdated="April 9, 2026"
+      title="How Teragenix plans to handle fulfillment."
+      description="This page outlines the shipping framework Teragenix intends to finalize before live order processing begins."
+      lastUpdated="April 11, 2026"
       intro={[
-        "Teragenix is not yet operating with a finalized shipping workflow, support inbox, or published service coverage. Because of that, this page is intentionally conservative.",
-        "No shipping speed, carrier promise, or delivery window should be treated as final until the live store is ready to support those claims operationally. This page will be updated before checkout launches.",
+        "Teragenix is still in a pre-launch phase and does not yet have a fully published shipping workflow, carrier program, or support process for live orders.",
+        "Because of that, this page is meant to set an honest structure instead of implying that fulfillment promises already exist where they do not. Before checkout goes live, shipping terms should be updated to match the actual operating process.",
       ]}
       sections={[
         {
           title: "1. Current status",
           body: [
-            "The site is currently in a pre-launch state. Shipping operations, carrier selection, destination coverage, processing windows, and cut-off times are still being finalized.",
+            "The website is currently pre-launch. Shipping operations, carrier selection, destination coverage, processing windows, and cut-off times are still being finalized.",
           ],
         },
         {
-          title: "2. When orders will ship",
+          title: "2. Processing and shipment timing",
           body: [
-            "Once live ordering is enabled, Teragenix should provide a stated processing timeframe only when it has a reasonable operational basis to meet that timeframe. Until then, the site should not promise same-day, next-day, or other exact processing speeds.",
-            "If shipping timelines are later posted, Teragenix should update this page to explain how processing time is calculated, whether weekends or holidays are excluded, and what happens if fulfillment is delayed.",
+            "Once live ordering is enabled, Teragenix should publish processing timelines only where there is a reasonable operational basis to meet them consistently.",
+            "Until then, the site should not be read as promising same-day shipping, next-day processing, weekend fulfillment, or any other exact turnaround standard.",
           ],
         },
         {
           title: "3. Shipping destinations",
           body: [
-            "Domestic and international shipping availability have not yet been finalized. Before launch, this page will be updated to identify where Teragenix will and will not ship, along with any destination-specific restrictions that may apply.",
+            "Domestic and international shipping coverage have not yet been finalized. Before launch, this page should be updated to identify the destinations Teragenix will serve, any excluded jurisdictions, and any destination-specific restrictions that apply.",
           ],
         },
         {
-          title: "4. Tracking, delivery, and delays",
+          title: "4. Tracking, carrier delays, and delivery issues",
           bullets: [
-            "If tracking is offered at launch, Teragenix should state when tracking becomes available and how customers receive it.",
-            "If a shipment is delayed, any customer communication process should match the actual fulfillment workflow in place at that time.",
-            "Weather events, carrier failures, address issues, or regulatory constraints may affect delivery timelines once the store is live.",
+            "If tracking is offered at launch, Teragenix should explain when tracking becomes available and how it will be delivered to customers.",
+            "Carrier delays, weather events, address problems, service interruptions, and regulatory constraints may affect delivery timelines once live fulfillment begins.",
+            "If a shipment is delayed or disrupted, customer communication should match the actual support process in place at that time.",
           ],
         },
         {
-          title: "5. Shipping charges",
+          title: "5. Shipping charges and service levels",
           body: [
-            "Shipping charges, free-shipping thresholds, insurance options, and expedited-service availability are not yet finalized. Those items should not be represented as final until they are real checkout options on the live site.",
+            "Shipping charges, free-shipping thresholds, insurance options, and expedited service availability are not yet finalized. Those items should not be treated as final until they exist as real checkout options on the live site.",
           ],
         },
         {
-          title: "6. Address accuracy and delivery issues",
+          title: "6. Address accuracy and returned packages",
           body: [
-            "Once ordering is enabled, customers will be responsible for submitting accurate shipping information. Before launch, this page should be updated to explain the policy for returned packages, address correction requests, and delivery disputes.",
+            "Once ordering is enabled, customers will be responsible for providing accurate shipping information. Before launch, this page should be updated to explain the process for address corrections, returned packages, and any reshipment or additional-charge rules that may apply.",
           ],
         },
         {
           title: "7. Damaged, missing, or incorrect shipments",
           body: [
-            "Teragenix intends to publish a formal process for handling damaged, missing, or incorrect shipments before live fulfillment begins. That future policy should include reporting windows, required evidence, and the available remedies, if any.",
+            "Teragenix intends to publish a formal issue-reporting process before live fulfillment begins. That process should explain reporting windows, required evidence, review timing, and the remedies that may be available for damaged, missing, or incorrect shipments.",
           ],
         },
         {
-          title: "8. Policy updates before launch",
+          title: "8. Finalization before launch",
           body: [
-            "Before the site accepts live orders, this page will be updated with the final shipping coverage, processing standards, carrier workflow, customer support contact method, and any other terms needed to accurately describe how fulfillment really works.",
+            "Before the site accepts live orders, this page should be finalized with the actual shipping coverage, carrier workflow, processing standards, support contact method, and any additional terms needed to describe how fulfillment really works.",
           ],
         },
       ]}

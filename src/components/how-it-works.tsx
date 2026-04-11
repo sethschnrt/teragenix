@@ -4,18 +4,18 @@ import { ArrowUpRight } from "lucide-react";
 const steps = [
   {
     num: "01",
-    title: "Pick your category",
-    body: "Start with the category, compare compounds quickly, and use the product pages to confirm the kit format before going deeper.",
+    title: "Choose a category",
+    body: "Start with the category that fits your research goal, then narrow down the catalog without wasting time on irrelevant kits.",
   },
   {
     num: "02",
-    title: "Review the full kit",
-    body: "Each listing shows what is included, the key specs, and the handling context needed to evaluate the product cleanly.",
+    title: "Confirm the full kit",
+    body: "Review what is included, the key specs, and the storage details so you can tell quickly whether the kit fits your workflow.",
   },
   {
     num: "03",
-    title: "Verify the details",
-    body: "Use the FAQ and policy pages to check shipping, refund, and research-use details before making a final decision.",
+    title: "Check support details",
+    body: "Use the FAQ, documentation hub, and policy pages to review shipping, refund, and research-use information before you decide.",
   },
 ];
 
@@ -30,13 +30,11 @@ export function HowItWorks() {
               HOW IT WORKS
             </p>
             <h2 className="font-sans text-[2.5rem] font-semibold leading-[1.04] tracking-[-0.03em] text-[#0d262d] sm:text-[3.6rem]">
-              Lab-prep,{" "}
-              <span className="italic text-[#3b6ed6]">simplified</span>{" "}
-              from browse to bench.
+              Choosing the right kit, <span className="italic text-[#3b6ed6]">simplified</span>.
             </h2>
           </div>
           <p className="text-[1.05rem] leading-7 text-[#0d262d]/70 lg:pb-3">
-            Teragenix is built to make category browsing, kit evaluation, and documentation review feel cleaner from first click to product detail.
+            Browse by category, confirm what is in the box, then verify specs and support details before you buy.
           </p>
         </div>
 
@@ -71,10 +69,10 @@ export function HowItWorks() {
         <div className="mt-16 flex flex-col items-center gap-5 rounded-[2rem] bg-[linear-gradient(166deg,_#3b6ed6_0%,_#0d262d_100%)] px-8 py-12 text-center sm:mt-20 sm:flex-row sm:justify-between sm:text-left lg:px-14">
           <div>
             <p className="mb-2 font-sans text-[11px] font-medium tracking-[0.22em] text-[#dbeafe]">
-              READY TO START
+              READY TO BROWSE
             </p>
             <h3 className="font-sans text-[1.8rem] font-semibold leading-tight tracking-tight text-white sm:text-[2.2rem]">
-              A cleaner buying path, built around <span className="italic text-[#dbeafe]">complete</span> kits.
+              Start with the catalog, then narrow down fast.
             </h3>
           </div>
           <Link

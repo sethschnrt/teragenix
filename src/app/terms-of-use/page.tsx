@@ -12,80 +12,82 @@ export default function TermsOfUsePage() {
     <LegalPageTemplate
       icon={FileText}
       eyebrow="TERMS OF USE"
-      title="The rules for using the Teragenix website."
-      description="These Terms of Use govern access to the current Teragenix website and are designed to establish a real operating framework before live ecommerce details are finalized."
-      lastUpdated="April 9, 2026"
+      title="Terms for using the Teragenix website."
+      description="These terms govern access to the Teragenix website, its content, and any future transactions offered through the site."
+      lastUpdated="April 11, 2026"
       intro={[
-        "Teragenix is in a pre-launch phase. The site may contain product, category, and documentation-style information before live order processing, support operations, and legal business details are fully finalized.",
-        "These Terms are meant to create a legitimate baseline for site use now. They will be updated before launch with final operator details, governing law language, and any additional terms tied to checkout, payment, or account creation.",
+        "These Terms of Use apply to your access to and use of the Teragenix website. By using the site, you agree to these terms. If you do not agree, do not use the site.",
+        "Teragenix is still in a pre-launch stage. Product listings, policies, pricing, support workflows, and checkout details may change before full ecommerce operations go live. Even so, the rules on this page are intended to set a real operating framework now.",
       ]}
       sections={[
         {
-          title: "1. Acceptance of these terms",
+          title: "1. Use of the website",
           body: [
-            "By accessing or using the Teragenix website, you agree to these Terms of Use. If you do not agree, do not use the site.",
+            "You may use the Teragenix website only for lawful informational, research, and business purposes related to the site’s stated scope.",
+            "You may not use the site in any way that is unlawful, fraudulent, abusive, misleading, or intended to interfere with site functionality, security, or availability.",
           ],
         },
         {
-          title: "2. Website purpose and current status",
-          body: [
-            "The current website is intended to present the Teragenix brand, product structure, research-use positioning, and related informational content. Product listings, documentation framing, and category language may change as the site evolves toward launch.",
-            "Nothing on the site should be interpreted as a commitment to accept any order, ship any item, or provide any specific service unless and until those functions are actually live and confirmed by Teragenix.",
-          ],
-        },
-        {
-          title: "3. Research-use-only restrictions",
+          title: "2. Research-use-only position",
           bullets: [
-            "Products and content are presented for in-vitro research and laboratory use only.",
-            "Nothing on the site is intended as medical advice, treatment advice, veterinary advice, or a recommendation for human consumption.",
-            "You are responsible for ensuring that your use of the site and any future purchase is lawful in your jurisdiction and consistent with the stated research-use restrictions.",
+            "Teragenix presents products for lawful in-vitro research and laboratory use only.",
+            "Nothing on the site is intended as medical advice, treatment advice, dosing guidance, veterinary advice, or a recommendation for human or animal use.",
+            "You are responsible for ensuring that your use of the site and any future purchase is lawful in your jurisdiction and consistent with the stated research-use restriction.",
           ],
         },
         {
-          title: "4. Permitted and prohibited use",
-          bullets: [
-            "You may browse the site for lawful informational and business purposes.",
-            "You may not use the site in a way that is fraudulent, unlawful, abusive, misleading, or intended to interfere with site security or availability.",
-            "You may not attempt to scrape restricted data, bypass technical protections, probe vulnerabilities, or use the site to support unlawful product use.",
-          ],
-        },
-        {
-          title: "5. Product and content information",
+          title: "3. Eligibility and compliance",
           body: [
-            "Teragenix aims to present product and documentation information carefully, but descriptions, availability, imagery, pricing, category placement, and supporting materials may change at any time without notice.",
-            "The site may contain errors, omissions, or incomplete launch-stage information. Teragenix reserves the right to correct those issues, revise listings, or remove content at any time.",
+            "By using the site, you represent that you will act in compliance with applicable laws, regulations, and institutional rules relevant to your access, communications, and any future transaction with Teragenix.",
+            "Teragenix may refuse access, inquiries, or future orders where compliance concerns are reasonably suspected.",
+          ],
+        },
+        {
+          title: "4. Product information and availability",
+          body: [
+            "Teragenix aims to present accurate product information, but listings, specifications, imagery, pricing, availability, and documentation may be updated, corrected, or removed at any time without notice.",
+            "Nothing on the site should be interpreted as a guarantee that any product will remain available, ship on a certain timeline, or be offered on any specific terms unless that is expressly confirmed by Teragenix.",
+          ],
+        },
+        {
+          title: "5. Prohibited conduct",
+          bullets: [
+            "You may not misuse the site to support unlawful, unsafe, or off-label product activity.",
+            "You may not attempt to probe, disrupt, scrape, reverse engineer, or bypass security measures or technical protections on the site.",
+            "You may not impersonate Teragenix, misrepresent your identity, or submit false, deceptive, or incomplete information through the site.",
           ],
         },
         {
           title: "6. Intellectual property",
           body: [
-            "The Teragenix website, including its text, branding, graphics, layouts, product presentation, and compiled content, is protected by applicable intellectual property law. Unless otherwise stated, you may not reproduce, republish, distribute, modify, or exploit site content without written permission.",
+            "The Teragenix name, branding, site design, graphics, product presentation, text, and compiled content are protected by applicable intellectual property laws. Except as otherwise permitted by law, you may not reproduce, republish, distribute, modify, or commercially exploit site content without prior written permission.",
           ],
         },
         {
-          title: "7. Third-party services and links",
+          title: "7. Third-party services",
           body: [
-            "The website may link to or later integrate with third-party providers such as hosting, analytics, payment, shipping, or communication services. Teragenix is not responsible for the content or independent policies of third-party services outside its direct control.",
+            "The site may use or link to third-party providers for hosting, analytics, communication, payment, shipping, or other supporting services. Teragenix is not responsible for the independent terms, content, or practices of third-party services outside its direct control.",
           ],
         },
         {
-          title: "8. Disclaimers",
+          title: "8. Disclaimer of warranties",
           body: [
-            "The site is provided on an as-is and as-available basis to the maximum extent permitted by law. Teragenix does not guarantee uninterrupted access, error-free operation, or that the site will always be free from bugs, delays, or security issues.",
-            "Nothing on the site should be read as a guarantee of research results, regulatory status, or suitability for any particular purpose.",
+            "The website is provided on an as-is and as-available basis to the maximum extent permitted by law. Teragenix does not guarantee uninterrupted access, error-free operation, continuous availability, or that the site will always be free of bugs, delays, or security issues.",
+            "Nothing on the site should be read as a warranty regarding research outcomes, product suitability for a particular purpose, regulatory treatment, or commercial availability.",
           ],
         },
         {
           title: "9. Limitation of liability",
           body: [
-            "To the maximum extent permitted by law, Teragenix will not be liable for indirect, incidental, consequential, special, or punitive damages arising out of or related to use of the website. Direct liability, if any, should be limited to the amount paid to Teragenix for the specific product or service at issue, if applicable.",
+            "To the maximum extent permitted by law, Teragenix will not be liable for any indirect, incidental, special, consequential, or punitive damages arising from or related to use of the website.",
+            "If Teragenix is found liable for any claim directly related to a product or service, liability should be limited to the amount actually paid to Teragenix for that specific product or service, if any.",
           ],
         },
         {
-          title: "10. Governing law and future updates",
+          title: "10. Updates to these terms",
           body: [
-            "Before launch, these Terms will be updated with the final legal business name, governing law, venue language, and support contact details that apply to the operating entity behind Teragenix.",
-            "Teragenix may revise these Terms as the site and business operations develop. The updated version will be posted on this page with a revised effective date.",
+            "Teragenix may revise these Terms of Use as the site develops and operations move closer to launch. Updated terms will be posted on this page with a revised effective date.",
+            "Before full launch, this page should be finalized with the legal business entity name, governing law language, contact details, and any checkout-specific terms that apply to live orders.",
           ],
         },
       ]}

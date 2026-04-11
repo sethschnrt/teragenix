@@ -11,15 +11,15 @@ export default function FaqPage() {
         icon={HelpCircle}
         eyebrow="FAQ"
         detail="Research-use answers, kit basics, and policy shortcuts"
-        title="Straight answers, before you choose a kit."
-        description="Use this page to understand research-use positioning, kit format, category flow, and the policy layer without digging through the whole site."
+        title="Straight answers before you pick a kit."
+        description="Use this page to compare kit basics, understand research-use positioning, and find the shipping, refund, and policy details faster."
         variant="subpage"
         highlights={[
           { label: "Browse kits", href: "/shop" },
           { label: "Quality standards", href: "/about#quality-promise" },
         ]}
         panelEyebrow="QUICK LINKS"
-        panelTitle="Policy pages, without the hunt"
+        panelTitle="Policy pages, without the digging"
         panelItems={[
           { label: "Shipping Policy", href: "/shipping-policy" },
           { label: "Refund Policy", href: "/refund-policy" },

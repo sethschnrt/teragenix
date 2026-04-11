@@ -33,7 +33,7 @@ const faqData: FaqSection[] = [
       {
         question: "Why sell kits instead of standalone vials?",
         answer:
-          "Because the full prep format should be easy to evaluate in one place. Instead of making buyers assemble basics across multiple listings, Teragenix shows the compound, supplies, and setup together on the product page.",
+          "Because it is faster to evaluate one complete setup than piece together basics across multiple listings. Teragenix shows the compound, prep supplies, and setup context together on the product page.",
       },
       {
         question: "Where do I compare compounds quickly?",
@@ -49,17 +49,17 @@ const faqData: FaqSection[] = [
       {
         question: "What documentation is shown on product pages?",
         answer:
-          "Product pages are structured to surface the details serious buyers look for first: kit contents, technical specs, storage guidance, and research-use framing. The goal is to make the important information visible without turning the page into clutter.",
+          "Product pages surface the details serious buyers look for first: kit contents, technical specs, storage guidance, batch references, and research-use framing. The goal is to keep the important information visible without turning the page into clutter.",
       },
       {
         question: "What does the purity spec mean?",
         answer:
-          "The purity figure shown on a product page is the stated batch target for that compound listing. It should be read alongside the rest of the product-page spec and handling information, not as hype copy detached from documentation.",
+          "The purity figure shown on a product page is the stated batch target for that listing. It should be read alongside the rest of the specs, storage notes, and documentation context, not as standalone hype copy.",
       },
       {
         question: "Are COA and testing details part of the storefront?",
         answer:
-          "That is the direction. Teragenix is being structured so batch, spec, and testing context can live closer to the product instead of being buried behind vague trust language as those materials are finalized.",
+          "Yes, that is the goal. Teragenix is set up so batch, spec, and testing status can live closer to the product, making quality review easier as those materials are finalized and published.",
       },
     ],
   },
@@ -91,17 +91,17 @@ const faqData: FaqSection[] = [
       {
         question: "Is Teragenix checkout live yet?",
         answer:
-          "Not yet. The current site is a pre-launch catalog and trust pass focused on stronger product pages, clearer merchandising, and better documentation structure before full order processing goes live.",
+          "Not yet. Teragenix is still in a pre-launch phase while the catalog, documentation surfaces, and support details are being finalized before live order processing begins.",
       },
       {
         question: "Where do I find refund, shipping, and research-use terms?",
         answer:
-          "Use the linked policy pages throughout the site: Shipping Policy, Refund Policy, Terms of Use, Privacy Policy, and Research Disclaimer. Those pages give the storefront a real policy framework instead of leaving the important questions unanswered.",
+          "Use the linked policy pages throughout the site: Shipping Policy, Refund Policy, Terms of Use, Privacy Policy, and Research Disclaimer. They are there to make the operational details easy to verify before you move forward.",
       },
       {
         question: "What should I read before choosing a kit?",
         answer:
-          "The cleanest path is Shop first, product page second, FAQ third, then the policy pages if you need more operational detail. That flow gives you category context, exact kit contents, specs, and policy support in the right order.",
+          "Start with Shop, open the product page for the kit details, then use the FAQ and policy pages if you need more operational context. That path gives you category context, exact kit contents, specs, and support details in the right order.",
       },
     ],
   },
@@ -171,7 +171,7 @@ export function FaqAccordion() {
           >
             <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#4A90D9]">Catalog</p>
             <h3 className="mt-2 text-base font-semibold text-[#0d262d]">Browse research kits</h3>
-            <p className="mt-2 text-sm leading-6 text-[#475967]">Start with category, then compare compounds, kit format, and price before you open the full product page.</p>
+            <p className="mt-2 text-sm leading-6 text-[#475967]">Start with category, then compare compounds, kit format, and price before opening the full product page.</p>
           </Link>
 
           <Link
@@ -180,7 +180,7 @@ export function FaqAccordion() {
           >
             <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#4A90D9]">Quality</p>
             <h3 className="mt-2 text-base font-semibold text-[#0d262d]">Read quality standards</h3>
-            <p className="mt-2 text-sm leading-6 text-[#475967]">See how Teragenix approaches visible specs, documentation language, and proof-first product framing.</p>
+            <p className="mt-2 text-sm leading-6 text-[#475967]">See how Teragenix approaches visible specs, documentation language, and easier product evaluation.</p>
           </Link>
 
           <Link
@@ -189,7 +189,7 @@ export function FaqAccordion() {
           >
             <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#4A90D9]">Policies</p>
             <h3 className="mt-2 text-base font-semibold text-[#0d262d]">Check shipping + policy pages</h3>
-            <p className="mt-2 text-sm leading-6 text-[#475967]">Use the policy layer for shipping, refund, privacy, and research-use terms when you want the operational read fast.</p>
+            <p className="mt-2 text-sm leading-6 text-[#475967]">Use the policy pages for shipping, refund, privacy, and research-use details when you want the operational read fast.</p>
           </Link>
         </div>
       </div>

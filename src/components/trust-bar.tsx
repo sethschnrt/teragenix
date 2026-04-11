@@ -29,7 +29,7 @@ const tickerItems = [
     ),
   },
   {
-    label: "COA-BACKED BATCHES",
+    label: "BATCH + COA VISIBILITY",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4">
         <path d="M3 7h11v8H3z" />

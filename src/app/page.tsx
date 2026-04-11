@@ -23,23 +23,23 @@ export default function Home() {
 
       {/* Section 1 — Metabolic */}
       <EditorialSection
-        eyebrow="METABOLIC CATEGORY"
-        headline="Metabolic research, organized for faster comparison."
-        accentPhrase="faster comparison"
+        eyebrow="METABOLIC RESEARCH"
+        headline="Metabolic kits, organized for faster selection."
+        accentPhrase="faster selection"
         accentColor={BLUE_PRIMARY}
         haloColor={HALO_SKY}
-        bodyText="Retatrutide, tesamorelin, and adjacent peptide kits are grouped into a cleaner metabolic category with visible specs, prep essentials, and a faster comparison flow."
-        subheading="Built to reduce guesswork"
-        subbody="Instead of making visitors piece together basics across multiple listings, Teragenix presents each kit in a more structured format with clearer documentation and easier category scanning."
+        bodyText="Compare retatrutide, tesamorelin, and adjacent metabolic kits with visible format, included supplies, and pricing in one cleaner category."
+        subheading="Everything easier to verify"
+        subbody="Each listing makes it easier to confirm what is in the box, how the kit is formatted, and whether it fits your lab workflow before you go deeper."
         features={[
-          "Visible purity + quantity specs",
-          "Full kit contents on-page",
+          "Price + format in one view",
+          "Included prep essentials",
           "Clear storage guidance",
           "Category-first browsing",
-          "Research-use framing",
+          "Research-use-only framing",
         ]}
-        cardTitle="What you see up front:"
-        ctaLabel="Shop metabolic kits"
+        cardTitle="What you can verify fast:"
+        ctaLabel="Browse metabolic kits"
         ctaHref="/shop?category=fat-loss"
         image1="/images/generated/refresh-v1/metabolic-hero-tight.webp"
         image2="/images/generated/lifestyle-v1/metabolic-2-couple-walking.webp"
@@ -51,23 +51,23 @@ export default function Home() {
       {/* Section 2 — Quality standards */}
       <EditorialSection
         eyebrow="QUALITY STANDARDS"
-        headline="Proof-first. Cleaner standards."
-        accentPhrase="Cleaner standards"
+        headline="Documentation, closer to the product."
+        accentPhrase="closer to the product"
         accentColor={BLUE_SKY}
         haloColor={HALO_STEEL}
-        bodyText="Trust should come from batch context, handling guidance, and product pages that show exactly what is included, not inflated outcome language."
-        subheading="What serious buyers actually look for"
-        subbody="The strongest quality signal is simple: clear specs, visible kit contents, consistent research-use language, and documentation positioned close to the product."
+        bodyText="Serious buyers want specs, batch context, and kit contents where they can actually use them, not buried under hype."
+        subheading="Why that matters before checkout"
+        subbody="When documentation, storage notes, and included supplies are visible early, comparison gets easier and support questions shrink."
         features={[
-          "Purity targets shown on-page",
-          "Batch and handling context",
-          "Complete kit breakdowns",
-          "Support pages linked clearly",
-          "Credible language over hype",
+          "Purity and format shown clearly",
+          "Batch-linked documentation status",
+          "Storage notes on-page",
+          "Support pages easy to reach",
+          "Calm, specific product language",
         ]}
-        cardTitle="Standards that matter:"
-        ctaLabel="Read quality standards"
-        ctaHref="/about"
+        cardTitle="What builds confidence:"
+        ctaLabel="View batch docs"
+        ctaHref="/coa"
         image1="/images/generated/lifestyle-v1-cutout/quality-1-hero.webp"
         image2="/images/generated/lifestyle-v1/quality-2-glassware.webp"
         image3="/images/generated/lifestyle-v1/quality-3-yoga-couple.webp"

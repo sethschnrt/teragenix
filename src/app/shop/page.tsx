@@ -101,7 +101,7 @@ export default function ShopPage() {
                 SHOP TERAGENIX
               </span>
               <span className="text-[12px] text-white/60">
-                Category-led browsing, complete-kit storefront
+                Compare kits faster with less catalog clutter
               </span>
             </div>
 
@@ -109,7 +109,7 @@ export default function ShopPage() {
               Research kits, without the clutter.
             </h1>
             <p className="mt-2 max-w-xl text-[0.96rem] leading-6 text-white/72">
-              Filter by category, sort fast, and get straight into the products.
+              Browse by category, search by compound, and compare kit format, specs, and price faster.
             </p>
           </div>
         </div>
@@ -136,7 +136,7 @@ export default function ShopPage() {
                     <input
                       value={searchQuery}
                       onChange={(e) => setSearchQuery(e.target.value)}
-                      placeholder="Search compounds or kits"
+                      placeholder="Search compounds or kit names"
                       className="w-full rounded-full border px-11 py-2.5 pr-10 text-sm text-[#0d262d] outline-none transition"
                       style={{
                         borderColor: currentTheme.soft,
@@ -269,7 +269,7 @@ export default function ShopPage() {
           {filtered.length === 0 && (
             <div className="text-center py-16">
               <p className="text-lg text-muted-foreground">
-                No products found in this category.
+                No kits match this filter.
               </p>
               <Button
                 variant="outline"

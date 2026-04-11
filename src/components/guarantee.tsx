@@ -4,23 +4,23 @@ import { Shield, Truck, FlaskConical, Mail } from "lucide-react";
 const promises = [
   {
     icon: Truck,
-    title: "Category-led shopping",
-    body: "Browse by category first, then compare products inside a tighter, easier-to-scan catalog.",
+    title: "Faster product selection",
+    body: "Shop by category, compare kit formats quickly, and narrow down the right fit without digging through clutter.",
   },
   {
     icon: FlaskConical,
-    title: "Visible kit contents",
-    body: "Each product page makes the full box format easy to understand before checkout ever enters the picture.",
+    title: "Everything in the box, up front",
+    body: "Each product page makes included supplies easy to see, so you know what comes with the kit before you buy.",
   },
   {
     icon: Shield,
-    title: "Proof-first standards",
-    body: "Specs, storage guidance, and documentation language stay close to the product instead of hiding behind hype.",
+    title: "Specs you can verify",
+    body: "Purity, storage notes, and documentation stay close to the product, making due diligence faster and easier.",
   },
   {
     icon: Mail,
-    title: "Support surfaces built in",
-    body: "FAQ, shipping, refund, and research-use pages are linked clearly so buyers can verify the operational side fast.",
+    title: "Support answers, already linked",
+    body: "Shipping, refund, FAQ, and research-use details are easy to find, so operational questions do not slow you down.",
   },
 ];
 
@@ -30,11 +30,11 @@ export function Guarantee() {
       <div className="mx-auto max-w-[1240px] px-5 sm:px-8 lg:px-[160px]">
         <div className="mb-16 text-center">
           <p className="tg-eyebrow mb-6" style={{ color: "#3b6ed6" }}>
-            WHY IT FEELS TRUSTWORTHY
+            WHY IT IS EASIER TO BUY
           </p>
           <h2 className="tg-h2 mx-auto max-w-3xl" style={{ color: "#0d262d" }}>
-            A cleaner buying path, built around{" "}
-            <span style={{ color: "#3b6ed6" }}>proof and clarity.</span>
+            Less guesswork, more{" "}
+            <span style={{ color: "#3b6ed6" }}>confidence</span> before checkout.
           </h2>
           <p
             className="mx-auto mt-6 max-w-xl"
@@ -45,7 +45,7 @@ export function Guarantee() {
               fontWeight: 400,
             }}
           >
-            Four things that make the Teragenix experience feel more credible without cluttering the design.
+            Built to help shoppers compare faster, verify details sooner, and avoid surprises later.
           </p>
         </div>
 
@@ -91,7 +91,7 @@ export function Guarantee() {
               className="tg-eyebrow mb-4"
               style={{ color: "#4a8dd9" }}
             >
-              READY TO GET STARTED
+              READY TO SHOP
             </p>
             <h3
               className="max-w-xl"
@@ -103,7 +103,7 @@ export function Guarantee() {
                 letterSpacing: "-0.76px",
               }}
             >
-              Shop the full Teragenix catalog.
+              Find the right kit faster.
             </h3>
           </div>
           <Link

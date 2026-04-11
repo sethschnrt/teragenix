@@ -102,17 +102,17 @@ export function Hero() {
                 <span
                   className="inline-block h-1.5 w-1.5 rounded-full bg-white"
                 />
-                Research-use kits with clear specs
+                Research kits with clear specs and full-kit visibility
               </p>
             </div>
 
             {/* Headline */}
             <h1 className="mx-auto max-w-[900px] text-center lg:max-w-[760px]">
               <span className="block text-[48px] font-bold leading-[0.98] tracking-[-0.03em] text-white sm:text-[60px] lg:text-[54px]">
-                The Structure of
+                Research kits,
               </span>
               <span className="block text-[48px] font-bold leading-[0.98] tracking-[-0.03em] text-white sm:text-[60px] lg:text-[54px]">
-                <span className="italic text-[#a8c5f5]">Your Workflow</span>, Simplified.
+                <span className="italic text-[#a8c5f5]">organized</span> to compare faster.
               </span>
             </h1>
 
@@ -121,7 +121,7 @@ export function Hero() {
               className="mx-auto mt-5 max-w-[560px] text-center text-white/85 lg:mt-3 lg:max-w-[600px]"
               style={{ fontSize: "15px", lineHeight: "1.5", fontWeight: 400 }}
             >
-              Research peptides organized into complete kits with visible specs, storage guidance, and documentation-first product pages.
+              Find the right kit faster with visible specs, included prep essentials, storage guidance, and product pages built for quick evaluation.
             </p>
 
             {/* CTA row */}
