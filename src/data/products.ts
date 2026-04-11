@@ -98,9 +98,9 @@ export const products: Product[] = [
     price: 189.99,
     originalPrice: 239.99,
     description:
-      "10mg Retatrutide + bacteriostatic water + insulin syringes + alcohol swabs. Triple-agonist research kit.",
+      "10mg Retatrutide + bacteriostatic water + insulin syringes + alcohol swabs. Reference-compound research kit.",
     longDescription:
-      "Retatrutide is a multi-receptor metabolic research peptide studied for its activity across incretin-related pathways. This complete kit includes 10mg lyophilized compound, bacteriostatic water, syringes, and swabs for laboratory handling and reconstitution workflows.",
+      "Retatrutide is presented here as a reference peptide compound for laboratory handling and reconstitution workflows. This complete kit includes 10mg lyophilized compound, bacteriostatic water, syringes, and swabs for consistent lab prep.",
     badge: "Popular",
     badgeColor: "bg-[#4A90D9]",
     image: "/images/vials/retatrutide.webp",
@@ -136,9 +136,9 @@ export const products: Product[] = [
     price: 149.99,
     originalPrice: 189.99,
     description:
-      "10mg Tesamorelin + bacteriostatic water + insulin syringes + alcohol swabs. Growth-hormone pathway research kit.",
+      "10mg Tesamorelin + bacteriostatic water + insulin syringes + alcohol swabs. Synthetic peptide research kit.",
     longDescription:
-      "Tesamorelin is a synthetic peptide referenced in metabolic and endocrine-related laboratory literature. This ready-to-study kit includes 10mg lyophilized peptide, bacteriostatic water, syringes, and swabs for clean lab preparation.",
+      "Tesamorelin is presented here as a synthetic peptide reference compound for laboratory handling and reconstitution workflows. This ready-to-study kit includes 10mg lyophilized peptide, bacteriostatic water, syringes, and swabs for clean lab prep.",
     badge: "Best Seller",
     badgeColor: "bg-emerald-600",
     image: "/images/vials/tesamorelin.webp",
@@ -176,7 +176,7 @@ export const products: Product[] = [
     description:
       "10mg Melanotan II + bacteriostatic water + insulin syringes + alcohol swabs. Melanocortin research kit.",
     longDescription:
-      "Melanotan II is a melanocortin research peptide referenced in receptor-signaling literature. This complete kit includes 10mg lyophilized compound and the reconstitution essentials needed for research workflows.",
+      "Melanotan II is presented here as a melanocortin reference compound for laboratory workflows. This complete kit includes 10mg lyophilized compound and the reconstitution essentials needed for research prep.",
     badge: "New",
     badgeColor: "bg-violet-600",
     image: "/images/vials/melanotan-ii.webp",
