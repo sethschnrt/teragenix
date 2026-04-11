@@ -23,14 +23,14 @@ export default function Home() {
 
       {/* Section 1 — Metabolic */}
       <EditorialSection
-        eyebrow="METABOLIC RESEARCH KITS"
+        eyebrow="METABOLIC CATEGORY"
         headline="Metabolic research, organized for faster comparison."
         accentPhrase="faster comparison"
         accentColor={BLUE_PRIMARY}
         haloColor={HALO_SKY}
-        bodyText="Retatrutide, tesamorelin, and adjacent metabolic compounds are grouped into complete kits with visible specs, prep essentials, and a cleaner comparison flow."
+        bodyText="Retatrutide, tesamorelin, and adjacent peptide kits are grouped into a cleaner metabolic category with visible specs, prep essentials, and a faster comparison flow."
         subheading="Built to reduce guesswork"
-        subbody="Instead of making researchers piece together basics across multiple listings, Teragenix presents each kit as a complete lab-ready format with clearer documentation and easier category scanning."
+        subbody="Instead of making visitors piece together basics across multiple listings, Teragenix presents each kit in a more structured format with clearer documentation and easier category scanning."
         features={[
           "Visible purity + quantity specs",
           "Full kit contents on-page",
@@ -55,7 +55,7 @@ export default function Home() {
         accentPhrase="Cleaner standards"
         accentColor={BLUE_SKY}
         haloColor={HALO_STEEL}
-        bodyText="Trust should come from batch context, handling guidance, and product pages that show exactly what is included, not inflated claims."
+        bodyText="Trust should come from batch context, handling guidance, and product pages that show exactly what is included, not inflated outcome language."
         subheading="What serious buyers actually look for"
         subbody="The strongest quality signal is simple: clear specs, visible kit contents, consistent research-use language, and documentation positioned close to the product."
         features={[

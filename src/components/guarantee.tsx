@@ -5,7 +5,7 @@ const promises = [
   {
     icon: Truck,
     title: "Category-led shopping",
-    body: "Browse by goal first, then compare products inside a tighter, easier-to-scan catalog.",
+    body: "Browse by category first, then compare products inside a tighter, easier-to-scan catalog.",
   },
   {
     icon: FlaskConical,

@@ -3,7 +3,7 @@ export interface Product {
   name: string;
   shortName: string;
   category: string;
-  heroCategory: "Fat Loss" | "Recovery" | "Longevity" | "Vitality";
+  heroCategory: "Metabolic" | "Antioxidant" | "Cosmetic" | "Melanocortin";
   price: number;
   originalPrice: number;
   description: string;
@@ -29,7 +29,7 @@ export interface Product {
   relatedProductSlugs: string[];
 }
 
-export const shopCategories = ["All", "Fat Loss", "Recovery", "Longevity", "Vitality"] as const;
+export const shopCategories = ["All", "Metabolic", "Antioxidant", "Cosmetic", "Melanocortin"] as const;
 
 export type ShopCategory = (typeof shopCategories)[number];
 
@@ -45,7 +45,7 @@ export type CategoryTheme = {
 };
 
 const heroCategoryThemes: Record<HeroCategory, CategoryTheme> = {
-  "Fat Loss": {
+  Metabolic: {
     accent: "#2e6c49",
     accentDeep: "#214d37",
     soft: "#cfe8d7",
@@ -53,7 +53,7 @@ const heroCategoryThemes: Record<HeroCategory, CategoryTheme> = {
     heroTone: "#e7f3ea",
     tagClass: "bg-[#cfe8d7] text-[#2e6c49]",
   },
-  Recovery: {
+  Antioxidant: {
     accent: "#2f6b78",
     accentDeep: "#204f5a",
     soft: "#dceff3",
@@ -61,7 +61,7 @@ const heroCategoryThemes: Record<HeroCategory, CategoryTheme> = {
     heroTone: "#e4f3f5",
     tagClass: "bg-[#dceff3] text-[#2f6b78]",
   },
-  Longevity: {
+  Cosmetic: {
     accent: "#86572a",
     accentDeep: "#69431f",
     soft: "#f3e4d3",
@@ -69,7 +69,7 @@ const heroCategoryThemes: Record<HeroCategory, CategoryTheme> = {
     heroTone: "#f7eee2",
     tagClass: "bg-[#f3e4d3] text-[#86572a]",
   },
-  Vitality: {
+  Melanocortin: {
     accent: "#5a46a3",
     accentDeep: "#433184",
     soft: "#e6e0fb",
@@ -94,7 +94,7 @@ export const products: Product[] = [
     name: "Retatrutide Research Kit",
     shortName: "Retatrutide",
     category: "Metabolic",
-    heroCategory: "Fat Loss",
+    heroCategory: "Metabolic",
     price: 189.99,
     originalPrice: 239.99,
     description:
@@ -132,13 +132,13 @@ export const products: Product[] = [
     name: "Tesamorelin Research Kit",
     shortName: "Tesamorelin",
     category: "Metabolic",
-    heroCategory: "Fat Loss",
+    heroCategory: "Metabolic",
     price: 149.99,
     originalPrice: 189.99,
     description:
       "10mg Tesamorelin + bacteriostatic water + insulin syringes + alcohol swabs. Growth-hormone pathway research kit.",
     longDescription:
-      "Tesamorelin is a GHRH analog widely discussed in metabolic and body composition research. This ready-to-study kit includes 10mg lyophilized peptide, bacteriostatic water, syringes, and swabs for clean lab preparation.",
+      "Tesamorelin is a synthetic peptide referenced in metabolic and endocrine-related laboratory literature. This ready-to-study kit includes 10mg lyophilized peptide, bacteriostatic water, syringes, and swabs for clean lab preparation.",
     badge: "Best Seller",
     badgeColor: "bg-emerald-600",
     image: "/images/vials/tesamorelin.webp",
@@ -169,14 +169,14 @@ export const products: Product[] = [
     slug: "melanotan-ii",
     name: "Melanotan II Research Kit",
     shortName: "Melanotan II",
-    category: "Research",
-    heroCategory: "Vitality",
+    category: "Melanocortin",
+    heroCategory: "Melanocortin",
     price: 79.99,
     originalPrice: 99.99,
     description:
       "10mg Melanotan II + bacteriostatic water + insulin syringes + alcohol swabs. Melanocortin research kit.",
     longDescription:
-      "Melanotan II is a melanocortin research peptide studied in pigmentation and receptor-signaling contexts. This complete kit includes 10mg lyophilized compound and the reconstitution essentials needed for research workflows.",
+      "Melanotan II is a melanocortin research peptide referenced in receptor-signaling literature. This complete kit includes 10mg lyophilized compound and the reconstitution essentials needed for research workflows.",
     badge: "New",
     badgeColor: "bg-violet-600",
     image: "/images/vials/melanotan-ii.webp",
@@ -207,14 +207,14 @@ export const products: Product[] = [
     slug: "glow-70",
     name: "Glow 70 Research Kit",
     shortName: "Glow 70",
-    category: "Beauty",
-    heroCategory: "Longevity",
+    category: "Cosmetic",
+    heroCategory: "Cosmetic",
     price: 119.99,
     originalPrice: 149.99,
     description:
-      "70mg Glow 70 blend + bacteriostatic water + syringes + alcohol swabs. Beauty-focused research kit.",
+      "70mg Glow 70 blend + bacteriostatic water + syringes + alcohol swabs. Multi-compound research kit.",
     longDescription:
-      "Glow 70 is a beauty-focused research blend designed for customers interested in cosmetic peptide categories. This kit includes a 70mg lyophilized vial plus the reconstitution supplies needed for consistent lab prep.",
+      "Glow 70 is presented as a multi-compound research blend. This kit includes a 70mg lyophilized vial plus the reconstitution supplies needed for consistent lab prep.",
     badge: "Trending",
     badgeColor: "bg-rose-600",
     image: "/images/vials/glow-70.webp",
@@ -245,14 +245,14 @@ export const products: Product[] = [
     slug: "glutathione",
     name: "Glutathione Research Kit",
     shortName: "Glutathione",
-    category: "Beauty",
-    heroCategory: "Recovery",
+    category: "Antioxidant",
+    heroCategory: "Antioxidant",
     price: 69.99,
     originalPrice: 89.99,
     description:
-      "600mg Glutathione + bacteriostatic water + syringes + alcohol swabs. Antioxidant research kit.",
+      "600mg Glutathione + bacteriostatic water + syringes + alcohol swabs. Laboratory research kit.",
     longDescription:
-      "Glutathione is a widely known antioxidant compound that appears in recovery and cosmetic-adjacent research conversations. This kit includes a 600mg vial with core reconstitution supplies for convenient lab setup.",
+      "Glutathione is a widely referenced laboratory compound. This kit includes a 600mg vial with core reconstitution supplies for consistent lab setup.",
     image: "/images/vials/glutathione.webp",
     specifications: {
       purity: "99%+",
@@ -284,24 +284,27 @@ export const featuredProducts = products.filter((p) => p.badge);
 
 const categoryParamMap: Record<string, ShopCategory> = {
   all: "All",
-  metabolic: "Fat Loss",
-  research: "Vitality",
-  beauty: "Longevity",
+  metabolic: "Metabolic",
+  research: "Melanocortin",
+  beauty: "Cosmetic",
   bundles: "All",
-  "fat-loss": "Fat Loss",
-  fatloss: "Fat Loss",
-  "weight-loss": "Fat Loss",
-  recovery: "Recovery",
-  longevity: "Longevity",
-  vitality: "Vitality",
-  "beauty-skin": "Longevity",
+  "fat-loss": "Metabolic",
+  fatloss: "Metabolic",
+  "weight-loss": "Metabolic",
+  recovery: "Antioxidant",
+  antioxidant: "Antioxidant",
+  longevity: "Cosmetic",
+  cosmetic: "Cosmetic",
+  vitality: "Melanocortin",
+  melanocortin: "Melanocortin",
+  "beauty-skin": "Cosmetic",
 };
 
 const heroCategoryHrefMap: Record<HeroCategory, string> = {
-  "Fat Loss": "fat-loss",
-  Recovery: "recovery",
-  Longevity: "longevity",
-  Vitality: "vitality",
+  Metabolic: "metabolic",
+  Antioxidant: "antioxidant",
+  Cosmetic: "cosmetic",
+  Melanocortin: "melanocortin",
 };
 
 export function normalizeCategoryParam(category: string | null): ShopCategory | undefined {

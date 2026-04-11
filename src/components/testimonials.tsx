@@ -37,7 +37,7 @@ export function Testimonials() {
         <div className="mb-14 flex flex-col gap-8 lg:mb-16 lg:flex-row lg:items-end lg:justify-between">
           <div className="max-w-2xl">
             <p className="tg-eyebrow mb-6" style={{ color: "#3b6ed6" }}>
-              CLINICAL CREDIBILITY
+              DOCUMENTATION + CLARITY
             </p>
             <h2 className="tg-h2 max-w-[760px]">
               Trust should come from standards you can <span style={{ color: "#3b6ed6" }}>verify.</span>
@@ -51,7 +51,7 @@ export function Testimonials() {
                 fontWeight: 400,
               }}
             >
-              Instead of gimmicky doctor ads, Teragenix should win on what serious buyers actually care about: documentation, kit completeness, and a cleaner overall experience.
+              Teragenix should win on what serious buyers actually care about: documentation, kit completeness, and a cleaner overall experience.
             </p>
           </div>
 

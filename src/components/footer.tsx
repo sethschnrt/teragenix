@@ -4,10 +4,10 @@ import Link from "next/link";
 const footerLinks = {
   Shop: [
     { label: "All Products", href: "/shop" },
-    { label: "Fat Loss", href: "/shop?category=fat-loss" },
-    { label: "Recovery", href: "/shop?category=recovery" },
-    { label: "Longevity", href: "/shop?category=longevity" },
-    { label: "Vitality", href: "/shop?category=vitality" },
+    { label: "Metabolic", href: "/shop?category=metabolic" },
+    { label: "Antioxidant", href: "/shop?category=antioxidant" },
+    { label: "Cosmetic", href: "/shop?category=cosmetic" },
+    { label: "Melanocortin", href: "/shop?category=melanocortin" },
   ],
   Explore: [
     { label: "About", href: "/about" },

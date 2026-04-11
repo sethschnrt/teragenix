@@ -200,7 +200,7 @@ export default function AboutPage() {
               </h2>
               <div className="mt-6 space-y-4">
                 {[
-                  "Browse by goal first so the catalog feels easier to scan.",
+                  "Browse by category first so the catalog feels easier to scan.",
                   "Use the product page to confirm the full kit format, specs, and storage guidance.",
                   "Use the FAQ and policy pages to validate shipping, refund, and research-use details.",
                 ].map((item, index) => (

@@ -109,7 +109,7 @@ export default function ShopPage() {
               Research kits, without the clutter.
             </h1>
             <p className="mt-2 max-w-xl text-[0.96rem] leading-6 text-white/72">
-              Filter by goal, sort fast, and get straight into the products.
+              Filter by category, sort fast, and get straight into the products.
             </p>
           </div>
         </div>

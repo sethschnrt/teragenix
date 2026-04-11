@@ -16,8 +16,8 @@ type HeroTile = {
 
 const heroTiles: HeroTile[] = [
   {
-    title: "Fat Loss",
-    href: "/shop?category=fat-loss",
+    title: "Metabolic",
+    href: "/shop?category=metabolic",
     image: "/images/generated/life-benefits-v13-cutout/confidence-jeans-belt.webp",
     desktopImage: "/images/generated/life-benefits-v13-cutout/confidence-jeans-belt-desktop-bottom.webp",
     tone: "#e7f3ea",
@@ -27,8 +27,8 @@ const heroTiles: HeroTile[] = [
     desktopImageClass: "h-[228px] max-w-[96%] lg:h-[150px] lg:max-w-[96%]",
   },
   {
-    title: "Recovery",
-    href: "/shop?category=recovery",
+    title: "Antioxidant",
+    href: "/shop?category=antioxidant",
     image: "/images/generated/hero-cards-v2-cutout/recovery-man-31.webp",
     tone: "#e4f3f5",
     mobileImageAlign: "bottom",
@@ -37,8 +37,8 @@ const heroTiles: HeroTile[] = [
     desktopImageClass: "h-[236px] max-w-[94%] lg:h-[164px] lg:max-w-[94%]",
   },
   {
-    title: "Longevity",
-    href: "/shop?category=longevity",
+    title: "Cosmetic",
+    href: "/shop?category=cosmetic",
     image: "/images/generated/hero-cards-v9-cutout/woman-47-cream-seated.webp",
     tone: "#f7eee2",
     mobileImageAlign: "bottom",
@@ -47,8 +47,8 @@ const heroTiles: HeroTile[] = [
     desktopImageClass: "h-[232px] max-w-[95%] lg:h-[158px] lg:max-w-[95%]",
   },
   {
-    title: "Vitality",
-    href: "/shop?category=vitality",
+    title: "Melanocortin",
+    href: "/shop?category=melanocortin",
     image: "/images/generated/life-benefits-v13-cutout/active-life-pickleball-centered.webp",
     desktopImage: "/images/generated/life-benefits-v13-cutout/active-life-pickleball-desktop-bottom.webp",
     tone: "#eee7fb",
@@ -109,10 +109,10 @@ export function Hero() {
             {/* Headline */}
             <h1 className="mx-auto max-w-[900px] text-center lg:max-w-[760px]">
               <span className="block text-[48px] font-bold leading-[0.98] tracking-[-0.03em] text-white sm:text-[60px] lg:text-[54px]">
-                The Quality of
+                The Structure of
               </span>
               <span className="block text-[48px] font-bold leading-[0.98] tracking-[-0.03em] text-white sm:text-[60px] lg:text-[54px]">
-                <span className="italic text-[#a8c5f5]">Your Life</span>, Multiplied.
+                <span className="italic text-[#a8c5f5]">Your Workflow</span>, Simplified.
               </span>
             </h1>
 

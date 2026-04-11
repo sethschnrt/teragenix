@@ -5,7 +5,7 @@ const steps = [
   {
     num: "01",
     title: "Pick your category",
-    body: "Start with the goal, compare compounds quickly, and use the product pages to confirm the kit format before going deeper.",
+    body: "Start with the category, compare compounds quickly, and use the product pages to confirm the kit format before going deeper.",
   },
   {
     num: "02",
@@ -32,7 +32,7 @@ export function HowItWorks() {
             <h2 className="font-sans text-[2.5rem] font-semibold leading-[1.04] tracking-[-0.03em] text-[#0d262d] sm:text-[3.6rem]">
               Lab-prep,{" "}
               <span className="italic text-[#3b6ed6]">simplified</span>{" "}
-              from order to bench.
+              from browse to bench.
             </h2>
           </div>
           <p className="text-[1.05rem] leading-7 text-[#0d262d]/70 lg:pb-3">
