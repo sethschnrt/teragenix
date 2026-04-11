@@ -3,7 +3,7 @@ import { Badge } from "@/components/ui/badge";
 import { PageHero } from "@/components/page-hero";
 import { DisclaimerBanner } from "@/components/disclaimer-banner";
 import { Footer } from "@/components/footer";
-import { getHeroCategoryTagClasses, getHeroCategoryTheme, products } from "@/data/products";
+import { getHeroCategoryLabel, getHeroCategoryTagClasses, getHeroCategoryTheme, products } from "@/data/products";
 import {
   ArrowUpRight,
   FileCheck2,
@@ -98,7 +98,7 @@ export default function CoaPage() {
                         <Badge
                           className={`border-0 px-3 py-1.5 text-[10px] font-semibold tracking-[0.16em] ${getHeroCategoryTagClasses(product.heroCategory)}`}
                         >
-                          {product.heroCategory.toUpperCase()}
+                          {getHeroCategoryLabel(product.heroCategory).toUpperCase()}
                         </Badge>
                         <h3 className="mt-3 text-[1.05rem] font-semibold leading-snug text-[#0d262d]">
                           {product.name}

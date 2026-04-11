@@ -16,6 +16,7 @@ import {
 import { Footer } from "@/components/footer";
 import {
   getHeroCategoryHrefParam,
+  getHeroCategoryLabel,
   getHeroCategoryTagClasses,
   getHeroCategoryTheme,
   type Product,
@@ -39,6 +40,7 @@ export function ProductDetail({ product, relatedProducts }: ProductDetailProps) 
   const theme = getHeroCategoryTheme(product.heroCategory);
   const categoryHref = `/shop?category=${getHeroCategoryHrefParam(product.heroCategory)}`;
   const savings = (product.originalPrice - product.price).toFixed(0);
+  const categoryLabel = getHeroCategoryLabel(product.heroCategory);
   const documentationItems = [
     {
       label: "SKU",
@@ -125,14 +127,14 @@ export function ProductDetail({ product, relatedProducts }: ProductDetailProps) 
                 <Badge
                   className={`absolute left-4 top-4 border-0 px-3 py-1.5 text-[10px] font-semibold tracking-[0.16em] shadow-lg ${getHeroCategoryTagClasses(product.heroCategory)}`}
                 >
-                  {product.heroCategory.toUpperCase()}
+                  {categoryLabel.toUpperCase()}
                 </Badge>
               </div>
             </div>
 
             <div>
               <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-white/72">
-                {product.heroCategory}
+                {categoryLabel}
               </p>
               <h1 className="mt-3 max-w-3xl text-[2.2rem] font-semibold leading-[0.96] tracking-[-0.04em] text-white sm:text-[3.8rem]">
                 {product.name}
@@ -178,7 +180,7 @@ export function ProductDetail({ product, relatedProducts }: ProductDetailProps) 
                   className="tg-link-pill inline-flex items-center rounded-full px-5 py-3 text-sm font-semibold text-white"
                   style={{ backgroundColor: theme.accent }}
                 >
-                  Browse more {product.heroCategory}
+                  Browse more {categoryLabel}
                   <ArrowUpRight className="tg-link-pill-icon ml-2 h-4 w-4" />
                 </Link>
                 <Link
@@ -345,7 +347,7 @@ export function ProductDetail({ product, relatedProducts }: ProductDetailProps) 
                   Related kits
                 </p>
                 <h2 className="mt-3 text-[1.85rem] font-semibold leading-tight tracking-[-0.03em] text-[#0d262d] sm:text-[2.15rem]">
-                  Compare more {product.heroCategory.toLowerCase()} kits.
+                  Compare more {categoryLabel.toLowerCase()} kits.
                 </h2>
               </div>
             </div>
@@ -374,7 +376,7 @@ export function ProductDetail({ product, relatedProducts }: ProductDetailProps) 
                       <Badge
                         className={`absolute left-3 top-3 border-0 px-3 py-1.5 text-[10px] font-semibold tracking-[0.16em] ${getHeroCategoryTagClasses(rp.heroCategory)}`}
                       >
-                        {rp.heroCategory.toUpperCase()}
+                        {getHeroCategoryLabel(rp.heroCategory).toUpperCase()}
                       </Badge>
                     </div>
 

@@ -4,10 +4,10 @@ import Link from "next/link";
 const footerLinks = {
   Shop: [
     { label: "All Products", href: "/shop" },
-    { label: "Metabolic", href: "/shop?category=metabolic" },
-    { label: "Antioxidant", href: "/shop?category=antioxidant" },
-    { label: "Cosmetic", href: "/shop?category=cosmetic" },
-    { label: "Melanocortin", href: "/shop?category=melanocortin" },
+    { label: "Fat Loss", href: "/shop?category=fat-loss" },
+    { label: "Recovery", href: "/shop?category=recovery" },
+    { label: "Skin Glow", href: "/shop?category=skin-glow" },
+    { label: "Tanning", href: "/shop?category=tanning" },
   ],
   Explore: [
     { label: "About", href: "/about" },
@@ -44,7 +44,7 @@ export function Footer() {
           <div className="md:col-span-1">
             <Logo size="md" theme="light" className="w-[112px] sm:w-[128px]" />
             <p className="mt-5 max-w-xs text-[14px] leading-relaxed text-white/65">
-              Research peptide kits built around visible specs, complete kit formats, and documentation-first product pages.
+              Research kits for fat loss, recovery, skin glow, and tanning-focused protocols, with visible specs and complete kit formats.
             </p>
             <p className="mt-4 max-w-sm text-[12px] leading-6 text-white/48">
               Pre-launch legal pages are live now and will be updated with final business details before checkout goes live.

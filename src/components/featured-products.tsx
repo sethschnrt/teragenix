@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
 import { ArrowUpRight } from "lucide-react";
-import { featuredProducts, getHeroCategoryTagClasses, getHeroCategoryTheme } from "@/data/products";
+import { featuredProducts, getHeroCategoryLabel, getHeroCategoryTagClasses, getHeroCategoryTheme } from "@/data/products";
 
 const BASE_PATH = process.env.NODE_ENV === "production" ? "/teragenix" : "";
 
@@ -20,11 +20,11 @@ export function FeaturedProducts() {
               FEATURED KITS
             </p>
             <h2 className="font-sans text-[2.5rem] font-semibold leading-[1.04] tracking-[-0.03em] text-[#0d262d] sm:text-[3.6rem]">
-              Ready-to-run kits, <br className="hidden sm:block" />
-              <span className="italic text-[#3b6ed6]">easier</span> to choose.
+              Best sellers, <br className="hidden sm:block" />
+              built around <span className="italic text-[#3b6ed6]">real goals</span>.
             </h2>
             <p className="mt-6 max-w-xl text-[1.05rem] leading-7 text-[#0d262d]/65">
-              Compare format, included essentials, and price in one quick scan, so finding the right research kit takes less digging.
+              From fat loss and recovery to skin glow and tanning-focused research, these kits pair the compound with the prep essentials in one clean box.
             </p>
           </div>
 
@@ -66,7 +66,7 @@ export function FeaturedProducts() {
                   <Badge
                     className={`absolute left-4 top-4 border-0 px-3 py-1.5 text-[10px] font-semibold tracking-[0.16em] shadow-lg ${getHeroCategoryTagClasses(product.heroCategory)}`}
                   >
-                    {product.heroCategory.toUpperCase()}
+                    {getHeroCategoryLabel(product.heroCategory).toUpperCase()}
                   </Badge>
 
                   <div
@@ -82,11 +82,11 @@ export function FeaturedProducts() {
                   </h3>
 
                   <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-[#3b6ed6]/90">
-                    {product.specifications.quantity} • {product.specifications.form}
+                    {getHeroCategoryLabel(product.heroCategory)} • {product.specifications.quantity}
                   </p>
 
                   <p className="line-clamp-2 text-[13px] leading-relaxed text-[#0d262d]/60">
-                    One box with {product.shortName}, bacteriostatic water, syringes, swabs, and a guide for faster lab prep.
+                    {product.description}
                   </p>
 
                   <div className="mt-auto flex items-end justify-between gap-3 pt-4">

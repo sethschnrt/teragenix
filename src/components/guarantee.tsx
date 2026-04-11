@@ -4,23 +4,23 @@ import { Shield, Truck, FlaskConical, Mail } from "lucide-react";
 const promises = [
   {
     icon: Truck,
-    title: "Faster product selection",
-    body: "Shop by category, compare kit formats quickly, and narrow down the right fit without digging through clutter.",
+    title: "Complete prep in one box",
+    body: "Each kit pairs the compound with the core prep essentials, so setup feels cleaner from the start.",
   },
   {
     icon: FlaskConical,
-    title: "Everything in the box, up front",
-    body: "Each product page makes included supplies easy to see, so you know what comes with the kit before you buy.",
+    title: "Product benefits, clearly framed",
+    body: "Fat loss, recovery, glow, and tanning-focused kits are grouped in a way that makes the use case obvious fast.",
   },
   {
     icon: Shield,
-    title: "Specs you can verify",
-    body: "Purity, storage notes, and documentation stay close to the product, making due diligence faster and easier.",
+    title: "Specs that support the product",
+    body: "Purity, storage notes, and documentation status stay close to the kit, making product confidence easier to earn.",
   },
   {
     icon: Mail,
-    title: "Support answers, already linked",
-    body: "Shipping, refund, FAQ, and research-use details are easy to find, so operational questions do not slow you down.",
+    title: "Answers before checkout",
+    body: "Support, shipping, refund, and research-use details are easy to reach when you need to verify the operational side.",
   },
 ];
 
@@ -30,11 +30,10 @@ export function Guarantee() {
       <div className="mx-auto max-w-[1240px] px-5 sm:px-8 lg:px-[160px]">
         <div className="mb-16 text-center">
           <p className="tg-eyebrow mb-6" style={{ color: "#3b6ed6" }}>
-            WHY IT IS EASIER TO BUY
+            WHY THE KITS LAND
           </p>
           <h2 className="tg-h2 mx-auto max-w-3xl" style={{ color: "#0d262d" }}>
-            Less guesswork, more{" "}
-            <span style={{ color: "#3b6ed6" }}>confidence</span> before checkout.
+            Better product framing, <span style={{ color: "#3b6ed6" }}>less guesswork</span> before checkout.
           </h2>
           <p
             className="mx-auto mt-6 max-w-xl"
@@ -45,7 +44,7 @@ export function Guarantee() {
               fontWeight: 400,
             }}
           >
-            Built to help shoppers compare faster, verify details sooner, and avoid surprises later.
+            The compound, included supplies, specs, and support details all work together to make the products easier to trust.
           </p>
         </div>
 
@@ -103,7 +102,7 @@ export function Guarantee() {
                 letterSpacing: "-0.76px",
               }}
             >
-              Find the right kit faster.
+              Explore the full product lineup.
             </h3>
           </div>
           <Link

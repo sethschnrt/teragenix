@@ -4,18 +4,18 @@ import { ArrowUpRight } from "lucide-react";
 const steps = [
   {
     num: "01",
-    title: "Choose a category",
-    body: "Start with the category that fits your research goal, then narrow down the catalog without wasting time on irrelevant kits.",
+    title: "Pick the product goal",
+    body: "Start with fat loss, recovery, skin glow, or tanning-focused research so the product benefit is clear from the first click.",
   },
   {
     num: "02",
-    title: "Confirm the full kit",
-    body: "Review what is included, the key specs, and the storage details so you can tell quickly whether the kit fits your workflow.",
+    title: "Review the full kit",
+    body: "Check the compound, included prep essentials, specs, and storage details to see exactly what the kit gives you.",
   },
   {
     num: "03",
-    title: "Check support details",
-    body: "Use the FAQ, documentation hub, and policy pages to review shipping, refund, and research-use information before you decide.",
+    title: "Verify the support layer",
+    body: "Use the FAQ, documentation hub, and policy pages to confirm the operational details before moving forward.",
   },
 ];
 
@@ -30,11 +30,11 @@ export function HowItWorks() {
               HOW IT WORKS
             </p>
             <h2 className="font-sans text-[2.5rem] font-semibold leading-[1.04] tracking-[-0.03em] text-[#0d262d] sm:text-[3.6rem]">
-              Choosing the right kit, <span className="italic text-[#3b6ed6]">simplified</span>.
+              Product benefits, <span className="italic text-[#3b6ed6]">made clear</span>.
             </h2>
           </div>
           <p className="text-[1.05rem] leading-7 text-[#0d262d]/70 lg:pb-3">
-            Browse by category, confirm what is in the box, then verify specs and support details before you buy.
+            Start with the result you care about, then confirm the kit, specs, and support details in one clean flow.
           </p>
         </div>
 
@@ -69,10 +69,10 @@ export function HowItWorks() {
         <div className="mt-16 flex flex-col items-center gap-5 rounded-[2rem] bg-[linear-gradient(166deg,_#3b6ed6_0%,_#0d262d_100%)] px-8 py-12 text-center sm:mt-20 sm:flex-row sm:justify-between sm:text-left lg:px-14">
           <div>
             <p className="mb-2 font-sans text-[11px] font-medium tracking-[0.22em] text-[#dbeafe]">
-              READY TO BROWSE
+              READY TO EXPLORE
             </p>
             <h3 className="font-sans text-[1.8rem] font-semibold leading-tight tracking-tight text-white sm:text-[2.2rem]">
-              Start with the catalog, then narrow down fast.
+              Find the product focus that fits your research.
             </h3>
           </div>
           <Link

@@ -6,7 +6,7 @@ import { useSearchParams } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ArrowLeft, ArrowUpRight, ChevronDown, Search, X } from "lucide-react";
-import { products, shopCategories, normalizeCategoryParam, getHeroCategoryTagClasses, getHeroCategoryTheme, type ShopCategory } from "@/data/products";
+import { products, shopCategories, normalizeCategoryParam, getHeroCategoryLabel, getHeroCategoryTagClasses, getHeroCategoryTheme, getShopCategoryLabel, type ShopCategory } from "@/data/products";
 import { Footer } from "@/components/footer";
 
 const BASE_PATH = process.env.NODE_ENV === "production" ? "/teragenix" : "";
@@ -101,15 +101,15 @@ export default function ShopPage() {
                 SHOP TERAGENIX
               </span>
               <span className="text-[12px] text-white/60">
-                Compare kits faster with less catalog clutter
+                Fat loss, recovery, skin glow, and tanning-focused kits
               </span>
             </div>
 
             <h1 className="text-[2rem] font-semibold leading-[0.96] tracking-[-0.035em] text-white sm:text-[2.45rem]">
-              Research kits, without the clutter.
+              Shop by product goal.
             </h1>
             <p className="mt-2 max-w-xl text-[0.96rem] leading-6 text-white/72">
-              Browse by category, search by compound, and compare kit format, specs, and price faster.
+              Explore kits for fat loss, recovery, skin glow, and tanning-focused research, then compare specs and included supplies fast.
             </p>
           </div>
         </div>
@@ -195,7 +195,7 @@ export default function ShopPage() {
                         }
                   }
                 >
-                  {cat}
+                  {getShopCategoryLabel(cat)}
                 </button>
               ))}
               </div>
@@ -230,7 +230,7 @@ export default function ShopPage() {
                   <Badge
                     className={`absolute left-3 top-3 border-0 px-3 py-1.5 text-[10px] font-semibold tracking-[0.16em] ${getHeroCategoryTagClasses(product.heroCategory)}`}
                   >
-                    {product.heroCategory.toUpperCase()}
+                    {getHeroCategoryLabel(product.heroCategory).toUpperCase()}
                   </Badge>
                 </div>
 

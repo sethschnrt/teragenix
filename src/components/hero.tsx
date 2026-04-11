@@ -16,8 +16,8 @@ type HeroTile = {
 
 const heroTiles: HeroTile[] = [
   {
-    title: "Metabolic",
-    href: "/shop?category=metabolic",
+    title: "Fat Loss",
+    href: "/shop?category=fat-loss",
     image: "/images/generated/life-benefits-v13-cutout/confidence-jeans-belt.webp",
     desktopImage: "/images/generated/life-benefits-v13-cutout/confidence-jeans-belt-desktop-bottom.webp",
     tone: "#e7f3ea",
@@ -27,8 +27,8 @@ const heroTiles: HeroTile[] = [
     desktopImageClass: "h-[228px] max-w-[96%] lg:h-[150px] lg:max-w-[96%]",
   },
   {
-    title: "Antioxidant",
-    href: "/shop?category=antioxidant",
+    title: "Recovery",
+    href: "/shop?category=recovery",
     image: "/images/generated/hero-cards-v2-cutout/recovery-man-31.webp",
     tone: "#e4f3f5",
     mobileImageAlign: "bottom",
@@ -37,8 +37,8 @@ const heroTiles: HeroTile[] = [
     desktopImageClass: "h-[236px] max-w-[94%] lg:h-[164px] lg:max-w-[94%]",
   },
   {
-    title: "Cosmetic",
-    href: "/shop?category=cosmetic",
+    title: "Skin Glow",
+    href: "/shop?category=skin-glow",
     image: "/images/generated/hero-cards-v9-cutout/woman-47-cream-seated.webp",
     tone: "#f7eee2",
     mobileImageAlign: "bottom",
@@ -47,8 +47,8 @@ const heroTiles: HeroTile[] = [
     desktopImageClass: "h-[232px] max-w-[95%] lg:h-[158px] lg:max-w-[95%]",
   },
   {
-    title: "Melanocortin",
-    href: "/shop?category=melanocortin",
+    title: "Tanning",
+    href: "/shop?category=tanning",
     image: "/images/generated/life-benefits-v13-cutout/active-life-pickleball-centered.webp",
     desktopImage: "/images/generated/life-benefits-v13-cutout/active-life-pickleball-desktop-bottom.webp",
     tone: "#eee7fb",
@@ -102,17 +102,17 @@ export function Hero() {
                 <span
                   className="inline-block h-1.5 w-1.5 rounded-full bg-white"
                 />
-                Research kits with clear specs and full-kit visibility
+                Fat loss, recovery, glow, and tanning-focused research kits
               </p>
             </div>
 
             {/* Headline */}
             <h1 className="mx-auto max-w-[900px] text-center lg:max-w-[760px]">
               <span className="block text-[48px] font-bold leading-[0.98] tracking-[-0.03em] text-white sm:text-[60px] lg:text-[54px]">
-                Research kits,
+                Product-led research kits,
               </span>
               <span className="block text-[48px] font-bold leading-[0.98] tracking-[-0.03em] text-white sm:text-[60px] lg:text-[54px]">
-                <span className="italic text-[#a8c5f5]">organized</span> to compare faster.
+                built around <span className="italic text-[#a8c5f5]">real goals</span>.
               </span>
             </h1>
 
@@ -121,7 +121,7 @@ export function Hero() {
               className="mx-auto mt-5 max-w-[560px] text-center text-white/85 lg:mt-3 lg:max-w-[600px]"
               style={{ fontSize: "15px", lineHeight: "1.5", fontWeight: 400 }}
             >
-              Find the right kit faster with visible specs, included prep essentials, storage guidance, and product pages built for quick evaluation.
+              Explore kits for fat loss, recovery, skin glow, and tanning-focused research with visible specs, included prep essentials, and clear storage guidance.
             </p>
 
             {/* CTA row */}

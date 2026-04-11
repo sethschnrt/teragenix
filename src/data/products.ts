@@ -98,9 +98,9 @@ export const products: Product[] = [
     price: 189.99,
     originalPrice: 239.99,
     description:
-      "10mg Retatrutide kit with bacteriostatic water, insulin syringes, and swabs for faster lab prep.",
+      "10mg Retatrutide kit for metabolic and weight-management research, with bacteriostatic water, syringes, and swabs included.",
     longDescription:
-      "This Retatrutide research kit brings the compound, prep essentials, and storage context together in one place, making evaluation faster before lab work begins. Each kit includes a 10mg lyophilized vial, bacteriostatic water, syringes, and swabs for a cleaner prep workflow.",
+      "This Retatrutide research kit is positioned for metabolic and weight-management research, with the compound, prep essentials, and storage context kept together in one place. Each kit includes a 10mg lyophilized vial, bacteriostatic water, syringes, and swabs for a cleaner prep workflow.",
     badge: "Popular",
     badgeColor: "bg-[#4A90D9]",
     image: "/images/vials/retatrutide.webp",
@@ -136,9 +136,9 @@ export const products: Product[] = [
     price: 149.99,
     originalPrice: 189.99,
     description:
-      "10mg Tesamorelin kit with bacteriostatic water, insulin syringes, and swabs for streamlined lab prep.",
+      "10mg Tesamorelin kit for growth-hormone and body-composition research, with prep essentials included.",
     longDescription:
-      "This Tesamorelin research kit keeps the compound, prep essentials, and storage guidance together, making it easier to compare and easier to prep. Each kit includes a 10mg lyophilized vial, bacteriostatic water, syringes, and swabs for a clean lab workflow.",
+      "This Tesamorelin research kit is framed for growth-hormone and body-composition research, with the compound, prep essentials, and storage guidance kept together in one place. Each kit includes a 10mg lyophilized vial, bacteriostatic water, syringes, and swabs for a clean lab workflow.",
     badge: "Best Seller",
     badgeColor: "bg-emerald-600",
     image: "/images/vials/tesamorelin.webp",
@@ -174,9 +174,9 @@ export const products: Product[] = [
     price: 79.99,
     originalPrice: 99.99,
     description:
-      "10mg Melanotan II kit with bacteriostatic water, insulin syringes, and swabs for streamlined lab prep.",
+      "10mg Melanotan II kit for tanning and pigmentation research, with bacteriostatic water, syringes, and swabs included.",
     longDescription:
-      "This Melanotan II research kit keeps the compound, prep essentials, and handling context together, so comparison is quicker and setup is clearer. Each kit includes a 10mg lyophilized vial plus the reconstitution supplies needed for consistent lab prep.",
+      "This Melanotan II research kit is positioned for tanning and pigmentation research, with the compound, prep essentials, and handling context kept together in one box. Each kit includes a 10mg lyophilized vial plus the reconstitution supplies needed for consistent lab prep.",
     badge: "New",
     badgeColor: "bg-violet-600",
     image: "/images/vials/melanotan-ii.webp",
@@ -212,9 +212,9 @@ export const products: Product[] = [
     price: 119.99,
     originalPrice: 149.99,
     description:
-      "70mg multi-compound kit with bacteriostatic water, syringes, and swabs for all-in-one lab prep.",
+      "70mg skin-glow blend with bacteriostatic water, syringes, and swabs for beauty-focused research.",
     longDescription:
-      "This Glow 70 research kit brings the blend and core prep supplies together in one box, making it easier to review format, included essentials, and storage notes before you choose. Each kit includes a 70mg lyophilized vial plus the reconstitution supplies needed for consistent lab prep.",
+      "This Glow 70 research kit is framed around skin-glow and beauty-focused research, with the blend, prep essentials, and storage notes kept together in one box. Each kit includes a 70mg lyophilized vial plus the reconstitution supplies needed for consistent lab prep.",
     badge: "Trending",
     badgeColor: "bg-rose-600",
     image: "/images/vials/glow-70.webp",
@@ -250,9 +250,9 @@ export const products: Product[] = [
     price: 69.99,
     originalPrice: 89.99,
     description:
-      "600mg Glutathione kit with bacteriostatic water, syringes, and swabs for straightforward lab setup.",
+      "600mg Glutathione kit for antioxidant and recovery-focused research, with prep essentials included.",
     longDescription:
-      "This Glutathione research kit keeps the compound, prep essentials, and storage guidance together, so lab setup is easier to evaluate before selection. Each kit includes a 600mg lyophilized vial plus the reconstitution supplies needed for a clean prep workflow.",
+      "This Glutathione research kit is positioned for antioxidant and recovery-focused research, with the compound, prep essentials, and storage guidance kept together for easier evaluation. Each kit includes a 600mg lyophilized vial plus the reconstitution supplies needed for a clean prep workflow.",
     image: "/images/vials/glutathione.webp",
     specifications: {
       purity: "99%+",
@@ -282,6 +282,21 @@ export const products: Product[] = [
 /** Products with badges — used on the homepage featured section */
 export const featuredProducts = products.filter((p) => p.badge);
 
+const heroCategoryLabelMap: Record<HeroCategory, string> = {
+  Metabolic: "Fat Loss",
+  Antioxidant: "Recovery",
+  Cosmetic: "Skin Glow",
+  Melanocortin: "Tanning",
+};
+
+const shopCategoryLabelMap: Record<ShopCategory, string> = {
+  All: "All",
+  Metabolic: heroCategoryLabelMap.Metabolic,
+  Antioxidant: heroCategoryLabelMap.Antioxidant,
+  Cosmetic: heroCategoryLabelMap.Cosmetic,
+  Melanocortin: heroCategoryLabelMap.Melanocortin,
+};
+
 const categoryParamMap: Record<string, ShopCategory> = {
   all: "All",
   metabolic: "Metabolic",
@@ -295,16 +310,22 @@ const categoryParamMap: Record<string, ShopCategory> = {
   antioxidant: "Antioxidant",
   longevity: "Cosmetic",
   cosmetic: "Cosmetic",
+  "skin-glow": "Cosmetic",
+  skin: "Cosmetic",
+  glow: "Cosmetic",
   vitality: "Melanocortin",
   melanocortin: "Melanocortin",
+  tanning: "Melanocortin",
+  pigment: "Melanocortin",
+  pigmentation: "Melanocortin",
   "beauty-skin": "Cosmetic",
 };
 
 const heroCategoryHrefMap: Record<HeroCategory, string> = {
-  Metabolic: "metabolic",
-  Antioxidant: "antioxidant",
-  Cosmetic: "cosmetic",
-  Melanocortin: "melanocortin",
+  Metabolic: "fat-loss",
+  Antioxidant: "recovery",
+  Cosmetic: "skin-glow",
+  Melanocortin: "tanning",
 };
 
 export function normalizeCategoryParam(category: string | null): ShopCategory | undefined {
@@ -335,4 +356,12 @@ export function getHeroCategoryTagClasses(category: HeroCategory): string {
 
 export function getHeroCategoryHrefParam(category: HeroCategory): string {
   return heroCategoryHrefMap[category];
+}
+
+export function getHeroCategoryLabel(category: HeroCategory): string {
+  return heroCategoryLabelMap[category];
+}
+
+export function getShopCategoryLabel(category: ShopCategory): string {
+  return shopCategoryLabelMap[category];
 }

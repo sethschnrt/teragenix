@@ -23,23 +23,23 @@ export default function Home() {
 
       {/* Section 1 — Metabolic */}
       <EditorialSection
-        eyebrow="METABOLIC RESEARCH"
-        headline="Metabolic kits, organized for faster selection."
-        accentPhrase="faster selection"
+        eyebrow="FAT LOSS RESEARCH"
+        headline="Metabolic and body-composition research, built into complete kits."
+        accentPhrase="complete kits"
         accentColor={BLUE_PRIMARY}
         haloColor={HALO_SKY}
-        bodyText="Compare retatrutide, tesamorelin, and adjacent metabolic kits with visible format, included supplies, and pricing in one cleaner category."
-        subheading="Everything easier to verify"
-        subbody="Each listing makes it easier to confirm what is in the box, how the kit is formatted, and whether it fits your lab workflow before you go deeper."
+        bodyText="Retatrutide and tesamorelin kits are positioned for metabolic and body-composition research, with the compound, prep essentials, and key specs kept together in one box."
+        subheading="Built for cleaner prep"
+        subbody="Instead of chasing down supplies separately, each kit keeps the essentials together so the product benefit stays front and center from the first glance."
         features={[
-          "Price + format in one view",
+          "Metabolic research focus",
           "Included prep essentials",
           "Clear storage guidance",
-          "Category-first browsing",
+          "Visible format + quantity",
           "Research-use-only framing",
         ]}
-        cardTitle="What you can verify fast:"
-        ctaLabel="Browse metabolic kits"
+        cardTitle="Why these kits stand out:"
+        ctaLabel="Browse fat loss kits"
         ctaHref="/shop?category=fat-loss"
         image1="/images/generated/refresh-v1/metabolic-hero-tight.webp"
         image2="/images/generated/lifestyle-v1/metabolic-2-couple-walking.webp"
@@ -50,19 +50,19 @@ export default function Home() {
 
       {/* Section 2 — Quality standards */}
       <EditorialSection
-        eyebrow="QUALITY STANDARDS"
-        headline="Documentation, closer to the product."
-        accentPhrase="closer to the product"
+        eyebrow="PRODUCT CONFIDENCE"
+        headline="Purity, storage, and batch visibility where they matter."
+        accentPhrase="where they matter"
         accentColor={BLUE_SKY}
         haloColor={HALO_STEEL}
-        bodyText="Serious buyers want specs, batch context, and kit contents where they can actually use them, not buried under hype."
-        subheading="Why that matters before checkout"
-        subbody="When documentation, storage notes, and included supplies are visible early, comparison gets easier and support questions shrink."
+        bodyText="The strongest product story is simple: visible specs, batch-linked documentation status, and clear handling guidance tied directly to the kit."
+        subheading="Why buyers care"
+        subbody="When purity, storage, and documentation stay close to the product, confidence comes from what the kit actually offers, not from inflated marketing language."
         features={[
           "Purity and format shown clearly",
           "Batch-linked documentation status",
           "Storage notes on-page",
-          "Support pages easy to reach",
+          "Kit contents shown upfront",
           "Calm, specific product language",
         ]}
         cardTitle="What builds confidence:"
