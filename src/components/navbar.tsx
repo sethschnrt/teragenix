@@ -187,30 +187,6 @@ export function Navbar() {
           />
         </Link>
 
-        <nav className="hidden md:flex md:flex-1 md:items-center md:justify-center md:gap-6 lg:gap-8">
-          {navLinks.map((link) => {
-            const active = normalizedPath === link.href;
-
-            return (
-              <Link
-                key={link.href}
-                href={link.href}
-                className={`text-[13px] font-semibold tracking-[0.08em] transition ${
-                  useHeroNav
-                    ? active
-                      ? "text-white"
-                      : "text-white/72 hover:text-white"
-                    : active
-                      ? "text-[#173f85]"
-                      : "text-[#475967] hover:text-[#173f85]"
-                }`}
-              >
-                {link.label.toUpperCase()}
-              </Link>
-            );
-          })}
-        </nav>
-
         <div className="ml-auto flex items-center gap-3">
           <div className="hidden w-[250px] lg:block xl:w-[280px]">
             <SearchBox
@@ -234,7 +210,7 @@ export function Navbar() {
 
           <Sheet open={open} onOpenChange={setOpen}>
             <SheetTrigger
-              className={`inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full md:hidden ${
+              className={`inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full ${
                 useHeroNav ? "text-white hover:bg-transparent" : "text-[#0d262d] hover:bg-transparent"
               }`}
             >
