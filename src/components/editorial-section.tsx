@@ -80,6 +80,9 @@ export function EditorialSection({
                   <img
                     src={`${BASE_PATH}${image1}`}
                     alt=""
+                    loading="lazy"
+                    decoding="async"
+                    fetchPriority="low"
                     className="h-full w-full object-cover"
                   />
                 </div>
@@ -89,6 +92,9 @@ export function EditorialSection({
                   <img
                     src={`${BASE_PATH}${image1}`}
                     alt=""
+                    loading="lazy"
+                    decoding="async"
+                    fetchPriority="low"
                     className="max-h-[270px] w-auto object-contain drop-shadow-[0_24px_40px_rgba(17,33,17,0.18)] sm:max-h-[340px] lg:max-h-[500px]"
                   />
                 </>
@@ -191,6 +197,9 @@ export function EditorialSection({
                   <img
                     src={`${BASE_PATH}${src}`}
                     alt=""
+                    loading="lazy"
+                    decoding="async"
+                    fetchPriority="low"
                     className="absolute inset-0 h-full w-full object-cover"
                   />
                   {badgeLabel && i === 0 && (

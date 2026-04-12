@@ -59,6 +59,9 @@ export function FeaturedProducts() {
                   <img
                     src={`${BASE_PATH}${product.image}`}
                     alt={product.name}
+                    loading="lazy"
+                    decoding="async"
+                    fetchPriority="low"
                     className="tg-link-card-media h-full w-full object-cover"
                     style={{ transform: "scale(1.08)" }}
                   />
