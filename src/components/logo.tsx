@@ -29,6 +29,9 @@ export function Logo({ className, size = "md", theme = "default" }: LogoProps) {
       alt="Teragenix"
       width={width}
       height={height}
+      loading="eager"
+      fetchPriority="high"
+      decoding="sync"
       className={cn("block h-auto w-auto max-w-full select-none", className)}
       draggable={false}
     />
