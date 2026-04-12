@@ -15,8 +15,8 @@ const sizeMap: Record<NonNullable<LogoProps["size"]>, { width: number; height: n
 };
 
 const srcMap: Record<NonNullable<LogoProps["theme"]>, string> = {
-  default: `${BASE_PATH}/images/teragenix-logo-dark.png`,
-  light: `${BASE_PATH}/images/teragenix-logo-white.png`,
+  default: `${BASE_PATH}/images/teragenix-logo-dark-optimized.png`,
+  light: `${BASE_PATH}/images/teragenix-logo-white-optimized.png`,
 };
 
 export function Logo({ className, size = "md", theme = "default" }: LogoProps) {
