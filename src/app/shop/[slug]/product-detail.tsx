@@ -1,6 +1,8 @@
 "use client";
 
 import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { useState } from "react";
 import { Badge } from "@/components/ui/badge";
 import {
   ArrowLeft,
@@ -15,6 +17,7 @@ import {
 } from "lucide-react";
 import { Footer } from "@/components/footer";
 import { RegulatoryDisclaimer } from "@/components/regulatory-disclaimer";
+import { useCart } from "@/components/cart-provider";
 import {
   getHeroCategoryHrefParam,
   getHeroCategoryLabel,
@@ -39,6 +42,10 @@ const specLabels: Record<string, string> = {
 
 export function ProductDetail({ product, relatedProducts }: ProductDetailProps) {
   const theme = getHeroCategoryTheme(product.heroCategory);
+  const router = useRouter();
+  const { addItem, buyNow } = useCart();
+  const [quantity, setQuantity] = useState(1);
+  const [cartFeedback, setCartFeedback] = useState<string | null>(null);
   const categoryHref = `/shop?category=${getHeroCategoryHrefParam(product.heroCategory)}`;
   const savings = (product.originalPrice - product.price).toFixed(0);
   const categoryLabel = getHeroCategoryLabel(product.heroCategory);
@@ -173,6 +180,74 @@ export function ProductDetail({ product, relatedProducts }: ProductDetailProps) 
                     {item}
                   </span>
                 ))}
+              </div>
+
+              <div
+                className="mt-8 rounded-[1.5rem] border p-4 sm:p-5"
+                style={{ borderColor: "rgba(255,255,255,0.14)", backgroundColor: "rgba(255,255,255,0.08)" }}
+              >
+                <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-white/68">
+                  Purchase flow
+                </p>
+
+                <div className="mt-4 flex flex-col gap-4 lg:flex-row lg:items-end">
+                  <div>
+                    <p className="text-[12px] font-medium uppercase tracking-[0.16em] text-white/60">
+                      Quantity
+                    </p>
+                    <div className="mt-2 inline-flex items-center overflow-hidden rounded-full border border-white/14 bg-white/8">
+                      <button
+                        type="button"
+                        onClick={() => setQuantity((value) => Math.max(1, value - 1))}
+                        className="inline-flex h-11 w-11 items-center justify-center text-lg font-semibold text-white/82"
+                        aria-label="Decrease quantity"
+                      >
+                        -
+                      </button>
+                      <div className="inline-flex h-11 min-w-[52px] items-center justify-center border-x border-white/14 px-4 text-sm font-semibold text-white">
+                        {quantity}
+                      </div>
+                      <button
+                        type="button"
+                        onClick={() => setQuantity((value) => value + 1)}
+                        className="inline-flex h-11 w-11 items-center justify-center text-lg font-semibold text-white/82"
+                        aria-label="Increase quantity"
+                      >
+                        +
+                      </button>
+                    </div>
+                  </div>
+
+                  <div className="flex flex-1 flex-col gap-3 sm:flex-row">
+                    <button
+                      type="button"
+                      onClick={() => {
+                        addItem(product, quantity);
+                        setCartFeedback(`${quantity} added to cart.`);
+                      }}
+                      className="tg-link-pill inline-flex h-12 items-center justify-center rounded-full border px-5 text-sm font-semibold text-white"
+                      style={{ borderColor: "rgba(255,255,255,0.18)", backgroundColor: "rgba(255,255,255,0.06)" }}
+                    >
+                      Add to cart
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => {
+                        buyNow(product, quantity);
+                        router.push("/checkout");
+                      }}
+                      className="tg-link-pill inline-flex h-12 items-center justify-center rounded-full px-5 text-sm font-semibold text-white"
+                      style={{ backgroundColor: theme.accent }}
+                    >
+                      Buy now
+                      <ArrowUpRight className="tg-link-pill-icon ml-2 h-4 w-4" />
+                    </button>
+                  </div>
+                </div>
+
+                <p className="mt-3 text-[13px] text-white/64">
+                  {cartFeedback ?? "Build your cart here, or jump straight into checkout with Buy now."}
+                </p>
               </div>
 
               <div className="mt-8 flex flex-wrap gap-3">

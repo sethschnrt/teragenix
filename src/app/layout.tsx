@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/navbar";
+import { CartProvider } from "@/components/cart-provider";
 
 const poppins = Poppins({
   variable: "--font-sans",
@@ -28,8 +29,10 @@ export default function RootLayout({
         className={`${poppins.variable} antialiased`}
         style={{ fontFamily: "var(--font-sans), system-ui, sans-serif" }}
       >
-        <Navbar />
-        {children}
+        <CartProvider>
+          <Navbar />
+          {children}
+        </CartProvider>
       </body>
     </html>
   );

@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { FormEvent, useMemo, useState } from "react";
 import { usePathname, useRouter } from "next/navigation";
-import { ArrowUpRight, Menu, Search } from "lucide-react";
+import { ArrowUpRight, Menu, Search, ShoppingBag } from "lucide-react";
 import { products } from "@/data/products";
 import { Logo } from "./logo";
 import {
@@ -12,6 +12,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
+import { useCart } from "./cart-provider";
 
 const navLinks = [
   { label: "Shop", href: "/shop" },
@@ -154,6 +155,7 @@ function SearchBox({
 export function Navbar() {
   const [open, setOpen] = useState(false);
   const [query, setQuery] = useState("");
+  const { itemCount } = useCart();
   const pathname = usePathname();
   const router = useRouter();
   const normalizedPath = (pathname.replace(/^\/teragenix(?=\/|$)/, "") || "/").replace(/\/$/, "") || "/";
@@ -208,6 +210,21 @@ export function Navbar() {
             Shop kits
           </Link>
 
+          <Link
+            href="/cart"
+            className={`relative inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full ${
+              useHeroNav ? "text-white hover:bg-transparent" : "text-[#0d262d] hover:bg-transparent"
+            }`}
+            aria-label="Cart"
+          >
+            <ShoppingBag className="h-5 w-5" />
+            {itemCount > 0 ? (
+              <span className="absolute -right-1.5 -top-1.5 inline-flex min-w-[18px] items-center justify-center rounded-full bg-[#3b6ed6] px-1.5 text-[10px] font-semibold leading-5 text-white">
+                {itemCount}
+              </span>
+            ) : null}
+          </Link>
+
           <Sheet open={open} onOpenChange={setOpen}>
             <SheetTrigger
               className={`inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full ${
@@ -229,6 +246,14 @@ export function Navbar() {
                   onResultClick={() => setOpen(false)}
                   mobile
                 />
+
+                <Link
+                  href="/cart"
+                  onClick={() => setOpen(false)}
+                  className="tg-link-text text-lg font-medium text-[#0d262d] hover:text-[#3b6ed6]"
+                >
+                  Cart{itemCount > 0 ? ` (${itemCount})` : ""}
+                </Link>
 
                 {navLinks.map((link) => (
                   <Link
