@@ -1,5 +1,6 @@
 import { Logo } from "./logo";
 import Link from "next/link";
+import { RegulatoryDisclaimer } from "./regulatory-disclaimer";
 
 const footerLinks = {
   Shop: [
@@ -39,6 +40,8 @@ export function Footer() {
       </div>
 
       <div className="relative mx-auto max-w-[1240px] px-5 py-20 sm:px-8 lg:px-12">
+        <RegulatoryDisclaimer variant="dark" className="mb-10" />
+
         <div className="grid gap-14 lg:grid-cols-[1.2fr_0.95fr_0.95fr_1.05fr]">
           {/* Brand column */}
           <div className="md:col-span-1">
@@ -80,7 +83,7 @@ export function Footer() {
             &copy; {new Date().getFullYear()} Teragenix Research. All rights reserved.
           </p>
           <p className="max-w-md text-center text-[12px] text-white/45 sm:text-right">
-            All products are intended for research and laboratory use only. Not for human consumption.
+            Research-use catalog with visible docs, policies, and support pages.
           </p>
         </div>
       </div>

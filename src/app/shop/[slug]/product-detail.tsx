@@ -14,6 +14,7 @@ import {
   Snowflake,
 } from "lucide-react";
 import { Footer } from "@/components/footer";
+import { RegulatoryDisclaimer } from "@/components/regulatory-disclaimer";
 import {
   getHeroCategoryHrefParam,
   getHeroCategoryLabel,
@@ -192,6 +193,8 @@ export function ProductDetail({ product, relatedProducts }: ProductDetailProps) 
                   Back to catalog
                 </Link>
               </div>
+
+              <RegulatoryDisclaimer variant="dark" className="mt-6 max-w-2xl" />
             </div>
           </div>
         </div>
