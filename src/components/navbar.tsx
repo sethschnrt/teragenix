@@ -276,16 +276,6 @@ export function Navbar() {
                   {session?.user ? "Account" : "Sign in"}
                 </Link>
 
-                {!session?.user ? (
-                  <Link
-                    href="/signup"
-                    onClick={() => setOpen(false)}
-                    className="tg-link-text text-lg font-medium text-[#0d262d] hover:text-[#3b6ed6]"
-                  >
-                    Create account
-                  </Link>
-                ) : null}
-
                 {navLinks.map((link) => (
                   <Link
                     key={link.href}
