@@ -33,6 +33,9 @@ export default async function AdminOrderDetailPage({
     notFound();
   }
 
+type OrderItemRecord = (typeof order.items)[number];
+type OrderNoteRecord = (typeof order.notes)[number];
+
   return (
     <div className="space-y-6">
       <div className="grid gap-4 lg:grid-cols-[1.12fr_0.88fr]">
@@ -116,7 +119,7 @@ export default async function AdminOrderDetailPage({
             {order.items.length === 0 ? (
               <p>No order items yet.</p>
             ) : (
-              order.items.map((item) => (
+              order.items.map((item: OrderItemRecord) => (
                 <div key={item.id} className="flex items-center justify-between rounded-lg border border-tera-border px-4 py-3">
                   <div>
                     <p className="font-medium text-tera-navy">{item.productNameSnapshot}</p>
@@ -142,7 +145,7 @@ export default async function AdminOrderDetailPage({
           {order.notes.length === 0 ? (
             <p>No notes yet.</p>
           ) : (
-            order.notes.map((note) => (
+            order.notes.map((note: OrderNoteRecord) => (
               <div key={note.id} className="rounded-lg border border-tera-border px-4 py-3">
                 <p>{note.body}</p>
               </div>

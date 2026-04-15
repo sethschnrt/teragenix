@@ -99,6 +99,11 @@ export default async function AdminOverviewPage() {
   const recentExpenseTotal = expenses.reduce((sum, expense) => sum + Number(expense.amount), 0);
   const projectedOpenSpend = Number(openProcurementEstimate._sum.estimatedCost ?? 0);
 
+type OverviewContactRecord = (typeof contacts)[number];
+type OverviewOrderRecord = (typeof orders)[number];
+type OverviewExpenseRecord = (typeof expenses)[number];
+type OverviewProcurementRecord = (typeof procurementItems)[number];
+
   return (
     <div className="space-y-6">
       <div className="grid gap-4 lg:grid-cols-[1.15fr_0.85fr]">
@@ -193,7 +198,7 @@ export default async function AdminOverviewPage() {
             {contacts.length === 0 ? (
               <p className="text-sm text-tera-body">No contacts yet.</p>
             ) : (
-              contacts.map((contact) => (
+              contacts.map((contact: OverviewContactRecord) => (
                 <Link
                   key={contact.id}
                   href={`/admin/crm/${contact.id}`}
@@ -221,7 +226,7 @@ export default async function AdminOverviewPage() {
             {orders.length === 0 ? (
               <p className="text-sm text-tera-body">No orders yet.</p>
             ) : (
-              orders.map((order) => (
+              orders.map((order: OverviewOrderRecord) => (
                 <Link
                   key={order.id}
                   href={`/admin/orders/${order.id}`}
@@ -249,7 +254,7 @@ export default async function AdminOverviewPage() {
             {procurementItems.length === 0 ? (
               <p>No purchase items yet.</p>
             ) : (
-              procurementItems.map((item) => (
+              procurementItems.map((item: OverviewProcurementRecord) => (
                 <Link
                   key={item.id}
                   href="/admin/purchasing"
@@ -283,7 +288,7 @@ export default async function AdminOverviewPage() {
             {expenses.length === 0 ? (
               <p>No expenses yet.</p>
             ) : (
-              expenses.map((expense) => (
+              expenses.map((expense: OverviewExpenseRecord) => (
                 <div key={expense.id} className="rounded-[1.2rem] border border-tera-border px-4 py-3">
                   <div className="flex items-center justify-between gap-3">
                     <p className="font-medium text-tera-navy">{expense.vendor}</p>

@@ -20,6 +20,8 @@ export default async function AdminCrmPage() {
     take: 50,
   });
 
+type AdminContactRow = (typeof contacts)[number];
+
   return (
     <div className="space-y-5">
       <div>
@@ -41,7 +43,7 @@ export default async function AdminCrmPage() {
         {contacts.length === 0 ? (
           <div className="px-5 py-6 text-sm text-tera-body">No contacts yet.</div>
         ) : (
-          contacts.map((contact) => (
+          contacts.map((contact: AdminContactRow) => (
             <Link
               key={contact.id}
               href={`/admin/crm/${contact.id}`}

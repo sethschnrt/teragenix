@@ -17,6 +17,8 @@ export default async function AdminOrdersPage() {
     take: 50,
   });
 
+type AdminOrderRow = (typeof orders)[number];
+
   return (
     <div className="space-y-5">
       <div>
@@ -39,7 +41,7 @@ export default async function AdminOrdersPage() {
         {orders.length === 0 ? (
           <div className="px-5 py-6 text-sm text-tera-body">No orders yet.</div>
         ) : (
-          orders.map((order) => (
+          orders.map((order: AdminOrderRow) => (
             <Link
               key={order.id}
               href={`/admin/orders/${order.id}`}

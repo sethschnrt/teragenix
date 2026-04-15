@@ -66,6 +66,9 @@ export default async function AdminPurchasingPage() {
     .sort((left, right) => Number(left.neededBy) - Number(right.neededBy))[0];
   const linkedExpenseTotal = linkedExpenses.reduce((sum, expense) => sum + Number(expense.amount), 0);
 
+type PurchasingItemRecord = (typeof items)[number];
+type LinkedExpenseRecord = (typeof linkedExpenses)[number];
+
   return (
     <div className="space-y-6">
       <div className="grid gap-4 lg:grid-cols-[1.15fr_0.85fr]">
@@ -158,7 +161,7 @@ export default async function AdminPurchasingPage() {
             {linkedExpenses.length === 0 ? (
               <p className="text-sm text-tera-body">No purchase-linked expenses yet.</p>
             ) : (
-              linkedExpenses.map((expense) => (
+              linkedExpenses.map((expense: LinkedExpenseRecord) => (
                 <div key={expense.id} className="rounded-[1.2rem] border border-tera-border px-4 py-4">
                   <div className="flex items-center justify-between gap-3">
                     <div className="min-w-0">
@@ -194,7 +197,7 @@ export default async function AdminPurchasingPage() {
           </Card>
         ) : (
           <div className="grid gap-4">
-            {openItems.map((item) => (
+            {openItems.map((item: PurchasingItemRecord) => (
               <ProcurementItemCard
                 key={item.id}
                 item={{
@@ -230,7 +233,7 @@ export default async function AdminPurchasingPage() {
           {closedItems.length === 0 ? (
             <p className="text-sm text-tera-body">Nothing closed yet.</p>
           ) : (
-            closedItems.slice(0, 8).map((item) => (
+            closedItems.slice(0, 8).map((item: PurchasingItemRecord) => (
               <div
                 key={item.id}
                 className="grid gap-3 rounded-[1.2rem] border border-tera-border px-4 py-4 sm:grid-cols-[minmax(0,1fr)_130px_130px_130px] sm:items-center"

@@ -38,6 +38,9 @@ export default async function AdminCrmContactPage({
     notFound();
   }
 
+type ContactOrderRecord = (typeof contact.orders)[number];
+type ContactNoteRecord = (typeof contact.notes)[number];
+
   return (
     <div className="space-y-6">
       <div className="grid gap-4 lg:grid-cols-[1.12fr_0.88fr]">
@@ -101,7 +104,7 @@ export default async function AdminCrmContactPage({
             {contact.orders.length === 0 ? (
               <p>No linked orders yet.</p>
             ) : (
-              contact.orders.map((order) => (
+              contact.orders.map((order: ContactOrderRecord) => (
                 <Link
                   key={order.id}
                   href={`/admin/orders/${order.id}`}
@@ -148,7 +151,7 @@ export default async function AdminCrmContactPage({
           {contact.notes.length === 0 ? (
             <p>No notes yet.</p>
           ) : (
-            contact.notes.map((note) => (
+            contact.notes.map((note: ContactNoteRecord) => (
               <div key={note.id} className="rounded-[1.2rem] border border-tera-border px-4 py-3">
                 <p>{note.body}</p>
               </div>

@@ -60,6 +60,9 @@ export default async function AdminExpensesPage() {
     .filter((expense) => expense.procurementItemId)
     .reduce((sum, expense) => sum + Number(expense.amount), 0);
 
+type ExpenseLedgerRecord = (typeof expenses)[number];
+type RecurringExpenseRecord = (typeof recurringExpenses)[number];
+
   return (
     <div className="space-y-6">
       <div className="grid gap-4 lg:grid-cols-[1.15fr_0.85fr]">
@@ -162,7 +165,7 @@ export default async function AdminExpensesPage() {
             {expenses.length === 0 ? (
               <p className="text-sm text-tera-body">No expenses recorded yet.</p>
             ) : (
-              expenses.map((expense) => (
+              expenses.map((expense: ExpenseLedgerRecord) => (
                 <div
                   key={expense.id}
                   className="grid gap-3 rounded-[1.2rem] border border-tera-border px-4 py-4 sm:grid-cols-[minmax(0,1fr)_120px_110px] sm:items-center"
@@ -194,7 +197,7 @@ export default async function AdminExpensesPage() {
             {recurringExpenses.length === 0 ? (
               <p className="text-sm text-tera-body">No recurring expenses yet.</p>
             ) : (
-              recurringExpenses.map((expense) => (
+              recurringExpenses.map((expense: RecurringExpenseRecord) => (
                 <RecurringExpenseCard
                   key={expense.id}
                   expense={{
