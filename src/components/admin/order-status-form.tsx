@@ -1,14 +1,17 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { FulfillmentStatus, OrderStatus, PaymentStatus } from "@prisma/client";
 import { useState, useTransition } from "react";
 
 import { Button } from "@/components/ui/button";
 
-const orderStatuses = Object.values(OrderStatus);
-const paymentStatuses = Object.values(PaymentStatus);
-const fulfillmentStatuses = Object.values(FulfillmentStatus);
+type OrderStatusValue = "PENDING" | "PAID" | "FULFILLED" | "SHIPPED" | "DELIVERED" | "CANCELED" | "REFUNDED";
+type PaymentStatusValue = "UNPAID" | "PENDING" | "PAID" | "FAILED" | "REFUNDED" | "PARTIALLY_REFUNDED";
+type FulfillmentStatusValue = "UNFULFILLED" | "PROCESSING" | "PACKED" | "SHIPPED" | "DELIVERED" | "RETURNED";
+
+const orderStatuses: OrderStatusValue[] = ["PENDING", "PAID", "FULFILLED", "SHIPPED", "DELIVERED", "CANCELED", "REFUNDED"];
+const paymentStatuses: PaymentStatusValue[] = ["UNPAID", "PENDING", "PAID", "FAILED", "REFUNDED", "PARTIALLY_REFUNDED"];
+const fulfillmentStatuses: FulfillmentStatusValue[] = ["UNFULFILLED", "PROCESSING", "PACKED", "SHIPPED", "DELIVERED", "RETURNED"];
 
 export function OrderStatusForm({
   orderId,
@@ -17,9 +20,9 @@ export function OrderStatusForm({
   fulfillmentStatus,
 }: {
   orderId: string;
-  status: OrderStatus;
-  paymentStatus: PaymentStatus;
-  fulfillmentStatus: FulfillmentStatus;
+  status: OrderStatusValue;
+  paymentStatus: PaymentStatusValue;
+  fulfillmentStatus: FulfillmentStatusValue;
 }) {
   const router = useRouter();
   const [isPending, startTransition] = useTransition();
@@ -58,7 +61,7 @@ export function OrderStatusForm({
           <span className="text-sm font-medium text-tera-navy">Order status</span>
           <select
             value={form.status}
-            onChange={(event) => setForm((current) => ({ ...current, status: event.target.value as OrderStatus }))}
+            onChange={(event) => setForm((current) => ({ ...current, status: event.target.value as OrderStatusValue }))}
             className="w-full rounded-lg border border-tera-border px-3 py-2 text-sm outline-none focus:border-tera-blue"
           >
             {orderStatuses.map((value) => (
@@ -74,7 +77,7 @@ export function OrderStatusForm({
           <select
             value={form.paymentStatus}
             onChange={(event) =>
-              setForm((current) => ({ ...current, paymentStatus: event.target.value as PaymentStatus }))
+              setForm((current) => ({ ...current, paymentStatus: event.target.value as PaymentStatusValue }))
             }
             className="w-full rounded-lg border border-tera-border px-3 py-2 text-sm outline-none focus:border-tera-blue"
           >
@@ -93,7 +96,7 @@ export function OrderStatusForm({
             onChange={(event) =>
               setForm((current) => ({
                 ...current,
-                fulfillmentStatus: event.target.value as FulfillmentStatus,
+                fulfillmentStatus: event.target.value as FulfillmentStatusValue,
               }))
             }
             className="w-full rounded-lg border border-tera-border px-3 py-2 text-sm outline-none focus:border-tera-blue"
