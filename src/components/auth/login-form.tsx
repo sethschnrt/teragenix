@@ -45,27 +45,12 @@ export function LoginForm() {
   }
 
   return (
-    <Card className="mx-auto w-full max-w-[520px] rounded-[2rem] border border-white/10 bg-white/92 py-5 text-[#0d262d] shadow-[0_30px_90px_-48px_rgba(0,0,0,0.65)] ring-1 ring-white/30 backdrop-blur-xl">
-      <CardHeader className="space-y-4 px-6 sm:px-7">
-        <div className="inline-flex w-fit items-center rounded-full bg-[#eef4fc] px-3 py-1.5 text-[11px] font-medium tracking-[0.18em] text-[#173f85] ring-1 ring-[#dbe6f5]">
-          SECURE ACCESS
-        </div>
-        <div>
-          <CardTitle className="text-[1.9rem] tracking-[-0.03em] text-[#0d262d]">Sign in</CardTitle>
-          <CardDescription className="mt-2 max-w-md text-sm leading-6 text-[#5a6a7f]">
-            Access the Teragenix operations workspace for CRM, orders, purchasing, and expense tracking.
-          </CardDescription>
-        </div>
-        <div className="grid gap-3 sm:grid-cols-2">
-          <div className="rounded-[1.15rem] border border-[#dbe6f5] bg-[#f8fbff] px-4 py-3">
-            <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-[#3b6ed6]">Access level</p>
-            <p className="mt-2 text-sm font-medium text-[#0d262d]">Admin and sales</p>
-          </div>
-          <div className="rounded-[1.15rem] border border-[#dbe6f5] bg-[#f8fbff] px-4 py-3">
-            <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-[#3b6ed6]">Destination</p>
-            <p className="mt-2 text-sm font-medium text-[#0d262d]">Connected ops dashboard</p>
-          </div>
-        </div>
+    <Card className="mx-auto w-full max-w-[460px] rounded-[2rem] border border-white/10 bg-white/92 py-5 text-[#0d262d] shadow-[0_30px_90px_-48px_rgba(0,0,0,0.65)] ring-1 ring-white/30 backdrop-blur-xl">
+      <CardHeader className="space-y-2 px-6 sm:px-7">
+        <CardTitle className="text-[1.9rem] tracking-[-0.03em] text-[#0d262d]">Sign in</CardTitle>
+        <CardDescription className="text-sm text-[#5a6a7f]">
+          Enter your email and password.
+        </CardDescription>
       </CardHeader>
       <CardContent className="px-6 sm:px-7">
         <form className="space-y-4" onSubmit={handleSubmit}>
@@ -106,7 +91,7 @@ export function LoginForm() {
           ) : null}
 
           <Button className="h-12 w-full rounded-[1rem] bg-[#173f85] text-white hover:bg-[#12346d]" type="submit" disabled={isPending}>
-            {isPending ? "Signing in..." : "Enter ops dashboard"}
+            {isPending ? "Signing in..." : "Sign in"}
           </Button>
         </form>
       </CardContent>

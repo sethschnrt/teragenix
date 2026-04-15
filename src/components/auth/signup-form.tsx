@@ -73,37 +73,35 @@ export function SignupForm() {
   }
 
   return (
-    <Card className="mx-auto w-full max-w-xl border border-tera-border bg-white py-5 shadow-[0_20px_50px_-42px_rgba(13,38,45,0.35)]">
-      <CardHeader>
-        <CardTitle>Create your account</CardTitle>
-        <CardDescription>
-          Your Teragenix account will also create your CRM record behind the scenes.
-        </CardDescription>
+    <Card className="mx-auto w-full max-w-[640px] rounded-[2rem] border border-white/10 bg-white/92 py-5 text-[#0d262d] shadow-[0_30px_90px_-48px_rgba(0,0,0,0.65)] ring-1 ring-white/30 backdrop-blur-xl">
+      <CardHeader className="space-y-2 px-6 sm:px-7">
+        <CardTitle className="text-[1.9rem] tracking-[-0.03em] text-[#0d262d]">Create account</CardTitle>
+        <CardDescription className="text-sm text-[#5a6a7f]">Enter your details below.</CardDescription>
       </CardHeader>
-      <CardContent>
+      <CardContent className="px-6 sm:px-7">
         <form className="space-y-4" onSubmit={handleSubmit}>
           <div className="grid gap-4 sm:grid-cols-2">
             <div className="space-y-1.5">
-              <label className="text-sm font-medium text-tera-navy" htmlFor="firstName">
+              <label className="text-sm font-medium text-[#0d262d]" htmlFor="firstName">
                 First name
               </label>
               <input
                 id="firstName"
                 value={form.firstName}
                 onChange={(event) => updateField("firstName", event.target.value)}
-                className="w-full rounded-lg border border-tera-border px-3 py-2 text-sm outline-none transition focus:border-tera-blue"
+                className="h-12 w-full rounded-[1rem] border border-[#dbe6f5] bg-white px-4 text-sm outline-none transition focus:border-[#3b6ed6] focus:shadow-[0_0_0_4px_rgba(59,110,214,0.12)]"
                 required
               />
             </div>
             <div className="space-y-1.5">
-              <label className="text-sm font-medium text-tera-navy" htmlFor="lastName">
+              <label className="text-sm font-medium text-[#0d262d]" htmlFor="lastName">
                 Last name
               </label>
               <input
                 id="lastName"
                 value={form.lastName}
                 onChange={(event) => updateField("lastName", event.target.value)}
-                className="w-full rounded-lg border border-tera-border px-3 py-2 text-sm outline-none transition focus:border-tera-blue"
+                className="h-12 w-full rounded-[1rem] border border-[#dbe6f5] bg-white px-4 text-sm outline-none transition focus:border-[#3b6ed6] focus:shadow-[0_0_0_4px_rgba(59,110,214,0.12)]"
                 required
               />
             </div>
@@ -111,7 +109,7 @@ export function SignupForm() {
 
           <div className="grid gap-4 sm:grid-cols-2">
             <div className="space-y-1.5">
-              <label className="text-sm font-medium text-tera-navy" htmlFor="email">
+              <label className="text-sm font-medium text-[#0d262d]" htmlFor="email">
                 Email
               </label>
               <input
@@ -119,12 +117,12 @@ export function SignupForm() {
                 type="email"
                 value={form.email}
                 onChange={(event) => updateField("email", event.target.value)}
-                className="w-full rounded-lg border border-tera-border px-3 py-2 text-sm outline-none transition focus:border-tera-blue"
+                className="h-12 w-full rounded-[1rem] border border-[#dbe6f5] bg-white px-4 text-sm outline-none transition focus:border-[#3b6ed6] focus:shadow-[0_0_0_4px_rgba(59,110,214,0.12)]"
                 required
               />
             </div>
             <div className="space-y-1.5">
-              <label className="text-sm font-medium text-tera-navy" htmlFor="phone">
+              <label className="text-sm font-medium text-[#0d262d]" htmlFor="phone">
                 Phone
               </label>
               <input
@@ -132,13 +130,13 @@ export function SignupForm() {
                 type="tel"
                 value={form.phone}
                 onChange={(event) => updateField("phone", event.target.value)}
-                className="w-full rounded-lg border border-tera-border px-3 py-2 text-sm outline-none transition focus:border-tera-blue"
+                className="h-12 w-full rounded-[1rem] border border-[#dbe6f5] bg-white px-4 text-sm outline-none transition focus:border-[#3b6ed6] focus:shadow-[0_0_0_4px_rgba(59,110,214,0.12)]"
               />
             </div>
           </div>
 
           <div className="space-y-1.5">
-            <label className="text-sm font-medium text-tera-navy" htmlFor="password">
+            <label className="text-sm font-medium text-[#0d262d]" htmlFor="password">
               Password
             </label>
             <input
@@ -146,15 +144,15 @@ export function SignupForm() {
               type="password"
               value={form.password}
               onChange={(event) => updateField("password", event.target.value)}
-              className="w-full rounded-lg border border-tera-border px-3 py-2 text-sm outline-none transition focus:border-tera-blue"
+              className="h-12 w-full rounded-[1rem] border border-[#dbe6f5] bg-white px-4 text-sm outline-none transition focus:border-[#3b6ed6] focus:shadow-[0_0_0_4px_rgba(59,110,214,0.12)]"
               minLength={8}
               required
             />
           </div>
 
-          {error ? <p className="text-sm text-red-600">{error}</p> : null}
+          {error ? <div className="rounded-[1rem] border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700">{error}</div> : null}
 
-          <Button className="h-11 w-full rounded-full bg-tera-blue text-white hover:bg-tera-blue-hover" type="submit" disabled={isPending}>
+          <Button className="h-12 w-full rounded-[1rem] bg-[#173f85] text-white hover:bg-[#12346d]" type="submit" disabled={isPending}>
             {isPending ? "Creating account..." : "Create account"}
           </Button>
         </form>
