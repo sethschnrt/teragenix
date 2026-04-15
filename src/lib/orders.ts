@@ -55,7 +55,7 @@ export async function updateOrderStatuses({
   fulfillmentStatus?: FulfillmentStatus;
   actorUserId?: string;
 }) {
-  return prisma.$transaction(async (tx) => {
+  return prisma.$transaction(async (tx: Prisma.TransactionClient) => {
     const order = await tx.order.findUnique({
       where: { id: orderId },
       select: { id: true, orderNumber: true, crmContactId: true },
@@ -129,7 +129,7 @@ export async function createWebsiteOrder({
   const subtotal = items.reduce((sum, item) => sum + item.unitPrice * item.quantity, 0);
   const orderNumber = generateOrderNumber();
 
-  return prisma.$transaction(async (tx) => {
+  return prisma.$transaction(async (tx: Prisma.TransactionClient) => {
     let contactId: string | null = null;
 
     if (userId) {
