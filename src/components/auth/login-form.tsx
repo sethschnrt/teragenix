@@ -13,7 +13,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 
-export function LoginForm({ allowBootstrap = false }: { allowBootstrap?: boolean }) {
+export function LoginForm() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const callbackUrl = searchParams.get("callbackUrl") || "/admin";
@@ -22,26 +22,45 @@ export function LoginForm({ allowBootstrap = false }: { allowBootstrap?: boolean
   const [error, setError] = useState<string | null>(null);
   const [isPending, startTransition] = useTransition();
 
-  async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+  async function handleSignIn(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
     setError(null);
 
     startTransition(async () => {
-      if (allowBootstrap) {
-        const response = await fetch("/api/auth/bootstrap-admin", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ email, password }),
-        });
+      const result = await signIn("credentials", {
+        email,
+        password,
+        redirect: false,
+        callbackUrl,
+      });
 
-        const payload = (await response.json()) as { error?: string };
+      if (!result || result.error) {
+        setError("Invalid email or password.");
+        return;
+      }
 
-        if (!response.ok) {
-          setError(payload.error || "Could not create admin.");
-          return;
-        }
+      router.push(result.url || callbackUrl);
+      router.refresh();
+    });
+  }
+
+  function handleCreateFirstAdmin() {
+    setError(null);
+
+    startTransition(async () => {
+      const response = await fetch("/api/auth/bootstrap-admin", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email, password }),
+      });
+
+      const payload = (await response.json()) as { error?: string };
+
+      if (!response.ok) {
+        setError(payload.error || "Could not create admin.");
+        return;
       }
 
       const result = await signIn("credentials", {
@@ -52,7 +71,7 @@ export function LoginForm({ allowBootstrap = false }: { allowBootstrap?: boolean
       });
 
       if (!result || result.error) {
-        setError(allowBootstrap ? "Admin created, but sign in failed." : "Invalid email or password.");
+        setError("Admin created. Try signing in.");
         return;
       }
 
@@ -64,15 +83,13 @@ export function LoginForm({ allowBootstrap = false }: { allowBootstrap?: boolean
   return (
     <Card className="mx-auto w-full max-w-[460px] rounded-[2rem] border border-white/10 bg-white/92 py-5 text-[#0d262d] shadow-[0_30px_90px_-48px_rgba(0,0,0,0.65)] ring-1 ring-white/30 backdrop-blur-xl">
       <CardHeader className="space-y-2 px-6 sm:px-7">
-        <CardTitle className="text-[1.9rem] tracking-[-0.03em] text-[#0d262d]">
-          {allowBootstrap ? "Create admin" : "Sign in"}
-        </CardTitle>
+        <CardTitle className="text-[1.9rem] tracking-[-0.03em] text-[#0d262d]">Sign in</CardTitle>
         <CardDescription className="text-sm text-[#5a6a7f]">
-          {allowBootstrap ? "No admin exists yet. Create the first one here." : "Enter your email and password."}
+          Enter your email and password.
         </CardDescription>
       </CardHeader>
       <CardContent className="px-6 sm:px-7">
-        <form className="space-y-4" onSubmit={handleSubmit}>
+        <form className="space-y-4" onSubmit={handleSignIn}>
           <div className="space-y-1.5">
             <label className="text-sm font-medium text-[#0d262d]" htmlFor="email">
               Email
@@ -111,8 +128,17 @@ export function LoginForm({ allowBootstrap = false }: { allowBootstrap?: boolean
           ) : null}
 
           <Button className="h-12 w-full rounded-[1rem] bg-[#173f85] text-white hover:bg-[#12346d]" type="submit" disabled={isPending}>
-            {isPending ? (allowBootstrap ? "Creating..." : "Signing in...") : (allowBootstrap ? "Create admin" : "Sign in")}
+            {isPending ? "Working..." : "Sign in"}
           </Button>
+
+          <button
+            type="button"
+            onClick={handleCreateFirstAdmin}
+            disabled={isPending || !email || !password}
+            className="w-full text-sm font-medium text-[#173f85] disabled:cursor-not-allowed disabled:opacity-40"
+          >
+            Create first admin instead
+          </button>
         </form>
       </CardContent>
     </Card>

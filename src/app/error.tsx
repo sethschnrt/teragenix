@@ -1,13 +1,8 @@
-import { Suspense } from "react";
+"use client";
 
-import { LoginForm } from "@/components/auth/login-form";
 import { Logo } from "@/components/logo";
 
-export const metadata = {
-  title: "Teragenix Sign In",
-};
-
-export default function LoginPage() {
+export default function Error({ reset }: { error: Error & { digest?: string }; reset: () => void }) {
   return (
     <main className="relative min-h-screen overflow-hidden bg-[#07131f] text-white">
       <div
@@ -19,17 +14,17 @@ export default function LoginPage() {
       />
 
       <div className="relative mx-auto flex min-h-screen max-w-[1240px] items-center justify-center px-6 py-10">
-        <div className="w-full max-w-[520px]">
+        <div className="w-full max-w-[520px] rounded-[2rem] border border-white/10 bg-white/8 p-8 text-center shadow-[0_30px_90px_-48px_rgba(0,0,0,0.65)] ring-1 ring-white/10 backdrop-blur-xl">
           <Logo size="lg" theme="light" className="mx-auto mb-6 w-[140px] sm:w-[160px]" />
-          <Suspense
-            fallback={
-              <div className="w-full max-w-[520px] rounded-[2rem] border border-white/10 bg-white/8 p-6 text-sm text-white/70 shadow-[0_30px_90px_-48px_rgba(0,0,0,0.6)] ring-1 ring-white/8 backdrop-blur-xl">
-                Loading...
-              </div>
-            }
+          <h1 className="text-[2rem] font-semibold tracking-[-0.03em] text-white">Something broke</h1>
+          <p className="mt-3 text-sm text-white/68">Try again.</p>
+          <button
+            type="button"
+            onClick={reset}
+            className="mt-6 inline-flex h-11 items-center justify-center rounded-[1rem] bg-white px-5 text-sm font-medium text-[#0d262d] hover:bg-[#eef4fc]"
           >
-            <LoginForm />
-          </Suspense>
+            Reload
+          </button>
         </div>
       </div>
     </main>
