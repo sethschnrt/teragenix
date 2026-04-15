@@ -1,6 +1,6 @@
-import { AddressType, ContactStage, OrderSource, OrderStatus, PaymentStatus, FulfillmentStatus, Prisma } from "@prisma/client";
+import { AddressType, ContactStage, OrderSource, OrderStatus, PaymentStatus, FulfillmentStatus } from "@prisma/client";
 
-import { prisma } from "@/lib/db";
+import { prisma, type DbTransactionClient } from "@/lib/db";
 
 export function generateOrderNumber() {
   const stamp = Date.now().toString().slice(-8);
@@ -35,7 +35,7 @@ export async function ensureCrmContactForUser(userId: string) {
   });
 }
 
-export async function markContactAsCustomer(contactId: string, tx: Prisma.TransactionClient = prisma) {
+export async function markContactAsCustomer(contactId: string, tx: DbTransactionClient | typeof prisma = prisma) {
   return tx.crmContact.update({
     where: { id: contactId },
     data: { stage: ContactStage.CUSTOMER },
@@ -55,7 +55,7 @@ export async function updateOrderStatuses({
   fulfillmentStatus?: FulfillmentStatus;
   actorUserId?: string;
 }) {
-  return prisma.$transaction(async (tx: Prisma.TransactionClient) => {
+  return prisma.$transaction(async (tx: DbTransactionClient) => {
     const order = await tx.order.findUnique({
       where: { id: orderId },
       select: { id: true, orderNumber: true, crmContactId: true },
@@ -129,7 +129,7 @@ export async function createWebsiteOrder({
   const subtotal = items.reduce((sum, item) => sum + item.unitPrice * item.quantity, 0);
   const orderNumber = generateOrderNumber();
 
-  return prisma.$transaction(async (tx: Prisma.TransactionClient) => {
+  return prisma.$transaction(async (tx: DbTransactionClient) => {
     let contactId: string | null = null;
 
     if (userId) {

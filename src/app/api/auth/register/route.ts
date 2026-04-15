@@ -1,8 +1,7 @@
-import { Prisma } from "@prisma/client";
 import { NextResponse } from "next/server";
 import { z } from "zod";
 
-import { prisma } from "@/lib/db";
+import { prisma, type DbTransactionClient } from "@/lib/db";
 import { hashPassword } from "@/lib/password";
 
 const registerSchema = z.object({
@@ -42,7 +41,7 @@ export async function POST(request: Request) {
 
     const passwordHash = await hashPassword(password);
 
-    const result = await prisma.$transaction(async (tx: Prisma.TransactionClient) => {
+    const result = await prisma.$transaction(async (tx: DbTransactionClient) => {
       const user = await tx.user.create({
         data: {
           email,

@@ -17,6 +17,11 @@ export const prisma =
     log: process.env.NODE_ENV === "development" ? ["warn", "error"] : ["error"],
   });
 
+export type DbTransactionClient = Omit<
+  PrismaClient,
+  "$connect" | "$disconnect" | "$on" | "$use" | "$extends"
+>;
+
 if (process.env.NODE_ENV !== "production") {
   global.__prisma = prisma;
 }
