@@ -1,6 +1,7 @@
 import { Suspense } from "react";
 
 import { LoginForm } from "@/components/auth/login-form";
+import { Logo } from "@/components/logo";
 
 export const metadata = {
   title: "Teragenix Sign In",
@@ -18,15 +19,18 @@ export default function LoginPage() {
       />
 
       <div className="relative mx-auto flex min-h-screen max-w-[1240px] items-center justify-center px-6 py-10">
-        <Suspense
-          fallback={
-            <div className="w-full max-w-[520px] rounded-[2rem] border border-white/10 bg-white/8 p-6 text-sm text-white/70 shadow-[0_30px_90px_-48px_rgba(0,0,0,0.6)] ring-1 ring-white/8 backdrop-blur-xl">
-              Loading...
-            </div>
-          }
-        >
-          <LoginForm />
-        </Suspense>
+        <div className="w-full max-w-[520px]">
+          <Logo size="lg" theme="light" className="mx-auto mb-6 w-[140px] sm:w-[160px]" />
+          <Suspense
+            fallback={
+              <div className="w-full max-w-[520px] rounded-[2rem] border border-white/10 bg-white/8 p-6 text-sm text-white/70 shadow-[0_30px_90px_-48px_rgba(0,0,0,0.6)] ring-1 ring-white/8 backdrop-blur-xl">
+                Loading...
+              </div>
+            }
+          >
+            <LoginForm />
+          </Suspense>
+        </div>
       </div>
     </main>
   );
