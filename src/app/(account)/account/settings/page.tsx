@@ -15,6 +15,8 @@ export default async function AccountSettingsPage() {
     },
   });
 
+type AccountAddressRecord = NonNullable<typeof user>["addresses"][number];
+
   return (
     <AccountShell title="Account settings" subtitle="Profile and address management will live here as the account layer expands.">
       <div className="grid gap-4 md:grid-cols-3">
@@ -51,7 +53,7 @@ export default async function AccountSettingsPage() {
         </CardHeader>
         <CardContent className="space-y-2 text-sm text-tera-body">
           {user?.addresses.length ? (
-            user.addresses.map((address) => (
+            user.addresses.map((address: AccountAddressRecord) => (
               <div key={address.id} className="rounded-[1.2rem] border border-tera-border px-4 py-3">
                 <p className="font-medium text-tera-navy">{address.type}</p>
                 <p className="mt-1 text-sm text-tera-body">
