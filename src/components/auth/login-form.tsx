@@ -45,17 +45,32 @@ export function LoginForm() {
   }
 
   return (
-    <Card className="mx-auto w-full max-w-md border border-tera-border bg-white py-5 shadow-[0_20px_50px_-42px_rgba(13,38,45,0.35)]">
-      <CardHeader>
-        <CardTitle>Sign in</CardTitle>
-        <CardDescription>
-          Use the seeded admin account to access the Teragenix back office.
-        </CardDescription>
+    <Card className="mx-auto w-full max-w-[520px] rounded-[2rem] border border-white/10 bg-white/92 py-5 text-[#0d262d] shadow-[0_30px_90px_-48px_rgba(0,0,0,0.65)] ring-1 ring-white/30 backdrop-blur-xl">
+      <CardHeader className="space-y-4 px-6 sm:px-7">
+        <div className="inline-flex w-fit items-center rounded-full bg-[#eef4fc] px-3 py-1.5 text-[11px] font-medium tracking-[0.18em] text-[#173f85] ring-1 ring-[#dbe6f5]">
+          SECURE ACCESS
+        </div>
+        <div>
+          <CardTitle className="text-[1.9rem] tracking-[-0.03em] text-[#0d262d]">Sign in</CardTitle>
+          <CardDescription className="mt-2 max-w-md text-sm leading-6 text-[#5a6a7f]">
+            Access the Teragenix operations workspace for CRM, orders, purchasing, and expense tracking.
+          </CardDescription>
+        </div>
+        <div className="grid gap-3 sm:grid-cols-2">
+          <div className="rounded-[1.15rem] border border-[#dbe6f5] bg-[#f8fbff] px-4 py-3">
+            <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-[#3b6ed6]">Access level</p>
+            <p className="mt-2 text-sm font-medium text-[#0d262d]">Admin and sales</p>
+          </div>
+          <div className="rounded-[1.15rem] border border-[#dbe6f5] bg-[#f8fbff] px-4 py-3">
+            <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-[#3b6ed6]">Destination</p>
+            <p className="mt-2 text-sm font-medium text-[#0d262d]">Connected ops dashboard</p>
+          </div>
+        </div>
       </CardHeader>
-      <CardContent>
+      <CardContent className="px-6 sm:px-7">
         <form className="space-y-4" onSubmit={handleSubmit}>
           <div className="space-y-1.5">
-            <label className="text-sm font-medium text-tera-navy" htmlFor="email">
+            <label className="text-sm font-medium text-[#0d262d]" htmlFor="email">
               Email
             </label>
             <input
@@ -63,14 +78,14 @@ export function LoginForm() {
               type="email"
               value={email}
               onChange={(event) => setEmail(event.target.value)}
-              className="w-full rounded-lg border border-tera-border px-3 py-2 text-sm outline-none ring-0 transition focus:border-tera-blue"
+              className="h-12 w-full rounded-[1rem] border border-[#dbe6f5] bg-white px-4 text-sm outline-none ring-0 transition placeholder:text-[#8a99ad] focus:border-[#3b6ed6] focus:shadow-[0_0_0_4px_rgba(59,110,214,0.12)]"
               placeholder="admin@teragenix.local"
               required
             />
           </div>
 
           <div className="space-y-1.5">
-            <label className="text-sm font-medium text-tera-navy" htmlFor="password">
+            <label className="text-sm font-medium text-[#0d262d]" htmlFor="password">
               Password
             </label>
             <input
@@ -78,16 +93,20 @@ export function LoginForm() {
               type="password"
               value={password}
               onChange={(event) => setPassword(event.target.value)}
-              className="w-full rounded-lg border border-tera-border px-3 py-2 text-sm outline-none ring-0 transition focus:border-tera-blue"
+              className="h-12 w-full rounded-[1rem] border border-[#dbe6f5] bg-white px-4 text-sm outline-none ring-0 transition placeholder:text-[#8a99ad] focus:border-[#3b6ed6] focus:shadow-[0_0_0_4px_rgba(59,110,214,0.12)]"
               placeholder="••••••••"
               required
             />
           </div>
 
-          {error ? <p className="text-sm text-red-600">{error}</p> : null}
+          {error ? (
+            <div className="rounded-[1rem] border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700">
+              {error}
+            </div>
+          ) : null}
 
-          <Button className="h-11 w-full rounded-full bg-tera-blue text-white hover:bg-tera-blue-hover" type="submit" disabled={isPending}>
-            {isPending ? "Signing in..." : "Sign in"}
+          <Button className="h-12 w-full rounded-[1rem] bg-[#173f85] text-white hover:bg-[#12346d]" type="submit" disabled={isPending}>
+            {isPending ? "Signing in..." : "Enter ops dashboard"}
           </Button>
         </form>
       </CardContent>
