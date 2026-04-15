@@ -17,6 +17,7 @@ export function LoginForm() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const callbackUrl = searchParams.get("callbackUrl") || "/admin";
+  const authError = searchParams.get("error");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState<string | null>(null);
@@ -34,8 +35,8 @@ export function LoginForm() {
         callbackUrl,
       });
 
-      if (!result || result.error) {
-        setError("Invalid email or password.");
+      if (!result || result.error || result.url?.includes("/api/auth/error")) {
+        setError(result?.error === "Configuration" || result?.url?.includes("/api/auth/error") ? "Auth setup error. Check Vercel env vars." : "Invalid email or password.");
         return;
       }
 
@@ -70,8 +71,8 @@ export function LoginForm() {
         callbackUrl,
       });
 
-      if (!result || result.error) {
-        setError("Admin created. Try signing in.");
+      if (!result || result.error || result.url?.includes("/api/auth/error")) {
+        setError(result?.error === "Configuration" || result?.url?.includes("/api/auth/error") ? "Admin created. Auth env is still wrong." : "Admin created. Try signing in.");
         return;
       }
 
@@ -120,6 +121,12 @@ export function LoginForm() {
               required
             />
           </div>
+
+          {authError === "Configuration" && !error ? (
+            <div className="rounded-[1rem] border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700">
+              Auth setup error. Check Vercel env vars.
+            </div>
+          ) : null}
 
           {error ? (
             <div className="rounded-[1rem] border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700">
