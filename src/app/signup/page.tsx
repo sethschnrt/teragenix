@@ -1,5 +1,6 @@
 import { Suspense } from "react";
 
+import { Logo } from "@/components/logo";
 import { SignupForm } from "@/components/auth/signup-form";
 
 export const metadata = {
@@ -18,15 +19,18 @@ export default function SignupPage() {
       />
 
       <div className="relative mx-auto flex min-h-screen max-w-[1240px] items-center justify-center px-6 py-10">
-        <Suspense
-          fallback={
-            <div className="w-full max-w-[640px] rounded-[2rem] border border-white/10 bg-white/8 p-6 text-sm text-white/70 shadow-[0_30px_90px_-48px_rgba(0,0,0,0.6)] ring-1 ring-white/8 backdrop-blur-xl">
-              Loading...
-            </div>
-          }
-        >
-          <SignupForm />
-        </Suspense>
+        <div className="w-full max-w-[640px]">
+          <Logo size="lg" theme="light" className="mx-auto mb-6 w-[140px] sm:w-[160px]" />
+          <Suspense
+            fallback={
+              <div className="w-full max-w-[640px] rounded-[2rem] border border-white/10 bg-white/8 p-6 text-sm text-white/70 shadow-[0_30px_90px_-48px_rgba(0,0,0,0.6)] ring-1 ring-white/8 backdrop-blur-xl">
+                Loading...
+              </div>
+            }
+          >
+            <SignupForm />
+          </Suspense>
+        </div>
       </div>
     </main>
   );
