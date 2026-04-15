@@ -13,7 +13,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 
-export function LoginForm() {
+export function LoginForm({ allowBootstrap = false }: { allowBootstrap?: boolean }) {
   const router = useRouter();
   const searchParams = useSearchParams();
   const callbackUrl = searchParams.get("callbackUrl") || "/admin";
@@ -27,6 +27,23 @@ export function LoginForm() {
     setError(null);
 
     startTransition(async () => {
+      if (allowBootstrap) {
+        const response = await fetch("/api/auth/bootstrap-admin", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ email, password }),
+        });
+
+        const payload = (await response.json()) as { error?: string };
+
+        if (!response.ok) {
+          setError(payload.error || "Could not create admin.");
+          return;
+        }
+      }
+
       const result = await signIn("credentials", {
         email,
         password,
@@ -35,7 +52,7 @@ export function LoginForm() {
       });
 
       if (!result || result.error) {
-        setError("Invalid email or password.");
+        setError(allowBootstrap ? "Admin created, but sign in failed." : "Invalid email or password.");
         return;
       }
 
@@ -47,9 +64,11 @@ export function LoginForm() {
   return (
     <Card className="mx-auto w-full max-w-[460px] rounded-[2rem] border border-white/10 bg-white/92 py-5 text-[#0d262d] shadow-[0_30px_90px_-48px_rgba(0,0,0,0.65)] ring-1 ring-white/30 backdrop-blur-xl">
       <CardHeader className="space-y-2 px-6 sm:px-7">
-        <CardTitle className="text-[1.9rem] tracking-[-0.03em] text-[#0d262d]">Sign in</CardTitle>
+        <CardTitle className="text-[1.9rem] tracking-[-0.03em] text-[#0d262d]">
+          {allowBootstrap ? "Create admin" : "Sign in"}
+        </CardTitle>
         <CardDescription className="text-sm text-[#5a6a7f]">
-          Enter your email and password.
+          {allowBootstrap ? "No admin exists yet. Create the first one here." : "Enter your email and password."}
         </CardDescription>
       </CardHeader>
       <CardContent className="px-6 sm:px-7">
@@ -64,7 +83,7 @@ export function LoginForm() {
               value={email}
               onChange={(event) => setEmail(event.target.value)}
               className="h-12 w-full rounded-[1rem] border border-[#dbe6f5] bg-white px-4 text-sm outline-none ring-0 transition placeholder:text-[#8a99ad] focus:border-[#3b6ed6] focus:shadow-[0_0_0_4px_rgba(59,110,214,0.12)]"
-              placeholder="admin@teragenix.local"
+              placeholder="admin@teragenix.com"
               required
             />
           </div>
@@ -80,6 +99,7 @@ export function LoginForm() {
               onChange={(event) => setPassword(event.target.value)}
               className="h-12 w-full rounded-[1rem] border border-[#dbe6f5] bg-white px-4 text-sm outline-none ring-0 transition placeholder:text-[#8a99ad] focus:border-[#3b6ed6] focus:shadow-[0_0_0_4px_rgba(59,110,214,0.12)]"
               placeholder="••••••••"
+              minLength={8}
               required
             />
           </div>
@@ -91,7 +111,7 @@ export function LoginForm() {
           ) : null}
 
           <Button className="h-12 w-full rounded-[1rem] bg-[#173f85] text-white hover:bg-[#12346d]" type="submit" disabled={isPending}>
-            {isPending ? "Signing in..." : "Sign in"}
+            {isPending ? (allowBootstrap ? "Creating..." : "Signing in...") : (allowBootstrap ? "Create admin" : "Sign in")}
           </Button>
         </form>
       </CardContent>

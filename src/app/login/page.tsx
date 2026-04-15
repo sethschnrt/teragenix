@@ -2,12 +2,19 @@ import { Suspense } from "react";
 
 import { LoginForm } from "@/components/auth/login-form";
 import { Logo } from "@/components/logo";
+import { prisma } from "@/lib/db";
 
 export const metadata = {
   title: "Teragenix Sign In",
 };
 
-export default function LoginPage() {
+export const dynamic = "force-dynamic";
+
+export default async function LoginPage() {
+  const adminCount = await prisma.user.count({
+    where: { role: "ADMIN" },
+  });
+
   return (
     <main className="relative min-h-screen overflow-hidden bg-[#07131f] text-white">
       <div
@@ -28,7 +35,7 @@ export default function LoginPage() {
               </div>
             }
           >
-            <LoginForm />
+            <LoginForm allowBootstrap={adminCount === 0} />
           </Suspense>
         </div>
       </div>
