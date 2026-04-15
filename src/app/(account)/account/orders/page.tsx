@@ -16,6 +16,8 @@ export default async function AccountOrdersPage() {
     take: 20,
   });
 
+type AccountOrderRecord = (typeof orders)[number];
+
   return (
     <AccountShell title="Your orders" subtitle="This will become the customer-facing order history for Teragenix accounts.">
       <Card className="border border-tera-border bg-white">
@@ -27,7 +29,7 @@ export default async function AccountOrdersPage() {
           {orders.length === 0 ? (
             <p>No orders yet.</p>
           ) : (
-            orders.map((order) => (
+            orders.map((order: AccountOrderRecord) => (
               <Link key={order.id} href={`/account/orders/${order.id}`} className="flex items-center justify-between rounded-lg border border-tera-border px-4 py-3 transition hover:bg-tera-blue-pale/40">
                 <div>
                   <p className="font-medium text-tera-navy">{order.orderNumber}</p>
