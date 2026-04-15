@@ -27,6 +27,8 @@ export default async function AccountOrderDetailPage({
     },
   });
 
+type OrderItemRecord = NonNullable<typeof order>["items"][number];
+
   if (!order) {
     notFound();
   }
@@ -43,7 +45,7 @@ export default async function AccountOrderDetailPage({
             <CardDescription>Current order detail foundation for customer accounts.</CardDescription>
           </CardHeader>
           <CardContent className="space-y-3 text-sm text-tera-body">
-            {order.items.map((item) => (
+            {order.items.map((item: OrderItemRecord) => (
               <div key={item.id} className="flex items-center justify-between rounded-lg border border-tera-border px-4 py-3">
                 <div>
                   <p className="font-medium text-tera-navy">{item.productNameSnapshot}</p>
