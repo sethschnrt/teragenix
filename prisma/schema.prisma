@@ -1,0 +1,345 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+enum UserRole {
+  CUSTOMER
+  ADMIN
+  SALES
+}
+
+enum UserStatus {
+  ACTIVE
+  INVITED
+  DISABLED
+}
+
+enum AddressType {
+  SHIPPING
+  BILLING
+}
+
+enum ContactStage {
+  LEAD
+  CONTACTED
+  QUALIFIED
+  CUSTOMER
+  INACTIVE
+}
+
+enum ProductStatus {
+  DRAFT
+  ACTIVE
+  ARCHIVED
+}
+
+enum OrderStatus {
+  PENDING
+  PAID
+  FULFILLED
+  SHIPPED
+  DELIVERED
+  CANCELED
+  REFUNDED
+}
+
+enum PaymentStatus {
+  UNPAID
+  PENDING
+  PAID
+  FAILED
+  REFUNDED
+  PARTIALLY_REFUNDED
+}
+
+enum FulfillmentStatus {
+  UNFULFILLED
+  PROCESSING
+  PACKED
+  SHIPPED
+  DELIVERED
+  RETURNED
+}
+
+enum OrderSource {
+  WEBSITE
+  MANUAL
+  PHONE
+  LOCAL
+}
+
+enum ExpenseFrequency {
+  MONTHLY
+  QUARTERLY
+  YEARLY
+}
+
+enum TaskStatus {
+  TODO
+  IN_PROGRESS
+  DONE
+  CANCELED
+}
+
+enum ProcurementType {
+  PRODUCT
+  EQUIPMENT
+  SUPPLIES
+  SOFTWARE
+  OTHER
+}
+
+enum ProcurementStatus {
+  BACKLOG
+  SOURCING
+  ORDERED
+  RECEIVED
+  CANCELED
+}
+
+model User {
+  id             String     @id @default(cuid())
+  email          String     @unique
+  passwordHash   String?
+  authProviderId String?    @unique
+  firstName      String?
+  lastName       String?
+  phone          String?
+  role           UserRole   @default(CUSTOMER)
+  status         UserStatus @default(ACTIVE)
+  createdAt      DateTime   @default(now())
+  updatedAt      DateTime   @updatedAt
+
+  crmContact      CrmContact?
+  addresses       Address[]
+  orders          Order[]
+  ownedContacts   CrmContact[] @relation("ContactOwner")
+  assignedTasks   Task[]       @relation("TaskAssignee")
+  authoredNotes   Note[]       @relation("NoteAuthor")
+  createdExpenses Expense[]    @relation("ExpenseCreator")
+  createdProcurementItems ProcurementItem[] @relation("ProcurementCreator")
+}
+
+model CrmContact {
+  id           String       @id @default(cuid())
+  userId       String?      @unique
+  firstName    String?
+  lastName     String?
+  email        String?
+  phone        String?
+  leadSource   String?
+  stage        ContactStage @default(LEAD)
+  ownerUserId  String?
+  tags         String[]
+  notesSummary String?
+  createdAt    DateTime     @default(now())
+  updatedAt    DateTime     @updatedAt
+
+  user      User?   @relation(fields: [userId], references: [id], onDelete: SetNull)
+  ownerUser User?   @relation("ContactOwner", fields: [ownerUserId], references: [id], onDelete: SetNull)
+  orders    Order[]
+  tasks     Task[]
+  notes     Note[]
+
+  @@index([email])
+  @@index([ownerUserId])
+  @@index([stage])
+}
+
+model Address {
+  id         String      @id @default(cuid())
+  userId     String
+  type       AddressType
+  line1      String
+  line2      String?
+  city       String
+  state      String
+  postalCode String
+  country    String      @default("US")
+  isDefault  Boolean     @default(false)
+  createdAt  DateTime    @default(now())
+  updatedAt  DateTime    @updatedAt
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId, type])
+}
+
+model Product {
+  id             String        @id @default(cuid())
+  sku            String        @unique
+  slug           String        @unique
+  name           String
+  category       String?
+  status         ProductStatus @default(DRAFT)
+  price          Decimal
+  costBasis      Decimal?
+  inventoryCount Int           @default(0)
+  createdAt      DateTime      @default(now())
+  updatedAt      DateTime      @updatedAt
+
+  orderItems OrderItem[]
+}
+
+model Order {
+  id                String            @id @default(cuid())
+  userId            String?
+  crmContactId      String?
+  orderNumber       String            @unique
+  status            OrderStatus       @default(PENDING)
+  paymentStatus     PaymentStatus     @default(UNPAID)
+  fulfillmentStatus FulfillmentStatus @default(UNFULFILLED)
+  subtotal          Decimal           @default(0)
+  discountTotal     Decimal           @default(0)
+  shippingTotal     Decimal           @default(0)
+  feeTotal          Decimal           @default(0)
+  taxTotal          Decimal           @default(0)
+  total             Decimal           @default(0)
+  source            OrderSource       @default(WEBSITE)
+  placedAt          DateTime?
+  createdAt         DateTime          @default(now())
+  updatedAt         DateTime          @updatedAt
+
+  user       User?       @relation(fields: [userId], references: [id], onDelete: SetNull)
+  crmContact CrmContact? @relation(fields: [crmContactId], references: [id], onDelete: SetNull)
+  items      OrderItem[]
+  expenses   Expense[]
+  tasks      Task[]
+  notes      Note[]
+
+  @@index([userId])
+  @@index([crmContactId])
+  @@index([status])
+  @@index([placedAt])
+}
+
+model OrderItem {
+  id                  String   @id @default(cuid())
+  orderId             String
+  productId           String?
+  productNameSnapshot String
+  skuSnapshot         String?
+  quantity            Int
+  unitPrice           Decimal
+  unitCost            Decimal?
+  lineTotal           Decimal
+  createdAt           DateTime @default(now())
+  updatedAt           DateTime @updatedAt
+
+  order   Order    @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  product Product? @relation(fields: [productId], references: [id], onDelete: SetNull)
+
+  @@index([orderId])
+  @@index([productId])
+}
+
+model Expense {
+  id             String   @id @default(cuid())
+  vendor         String
+  category       String
+  amount         Decimal
+  expenseDate    DateTime
+  paymentMethod  String?
+  notes          String?
+  relatedOrderId String?
+  procurementItemId String?
+  createdById    String?
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+
+  relatedOrder     Order?           @relation(fields: [relatedOrderId], references: [id], onDelete: SetNull)
+  procurementItem  ProcurementItem? @relation(fields: [procurementItemId], references: [id], onDelete: SetNull)
+  createdBy        User?            @relation("ExpenseCreator", fields: [createdById], references: [id], onDelete: SetNull)
+
+  @@index([expenseDate])
+  @@index([vendor])
+  @@index([category])
+  @@index([relatedOrderId])
+  @@index([procurementItemId])
+}
+
+model RecurringExpense {
+  id          String           @id @default(cuid())
+  vendor      String
+  category    String
+  amount      Decimal
+  frequency   ExpenseFrequency
+  nextDueDate DateTime
+  active      Boolean          @default(true)
+  notes       String?
+  createdAt   DateTime         @default(now())
+  updatedAt   DateTime         @updatedAt
+
+  @@index([active, nextDueDate])
+}
+
+model ProcurementItem {
+  id            String            @id @default(cuid())
+  title         String
+  vendor        String?
+  category      String
+  type          ProcurementType   @default(PRODUCT)
+  status        ProcurementStatus @default(BACKLOG)
+  quantity      Int               @default(1)
+  estimatedCost Decimal?
+  actualCost    Decimal?
+  itemUrl       String?
+  neededBy      DateTime?
+  orderedAt     DateTime?
+  receivedAt    DateTime?
+  notes         String?
+  createdById   String?
+  createdAt     DateTime          @default(now())
+  updatedAt     DateTime          @updatedAt
+
+  createdBy User?     @relation("ProcurementCreator", fields: [createdById], references: [id], onDelete: SetNull)
+  expenses  Expense[]
+
+  @@index([status, neededBy])
+  @@index([type])
+  @@index([vendor])
+}
+
+model Task {
+  id              String     @id @default(cuid())
+  title           String
+  description     String?
+  linkedContactId String?
+  linkedOrderId   String?
+  assignedUserId  String?
+  status          TaskStatus @default(TODO)
+  dueDate         DateTime?
+  createdAt       DateTime   @default(now())
+  updatedAt       DateTime   @updatedAt
+
+  linkedContact CrmContact? @relation(fields: [linkedContactId], references: [id], onDelete: SetNull)
+  linkedOrder   Order?      @relation(fields: [linkedOrderId], references: [id], onDelete: SetNull)
+  assignedUser  User?       @relation("TaskAssignee", fields: [assignedUserId], references: [id], onDelete: SetNull)
+
+  @@index([linkedContactId])
+  @@index([linkedOrderId])
+  @@index([assignedUserId])
+  @@index([status, dueDate])
+}
+
+model Note {
+  id           String   @id @default(cuid())
+  contactId    String?
+  orderId      String?
+  authorUserId String?
+  body         String
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  contact    CrmContact? @relation(fields: [contactId], references: [id], onDelete: SetNull)
+  order      Order?      @relation(fields: [orderId], references: [id], onDelete: SetNull)
+  authorUser User?       @relation("NoteAuthor", fields: [authorUserId], references: [id], onDelete: SetNull)
+
+  @@index([contactId])
+  @@index([orderId])
+  @@index([authorUserId])
+}

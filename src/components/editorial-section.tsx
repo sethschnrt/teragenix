@@ -22,7 +22,7 @@ interface EditorialSectionProps {
   heroMode?: "cutout" | "framed";
 }
 
-const BASE_PATH = process.env.NODE_ENV === "production" ? "/teragenix" : "";
+const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
 export function EditorialSection({
   eyebrow,

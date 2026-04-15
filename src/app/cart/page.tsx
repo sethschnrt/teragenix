@@ -6,7 +6,7 @@ import { Footer } from "@/components/footer";
 import { PageHero } from "@/components/page-hero";
 import { useCart } from "@/components/cart-provider";
 
-const BASE_PATH = process.env.NODE_ENV === "production" ? "/teragenix" : "";
+const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
 export default function CartPage() {
   const { items, itemCount, subtotal, updateQuantity, removeItem, clearCart } = useCart();

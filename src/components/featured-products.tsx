@@ -5,7 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import { ArrowUpRight } from "lucide-react";
 import { featuredProducts, getHeroCategoryLabel, getHeroCategoryTagClasses, getHeroCategoryTheme } from "@/data/products";
 
-const BASE_PATH = process.env.NODE_ENV === "production" ? "/teragenix" : "";
+const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
 export function FeaturedProducts() {
   const displayed = featuredProducts.slice(0, 4);

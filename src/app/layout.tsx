@@ -1,16 +1,13 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
-import { Navbar } from "@/components/navbar";
-import { CartProvider } from "@/components/cart-provider";
+import { Providers } from "@/components/providers";
 
 const poppins = Poppins({
   variable: "--font-sans",
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700", "800", "900"],
 });
-
-export const dynamic = "force-static";
 
 export const metadata: Metadata = {
   title: "Teragenix — Research-Grade Peptide Kits, Redefined",
@@ -29,10 +26,7 @@ export default function RootLayout({
         className={`${poppins.variable} antialiased`}
         style={{ fontFamily: "var(--font-sans), system-ui, sans-serif" }}
       >
-        <CartProvider>
-          <Navbar />
-          {children}
-        </CartProvider>
+        <Providers>{children}</Providers>
       </body>
     </html>
   );

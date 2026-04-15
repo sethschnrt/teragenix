@@ -1,36 +1,52 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Teragenix
 
-## Getting Started
+Teragenix is a Next.js storefront plus internal ops app for customer accounts, CRM, orders, expenses, and purchasing.
 
-First, run the development server:
+## Local dev
 
 ```bash
+npm install
+cp .env.example .env.local
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Required env vars
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```env
+DATABASE_URL="postgresql://..."
+NEXTAUTH_SECRET="replace-with-a-long-random-string"
+NEXTAUTH_URL="https://your-production-url.vercel.app"
+NEXT_PUBLIC_BASE_PATH=""
+ADMIN_EMAIL="admin@teragenix.local"
+ADMIN_PASSWORD="change-me-now"
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Deploy target
 
-## Learn More
+This app is meant for a real server-backed deploy, not GitHub Pages.
 
-To learn more about Next.js, take a look at the following resources:
+Recommended setup:
+- Vercel for the Next.js app
+- Postgres for the database, Supabase/Neon/Railway all work
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Vercel deploy checklist
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. Import `sethschnrt/teragenix` into Vercel.
+2. Provision a Postgres database.
+3. Add the env vars above in Vercel.
+4. Set `NEXTAUTH_URL` to the production Vercel URL.
+5. Run schema sync against the production database:
 
-## Deploy on Vercel
+```bash
+DATABASE_URL="your-production-db-url" npm run db:push
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+6. Redeploy in Vercel.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Validation
+
+```bash
+npx tsc --noEmit
+npm run lint
+npm run build
+```

@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { FormEvent, useMemo, useState } from "react";
 import { usePathname, useRouter } from "next/navigation";
+import { useSession } from "next-auth/react";
 import { ArrowUpRight, Menu, Search, ShoppingBag } from "lucide-react";
 import { products } from "@/data/products";
 import { Logo } from "./logo";
@@ -156,6 +157,7 @@ export function Navbar() {
   const [open, setOpen] = useState(false);
   const [query, setQuery] = useState("");
   const { itemCount } = useCart();
+  const { data: session } = useSession();
   const pathname = usePathname();
   const router = useRouter();
   const normalizedPath = (pathname.replace(/^\/teragenix(?=\/|$)/, "") || "/").replace(/\/$/, "") || "/";
@@ -211,6 +213,17 @@ export function Navbar() {
           </Link>
 
           <Link
+            href={session?.user ? "/account" : "/login"}
+            className={`tg-link-pill hidden h-9 items-center rounded-full px-4 text-[13px] font-semibold tracking-tight lg:inline-flex ${
+              useHeroNav
+                ? "border border-white/20 bg-white/10 text-white hover:bg-white/16"
+                : "border border-[#dbe6f5] bg-white text-[#0d262d] hover:bg-[#f8fbff]"
+            }`}
+          >
+            {session?.user ? "Account" : "Sign in"}
+          </Link>
+
+          <Link
             href="/cart"
             className={`relative inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full ${
               useHeroNav ? "text-white hover:bg-transparent" : "text-[#0d262d] hover:bg-transparent"
@@ -254,6 +267,24 @@ export function Navbar() {
                 >
                   Cart{itemCount > 0 ? ` (${itemCount})` : ""}
                 </Link>
+
+                <Link
+                  href={session?.user ? "/account" : "/login"}
+                  onClick={() => setOpen(false)}
+                  className="tg-link-text text-lg font-medium text-[#0d262d] hover:text-[#3b6ed6]"
+                >
+                  {session?.user ? "Account" : "Sign in"}
+                </Link>
+
+                {!session?.user ? (
+                  <Link
+                    href="/signup"
+                    onClick={() => setOpen(false)}
+                    className="tg-link-text text-lg font-medium text-[#0d262d] hover:text-[#3b6ed6]"
+                  >
+                    Create account
+                  </Link>
+                ) : null}
 
                 {navLinks.map((link) => (
                   <Link

@@ -6,7 +6,7 @@ interface LogoProps {
   theme?: "default" | "light";
 }
 
-const BASE_PATH = process.env.NODE_ENV === "production" ? "/teragenix" : "";
+const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
 const sizeMap: Record<NonNullable<LogoProps["size"]>, { width: number; height: number }> = {
   sm: { width: 72, height: 20 },
