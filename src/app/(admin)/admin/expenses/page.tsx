@@ -55,10 +55,10 @@ export default async function AdminExpensesPage() {
     }),
   ]);
 
-  const totalSpend = expenses.reduce((sum, expense) => sum + Number(expense.amount), 0);
+  const totalSpend = expenses.reduce((sum: number, expense: (typeof expenses)[number]) => sum + Number(expense.amount), 0);
   const procurementLinkedSpend = expenses
-    .filter((expense) => expense.procurementItemId)
-    .reduce((sum, expense) => sum + Number(expense.amount), 0);
+    .filter((expense: (typeof expenses)[number]) => expense.procurementItemId)
+    .reduce((sum: number, expense: (typeof expenses)[number]) => sum + Number(expense.amount), 0);
 
 type ExpenseLedgerRecord = (typeof expenses)[number];
 type RecurringExpenseRecord = (typeof recurringExpenses)[number];

@@ -56,15 +56,15 @@ export default async function AdminPurchasingPage() {
     }),
   ]);
 
-  const openItems = items.filter((item) => !["RECEIVED", "CANCELED"].includes(item.status));
-  const closedItems = items.filter((item) => ["RECEIVED", "CANCELED"].includes(item.status));
-  const orderedCount = items.filter((item) => item.status === "ORDERED").length;
-  const estimatedOpenSpend = openItems.reduce((sum, item) => sum + Number(item.estimatedCost ?? 0), 0);
-  const actualTrackedSpend = items.reduce((sum, item) => sum + Number(item.actualCost ?? 0), 0);
+  const openItems = items.filter((item: (typeof items)[number]) => !["RECEIVED", "CANCELED"].includes(item.status));
+  const closedItems = items.filter((item: (typeof items)[number]) => ["RECEIVED", "CANCELED"].includes(item.status));
+  const orderedCount = items.filter((item: (typeof items)[number]) => item.status === "ORDERED").length;
+  const estimatedOpenSpend = openItems.reduce((sum: number, item: (typeof openItems)[number]) => sum + Number(item.estimatedCost ?? 0), 0);
+  const actualTrackedSpend = items.reduce((sum: number, item: (typeof items)[number]) => sum + Number(item.actualCost ?? 0), 0);
   const nextNeed = [...openItems]
-    .filter((item) => item.neededBy)
-    .sort((left, right) => Number(left.neededBy) - Number(right.neededBy))[0];
-  const linkedExpenseTotal = linkedExpenses.reduce((sum, expense) => sum + Number(expense.amount), 0);
+    .filter((item: (typeof openItems)[number]) => item.neededBy)
+    .sort((left: (typeof openItems)[number], right: (typeof openItems)[number]) => Number(left.neededBy) - Number(right.neededBy))[0];
+  const linkedExpenseTotal = linkedExpenses.reduce((sum: number, expense: (typeof linkedExpenses)[number]) => sum + Number(expense.amount), 0);
 
 type PurchasingItemRecord = (typeof items)[number];
 type LinkedExpenseRecord = (typeof linkedExpenses)[number];
@@ -216,7 +216,7 @@ type LinkedExpenseRecord = (typeof linkedExpenses)[number];
                   receivedAt: item.receivedAt?.toISOString() ?? null,
                   notes: item.notes,
                   linkedExpenseCount: item.expenses.length,
-                  linkedExpenseTotal: item.expenses.reduce((sum, expense) => sum + Number(expense.amount), 0),
+                  linkedExpenseTotal: item.expenses.reduce((sum: number, expense: (typeof item.expenses)[number]) => sum + Number(expense.amount), 0),
                 }}
               />
             ))}

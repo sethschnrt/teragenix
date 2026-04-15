@@ -96,7 +96,7 @@ export default async function AdminOverviewPage() {
     }),
   ]);
 
-  const recentExpenseTotal = expenses.reduce((sum, expense) => sum + Number(expense.amount), 0);
+  const recentExpenseTotal = expenses.reduce((sum: number, expense: (typeof expenses)[number]) => sum + Number(expense.amount), 0);
   const projectedOpenSpend = Number(openProcurementEstimate._sum.estimatedCost ?? 0);
 
 type OverviewContactRecord = (typeof contacts)[number];
