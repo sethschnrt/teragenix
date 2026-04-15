@@ -19,6 +19,8 @@ export default async function AccountPage() {
     },
   });
 
+type AccountPageOrderRecord = NonNullable<typeof user>["orders"][number];
+
   return (
     <AccountShell
       title={`Welcome back${user?.firstName ? `, ${user.firstName}` : ""}`}
@@ -62,7 +64,7 @@ export default async function AccountPage() {
           </CardHeader>
           <CardContent className="space-y-3">
             {user?.orders.length ? (
-              user.orders.map((order) => (
+              user.orders.map((order: AccountPageOrderRecord) => (
                 <div key={order.id} className="flex items-center justify-between rounded-[1.2rem] border border-tera-border px-4 py-3">
                   <div>
                     <p className="text-sm font-medium text-tera-navy">{order.orderNumber}</p>
