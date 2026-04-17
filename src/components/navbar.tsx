@@ -122,7 +122,7 @@ function SearchBox({
                         {product.heroCategory}
                       </span>
                       <span className="text-[#c5cfdb]">•</span>
-                      <span>Research kit</span>
+                      <span>Research peptide</span>
                     </div>
                   </div>
                   <div className="shrink-0 text-right">
@@ -158,7 +158,7 @@ export function Navbar() {
   const [query, setQuery] = useState("");
   const { itemCount } = useCart();
   const { data: session } = useSession();
-  const pathname = usePathname();
+  const pathname = usePathname() ?? "/";
   const router = useRouter();
   const normalizedPath = (pathname.replace(/^\/teragenix(?=\/|$)/, "") || "/").replace(/\/$/, "") || "/";
   const useHeroNav = isHeroNavPath(normalizedPath);
@@ -209,7 +209,7 @@ export function Navbar() {
                 : "bg-[#3b6ed6] text-white hover:bg-[#2d5bbf]"
             }`}
           >
-            Shop kits
+            Shop peptides
           </Link>
 
           <Link

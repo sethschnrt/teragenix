@@ -28,16 +28,16 @@ export default function Home() {
         haloColor={HALO_SKY}
         bodyText="Retatrutide and tesamorelin fit the buyer who wants to see movement, stay consistent, and compare options without piecing together ten different sources."
         subheading="What matters here"
-        subbody="When kit contents, specs, and prep essentials are visible up front, it is easier to decide and easier to keep moving."
+        subbody="When product details, specs, and documentation are visible up front, it is easier to decide and easier to keep moving."
         features={[
-          "Kits built around body-composition goals",
-          "Prep essentials shown up front",
+          "Peptides organized around body-composition goals",
+          "Product details shown up front",
           "Format + quantity easy to compare",
           "Storage guidance on-page",
           "Documentation status visible",
         ]}
         cardTitle="What helps you decide faster:"
-        ctaLabel="Browse fat loss kits"
+        ctaLabel="Browse fat loss peptides"
         ctaHref="/shop?category=fat-loss"
         image1="/images/generated/refresh-v1/metabolic-hero-tight.webp"
         image2="/images/generated/lifestyle-v1/metabolic-2-couple-walking.webp"
@@ -52,12 +52,12 @@ export default function Home() {
         accentPhrase="More you can check for yourself"
         accentColor={BLUE_SKY}
         haloColor={HALO_STEEL}
-        bodyText="The buyer does not want another vague peptide page. Teragenix works best when the kit contents, specs, and batch-linked documentation are close to the product and easy to verify."
+        bodyText="The buyer does not want another vague peptide page. Teragenix works best when the specs, batch-linked documentation, and product details are close to the product and easy to verify."
         subheading="Why this converts"
         subbody="Clear proof reduces hesitation. It helps the cautious buyer compare faster, trust more, and hit checkout with fewer question marks."
         features={[
           "Batch-linked documentation status",
-          "Kit contents shown upfront",
+          "Product details shown upfront",
           "Storage notes close to the product",
           "Format and quantity visible",
           "Support + policy pages easy to reach",

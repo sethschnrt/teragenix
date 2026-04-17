@@ -103,7 +103,7 @@ export function Hero() {
 
             <h1 className="mx-auto max-w-[900px] text-center lg:max-w-[760px]">
               <span className="block text-[48px] font-bold leading-[0.98] tracking-[-0.03em] text-white sm:text-[60px] lg:text-[54px]">
-                Clearer Kits for
+                Premium Peptides for
               </span>
               <span className="block text-[48px] font-bold leading-[0.98] tracking-[-0.03em] text-white sm:text-[60px] lg:text-[54px]">
                 <span className="italic text-[#a8c5f5]">Real Progress.</span>
@@ -114,7 +114,7 @@ export function Hero() {
               className="mx-auto mt-5 max-w-[560px] text-center text-white/85 lg:mt-3 lg:max-w-[600px]"
               style={{ fontSize: "15px", lineHeight: "1.5", fontWeight: 400 }}
             >
-              Shop research-use peptide kits for fat loss, recovery, longevity, and aesthetics, with visible specs, batch documentation, and kit contents shown up front.
+              Shop research-use peptides for fat loss, recovery, longevity, and aesthetics, with visible specs, batch documentation, and product details shown up front.
             </p>
 
             <div className="mt-7 flex flex-wrap items-center justify-center gap-4 lg:mt-5">
@@ -123,7 +123,7 @@ export function Hero() {
                 className="tg-link-pill group inline-flex h-12 items-center rounded-full bg-white px-7 text-[#0d262d] hover:bg-white/90"
                 style={{ fontSize: "14px", fontWeight: 600, letterSpacing: "-0.02em" }}
               >
-                Shop all kits
+                Shop all peptides
                 <svg className="tg-link-pill-icon ml-2 h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M5 12h14M13 5l7 7-7 7" />
                 </svg>

@@ -10,12 +10,12 @@ export default function FaqPage() {
       <PageHero
         icon={HelpCircle}
         eyebrow="FAQ"
-        detail="Research-use answers, kit basics, and policy shortcuts"
-        title="Straight answers before you pick a kit."
-        description="Use this page to compare kit basics, understand research-use positioning, and find the shipping, refund, and policy details faster."
+        detail="Research-use answers, product basics, and policy shortcuts"
+        title="Straight answers before you pick a product."
+        description="Use this page to compare product basics, understand research-use positioning, and find the shipping, refund, and policy details faster."
         variant="subpage"
         highlights={[
-          { label: "Browse kits", href: "/shop" },
+          { label: "Browse peptides", href: "/shop" },
           { label: "Quality standards", href: "/about#quality-promise" },
         ]}
         panelEyebrow="QUICK LINKS"

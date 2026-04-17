@@ -9,8 +9,8 @@ const steps = [
   },
   {
     num: "02",
-    title: "Compare the kit",
-    body: "See the peptide, format, quantity, prep essentials, and product details in one place, so you can decide faster with less guesswork.",
+    title: "Compare the peptide",
+    body: "See the peptide, format, quantity, and product details in one place, so you can decide faster with less guesswork.",
   },
   {
     num: "03",
@@ -33,7 +33,7 @@ export function HowItWorks() {
             </h2>
           </div>
           <p className="text-[1.05rem] leading-7 text-[#0d262d]/70 lg:pb-3">
-            Start with the result you want, narrow into the right kit, then verify the details before you buy.
+            Start with the result you want, narrow into the right peptide, then verify the details before you buy.
           </p>
         </div>
 
@@ -76,7 +76,7 @@ export function HowItWorks() {
             href="/shop"
             className="tg-link-pill inline-flex h-12 items-center rounded-full bg-white px-7 text-[14px] font-semibold tracking-tight text-[#0d262d] hover:bg-[#eef4fc]"
           >
-            Shop all kits
+            Shop all peptides
             <ArrowUpRight className="tg-link-pill-icon ml-2 h-4 w-4" />
           </Link>
         </div>

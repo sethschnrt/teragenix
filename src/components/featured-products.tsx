@@ -16,14 +16,14 @@ export function FeaturedProducts() {
         <div className="mb-10 flex flex-col gap-6 sm:mb-12 sm:flex-row sm:items-end sm:justify-between">
           <div className="max-w-2xl">
             <p className="mb-5 font-sans text-[11px] font-medium tracking-[0.22em] text-[#3b6ed6]">
-              FEATURED KITS
+              FEATURED PEPTIDES
             </p>
             <h2 className="font-sans text-[2.5rem] font-semibold leading-[1.04] tracking-[-0.03em] text-[#0d262d] sm:text-[3.6rem]">
-              Start with the kits <br className="hidden sm:block" />
+              Start with the peptides <br className="hidden sm:block" />
               buyers compare <span className="italic text-[#3b6ed6]">first</span>.
             </h2>
             <p className="mt-6 max-w-xl text-[1.05rem] leading-7 text-[#0d262d]/65">
-              Clear product details, visible quantities, and cleaner kit formats make these the fastest place to start when you want progress without more digging.
+              Clear product details, visible quantities, and cleaner documentation make these the fastest place to start when you want progress without more digging.
             </p>
           </div>
 

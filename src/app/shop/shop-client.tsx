@@ -101,7 +101,7 @@ export function ShopPageClient() {
                 SHOP TERAGENIX
               </span>
               <span className="text-[12px] text-white/60">
-                Premium peptide kits built around specific outcomes
+                Premium peptides built around specific outcomes
               </span>
             </div>
 
@@ -109,7 +109,7 @@ export function ShopPageClient() {
               Premium peptides for specific outcomes.
             </h1>
             <p className="mt-2 max-w-xl text-[0.96rem] leading-6 text-white/72">
-              Shop peptide kits for fat loss, recovery, longevity, and aesthetics, complete with prep essentials, visible specs, and supporting proof.
+              Shop peptides for fat loss, recovery, longevity, and aesthetics, with visible specs and supporting proof.
             </p>
           </div>
         </div>
@@ -136,7 +136,7 @@ export function ShopPageClient() {
                     <input
                       value={searchQuery}
                       onChange={(e) => setSearchQuery(e.target.value)}
-                      placeholder="Search compounds or kit names"
+                      placeholder="Search compounds or product names"
                       className="w-full rounded-full border px-11 py-2.5 pr-10 text-sm text-[#0d262d] outline-none transition"
                       style={{
                         borderColor: currentTheme.soft,
@@ -269,7 +269,7 @@ export function ShopPageClient() {
           {filtered.length === 0 && (
             <div className="text-center py-16">
               <p className="text-lg text-muted-foreground">
-                No kits match this filter.
+                No products match this filter.
               </p>
               <Button
                 variant="outline"

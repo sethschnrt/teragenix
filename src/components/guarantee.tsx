@@ -4,8 +4,8 @@ import { Shield, Truck, FlaskConical, Mail } from "lucide-react";
 const promises = [
   {
     icon: Truck,
-    title: "Kits that are easier to evaluate",
-    body: "See the peptide, format, quantity, and prep essentials up front instead of piecing details together after the click.",
+    title: "Products that are easier to evaluate",
+    body: "See the peptide, format, quantity, and documentation status up front instead of piecing details together after the click.",
   },
   {
     icon: FlaskConical,
@@ -33,7 +33,7 @@ export function Guarantee() {
             WHY BUYERS TRUST TERAGENIX
           </p>
           <h2 className="tg-h2 mx-auto max-w-3xl" style={{ color: "#0d262d" }}>
-            Clearer kits, <span style={{ color: "#3b6ed6" }}>visible proof</span>, fewer question marks.
+            Clearer products, <span style={{ color: "#3b6ed6" }}>visible proof</span>, fewer question marks.
           </h2>
           <p
             className="mx-auto mt-6 max-w-xl"
@@ -44,7 +44,7 @@ export function Guarantee() {
               fontWeight: 400,
             }}
           >
-            The point is not to sound more premium. The point is to make the decision easier with better kit clarity, visible specs, and proof you can actually check.
+            The point is not to sound more premium. The point is to make the decision easier with better product clarity, visible specs, and proof you can actually check.
           </p>
         </div>
 
@@ -101,7 +101,7 @@ export function Guarantee() {
                 letterSpacing: "-0.76px",
               }}
             >
-              Shop the kits that make the next step easier.
+              Shop the peptides that make the next step easier.
             </h3>
           </div>
           <Link
@@ -113,7 +113,7 @@ export function Guarantee() {
               letterSpacing: "-0.3px",
             }}
             >
-              Shop all kits
+              Shop all peptides
               <svg
               className="tg-link-pill-icon ml-2.5 h-4 w-4"
               viewBox="0 0 24 24"
