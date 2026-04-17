@@ -17,14 +17,14 @@ export function FeaturedProducts() {
         <div className="mb-10 flex flex-col gap-6 sm:mb-12 sm:flex-row sm:items-end sm:justify-between">
           <div className="max-w-2xl">
             <p className="mb-5 font-sans text-[11px] font-medium tracking-[0.22em] text-[#3b6ed6]">
-              FEATURED KITS
+              START HERE
             </p>
             <h2 className="font-sans text-[2.5rem] font-semibold leading-[1.04] tracking-[-0.03em] text-[#0d262d] sm:text-[3.6rem]">
-              Better peptides, <br className="hidden sm:block" />
-              built into <span className="italic text-[#3b6ed6]">premium kits</span>.
+              The peptides people keep <br className="hidden sm:block" />
+              coming back to <span className="italic text-[#3b6ed6]">first</span>.
             </h2>
             <p className="mt-6 max-w-xl text-[1.05rem] leading-7 text-[#0d262d]/65">
-              These are the core kits buyers come for first: premium peptides paired with prep essentials, visible specs, and a cleaner all-in-one format.
+              If you are trying to see real progress, start with the compounds people ask about most, then check the specs and docs for yourself.
             </p>
           </div>
 
@@ -32,7 +32,7 @@ export function FeaturedProducts() {
             href="/shop"
             className="tg-link-pill inline-flex h-12 items-center self-start rounded-full border border-[#3b6ed6] bg-transparent px-6 text-[13px] font-semibold tracking-tight text-[#3b6ed6] hover:bg-[#3b6ed6] hover:text-white sm:self-end"
           >
-            View full catalog
+            Browse all peptides
             <ArrowUpRight className="tg-link-pill-icon ml-2 h-4 w-4" />
           </Link>
         </div>

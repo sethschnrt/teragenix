@@ -4,18 +4,18 @@ import { ArrowUpRight } from "lucide-react";
 const steps = [
   {
     num: "01",
-    title: "Choose the outcome",
-    body: "Start with the result you care about, then narrow into peptides built for fat loss, recovery, longevity, or aesthetics-focused protocols.",
+    title: "Pick the goal",
+    body: "Start with fat loss, recovery, longevity, or aesthetics so you are not digging through unrelated products.",
   },
   {
     num: "02",
-    title: "Choose the kit",
-    body: "Pick the peptide that fits the protocol, then review the full kit, included prep essentials, and supporting specs in one place.",
+    title: "Open the product",
+    body: "Check the peptide, quantity, format, storage, and docs in one place so you can decide faster with less guesswork.",
   },
   {
     num: "03",
-    title: "Verify the proof",
-    body: "Use the documentation hub, FAQ, and policy pages to confirm the product details and the operational side before you commit.",
+    title: "Verify the details",
+    body: "Use the documentation hub, FAQ, and policy pages to confirm the product details before you commit.",
   },
 ];
 
@@ -30,11 +30,11 @@ export function HowItWorks() {
               HOW IT WORKS
             </p>
             <h2 className="font-sans text-[2.5rem] font-semibold leading-[1.04] tracking-[-0.03em] text-[#0d262d] sm:text-[3.6rem]">
-              From desired outcome to <span className="italic text-[#3b6ed6]">premium kit</span>.
+              From “what should I start with?” to a <span className="italic text-[#3b6ed6]">cleaner decision</span>.
             </h2>
           </div>
           <p className="text-[1.05rem] leading-7 text-[#0d262d]/70 lg:pb-3">
-            Start with the desired result, move into the peptide, then confirm the specs and proof behind the kit.
+            Start with the goal you care about, open the product, then verify the details before you buy.
           </p>
         </div>
 
@@ -72,14 +72,14 @@ export function HowItWorks() {
               READY TO SHOP
             </p>
             <h3 className="font-sans text-[1.8rem] font-semibold leading-tight tracking-tight text-white sm:text-[2.2rem]">
-              Choose the outcome. Then choose the peptide.
+              Find the goal. Check the proof. Move forward.
             </h3>
           </div>
           <Link
             href="/shop"
             className="tg-link-pill inline-flex h-12 items-center rounded-full bg-white px-7 text-[14px] font-semibold tracking-tight text-[#0d262d] hover:bg-[#eef4fc]"
           >
-            Shop all kits
+            Shop peptides
             <ArrowUpRight className="tg-link-pill-icon ml-2 h-4 w-4" />
           </Link>
         </div>

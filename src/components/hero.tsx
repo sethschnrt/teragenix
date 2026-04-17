@@ -102,17 +102,17 @@ export function Hero() {
                 <span
                   className="inline-block h-1.5 w-1.5 rounded-full bg-white"
                 />
-                Premium peptide kits for specific outcomes
+                Less guesswork. More visible proof.
               </p>
             </div>
 
             {/* Headline */}
             <h1 className="mx-auto max-w-[900px] text-center lg:max-w-[760px]">
               <span className="block text-[48px] font-bold leading-[0.98] tracking-[-0.03em] text-white sm:text-[60px] lg:text-[54px]">
-                What Better Peptides
+                Real Progress,
               </span>
               <span className="block text-[48px] font-bold leading-[0.98] tracking-[-0.03em] text-white sm:text-[60px] lg:text-[54px]">
-                <span className="italic text-[#a8c5f5]">Make Possible.</span>
+                <span className="italic text-[#a8c5f5]">Less Guessing.</span>
               </span>
             </h1>
 
@@ -121,7 +121,7 @@ export function Hero() {
               className="mx-auto mt-5 max-w-[560px] text-center text-white/85 lg:mt-3 lg:max-w-[600px]"
               style={{ fontSize: "15px", lineHeight: "1.5", fontWeight: 400 }}
             >
-              Premium peptide kits for fat loss, recovery, longevity, and aesthetics, complete with prep essentials, visible specs, and supporting documentation.
+              Shop research-use peptides with clear specs, batch documentation, and product details you can check without digging through ten different pages.
             </p>
 
             {/* CTA row */}
@@ -131,7 +131,7 @@ export function Hero() {
                 className="tg-link-pill group inline-flex h-12 items-center rounded-full bg-white px-7 text-[#0d262d] hover:bg-white/90"
                 style={{ fontSize: "14px", fontWeight: 600, letterSpacing: "-0.02em" }}
               >
-                Shop premium kits
+                Shop peptides
                 <svg className="tg-link-pill-icon ml-2 h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M5 12h14M13 5l7 7-7 7" />
                 </svg>
@@ -141,7 +141,7 @@ export function Hero() {
                 className="tg-link-pill inline-flex h-12 items-center rounded-full px-7 text-white ring-1 ring-white/40 hover:bg-white/10"
                 style={{ fontSize: "14px", fontWeight: 600, letterSpacing: "-0.02em" }}
               >
-                Explore outcomes
+                See how it works
               </Link>
             </div>
           </div>
