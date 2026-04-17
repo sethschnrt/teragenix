@@ -1,6 +1,6 @@
 const tickerItems = [
   {
-    label: "VISIBLE KIT CONTENTS",
+    label: "RESEARCH USE ONLY",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4">
         <path d="M12 3l7 3v5c0 4.5-2.9 8.6-7 10-4.1-1.4-7-5.5-7-10V6l7-3Z" />
@@ -10,7 +10,7 @@ const tickerItems = [
     ),
   },
   {
-    label: "SPECS UP FRONT",
+    label: "COMPLETE KIT FORMAT",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4">
         <rect x="4" y="5" width="16" height="11" rx="2" />
@@ -20,7 +20,7 @@ const tickerItems = [
     ),
   },
   {
-    label: "LESS GUESSWORK",
+    label: "FAT LOSS • RECOVERY • LONGEVITY • AESTHETICS",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4">
         <path d="M12 3v18" />

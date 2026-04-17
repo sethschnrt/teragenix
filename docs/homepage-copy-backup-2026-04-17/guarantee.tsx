@@ -4,23 +4,23 @@ import { Shield, Truck, FlaskConical, Mail } from "lucide-react";
 const promises = [
   {
     icon: Truck,
-    title: "Kits that are easier to evaluate",
-    body: "See the peptide, format, quantity, and prep essentials up front instead of piecing details together after the click.",
+    title: "Premium kits, not loose vials",
+    body: "Each kit pairs the peptide with the prep essentials, turning a simple purchase into a more complete protocol-ready package.",
   },
   {
     icon: FlaskConical,
-    title: "Documentation kept close",
-    body: "Batch status, storage notes, and supporting proof stay near the product so trust is built by what you can verify.",
+    title: "Built for specific outcomes",
+    body: "Fat loss, recovery, longevity, and aesthetics are the guiding outcomes, so the product promise is clear before you ever open the kit.",
   },
   {
     icon: Shield,
-    title: "Built for outcome-first buyers",
-    body: "Fat loss, recovery, longevity, and aesthetics are organized around the result you care about, not generic catalog sprawl.",
+    title: "Specs that justify the price",
+    body: "Purity, storage notes, and documentation status stay close to the product, so premium positioning has real support behind it.",
   },
   {
     icon: Mail,
-    title: "Support before commitment",
-    body: "FAQ, shipping, refund, and research-use details are easy to find when you want fewer question marks before checkout.",
+    title: "Clarity before commitment",
+    body: "Support, shipping, refund, and research-use details stay easy to reach when you want to verify the operational side before buying.",
   },
 ];
 
@@ -30,10 +30,10 @@ export function Guarantee() {
       <div className="mx-auto max-w-[1240px] px-5 sm:px-8 lg:px-[160px]">
         <div className="mb-16 text-center">
           <p className="tg-eyebrow mb-6" style={{ color: "#3b6ed6" }}>
-            WHY BUYERS TRUST TERAGENIX
+            WHY TERAGENIX WORKS
           </p>
           <h2 className="tg-h2 mx-auto max-w-3xl" style={{ color: "#0d262d" }}>
-            Clearer kits, <span style={{ color: "#3b6ed6" }}>visible proof</span>, fewer question marks.
+            Premium peptides, <span style={{ color: "#3b6ed6" }}>complete kits</span>, clearer proof.
           </h2>
           <p
             className="mx-auto mt-6 max-w-xl"
@@ -44,7 +44,7 @@ export function Guarantee() {
               fontWeight: 400,
             }}
           >
-            The point is not to sound more premium. The point is to make the decision easier with better kit clarity, visible specs, and proof you can actually check.
+            The difference is not the website. It is better peptides, better kit presentation, and better support behind the purchase.
           </p>
         </div>
 
@@ -83,6 +83,7 @@ export function Guarantee() {
           ))}
         </div>
 
+        {/* CTA band */}
         <div className="mt-20 flex flex-col items-center justify-between gap-6 rounded-[40px] bg-[linear-gradient(166deg,_#3b6ed6_0%,_#0d262d_100%)] px-10 py-14 sm:flex-row sm:px-16 sm:py-16 lg:px-20">
           <div className="text-center sm:text-left">
             <p
@@ -101,7 +102,7 @@ export function Guarantee() {
                 letterSpacing: "-0.76px",
               }}
             >
-              Shop the kits that make the next step easier.
+              Shop the full premium lineup.
             </h3>
           </div>
           <Link

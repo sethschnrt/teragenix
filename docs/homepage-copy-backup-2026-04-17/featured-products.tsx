@@ -13,17 +13,18 @@ export function FeaturedProducts() {
   return (
     <section id="featured" className="relative bg-[#f4f8ff] pb-16 pt-16 sm:pb-[4.5rem] sm:pt-[4.5rem]">
       <div className="mx-auto max-w-[1240px] px-5 sm:px-8 lg:px-12">
+        {/* Editorial header */}
         <div className="mb-10 flex flex-col gap-6 sm:mb-12 sm:flex-row sm:items-end sm:justify-between">
           <div className="max-w-2xl">
             <p className="mb-5 font-sans text-[11px] font-medium tracking-[0.22em] text-[#3b6ed6]">
               FEATURED KITS
             </p>
             <h2 className="font-sans text-[2.5rem] font-semibold leading-[1.04] tracking-[-0.03em] text-[#0d262d] sm:text-[3.6rem]">
-              Start with the kits <br className="hidden sm:block" />
-              buyers compare <span className="italic text-[#3b6ed6]">first</span>.
+              Better peptides, <br className="hidden sm:block" />
+              built into <span className="italic text-[#3b6ed6]">premium kits</span>.
             </h2>
             <p className="mt-6 max-w-xl text-[1.05rem] leading-7 text-[#0d262d]/65">
-              Clear product details, visible quantities, and cleaner kit formats make these the fastest place to start when you want progress without more digging.
+              These are the core kits buyers come for first: premium peptides paired with prep essentials, visible specs, and a cleaner all-in-one format.
             </p>
           </div>
 
@@ -31,11 +32,12 @@ export function FeaturedProducts() {
             href="/shop"
             className="tg-link-pill inline-flex h-12 items-center self-start rounded-full border border-[#3b6ed6] bg-transparent px-6 text-[13px] font-semibold tracking-tight text-[#3b6ed6] hover:bg-[#3b6ed6] hover:text-white sm:self-end"
           >
-            Browse full catalog
+            View full catalog
             <ArrowUpRight className="tg-link-pill-icon ml-2 h-4 w-4" />
           </Link>
         </div>
 
+        {/* Product grid */}
         <div className="grid grid-cols-2 gap-4 sm:gap-5 lg:grid-cols-4">
           {displayed.map((product) => {
             const theme = getHeroCategoryTheme(product.heroCategory);
@@ -53,6 +55,7 @@ export function FeaturedProducts() {
                     }}
                   />
 
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src={`${BASE_PATH}${product.image}`}
                     alt={product.name}
@@ -75,6 +78,7 @@ export function FeaturedProducts() {
                   />
                 </div>
 
+                {/* Info */}
                 <div className="flex flex-1 flex-col gap-3 px-5 pb-5 pt-5">
                   <h3 className="text-[1.05rem] font-semibold leading-snug tracking-tight text-[#0d262d]">
                     {product.name}
