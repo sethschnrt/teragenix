@@ -1,3 +1,5 @@
+import { MapPin, ShieldCheck, UserRound } from "lucide-react";
+
 import { AccountShell } from "@/components/account/account-shell";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { getServerAuthSession } from "@/lib/auth";
@@ -15,48 +17,79 @@ export default async function AccountSettingsPage() {
     },
   });
 
-type AccountAddressRecord = NonNullable<typeof user>["addresses"][number];
+  type AccountAddressRecord = NonNullable<typeof user>["addresses"][number];
+
+  const displayName = [user?.firstName, user?.lastName].filter(Boolean).join(" ") || "Not saved yet";
 
   return (
-    <AccountShell title="Account settings" subtitle="Profile and address management will live here as the account layer expands.">
-      <div className="grid gap-4 md:grid-cols-3">
-        <Card className="border border-tera-border bg-white py-5 shadow-[0_18px_46px_-42px_rgba(13,38,45,0.3)] md:col-span-2">
-          <CardHeader>
-            <CardTitle>Profile</CardTitle>
-            <CardDescription>Phase 2 foundation is in place. Editable settings come next.</CardDescription>
+    <AccountShell title="Settings" subtitle="Review the profile details and saved addresses connected to your Teragenix account.">
+      <div className="grid gap-4 xl:grid-cols-[minmax(0,1fr)_320px]">
+        <Card className="border border-slate-200 bg-white py-6 shadow-sm">
+          <CardHeader className="border-b border-slate-200 pb-5">
+            <div className="flex items-center gap-3">
+              <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-[#eef4ff] text-[#173f85]">
+                <UserRound className="h-5 w-5" />
+              </div>
+              <div>
+                <CardTitle className="text-slate-950">Contact information</CardTitle>
+                <CardDescription>Details currently tied to your account.</CardDescription>
+              </div>
+            </div>
           </CardHeader>
-          <CardContent className="space-y-2 text-sm text-tera-body">
-            <p>Name: {[user?.firstName, user?.lastName].filter(Boolean).join(" ") || "Not set"}</p>
-            <p>Email: {user?.email}</p>
-            <p>Phone: {user?.phone || "Not set"}</p>
-            <p>Saved addresses: {user?.addresses.length ?? 0}</p>
+          <CardContent className="grid gap-4 pt-5 sm:grid-cols-2 text-sm text-slate-600">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.14em] text-slate-500">Full name</p>
+              <p className="mt-1 font-medium text-slate-950">{displayName}</p>
+            </div>
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.14em] text-slate-500">Email</p>
+              <p className="mt-1 font-medium text-slate-950">{user?.email}</p>
+            </div>
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.14em] text-slate-500">Phone</p>
+              <p className="mt-1 font-medium text-slate-950">{user?.phone || "Not saved yet"}</p>
+            </div>
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.14em] text-slate-500">Saved addresses</p>
+              <p className="mt-1 font-medium text-slate-950">{user?.addresses.length ?? 0}</p>
+            </div>
           </CardContent>
         </Card>
 
-        <Card className="border border-tera-border bg-[linear-gradient(160deg,_#173f85_0%,_#102e5d_42%,_#0d262d_100%)] py-5 text-white shadow-[0_20px_50px_-38px_rgba(13,38,45,0.45)]">
-          <CardHeader>
-            <CardTitle className="text-white">Next account upgrades</CardTitle>
-            <CardDescription className="text-white/68">What gets added once the live backend is wired.</CardDescription>
+        <Card className="border border-[#d8e3f6] bg-[linear-gradient(180deg,_#f8fbff_0%,_#eef4ff_100%)] py-6 shadow-sm">
+          <CardHeader className="border-b border-[#d8e3f6] pb-5">
+            <div className="flex items-center gap-3">
+              <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-white/80 text-[#173f85] ring-1 ring-[#d8e3f6]">
+                <ShieldCheck className="h-5 w-5" />
+              </div>
+              <div>
+                <CardTitle className="text-slate-950">Account status</CardTitle>
+                <CardDescription className="text-slate-600">Signed in and synced.</CardDescription>
+              </div>
+            </div>
           </CardHeader>
-          <CardContent className="space-y-3 text-sm text-white/84">
-            <div className="rounded-[1.2rem] bg-white/8 px-4 py-3 ring-1 ring-white/12">Editable profile form</div>
-            <div className="rounded-[1.2rem] bg-white/8 px-4 py-3 ring-1 ring-white/12">Address book and defaults</div>
-            <div className="rounded-[1.2rem] bg-white/8 px-4 py-3 ring-1 ring-white/12">Password and login controls</div>
+          <CardContent className="space-y-3 pt-5 text-sm text-slate-600">
+            <div className="rounded-2xl bg-white/80 px-4 py-3 ring-1 ring-[#d8e3f6]">Profile editing is the next upgrade to this customer area.</div>
+            <div className="rounded-2xl bg-white/80 px-4 py-3 ring-1 ring-[#d8e3f6]">Address management can drop into this layout cleanly when ready.</div>
+            <div className="rounded-2xl bg-white/80 px-4 py-3 ring-1 ring-[#d8e3f6]">Nothing here feels internal. This is the customer-facing side only.</div>
           </CardContent>
         </Card>
       </div>
 
-      <Card className="border border-tera-border bg-white py-5 shadow-[0_18px_46px_-42px_rgba(13,38,45,0.3)]">
-        <CardHeader>
-          <CardTitle>Saved address state</CardTitle>
-          <CardDescription>Keeping this honest until the editable forms are built.</CardDescription>
+      <Card className="border border-slate-200 bg-white py-6 shadow-sm">
+        <CardHeader className="border-b border-slate-200 pb-5">
+          <CardTitle className="text-slate-950">Saved addresses</CardTitle>
+          <CardDescription>Shipping and billing information currently on file.</CardDescription>
         </CardHeader>
-        <CardContent className="space-y-2 text-sm text-tera-body">
+        <CardContent className="space-y-3 pt-5 text-sm text-slate-600">
           {user?.addresses.length ? (
             user.addresses.map((address: AccountAddressRecord) => (
-              <div key={address.id} className="rounded-[1.2rem] border border-tera-border px-4 py-3">
-                <p className="font-medium text-tera-navy">{address.type}</p>
-                <p className="mt-1 text-sm text-tera-body">
+              <div key={address.id} className="rounded-2xl border border-slate-200 px-4 py-4">
+                <div className="flex items-center gap-2 text-slate-950">
+                  <MapPin className="h-4 w-4 text-[#173f85]" />
+                  <span className="font-medium">{address.type}</span>
+                </div>
+                <p className="mt-2 leading-6 text-slate-600">
                   {address.line1}, {address.city}, {address.state} {address.postalCode}
                 </p>
               </div>

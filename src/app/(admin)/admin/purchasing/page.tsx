@@ -1,8 +1,7 @@
-import { ArrowUpRight, PackagePlus, ReceiptText, Truck, Waypoints } from "lucide-react";
+import Link from "next/link";
 
 import { ProcurementIntakeForm } from "@/components/admin/procurement-intake-form";
-import { ProcurementItemCard } from "@/components/admin/procurement-item-card";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { prisma } from "@/lib/db";
 
 export const dynamic = "force-dynamic";
@@ -14,9 +13,7 @@ const currency = new Intl.NumberFormat("en-US", {
 });
 
 function formatDate(date: Date | null) {
-  if (!date) {
-    return "No date set";
-  }
+  if (!date) return "-";
 
   return new Intl.DateTimeFormat("en-US", {
     month: "short",
@@ -36,10 +33,8 @@ export default async function AdminPurchasingPage() {
           },
         },
       },
-      orderBy: [
-        { createdAt: "desc" },
-      ],
-      take: 36,
+      orderBy: [{ createdAt: "desc" }],
+      take: 100,
     }),
     prisma.expense.findMany({
       where: { procurementItemId: { not: null } },
@@ -52,215 +47,158 @@ export default async function AdminPurchasingPage() {
         },
       },
       orderBy: { expenseDate: "desc" },
-      take: 6,
+      take: 12,
     }),
   ]);
 
-  const openItems = items.filter((item: (typeof items)[number]) => !["RECEIVED", "CANCELED"].includes(item.status));
-  const closedItems = items.filter((item: (typeof items)[number]) => ["RECEIVED", "CANCELED"].includes(item.status));
-  const orderedCount = items.filter((item: (typeof items)[number]) => item.status === "ORDERED").length;
-  const estimatedOpenSpend = openItems.reduce((sum: number, item: (typeof openItems)[number]) => sum + Number(item.estimatedCost ?? 0), 0);
-  const actualTrackedSpend = items.reduce((sum: number, item: (typeof items)[number]) => sum + Number(item.actualCost ?? 0), 0);
-  const nextNeed = [...openItems]
-    .filter((item: (typeof openItems)[number]) => item.neededBy)
-    .sort((left: (typeof openItems)[number], right: (typeof openItems)[number]) => Number(left.neededBy) - Number(right.neededBy))[0];
-  const linkedExpenseTotal = linkedExpenses.reduce((sum: number, expense: (typeof linkedExpenses)[number]) => sum + Number(expense.amount), 0);
+  type ItemRecord = (typeof items)[number];
+  type LinkedExpenseRecord = (typeof linkedExpenses)[number];
 
-type PurchasingItemRecord = (typeof items)[number];
-type LinkedExpenseRecord = (typeof linkedExpenses)[number];
+  const openItems = items.filter((item) => !["RECEIVED", "CANCELED"].includes(item.status));
+  const closedItems = items.filter((item) => ["RECEIVED", "CANCELED"].includes(item.status));
+  const orderedCount = items.filter((item) => item.status === "ORDERED").length;
+  const estimatedOpenSpend = openItems.reduce((sum, item) => sum + Number(item.estimatedCost ?? 0), 0);
+  const actualTrackedSpend = items.reduce((sum, item) => sum + Number(item.actualCost ?? 0), 0);
+
+  const summaryItems = [
+    { label: "Open", value: openItems.length.toString(), tone: "bg-amber-50 text-amber-700 border-amber-200" },
+    { label: "Ordered", value: orderedCount.toString(), tone: "bg-blue-50 text-blue-700 border-blue-200" },
+    { label: "Open spend", value: currency.format(estimatedOpenSpend), tone: "bg-amber-50 text-amber-700 border-amber-200" },
+    { label: "Tracked actual", value: currency.format(actualTrackedSpend), tone: "bg-emerald-50 text-emerald-700 border-emerald-200" },
+  ];
 
   return (
-    <div className="space-y-6">
-      <div className="grid gap-4 lg:grid-cols-[1.15fr_0.85fr]">
-        <div className="rounded-[2rem] border border-tera-border bg-white p-6 shadow-[0_20px_50px_-42px_rgba(13,38,45,0.35)] sm:p-7">
-          <p className="tg-eyebrow">Purchasing</p>
-          <h2 className="mt-3 text-[1.95rem] font-semibold leading-tight tracking-[-0.03em] text-tera-navy sm:text-[2.35rem]">
-            Internal purchasing that tracks products, equipment, and spend in one Teragenix ops layer.
-          </h2>
-          <p className="mt-4 max-w-2xl text-sm leading-6 text-tera-body sm:text-[15px]">
-            Build the buy list, move items through sourcing and ordering, then connect the actual expense when the bill lands.
-          </p>
+    <div className="space-y-4">
+      <section className="rounded-2xl border border-[#dfe3e8] bg-white px-4 py-4 shadow-sm">
+        <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#6d7175]">Product orders</p>
+        <h2 className="mt-1 text-2xl font-semibold text-[#202223]">Items to buy</h2>
+        <div className="mt-4 grid gap-2 md:grid-cols-2 xl:grid-cols-4">
+          {summaryItems.map((item) => (
+            <div key={item.label} className={`rounded-xl border px-3 py-2 ${item.tone}`}>
+              <p className="text-[10px] font-semibold uppercase tracking-[0.14em]">{item.label}</p>
+              <p className="mt-1 text-sm font-semibold">{item.value}</p>
+            </div>
+          ))}
         </div>
+      </section>
 
-        <div className="rounded-[2rem] bg-[linear-gradient(160deg,_#173f85_0%,_#102e5d_42%,_#0d262d_100%)] p-6 text-white shadow-[0_20px_50px_-38px_rgba(13,38,45,0.45)] sm:p-7">
-          <p className="text-[11px] font-medium tracking-[0.2em] text-[#dbeafe]">PROCUREMENT READOUT</p>
-          <div className="mt-5 grid gap-3 sm:grid-cols-2">
-            <div className="rounded-[1.2rem] bg-white/8 p-4 ring-1 ring-white/12">
-              <p className="text-[11px] uppercase tracking-[0.18em] text-white/58">Open items</p>
-              <p className="mt-2 text-2xl font-semibold text-white">{openItems.length}</p>
-            </div>
-            <div className="rounded-[1.2rem] bg-white/8 p-4 ring-1 ring-white/12">
-              <p className="text-[11px] uppercase tracking-[0.18em] text-white/58">On order</p>
-              <p className="mt-2 text-2xl font-semibold text-white">{orderedCount}</p>
-            </div>
-            <div className="rounded-[1.2rem] bg-white/8 p-4 ring-1 ring-white/12">
-              <p className="text-[11px] uppercase tracking-[0.18em] text-white/58">Estimated open spend</p>
-              <p className="mt-2 text-2xl font-semibold text-white">{currency.format(estimatedOpenSpend)}</p>
-            </div>
-            <div className="rounded-[1.2rem] bg-white/8 p-4 ring-1 ring-white/12">
-              <p className="text-[11px] uppercase tracking-[0.18em] text-white/58">Next needed</p>
-              <p className="mt-2 text-sm font-medium text-white/88">{nextNeed ? formatDate(nextNeed.neededBy) : "Nothing scheduled"}</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div className="grid gap-4 md:grid-cols-3">
-        {[
-          {
-            title: "Need capture",
-            description: "Track products, supplies, and equipment before they disappear into Slack or memory.",
-            icon: PackagePlus,
-          },
-          {
-            title: "Workflow state",
-            description: "Move each line item through backlog, sourcing, ordered, and received with real dates.",
-            icon: Waypoints,
-          },
-          {
-            title: "Expense follow-through",
-            description: "Tie the spend entry back to the purchase item so planning and actual cost stay connected.",
-            icon: ReceiptText,
-          },
-        ].map((card) => (
-          <Card key={card.title} className="border border-tera-border bg-white py-5 shadow-[0_18px_46px_-42px_rgba(13,38,45,0.3)]">
-            <CardHeader>
-              <div className="flex h-11 w-11 items-center justify-center rounded-[1rem] bg-[#f4f8ff] ring-1 ring-[#dbe6f5]">
-                <card.icon className="h-5 w-5 text-tera-blue" />
-              </div>
-              <CardTitle className="mt-4">{card.title}</CardTitle>
-              <CardDescription>{card.description}</CardDescription>
-            </CardHeader>
-          </Card>
-        ))}
-      </div>
-
-      <div className="grid gap-4 xl:grid-cols-[1.05fr_0.95fr]">
-        <Card className="border border-tera-border bg-white py-5 shadow-[0_18px_46px_-42px_rgba(13,38,45,0.3)]">
-          <CardHeader>
-            <CardTitle>Add a purchasing item</CardTitle>
-            <CardDescription>Start with what needs to be bought, who it likely comes from, and the expected cost.</CardDescription>
+      <section className="grid gap-4 xl:grid-cols-[1.45fr_0.9fr]">
+        <Card className="border border-[#dfe3e8] bg-white py-3 shadow-sm">
+          <CardHeader className="border-b border-[#eceef0] pb-3">
+            <CardTitle className="text-base text-[#202223]">Open product orders</CardTitle>
           </CardHeader>
-          <CardContent>
-            <ProcurementIntakeForm />
-          </CardContent>
-        </Card>
-
-        <Card className="border border-tera-border bg-white py-5 shadow-[0_18px_46px_-42px_rgba(13,38,45,0.3)]">
-          <CardHeader>
-            <CardTitle>Purchase spend sync</CardTitle>
-            <CardDescription>Recent expense entries already connected back to purchasing records.</CardDescription>
-          </CardHeader>
-          <CardContent className="space-y-3">
-            <div className="rounded-[1.2rem] bg-[#f8fbff] px-4 py-4 ring-1 ring-[#dbe6f5]">
-              <p className="text-[11px] uppercase tracking-[0.18em] text-tera-body">Linked spend total</p>
-              <p className="mt-2 text-2xl font-semibold text-tera-navy">{currency.format(linkedExpenseTotal)}</p>
-              <p className="mt-2 text-sm text-tera-body">Use the expense form to attach vendor bills and receipts back to the original purchasing line item.</p>
-            </div>
-
-            {linkedExpenses.length === 0 ? (
-              <p className="text-sm text-tera-body">No purchase-linked expenses yet.</p>
+          <CardContent className="pt-4">
+            {openItems.length === 0 ? (
+              <p className="text-sm text-[#6d7175]">No open product orders.</p>
             ) : (
-              linkedExpenses.map((expense: LinkedExpenseRecord) => (
-                <div key={expense.id} className="rounded-[1.2rem] border border-tera-border px-4 py-4">
-                  <div className="flex items-center justify-between gap-3">
-                    <div className="min-w-0">
-                      <p className="truncate text-sm font-medium text-tera-navy">{expense.procurementItem?.title || expense.vendor}</p>
-                      <p className="truncate text-xs text-tera-body">{expense.vendor} • {formatDate(expense.expenseDate)}</p>
-                    </div>
-                    <div className="text-sm font-medium text-tera-navy">{currency.format(Number(expense.amount))}</div>
-                  </div>
-                </div>
-              ))
+              <div className="overflow-hidden rounded-xl border border-[#e5e7eb]">
+                <table className="min-w-full divide-y divide-[#e5e7eb] text-sm">
+                  <thead className="bg-[#f6f6f7] text-left text-[11px] font-semibold uppercase tracking-[0.14em] text-[#6d7175]">
+                    <tr>
+                      <th className="px-3 py-2.5">Item</th>
+                      <th className="px-3 py-2.5">Vendor</th>
+                      <th className="px-3 py-2.5">Status</th>
+                      <th className="px-3 py-2.5">Needed</th>
+                      <th className="px-3 py-2.5 text-right">Estimate</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-[#eceef0] bg-white">
+                    {openItems.map((item: ItemRecord) => (
+                      <tr key={item.id} className="hover:bg-[#f9fafb]">
+                        <td className="px-3 py-3 font-medium text-[#202223]">{item.title}</td>
+                        <td className="px-3 py-3 text-[#5c5f62]">{item.vendor || "-"}</td>
+                        <td className="px-3 py-3 text-[#5c5f62]">{item.status}</td>
+                        <td className="px-3 py-3 text-[#5c5f62]">{formatDate(item.neededBy)}</td>
+                        <td className="px-3 py-3 text-right font-medium text-[#202223]">{item.estimatedCost != null ? currency.format(Number(item.estimatedCost)) : "-"}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
             )}
           </CardContent>
         </Card>
-      </div>
 
-      <div className="space-y-4">
-        <div className="flex items-center justify-between gap-3">
-          <div>
-            <p className="tg-eyebrow">Open pipeline</p>
-            <h3 className="mt-2 text-2xl font-semibold text-tera-navy">What still needs action</h3>
-          </div>
-          <div className="hidden items-center gap-2 rounded-full bg-white px-4 py-2 text-sm text-tera-body ring-1 ring-tera-border sm:flex">
-            <Truck className="h-4 w-4 text-tera-blue" />
-            {currency.format(actualTrackedSpend)} tracked actual spend
-          </div>
-        </div>
+        <Card className="border border-[#dfe3e8] bg-white py-3 shadow-sm">
+          <CardHeader className="border-b border-[#eceef0] pb-3">
+            <CardTitle className="text-base text-[#202223]">Add product order</CardTitle>
+          </CardHeader>
+          <CardContent className="pt-4">
+            <ProcurementIntakeForm />
+          </CardContent>
+        </Card>
+      </section>
 
-        {openItems.length === 0 ? (
-          <Card className="border border-dashed border-tera-border bg-white py-8 text-center shadow-[0_18px_46px_-42px_rgba(13,38,45,0.3)]">
-            <CardContent>
-              <p className="text-sm text-tera-body">No active purchase items yet. Add the next product or equipment order above.</p>
-            </CardContent>
-          </Card>
-        ) : (
-          <div className="grid gap-4">
-            {openItems.map((item: PurchasingItemRecord) => (
-              <ProcurementItemCard
-                key={item.id}
-                item={{
-                  id: item.id,
-                  title: item.title,
-                  vendor: item.vendor,
-                  category: item.category,
-                  type: item.type,
-                  status: item.status,
-                  quantity: item.quantity,
-                  estimatedCost: item.estimatedCost == null ? null : Number(item.estimatedCost),
-                  actualCost: item.actualCost == null ? null : Number(item.actualCost),
-                  itemUrl: item.itemUrl,
-                  neededBy: item.neededBy?.toISOString() ?? null,
-                  orderedAt: item.orderedAt?.toISOString() ?? null,
-                  receivedAt: item.receivedAt?.toISOString() ?? null,
-                  notes: item.notes,
-                  linkedExpenseCount: item.expenses.length,
-                  linkedExpenseTotal: item.expenses.reduce((sum: number, expense: (typeof item.expenses)[number]) => sum + Number(expense.amount), 0),
-                }}
-              />
-            ))}
-          </div>
-        )}
-      </div>
-
-      <Card className="border border-tera-border bg-white py-5 shadow-[0_18px_46px_-42px_rgba(13,38,45,0.3)]">
-        <CardHeader>
-          <CardTitle>Completed and canceled</CardTitle>
-          <CardDescription>Closed items still stay visible for spend history and operational memory.</CardDescription>
-        </CardHeader>
-        <CardContent className="space-y-3">
-          {closedItems.length === 0 ? (
-            <p className="text-sm text-tera-body">Nothing closed yet.</p>
-          ) : (
-            closedItems.slice(0, 8).map((item: PurchasingItemRecord) => (
-              <div
-                key={item.id}
-                className="grid gap-3 rounded-[1.2rem] border border-tera-border px-4 py-4 sm:grid-cols-[minmax(0,1fr)_130px_130px_130px] sm:items-center"
-              >
-                <div className="min-w-0">
-                  <p className="truncate text-sm font-medium text-tera-navy">{item.title}</p>
-                  <p className="truncate text-xs text-tera-body">{item.category} • {item.vendor || "Vendor TBD"}</p>
-                </div>
-                <div className="text-xs text-tera-body">{item.status}</div>
-                <div className="text-sm font-medium text-tera-navy">
-                  {item.actualCost != null ? currency.format(Number(item.actualCost)) : "No actual"}
-                </div>
-                <div className="text-right text-xs text-tera-body">
-                  {item.itemUrl ? (
-                    <a className="inline-flex items-center gap-1 text-tera-blue hover:text-tera-blue-hover" href={item.itemUrl} rel="noreferrer" target="_blank">
-                      Reference
-                      <ArrowUpRight className="h-3.5 w-3.5" />
-                    </a>
-                  ) : (
-                    "No link"
-                  )}
-                </div>
+      <section className="grid gap-4 xl:grid-cols-2">
+        <Card className="border border-[#dfe3e8] bg-white py-3 shadow-sm">
+          <CardHeader className="flex flex-row items-center justify-between border-b border-[#eceef0] pb-3">
+            <CardTitle className="text-base text-[#202223]">Linked expenses</CardTitle>
+            <Link href="/admin/expenses?scope=procurement" className="text-xs font-medium text-[#0f62fe]">View in expenses</Link>
+          </CardHeader>
+          <CardContent className="pt-4">
+            {linkedExpenses.length === 0 ? (
+              <p className="text-sm text-[#6d7175]">No linked expenses yet.</p>
+            ) : (
+              <div className="overflow-hidden rounded-xl border border-[#e5e7eb]">
+                <table className="min-w-full divide-y divide-[#e5e7eb] text-sm">
+                  <thead className="bg-[#f6f6f7] text-left text-[11px] font-semibold uppercase tracking-[0.14em] text-[#6d7175]">
+                    <tr>
+                      <th className="px-3 py-2.5">Item</th>
+                      <th className="px-3 py-2.5">Vendor</th>
+                      <th className="px-3 py-2.5">Date</th>
+                      <th className="px-3 py-2.5 text-right">Amount</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-[#eceef0] bg-white">
+                    {linkedExpenses.map((expense: LinkedExpenseRecord) => (
+                      <tr key={expense.id} className="hover:bg-[#f9fafb]">
+                        <td className="px-3 py-3 font-medium text-[#202223]">{expense.procurementItem?.title || "-"}</td>
+                        <td className="px-3 py-3 text-[#5c5f62]">{expense.vendor}</td>
+                        <td className="px-3 py-3 text-[#5c5f62]">{formatDate(expense.expenseDate)}</td>
+                        <td className="px-3 py-3 text-right font-medium text-[#202223]">{currency.format(Number(expense.amount))}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
               </div>
-            ))
-          )}
-        </CardContent>
-      </Card>
+            )}
+          </CardContent>
+        </Card>
+
+        <Card className="border border-[#dfe3e8] bg-white py-3 shadow-sm">
+          <CardHeader className="border-b border-[#eceef0] pb-3">
+            <CardTitle className="text-base text-[#202223]">Completed</CardTitle>
+          </CardHeader>
+          <CardContent className="pt-4">
+            {closedItems.length === 0 ? (
+              <p className="text-sm text-[#6d7175]">Nothing completed yet.</p>
+            ) : (
+              <div className="overflow-hidden rounded-xl border border-[#e5e7eb]">
+                <table className="min-w-full divide-y divide-[#e5e7eb] text-sm">
+                  <thead className="bg-[#f6f6f7] text-left text-[11px] font-semibold uppercase tracking-[0.14em] text-[#6d7175]">
+                    <tr>
+                      <th className="px-3 py-2.5">Item</th>
+                      <th className="px-3 py-2.5">Status</th>
+                      <th className="px-3 py-2.5">Vendor</th>
+                      <th className="px-3 py-2.5 text-right">Actual</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-[#eceef0] bg-white">
+                    {closedItems.slice(0, 20).map((item: ItemRecord) => (
+                      <tr key={item.id} className="hover:bg-[#f9fafb]">
+                        <td className="px-3 py-3 font-medium text-[#202223]">{item.title}</td>
+                        <td className="px-3 py-3 text-[#5c5f62]">{item.status}</td>
+                        <td className="px-3 py-3 text-[#5c5f62]">{item.vendor || "-"}</td>
+                        <td className="px-3 py-3 text-right font-medium text-[#202223]">{item.actualCost != null ? currency.format(Number(item.actualCost)) : "-"}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            )}
+          </CardContent>
+        </Card>
+      </section>
     </div>
   );
 }

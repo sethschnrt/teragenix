@@ -1,44 +1,57 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-
 export default function AdminSettingsPage() {
+  const systemRows = [
+    ["Auth", "Live", "Credential auth is running"],
+    ["Database", "Live", "Postgres-backed app"],
+    ["Admin access", "Restricted", "Admin role required"],
+  ];
+
+  const nextRows = [
+    ["Notifications", "Pending"],
+    ["Team permissions", "Pending"],
+    ["Workflow automation", "Pending"],
+  ];
+
   return (
-    <div className="space-y-6">
-      <div className="rounded-[2rem] border border-tera-border bg-white p-6 shadow-[0_20px_50px_-42px_rgba(13,38,45,0.35)] sm:p-7">
-        <p className="tg-eyebrow">Settings</p>
-        <h2 className="mt-3 text-[1.95rem] font-semibold leading-tight tracking-[-0.03em] text-tera-navy sm:text-[2.35rem]">
-          Reserved for auth, database, and workflow controls.
-        </h2>
-        <p className="mt-4 max-w-2xl text-sm leading-6 text-tera-body sm:text-[15px]">
-          I kept this visually aligned with the main site instead of letting it turn into a dead plain settings page.
-        </p>
-      </div>
+    <div className="space-y-4">
+      <section className="rounded-2xl border border-[#dfe3e8] bg-white px-4 py-4 shadow-sm">
+        <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#6d7175]">Settings</p>
+        <h2 className="mt-1 text-2xl font-semibold text-[#202223]">System settings</h2>
+      </section>
 
-      <div className="grid gap-4 md:grid-cols-3">
-        {[
-          ["Auth configuration", "Credential auth is scaffolded and ready for a real database-backed rollout."],
-          ["Database controls", "Migrations, seeds, and production connection settings should live here next."],
-          ["Ops safeguards", "Permissions, task rules, and future team controls belong in this area."],
-        ].map(([title, description]) => (
-          <Card key={title} className="border border-tera-border bg-white py-5 shadow-[0_18px_46px_-42px_rgba(13,38,45,0.3)]">
-            <CardHeader>
-              <CardTitle>{title}</CardTitle>
-              <CardDescription>{description}</CardDescription>
-            </CardHeader>
-          </Card>
-        ))}
-      </div>
+      <section className="grid gap-4 xl:grid-cols-2">
+        <div className="overflow-hidden rounded-2xl border border-[#dfe3e8] bg-white shadow-sm">
+          <div className="border-b border-[#eceef0] bg-[#f6f6f7] px-3 py-2.5 text-[11px] font-semibold uppercase tracking-[0.14em] text-[#6d7175]">
+            Current system
+          </div>
+          <table className="min-w-full divide-y divide-[#eceef0] text-sm">
+            <tbody className="divide-y divide-[#eceef0] bg-white">
+              {systemRows.map(([name, status, detail]) => (
+                <tr key={name}>
+                  <td className="px-3 py-3 font-medium text-[#202223]">{name}</td>
+                  <td className="px-3 py-3 text-[#5c5f62]">{status}</td>
+                  <td className="px-3 py-3 text-[#5c5f62]">{detail}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
 
-      <Card className="border border-tera-border bg-white py-5 shadow-[0_18px_46px_-42px_rgba(13,38,45,0.3)]">
-        <CardHeader>
-          <CardTitle>What still needs a live backend</CardTitle>
-          <CardDescription>This page stays honest about the remaining real dependency.</CardDescription>
-        </CardHeader>
-        <CardContent className="space-y-2 text-sm text-tera-body">
-          <p>• Run Prisma migrations against a real PostgreSQL database.</p>
-          <p>• Seed the first admin user in production.</p>
-          <p>• Add environment-backed controls for notifications and order workflow automation.</p>
-        </CardContent>
-      </Card>
+        <div className="overflow-hidden rounded-2xl border border-[#dfe3e8] bg-white shadow-sm">
+          <div className="border-b border-[#eceef0] bg-[#f6f6f7] px-3 py-2.5 text-[11px] font-semibold uppercase tracking-[0.14em] text-[#6d7175]">
+            Next setup items
+          </div>
+          <table className="min-w-full divide-y divide-[#eceef0] text-sm">
+            <tbody className="divide-y divide-[#eceef0] bg-white">
+              {nextRows.map(([name, status]) => (
+                <tr key={name}>
+                  <td className="px-3 py-3 font-medium text-[#202223]">{name}</td>
+                  <td className="px-3 py-3 text-[#5c5f62]">{status}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
     </div>
   );
 }

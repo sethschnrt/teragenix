@@ -72,75 +72,77 @@ export function ExpenseEntryForm({
     });
   }
 
+  const inputClassName = "h-10 w-full rounded-lg border border-[#dbe6f5] bg-[#f8fbff] px-3 py-2 text-sm text-tera-navy outline-none";
+
   return (
-    <form className="space-y-4" onSubmit={handleSubmit}>
-      <div className="grid gap-4 sm:grid-cols-2">
+    <form className="space-y-3.5" onSubmit={handleSubmit}>
+      <div className="grid gap-3 sm:grid-cols-2">
         <label className="block">
-          <span className="mb-2 block text-sm font-medium text-tera-navy">Vendor</span>
+          <span className="mb-1.5 block text-sm font-medium text-tera-navy">Vendor</span>
           <input
             value={form.vendor}
             onChange={(event) => updateField("vendor", event.target.value)}
-            className="w-full rounded-[1rem] border border-[#dbe6f5] bg-[#f8fbff] px-4 py-3 text-sm text-tera-navy outline-none"
+            className={inputClassName}
             placeholder="ShipStation, packaging supplier, lab vendor"
             required
           />
         </label>
 
         <label className="block">
-          <span className="mb-2 block text-sm font-medium text-tera-navy">Category</span>
+          <span className="mb-1.5 block text-sm font-medium text-tera-navy">Category</span>
           <input
             value={form.category}
             onChange={(event) => updateField("category", event.target.value)}
-            className="w-full rounded-[1rem] border border-[#dbe6f5] bg-[#f8fbff] px-4 py-3 text-sm text-tera-navy outline-none"
+            className={inputClassName}
             placeholder="Shipping, software, packaging"
             required
           />
         </label>
       </div>
 
-      <div className="grid gap-4 sm:grid-cols-3">
+      <div className="grid gap-3 sm:grid-cols-3">
         <label className="block">
-          <span className="mb-2 block text-sm font-medium text-tera-navy">Amount</span>
+          <span className="mb-1.5 block text-sm font-medium text-tera-navy">Amount</span>
           <input
             type="number"
             step="0.01"
             min="0"
             value={form.amount}
             onChange={(event) => updateField("amount", event.target.value)}
-            className="w-full rounded-[1rem] border border-[#dbe6f5] bg-[#f8fbff] px-4 py-3 text-sm text-tera-navy outline-none"
+            className={inputClassName}
             placeholder="0.00"
             required
           />
         </label>
 
         <label className="block">
-          <span className="mb-2 block text-sm font-medium text-tera-navy">Expense date</span>
+          <span className="mb-1.5 block text-sm font-medium text-tera-navy">Expense date</span>
           <input
             type="date"
             value={form.expenseDate}
             onChange={(event) => updateField("expenseDate", event.target.value)}
-            className="w-full rounded-[1rem] border border-[#dbe6f5] bg-[#f8fbff] px-4 py-3 text-sm text-tera-navy outline-none"
+            className={inputClassName}
             required
           />
         </label>
 
         <label className="block">
-          <span className="mb-2 block text-sm font-medium text-tera-navy">Payment method</span>
+          <span className="mb-1.5 block text-sm font-medium text-tera-navy">Payment method</span>
           <input
             value={form.paymentMethod}
             onChange={(event) => updateField("paymentMethod", event.target.value)}
-            className="w-full rounded-[1rem] border border-[#dbe6f5] bg-[#f8fbff] px-4 py-3 text-sm text-tera-navy outline-none"
+            className={inputClassName}
             placeholder="Card, ACH, Stripe"
           />
         </label>
       </div>
 
       <label className="block">
-        <span className="mb-2 block text-sm font-medium text-tera-navy">Related order</span>
+        <span className="mb-1.5 block text-sm font-medium text-tera-navy">Related order</span>
         <select
           value={form.relatedOrderId}
           onChange={(event) => updateField("relatedOrderId", event.target.value)}
-          className="w-full rounded-[1rem] border border-[#dbe6f5] bg-[#f8fbff] px-4 py-3 text-sm text-tera-navy outline-none"
+          className={inputClassName}
         >
           <option value="">No linked order</option>
           {recentOrders.map((order) => (
@@ -152,11 +154,11 @@ export function ExpenseEntryForm({
       </label>
 
       <label className="block">
-        <span className="mb-2 block text-sm font-medium text-tera-navy">Related purchase item</span>
+        <span className="mb-1.5 block text-sm font-medium text-tera-navy">Related purchase item</span>
         <select
           value={form.procurementItemId}
           onChange={(event) => updateField("procurementItemId", event.target.value)}
-          className="w-full rounded-[1rem] border border-[#dbe6f5] bg-[#f8fbff] px-4 py-3 text-sm text-tera-navy outline-none"
+          className={inputClassName}
         >
           <option value="">No linked purchase item</option>
           {procurementItems.map((item) => (
@@ -168,12 +170,12 @@ export function ExpenseEntryForm({
       </label>
 
       <label className="block">
-        <span className="mb-2 block text-sm font-medium text-tera-navy">Notes</span>
+        <span className="mb-1.5 block text-sm font-medium text-tera-navy">Notes</span>
         <textarea
-          rows={4}
+          rows={3}
           value={form.notes}
           onChange={(event) => updateField("notes", event.target.value)}
-          className="w-full rounded-[1rem] border border-[#dbe6f5] bg-[#f8fbff] px-4 py-3 text-sm text-tera-navy outline-none"
+          className="w-full rounded-lg border border-[#dbe6f5] bg-[#f8fbff] px-3 py-2 text-sm text-tera-navy outline-none"
           placeholder="Optional internal context"
         />
       </label>
@@ -181,7 +183,7 @@ export function ExpenseEntryForm({
       {error ? <p className="text-sm text-red-600">{error}</p> : null}
       {success ? <p className="text-sm text-emerald-700">{success}</p> : null}
 
-      <Button className="h-11 rounded-full bg-tera-blue px-6 text-white hover:bg-tera-blue-hover" disabled={isPending} type="submit">
+      <Button className="h-10 rounded-lg bg-tera-blue px-5 text-white hover:bg-tera-blue-hover" disabled={isPending} type="submit">
         {isPending ? "Saving expense..." : "Log expense"}
       </Button>
     </form>
