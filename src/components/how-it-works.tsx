@@ -4,17 +4,17 @@ import { ArrowUpRight } from "lucide-react";
 const steps = [
   {
     num: "01",
-    title: "Start with the result",
-    body: "Shop by fat loss, recovery, longevity, or aesthetics so you can begin with the change you want instead of digging through unrelated products.",
+    title: "Pick the goal",
+    body: "Start with fat loss, recovery, longevity, or aesthetics so you are not digging through unrelated products.",
   },
   {
     num: "02",
-    title: "Compare the peptide",
-    body: "See the peptide, format, quantity, and product details in one place, so you can decide faster with less guesswork.",
+    title: "Open the product",
+    body: "Check the peptide, quantity, format, storage, and docs in one place so you can decide faster with less guesswork.",
   },
   {
     num: "03",
-    title: "Verify before checkout",
+    title: "Verify the details",
     body: "Check documentation status, FAQ, shipping, refund, and research-use details before you commit.",
   },
 ];
@@ -29,11 +29,11 @@ export function HowItWorks() {
               HOW IT WORKS
             </p>
             <h2 className="font-sans text-[2.5rem] font-semibold leading-[1.04] tracking-[-0.03em] text-[#0d262d] sm:text-[3.6rem]">
-              From desired outcome to a <span className="italic text-[#3b6ed6]">cleaner decision</span>.
+              From “what should I start with?” to a <span className="italic text-[#3b6ed6]">cleaner decision</span>.
             </h2>
           </div>
           <p className="text-[1.05rem] leading-7 text-[#0d262d]/70 lg:pb-3">
-            Start with the result you want, narrow into the right peptide, then verify the details before you buy.
+            Start with the goal you care about, open the product, then verify the details before you buy.
           </p>
         </div>
 

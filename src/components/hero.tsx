@@ -103,10 +103,10 @@ export function Hero() {
 
             <h1 className="mx-auto max-w-[900px] text-center lg:max-w-[760px]">
               <span className="block text-[48px] font-bold leading-[0.98] tracking-[-0.03em] text-white sm:text-[60px] lg:text-[54px]">
-                Premium Peptides for
+                Real Progress,
               </span>
               <span className="block text-[48px] font-bold leading-[0.98] tracking-[-0.03em] text-white sm:text-[60px] lg:text-[54px]">
-                <span className="italic text-[#a8c5f5]">Real Progress.</span>
+                <span className="italic text-[#a8c5f5]">Less Guessing.</span>
               </span>
             </h1>
 
@@ -114,7 +114,7 @@ export function Hero() {
               className="mx-auto mt-5 max-w-[560px] text-center text-white/85 lg:mt-3 lg:max-w-[600px]"
               style={{ fontSize: "15px", lineHeight: "1.5", fontWeight: 400 }}
             >
-              Shop research-use peptides for fat loss, recovery, longevity, and aesthetics, with visible specs, batch documentation, and product details shown up front.
+              Shop research-use peptides with clear specs, batch documentation, and product details you can check without digging.
             </p>
 
             <div className="mt-7 flex flex-wrap items-center justify-center gap-4 lg:mt-5">

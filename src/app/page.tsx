@@ -22,15 +22,15 @@ export default function Home() {
 
       <EditorialSection
         eyebrow="BODY COMPOSITION"
-        headline="For buyers chasing visible progress, not more guesswork."
+        headline="For people trying to finally see movement."
         accentPhrase="visible progress"
         accentColor={BLUE_PRIMARY}
         haloColor={HALO_SKY}
-        bodyText="Retatrutide and tesamorelin fit the buyer who wants to see movement, stay consistent, and compare options without piecing together ten different sources."
+        bodyText="Retatrutide and tesamorelin stand out for people chasing body-comp progress and trying to stop spinning their wheels."
         subheading="What matters here"
-        subbody="When product details, specs, and documentation are visible up front, it is easier to decide and easier to keep moving."
+        subbody="You should be able to see the format, quantity, storage notes, and docs without opening ten tabs."
         features={[
-          "Peptides organized around body-composition goals",
+          "Body-comp peptides grouped together",
           "Product details shown up front",
           "Format + quantity easy to compare",
           "Storage guidance on-page",
@@ -48,13 +48,13 @@ export default function Home() {
 
       <EditorialSection
         eyebrow="PROOF BEFORE PURCHASE"
-        headline="Less vendor fluff. More you can check for yourself."
+        headline="Less vague marketing. More you can actually check."
         accentPhrase="More you can check for yourself"
         accentColor={BLUE_SKY}
         haloColor={HALO_STEEL}
-        bodyText="The buyer does not want another vague peptide page. Teragenix works best when the specs, batch-linked documentation, and product details are close to the product and easy to verify."
+        bodyText="Nobody wants to dig through fluff just to figure out what they are buying. Put the specs, batch status, and storage notes next to the product and let people verify it fast."
         subheading="Why this converts"
-        subbody="Clear proof reduces hesitation. It helps the cautious buyer compare faster, trust more, and hit checkout with fewer question marks."
+        subbody="When the details are obvious, it is easier to trust what you are looking at and easier to move forward."
         features={[
           "Batch-linked documentation status",
           "Product details shown upfront",
@@ -63,7 +63,7 @@ export default function Home() {
           "Support + policy pages easy to reach",
           "Research-use positioning kept clear",
         ]}
-        cardTitle="What reduces hesitation:"
+        cardTitle="What people look for first:"
         ctaLabel="View batch docs"
         ctaHref="/coa"
         image1="/images/generated/lifestyle-v1-cutout/quality-1-hero.webp"

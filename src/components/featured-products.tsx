@@ -20,10 +20,10 @@ export function FeaturedProducts() {
             </p>
             <h2 className="font-sans text-[2.5rem] font-semibold leading-[1.04] tracking-[-0.03em] text-[#0d262d] sm:text-[3.6rem]">
               Start with the peptides <br className="hidden sm:block" />
-              buyers compare <span className="italic text-[#3b6ed6]">first</span>.
+              people ask about <span className="italic text-[#3b6ed6]">most</span>.
             </h2>
             <p className="mt-6 max-w-xl text-[1.05rem] leading-7 text-[#0d262d]/65">
-              Clear product details, visible quantities, and cleaner documentation make these the fastest place to start when you want progress without more digging.
+              If you are trying to see real progress, these are the peptides people keep coming back to. Start here, then check the specs and docs for yourself.
             </p>
           </div>
 

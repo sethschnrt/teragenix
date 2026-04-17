@@ -4,8 +4,8 @@ import { Shield, Truck, FlaskConical, Mail } from "lucide-react";
 const promises = [
   {
     icon: Truck,
-    title: "Products that are easier to evaluate",
-    body: "See the peptide, format, quantity, and documentation status up front instead of piecing details together after the click.",
+    title: "No digging for basics",
+    body: "See the peptide, quantity, format, and documentation status up front instead of hunting for the basics after the click.",
   },
   {
     icon: FlaskConical,
@@ -14,13 +14,13 @@ const promises = [
   },
   {
     icon: Shield,
-    title: "Built for outcome-first buyers",
-    body: "Fat loss, recovery, longevity, and aesthetics are organized around the result you care about, not generic catalog sprawl.",
+    title: "Grouped by what you want",
+    body: "Fat loss, recovery, longevity, and aesthetics are organized around the result you care about, not random catalog sprawl.",
   },
   {
     icon: Mail,
     title: "Support before commitment",
-    body: "FAQ, shipping, refund, and research-use details are easy to find when you want fewer question marks before checkout.",
+    body: "FAQ, shipping, refund, and research-use details are easy to find before you commit.",
   },
 ];
 
@@ -33,7 +33,7 @@ export function Guarantee() {
             WHY BUYERS TRUST TERAGENIX
           </p>
           <h2 className="tg-h2 mx-auto max-w-3xl" style={{ color: "#0d262d" }}>
-            Clearer products, <span style={{ color: "#3b6ed6" }}>visible proof</span>, fewer question marks.
+            Less guesswork, <span style={{ color: "#3b6ed6" }}>more to verify</span>.
           </h2>
           <p
             className="mx-auto mt-6 max-w-xl"
@@ -44,7 +44,7 @@ export function Guarantee() {
               fontWeight: 400,
             }}
           >
-            The point is not to sound more premium. The point is to make the decision easier with better product clarity, visible specs, and proof you can actually check.
+            People are tired of vague peptide pages. Show the specs, show the docs, and make it easy to check what matters.
           </p>
         </div>
 
@@ -101,7 +101,7 @@ export function Guarantee() {
                 letterSpacing: "-0.76px",
               }}
             >
-              Shop the peptides that make the next step easier.
+              Find the peptide. Check the details. Move forward.
             </h3>
           </div>
           <Link

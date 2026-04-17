@@ -1,6 +1,6 @@
 const tickerItems = [
   {
-    label: "VISIBLE KIT CONTENTS",
+    label: "PRODUCT DETAILS UP FRONT",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4">
         <path d="M12 3l7 3v5c0 4.5-2.9 8.6-7 10-4.1-1.4-7-5.5-7-10V6l7-3Z" />
@@ -29,7 +29,7 @@ const tickerItems = [
     ),
   },
   {
-    label: "BATCH + COA VISIBILITY",
+    label: "BATCH + COA STATUS",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4">
         <path d="M3 7h11v8H3z" />
