@@ -84,7 +84,7 @@ export default function CheckoutPage() {
         detail={items.length > 0 ? "Order ready to review" : "No items in checkout"}
         highlights={[
           { label: "Back to cart", href: "/cart" },
-          { label: "Browse peptides", href: "/shop" },
+          { label: "Browse kits", href: "/shop" },
         ]}
         panelEyebrow="ORDER SUMMARY"
         panelTitle="A branded checkout flow that now creates real orders in the shared system."
@@ -110,7 +110,7 @@ export default function CheckoutPage() {
                   <ShoppingBag className="h-7 w-7" />
                 </div>
                 <h3 className="mt-5 text-[1.4rem] font-semibold tracking-[-0.02em] text-[#0d262d]">
-                  Add a product first.
+                  Add a kit first.
                 </h3>
                 <p className="mx-auto mt-3 max-w-md text-[15px] leading-7 text-[#475967]">
                   Use Add to cart or Buy now from a product page, then come back here with the order already loaded.
@@ -120,7 +120,7 @@ export default function CheckoutPage() {
                     href="/shop"
                     className="tg-link-pill inline-flex h-12 items-center rounded-full bg-[#3b6ed6] px-6 text-sm font-semibold text-white"
                   >
-                    Browse peptides
+                    Browse kits
                     <ArrowUpRight className="tg-link-pill-icon ml-2 h-4 w-4" />
                   </Link>
                 </div>

@@ -16,7 +16,7 @@ export default function CartPage() {
       <PageHero
         icon={ShoppingBag}
         eyebrow="CART"
-        title="Selected products, ready to review."
+        title="Premium kits, ready to review."
         description="Adjust the mix, tighten quantities, and move into checkout without leaving the Teragenix flow."
         variant="subpage"
         detail={itemCount > 0 ? `${itemCount} item${itemCount === 1 ? "" : "s"} in cart` : "Cart is empty"}
@@ -41,7 +41,7 @@ export default function CartPage() {
               <div>
                 <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-[#3b6ed6]">Cart items</p>
                 <h2 className="mt-3 text-[1.5rem] font-semibold leading-tight tracking-[-0.02em] text-[#0d262d] sm:text-[1.8rem]">
-                  {items.length > 0 ? "Your selected products" : "Nothing added yet"}
+                  {items.length > 0 ? "Your selected kits" : "Nothing added yet"}
                 </h2>
               </div>
               {items.length > 0 ? (
@@ -64,14 +64,14 @@ export default function CartPage() {
                   Start with a product page.
                 </h3>
                 <p className="mx-auto mt-3 max-w-md text-[15px] leading-7 text-[#475967]">
-                  Add a product from the product page, then come back here to review the order before checkout.
+                  Add a kit from the product page, then come back here to review the order before checkout.
                 </p>
                 <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
                   <Link
                     href="/shop"
                     className="tg-link-pill inline-flex h-12 items-center rounded-full bg-[#3b6ed6] px-6 text-sm font-semibold text-white"
                   >
-                    Browse peptides
+                    Browse kits
                     <ArrowUpRight className="tg-link-pill-icon ml-2 h-4 w-4" />
                   </Link>
                 </div>

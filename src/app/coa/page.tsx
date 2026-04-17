@@ -42,7 +42,7 @@ export default function CoaPage() {
         description="Use this hub to check SKU references, batch codes, and documentation status without bouncing between product and support pages."
         variant="subpage"
         highlights={[
-          { label: "Browse research peptides", href: "/shop" },
+          { label: "Browse research kits", href: "/shop" },
           { label: "Read support FAQ", href: "/faq" },
         ]}
         panelEyebrow="DOCUMENTATION SYSTEM"
@@ -167,7 +167,7 @@ export default function CoaPage() {
               </h2>
               <div className="mt-5 space-y-4 text-[15px] leading-7 text-[#475967]">
                 <p>
-                  This page keeps documentation status easy to check now, with product-linked SKU references and batch codes tied to the exact product.
+                  This page keeps documentation status easy to check now, with product-linked SKU references and batch codes tied to the exact kit.
                 </p>
                 <p>
                   As files are published, the same structure can expand into direct COA, HPLC, and MS access without forcing buyers to relearn the system.

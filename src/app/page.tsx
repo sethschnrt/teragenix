@@ -7,6 +7,7 @@ import { Guarantee } from "@/components/guarantee";
 import { DisclaimerBanner } from "@/components/disclaimer-banner";
 import { Footer } from "@/components/footer";
 
+// Brand blue accents (all sections stay within Teragenix blue family)
 const BLUE_PRIMARY = "#3b6ed6";
 const BLUE_SKY = "#4a8dd9";
 
@@ -20,24 +21,25 @@ export default function Home() {
       <TrustBar />
       <FeaturedProducts />
 
+      {/* Section 1 — Metabolic */}
       <EditorialSection
         eyebrow="BODY COMPOSITION"
-        headline="For people trying to finally see movement."
-        accentPhrase="visible progress"
+        headline="Premium peptides for body-composition focused protocols."
+        accentPhrase="body-composition focused protocols"
         accentColor={BLUE_PRIMARY}
         haloColor={HALO_SKY}
-        bodyText="Retatrutide and tesamorelin stand out for people chasing body-comp progress and trying to stop spinning their wheels."
-        subheading="What matters here"
-        subbody="You should be able to see the format, quantity, storage notes, and docs without opening ten tabs."
+        bodyText="Retatrutide and tesamorelin are positioned for buyers chasing a sharper body-composition edge, with the compound, prep essentials, and key specs kept together in one premium kit."
+        subheading="Why the kit matters"
+        subbody="When the peptide, prep supplies, and specs all show up together, the product feels more serious, more complete, and easier to act on."
         features={[
-          "Body-comp peptides grouped together",
-          "Product details shown up front",
-          "Format + quantity easy to compare",
-          "Storage guidance on-page",
-          "Documentation status visible",
+          "Premium compounds for leaner protocols",
+          "Included prep essentials",
+          "Clear storage guidance",
+          "Visible format + quantity",
+          "Supporting documentation status",
         ]}
-        cardTitle="What helps you decide faster:"
-        ctaLabel="Browse fat loss peptides"
+        cardTitle="What you get in one box:"
+        ctaLabel="Browse fat loss kits"
         ctaHref="/shop?category=fat-loss"
         image1="/images/generated/refresh-v1/metabolic-hero-tight.webp"
         image2="/images/generated/lifestyle-v1/metabolic-2-couple-walking.webp"
@@ -46,24 +48,25 @@ export default function Home() {
         background="white"
       />
 
+      {/* Section 2 — Quality standards */}
       <EditorialSection
-        eyebrow="PROOF BEFORE PURCHASE"
-        headline="Less vague marketing. More you can actually check."
-        accentPhrase="More you can check for yourself"
+        eyebrow="PREMIUM STANDARD"
+        headline="Better compounds. Better kits. Better supporting proof."
+        accentPhrase="Better supporting proof"
         accentColor={BLUE_SKY}
         haloColor={HALO_STEEL}
-        bodyText="Nobody wants to dig through fluff just to figure out what they are buying. Put the specs, batch status, and storage notes next to the product and let people verify it fast."
-        subheading="Why this converts"
-        subbody="When the details are obvious, it is easier to trust what you are looking at and easier to move forward."
+        bodyText="Teragenix is strongest when the product itself does the selling: premium peptides, complete kits, visible specs, and batch-linked documentation that backs up the promise."
+        subheading="The selling point, in one line"
+        subbody="You are not buying a loose vial and a bunch of question marks. You are buying a more complete peptide kit with clearer proof behind it."
         features={[
+          "Premium compounds for specific goals",
+          "Complete kit format",
           "Batch-linked documentation status",
-          "Product details shown upfront",
-          "Storage notes close to the product",
-          "Format and quantity visible",
-          "Support + policy pages easy to reach",
-          "Research-use positioning kept clear",
+          "Storage notes on-page",
+          "Kit contents shown upfront",
+          "Visible purity + format",
         ]}
-        cardTitle="What people look for first:"
+        cardTitle="What builds confidence:"
         ctaLabel="View batch docs"
         ctaHref="/coa"
         image1="/images/generated/lifestyle-v1-cutout/quality-1-hero.webp"

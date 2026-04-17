@@ -1,4 +1,4 @@
-import type { Metadata, Viewport } from "next";
+import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
 import { Providers } from "@/components/providers";
@@ -10,17 +10,9 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Teragenix — Research-Grade Peptides, Redefined",
+  title: "Teragenix — Research-Grade Peptide Kits, Redefined",
   description:
-    "A cleaner storefront for browsing research-grade peptides by category, comparing products faster, and moving through a more coherent catalog experience.",
-};
-
-export const viewport: Viewport = {
-  width: "device-width",
-  initialScale: 1,
-  maximumScale: 1,
-  userScalable: false,
-  viewportFit: "cover",
+    "A cleaner storefront for browsing peptide research kits by category, comparing products faster, and moving through a more coherent catalog experience.",
 };
 
 export default function RootLayout({

@@ -169,7 +169,7 @@ export function ProductDetail({ product, relatedProducts }: ProductDetailProps) 
               <div className="mt-8 flex flex-wrap gap-3">
                 {[
                   "Visible specs",
-                  "Single-product listing",
+                  "Kit includes shown",
                   "Batch doc status",
                 ].map((item) => (
                   <span
@@ -279,22 +279,22 @@ export function ProductDetail({ product, relatedProducts }: ProductDetailProps) 
         <div className="mx-auto grid max-w-[1240px] gap-8 px-5 sm:px-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-start lg:gap-10 lg:px-12">
           <div className="rounded-[2rem] bg-white p-6 ring-1 ring-[#e3e8ef] sm:p-8">
             <p className="text-[11px] font-medium uppercase tracking-[0.22em]" style={{ color: theme.accent }}>
-              About this product
+              About this kit
             </p>
             <h2 className="mt-3 text-[1.85rem] font-semibold leading-tight tracking-[-0.03em] text-[#0d262d] sm:text-[2.2rem]">
-              Built around a clearer peptide purchase.
+              Built around a better peptide purchase.
             </h2>
             <p className="mt-5 text-[15px] leading-7 text-[#0d262d]/68 sm:text-[16px]">
               {product.longDescription}
             </p>
 
             <div className="mt-8 rounded-[1.5rem] p-5" style={{ backgroundColor: theme.softAlt }}>
-              <p className="text-sm font-semibold text-[#0d262d]">Why this product is easier to evaluate</p>
+              <p className="text-sm font-semibold text-[#0d262d]">Why the kit feels premium</p>
               <ul className="mt-4 space-y-3">
                 {[
-                  "The product page stays focused on the peptide itself, not bundled extras.",
+                  "The peptide and prep essentials arrive as one complete purchase.",
                   "Batch code, SKU, and documentation status stay tied to the exact product.",
-                  "Specs, storage guidance, and support links stay close to the product.",
+                  "Specs, storage guidance, and support links stay close to the kit.",
                 ].map((item) => (
                   <li key={item} className="flex items-start gap-2.5 text-[14px] leading-6 text-[#0d262d]/68">
                     <Check className="mt-1 h-4 w-4 shrink-0" style={{ color: theme.accent }} />
@@ -308,7 +308,7 @@ export function ProductDetail({ product, relatedProducts }: ProductDetailProps) 
           <div className="space-y-6">
             <div className="rounded-[2rem] bg-white p-6 ring-1 ring-[#e3e8ef] sm:p-8">
               <p className="text-[11px] font-medium uppercase tracking-[0.22em]" style={{ color: theme.accent }}>
-                Included with purchase
+                Kit includes
               </p>
               <ul className="mt-5 space-y-3.5">
                 {product.kitIncludes.map((item) => (
@@ -422,10 +422,10 @@ export function ProductDetail({ product, relatedProducts }: ProductDetailProps) 
             <div className="mb-8 flex items-end justify-between gap-4">
               <div>
                 <p className="text-[11px] font-medium uppercase tracking-[0.22em]" style={{ color: theme.accent }}>
-                  Related products
+                  Related kits
                 </p>
                 <h2 className="mt-3 text-[1.85rem] font-semibold leading-tight tracking-[-0.03em] text-[#0d262d] sm:text-[2.15rem]">
-                  Compare more {categoryLabel.toLowerCase()} products.
+                  Compare more {categoryLabel.toLowerCase()} kits.
                 </h2>
               </div>
             </div>
