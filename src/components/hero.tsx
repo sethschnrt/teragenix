@@ -112,7 +112,7 @@ export function Hero() {
                 Real Progress,
               </span>
               <span className="block text-[48px] font-bold leading-[0.98] tracking-[-0.03em] text-white sm:text-[60px] lg:text-[54px]">
-                <span className="italic text-[#a8c5f5]">Less Guessing.</span>
+                <span className="italic text-[#a8c5f5]">Visible Proof.</span>
               </span>
             </h1>
 
