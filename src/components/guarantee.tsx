@@ -102,7 +102,7 @@ export function Guarantee() {
                 letterSpacing: "-0.76px",
               }}
             >
-              Pick the goal. Check the proof.
+              Shop the peptides built for your goal.
             </h3>
           </div>
           <Link
