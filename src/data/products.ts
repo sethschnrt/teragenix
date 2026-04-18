@@ -103,7 +103,7 @@ export const products: Product[] = [
       "This Retatrutide research kit is positioned for metabolic and body-composition focused workflows, with the compound, prep essentials, and storage notes kept together in one place. Each kit includes a 10mg lyophilized vial plus the supporting prep supplies needed for a cleaner lab routine.",
     badge: "Popular",
     badgeColor: "bg-[#4A90D9]",
-    image: "/images/vials/front/retatrutide.png",
+    image: "/images/vials/catalog/retatrutide.png",
     specifications: {
       purity: "99%+",
       quantity: "10mg per vial",
@@ -141,7 +141,7 @@ export const products: Product[] = [
       "This Tesamorelin research kit is framed around longevity and body-composition focused protocols, with the compound, prep essentials, and storage guidance kept together in one place. Each kit includes a 10mg lyophilized vial and the supporting supplies needed for a cleaner prep workflow.",
     badge: "Best Seller",
     badgeColor: "bg-emerald-600",
-    image: "/images/vials/front/tesamorelin.png",
+    image: "/images/vials/catalog/tesamorelin.png",
     specifications: {
       purity: "99%+",
       quantity: "10mg per vial",
@@ -174,20 +174,20 @@ export const products: Product[] = [
     price: 79.99,
     originalPrice: 99.99,
     description:
-      "5mg BPC-157 kit for recovery-focused research, with prep essentials included.",
+      "10mg BPC-157 kit for recovery-focused research, with prep essentials included.",
     longDescription:
-      "This BPC-157 research kit is positioned for recovery-focused workflows, with the compound, prep essentials, and storage guidance kept together for easier evaluation. Each kit includes a 5mg lyophilized vial plus the supporting prep supplies needed for consistent lab prep.",
+      "This BPC-157 research kit is positioned for recovery-focused workflows, with the compound, prep essentials, and storage guidance kept together for easier evaluation. Each kit includes a 10mg lyophilized vial plus the supporting prep supplies needed for consistent lab prep.",
     badge: "New",
     badgeColor: "bg-teal-600",
-    image: "/images/vials/front/bpc-157.png",
+    image: "/images/vials/catalog/bpc-157.png",
     specifications: {
       purity: "99%+",
-      quantity: "5mg per vial",
+      quantity: "10mg per vial",
       form: "Lyophilized powder",
       storage: "Store sealed and frozen. Refrigerate after reconstitution (2-8°C)",
     },
     documentation: {
-      sku: "TGX-BPC-5",
+      sku: "TGX-BPC-10",
       batchCode: "BPC-ORDER-01",
       coaStatus: "COA publishing with first production intake",
       hplcStatus: "HPLC summary publishing with first production intake",
@@ -195,7 +195,7 @@ export const products: Product[] = [
       releaseWindow: "Current ordered batch",
     },
     kitIncludes: [
-      "1× BPC-157 (5mg lyophilized)",
+      "1× BPC-157 (10mg lyophilized)",
       "1× Bacteriostatic water (30mL)",
       "10× Insulin syringes (1mL)",
       "10× Sterile alcohol swabs",
@@ -212,18 +212,18 @@ export const products: Product[] = [
     price: 79.99,
     originalPrice: 99.99,
     description:
-      "600mg Glutathione kit for recovery-focused research, with prep essentials included.",
+      "1500mg Glutathione kit for recovery-focused research, with prep essentials included.",
     longDescription:
-      "This Glutathione research kit is positioned for recovery-focused protocols, with the compound, prep essentials, and storage guidance kept together for easier evaluation. Each kit includes a 600mg lyophilized vial plus the supporting prep supplies needed for a clean lab workflow.",
-    image: "/images/vials/front/glutathione.png",
+      "This Glutathione research kit is positioned for recovery-focused protocols, with the compound, prep essentials, and storage guidance kept together for easier evaluation. Each kit includes a 1500mg lyophilized vial plus the supporting prep supplies needed for a clean lab workflow.",
+    image: "/images/vials/catalog/glutathione.png",
     specifications: {
       purity: "99%+",
-      quantity: "600mg per vial",
+      quantity: "1500mg per vial",
       form: "Lyophilized powder",
       storage: "Store sealed and frozen. Refrigerate after reconstitution (2-8°C)",
     },
     documentation: {
-      sku: "TGX-GLUT-600",
+      sku: "TGX-GLUT-1500",
       batchCode: "GLT-ORDER-01",
       coaStatus: "COA publishing with first production intake",
       hplcStatus: "HPLC summary publishing with first production intake",
@@ -231,7 +231,7 @@ export const products: Product[] = [
       releaseWindow: "Current ordered batch",
     },
     kitIncludes: [
-      "1× Glutathione (600mg lyophilized)",
+      "1× Glutathione (1500mg lyophilized)",
       "1× Bacteriostatic water (30mL)",
       "10× Insulin syringes (1mL)",
       "10× Sterile alcohol swabs",
@@ -248,18 +248,18 @@ export const products: Product[] = [
     price: 89.99,
     originalPrice: 109.99,
     description:
-      "30mg Semax kit for focus and resilience research, with prep essentials included.",
+      "10mg Semax kit for focus and resilience research, with prep essentials included.",
     longDescription:
-      "This Semax research kit is framed around focus and resilience oriented workflows, with the compound, prep essentials, and storage notes kept together for easier review. Each kit includes a 30mg lyophilized vial plus the supporting supplies needed for consistent lab prep.",
-    image: "/images/vials/front/semax.png",
+      "This Semax research kit is framed around focus and resilience oriented workflows, with the compound, prep essentials, and storage notes kept together for easier review. Each kit includes a 10mg lyophilized vial plus the supporting supplies needed for consistent lab prep.",
+    image: "/images/vials/catalog/semax.png",
     specifications: {
       purity: "99%+",
-      quantity: "30mg per vial",
+      quantity: "10mg per vial",
       form: "Lyophilized powder",
       storage: "Store sealed and frozen. Refrigerate after reconstitution (2-8°C)",
     },
     documentation: {
-      sku: "TGX-SEMAX-30",
+      sku: "TGX-SEMAX-10",
       batchCode: "SEM-ORDER-01",
       coaStatus: "COA publishing with first production intake",
       hplcStatus: "HPLC summary publishing with first production intake",
@@ -267,7 +267,7 @@ export const products: Product[] = [
       releaseWindow: "Current ordered batch",
     },
     kitIncludes: [
-      "1× Semax (30mg lyophilized)",
+      "1× Semax (10mg lyophilized)",
       "1× Bacteriostatic water (30mL)",
       "10× Insulin syringes (1mL)",
       "10× Sterile alcohol swabs",
@@ -284,18 +284,18 @@ export const products: Product[] = [
     price: 89.99,
     originalPrice: 109.99,
     description:
-      "5mg Selank kit for calm and clarity research, with prep essentials included.",
+      "10mg Selank kit for calm and clarity research, with prep essentials included.",
     longDescription:
-      "This Selank research kit is positioned for calm and clarity focused workflows, with the compound, prep essentials, and storage notes kept together in one place. Each kit includes a 5mg lyophilized vial plus the supporting supplies needed for a cleaner prep routine.",
-    image: "/images/vials/front/selank.png",
+      "This Selank research kit is positioned for calm and clarity focused workflows, with the compound, prep essentials, and storage notes kept together in one place. Each kit includes a 10mg lyophilized vial plus the supporting supplies needed for a cleaner prep routine.",
+    image: "/images/vials/catalog/selank.png",
     specifications: {
       purity: "99%+",
-      quantity: "5mg per vial",
+      quantity: "10mg per vial",
       form: "Lyophilized powder",
       storage: "Store sealed and frozen. Refrigerate after reconstitution (2-8°C)",
     },
     documentation: {
-      sku: "TGX-SELANK-5",
+      sku: "TGX-SELANK-10",
       batchCode: "SEL-ORDER-01",
       coaStatus: "COA publishing with first production intake",
       hplcStatus: "HPLC summary publishing with first production intake",
@@ -303,7 +303,7 @@ export const products: Product[] = [
       releaseWindow: "Current ordered batch",
     },
     kitIncludes: [
-      "1× Selank (5mg lyophilized)",
+      "1× Selank (10mg lyophilized)",
       "1× Bacteriostatic water (30mL)",
       "10× Insulin syringes (1mL)",
       "10× Sterile alcohol swabs",
@@ -320,20 +320,20 @@ export const products: Product[] = [
     price: 149.99,
     originalPrice: 179.99,
     description:
-      "Glow-70 Stack kit for aesthetics-focused research, with prep essentials included.",
+      "70mg Glow-70 kit for aesthetics-focused research, with prep essentials included.",
     longDescription:
-      "This Glow-70 Stack research kit is framed around aesthetics-focused protocols, with the blend, prep essentials, and storage notes kept together in one box. Each kit includes the branded stack kit presentation plus the supporting prep supplies needed for consistent lab prep.",
+      "This Glow-70 research kit is framed around aesthetics-focused protocols, with the blend, prep essentials, and storage notes kept together in one box. Each kit includes a 70mg lyophilized vial plus the supporting prep supplies needed for consistent lab prep.",
     badge: "Trending",
     badgeColor: "bg-rose-600",
-    image: "/images/vials/front/glow-70.png",
+    image: "/images/vials/catalog/glow-70.png",
     specifications: {
       purity: "99%+",
-      quantity: "Stack kit",
+      quantity: "70mg per vial",
       form: "Lyophilized powder",
       storage: "Store sealed and frozen. Refrigerate after reconstitution (2-8°C)",
     },
     documentation: {
-      sku: "TGX-GLOW70-KIT",
+      sku: "TGX-GLOW70-70",
       batchCode: "GLW-ORDER-01",
       coaStatus: "COA publishing with first production intake",
       hplcStatus: "HPLC summary publishing with first production intake",
@@ -341,7 +341,7 @@ export const products: Product[] = [
       releaseWindow: "Current ordered batch",
     },
     kitIncludes: [
-      "1× Glow-70 Stack branded kit",
+      "1× Glow-70 (70mg lyophilized)",
       "1× Bacteriostatic water (30mL)",
       "10× Insulin syringes (1mL)",
       "10× Sterile alcohol swabs",
@@ -361,7 +361,7 @@ export const products: Product[] = [
       "10mg Melanotan II / MT-2 kit for pigmentation-focused research, with prep essentials included.",
     longDescription:
       "This Melanotan II / MT-2 research kit is positioned for pigmentation-focused workflows, with the compound, prep essentials, and handling context kept together in one box. Each kit includes a 10mg lyophilized vial plus the supporting prep supplies needed for a cleaner lab routine.",
-    image: "/images/vials/front/mt-2.png",
+    image: "/images/vials/catalog/mt-2.png",
     specifications: {
       purity: "99%+",
       quantity: "10mg per vial",
