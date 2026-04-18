@@ -461,7 +461,15 @@ export const products: Product[] = [
   },
 ];
 
-export const publicProducts = products;
+const hiddenPublicProductSlugs = new Set([
+  "bpc-157",
+  "semax",
+  "selank",
+  "cjc-ipamorelin",
+  "nad-plus",
+]);
+
+export const publicProducts = products.filter((p) => !hiddenPublicProductSlugs.has(p.slug));
 
 /** Products with badges — used on the homepage featured section */
 export const featuredProducts = publicProducts.filter((p) => p.badge);
