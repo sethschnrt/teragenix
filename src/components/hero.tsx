@@ -109,10 +109,10 @@ export function Hero() {
             {/* Headline */}
             <h1 className="mx-auto max-w-[900px] text-center lg:max-w-[760px]">
               <span className="block text-[48px] font-bold leading-[0.98] tracking-[-0.03em] text-white sm:text-[60px] lg:text-[54px]">
-                Find the Right Peptide,
+                Peptides for Real
               </span>
               <span className="block text-[48px] font-bold leading-[0.98] tracking-[-0.03em] text-white sm:text-[60px] lg:text-[54px]">
-                <span className="italic text-[#a8c5f5]">Without the Digging.</span>
+                <span className="italic text-[#a8c5f5]">Progress.</span>
               </span>
             </h1>
 
