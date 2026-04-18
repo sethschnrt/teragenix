@@ -26,6 +26,9 @@ const heroNavPaths = [
   "/shop",
   "/about",
   "/faq",
+  "/coa",
+  "/cart",
+  "/checkout",
   "/privacy-policy",
   "/terms-of-use",
   "/shipping-policy",
@@ -34,7 +37,7 @@ const heroNavPaths = [
 ];
 
 function isHeroNavPath(pathname: string) {
-  return heroNavPaths.includes(pathname) || pathname.startsWith("/shop/");
+  return heroNavPaths.includes(pathname) || pathname.startsWith("/shop/") || pathname.startsWith("/checkout/");
 }
 
 function SearchBox({
