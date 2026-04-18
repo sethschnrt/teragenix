@@ -5,7 +5,7 @@ import { FormEvent, useMemo, useState } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import { useSession } from "next-auth/react";
 import { ArrowUpRight, Menu, Search, ShoppingBag } from "lucide-react";
-import { products } from "@/data/products";
+import { publicProducts } from "@/data/products";
 import { Logo } from "./logo";
 import {
   Sheet,
@@ -58,7 +58,7 @@ function SearchBox({
     const trimmed = query.trim().toLowerCase();
     if (!trimmed) return [];
 
-    return products
+    return publicProducts
       .filter(
         (product) =>
           product.name.toLowerCase().includes(trimmed) ||

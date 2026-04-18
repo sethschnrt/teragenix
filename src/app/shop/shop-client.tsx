@@ -6,7 +6,7 @@ import { useSearchParams } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ArrowLeft, ArrowUpRight, ChevronDown, Search, X } from "lucide-react";
-import { products, shopCategories, normalizeCategoryParam, getHeroCategoryLabel, getHeroCategoryTagClasses, getHeroCategoryTheme, getShopCategoryLabel, type ShopCategory } from "@/data/products";
+import { publicProducts, shopCategories, normalizeCategoryParam, getHeroCategoryLabel, getHeroCategoryTagClasses, getHeroCategoryTheme, getShopCategoryLabel, type ShopCategory } from "@/data/products";
 import { Footer } from "@/components/footer";
 
 const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
@@ -34,7 +34,7 @@ export function ShopPageClient() {
   const sortOptions: SortOption[] = ["featured", "price-asc", "price-desc", "name-asc"];
 
   const filtered = useMemo(() => {
-    let result = [...products];
+    let result = [...publicProducts];
 
     const query = searchQuery.trim().toLowerCase();
 

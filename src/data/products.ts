@@ -387,8 +387,16 @@ export const products: Product[] = [
   },
 ];
 
+const hiddenPublicProductSlugs = new Set([
+  "bpc-157",
+  "semax",
+  "selank",
+]);
+
+export const publicProducts = products.filter((p) => !hiddenPublicProductSlugs.has(p.slug));
+
 /** Products with badges — used on the homepage featured section */
-export const featuredProducts = products.filter((p) => p.badge);
+export const featuredProducts = publicProducts.filter((p) => p.badge);
 
 const heroCategoryLabelMap: Record<HeroCategory, string> = {
   Metabolic: "Fat Loss",
@@ -447,10 +455,14 @@ export function getProductBySlug(slug: string): Product | undefined {
   return products.find((p) => p.slug === slug);
 }
 
+export function getPublicProductBySlug(slug: string): Product | undefined {
+  return publicProducts.find((p) => p.slug === slug);
+}
+
 /** Get products by public-facing shop category */
 export function getProductsByCategory(category: ShopCategory): Product[] {
-  if (category === "All") return products;
-  return products.filter((p) => p.heroCategory === category);
+  if (category === "All") return publicProducts;
+  return publicProducts.filter((p) => p.heroCategory === category);
 }
 
 export function getHeroCategoryTheme(category: HeroCategory | ShopCategory): CategoryTheme {
