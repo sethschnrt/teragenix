@@ -103,7 +103,7 @@ export const products: Product[] = [
       "This Retatrutide research kit is positioned for metabolic and body-composition focused workflows, with the compound, prep essentials, and storage notes kept together in one place. Each kit includes a 10mg lyophilized vial plus the supporting prep supplies needed for a cleaner lab routine.",
     badge: "Popular",
     badgeColor: "bg-[#4A90D9]",
-    image: "/images/vials/catalog/retatrutide.png",
+    image: "/images/vials/approved/retatrutide.png",
     specifications: {
       purity: "99%+",
       quantity: "10mg per vial",
@@ -141,7 +141,7 @@ export const products: Product[] = [
       "This Tesamorelin research kit is framed around longevity and body-composition focused protocols, with the compound, prep essentials, and storage guidance kept together in one place. Each kit includes a 10mg lyophilized vial and the supporting supplies needed for a cleaner prep workflow.",
     badge: "Best Seller",
     badgeColor: "bg-emerald-600",
-    image: "/images/vials/catalog/tesamorelin.png",
+    image: "/images/vials/approved/tesamorelin.png",
     specifications: {
       purity: "99%+",
       quantity: "10mg per vial",
@@ -179,7 +179,7 @@ export const products: Product[] = [
       "This BPC-157 research kit is positioned for recovery-focused workflows, with the compound, prep essentials, and storage guidance kept together for easier evaluation. Each kit includes a 10mg lyophilized vial plus the supporting prep supplies needed for consistent lab prep.",
     badge: "New",
     badgeColor: "bg-teal-600",
-    image: "/images/vials/catalog/bpc-157.png",
+    image: "/images/vials/approved/bpc-157.png",
     specifications: {
       purity: "99%+",
       quantity: "10mg per vial",
@@ -215,7 +215,7 @@ export const products: Product[] = [
       "1500mg Glutathione kit for recovery-focused research, with prep essentials included.",
     longDescription:
       "This Glutathione research kit is positioned for recovery-focused protocols, with the compound, prep essentials, and storage guidance kept together for easier evaluation. Each kit includes a 1500mg lyophilized vial plus the supporting prep supplies needed for a clean lab workflow.",
-    image: "/images/vials/catalog/glutathione.png",
+    image: "/images/vials/approved/glutathione.png",
     specifications: {
       purity: "99%+",
       quantity: "1500mg per vial",
@@ -251,7 +251,7 @@ export const products: Product[] = [
       "10mg Semax kit for focus and resilience research, with prep essentials included.",
     longDescription:
       "This Semax research kit is framed around focus and resilience oriented workflows, with the compound, prep essentials, and storage notes kept together for easier review. Each kit includes a 10mg lyophilized vial plus the supporting supplies needed for consistent lab prep.",
-    image: "/images/vials/catalog/semax.png",
+    image: "/images/vials/approved/semax.png",
     specifications: {
       purity: "99%+",
       quantity: "10mg per vial",
@@ -287,7 +287,7 @@ export const products: Product[] = [
       "10mg Selank kit for calm and clarity research, with prep essentials included.",
     longDescription:
       "This Selank research kit is positioned for calm and clarity focused workflows, with the compound, prep essentials, and storage notes kept together in one place. Each kit includes a 10mg lyophilized vial plus the supporting supplies needed for a cleaner prep routine.",
-    image: "/images/vials/catalog/selank.png",
+    image: "/images/vials/approved/selank.png",
     specifications: {
       purity: "99%+",
       quantity: "10mg per vial",
@@ -325,7 +325,7 @@ export const products: Product[] = [
       "This Glow-70 research kit is framed around aesthetics-focused protocols, with the blend, prep essentials, and storage notes kept together in one box. Each kit includes a 70mg lyophilized vial plus the supporting prep supplies needed for consistent lab prep.",
     badge: "Trending",
     badgeColor: "bg-rose-600",
-    image: "/images/vials/catalog/glow-70.png",
+    image: "/images/vials/approved/glow-70.png",
     specifications: {
       purity: "99%+",
       quantity: "70mg per vial",
@@ -361,7 +361,7 @@ export const products: Product[] = [
       "10mg Melanotan II / MT-2 kit for pigmentation-focused research, with prep essentials included.",
     longDescription:
       "This Melanotan II / MT-2 research kit is positioned for pigmentation-focused workflows, with the compound, prep essentials, and handling context kept together in one box. Each kit includes a 10mg lyophilized vial plus the supporting prep supplies needed for a cleaner lab routine.",
-    image: "/images/vials/catalog/mt-2.png",
+    image: "/images/vials/approved/mt-2.png",
     specifications: {
       purity: "99%+",
       quantity: "10mg per vial",
