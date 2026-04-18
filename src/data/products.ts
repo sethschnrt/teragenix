@@ -201,7 +201,81 @@ export const products: Product[] = [
       "10× Sterile alcohol swabs",
       "Reconstitution guide",
     ],
-    relatedProductSlugs: ["glutathione", "retatrutide", "glow-70"],
+    relatedProductSlugs: ["glutathione", "nad-plus", "cjc-ipamorelin"],
+  },
+  {
+    slug: "cjc-ipamorelin",
+    name: "CJC / Ipamorelin Research Kit",
+    shortName: "CJC / Ipamorelin",
+    category: "Melanocortin",
+    heroCategory: "Melanocortin",
+    price: 129.99,
+    originalPrice: 159.99,
+    description:
+      "10mg CJC / Ipamorelin blend for recovery and longevity research, with prep essentials included.",
+    longDescription:
+      "This CJC / Ipamorelin research kit keeps the blend, prep essentials, and storage notes in one place for easier review. Each kit includes a 10mg lyophilized vial plus the supporting prep supplies needed for a clean research workflow.",
+    badge: "Trending",
+    badgeColor: "bg-violet-600",
+    image: "/images/vials/approved/cjc-ipamorelin.png",
+    specifications: {
+      purity: "99%+",
+      quantity: "10mg per vial",
+      form: "Lyophilized powder",
+      storage: "Store sealed and frozen. Refrigerate after reconstitution (2-8°C)",
+    },
+    documentation: {
+      sku: "TGX-CJCI-10",
+      batchCode: "CJC-ORDER-01",
+      coaStatus: "COA publishing with first production intake",
+      hplcStatus: "HPLC summary publishing with first production intake",
+      msStatus: "MS summary publishing with first production intake",
+      releaseWindow: "Current ordered batch",
+    },
+    kitIncludes: [
+      "1× CJC / Ipamorelin blend (10mg lyophilized)",
+      "1× Bacteriostatic water (30mL)",
+      "10× Insulin syringes (1mL)",
+      "10× Sterile alcohol swabs",
+      "Reconstitution guide",
+    ],
+    relatedProductSlugs: ["tesamorelin", "semax", "retatrutide"],
+  },
+  {
+    slug: "nad-plus",
+    name: "NAD+ Research Kit",
+    shortName: "NAD+",
+    category: "Antioxidant",
+    heroCategory: "Antioxidant",
+    price: 119.99,
+    originalPrice: 149.99,
+    description:
+      "1000mg NAD+ kit for energy and resilience research, with prep essentials included.",
+    longDescription:
+      "This NAD+ research kit is positioned for energy and resilience focused workflows, with the compound, prep essentials, and storage notes kept together for faster review. Each kit includes a 1000mg lyophilized vial plus the supporting supplies needed for a cleaner prep routine.",
+    image: "/images/vials/approved/nad-plus.png",
+    specifications: {
+      purity: "99%+",
+      quantity: "1000mg per vial",
+      form: "Lyophilized powder",
+      storage: "Store sealed and frozen. Refrigerate after reconstitution (2-8°C)",
+    },
+    documentation: {
+      sku: "TGX-NAD-1000",
+      batchCode: "NAD-ORDER-01",
+      coaStatus: "COA publishing with first production intake",
+      hplcStatus: "HPLC summary publishing with first production intake",
+      msStatus: "MS summary publishing with first production intake",
+      releaseWindow: "Current ordered batch",
+    },
+    kitIncludes: [
+      "1× NAD+ (1000mg lyophilized)",
+      "1× Bacteriostatic water (30mL)",
+      "10× Insulin syringes (1mL)",
+      "10× Sterile alcohol swabs",
+      "Reconstitution guide",
+    ],
+    relatedProductSlugs: ["glutathione", "bpc-157", "tesamorelin"],
   },
   {
     slug: "glutathione",
@@ -387,13 +461,7 @@ export const products: Product[] = [
   },
 ];
 
-const hiddenPublicProductSlugs = new Set([
-  "bpc-157",
-  "semax",
-  "selank",
-]);
-
-export const publicProducts = products.filter((p) => !hiddenPublicProductSlugs.has(p.slug));
+export const publicProducts = products;
 
 /** Products with badges — used on the homepage featured section */
 export const featuredProducts = publicProducts.filter((p) => p.badge);
