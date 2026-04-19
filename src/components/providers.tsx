@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 
 import { AgeGate } from "@/components/age-gate";
 import { CartProvider } from "@/components/cart-provider";
+import { CookieBanner } from "@/components/cookie-banner";
 import { CartDrawer } from "@/components/cart-drawer";
 import { Navbar } from "@/components/navbar";
 
@@ -18,6 +19,7 @@ export function Providers({ children }: { children: React.ReactNode }) {
     !appChromeHiddenRoutes.has(normalizedPath) &&
     !appChromeHiddenPrefixes.some((prefix) => normalizedPath.startsWith(prefix));
   const showAgeGate = showNavbar;
+  const showCookieBanner = showNavbar;
 
   return (
     <SessionProvider>
@@ -26,6 +28,7 @@ export function Providers({ children }: { children: React.ReactNode }) {
         {children}
         <CartDrawer />
         <AgeGate enabled={showAgeGate} />
+        <CookieBanner enabled={showCookieBanner} />
       </CartProvider>
     </SessionProvider>
   );

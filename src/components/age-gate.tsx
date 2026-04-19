@@ -78,16 +78,16 @@ export function AgeGate({ enabled = true }: AgeGateProps) {
           Age verification required
         </p>
         <h2 className="mt-3 text-[2rem] font-semibold leading-[0.95] tracking-[-0.05em] text-[#0d262d] sm:text-[2.4rem]">
-          This site is for adults 21+
+          This site is for adults 18+
         </h2>
         <p className="mt-4 max-w-[32rem] text-[15px] leading-7 text-[#5b6b7b] sm:text-[16px]">
-          By entering, you confirm that you are at least 21 years old and understand that Teragenix products are presented for lawful in-vitro research use only.
+          By entering, you confirm that you are at least 18 years old and understand that Teragenix products are presented for lawful in-vitro research use only.
         </p>
 
         <div className="mt-6 rounded-[1.5rem] border border-[#dbe6f5] bg-white/88 p-4 sm:p-5">
           <p className="text-sm font-semibold text-[#0d262d]">Before continuing</p>
           <ul className="mt-3 space-y-2 text-sm leading-6 text-[#5b6b7b]">
-            <li>• You are 21 years of age or older.</li>
+            <li>• You are 18 years of age or older.</li>
             <li>• You will review the research-use restrictions before purchasing.</li>
             <li>• You understand products are not presented for human or veterinary use.</li>
           </ul>
@@ -99,7 +99,7 @@ export function AgeGate({ enabled = true }: AgeGateProps) {
             onClick={confirmAge}
             className="tg-link-pill inline-flex h-12 flex-1 items-center justify-center rounded-full bg-[#3b6ed6] px-6 text-sm font-semibold text-white transition hover:bg-[#2d5bbf]"
           >
-            I am 21 or older
+            I am 18 or older
             <ArrowRight className="tg-link-pill-icon ml-2 h-4 w-4" />
           </button>
           <button
