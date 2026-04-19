@@ -22,52 +22,62 @@ export function CartDrawer() {
     <Sheet open={isCartOpen} onOpenChange={(open) => (open ? undefined : closeCart())}>
       <SheetContent
         side="right"
-        className="w-full max-w-[420px] border-l border-[#dbe6f5] bg-[#f7fbff] p-0 text-[#0d262d] sm:max-w-[420px]"
+        className="w-full max-w-none border-l border-[#dbe6f5] bg-white p-0 text-[#0d262d] sm:max-w-[420px]"
       >
         <div className="flex h-full flex-col">
-          <div className="border-b border-[#dbe6f5] bg-white px-6 pb-5 pt-6">
-            <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-[#3b6ed6]">Cart</p>
-            <div className="mt-3 flex items-end justify-between gap-4">
-              <div>
-                <SheetTitle className="text-[1.65rem] font-semibold tracking-[-0.03em] text-[#0d262d]">
-                  {itemCount > 0 ? "Your cart" : "Your cart is empty"}
+          {items.length === 0 ? (
+            <div className="flex h-full flex-col px-6 pb-8 pt-14 text-center sm:px-7 sm:pb-10 sm:pt-16">
+              <div className="mx-auto max-w-sm">
+                <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-[#3b6ed6]">Cart</p>
+                <SheetTitle className="mt-4 text-[2rem] font-semibold leading-[0.95] tracking-[-0.04em] text-[#0d262d] sm:text-[2.2rem]">
+                  Your cart is empty
                 </SheetTitle>
-                <SheetDescription className="mt-2 text-[14px] leading-6 text-[#5b6b7b]">
-                  {itemCount > 0
-                    ? `${itemCount} item${itemCount === 1 ? "" : "s"} ready to review before checkout.`
-                    : "Add a peptide from any product page and it will show up here instantly."}
+                <SheetDescription className="mx-auto mt-4 max-w-[280px] text-[15px] leading-7 text-[#5b6b7b] sm:max-w-[320px]">
+                  Browse products, add what you want, then come back here to review quantities and subtotal.
                 </SheetDescription>
               </div>
-              <div className="rounded-[1rem] border border-[#dbe6f5] bg-[#f8fbff] px-4 py-3 text-right">
-                <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-[#6d7d8d]">Subtotal</p>
-                <p className="mt-1 text-[1.05rem] font-semibold text-[#0d262d]">${subtotal.toFixed(2)}</p>
-              </div>
-            </div>
-          </div>
 
-          {items.length === 0 ? (
-            <div className="flex flex-1 flex-col items-center justify-center px-6 py-10 text-center">
-              <div className="flex h-16 w-16 items-center justify-center rounded-full bg-white text-[#3b6ed6] ring-1 ring-[#dbe6f5] shadow-[0_12px_28px_rgba(59,110,214,0.12)]">
-                <ShoppingBag className="h-7 w-7" />
+              <div className="mt-10 flex flex-1 flex-col items-center justify-center rounded-[1.75rem] border border-[#e5edf8] bg-[linear-gradient(180deg,_#fbfdff_0%,_#f4f8fe_100%)] px-6 py-10 sm:px-7 sm:py-12">
+                <div className="flex h-16 w-16 items-center justify-center rounded-full bg-white text-[#3b6ed6] ring-1 ring-[#dbe6f5] shadow-[0_12px_28px_rgba(59,110,214,0.12)]">
+                  <ShoppingBag className="h-7 w-7" />
+                </div>
+                <h3 className="mt-5 text-[1.35rem] font-semibold tracking-[-0.02em] text-[#0d262d]">
+                  Start with the shop.
+                </h3>
+                <p className="mt-3 max-w-[280px] text-[15px] leading-7 text-[#5b6b7b] sm:max-w-sm">
+                  Add a peptide from any product page and it will show up here instantly.
+                </p>
+                <Link
+                  href="/shop"
+                  onClick={closeCart}
+                  className="tg-link-pill mt-7 inline-flex h-12 items-center rounded-full bg-[#3b6ed6] px-6 text-sm font-semibold text-white"
+                >
+                  Browse peptides
+                  <ArrowUpRight className="tg-link-pill-icon ml-2 h-4 w-4" />
+                </Link>
               </div>
-              <h3 className="mt-5 text-[1.35rem] font-semibold tracking-[-0.02em] text-[#0d262d]">
-                Start with the shop.
-              </h3>
-              <p className="mt-3 max-w-sm text-[15px] leading-7 text-[#5b6b7b]">
-                Browse products, add what you want, then come back here to review quantities and subtotal.
-              </p>
-              <Link
-                href="/shop"
-                onClick={closeCart}
-                className="tg-link-pill mt-6 inline-flex h-12 items-center rounded-full bg-[#3b6ed6] px-6 text-sm font-semibold text-white"
-              >
-                Browse peptides
-                <ArrowUpRight className="tg-link-pill-icon ml-2 h-4 w-4" />
-              </Link>
             </div>
           ) : (
             <>
-              <div className="flex-1 space-y-4 overflow-y-auto px-6 py-6">
+              <div className="border-b border-[#dbe6f5] bg-white px-6 pb-5 pt-6 sm:px-7">
+                <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-[#3b6ed6]">Cart</p>
+                <div className="mt-3 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+                  <div>
+                    <SheetTitle className="text-[1.65rem] font-semibold tracking-[-0.03em] text-[#0d262d]">
+                      Your cart
+                    </SheetTitle>
+                    <SheetDescription className="mt-2 text-[14px] leading-6 text-[#5b6b7b]">
+                      {`${itemCount} item${itemCount === 1 ? "" : "s"} ready to review before checkout.`}
+                    </SheetDescription>
+                  </div>
+                  <div className="w-fit rounded-[1rem] border border-[#dbe6f5] bg-[#f8fbff] px-4 py-3 text-right">
+                    <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-[#6d7d8d]">Subtotal</p>
+                    <p className="mt-1 text-[1.05rem] font-semibold text-[#0d262d]">${subtotal.toFixed(2)}</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="flex-1 space-y-4 overflow-y-auto px-6 py-6 sm:px-7">
                 {items.map((item) => (
                   <article
                     key={item.slug}
@@ -135,7 +145,7 @@ export function CartDrawer() {
                 ))}
               </div>
 
-              <div className="border-t border-[#dbe6f5] bg-white px-6 py-5">
+              <div className="border-t border-[#dbe6f5] bg-white px-6 py-5 sm:px-7">
                 <div className="flex items-center justify-between text-sm text-[#5b6b7b]">
                   <span>Subtotal</span>
                   <span className="text-[1.05rem] font-semibold text-[#0d262d]">${subtotal.toFixed(2)}</span>
