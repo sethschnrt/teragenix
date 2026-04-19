@@ -3,6 +3,7 @@
 import { SessionProvider } from "next-auth/react";
 import { usePathname } from "next/navigation";
 
+import { AgeGate } from "@/components/age-gate";
 import { CartProvider } from "@/components/cart-provider";
 import { CartDrawer } from "@/components/cart-drawer";
 import { Navbar } from "@/components/navbar";
@@ -16,6 +17,7 @@ export function Providers({ children }: { children: React.ReactNode }) {
   const showNavbar =
     !appChromeHiddenRoutes.has(normalizedPath) &&
     !appChromeHiddenPrefixes.some((prefix) => normalizedPath.startsWith(prefix));
+  const showAgeGate = showNavbar;
 
   return (
     <SessionProvider>
@@ -23,6 +25,7 @@ export function Providers({ children }: { children: React.ReactNode }) {
         {showNavbar ? <Navbar /> : null}
         {children}
         <CartDrawer />
+        <AgeGate enabled={showAgeGate} />
       </CartProvider>
     </SessionProvider>
   );
