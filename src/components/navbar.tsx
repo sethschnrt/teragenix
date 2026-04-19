@@ -159,7 +159,7 @@ function SearchBox({
 export function Navbar() {
   const [open, setOpen] = useState(false);
   const [query, setQuery] = useState("");
-  const { itemCount } = useCart();
+  const { itemCount, openCart } = useCart();
   const { data: session } = useSession();
   const pathname = usePathname();
   const router = useRouter();
@@ -226,12 +226,13 @@ export function Navbar() {
             {session?.user ? "Account" : "Sign in"}
           </Link>
 
-          <Link
-            href="/cart"
+          <button
+            type="button"
+            onClick={openCart}
             className={`relative inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full ${
               useHeroNav ? "text-white hover:bg-transparent" : "text-[#0d262d] hover:bg-transparent"
             }`}
-            aria-label="Cart"
+            aria-label="Open cart"
           >
             <ShoppingBag className="h-5 w-5" />
             {itemCount > 0 ? (
@@ -239,7 +240,7 @@ export function Navbar() {
                 {itemCount}
               </span>
             ) : null}
-          </Link>
+          </button>
 
           <Sheet open={open} onOpenChange={setOpen}>
             <SheetTrigger
@@ -263,13 +264,16 @@ export function Navbar() {
                   mobile
                 />
 
-                <Link
-                  href="/cart"
-                  onClick={() => setOpen(false)}
-                  className="tg-link-text text-lg font-medium text-[#0d262d] hover:text-[#3b6ed6]"
+                <button
+                  type="button"
+                  onClick={() => {
+                    setOpen(false);
+                    openCart();
+                  }}
+                  className="tg-link-text text-left text-lg font-medium text-[#0d262d] hover:text-[#3b6ed6]"
                 >
                   Cart{itemCount > 0 ? ` (${itemCount})` : ""}
-                </Link>
+                </button>
 
                 <Link
                   href={session?.user ? "/account" : "/login"}

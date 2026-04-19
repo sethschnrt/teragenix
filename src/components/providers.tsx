@@ -4,6 +4,7 @@ import { SessionProvider } from "next-auth/react";
 import { usePathname } from "next/navigation";
 
 import { CartProvider } from "@/components/cart-provider";
+import { CartDrawer } from "@/components/cart-drawer";
 import { Navbar } from "@/components/navbar";
 
 const appChromeHiddenPrefixes = ["/admin", "/account"];
@@ -21,6 +22,7 @@ export function Providers({ children }: { children: React.ReactNode }) {
       <CartProvider>
         {showNavbar ? <Navbar /> : null}
         {children}
+        <CartDrawer />
       </CartProvider>
     </SessionProvider>
   );

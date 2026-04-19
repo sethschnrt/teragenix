@@ -19,6 +19,9 @@ type CartContextValue = {
   items: CartItem[];
   itemCount: number;
   subtotal: number;
+  isCartOpen: boolean;
+  openCart: () => void;
+  closeCart: () => void;
   addItem: (product: Product, quantity?: number) => void;
   buyNow: (product: Product, quantity?: number) => void;
   updateQuantity: (slug: string, quantity: number) => void;
@@ -43,6 +46,7 @@ function toCartItem(product: Product, quantity: number): CartItem {
 export function CartProvider({ children }: { children: React.ReactNode }) {
   const [items, setItems] = useState<CartItem[]>([]);
   const [hydrated, setHydrated] = useState(false);
+  const [isCartOpen, setIsCartOpen] = useState(false);
 
   useEffect(() => {
     try {
@@ -66,6 +70,14 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
     const itemCount = items.reduce((sum, item) => sum + item.quantity, 0);
     const subtotal = items.reduce((sum, item) => sum + item.price * item.quantity, 0);
 
+    function openCart() {
+      setIsCartOpen(true);
+    }
+
+    function closeCart() {
+      setIsCartOpen(false);
+    }
+
     function addItem(product: Product, quantity = 1) {
       const safeQuantity = Math.max(1, quantity);
       setItems((current) => {
@@ -79,6 +91,7 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
         }
         return [...current, toCartItem(product, safeQuantity)];
       });
+      openCart();
     }
 
     function buyNow(product: Product, quantity = 1) {
@@ -111,13 +124,16 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
       items,
       itemCount,
       subtotal,
+      isCartOpen,
+      openCart,
+      closeCart,
       addItem,
       buyNow,
       updateQuantity,
       removeItem,
       clearCart,
     };
-  }, [items]);
+  }, [items, isCartOpen]);
 
   return <CartContext.Provider value={value}>{children}</CartContext.Provider>;
 }
