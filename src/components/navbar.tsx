@@ -267,7 +267,7 @@ export function Navbar() {
 
                 <div>
                   <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.16em] text-[#7b8aa0]">
-                    Application
+                    Your stuff
                   </p>
                   <div className="flex flex-col gap-5">
                     <button
@@ -295,7 +295,7 @@ export function Navbar() {
 
                 <div>
                   <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.16em] text-[#7b8aa0]">
-                    Information
+                    Explore
                   </p>
                   <div className="flex flex-col gap-5">
                     {navLinks.map((link) => (
