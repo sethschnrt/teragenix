@@ -2,11 +2,11 @@ import { Check, X } from "lucide-react";
 import { Logo } from "@/components/logo";
 
 const comparisonRows = [
-  "Curated around the goals people obsess over most",
-  "Built to feel premium, credible, and worth buying from",
-  "Focused on visible change people can actually feel good about",
-  "Covers fat loss, recovery, longevity, and aesthetics in one brand",
-  "Designed to create desire, confidence, and repeat demand",
+  "Visible purity standard on every product",
+  "Exact vial quantity shown up front",
+  "Batch-linked documentation tracking",
+  "Storage guidance shown before purchase",
+  "One brand covering fat loss, recovery, longevity, and aesthetics",
 ] as const;
 
 export function WhyChoose() {
@@ -16,10 +16,10 @@ export function WhyChoose() {
         <div className="mb-10 max-w-[760px] sm:mb-12">
           <p className="tg-eyebrow">WHY CHOOSE TERAGENIX</p>
           <h2 className="mt-3 text-[2.4rem] font-semibold leading-[0.96] tracking-[-0.05em] text-[#0d262d] sm:text-[3.2rem]">
-            Built around desire, not just inventory.
+            Standards people can actually compare.
           </h2>
           <p className="mt-4 max-w-[44rem] text-[15px] leading-7 text-[#475967] sm:text-[16px]">
-            The difference is not simply carrying peptides. It is choosing products people actually want, then framing them around confidence, transformation, and feeling better in their own body.
+            Not vague claims, real product-level details that make it easier to judge quality before buying.
           </p>
         </div>
 
