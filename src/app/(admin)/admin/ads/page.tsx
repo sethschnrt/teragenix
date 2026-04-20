@@ -1,13 +1,12 @@
-import Link from "next/link";
 import {
   Activity,
   BarChart3,
-  Bot,
+  CircleAlert,
   Clapperboard,
-  Database,
-  FileText,
+  FileVideo,
+  Flag,
   Layers3,
-  Megaphone,
+  Lightbulb,
   PenSquare,
   Sparkles,
 } from "lucide-react";
@@ -16,229 +15,248 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 export const dynamic = "force-dynamic";
 
-const topStats = [
+const summaryCards = [
   {
-    label: "Visible workstreams",
-    value: "6",
-    detail: "campaigns, angles, scripts, creative, results, ops",
-    tone: "bg-rose-50 text-rose-700 border-rose-200",
-  },
-  {
-    label: "Live in admin",
-    value: "Yes",
-    detail: "inside Teragenix admin, not storefront",
-    tone: "bg-emerald-50 text-emerald-700 border-emerald-200",
-  },
-  {
-    label: "Build phase",
-    value: "V1",
-    detail: "UI shell first, database wiring next",
+    label: "Screen type",
+    value: "Hybrid dashboard",
+    detail: "sprint tracker plus creation plus analytics",
     tone: "bg-blue-50 text-blue-700 border-blue-200",
   },
   {
-    label: "Next move",
-    value: "Prisma",
-    detail: "real records, forms, and run logging",
+    label: "Visible now",
+    value: "/admin/ads",
+    detail: "inside the Teragenix admin shell",
+    tone: "bg-emerald-50 text-emerald-700 border-emerald-200",
+  },
+  {
+    label: "Truth level",
+    value: "Real UI, partial data",
+    detail: "structure is live, ingestion is next",
     tone: "bg-amber-50 text-amber-700 border-amber-200",
+  },
+  {
+    label: "Next build",
+    value: "Prisma + forms",
+    detail: "to make this fully trackable",
+    tone: "bg-rose-50 text-rose-700 border-rose-200",
   },
 ] as const;
 
-const visibilityCards = [
+const sprintColumns = [
   {
-    icon: Megaphone,
-    title: "Campaigns",
-    description: "See each ad project, product focus, objective, owner, and current stage from one place.",
-    items: ["project name", "offer", "channel", "status"],
+    title: "Backlog",
+    tone: "bg-[#f6f6f7] text-[#5c5f62] border-[#e1e3e5]",
+    items: [
+      {
+        title: "Ad entity schema",
+        meta: "Prisma",
+        detail: "Persist campaigns, angles, scripts, creative runs, assets, and results snapshots.",
+      },
+      {
+        title: "Result import flow",
+        meta: "Analytics",
+        detail: "Manual import first, then hook up channel connectors after the workflow is stable.",
+      },
+    ],
+  },
+  {
+    title: "In Progress",
+    tone: "bg-blue-50 text-blue-700 border-blue-200",
+    items: [
+      {
+        title: "Dashboard direction",
+        meta: "UX",
+        detail: "Shifted from overview page to a single-screen tracker that shows creation plus performance.",
+      },
+    ],
+  },
+  {
+    title: "Review",
+    tone: "bg-violet-50 text-violet-700 border-violet-200",
+    items: [
+      {
+        title: "Admin organization",
+        meta: "Layout",
+        detail: "Checking that the screen reads like an ops tool instead of a marketing page.",
+      },
+    ],
+  },
+  {
+    title: "Live",
+    tone: "bg-emerald-50 text-emerald-700 border-emerald-200",
+    items: [
+      {
+        title: "Admin ads route",
+        meta: "Deploy",
+        detail: "The workspace lives in the admin now, not the storefront.",
+      },
+      {
+        title: "Hybrid layout",
+        meta: "UI",
+        detail: "Command center, sprint board, video pipeline, and analytics areas now share one screen.",
+      },
+    ],
+  },
+  {
+    title: "Blocked",
+    tone: "bg-amber-50 text-amber-700 border-amber-200",
+    items: [
+      {
+        title: "Real performance metrics",
+        meta: "Data source",
+        detail: "CTR, CPA, spend, and hold rate stay empty until we wire imports or platform connectors.",
+      },
+    ],
+  },
+] as const;
+
+const pipelineStages = [
+  {
+    icon: Lightbulb,
+    title: "Angle",
+    status: "Awaiting tracked items",
+    detail: "Each card should start with the pain point, hook, awareness level, and product focus.",
   },
   {
     icon: PenSquare,
-    title: "Angles + scripts",
-    description: "Track the hook backlog, what got turned into scripts, and what is ready for creative.",
-    items: ["pain point", "hook", "script", "CTA"],
+    title: "Script",
+    status: "Awaiting tracked items",
+    detail: "Short scripts should carry the hook, main claim, CTA, narrator notes, and landing-page target.",
+  },
+  {
+    icon: Sparkles,
+    title: "Generate",
+    status: "Awaiting tracked items",
+    detail: "This stage should show provider, prompt version, reference assets, output links, and run status.",
   },
   {
     icon: Clapperboard,
-    title: "Creative runs",
-    description: "Log prompt versions, reference assets, output links, thumbnails, and approval state.",
-    items: ["provider", "prompt", "refs", "output"],
+    title: "Review",
+    status: "Awaiting tracked items",
+    detail: "Review is where we compare output quality, continuity, revisions, and approval notes.",
   },
   {
-    icon: BarChart3,
-    title: "Results",
-    description: "Track what wins, what dies, and what gets duplicated without spreadsheet sprawl.",
-    items: ["CTR", "hold rate", "CPA", "winner"],
-  },
-] as const;
-
-const buildTracker = [
-  {
-    area: "Admin ads workspace",
-    status: "LIVE",
-    owner: "Rex",
-    note: "Route exists at /admin/ads and matches the internal admin UI, not the storefront.",
-  },
-  {
-    area: "System structure",
-    status: "LIVE",
-    owner: "Rex",
-    note: "Campaigns, scripts, creatives, results, and ops are mapped into one screen.",
-  },
-  {
-    area: "Prisma models",
-    status: "NEXT",
-    owner: "Rex",
-    note: "Add ad_projects, ad_angles, ad_scripts, ad_creatives, ad_variants, ad_channels, performance snapshots.",
-  },
-  {
-    area: "Input forms",
-    status: "NEXT",
-    owner: "Rex",
-    note: "Need forms for angles, scripts, prompts, asset URLs, and winner flags.",
-  },
-  {
-    area: "Automation logging",
-    status: "PENDING",
-    owner: "Rex",
-    note: "Expose queue status, cron summaries, and creative run activity here instead of in chat only.",
-  },
-  {
-    area: "Results ingest",
-    status: "PENDING",
-    owner: "Rex",
-    note: "Manual import first, then connector work for channel metrics once the workflow is proven.",
-  },
-] as const;
-
-const seededViews = [
-  {
-    name: "Campaign board",
-    description: "Top-level projects with offer, objective, platform, stage, and owner.",
     icon: Layers3,
+    title: "Landing Page",
+    status: "Awaiting tracked items",
+    detail: "Every creative should point to the page or offer it supports so message match stays visible.",
   },
   {
-    name: "Creative queue",
-    description: "What is at angle stage, script stage, creative generation, review, or live testing.",
-    icon: Sparkles,
-  },
-  {
-    name: "Ops log",
-    description: "A running feed of what I changed, what is blocked, and what the next action is.",
-    icon: Activity,
-  },
-  {
-    name: "Asset registry",
-    description: "Prompt text, references, output URLs, thumbnails, and version history tied to each creative.",
-    icon: FileText,
+    icon: FileVideo,
+    title: "Live",
+    status: "Awaiting tracked items",
+    detail: "Once live, the card should show channel, launch date, active spend, and winner or loser status.",
   },
 ] as const;
 
-const stackStatus = [
+const kpiCards = [
   {
-    label: "Hooks + scripts",
-    value: "Claude / OpenAI",
-    status: "ready",
+    label: "Spend",
+    value: "—",
+    detail: "waiting on first import",
   },
   {
-    label: "Creative generation",
-    value: "Seedance / Runway",
-    status: "ready",
+    label: "CTR",
+    value: "—",
+    detail: "waiting on first import",
   },
   {
-    label: "App storage layer",
-    value: "Prisma + Postgres",
-    status: "next",
+    label: "Hold rate",
+    value: "—",
+    detail: "waiting on first import",
   },
   {
-    label: "Ops automation",
-    value: "OpenClaw cron + summaries",
-    status: "next",
+    label: "CPC",
+    value: "—",
+    detail: "waiting on first import",
   },
   {
-    label: "Result ingestion",
-    value: "manual first",
-    status: "pending",
+    label: "CPA",
+    value: "—",
+    detail: "waiting on first import",
   },
   {
-    label: "Deployment",
-    value: "Vercel",
-    status: "live",
+    label: "Winners",
+    value: "0",
+    detail: "nothing tracked yet",
   },
 ] as const;
 
-const recentWork = [
-  "Moved the concept back into the admin workflow instead of treating it like a public marketing page.",
-  "Built a dedicated ads workspace route inside the Teragenix admin shell.",
-  "Mapped the system around campaigns, angles, scripts, creative, results, and operator visibility.",
-  "Queued the next build step: real Prisma-backed records and forms so this stops being a shell and starts being a usable tool.",
+const operatorFeed = [
+  {
+    title: "Public content page removed from the main storefront flow",
+    detail: "The app concept was moved back where it belongs, inside the admin workspace.",
+  },
+  {
+    title: "Admin ads route reframed as a tracker",
+    detail: "This screen now centers on work visibility instead of theory and system copy.",
+  },
+  {
+    title: "Analytics are intentionally blank for now",
+    detail: "I am not faking performance numbers. We need imports or connectors before those cards become real.",
+  },
+  {
+    title: "Next technical step is persistence",
+    detail: "The UI is ready for real cards, but Prisma entities and forms are what make it operational.",
+  },
 ] as const;
 
-function statusTone(status: string) {
-  switch (status) {
-    case "LIVE":
-    case "live":
-    case "ready":
-      return "bg-emerald-50 text-emerald-700 border-emerald-200";
-    case "NEXT":
-    case "next":
-      return "bg-blue-50 text-blue-700 border-blue-200";
-    default:
-      return "bg-amber-50 text-amber-700 border-amber-200";
-  }
-}
+const answerStrip = [
+  "What is being made right now",
+  "What is blocked or waiting",
+  "What shipped already",
+  "How each video moves through the pipeline",
+  "How the ads are performing once data is wired",
+] as const;
 
 export default function AdminAdsPage() {
   return (
     <div className="space-y-4">
       <section className="rounded-2xl border border-[#dfe3e8] bg-white px-4 py-4 shadow-sm">
-        <div className="flex flex-col gap-4 xl:flex-row xl:items-start xl:justify-between">
-          <div>
-            <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#c2185b]">Ads workspace</p>
-            <h2 className="mt-1 text-2xl font-semibold tracking-[-0.02em] text-[#202223]">Teragenix growth operating system</h2>
-            <p className="mt-2 max-w-3xl text-sm text-[#5c5f62]">
-              This is the internal app layer for tracking what I am building across campaigns, hooks, scripts, creative,
-              results, and ops. It belongs in admin and should behave like an operations tool, not a storefront section.
-            </p>
-          </div>
-          <div className="flex flex-wrap gap-2">
-            <Link href="/admin" className="rounded-xl border border-[#dfe3e8] bg-white px-3 py-2 text-xs font-medium text-[#202223] hover:bg-[#f6f6f7]">
-              Back to overview
-            </Link>
-            <Link href="/docs/teragenix-ad-ops-v1.md" className="rounded-xl border border-[#f8bfd5] bg-[#fff7fb] px-3 py-2 text-xs font-medium text-[#c2185b] hover:bg-[#fff0f6]">
-              Open framework doc
-            </Link>
-          </div>
-        </div>
+        <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-[#c2185b]">Ads command center</p>
+        <h2 className="mt-1 text-2xl font-semibold tracking-[-0.02em] text-[#202223]">
+          One screen for sprint status, video creation, and performance.
+        </h2>
+        <p className="mt-2 max-w-3xl text-sm text-[#5c5f62]">
+          This should work like an actual operator dashboard. Top tells you what is going on, middle shows how videos
+          are moving, bottom shows how ads are performing. If data is not wired yet, the screen should say that plainly
+          instead of pretending.
+        </p>
 
         <div className="mt-4 grid gap-2 md:grid-cols-2 xl:grid-cols-4">
-          {topStats.map((item) => (
-            <div key={item.label} className={`rounded-xl border px-3 py-2 ${item.tone}`}>
-              <p className="text-[10px] font-semibold uppercase tracking-[0.14em]">{item.label}</p>
-              <p className="mt-1 text-sm font-semibold">{item.value}</p>
-              <p className="mt-1 text-[11px] opacity-80">{item.detail}</p>
+          {summaryCards.map((card) => (
+            <div key={card.label} className={`rounded-xl border px-3 py-2 ${card.tone}`}>
+              <p className="text-[10px] font-semibold uppercase tracking-[0.14em]">{card.label}</p>
+              <p className="mt-1 text-sm font-semibold">{card.value}</p>
+              <p className="mt-1 text-[11px] opacity-80">{card.detail}</p>
             </div>
           ))}
         </div>
       </section>
 
-      <section className="grid gap-4 xl:grid-cols-[1.2fr_0.8fr]">
+      <section className="grid gap-4 xl:grid-cols-[1.18fr_0.82fr]">
         <Card className="border border-[#dfe3e8] bg-white py-3 shadow-sm">
           <CardHeader className="border-b border-[#eceef0] pb-3">
-            <CardTitle className="text-base text-[#202223]">What you can see here</CardTitle>
+            <CardTitle className="text-base text-[#202223]">Sprint board</CardTitle>
           </CardHeader>
           <CardContent className="pt-4">
-            <div className="grid gap-3 md:grid-cols-2">
-              {visibilityCards.map((card) => (
-                <div key={card.title} className="rounded-xl border border-[#eceef0] bg-[#fafafa] p-4">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#fff0f6] ring-1 ring-[#f8bfd5]">
-                    <card.icon className="h-4.5 w-4.5 text-[#c2185b]" />
+            <div className="grid gap-3 xl:grid-cols-5">
+              {sprintColumns.map((column) => (
+                <div key={column.title} className="rounded-xl border border-[#eceef0] bg-[#fafafa] p-3">
+                  <div className={`rounded-full border px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.14em] ${column.tone}`}>
+                    {column.title}
                   </div>
-                  <h3 className="mt-4 text-sm font-semibold text-[#202223]">{card.title}</h3>
-                  <p className="mt-2 text-sm leading-6 text-[#5c5f62]">{card.description}</p>
-                  <div className="mt-3 flex flex-wrap gap-2">
-                    {card.items.map((item) => (
-                      <span key={item} className="rounded-full border border-[#e4e7eb] bg-white px-2.5 py-1 text-[11px] font-medium text-[#414447]">
-                        {item}
-                      </span>
+                  <div className="mt-3 space-y-2">
+                    {column.items.map((item) => (
+                      <div key={item.title} className="rounded-xl border border-[#e5e7eb] bg-white p-3 shadow-[0_1px_0_rgba(22,29,37,0.03)]">
+                        <div className="flex items-start justify-between gap-2">
+                          <p className="text-sm font-semibold text-[#202223]">{item.title}</p>
+                          <span className="rounded-full bg-[#f6f6f7] px-2 py-1 text-[10px] font-semibold uppercase tracking-[0.14em] text-[#6d7175]">
+                            {item.meta}
+                          </span>
+                        </div>
+                        <p className="mt-2 text-[13px] leading-5 text-[#5c5f62]">{item.detail}</p>
+                      </div>
                     ))}
                   </div>
                 </div>
@@ -249,70 +267,11 @@ export default function AdminAdsPage() {
 
         <Card className="border border-[#dfe3e8] bg-white py-3 shadow-sm">
           <CardHeader className="border-b border-[#eceef0] pb-3">
-            <CardTitle className="text-base text-[#202223]">Stack status</CardTitle>
+            <CardTitle className="text-base text-[#202223]">What this page should answer</CardTitle>
           </CardHeader>
           <CardContent className="pt-4">
             <div className="space-y-2">
-              {stackStatus.map((item) => (
-                <div key={item.label} className="rounded-xl border border-[#eceef0] bg-[#fafafa] px-3 py-3">
-                  <div className="flex items-start justify-between gap-3">
-                    <div>
-                      <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-[#6d7175]">{item.label}</p>
-                      <p className="mt-1 text-sm font-medium text-[#202223]">{item.value}</p>
-                    </div>
-                    <span className={`rounded-full border px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.14em] ${statusTone(item.status)}`}>
-                      {item.status}
-                    </span>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </CardContent>
-        </Card>
-      </section>
-
-      <section className="grid gap-4 xl:grid-cols-[1.1fr_0.9fr]">
-        <Card className="border border-[#dfe3e8] bg-white py-3 shadow-sm">
-          <CardHeader className="border-b border-[#eceef0] pb-3">
-            <CardTitle className="text-base text-[#202223]">Execution tracker</CardTitle>
-          </CardHeader>
-          <CardContent className="pt-4">
-            <div className="overflow-hidden rounded-xl border border-[#e5e7eb]">
-              <table className="min-w-full divide-y divide-[#e5e7eb] text-sm">
-                <thead className="bg-[#f6f6f7] text-left text-[11px] font-semibold uppercase tracking-[0.14em] text-[#6d7175]">
-                  <tr>
-                    <th className="px-3 py-2.5">Area</th>
-                    <th className="px-3 py-2.5">Status</th>
-                    <th className="px-3 py-2.5">Owner</th>
-                    <th className="px-3 py-2.5">Note</th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-[#eceef0] bg-white">
-                  {buildTracker.map((item) => (
-                    <tr key={item.area} className="align-top hover:bg-[#f9fafb]">
-                      <td className="px-3 py-3 font-medium text-[#202223]">{item.area}</td>
-                      <td className="px-3 py-3">
-                        <span className={`rounded-full border px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.14em] ${statusTone(item.status)}`}>
-                          {item.status}
-                        </span>
-                      </td>
-                      <td className="px-3 py-3 text-[#5c5f62]">{item.owner}</td>
-                      <td className="px-3 py-3 text-[#5c5f62]">{item.note}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </CardContent>
-        </Card>
-
-        <Card className="border border-[#dfe3e8] bg-white py-3 shadow-sm">
-          <CardHeader className="border-b border-[#eceef0] pb-3">
-            <CardTitle className="text-base text-[#202223]">Recent work</CardTitle>
-          </CardHeader>
-          <CardContent className="pt-4">
-            <div className="space-y-2">
-              {recentWork.map((item, index) => (
+              {answerStrip.map((item, index) => (
                 <div key={item} className="flex gap-3 rounded-xl border border-[#eceef0] bg-[#fafafa] px-3 py-3">
                   <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#fff0f6] text-[11px] font-semibold text-[#c2185b] ring-1 ring-[#f8bfd5]">
                     {index + 1}
@@ -321,27 +280,32 @@ export default function AdminAdsPage() {
                 </div>
               ))}
             </div>
+            <div className="mt-4 rounded-xl border border-[#f8d7da] bg-[#fff8f8] p-3 text-sm text-[#7a3a40]">
+              The old version failed because it explained the system instead of tracking the work.
+            </div>
           </CardContent>
         </Card>
       </section>
 
-      <section className="grid gap-4 xl:grid-cols-2">
+      <section className="grid gap-4 xl:grid-cols-[1.15fr_0.85fr]">
         <Card className="border border-[#dfe3e8] bg-white py-3 shadow-sm">
           <CardHeader className="border-b border-[#eceef0] pb-3">
-            <CardTitle className="flex items-center gap-2 text-base text-[#202223]">
-              <Database className="h-4 w-4 text-[#c2185b]" />
-              Planned internal views
-            </CardTitle>
+            <CardTitle className="text-base text-[#202223]">Video creation pipeline</CardTitle>
           </CardHeader>
           <CardContent className="pt-4">
-            <div className="grid gap-3 sm:grid-cols-2">
-              {seededViews.map((item) => (
-                <div key={item.name} className="rounded-xl border border-[#eceef0] bg-[#fafafa] p-4">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-white ring-1 ring-[#eceef0]">
-                    <item.icon className="h-4.5 w-4.5 text-[#c2185b]" />
+            <div className="grid gap-3 md:grid-cols-2 xl:grid-cols-3">
+              {pipelineStages.map((stage) => (
+                <div key={stage.title} className="rounded-xl border border-[#eceef0] bg-[#fafafa] p-4">
+                  <div className="flex items-center gap-3">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#eaf2ff] ring-1 ring-[#cfe0ff]">
+                      <stage.icon className="h-4.5 w-4.5 text-[#0f62fe]" />
+                    </div>
+                    <div>
+                      <h3 className="text-sm font-semibold text-[#202223]">{stage.title}</h3>
+                      <p className="text-[11px] uppercase tracking-[0.14em] text-[#6d7175]">{stage.status}</p>
+                    </div>
                   </div>
-                  <h3 className="mt-4 text-sm font-semibold text-[#202223]">{item.name}</h3>
-                  <p className="mt-2 text-sm leading-6 text-[#5c5f62]">{item.description}</p>
+                  <p className="mt-3 text-sm leading-6 text-[#5c5f62]">{stage.detail}</p>
                 </div>
               ))}
             </div>
@@ -350,21 +314,93 @@ export default function AdminAdsPage() {
 
         <Card className="border border-[#dfe3e8] bg-white py-3 shadow-sm">
           <CardHeader className="border-b border-[#eceef0] pb-3">
-            <CardTitle className="flex items-center gap-2 text-base text-[#202223]">
-              <Bot className="h-4 w-4 text-[#c2185b]" />
-              What happens next
-            </CardTitle>
+            <CardTitle className="text-base text-[#202223]">Pipeline notes</CardTitle>
+          </CardHeader>
+          <CardContent className="pt-4">
+            <div className="space-y-3">
+              <div className="rounded-xl border border-[#eceef0] bg-[#fafafa] p-3">
+                <div className="flex items-center gap-2">
+                  <Flag className="h-4 w-4 text-[#c2185b]" />
+                  <p className="text-sm font-semibold text-[#202223]">What each video card needs</p>
+                </div>
+                <p className="mt-2 text-sm leading-6 text-[#5c5f62]">
+                  owner, priority, prompt version, asset links, latest output, blocker, and next action.
+                </p>
+              </div>
+              <div className="rounded-xl border border-[#eceef0] bg-[#fafafa] p-3">
+                <div className="flex items-center gap-2">
+                  <CircleAlert className="h-4 w-4 text-[#b98900]" />
+                  <p className="text-sm font-semibold text-[#202223]">Why the cards are empty</p>
+                </div>
+                <p className="mt-2 text-sm leading-6 text-[#5c5f62]">
+                  I have not wired persistence yet, so I am showing the real structure without faking tracked jobs.
+                </p>
+              </div>
+              <div className="rounded-xl border border-[#eceef0] bg-[#fafafa] p-3">
+                <div className="flex items-center gap-2">
+                  <Activity className="h-4 w-4 text-[#0f62fe]" />
+                  <p className="text-sm font-semibold text-[#202223]">Next step</p>
+                </div>
+                <p className="mt-2 text-sm leading-6 text-[#5c5f62]">
+                  Add forms and entities so a new angle, script, or creative run appears here automatically.
+                </p>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+      </section>
+
+      <section className="grid gap-4 xl:grid-cols-[1.18fr_0.82fr]">
+        <Card className="border border-[#dfe3e8] bg-white py-3 shadow-sm">
+          <CardHeader className="border-b border-[#eceef0] pb-3">
+            <CardTitle className="text-base text-[#202223]">Analytics command center</CardTitle>
+          </CardHeader>
+          <CardContent className="pt-4">
+            <div className="grid gap-2 md:grid-cols-3 xl:grid-cols-6">
+              {kpiCards.map((card) => (
+                <div key={card.label} className="rounded-xl border border-[#e5e7eb] bg-[#fafafa] px-3 py-3">
+                  <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-[#6d7175]">{card.label}</p>
+                  <p className="mt-2 text-lg font-semibold text-[#202223]">{card.value}</p>
+                  <p className="mt-1 text-[11px] text-[#6d7175]">{card.detail}</p>
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-4 overflow-hidden rounded-xl border border-[#e5e7eb]">
+              <table className="min-w-full divide-y divide-[#e5e7eb] text-sm">
+                <thead className="bg-[#f6f6f7] text-left text-[11px] font-semibold uppercase tracking-[0.14em] text-[#6d7175]">
+                  <tr>
+                    <th className="px-3 py-2.5">Campaign</th>
+                    <th className="px-3 py-2.5">Creative</th>
+                    <th className="px-3 py-2.5">Spend</th>
+                    <th className="px-3 py-2.5">CTR</th>
+                    <th className="px-3 py-2.5">Hold</th>
+                    <th className="px-3 py-2.5">CPA</th>
+                    <th className="px-3 py-2.5">Status</th>
+                  </tr>
+                </thead>
+                <tbody className="bg-white">
+                  <tr>
+                    <td colSpan={7} className="px-3 py-6 text-center text-sm text-[#6d7175]">
+                      No tracked ad performance yet. This table becomes useful as soon as we add manual imports or source connectors.
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </CardContent>
+        </Card>
+
+        <Card className="border border-[#dfe3e8] bg-white py-3 shadow-sm">
+          <CardHeader className="border-b border-[#eceef0] pb-3">
+            <CardTitle className="text-base text-[#202223]">Operator feed</CardTitle>
           </CardHeader>
           <CardContent className="pt-4">
             <div className="space-y-2">
-              {[
-                "Add Prisma tables so campaigns, scripts, creatives, and results become real records.",
-                "Add forms to create angles, scripts, and creative runs from inside admin.",
-                "Add an operator log so you can see what I changed and what is blocked without relying on chat history.",
-                "Add basic result tracking first, then automation and channel connectors after the workflow is stable.",
-              ].map((item) => (
-                <div key={item} className="rounded-xl border border-[#eceef0] bg-[#fafafa] px-3 py-3 text-sm text-[#202223]">
-                  {item}
+              {operatorFeed.map((item) => (
+                <div key={item.title} className="rounded-xl border border-[#eceef0] bg-[#fafafa] p-3">
+                  <p className="text-sm font-semibold text-[#202223]">{item.title}</p>
+                  <p className="mt-2 text-sm leading-6 text-[#5c5f62]">{item.detail}</p>
                 </div>
               ))}
             </div>
