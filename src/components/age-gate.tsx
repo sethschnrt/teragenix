@@ -61,7 +61,7 @@ export function AgeGate({ enabled = true }: AgeGateProps) {
   if (!enabled || !ready || !open) return null;
 
   return (
-    <div className="fixed inset-0 z-[120] bg-[#06111a]/72 px-4 py-4 backdrop-blur-sm sm:flex sm:items-center sm:justify-center sm:px-6 sm:py-6">
+    <div data-site-chrome="age-gate" className="fixed inset-0 z-[120] bg-[#06111a]/72 px-4 py-4 backdrop-blur-sm sm:flex sm:items-center sm:justify-center sm:px-6 sm:py-6">
       <div className="mx-auto w-full max-w-[420px] rounded-[1.5rem] bg-white p-5 text-[#0d262d] shadow-[0_30px_80px_rgba(6,17,26,0.36)] sm:p-7">
         <p className="text-[10px] font-medium uppercase tracking-[0.22em] text-[#3b6ed6]">
           Age verification

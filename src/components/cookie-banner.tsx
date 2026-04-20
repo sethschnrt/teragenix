@@ -52,7 +52,7 @@ export function CookieBanner({ enabled = true }: CookieBannerProps) {
   if (!enabled || !ready || !visible) return null;
 
   return (
-    <div className="fixed inset-x-0 bottom-0 z-[110] px-4 pb-4 sm:px-6 sm:pb-6">
+    <div data-site-chrome="cookie-banner" className="fixed inset-x-0 bottom-0 z-[110] px-4 pb-4 sm:px-6 sm:pb-6">
       <div className="mx-auto flex w-full max-w-[980px] flex-col gap-4 rounded-[1.5rem] border border-[#dbe6f5] bg-white/96 p-4 text-[#0d262d] shadow-[0_20px_50px_rgba(13,38,45,0.16)] backdrop-blur sm:flex-row sm:items-center sm:justify-between sm:gap-6 sm:px-5 sm:py-4">
         <div className="max-w-[42rem]">
           <p className="text-sm font-semibold text-[#0d262d]">Cookie notice</p>

@@ -210,6 +210,12 @@
     animation: tg-marquee 24s linear infinite;
     will-change: transform;
   }
+
+  body:has(main[data-page="not-found"]) header,
+  body:has(main[data-page="not-found"]) [data-site-chrome="age-gate"],
+  body:has(main[data-page="not-found"]) [data-site-chrome="cookie-banner"] {
+    display: none !important;
+  }
 }
 
 @layer components {

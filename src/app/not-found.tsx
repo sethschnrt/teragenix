@@ -10,7 +10,7 @@ const quickLinks = [
 
 export default function NotFound() {
   return (
-    <main className="relative min-h-screen overflow-hidden bg-[#f4f8ff] text-[#0d262d]">
+    <main data-page="not-found" className="relative min-h-screen overflow-hidden bg-[#f4f8ff] text-[#0d262d]">
       <div
         className="pointer-events-none absolute inset-0"
         style={{
