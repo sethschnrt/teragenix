@@ -47,66 +47,31 @@ const boardColumns: BoardColumn[] = [
   {
     title: "Backlog",
     tone: "bg-[#f6f6f7] text-[#5c5f62] border-[#e1e3e5]",
-    items: [
-      { id: "retatrutide-angle-batch", title: "Retatrutide hook batch", meta: "angle", stage: "angle" },
-      { id: "fatloss-script-pass", title: "Fat-loss script pass", meta: "script", stage: "script" },
-    ],
+    items: [],
   },
   {
     title: "In Progress",
     tone: "bg-blue-50 text-blue-700 border-blue-200",
-    items: [
-      { id: "ugc-variant-render", title: "UGC variant render", meta: "generate", stage: "generate" },
-    ],
+    items: [],
   },
   {
     title: "Review",
     tone: "bg-violet-50 text-violet-700 border-violet-200",
-    items: [
-      { id: "fatloss-cut-review", title: "Fat-loss cut review", meta: "review", stage: "review" },
-    ],
+    items: [],
   },
   {
     title: "Live",
     tone: "bg-emerald-50 text-emerald-700 border-emerald-200",
-    items: [
-      { id: "reta-test-a", title: "Retatrutide test A", meta: "live", stage: "live" },
-      { id: "fatloss-hook-b", title: "Fat-loss hook B", meta: "live", stage: "live" },
-    ],
+    items: [],
   },
   {
     title: "Blocked",
     tone: "bg-amber-50 text-amber-700 border-amber-200",
-    items: [
-      { id: "creator-angle-pass", title: "Creator angle pass", meta: "angle", stage: "angle" },
-    ],
+    items: [],
   },
 ];
 
-const analyticsRows: AnalyticsRow[] = [
-  {
-    id: "reta-test-a",
-    campaign: "Retatrutide angle test",
-    creative: "Hook A",
-    spend: "$0",
-    ctr: "—",
-    hold: "—",
-    cpa: "—",
-    status: "No data",
-    stage: "live",
-  },
-  {
-    id: "fatloss-hook-b",
-    campaign: "Fat-loss offer",
-    creative: "Hook B",
-    spend: "$0",
-    ctr: "—",
-    hold: "—",
-    cpa: "—",
-    status: "No data",
-    stage: "live",
-  },
-];
+const analyticsRows: AnalyticsRow[] = [];
 
 const allBoardItems = boardColumns.flatMap((column) => column.items);
 
