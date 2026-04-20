@@ -26,7 +26,7 @@ export function WhyChoose() {
           <div className="grid grid-cols-[minmax(0,1.5fr)_120px_120px] border-b border-[#e8eef7] bg-[#f8fbff] px-5 py-4 text-sm sm:grid-cols-[minmax(0,1fr)_180px_180px] sm:px-8">
             <div />
             <div className="text-center font-semibold text-[#3b6ed6]">Teragenix</div>
-            <div className="text-center font-semibold text-[#6b7b8f]">Typical sites</div>
+            <div className="text-center font-semibold text-[#6b7b8f]">Others</div>
           </div>
 
           {comparisonRows.map((row, index) => (
