@@ -30,7 +30,7 @@ export default async function OpenGraphImage() {
         display: "flex",
         position: "relative",
         overflow: "hidden",
-        background: "linear-gradient(154deg, #1e4a9e 0%, #10366f 46%, #0d262d 100%)",
+        background: "linear-gradient(154deg, #1e4a9e 0%, #10366f 48%, #14375a 100%)",
         color: "white",
         fontFamily: "Inter, Arial, sans-serif",
       }}
@@ -40,7 +40,7 @@ export default async function OpenGraphImage() {
           position: "absolute",
           inset: 0,
           background:
-            "radial-gradient(circle at 24% 22%, rgba(255,255,255,0.14), transparent 32%), radial-gradient(circle at 78% 34%, rgba(168,197,245,0.14), transparent 26%)",
+            "radial-gradient(circle at 22% 18%, rgba(255,255,255,0.12), transparent 30%), radial-gradient(circle at 78% 26%, rgba(168,197,245,0.12), transparent 24%)",
         }}
       />
 
@@ -49,9 +49,9 @@ export default async function OpenGraphImage() {
           display: "flex",
           width: "100%",
           height: "100%",
-          padding: "58px 64px",
-          justifyContent: "space-between",
+          padding: "56px 72px",
           alignItems: "center",
+          justifyContent: "space-between",
         }}
       >
         <div
@@ -61,21 +61,16 @@ export default async function OpenGraphImage() {
             width: 560,
           }}
         >
-          <img
-            src={logoSrc}
-            alt="Teragenix"
-            width={308}
-            height={87}
-          />
+          <img src={logoSrc} alt="Teragenix" width={290} height={82} />
 
           <div
             style={{
               display: "flex",
               flexDirection: "column",
-              marginTop: 34,
-              fontSize: 74,
+              marginTop: 36,
+              fontSize: 76,
               fontWeight: 700,
-              lineHeight: 0.95,
+              lineHeight: 0.94,
               letterSpacing: "-0.06em",
             }}
           >
@@ -86,15 +81,15 @@ export default async function OpenGraphImage() {
           <div
             style={{
               display: "flex",
-              marginTop: 24,
-              width: 520,
-              color: "rgba(255,255,255,0.86)",
-              fontSize: 27,
-              lineHeight: 1.4,
+              marginTop: 26,
+              width: 450,
+              color: "rgba(255,255,255,0.84)",
+              fontSize: 26,
+              lineHeight: 1.35,
               letterSpacing: "-0.02em",
             }}
           >
-            Clear specs, batch documentation, and product details you can verify before you buy.
+            Research-use peptides with clearer specs, cleaner documentation, and a better storefront experience.
           </div>
         </div>
 
@@ -102,32 +97,24 @@ export default async function OpenGraphImage() {
           style={{
             position: "relative",
             display: "flex",
-            width: 450,
-            height: 470,
-            alignItems: "center",
+            width: 430,
+            height: 430,
+            alignItems: "flex-end",
             justifyContent: "center",
+            borderRadius: 34,
+            background: "#e4f3f5",
+            overflow: "hidden",
+            boxShadow: "0 24px 70px rgba(4,14,32,0.22)",
           }}
         >
-          <div
-            style={{
-              position: "absolute",
-              width: 400,
-              height: 400,
-              borderRadius: 999,
-              background: "radial-gradient(circle, rgba(255,255,255,0.18) 0%, rgba(168,197,245,0.10) 38%, rgba(255,255,255,0) 72%)",
-            }}
-          />
-
           <img
             src={heroSrc}
-            alt="Teragenix lifestyle image"
-            width={390}
-            height={390}
+            alt="Teragenix hero visual"
+            width={380}
+            height={380}
             style={{
-              position: "relative",
               objectFit: "contain",
-              transform: "translate(-10px, -8px)",
-              filter: "drop-shadow(0 18px 40px rgba(5, 16, 34, 0.22))",
+              transform: "translateY(14px)",
             }}
           />
         </div>
