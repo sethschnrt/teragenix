@@ -89,23 +89,6 @@ export function Hero() {
         {/* Content container — centered independently from background wordmark */}
         <div className="relative z-10 mx-auto flex h-full max-w-[1240px] items-center justify-center px-5 pb-[92px] pt-[72px] sm:px-8 sm:pb-[104px] sm:pt-[88px] lg:px-12 lg:pb-[72px] lg:pt-[40px]">
           <div className="mx-auto max-w-[900px] text-center lg:max-w-[760px]">
-            {/* Eyebrow */}
-            <div className="mb-5 flex justify-center lg:mb-4">
-              <p
-                className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-white backdrop-blur-sm ring-1 ring-white/20"
-                style={{
-                  fontSize: "13px",
-                  fontWeight: 500,
-                  letterSpacing: "0.02em",
-                }}
-              >
-                <span
-                  className="inline-block h-1.5 w-1.5 rounded-full bg-white"
-                />
-                Less guesswork. More visible proof.
-              </p>
-            </div>
-
             {/* Headline */}
             <h1 className="mx-auto max-w-[900px] text-center lg:max-w-[760px]">
               <span className="block text-[48px] font-bold leading-[0.98] tracking-[-0.03em] text-white sm:text-[60px] lg:text-[54px]">
