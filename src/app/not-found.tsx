@@ -7,8 +7,7 @@ export default function NotFound() {
       <div className="mx-auto flex min-h-screen max-w-[1240px] items-center justify-center px-6 py-10 sm:px-8 lg:px-12">
         <div className="w-full max-w-[480px] text-center">
           <Logo size="lg" className="mx-auto w-[148px] sm:w-[168px]" />
-          <p className="mt-8 text-[11px] font-semibold uppercase tracking-[0.16em] text-[#3b6ed6]">404</p>
-          <h1 className="mt-3 text-[2.3rem] font-semibold tracking-[-0.05em] text-[#0d262d] sm:text-[3rem]">
+          <h1 className="mt-8 text-[2.3rem] font-semibold tracking-[-0.05em] text-[#0d262d] sm:text-[3rem]">
             Page not found
           </h1>
           <p className="mt-4 text-[15px] leading-7 text-[#5b6b7b] sm:text-[16px]">
