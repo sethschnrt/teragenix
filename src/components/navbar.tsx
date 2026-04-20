@@ -264,35 +264,51 @@ export function Navbar() {
                   mobile
                 />
 
-                <button
-                  type="button"
-                  onClick={() => {
-                    setOpen(false);
-                    openCart();
-                  }}
-                  className="tg-link-text text-left text-lg font-medium text-[#0d262d] hover:text-[#3b6ed6]"
-                >
-                  Cart{itemCount > 0 ? ` (${itemCount})` : ""}
-                </button>
+                <div>
+                  <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.16em] text-[#7b8aa0]">
+                    Application
+                  </p>
+                  <div className="flex flex-col gap-5">
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setOpen(false);
+                        openCart();
+                      }}
+                      className="tg-link-text text-left text-lg font-medium text-[#0d262d] hover:text-[#3b6ed6]"
+                    >
+                      Cart{itemCount > 0 ? ` (${itemCount})` : ""}
+                    </button>
 
-                <Link
-                  href={session?.user ? "/account" : "/login"}
-                  onClick={() => setOpen(false)}
-                  className="tg-link-text text-lg font-medium text-[#0d262d] hover:text-[#3b6ed6]"
-                >
-                  {session?.user ? "Account" : "Sign in"}
-                </Link>
+                    <Link
+                      href={session?.user ? "/account" : "/login"}
+                      onClick={() => setOpen(false)}
+                      className="tg-link-text text-lg font-medium text-[#0d262d] hover:text-[#3b6ed6]"
+                    >
+                      {session?.user ? "Account" : "Sign in"}
+                    </Link>
+                  </div>
+                </div>
 
-                {navLinks.map((link) => (
-                  <Link
-                    key={link.href}
-                    href={link.href}
-                    onClick={() => setOpen(false)}
-                    className="tg-link-text text-lg font-medium text-[#0d262d] hover:text-[#3b6ed6]"
-                  >
-                    {link.label}
-                  </Link>
-                ))}
+                <div className="h-px w-full bg-[#e8eef7]" />
+
+                <div>
+                  <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.16em] text-[#7b8aa0]">
+                    Information
+                  </p>
+                  <div className="flex flex-col gap-5">
+                    {navLinks.map((link) => (
+                      <Link
+                        key={link.href}
+                        href={link.href}
+                        onClick={() => setOpen(false)}
+                        className="tg-link-text text-lg font-medium text-[#0d262d] hover:text-[#3b6ed6]"
+                      >
+                        {link.label}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
               </div>
             </SheetContent>
           </Sheet>
