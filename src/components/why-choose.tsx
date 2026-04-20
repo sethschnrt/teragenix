@@ -3,10 +3,10 @@ import { Logo } from "@/components/logo";
 
 const comparisonRows = [
   "Curated around the goals people obsess over most",
-  "Aspirational brand feel instead of generic peptide-store energy",
-  "Built for visible transformation, not just technical interest",
-  "One lineup spanning fat loss, recovery, longevity, and aesthetics",
-  "Merchandised around desire, confidence, and identity",
+  "Built to feel premium, credible, and worth buying from",
+  "Focused on visible change people can actually feel good about",
+  "Covers fat loss, recovery, longevity, and aesthetics in one brand",
+  "Designed to create desire, confidence, and repeat demand",
 ] as const;
 
 export function WhyChoose() {
