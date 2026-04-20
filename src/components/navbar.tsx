@@ -4,7 +4,7 @@ import Link from "next/link";
 import { FormEvent, useMemo, useState } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import { useSession } from "next-auth/react";
-import { ArrowUpRight, Menu, Search, ShoppingBag } from "lucide-react";
+import { ArrowUpRight, Menu, Search, ShoppingCart, UserRound } from "lucide-react";
 import { publicProducts } from "@/data/products";
 import { Logo } from "./logo";
 import {
@@ -217,13 +217,14 @@ export function Navbar() {
 
           <Link
             href={session?.user ? "/account" : "/login"}
-            className={`tg-link-pill hidden h-9 items-center rounded-full px-4 text-[13px] font-semibold tracking-tight lg:inline-flex ${
+            aria-label={session?.user ? "Account" : "Sign in"}
+            className={`tg-link-pill hidden h-9 w-9 items-center justify-center rounded-full lg:inline-flex ${
               useHeroNav
                 ? "border border-white/20 bg-white/10 text-white hover:bg-white/16"
                 : "border border-[#dbe6f5] bg-white text-[#0d262d] hover:bg-[#f8fbff]"
             }`}
           >
-            {session?.user ? "Account" : "Sign in"}
+            <UserRound className="h-4.5 w-4.5" />
           </Link>
 
           <button
@@ -234,7 +235,7 @@ export function Navbar() {
             }`}
             aria-label="Open cart"
           >
-            <ShoppingBag className="h-5 w-5" />
+            <ShoppingCart className="h-5 w-5" />
             {itemCount > 0 ? (
               <span className="absolute -right-1.5 -top-1.5 inline-flex min-w-[18px] items-center justify-center rounded-full bg-[#3b6ed6] px-1.5 text-[10px] font-semibold leading-5 text-white">
                 {itemCount}
