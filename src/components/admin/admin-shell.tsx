@@ -9,6 +9,7 @@ import {
   ExternalLink,
   LayoutDashboard,
   LogOut,
+  Megaphone,
   Search,
   Settings2,
   ShoppingCart,
@@ -36,6 +37,10 @@ const navSections = [
     ],
   },
   {
+    label: "Growth",
+    items: [{ href: "/admin/ads", label: "Ads", icon: Megaphone, color: "rose" }],
+  },
+  {
     label: "Configuration",
     items: [{ href: "/admin/settings", label: "Settings", icon: Settings2, color: "slate" }],
   },
@@ -47,6 +52,7 @@ const mobileNavItems = [
   { href: "/admin/expenses", label: "Expenses", icon: CircleDollarSign, color: "violet" },
   { href: "/admin/purchasing", label: "Product Orders", icon: ShoppingCart, color: "amber" },
   { href: "/admin/crm", label: "CRM", icon: Users, color: "green" },
+  { href: "/admin/ads", label: "Ads", icon: Megaphone, color: "rose" },
   { href: "/admin/settings", label: "Settings", icon: Settings2, color: "slate" },
 ] as const;
 
@@ -75,6 +81,12 @@ const themeByColor = {
     badge: "bg-[#f3ecff] text-[#6d28d9] border-[#d9c7ff]",
     focus: "focus:border-[#6d28d9]",
   },
+  rose: {
+    active: "bg-[#fff0f6] text-[#c2185b] ring-1 ring-[#f8bfd5]",
+    icon: "text-[#c2185b]",
+    badge: "bg-[#fff0f6] text-[#c2185b] border-[#f8bfd5]",
+    focus: "focus:border-[#c2185b]",
+  },
   slate: {
     active: "bg-white text-[#202223] ring-1 ring-[#dfe3e8]",
     icon: "text-[#4a4f55]",
@@ -95,6 +107,9 @@ function getAdminTheme(pathname: string) {
   }
   if (pathname.startsWith("/admin/expenses")) {
     return { title: "Expenses", color: "violet" as const };
+  }
+  if (pathname.startsWith("/admin/ads")) {
+    return { title: "Ads", color: "rose" as const };
   }
   if (pathname.startsWith("/admin/settings")) {
     return { title: "Settings", color: "slate" as const };
@@ -239,7 +254,7 @@ export function AdminShell({
                     <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-[#6d7175]" />
                     <input
                       type="text"
-                      placeholder="Search orders, contacts, expenses"
+                      placeholder="Search orders, contacts, ads"
                       className={`h-10 w-full rounded-xl border border-[#c9cccf] bg-white pl-10 pr-4 text-sm text-[#202223] outline-none transition ${themeClasses.focus}`}
                     />
                   </div>
