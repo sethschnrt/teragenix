@@ -3,6 +3,7 @@ import { TrustBar } from "@/components/trust-bar";
 import { EditorialSection } from "@/components/editorial-section";
 import { FeaturedProducts } from "@/components/featured-products";
 import { HowItWorks } from "@/components/how-it-works";
+import { WhyChoose } from "@/components/why-choose";
 import { Guarantee } from "@/components/guarantee";
 import { DisclaimerBanner } from "@/components/disclaimer-banner";
 import { Footer } from "@/components/footer";
@@ -77,6 +78,7 @@ export default function Home() {
       />
 
       <HowItWorks />
+      <WhyChoose />
       <Guarantee />
       <DisclaimerBanner />
       <Footer />
