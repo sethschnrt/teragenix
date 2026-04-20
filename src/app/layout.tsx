@@ -10,9 +10,9 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Teragenix — Research-Grade Peptide Kits, Redefined",
+  title: "Teragenix — Research-Grade Peptides, Refined",
   description:
-    "A cleaner storefront for browsing peptide research kits by category, comparing products faster, and moving through a more coherent catalog experience.",
+    "A cleaner storefront for browsing research peptides by category, comparing products faster, and moving through a more coherent catalog experience.",
 };
 
 export default function RootLayout({

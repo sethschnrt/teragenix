@@ -125,7 +125,7 @@ function SearchBox({
                         {product.heroCategory}
                       </span>
                       <span className="text-[#c5cfdb]">•</span>
-                      <span>Research kit</span>
+                      <span>Product</span>
                     </div>
                   </div>
                   <div className="shrink-0 text-right">
@@ -212,7 +212,7 @@ export function Navbar() {
                 : "bg-[#3b6ed6] text-white hover:bg-[#2d5bbf]"
             }`}
           >
-            Shop kits
+            Shop peptides
           </Link>
 
           <Link

@@ -91,16 +91,16 @@ const allCategoryTheme: CategoryTheme = {
 export const products: Product[] = [
   {
     slug: "retatrutide",
-    name: "Retatrutide Research Kit",
+    name: "Retatrutide",
     shortName: "Retatrutide",
     category: "Metabolic",
     heroCategory: "Metabolic",
     price: 189.99,
     originalPrice: 239.99,
     description:
-      "10mg Retatrutide kit for metabolic and body-composition research, with prep essentials included.",
+      "10mg Retatrutide for metabolic and body-composition research.",
     longDescription:
-      "This Retatrutide research kit is positioned for metabolic and body-composition focused workflows, with the compound, prep essentials, and storage notes kept together in one place. Each kit includes a 10mg lyophilized vial plus the supporting prep supplies needed for a cleaner lab routine.",
+      "Retatrutide is presented for metabolic and body-composition research, with visible specs, storage guidance, and documentation context kept easy to review.",
     badge: "Popular",
     badgeColor: "bg-[#4A90D9]",
     image: "/images/vials/approved/retatrutide.png",
@@ -119,26 +119,22 @@ export const products: Product[] = [
       releaseWindow: "Current ordered batch",
     },
     kitIncludes: [
-      "1× Retatrutide (10mg lyophilized)",
-      "1× Bacteriostatic water (30mL)",
-      "10× Insulin syringes (1mL)",
-      "10× Sterile alcohol swabs",
-      "Reconstitution guide",
+      "1× Retatrutide vial (10mg lyophilized)"
     ],
     relatedProductSlugs: ["tesamorelin", "bpc-157", "glutathione"],
   },
   {
     slug: "tesamorelin",
-    name: "Tesamorelin Research Kit",
+    name: "Tesamorelin",
     shortName: "Tesamorelin",
     category: "Melanocortin",
     heroCategory: "Melanocortin",
     price: 159.99,
     originalPrice: 199.99,
     description:
-      "10mg Tesamorelin kit for longevity and body-composition research, with prep essentials included.",
+      "10mg Tesamorelin for longevity and body-composition research.",
     longDescription:
-      "This Tesamorelin research kit is framed around longevity and body-composition focused protocols, with the compound, prep essentials, and storage guidance kept together in one place. Each kit includes a 10mg lyophilized vial and the supporting supplies needed for a cleaner prep workflow.",
+      "Tesamorelin is presented for longevity and body-composition research, with visible specs, storage guidance, and documentation context kept easy to review.",
     badge: "Best Seller",
     badgeColor: "bg-emerald-600",
     image: "/images/vials/approved/tesamorelin.png",
@@ -157,26 +153,22 @@ export const products: Product[] = [
       releaseWindow: "Current ordered batch",
     },
     kitIncludes: [
-      "1× Tesamorelin (10mg lyophilized)",
-      "1× Bacteriostatic water (30mL)",
-      "10× Insulin syringes (1mL)",
-      "10× Sterile alcohol swabs",
-      "Reconstitution guide",
+      "1× Tesamorelin vial (10mg lyophilized)"
     ],
     relatedProductSlugs: ["retatrutide", "semax", "selank"],
   },
   {
     slug: "bpc-157",
-    name: "BPC-157 Research Kit",
+    name: "BPC-157",
     shortName: "BPC-157",
     category: "Antioxidant",
     heroCategory: "Antioxidant",
     price: 79.99,
     originalPrice: 99.99,
     description:
-      "10mg BPC-157 kit for recovery-focused research, with prep essentials included.",
+      "10mg BPC-157 for recovery-focused research.",
     longDescription:
-      "This BPC-157 research kit is positioned for recovery-focused workflows, with the compound, prep essentials, and storage guidance kept together for easier evaluation. Each kit includes a 10mg lyophilized vial plus the supporting prep supplies needed for consistent lab prep.",
+      "BPC-157 is presented for recovery-focused research, with visible specs, storage guidance, and documentation context kept easy to review.",
     badge: "New",
     badgeColor: "bg-teal-600",
     image: "/images/vials/approved/bpc-157.png",
@@ -195,17 +187,13 @@ export const products: Product[] = [
       releaseWindow: "Current ordered batch",
     },
     kitIncludes: [
-      "1× BPC-157 (10mg lyophilized)",
-      "1× Bacteriostatic water (30mL)",
-      "10× Insulin syringes (1mL)",
-      "10× Sterile alcohol swabs",
-      "Reconstitution guide",
+      "1× BPC-157 vial (10mg lyophilized)"
     ],
     relatedProductSlugs: ["glutathione", "nad-plus", "cjc-ipamorelin"],
   },
   {
     slug: "cjc-ipamorelin",
-    name: "CJC / Ipamorelin Research Kit",
+    name: "CJC / Ipamorelin",
     shortName: "CJC / Ipamorelin",
     category: "Melanocortin",
     heroCategory: "Melanocortin",
@@ -214,7 +202,7 @@ export const products: Product[] = [
     description:
       "10mg CJC / Ipamorelin blend for recovery and longevity research, with prep essentials included.",
     longDescription:
-      "This CJC / Ipamorelin research kit keeps the blend, prep essentials, and storage notes in one place for easier review. Each kit includes a 10mg lyophilized vial plus the supporting prep supplies needed for a clean research workflow.",
+      "CJC / Ipamorelin is presented for recovery and longevity research, with visible specs, storage guidance, and documentation context kept easy to review.",
     badge: "Trending",
     badgeColor: "bg-violet-600",
     image: "/images/vials/approved/cjc-ipamorelin.png",
@@ -233,26 +221,22 @@ export const products: Product[] = [
       releaseWindow: "Current ordered batch",
     },
     kitIncludes: [
-      "1× CJC / Ipamorelin blend (10mg lyophilized)",
-      "1× Bacteriostatic water (30mL)",
-      "10× Insulin syringes (1mL)",
-      "10× Sterile alcohol swabs",
-      "Reconstitution guide",
+      "1× CJC / Ipamorelin blend vial (10mg lyophilized)"
     ],
     relatedProductSlugs: ["tesamorelin", "semax", "retatrutide"],
   },
   {
     slug: "nad-plus",
-    name: "NAD+ Research Kit",
+    name: "NAD+",
     shortName: "NAD+",
     category: "Antioxidant",
     heroCategory: "Antioxidant",
     price: 119.99,
     originalPrice: 149.99,
     description:
-      "1000mg NAD+ kit for energy and resilience research, with prep essentials included.",
+      "1000mg NAD+ for energy and resilience research.",
     longDescription:
-      "This NAD+ research kit is positioned for energy and resilience focused workflows, with the compound, prep essentials, and storage notes kept together for faster review. Each kit includes a 1000mg lyophilized vial plus the supporting supplies needed for a cleaner prep routine.",
+      "NAD+ is presented for energy and resilience research, with visible specs, storage guidance, and documentation context kept easy to review.",
     image: "/images/vials/approved/nad-plus.png",
     specifications: {
       purity: "99%+",
@@ -269,26 +253,22 @@ export const products: Product[] = [
       releaseWindow: "Current ordered batch",
     },
     kitIncludes: [
-      "1× NAD+ (1000mg lyophilized)",
-      "1× Bacteriostatic water (30mL)",
-      "10× Insulin syringes (1mL)",
-      "10× Sterile alcohol swabs",
-      "Reconstitution guide",
+      "1× NAD+ vial (1000mg lyophilized)"
     ],
     relatedProductSlugs: ["glutathione", "bpc-157", "tesamorelin"],
   },
   {
     slug: "glutathione",
-    name: "Glutathione Research Kit",
+    name: "Glutathione",
     shortName: "Glutathione",
     category: "Antioxidant",
     heroCategory: "Antioxidant",
     price: 79.99,
     originalPrice: 99.99,
     description:
-      "1500mg Glutathione kit for recovery-focused research, with prep essentials included.",
+      "1500mg Glutathione for recovery-focused research.",
     longDescription:
-      "This Glutathione research kit is positioned for recovery-focused protocols, with the compound, prep essentials, and storage guidance kept together for easier evaluation. Each kit includes a 1500mg lyophilized vial plus the supporting prep supplies needed for a clean lab workflow.",
+      "Glutathione is presented for recovery-focused research, with visible specs, storage guidance, and documentation context kept easy to review.",
     image: "/images/vials/approved/glutathione.png",
     specifications: {
       purity: "99%+",
@@ -305,26 +285,22 @@ export const products: Product[] = [
       releaseWindow: "Current ordered batch",
     },
     kitIncludes: [
-      "1× Glutathione (1500mg lyophilized)",
-      "1× Bacteriostatic water (30mL)",
-      "10× Insulin syringes (1mL)",
-      "10× Sterile alcohol swabs",
-      "Reconstitution guide",
+      "1× Glutathione vial (1500mg lyophilized)"
     ],
     relatedProductSlugs: ["bpc-157", "retatrutide", "glow-70"],
   },
   {
     slug: "semax",
-    name: "Semax Research Kit",
+    name: "Semax",
     shortName: "Semax",
     category: "Melanocortin",
     heroCategory: "Melanocortin",
     price: 89.99,
     originalPrice: 109.99,
     description:
-      "10mg Semax kit for focus and resilience research, with prep essentials included.",
+      "10mg Semax for focus and resilience research.",
     longDescription:
-      "This Semax research kit is framed around focus and resilience oriented workflows, with the compound, prep essentials, and storage notes kept together for easier review. Each kit includes a 10mg lyophilized vial plus the supporting supplies needed for consistent lab prep.",
+      "Semax is presented for focus and resilience research, with visible specs, storage guidance, and documentation context kept easy to review.",
     image: "/images/vials/approved/semax.png",
     specifications: {
       purity: "99%+",
@@ -341,26 +317,22 @@ export const products: Product[] = [
       releaseWindow: "Current ordered batch",
     },
     kitIncludes: [
-      "1× Semax (10mg lyophilized)",
-      "1× Bacteriostatic water (30mL)",
-      "10× Insulin syringes (1mL)",
-      "10× Sterile alcohol swabs",
-      "Reconstitution guide",
+      "1× Semax vial (10mg lyophilized)"
     ],
     relatedProductSlugs: ["selank", "tesamorelin", "retatrutide"],
   },
   {
     slug: "selank",
-    name: "Selank Research Kit",
+    name: "Selank",
     shortName: "Selank",
     category: "Melanocortin",
     heroCategory: "Melanocortin",
     price: 89.99,
     originalPrice: 109.99,
     description:
-      "10mg Selank kit for calm and clarity research, with prep essentials included.",
+      "10mg Selank for calm and clarity research.",
     longDescription:
-      "This Selank research kit is positioned for calm and clarity focused workflows, with the compound, prep essentials, and storage notes kept together in one place. Each kit includes a 10mg lyophilized vial plus the supporting supplies needed for a cleaner prep routine.",
+      "Selank is presented for calm and clarity research, with visible specs, storage guidance, and documentation context kept easy to review.",
     image: "/images/vials/approved/selank.png",
     specifications: {
       purity: "99%+",
@@ -377,26 +349,22 @@ export const products: Product[] = [
       releaseWindow: "Current ordered batch",
     },
     kitIncludes: [
-      "1× Selank (10mg lyophilized)",
-      "1× Bacteriostatic water (30mL)",
-      "10× Insulin syringes (1mL)",
-      "10× Sterile alcohol swabs",
-      "Reconstitution guide",
+      "1× Selank vial (10mg lyophilized)"
     ],
     relatedProductSlugs: ["semax", "tesamorelin", "glutathione"],
   },
   {
     slug: "glow-70",
-    name: "Glow-70 Stack Research Kit",
+    name: "Glow-70 Stack",
     shortName: "Glow-70 Stack",
     category: "Cosmetic",
     heroCategory: "Cosmetic",
     price: 149.99,
     originalPrice: 179.99,
     description:
-      "70mg Glow-70 kit for aesthetics-focused research, with prep essentials included.",
+      "70mg Glow-70 for aesthetics-focused research.",
     longDescription:
-      "This Glow-70 research kit is framed around aesthetics-focused protocols, with the blend, prep essentials, and storage notes kept together in one box. Each kit includes a 70mg lyophilized vial plus the supporting prep supplies needed for consistent lab prep.",
+      "Glow-70 Stack is presented for aesthetics-focused research, with visible specs, storage guidance, and documentation context kept easy to review.",
     badge: "Trending",
     badgeColor: "bg-rose-600",
     image: "/images/vials/approved/glow-70.png",
@@ -415,26 +383,22 @@ export const products: Product[] = [
       releaseWindow: "Current ordered batch",
     },
     kitIncludes: [
-      "1× Glow-70 (70mg lyophilized)",
-      "1× Bacteriostatic water (30mL)",
-      "10× Insulin syringes (1mL)",
-      "10× Sterile alcohol swabs",
-      "Reconstitution guide",
+      "1× Glow-70 Stack vial (70mg lyophilized)"
     ],
     relatedProductSlugs: ["glutathione", "mt-2", "bpc-157"],
   },
   {
     slug: "mt-2",
-    name: "Melanotan II (MT-2) Research Kit",
+    name: "Melanotan II (MT-2)",
     shortName: "MT-2",
     category: "Cosmetic",
     heroCategory: "Cosmetic",
     price: 69.99,
     originalPrice: 89.99,
     description:
-      "10mg Melanotan II / MT-2 kit for pigmentation-focused research, with prep essentials included.",
+      "10mg Melanotan II / MT-2 for pigmentation-focused research.",
     longDescription:
-      "This Melanotan II / MT-2 research kit is positioned for pigmentation-focused workflows, with the compound, prep essentials, and handling context kept together in one box. Each kit includes a 10mg lyophilized vial plus the supporting prep supplies needed for a cleaner lab routine.",
+      "Melanotan II (MT-2) is presented for pigmentation-focused research, with visible specs, storage guidance, and documentation context kept easy to review.",
     image: "/images/vials/approved/mt-2.png",
     specifications: {
       purity: "99%+",
@@ -451,11 +415,7 @@ export const products: Product[] = [
       releaseWindow: "Current ordered batch",
     },
     kitIncludes: [
-      "1× Melanotan II / MT-2 (10mg lyophilized)",
-      "1× Bacteriostatic water (30mL)",
-      "10× Insulin syringes (1mL)",
-      "10× Sterile alcohol swabs",
-      "Reconstitution guide",
+      "1× Melanotan II (MT-2) vial (10mg lyophilized)"
     ],
     relatedProductSlugs: ["glow-70", "selank", "semax"],
   },

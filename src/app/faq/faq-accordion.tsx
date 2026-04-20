@@ -26,19 +26,19 @@ const faqData: FaqSection[] = [
           "No. All Teragenix products are presented strictly for in-vitro research and laboratory use only. They are not sold for human consumption, veterinary use, or therapeutic application.",
       },
       {
-        question: "What comes in a Teragenix research kit?",
+        question: "What does a Teragenix product listing show?",
         answer:
-          "Every product page lists the exact box contents. In most cases, that means the lyophilized compound plus the core prep items researchers expect to see, including bacteriostatic water, syringes, swabs, and a reconstitution guide.",
+          "Every product page lists the peptide, specs, storage guidance, and documentation context so buyers can evaluate the product faster.",
       },
       {
-        question: "Why sell kits instead of standalone vials?",
+        question: "Does Teragenix sell standalone peptides?",
         answer:
-          "Because it is faster to evaluate one complete setup than piece together basics across multiple listings. Teragenix shows the compound, prep supplies, and setup context together on the product page.",
+          "Yes. The current direction is standalone peptides, with the product page focused on the peptide itself, visible specs, and documentation context.",
       },
       {
         question: "Where do I compare compounds quickly?",
         answer:
-          "Start on the Shop page. Browse by category, search by compound or kit name, and use the product page for the deeper read on specs, contents, and handling details.",
+          "Start on the Shop page. Browse by category, search by compound or product name, and use the product page for the deeper read on specs and handling details.",
       },
     ],
   },
@@ -49,7 +49,7 @@ const faqData: FaqSection[] = [
       {
         question: "What documentation is shown on product pages?",
         answer:
-          "Product pages surface the details serious buyers look for first: kit contents, technical specs, storage guidance, batch references, and research-use framing. The goal is to keep the important information visible without turning the page into clutter.",
+          "Product pages surface the details serious buyers look for first: technical specs, storage guidance, batch references, and research-use framing. The goal is to keep the important information visible without turning the page into clutter.",
       },
       {
         question: "What does the purity spec mean?",
@@ -70,12 +70,12 @@ const faqData: FaqSection[] = [
       {
         question: "How should peptides be stored?",
         answer:
-          "Storage guidance is shown on the product page for each kit. In general, unopened lyophilized peptides are stored cold and dry, while reconstituted material should be refrigerated and handled according to the listed storage range.",
+          "Storage guidance is shown on the product page for each product. In general, unopened lyophilized peptides are stored cold and dry, while reconstituted material should be refrigerated and handled according to the listed storage range.",
       },
       {
-        question: "Do product pages include reconstitution-related supplies?",
+        question: "Do product pages focus on the peptide or bundled extras?",
         answer:
-          "Yes. Teragenix kit pages are designed to show not just the compound itself, but the prep essentials included with the kit, such as bacteriostatic water, syringes, swabs, and a guide when applicable.",
+          "They should focus on the peptide itself. The direction now is standalone products with clearer specs, storage guidance, and documentation context.",
       },
       {
         question: "Where will shipping details live?",
@@ -99,9 +99,9 @@ const faqData: FaqSection[] = [
           "Use the linked policy pages throughout the site: Shipping Policy, Refund Policy, Terms of Use, Privacy Policy, and Research Disclaimer. They are there to make the operational details easy to verify before you move forward.",
       },
       {
-        question: "What should I read before choosing a kit?",
+        question: "What should I read before choosing a product?",
         answer:
-          "Start with Shop, open the product page for the kit details, then use the FAQ and policy pages if you need more operational context. That path gives you category context, exact kit contents, specs, and support details in the right order.",
+          "Start with Shop, open the product page for the product details, then use the FAQ and policy pages if you need more operational context. That path gives you category context, specs, and support details in the right order.",
       },
     ],
   },
@@ -170,8 +170,8 @@ export function FaqAccordion() {
             className="tg-link-card rounded-2xl border bg-white p-5 ring-1 ring-[#e3e8ef] transition-colors hover:bg-[#f8fbff]"
           >
             <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#4A90D9]">Catalog</p>
-            <h3 className="mt-2 text-base font-semibold text-[#0d262d]">Browse research kits</h3>
-            <p className="mt-2 text-sm leading-6 text-[#475967]">Start with category, then compare compounds, kit format, and price before opening the full product page.</p>
+            <h3 className="mt-2 text-base font-semibold text-[#0d262d]">Browse peptides</h3>
+            <p className="mt-2 text-sm leading-6 text-[#475967]">Start with category, then compare compounds and price before opening the full product page.</p>
           </Link>
 
           <Link

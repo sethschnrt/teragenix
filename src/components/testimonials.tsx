@@ -1,12 +1,12 @@
 import Link from "next/link";
 import { BadgeCheck, FileCheck2, FlaskConical, Truck } from "lucide-react";
 
-const proofPills = ["Research use only", "COA-backed batches", "Complete kit format"] as const;
+const proofPills = ["Research use only", "COA-backed batches", "Clear product pages"] as const;
 
 const standards = [
   "Clear category-led browsing",
   "COA-first quality positioning",
-  "Complete kit presentation",
+  "Clear product presentation",
   "More coherent product discovery",
 ] as const;
 
@@ -18,8 +18,8 @@ const proofCards = [
   },
   {
     icon: FlaskConical,
-    title: "Kit-ready from day one",
-    body: "The storefront should make the kit format obvious fast, so buyers understand what is included without digging through scattered copy.",
+    title: "Clarity from day one",
+    body: "The storefront should make the product details obvious fast, so buyers understand what they are looking at without digging through scattered copy.",
   },
   {
     icon: Truck,
@@ -51,7 +51,7 @@ export function Testimonials() {
                 fontWeight: 400,
               }}
             >
-              Teragenix should win on what serious buyers actually care about: documentation, kit completeness, and a cleaner overall experience.
+              Teragenix should win on what serious buyers actually care about: documentation, clarity, and a cleaner overall experience.
             </p>
           </div>
 
@@ -148,7 +148,7 @@ export function Testimonials() {
             className="inline-flex h-12 items-center rounded-full bg-[#0d262d] px-7 text-white transition hover:bg-[#163741]"
             style={{ fontSize: "14px", fontWeight: 600, letterSpacing: "-0.02em" }}
           >
-            Shop all kits
+            Shop all peptides
             <svg
               className="ml-2 h-4 w-4"
               viewBox="0 0 24 24"
