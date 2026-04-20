@@ -18,7 +18,6 @@ import { useCart } from "./cart-provider";
 const navLinks = [
   { label: "Shop", href: "/shop" },
   { label: "About", href: "/about" },
-  { label: "Content System", href: "/content-system" },
   { label: "FAQ", href: "/faq" },
 ];
 
@@ -26,7 +25,6 @@ const heroNavPaths = [
   "/",
   "/shop",
   "/about",
-  "/content-system",
   "/faq",
   "/coa",
   "/cart",

@@ -6,7 +6,6 @@ import { HowItWorks } from "@/components/how-it-works";
 import { Guarantee } from "@/components/guarantee";
 import { DisclaimerBanner } from "@/components/disclaimer-banner";
 import { Footer } from "@/components/footer";
-import { ContentSystemSection } from "@/components/content-system-section";
 
 // Brand blue accents (all sections stay within Teragenix blue family)
 const BLUE_PRIMARY = "#3b6ed6";
@@ -77,7 +76,6 @@ export default function Home() {
         background="cream"
       />
 
-      <ContentSystemSection />
       <HowItWorks />
       <Guarantee />
       <DisclaimerBanner />
