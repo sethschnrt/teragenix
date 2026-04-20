@@ -68,23 +68,23 @@ export function AgeGate({ enabled = true }: AgeGateProps) {
   if (!enabled || !ready || !open) return null;
 
   return (
-    <div className="fixed inset-0 z-[120] flex items-center justify-center bg-[#06111a]/72 px-4 py-6 backdrop-blur-sm sm:px-6">
-      <div className="relative w-full max-w-[560px] overflow-hidden rounded-[2rem] border border-white/12 bg-[linear-gradient(180deg,_#ffffff_0%,_#f6f9fe_100%)] p-6 text-[#0d262d] shadow-[0_30px_80px_rgba(6,17,26,0.36)] sm:p-8">
-        <div className="inline-flex h-14 w-14 items-center justify-center rounded-full bg-[#ecf4ff] text-[#3b6ed6] ring-1 ring-[#dbe6f5]">
-          <ShieldCheck className="h-7 w-7" />
+    <div className="fixed inset-0 z-[120] overflow-y-auto bg-[#06111a]/72 px-3 py-3 backdrop-blur-sm sm:flex sm:items-center sm:justify-center sm:px-6 sm:py-6">
+      <div className="relative mx-auto w-full max-w-[560px] rounded-[1.5rem] border border-white/12 bg-[linear-gradient(180deg,_#ffffff_0%,_#f6f9fe_100%)] p-5 text-[#0d262d] shadow-[0_30px_80px_rgba(6,17,26,0.36)] sm:rounded-[2rem] sm:p-8">
+        <div className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-[#ecf4ff] text-[#3b6ed6] ring-1 ring-[#dbe6f5] sm:h-14 sm:w-14">
+          <ShieldCheck className="h-6 w-6 sm:h-7 sm:w-7" />
         </div>
 
-        <p className="mt-6 text-[11px] font-medium uppercase tracking-[0.24em] text-[#3b6ed6]">
+        <p className="mt-5 text-[10px] font-medium uppercase tracking-[0.22em] text-[#3b6ed6] sm:mt-6 sm:text-[11px] sm:tracking-[0.24em]">
           Age verification required
         </p>
-        <h2 className="mt-3 text-[2rem] font-semibold leading-[0.95] tracking-[-0.05em] text-[#0d262d] sm:text-[2.4rem]">
+        <h2 className="mt-3 max-w-[16rem] text-[1.75rem] font-semibold leading-[0.95] tracking-[-0.05em] text-[#0d262d] sm:max-w-none sm:text-[2.4rem]">
           This site is for adults 18+
         </h2>
-        <p className="mt-4 max-w-[32rem] text-[15px] leading-7 text-[#5b6b7b] sm:text-[16px]">
+        <p className="mt-3 text-[14px] leading-6 text-[#5b6b7b] sm:mt-4 sm:max-w-[32rem] sm:text-[16px] sm:leading-7">
           By entering, you confirm that you are at least 18 years old and understand that Teragenix products are presented for lawful in-vitro research use only.
         </p>
 
-        <div className="mt-6 rounded-[1.5rem] border border-[#dbe6f5] bg-white/88 p-4 sm:p-5">
+        <div className="mt-5 rounded-[1.25rem] border border-[#dbe6f5] bg-white/88 p-4 sm:mt-6 sm:rounded-[1.5rem] sm:p-5">
           <p className="text-sm font-semibold text-[#0d262d]">Before continuing</p>
           <ul className="mt-3 space-y-2 text-sm leading-6 text-[#5b6b7b]">
             <li>• You are 18 years of age or older.</li>
@@ -93,11 +93,11 @@ export function AgeGate({ enabled = true }: AgeGateProps) {
           </ul>
         </div>
 
-        <div className="mt-7 flex flex-col gap-3 sm:flex-row">
+        <div className="mt-5 flex flex-col gap-2.5 sm:mt-7 sm:flex-row sm:gap-3">
           <button
             type="button"
             onClick={confirmAge}
-            className="tg-link-pill inline-flex h-12 flex-1 items-center justify-center rounded-full bg-[#3b6ed6] px-6 text-sm font-semibold text-white transition hover:bg-[#2d5bbf]"
+            className="tg-link-pill inline-flex h-11 flex-1 items-center justify-center rounded-full bg-[#3b6ed6] px-5 text-sm font-semibold text-white transition hover:bg-[#2d5bbf] sm:h-12 sm:px-6"
           >
             I am 18 or older
             <ArrowRight className="tg-link-pill-icon ml-2 h-4 w-4" />
@@ -105,20 +105,20 @@ export function AgeGate({ enabled = true }: AgeGateProps) {
           <button
             type="button"
             onClick={leaveSite}
-            className="tg-link-pill inline-flex h-12 flex-1 items-center justify-center rounded-full border border-[#dbe6f5] bg-[#f8fbff] px-6 text-sm font-semibold text-[#173f85] transition hover:bg-[#eef4fc]"
+            className="tg-link-pill inline-flex h-11 flex-1 items-center justify-center rounded-full border border-[#dbe6f5] bg-[#f8fbff] px-5 text-sm font-semibold text-[#173f85] transition hover:bg-[#eef4fc] sm:h-12 sm:px-6"
           >
             Exit site
           </button>
         </div>
 
-        <div className="mt-5 flex flex-col gap-2 text-xs leading-5 text-[#6d7d8d] sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-4 flex flex-col gap-2 text-xs leading-5 text-[#6d7d8d] sm:mt-5 sm:flex-row sm:items-center sm:justify-between">
           <span>Confirmation saved for 30 days.</span>
           <Link href="/research-disclaimer" className="font-semibold text-[#173f85] underline-offset-4 hover:underline">
             Read research disclaimer
           </Link>
         </div>
 
-        <p className="mt-4 text-[11px] uppercase tracking-[0.18em] text-[#94a3b8]">Updated {today}</p>
+        <p className="mt-3 text-[10px] uppercase tracking-[0.16em] text-[#94a3b8] sm:mt-4 sm:text-[11px] sm:tracking-[0.18em]">Updated {today}</p>
       </div>
     </div>
   );

@@ -5,7 +5,9 @@ import { useEffect, useState } from "react";
 
 const STORAGE_KEY = "teragenix-cookie-consent-v1";
 const COOKIE_NAME = "teragenix_cookie_consent";
+const AGE_GATE_KEY = "teragenix-age-gate-v1";
 const MAX_AGE_SECONDS = 60 * 60 * 24 * 365;
+const AGE_GATE_MAX_AGE_MS = 1000 * 60 * 60 * 24 * 30;
 
 type CookieBannerProps = {
   enabled?: boolean;
@@ -24,9 +26,13 @@ export function CookieBanner({ enabled = true }: CookieBannerProps) {
 
     try {
       const stored = window.localStorage.getItem(STORAGE_KEY);
-      setVisible(stored !== "accepted");
+      const ageRaw = window.localStorage.getItem(AGE_GATE_KEY);
+      const ageAcceptedAt = ageRaw ? (JSON.parse(ageRaw) as { acceptedAt?: number }).acceptedAt ?? 0 : 0;
+      const ageAccepted = Date.now() - ageAcceptedAt <= AGE_GATE_MAX_AGE_MS;
+
+      setVisible(ageAccepted && stored !== "accepted");
     } catch {
-      setVisible(true);
+      setVisible(false);
     } finally {
       setReady(true);
     }
