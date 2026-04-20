@@ -1,11 +1,12 @@
 import { Check, X } from "lucide-react";
+import { Logo } from "@/components/logo";
 
 const comparisonRows = [
-  "Getting leaner and feeling more confident",
-  "Recovering faster and staying consistent",
-  "More energy, vitality, and momentum",
-  "Sharper focus and clearer day-to-day performance",
-  "Visible aesthetic improvements people actually want",
+  "Curated around high-demand outcomes, not endless filler compounds",
+  "Built for body composition, recovery, longevity, and aesthetics in one brand",
+  "Premium positioning without the sketchy peptide-store feel",
+  "Products chosen for visible, felt transformations people actually want",
+  "A tighter lineup built for stronger desire and repeat demand",
 ] as const;
 
 export function WhyChoose() {
@@ -15,17 +16,19 @@ export function WhyChoose() {
         <div className="mb-10 max-w-[760px] sm:mb-12">
           <p className="tg-eyebrow">WHY CHOOSE TERAGENIX</p>
           <h2 className="mt-3 text-[2.4rem] font-semibold leading-[0.96] tracking-[-0.05em] text-[#0d262d] sm:text-[3.2rem]">
-            Products people want for outcomes they already care about.
+            Not another peptide catalog, a brand built around what people actually want.
           </h2>
-          <p className="mt-4 max-w-[42rem] text-[15px] leading-7 text-[#475967] sm:text-[16px]">
-            The strongest demand comes from real goals: looking better, recovering faster, feeling stronger, and showing up better in everyday life.
+          <p className="mt-4 max-w-[44rem] text-[15px] leading-7 text-[#475967] sm:text-[16px]">
+            The difference is not just having peptides. It is choosing the right ones, framing them around real desire, and building a brand people actually want to buy from.
           </p>
         </div>
 
         <div className="overflow-hidden rounded-[2rem] border border-[#dbe6f5] bg-white shadow-[0_24px_60px_-40px_rgba(17,33,17,0.18)]">
           <div className="grid grid-cols-[minmax(0,1.5fr)_120px_120px] border-b border-[#e8eef7] bg-[#f8fbff] px-5 py-4 text-sm sm:grid-cols-[minmax(0,1fr)_180px_180px] sm:px-8">
             <div />
-            <div className="text-center font-semibold text-[#3b6ed6]">Teragenix</div>
+            <div className="flex items-center justify-center">
+              <Logo size="md" className="w-[102px] sm:w-[112px]" />
+            </div>
             <div className="text-center font-semibold text-[#6b7b8f]">Others</div>
           </div>
 
