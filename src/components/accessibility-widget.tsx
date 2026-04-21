@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState, useSyncExternalStore } from "react";
 import { Accessibility, RotateCcw, X } from "lucide-react";
 
 type TextSize = "default" | "large" | "xlarge";
@@ -29,11 +29,12 @@ function applySettings(settings: AccessibilitySettings) {
   root.dataset.focusHighlight = settings.focusHighlight ? "true" : "false";
 }
 
-type AccessibilityWidgetProps = {
-  enabled?: boolean;
-};
-
-export function AccessibilityWidget({ enabled = true }: AccessibilityWidgetProps) {
+export function AccessibilityWidget() {
+  const mounted = useSyncExternalStore(
+    () => () => {},
+    () => true,
+    () => false,
+  );
   const [open, setOpen] = useState(false);
   const [settings, setSettings] = useState<AccessibilitySettings>(() => {
     if (typeof window === "undefined") return defaultSettings;
@@ -53,9 +54,10 @@ export function AccessibilityWidget({ enabled = true }: AccessibilityWidgetProps
   });
 
   useEffect(() => {
+    if (!mounted) return;
     applySettings(settings);
     window.localStorage.setItem(STORAGE_KEY, JSON.stringify(settings));
-  }, [settings]);
+  }, [mounted, settings]);
 
   useEffect(() => {
     if (!open) return;
@@ -81,7 +83,7 @@ export function AccessibilityWidget({ enabled = true }: AccessibilityWidgetProps
 
   const reset = () => setSettings(defaultSettings);
 
-  if (!enabled) return null;
+  if (!mounted) return null;
 
   return (
     <div className="fixed bottom-[calc(env(safe-area-inset-bottom,0px)+5.75rem)] right-5 z-[115] flex flex-col items-end gap-3 sm:bottom-5" data-site-chrome="accessibility-widget">

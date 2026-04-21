@@ -157,9 +157,9 @@ export function Hero() {
                       <img
                         src={`${BASE_PATH}${tile.image}`}
                         alt={tile.title}
-                        loading="lazy"
+                        loading="eager"
                         decoding="async"
-                        fetchPriority="low"
+                        fetchPriority="high"
                         className={`tg-link-card-media tg-hero-card-media ${tile.mobileImageClass}`}
                       />
                     </div>
@@ -203,9 +203,9 @@ export function Hero() {
                       <img
                         src={`${BASE_PATH}${tile.desktopImage ?? tile.image}`}
                         alt={tile.title}
-                        loading="lazy"
+                        loading="eager"
                         decoding="async"
-                        fetchPriority="low"
+                        fetchPriority="high"
                         className={`tg-link-card-media tg-hero-card-media w-auto object-contain ${tile.desktopImageClass}`}
                       />
                     </div>
