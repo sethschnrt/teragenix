@@ -232,7 +232,7 @@
     font-size: 18px;
   }
 
-  html[data-contrast="high"] body {
+  html[data-contrast="high"] [data-site-shell] {
     filter: contrast(1.08);
   }
 

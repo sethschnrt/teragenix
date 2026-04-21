@@ -25,12 +25,14 @@ export function Providers({ children }: { children: React.ReactNode }) {
   return (
     <SessionProvider>
       <CartProvider>
-        {showNavbar ? <Navbar /> : null}
-        {children}
-        <CartDrawer />
+        <div data-site-shell>
+          {showNavbar ? <Navbar /> : null}
+          {children}
+          <CartDrawer />
+          <AgeGate enabled={showAgeGate} />
+          <CookieBanner enabled={showCookieBanner} />
+        </div>
         {showNavbar ? <AccessibilityWidget /> : null}
-        <AgeGate enabled={showAgeGate} />
-        <CookieBanner enabled={showCookieBanner} />
       </CartProvider>
     </SessionProvider>
   );
