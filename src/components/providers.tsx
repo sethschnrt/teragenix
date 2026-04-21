@@ -3,6 +3,7 @@
 import { SessionProvider } from "next-auth/react";
 import { usePathname } from "next/navigation";
 
+import { AccessibilityWidget } from "@/components/accessibility-widget";
 import { AgeGate } from "@/components/age-gate";
 import { CartProvider } from "@/components/cart-provider";
 import { CookieBanner } from "@/components/cookie-banner";
@@ -27,6 +28,7 @@ export function Providers({ children }: { children: React.ReactNode }) {
         {showNavbar ? <Navbar /> : null}
         {children}
         <CartDrawer />
+        {showNavbar ? <AccessibilityWidget /> : null}
         <AgeGate enabled={showAgeGate} />
         <CookieBanner enabled={showCookieBanner} />
       </CartProvider>

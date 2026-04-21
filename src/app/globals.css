@@ -70,6 +70,7 @@
 :root {
   --background: #ffffff;
   --foreground: #0d262d;
+  --tera-text-scale: 1;
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(1 0 0);
@@ -215,6 +216,38 @@
   body:has(main[data-page="not-found"]) [data-site-chrome="age-gate"],
   body:has(main[data-page="not-found"]) [data-site-chrome="cookie-banner"] {
     display: none !important;
+  }
+
+  html[data-text-size="large"] {
+    font-size: 17px;
+  }
+
+  html[data-text-size="xlarge"] {
+    font-size: 18px;
+  }
+
+  html[data-contrast="high"] body {
+    filter: contrast(1.08);
+  }
+
+  html[data-focus-highlight="true"] :focus-visible {
+    outline: 3px solid #3b6ed6 !important;
+    outline-offset: 3px !important;
+    box-shadow: 0 0 0 6px rgba(59, 110, 214, 0.16) !important;
+  }
+
+  html[data-reduce-motion="true"],
+  html[data-reduce-motion="true"] * {
+    scroll-behavior: auto !important;
+  }
+
+  html[data-reduce-motion="true"] *,
+  html[data-reduce-motion="true"] *::before,
+  html[data-reduce-motion="true"] *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    transition-delay: 0ms !important;
   }
 }
 
