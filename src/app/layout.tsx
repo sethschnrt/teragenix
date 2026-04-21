@@ -11,11 +11,11 @@ const poppins = Poppins({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://teragenix.vercel.app"),
-  title: "Teragenix — Research-Grade Peptides, Refined",
+  title: "Teragenix | Research Grade Peptides",
   description:
     "Shop research-use peptides with clear specs, batch documentation, and product details you can verify before you buy.",
   openGraph: {
-    title: "Teragenix — Research-Grade Peptides, Refined",
+    title: "Teragenix | Research Grade Peptides",
     description:
       "Shop research-use peptides with clear specs, batch documentation, and product details you can verify before you buy.",
     type: "website",
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Teragenix — Research-Grade Peptides, Refined",
+    title: "Teragenix | Research Grade Peptides",
     description:
       "Shop research-use peptides with clear specs, batch documentation, and product details you can verify before you buy.",
   },
