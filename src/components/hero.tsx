@@ -44,7 +44,7 @@ const heroTiles: HeroTile[] = [
     mobileImageAlign: "bottom",
     desktopImageAlign: "bottom",
     mobileImageClass: "h-[100%] w-auto max-w-[138%] object-contain",
-    desktopImageClass: "h-[232px] max-w-[95%] lg:h-[158px] lg:max-w-[95%]",
+    desktopImageClass: "h-[220px] max-w-[95%] lg:h-[158px] lg:max-w-[95%] lg:translate-y-0",
   },
   {
     title: "Longevity",
