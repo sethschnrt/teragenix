@@ -8,9 +8,10 @@ export const AGE_GATE_MAX_AGE_MS = 1000 * 60 * 60 * 24 * 30;
 type AgeGateProps = {
   enabled?: boolean;
   onAccepted?: () => void;
+  onStatusChange?: (accepted: boolean) => void;
 };
 
-export function AgeGate({ enabled = true, onAccepted }: AgeGateProps) {
+export function AgeGate({ enabled = true, onAccepted, onStatusChange }: AgeGateProps) {
   const [ready, setReady] = useState(false);
   const [open, setOpen] = useState(false);
 
@@ -18,6 +19,7 @@ export function AgeGate({ enabled = true, onAccepted }: AgeGateProps) {
     if (!enabled) {
       setOpen(false);
       setReady(true);
+      onStatusChange?.(true);
       return;
     }
 
@@ -26,18 +28,22 @@ export function AgeGate({ enabled = true, onAccepted }: AgeGateProps) {
       if (!raw) {
         setOpen(true);
         setReady(true);
+        onStatusChange?.(false);
         return;
       }
 
       const parsed = JSON.parse(raw) as { acceptedAt?: number };
       const acceptedAt = typeof parsed?.acceptedAt === "number" ? parsed.acceptedAt : 0;
-      setOpen(Date.now() - acceptedAt > AGE_GATE_MAX_AGE_MS);
+      const accepted = Date.now() - acceptedAt <= AGE_GATE_MAX_AGE_MS;
+      setOpen(!accepted);
+      onStatusChange?.(accepted);
     } catch {
       setOpen(true);
+      onStatusChange?.(false);
     } finally {
       setReady(true);
     }
-  }, [enabled]);
+  }, [enabled, onStatusChange]);
 
   useEffect(() => {
     if (!ready || !open) return;
