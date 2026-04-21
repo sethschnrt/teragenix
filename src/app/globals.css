@@ -219,7 +219,7 @@
   }
 
   [data-site-chrome="accessibility-widget"] {
-    top: calc(100dvh - 3rem - env(safe-area-inset-bottom, 0px) - 1rem);
+    top: calc(100svh - 3rem - env(safe-area-inset-bottom, 0px) - 1rem);
   }
 
   @media (min-width: 640px) {
