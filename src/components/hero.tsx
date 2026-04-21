@@ -53,9 +53,9 @@ const heroTiles: HeroTile[] = [
     desktopImage: "/images/generated/life-benefits-v13-cutout/active-life-pickleball-desktop-bottom.webp",
     tone: "#eee7fb",
     mobileImageAlign: "center",
-    desktopImageAlign: "desktop-bottom",
+    desktopImageAlign: "bottom",
     mobileImageClass: "h-[98%] w-auto max-w-[110%] object-contain",
-    desktopImageClass: "h-[214px] max-w-[98%] lg:h-[150px] lg:max-w-[98%]",
+    desktopImageClass: "h-[184px] max-w-[90%] lg:h-[150px] lg:max-w-[98%]",
   },
 ];
 
@@ -193,7 +193,7 @@ export function Hero() {
                     style={{ backgroundColor: tile.tone }}
                   >
                     <div
-                      className={`pointer-events-none absolute inset-0 z-10 flex justify-center ${
+                      className={`pointer-events-none absolute inset-0 flex justify-center ${
                         tile.desktopImageAlign === "desktop-bottom"
                           ? "items-center lg:items-end"
                           : "items-end"
@@ -212,7 +212,7 @@ export function Hero() {
                   </div>
 
                   {/* Light grey content area flush to the bottom */}
-                  <div className="tg-hero-card-panel absolute inset-x-0 bottom-0 rounded-t-[18px] rounded-b-[22px] bg-[#f2f3f3] px-4 py-4 lg:rounded-t-[14px] lg:rounded-b-[18px] lg:px-3 lg:py-2.5">
+                  <div className="tg-hero-card-panel absolute inset-x-0 bottom-0 z-20 rounded-t-[18px] rounded-b-[22px] bg-[#f2f3f3] px-4 py-4 lg:rounded-t-[14px] lg:rounded-b-[18px] lg:px-3 lg:py-2.5">
                     <div className="flex items-center justify-between gap-3">
                       <p
                         className="text-[#242220]"
@@ -225,7 +225,7 @@ export function Hero() {
                       >
                         {tile.title}
                       </p>
-                      <span className="tg-hero-card-action flex h-7 w-7 items-center justify-center rounded-full text-[#242220]">
+                      <span className="tg-hero-card-action relative z-30 flex h-7 w-7 items-center justify-center rounded-full text-[#242220]">
                         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                           <path d="M5 12h14" />
                           <path d="M13 5l7 7-7 7" />
