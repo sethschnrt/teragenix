@@ -29,7 +29,11 @@ function applySettings(settings: AccessibilitySettings) {
   root.dataset.focusHighlight = settings.focusHighlight ? "true" : "false";
 }
 
-export function AccessibilityWidget() {
+type AccessibilityWidgetProps = {
+  enabled?: boolean;
+};
+
+export function AccessibilityWidget({ enabled = true }: AccessibilityWidgetProps) {
   const [open, setOpen] = useState(false);
   const [settings, setSettings] = useState<AccessibilitySettings>(() => {
     if (typeof window === "undefined") return defaultSettings;
@@ -76,6 +80,8 @@ export function AccessibilityWidget() {
   };
 
   const reset = () => setSettings(defaultSettings);
+
+  if (!enabled) return null;
 
   return (
     <div className="fixed bottom-[calc(env(safe-area-inset-bottom,0px)+5.75rem)] right-5 z-[115] flex flex-col items-end gap-3 sm:bottom-5" data-site-chrome="accessibility-widget">

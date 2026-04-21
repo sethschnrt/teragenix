@@ -2,14 +2,15 @@
 
 import { useEffect, useState } from "react";
 
-const STORAGE_KEY = "teragenix-age-gate-v1";
-const MAX_AGE_MS = 1000 * 60 * 60 * 24 * 30;
+export const AGE_GATE_STORAGE_KEY = "teragenix-age-gate-v1";
+export const AGE_GATE_MAX_AGE_MS = 1000 * 60 * 60 * 24 * 30;
 
 type AgeGateProps = {
   enabled?: boolean;
+  onAccepted?: () => void;
 };
 
-export function AgeGate({ enabled = true }: AgeGateProps) {
+export function AgeGate({ enabled = true, onAccepted }: AgeGateProps) {
   const [ready, setReady] = useState(false);
   const [open, setOpen] = useState(false);
 
@@ -21,7 +22,7 @@ export function AgeGate({ enabled = true }: AgeGateProps) {
     }
 
     try {
-      const raw = window.localStorage.getItem(STORAGE_KEY);
+      const raw = window.localStorage.getItem(AGE_GATE_STORAGE_KEY);
       if (!raw) {
         setOpen(true);
         setReady(true);
@@ -30,7 +31,7 @@ export function AgeGate({ enabled = true }: AgeGateProps) {
 
       const parsed = JSON.parse(raw) as { acceptedAt?: number };
       const acceptedAt = typeof parsed?.acceptedAt === "number" ? parsed.acceptedAt : 0;
-      setOpen(Date.now() - acceptedAt > MAX_AGE_MS);
+      setOpen(Date.now() - acceptedAt > AGE_GATE_MAX_AGE_MS);
     } catch {
       setOpen(true);
     } finally {
@@ -50,8 +51,9 @@ export function AgeGate({ enabled = true }: AgeGateProps) {
   }, [open, ready]);
 
   function confirmAge() {
-    window.localStorage.setItem(STORAGE_KEY, JSON.stringify({ acceptedAt: Date.now() }));
+    window.localStorage.setItem(AGE_GATE_STORAGE_KEY, JSON.stringify({ acceptedAt: Date.now() }));
     setOpen(false);
+    onAccepted?.();
   }
 
   function leaveSite() {
