@@ -3,7 +3,7 @@ import { readFile } from "node:fs/promises";
 import path from "node:path";
 
 export const runtime = "nodejs";
-export const alt = "Teragenix — Research-Grade Peptides, Refined";
+export const alt = "Teragenix — Peptides for real progress";
 export const size = {
   width: 1200,
   height: 630,
@@ -17,10 +17,7 @@ async function imageData(relativePath: string) {
 }
 
 export default async function OpenGraphImage() {
-  const [logoSrc, heroSrc] = await Promise.all([
-    imageData("images/teragenix-logo-white-optimized.png"),
-    imageData("images/generated/hero-cards-v2-cutout/recovery-man-31.png"),
-  ]);
+  const logoSrc = await imageData("images/teragenix-logo-dark-optimized.png");
 
   return new ImageResponse(
     <div
@@ -28,96 +25,29 @@ export default async function OpenGraphImage() {
         height: "100%",
         width: "100%",
         display: "flex",
-        position: "relative",
-        overflow: "hidden",
-        background: "linear-gradient(154deg, #1e4a9e 0%, #10366f 48%, #14375a 100%)",
-        color: "white",
+        flexDirection: "column",
+        alignItems: "flex-start",
+        justifyContent: "center",
+        background: "#ffffff",
+        color: "#0d262d",
         fontFamily: "Inter, Arial, sans-serif",
+        padding: "0 110px",
       }}
     >
-      <div
-        style={{
-          position: "absolute",
-          inset: 0,
-          background:
-            "radial-gradient(circle at 22% 18%, rgba(255,255,255,0.12), transparent 30%), radial-gradient(circle at 78% 26%, rgba(168,197,245,0.12), transparent 24%)",
-        }}
-      />
+      <img src={logoSrc} alt="Teragenix" width={330} height={94} />
 
       <div
         style={{
-          display: "flex",
-          width: "100%",
-          height: "100%",
-          padding: "56px 72px",
-          alignItems: "center",
-          justifyContent: "space-between",
+          marginTop: 34,
+          fontSize: 64,
+          lineHeight: 1.02,
+          letterSpacing: "-0.055em",
+          fontWeight: 600,
+          color: "#0d262d",
+          maxWidth: 720,
         }}
       >
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            width: 560,
-          }}
-        >
-          <img src={logoSrc} alt="Teragenix" width={290} height={82} />
-
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              marginTop: 36,
-              fontSize: 76,
-              fontWeight: 700,
-              lineHeight: 0.94,
-              letterSpacing: "-0.06em",
-            }}
-          >
-            <span>Peptides for Real</span>
-            <span style={{ color: "#d8e7ff", fontStyle: "italic" }}>Progress.</span>
-          </div>
-
-          <div
-            style={{
-              display: "flex",
-              marginTop: 26,
-              width: 450,
-              color: "rgba(255,255,255,0.84)",
-              fontSize: 26,
-              lineHeight: 1.35,
-              letterSpacing: "-0.02em",
-            }}
-          >
-            Research-use peptides with clearer specs, cleaner documentation, and a better storefront experience.
-          </div>
-        </div>
-
-        <div
-          style={{
-            position: "relative",
-            display: "flex",
-            width: 430,
-            height: 430,
-            alignItems: "flex-end",
-            justifyContent: "center",
-            borderRadius: 34,
-            background: "#e4f3f5",
-            overflow: "hidden",
-            boxShadow: "0 24px 70px rgba(4,14,32,0.22)",
-          }}
-        >
-          <img
-            src={heroSrc}
-            alt="Teragenix hero visual"
-            width={380}
-            height={380}
-            style={{
-              objectFit: "contain",
-              transform: "translateY(14px)",
-            }}
-          />
-        </div>
+        Peptides for real progress
       </div>
     </div>,
     size,
