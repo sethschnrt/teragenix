@@ -78,11 +78,11 @@ export function AccessibilityWidget() {
   const reset = () => setSettings(defaultSettings);
 
   return (
-    <div className="fixed bottom-[calc(env(safe-area-inset-bottom,0px)+var(--tera-accessibility-offset,0px)+1rem)] right-4 z-[105] flex flex-col items-end gap-3 sm:bottom-5 sm:right-5" data-site-chrome="accessibility-widget">
+    <div className="fixed right-4 z-[105] sm:right-5" data-site-chrome="accessibility-widget">
       {open ? (
         <div
           id="teragenix-accessibility-panel"
-          className="w-[320px] rounded-[24px] border border-[#dbe6f5] bg-white p-4 shadow-[0_26px_60px_-26px_rgba(13,38,45,0.3)]"
+          className="absolute bottom-[calc(100%+0.75rem)] right-0 w-[320px] max-w-[calc(100vw-2rem)] rounded-[24px] border border-[#dbe6f5] bg-white p-4 shadow-[0_26px_60px_-26px_rgba(13,38,45,0.3)]"
           role="dialog"
           aria-label="Accessibility settings"
           aria-modal="false"
