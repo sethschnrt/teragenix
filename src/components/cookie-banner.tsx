@@ -5,9 +5,7 @@ import { useState } from "react";
 
 const STORAGE_KEY = "teragenix-cookie-consent-v1";
 const COOKIE_NAME = "teragenix_cookie_consent";
-const AGE_GATE_KEY = "teragenix-age-gate-v1";
 const MAX_AGE_SECONDS = 60 * 60 * 24 * 365;
-const AGE_GATE_MAX_AGE_MS = 1000 * 60 * 60 * 24 * 30;
 
 type CookieBannerProps = {
   enabled?: boolean;
@@ -15,18 +13,8 @@ type CookieBannerProps = {
 
 export function CookieBanner({ enabled = true }: CookieBannerProps) {
   const [visible, setVisible] = useState(() => {
-    if (typeof window === "undefined" || !enabled) return false;
-
-    try {
-      const stored = window.localStorage.getItem(STORAGE_KEY);
-      const ageRaw = window.localStorage.getItem(AGE_GATE_KEY);
-      const ageAcceptedAt = ageRaw ? (JSON.parse(ageRaw) as { acceptedAt?: number }).acceptedAt ?? 0 : 0;
-      const ageAccepted = Date.now() - ageAcceptedAt <= AGE_GATE_MAX_AGE_MS;
-
-      return ageAccepted && stored !== "accepted";
-    } catch {
-      return false;
-    }
+    if (typeof document === "undefined" || !enabled) return false;
+    return document.documentElement.dataset.cookieBannerVisible === "true";
   });
 
   function acceptCookies() {
@@ -37,6 +25,7 @@ export function CookieBanner({ enabled = true }: CookieBannerProps) {
     }
 
     document.cookie = `${COOKIE_NAME}=accepted; path=/; max-age=${MAX_AGE_SECONDS}; SameSite=Lax`;
+    document.documentElement.dataset.cookieBannerVisible = "false";
     setVisible(false);
   }
 

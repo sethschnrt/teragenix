@@ -2,7 +2,6 @@
 
 import { SessionProvider } from "next-auth/react";
 import { usePathname } from "next/navigation";
-import { useSyncExternalStore } from "react";
 
 import { AccessibilityWidget } from "@/components/accessibility-widget";
 import { AgeGate } from "@/components/age-gate";
@@ -16,11 +15,6 @@ const appChromeHiddenRoutes = new Set(["/login", "/signup"]);
 
 export function Providers({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
-  const chromeReady = useSyncExternalStore(
-    () => () => {},
-    () => true,
-    () => false,
-  );
   const normalizedPath = (pathname || "/").replace(/\/$/, "") || "/";
   const showNavbar =
     !appChromeHiddenRoutes.has(normalizedPath) &&
@@ -34,9 +28,9 @@ export function Providers({ children }: { children: React.ReactNode }) {
         {showNavbar ? <Navbar /> : null}
         {children}
         <CartDrawer />
-        {showNavbar && chromeReady ? <AccessibilityWidget /> : null}
-        {chromeReady ? <AgeGate enabled={showAgeGate} /> : null}
-        {chromeReady ? <CookieBanner enabled={showCookieBanner} /> : null}
+        {showNavbar ? <AccessibilityWidget /> : null}
+        <AgeGate enabled={showAgeGate} />
+        <CookieBanner enabled={showCookieBanner} />
       </CartProvider>
     </SessionProvider>
   );

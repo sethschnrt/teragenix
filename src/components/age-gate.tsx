@@ -7,24 +7,12 @@ export const AGE_GATE_MAX_AGE_MS = 1000 * 60 * 60 * 24 * 30;
 
 type AgeGateProps = {
   enabled?: boolean;
-  onAccepted?: () => void;
-  onStatusChange?: (accepted: boolean) => void;
 };
 
-export function AgeGate({ enabled = true, onAccepted, onStatusChange }: AgeGateProps) {
+export function AgeGate({ enabled = true }: AgeGateProps) {
   const [open, setOpen] = useState(() => {
-    if (typeof window === "undefined" || !enabled) return false;
-
-    try {
-      const raw = window.localStorage.getItem(AGE_GATE_STORAGE_KEY);
-      if (!raw) return true;
-
-      const parsed = JSON.parse(raw) as { acceptedAt?: number };
-      const acceptedAt = typeof parsed?.acceptedAt === "number" ? parsed.acceptedAt : 0;
-      return Date.now() - acceptedAt > AGE_GATE_MAX_AGE_MS;
-    } catch {
-      return true;
-    }
+    if (typeof document === "undefined" || !enabled) return false;
+    return document.documentElement.dataset.ageGateOpen === "true";
   });
 
   useEffect(() => {
@@ -40,17 +28,14 @@ export function AgeGate({ enabled = true, onAccepted, onStatusChange }: AgeGateP
 
   function confirmAge() {
     window.localStorage.setItem(AGE_GATE_STORAGE_KEY, JSON.stringify({ acceptedAt: Date.now() }));
+    document.documentElement.dataset.ageGateOpen = "false";
+    document.documentElement.dataset.cookieBannerVisible = window.localStorage.getItem("teragenix-cookie-consent-v1") === "accepted" ? "false" : "true";
     setOpen(false);
-    onAccepted?.();
   }
 
   function leaveSite() {
     window.location.href = "https://www.google.com";
   }
-
-  useEffect(() => {
-    onStatusChange?.(!open);
-  }, [open, onStatusChange]);
 
   if (!enabled || !open) return null;
 
