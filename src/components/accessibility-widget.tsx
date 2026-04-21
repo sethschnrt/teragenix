@@ -192,7 +192,7 @@ export function AccessibilityWidget() {
       <button
         type="button"
         onClick={() => setOpen((current) => !current)}
-        className="inline-flex h-[52px] w-[52px] items-center justify-center rounded-full bg-[#0d262d] text-white shadow-[0_22px_45px_-22px_rgba(13,38,45,0.5)] transition hover:bg-[#143640]"
+        className="inline-flex h-[56px] w-[56px] items-center justify-center rounded-full border-2 border-white bg-[#0d262d] text-white shadow-[0_22px_45px_-22px_rgba(13,38,45,0.5)] transition hover:bg-[#143640]"
         aria-label="Open accessibility settings"
         aria-expanded={open}
         aria-controls="teragenix-accessibility-panel"

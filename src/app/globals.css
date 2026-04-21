@@ -230,10 +230,6 @@
     [data-site-chrome="accessibility-widget"] {
       bottom: 1.25rem;
     }
-
-    body:has([data-site-chrome="cookie-banner"]) [data-site-chrome="accessibility-widget"] {
-      bottom: 7rem !important;
-    }
   }
 
   html[data-text-size="large"] {
