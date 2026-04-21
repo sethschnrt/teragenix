@@ -218,11 +218,19 @@
     display: none !important;
   }
 
+  [data-site-chrome="accessibility-widget"] {
+    bottom: calc(env(safe-area-inset-bottom, 0px) + 5.75rem);
+  }
+
   body:has([data-site-chrome="cookie-banner"]) [data-site-chrome="accessibility-widget"] {
-    bottom: 8rem !important;
+    bottom: calc(env(safe-area-inset-bottom, 0px) + 10.5rem) !important;
   }
 
   @media (min-width: 640px) {
+    [data-site-chrome="accessibility-widget"] {
+      bottom: 1.25rem;
+    }
+
     body:has([data-site-chrome="cookie-banner"]) [data-site-chrome="accessibility-widget"] {
       bottom: 7rem !important;
     }

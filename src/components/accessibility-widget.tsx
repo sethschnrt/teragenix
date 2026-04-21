@@ -85,7 +85,7 @@ export function AccessibilityWidget() {
   const reset = () => setSettings(defaultSettings);
 
   return (
-    <div className="fixed bottom-5 right-5 z-[115] flex flex-col items-end gap-3" data-site-chrome="accessibility-widget">
+    <div className="fixed right-5 z-[115] flex flex-col items-end gap-3" data-site-chrome="accessibility-widget">
       {open ? (
         <div
           id="teragenix-accessibility-panel"
