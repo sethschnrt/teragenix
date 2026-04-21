@@ -218,6 +218,16 @@
     display: none !important;
   }
 
+  body:has([data-site-chrome="cookie-banner"]) [data-site-chrome="accessibility-widget"] {
+    bottom: 8rem !important;
+  }
+
+  @media (min-width: 640px) {
+    body:has([data-site-chrome="cookie-banner"]) [data-site-chrome="accessibility-widget"] {
+      bottom: 7rem !important;
+    }
+  }
+
   html[data-text-size="large"] {
     font-size: 17px;
   }
