@@ -12,41 +12,23 @@ type AgeGateProps = {
 };
 
 export function AgeGate({ enabled = true, onAccepted, onStatusChange }: AgeGateProps) {
-  const [ready, setReady] = useState(false);
-  const [open, setOpen] = useState(false);
-
-  useEffect(() => {
-    if (!enabled) {
-      setOpen(false);
-      setReady(true);
-      onStatusChange?.(true);
-      return;
-    }
+  const [open, setOpen] = useState(() => {
+    if (typeof window === "undefined" || !enabled) return false;
 
     try {
       const raw = window.localStorage.getItem(AGE_GATE_STORAGE_KEY);
-      if (!raw) {
-        setOpen(true);
-        setReady(true);
-        onStatusChange?.(false);
-        return;
-      }
+      if (!raw) return true;
 
       const parsed = JSON.parse(raw) as { acceptedAt?: number };
       const acceptedAt = typeof parsed?.acceptedAt === "number" ? parsed.acceptedAt : 0;
-      const accepted = Date.now() - acceptedAt <= AGE_GATE_MAX_AGE_MS;
-      setOpen(!accepted);
-      onStatusChange?.(accepted);
+      return Date.now() - acceptedAt > AGE_GATE_MAX_AGE_MS;
     } catch {
-      setOpen(true);
-      onStatusChange?.(false);
-    } finally {
-      setReady(true);
+      return true;
     }
-  }, [enabled, onStatusChange]);
+  });
 
   useEffect(() => {
-    if (!ready || !open) return;
+    if (!open) return;
 
     const previousOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
@@ -54,7 +36,7 @@ export function AgeGate({ enabled = true, onAccepted, onStatusChange }: AgeGateP
     return () => {
       document.body.style.overflow = previousOverflow;
     };
-  }, [open, ready]);
+  }, [open]);
 
   function confirmAge() {
     window.localStorage.setItem(AGE_GATE_STORAGE_KEY, JSON.stringify({ acceptedAt: Date.now() }));
@@ -66,7 +48,11 @@ export function AgeGate({ enabled = true, onAccepted, onStatusChange }: AgeGateP
     window.location.href = "https://www.google.com";
   }
 
-  if (!enabled || !ready || !open) return null;
+  useEffect(() => {
+    onStatusChange?.(!open);
+  }, [open, onStatusChange]);
+
+  if (!enabled || !open) return null;
 
   return (
     <div data-site-chrome="age-gate" className="fixed inset-0 z-[120] bg-[#06111a]/72 px-4 py-4 backdrop-blur-sm sm:flex sm:items-center sm:justify-center sm:px-6 sm:py-6">

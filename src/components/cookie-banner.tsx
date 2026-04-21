@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 const STORAGE_KEY = "teragenix-cookie-consent-v1";
 const COOKIE_NAME = "teragenix_cookie_consent";
@@ -14,15 +14,8 @@ type CookieBannerProps = {
 };
 
 export function CookieBanner({ enabled = true }: CookieBannerProps) {
-  const [ready, setReady] = useState(false);
-  const [visible, setVisible] = useState(false);
-
-  useEffect(() => {
-    if (!enabled) {
-      setVisible(false);
-      setReady(true);
-      return;
-    }
+  const [visible, setVisible] = useState(() => {
+    if (typeof window === "undefined" || !enabled) return false;
 
     try {
       const stored = window.localStorage.getItem(STORAGE_KEY);
@@ -30,13 +23,11 @@ export function CookieBanner({ enabled = true }: CookieBannerProps) {
       const ageAcceptedAt = ageRaw ? (JSON.parse(ageRaw) as { acceptedAt?: number }).acceptedAt ?? 0 : 0;
       const ageAccepted = Date.now() - ageAcceptedAt <= AGE_GATE_MAX_AGE_MS;
 
-      setVisible(ageAccepted && stored !== "accepted");
+      return ageAccepted && stored !== "accepted";
     } catch {
-      setVisible(false);
-    } finally {
-      setReady(true);
+      return false;
     }
-  }, [enabled]);
+  });
 
   function acceptCookies() {
     try {
@@ -49,7 +40,7 @@ export function CookieBanner({ enabled = true }: CookieBannerProps) {
     setVisible(false);
   }
 
-  if (!enabled || !ready || !visible) return null;
+  if (!enabled || !visible) return null;
 
   return (
     <div data-site-chrome="cookie-banner" className="fixed inset-x-0 bottom-0 z-[110] px-4 pb-4 sm:px-6 sm:pb-6">
