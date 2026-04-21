@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { CircleDollarSign, Funnel, Package, Plus, ReceiptText, RefreshCw, Search, Tags } from "lucide-react";
+import { Funnel, Package, Plus, RefreshCw, Search, Tags } from "lucide-react";
 
 import { ExpenseEntryForm } from "@/components/admin/expense-entry-form";
 import { RecurringExpenseForm } from "@/components/admin/recurring-expense-form";

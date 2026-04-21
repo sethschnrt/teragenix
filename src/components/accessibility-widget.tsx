@@ -31,34 +31,27 @@ function applySettings(settings: AccessibilitySettings) {
 
 export function AccessibilityWidget() {
   const [open, setOpen] = useState(false);
-  const [ready, setReady] = useState(false);
-  const [settings, setSettings] = useState<AccessibilitySettings>(defaultSettings);
+  const [settings, setSettings] = useState<AccessibilitySettings>(() => {
+    if (typeof window === "undefined") return defaultSettings;
 
-  useEffect(() => {
     try {
       const raw = window.localStorage.getItem(STORAGE_KEY);
-      if (raw) {
-        const parsed = JSON.parse(raw) as Partial<AccessibilitySettings>;
-        const next = {
-          ...defaultSettings,
-          ...parsed,
-        } satisfies AccessibilitySettings;
-        setSettings(next);
-        applySettings(next);
-      } else {
-        applySettings(defaultSettings);
-      }
+      if (!raw) return defaultSettings;
+
+      const parsed = JSON.parse(raw) as Partial<AccessibilitySettings>;
+      return {
+        ...defaultSettings,
+        ...parsed,
+      } satisfies AccessibilitySettings;
     } catch {
-      applySettings(defaultSettings);
+      return defaultSettings;
     }
-    setReady(true);
-  }, []);
+  });
 
   useEffect(() => {
-    if (!ready) return;
     applySettings(settings);
     window.localStorage.setItem(STORAGE_KEY, JSON.stringify(settings));
-  }, [ready, settings]);
+  }, [settings]);
 
   useEffect(() => {
     if (!open) return;
