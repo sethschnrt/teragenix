@@ -186,10 +186,10 @@ export function Hero() {
                 </div>
 
                 {/* TABLET & DESKTOP: vertical card with overflowing image */}
-                <div className="relative hidden h-[244px] overflow-hidden rounded-[22px] bg-white sm:block lg:h-[170px] lg:overflow-visible">
+                <div className="relative hidden h-[244px] overflow-visible rounded-[22px] bg-white sm:block lg:h-[170px]">
                   {/* Pastel image field */}
                   <div
-                    className="tg-hero-card-surface absolute inset-x-0 top-[16px] h-[160px] overflow-hidden rounded-[22px] lg:top-[8px] lg:h-[98px] lg:overflow-visible lg:rounded-[18px]"
+                    className="tg-hero-card-surface absolute inset-x-0 top-[16px] h-[160px] overflow-visible rounded-[22px] lg:top-[8px] lg:h-[98px] lg:rounded-[18px]"
                     style={{ backgroundColor: tile.tone }}
                   >
                     <div
