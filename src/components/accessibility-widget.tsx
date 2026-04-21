@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useId, useMemo, useRef, useState } from "react";
 import { Accessibility, RotateCcw, X } from "lucide-react";
 
 type TextSize = "default" | "large" | "xlarge";
@@ -31,6 +31,10 @@ function applySettings(settings: AccessibilitySettings) {
 
 export function AccessibilityWidget() {
   const [open, setOpen] = useState(false);
+  const launcherRef = useRef<HTMLButtonElement | null>(null);
+  const closeButtonRef = useRef<HTMLButtonElement | null>(null);
+  const titleId = useId();
+  const descriptionId = useId();
   const [settings, setSettings] = useState<AccessibilitySettings>(() => {
     if (typeof window === "undefined") return defaultSettings;
 
@@ -55,11 +59,20 @@ export function AccessibilityWidget() {
 
   useEffect(() => {
     if (!open) return;
+    closeButtonRef.current?.focus();
     const onKeyDown = (event: KeyboardEvent) => {
-      if (event.key === "Escape") setOpen(false);
+      if (event.key === "Escape") {
+        event.preventDefault();
+        setOpen(false);
+      }
     };
     window.addEventListener("keydown", onKeyDown);
     return () => window.removeEventListener("keydown", onKeyDown);
+  }, [open]);
+
+  useEffect(() => {
+    if (open) return;
+    launcherRef.current?.focus();
   }, [open]);
 
   const textSizeOptions = useMemo(
@@ -84,15 +97,17 @@ export function AccessibilityWidget() {
           id="teragenix-accessibility-panel"
           className="absolute bottom-[calc(100%+0.75rem)] right-0 w-[320px] max-w-[calc(100vw-2rem)] rounded-[24px] border border-[#dbe6f5] bg-white p-4 shadow-[0_26px_60px_-26px_rgba(13,38,45,0.3)]"
           role="dialog"
-          aria-label="Accessibility settings"
+          aria-labelledby={titleId}
+          aria-describedby={descriptionId}
           aria-modal="false"
         >
           <div className="flex items-start justify-between gap-3">
             <div>
-              <p className="text-[15px] font-semibold tracking-[-0.02em] text-[#0d262d]">Accessibility</p>
-              <p className="mt-1 text-[13px] leading-5 text-[#5a6a79]">Adjust readability and motion for this device.</p>
+              <p id={titleId} className="text-[15px] font-semibold tracking-[-0.02em] text-[#0d262d]">Accessibility</p>
+              <p id={descriptionId} className="mt-1 text-[13px] leading-5 text-[#5a6a79]">Adjust readability and motion for this device.</p>
             </div>
             <button
+              ref={closeButtonRef}
               type="button"
               onClick={() => setOpen(false)}
               className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-[#dbe6f5] text-[#0d262d] transition hover:bg-[#f4f8ff]"
@@ -182,10 +197,12 @@ export function AccessibilityWidget() {
       ) : null}
 
       <button
+        ref={launcherRef}
         type="button"
         onClick={() => setOpen((current) => !current)}
         className="inline-flex h-12 items-center gap-2 rounded-full border-2 border-white bg-[#0d262d] px-4 text-sm font-semibold text-white shadow-[0_22px_45px_-22px_rgba(13,38,45,0.5)] transition hover:bg-[#143640]"
         aria-label="Open accessibility settings"
+        aria-haspopup="dialog"
         aria-expanded={open}
         aria-controls="teragenix-accessibility-panel"
       >
