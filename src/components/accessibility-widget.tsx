@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState, useSyncExternalStore } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Accessibility, RotateCcw, X } from "lucide-react";
 
 type TextSize = "default" | "large" | "xlarge";
@@ -30,11 +30,6 @@ function applySettings(settings: AccessibilitySettings) {
 }
 
 export function AccessibilityWidget() {
-  const mounted = useSyncExternalStore(
-    () => () => {},
-    () => true,
-    () => false,
-  );
   const [open, setOpen] = useState(false);
   const [settings, setSettings] = useState<AccessibilitySettings>(() => {
     if (typeof window === "undefined") return defaultSettings;
@@ -54,10 +49,9 @@ export function AccessibilityWidget() {
   });
 
   useEffect(() => {
-    if (!mounted) return;
     applySettings(settings);
     window.localStorage.setItem(STORAGE_KEY, JSON.stringify(settings));
-  }, [mounted, settings]);
+  }, [settings]);
 
   useEffect(() => {
     if (!open) return;
@@ -83,10 +77,8 @@ export function AccessibilityWidget() {
 
   const reset = () => setSettings(defaultSettings);
 
-  if (!mounted) return null;
-
   return (
-    <div className="fixed bottom-[calc(env(safe-area-inset-bottom,0px)+1rem)] right-4 z-[115] flex flex-col items-end gap-3 sm:bottom-5 sm:right-5" data-site-chrome="accessibility-widget">
+    <div className="fixed bottom-[calc(env(safe-area-inset-bottom,0px)+1rem)] right-4 z-[105] flex flex-col items-end gap-3 sm:bottom-5 sm:right-5" data-site-chrome="accessibility-widget">
       {open ? (
         <div
           id="teragenix-accessibility-panel"

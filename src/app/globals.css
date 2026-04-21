@@ -218,10 +218,6 @@
     display: none !important;
   }
 
-  body:has([data-site-chrome="cookie-banner"]) [data-site-chrome="accessibility-widget"] {
-    bottom: calc(env(safe-area-inset-bottom, 0px) + 7rem) !important;
-  }
-
   @media (min-width: 640px) {
     [data-site-chrome="accessibility-widget"] {
       bottom: 1.25rem;
