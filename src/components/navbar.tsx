@@ -17,6 +17,7 @@ import { useCart } from "./cart-provider";
 
 const navLinks = [
   { label: "Shop", href: "/shop" },
+  { label: "Blog", href: "/blog" },
   { label: "About", href: "/about" },
   { label: "FAQ", href: "/faq" },
 ];
@@ -25,6 +26,7 @@ const heroNavPaths = [
   "/",
   "/shop",
   "/about",
+  "/blog",
   "/faq",
   "/coa",
   "/cart",
@@ -37,7 +39,12 @@ const heroNavPaths = [
 ];
 
 function isHeroNavPath(pathname: string) {
-  return heroNavPaths.includes(pathname) || pathname.startsWith("/shop/") || pathname.startsWith("/checkout/");
+  return (
+    heroNavPaths.includes(pathname) ||
+    pathname.startsWith("/shop/") ||
+    pathname.startsWith("/blog/") ||
+    pathname.startsWith("/checkout/")
+  );
 }
 
 function SearchBox({
@@ -194,8 +201,34 @@ export function Navbar() {
           />
         </Link>
 
+        <nav className="ml-6 hidden items-center gap-4 md:flex lg:ml-8 lg:gap-5">
+          {navLinks.map((link) => {
+            const isActive =
+              normalizedPath === link.href ||
+              (link.href !== "/" && normalizedPath.startsWith(`${link.href}/`));
+
+            return (
+              <Link
+                key={link.href}
+                href={link.href}
+                className={`tg-link-text text-[13px] font-semibold tracking-tight transition ${
+                  useHeroNav
+                    ? isActive
+                      ? "text-white"
+                      : "text-white/72 hover:text-white"
+                    : isActive
+                      ? "text-[#173f85]"
+                      : "text-[#475967] hover:text-[#173f85]"
+                }`}
+              >
+                {link.label}
+              </Link>
+            );
+          })}
+        </nav>
+
         <div className="ml-auto flex items-center gap-3">
-          <div className="hidden w-[250px] lg:block xl:w-[280px]">
+          <div className="hidden w-[250px] xl:block xl:w-[280px]">
             <SearchBox
               query={query}
               setQuery={setQuery}

@@ -12,6 +12,7 @@ const footerLinks = {
   ],
   Explore: [
     { label: "About", href: "/about" },
+    { label: "Blog", href: "/blog" },
     { label: "COA + Batch Docs", href: "/coa" },
     { label: "FAQ", href: "/faq" },
     { label: "Shipping FAQ", href: "/faq#shipping" },
