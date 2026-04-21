@@ -54,6 +54,33 @@ export function AccessibilityWidget() {
   }, [settings]);
 
   useEffect(() => {
+    const root = document.documentElement;
+    const updateViewportOffset = () => {
+      const viewport = window.visualViewport;
+      if (!viewport) {
+        root.style.setProperty("--tera-accessibility-offset", "0px");
+        return;
+      }
+
+      const layoutHeight = document.documentElement.clientHeight;
+      const chromeOffset = Math.max(0, layoutHeight - viewport.height - viewport.offsetTop);
+      root.style.setProperty("--tera-accessibility-offset", `${chromeOffset}px`);
+    };
+
+    updateViewportOffset();
+    window.visualViewport?.addEventListener("resize", updateViewportOffset);
+    window.visualViewport?.addEventListener("scroll", updateViewportOffset);
+    window.addEventListener("resize", updateViewportOffset);
+
+    return () => {
+      window.visualViewport?.removeEventListener("resize", updateViewportOffset);
+      window.visualViewport?.removeEventListener("scroll", updateViewportOffset);
+      window.removeEventListener("resize", updateViewportOffset);
+      root.style.setProperty("--tera-accessibility-offset", "0px");
+    };
+  }, []);
+
+  useEffect(() => {
     if (!open) return;
     const onKeyDown = (event: KeyboardEvent) => {
       if (event.key === "Escape") setOpen(false);
@@ -78,7 +105,7 @@ export function AccessibilityWidget() {
   const reset = () => setSettings(defaultSettings);
 
   return (
-    <div className="fixed bottom-[calc(env(safe-area-inset-bottom,0px)+8.5rem)] right-4 z-[105] flex flex-col items-end gap-3 sm:bottom-5 sm:right-5" data-site-chrome="accessibility-widget">
+    <div className="fixed bottom-[calc(env(safe-area-inset-bottom,0px)+var(--tera-accessibility-offset,0px)+1rem)] right-4 z-[105] flex flex-col items-end gap-3 sm:bottom-5 sm:right-5" data-site-chrome="accessibility-widget">
       {open ? (
         <div
           id="teragenix-accessibility-panel"
