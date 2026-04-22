@@ -1,0 +1,20 @@
+[
+  {
+    "slug": "peptide-product-page-red-flags",
+    "title": "The 7 Biggest Red Flags on a Peptide Product Page",
+    "alt": "Premium editorial still life of peptide vial, blurred product page, and warning highlights",
+    "prompt": "Create a premium editorial blog card image in a clean clinical-luxury style for an article titled 'The 7 Biggest Red Flags on a Peptide Product Page'. Composition: a sleek laptop or monitor at an angle showing an abstract ecommerce product-page layout made only of clean interface blocks, lines, image placeholders, and red warning markers, plus a premium peptide vial on the desk. Absolutely no readable text, no letters, no numbers, and no fake words anywhere on the screen. Landscape composition, strong visual hierarchy, dark navy and cool white palette, crisp studio lighting, shallow depth of field, premium ecommerce editorial feel. No logos, no visible faces, no hands, no signage. Make it look expensive, sharp, and trustworthy, not cheesy stock art.",
+    "model": "nano-banana-pro-preview",
+    "output": "/Users/Rex/.openclaw/workspace/teragenix/public/images/blog/peptide-product-page-red-flags.webp",
+    "converted": true
+  },
+  {
+    "slug": "how-to-compare-peptide-vendors-without-falling-for-hype",
+    "title": "How to Compare Peptide Vendors Without Falling for Hype",
+    "alt": "Side-by-side premium peptide evaluation scene with docs, vial comparison, and clean quality signals",
+    "prompt": "Create a premium editorial blog card image for an article titled 'How to Compare Peptide Vendors Without Falling for Hype'. Composition: a refined side-by-side vendor comparison scene using two premium peptide evaluation setups with vials, unlabeled document shapes, abstract scorecard blocks, and subtle comparison markers, but absolutely no readable text, no letters, and no numbers anywhere. The better side should feel cleaner, more transparent, and more organized without cheesy green checkmarks or busy paperwork. Landscape, premium biotech ecommerce editorial, sharp lighting, intelligent composition, dark navy plus white palette. No visible faces, no hands, no signage, no fake app UI words.",
+    "model": "nano-banana-pro-preview",
+    "output": "/Users/Rex/.openclaw/workspace/teragenix/public/images/blog/how-to-compare-peptide-vendors-without-falling-for-hype.webp",
+    "converted": true
+  }
+]

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, BookOpenText } from "lucide-react";
 import { DisclaimerBanner } from "@/components/disclaimer-banner";
@@ -85,26 +86,38 @@ export default function BlogHubPage() {
               <Link
                 key={post.slug}
                 href={`/blog/${post.slug}`}
-                className="group flex h-full flex-col rounded-[1.7rem] bg-white p-6 ring-1 ring-[#e3e8ef] transition hover:-translate-y-0.5 hover:shadow-[0_18px_44px_rgba(13,38,45,0.08)]"
+                className="group flex h-full flex-col overflow-hidden rounded-[1.7rem] bg-white ring-1 ring-[#e3e8ef] transition hover:-translate-y-0.5 hover:shadow-[0_18px_44px_rgba(13,38,45,0.08)]"
               >
-                <div className="flex flex-wrap items-center gap-2 text-[11px] font-medium uppercase tracking-[0.18em] text-[#3b6ed6]">
-                  <span>{post.category}</span>
-                  <span className="text-[#c5cfdb]">•</span>
-                  <span className="text-[#7b8aa0]">{formatBlogDate(post.publishedAt)}</span>
+                <div className="relative aspect-[16/10] overflow-hidden bg-[#e8eef7]">
+                  <Image
+                    src={post.imageSrc}
+                    alt={post.imageAlt}
+                    fill
+                    sizes="(min-width: 1280px) 380px, (min-width: 768px) 50vw, 100vw"
+                    className="object-cover transition duration-300 group-hover:scale-[1.02]"
+                  />
                 </div>
 
-                <h2 className="mt-4 text-[1.35rem] font-semibold leading-snug tracking-[-0.03em] text-[#0d262d]">
-                  {post.title}
-                </h2>
+                <div className="flex h-full flex-col p-6">
+                  <div className="flex flex-wrap items-center gap-2 text-[11px] font-medium uppercase tracking-[0.18em] text-[#3b6ed6]">
+                    <span>{post.category}</span>
+                    <span className="text-[#c5cfdb]">•</span>
+                    <span className="text-[#7b8aa0]">{formatBlogDate(post.publishedAt)}</span>
+                  </div>
 
-                <p className="mt-3 text-sm leading-6 text-[#475967]">{post.excerpt}</p>
+                  <h2 className="mt-4 text-[1.35rem] font-semibold leading-snug tracking-[-0.03em] text-[#0d262d]">
+                    {post.title}
+                  </h2>
 
-                <div className="mt-auto flex items-center justify-between pt-6">
-                  <span className="text-[12px] text-[#64748b]">{post.readingMinutes} min read</span>
-                  <span className="inline-flex items-center text-sm font-semibold text-[#173f85]">
-                    Read article
-                    <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-0.5" />
-                  </span>
+                  <p className="mt-3 text-sm leading-6 text-[#475967]">{post.excerpt}</p>
+
+                  <div className="mt-auto flex items-center justify-between pt-6">
+                    <span className="text-[12px] text-[#64748b]">{post.readingMinutes} min read</span>
+                    <span className="inline-flex items-center text-sm font-semibold text-[#173f85]">
+                      Read article
+                      <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+                    </span>
+                  </div>
                 </div>
               </Link>
             ))}
