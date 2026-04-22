@@ -174,12 +174,8 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       </section>
 
       <section className="relative z-10 pt-8 pb-10 sm:pt-10 sm:pb-12 lg:pt-12 lg:pb-14">
-        <div className="mx-auto max-w-[1180px] px-5 sm:px-8 lg:px-12 xl:grid xl:grid-cols-[260px_minmax(0,1fr)] xl:gap-8">
-          <div className="hidden xl:block">
-            <BlogProgressNav sections={articleSections.map((section) => ({ id: section.id, title: section.heading }))} />
-          </div>
-
-          <article className="min-w-0 rounded-[2rem] bg-white p-7 ring-1 ring-[#e3e8ef] shadow-[0_24px_60px_rgba(13,38,45,0.08)] sm:p-9">
+        <div className="mx-auto max-w-[1240px] px-5 sm:px-8 lg:px-12 xl:grid xl:grid-cols-[minmax(0,780px)_160px] xl:justify-between xl:gap-10">
+          <article className="min-w-0 rounded-[2rem] bg-white p-7 ring-1 ring-[#e3e8ef] shadow-[0_24px_60px_rgba(13,38,45,0.08)] sm:p-9 xl:max-w-[780px]">
             <div className="rounded-[1.45rem] bg-[linear-gradient(180deg,#f4f8ff_0%,#eef5ff_100%)] p-5 ring-1 ring-[#dbe6f5]">
               <p className="text-[11px] font-medium uppercase tracking-[0.2em] text-[#3b6ed6]">Summary</p>
               <p className="mt-3 text-[15px] leading-7 text-[#475967] sm:text-[16px]">{post.excerpt}</p>
@@ -242,6 +238,10 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               })}
             </div>
           </article>
+
+          <div className="mt-8 hidden xl:block xl:mt-0">
+            <BlogProgressNav sections={articleSections.map((section) => ({ id: section.id, title: section.heading }))} />
+          </div>
         </div>
       </section>
 

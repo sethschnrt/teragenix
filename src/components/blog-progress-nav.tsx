@@ -44,22 +44,22 @@ export function BlogProgressNav({ sections }: BlogProgressNavProps) {
   if (sections.length === 0) return null;
 
   return (
-    <aside className="sticky top-28 rounded-[1.6rem] border border-[#dbe6f5] bg-white/92 p-4 shadow-[0_18px_44px_rgba(13,38,45,0.08)] backdrop-blur-sm">
-      <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#3b6ed6]">On this page</p>
-      <div className="mt-3">
-        <div className="flex items-center justify-between text-[12px] text-[#64748b]">
-          <span>Reading progress</span>
-          <span>{Math.round(progress)}%</span>
-        </div>
-        <div className="mt-2 h-2 overflow-hidden rounded-full bg-[#e7eef8]">
-          <div
-            className="h-full rounded-full bg-[linear-gradient(90deg,#3b6ed6_0%,#74a2ff_100%)] transition-[width] duration-200"
-            style={{ width: `${progress}%` }}
-          />
-        </div>
+    <aside className="sticky top-30 w-full max-w-[160px]">
+      <div className="flex items-center justify-between gap-3 text-[10px] font-semibold uppercase tracking-[0.16em] text-[#7b8aa0]">
+        <span>On this page</span>
+        <span>{Math.round(progress)}%</span>
       </div>
 
-      <ul className="mt-4 space-y-1.5">
+      <div className="mt-4 flex items-stretch gap-3">
+        <div className="relative w-2 shrink-0">
+          <div className="absolute left-1/2 top-0 h-full w-px -translate-x-1/2 bg-[#dbe6f5]" />
+          <div
+            className="absolute left-1/2 top-0 w-px -translate-x-1/2 rounded-full bg-[linear-gradient(180deg,#3b6ed6_0%,#74a2ff_100%)] transition-[height] duration-200"
+            style={{ height: `${progress}%` }}
+          />
+        </div>
+
+        <ul className="min-w-0 flex-1 space-y-1.5">
         {sections.map((section, index) => {
           const active = section.id === activeId;
 
@@ -67,21 +67,29 @@ export function BlogProgressNav({ sections }: BlogProgressNavProps) {
             <li key={section.id}>
               <a
                 href={`#${section.id}`}
-                className={`flex items-start gap-2 rounded-[1rem] px-3 py-2.5 text-sm leading-5 transition ${
+                className={`group flex items-start gap-2 py-1.5 text-xs leading-4 transition ${
                   active
-                    ? "bg-[#eef4ff] text-[#173f85] ring-1 ring-[#dbe6f5]"
-                    : "text-[#5b6b80] hover:bg-[#f8fbff] hover:text-[#173f85]"
+                    ? "text-[#173f85]"
+                    : "text-[#6c7d92] hover:text-[#173f85]"
                 }`}
               >
-                <span className="mt-0.5 text-[10px] font-semibold uppercase tracking-[0.14em] text-[#7a8eae]">
-                  {String(index + 1).padStart(2, "0")}
+                <span
+                  className={`mt-[3px] h-1.5 w-1.5 shrink-0 rounded-full transition ${
+                    active ? "bg-[#3b6ed6]" : "bg-[#c6d4e8] group-hover:bg-[#7aa1e8]"
+                  }`}
+                />
+                <span className="min-w-0 flex-1">
+                  <span className="block text-[10px] font-semibold uppercase tracking-[0.14em] text-[#8ba0bc]">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                  <span className="mt-0.5 block line-clamp-3">{section.title}</span>
                 </span>
-                <span className="min-w-0 flex-1">{section.title}</span>
               </a>
             </li>
           );
         })}
-      </ul>
+        </ul>
+      </div>
     </aside>
   );
 }
