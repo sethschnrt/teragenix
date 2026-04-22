@@ -77,7 +77,18 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
   return (
     <main className="bg-[#f7f9fc]">
-      <section className="relative overflow-hidden bg-[linear-gradient(162deg,_#173f85_0%,_#0d262d_100%)] pt-24 pb-24 text-white sm:pt-28 sm:pb-28">
+      <section className="relative overflow-hidden pt-24 pb-24 text-white sm:pt-28 sm:pb-28">
+        <div className="pointer-events-none absolute inset-0">
+          <Image
+            src={post.imageSrc}
+            alt={post.imageAlt}
+            fill
+            sizes="100vw"
+            className="object-cover"
+            priority
+          />
+        </div>
+        <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(162deg,_#173f85_0%,_#0d262d_100%)] opacity-[0.85]" />
         <div
           className="pointer-events-none absolute inset-0"
           style={{
@@ -87,8 +98,8 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         />
 
         <div className="relative mx-auto max-w-[1180px] px-5 sm:px-8 lg:px-12">
-          <div className="grid gap-8 lg:grid-cols-[0.92fr_1.08fr] lg:items-end">
-            <div className="max-w-2xl">
+          <div className="max-w-2xl">
+            <div className="rounded-[2rem] bg-white/6 p-6 ring-1 ring-white/12 backdrop-blur-[3px] sm:p-7">
               <nav aria-label="Breadcrumb" className="flex flex-wrap items-center gap-2 text-[12px] text-white/70">
                 <Link href="/" className="tg-link-text hover:text-white">
                   Home
@@ -129,19 +140,6 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                   <span className="text-[11px] font-medium uppercase tracking-[0.18em] text-white/58">Author</span>
                   <span className="mt-2 block text-sm font-medium text-white/92">{post.author}</span>
                 </div>
-              </div>
-            </div>
-
-            <div className="overflow-hidden rounded-[2rem] bg-white/10 ring-1 ring-white/14 shadow-[0_28px_80px_rgba(7,18,30,0.22)] backdrop-blur-sm">
-              <div className="relative aspect-[16/11] w-full bg-white/10">
-                <Image
-                  src={post.imageSrc}
-                  alt={post.imageAlt}
-                  fill
-                  sizes="(min-width: 1024px) 560px, 100vw"
-                  className="object-cover"
-                  priority
-                />
               </div>
             </div>
           </div>
