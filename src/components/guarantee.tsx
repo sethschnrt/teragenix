@@ -25,7 +25,7 @@ const promises = [
 
 export function Guarantee() {
   return (
-    <section className="relative overflow-hidden bg-white py-24 sm:py-28 lg:py-[120px]">
+    <section className="relative overflow-hidden bg-white pt-24 pb-0 sm:pt-28 sm:pb-0 lg:pt-[120px] lg:pb-0">
       <div className="mx-auto max-w-[1240px] px-5 sm:px-8 lg:px-[160px]">
         <div className="mb-16 text-center">
           <p className="tg-eyebrow mb-6" style={{ color: "#3b6ed6" }}>
