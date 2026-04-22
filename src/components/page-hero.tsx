@@ -23,6 +23,7 @@ type PageHeroProps = {
   panelEyebrow?: string;
   panelTitle?: string;
   panelItems?: HeroPanelItem[];
+  centered?: boolean;
 };
 
 const variantStyles = {
@@ -61,6 +62,7 @@ export function PageHero({
   panelEyebrow,
   panelTitle,
   panelItems = [],
+  centered = false,
 }: PageHeroProps) {
   const styles = variantStyles[variant];
   const hasPanel = Boolean(panelTitle || panelItems.length > 0);
@@ -85,11 +87,13 @@ export function PageHero({
           className={
             hasPanel
               ? "grid gap-7 lg:grid-cols-[1.08fr_0.92fr] lg:items-end lg:gap-8"
-              : "max-w-3xl"
+              : centered
+                ? "mx-auto max-w-3xl"
+                : "max-w-3xl"
           }
         >
-          <div className="max-w-3xl">
-            <div className="mb-3 flex flex-wrap items-center gap-3">
+          <div className={`max-w-3xl ${centered && !hasPanel ? "mx-auto text-center" : ""}`}>
+            <div className={`mb-3 flex flex-wrap items-center gap-3 ${centered && !hasPanel ? "justify-center" : ""}`}>
               <span className="inline-flex items-center rounded-full bg-white/10 px-3 py-1.5 text-[11px] font-medium tracking-[0.18em] text-white/84 ring-1 ring-white/14 backdrop-blur-sm">
                 <Icon className="mr-2 h-3.5 w-3.5 text-[#a8c5f5]" />
                 {eyebrow}
@@ -97,16 +101,16 @@ export function PageHero({
               {detail && <span className="text-[12px] text-white/60">{detail}</span>}
             </div>
 
-            <h1 className={`max-w-3xl font-semibold leading-[0.98] tracking-[-0.035em] text-white ${styles.title}`}>
+            <h1 className={`max-w-3xl font-semibold leading-[0.98] tracking-[-0.035em] text-white ${styles.title} ${centered && !hasPanel ? "mx-auto" : ""}`}>
               {title}
             </h1>
 
-            <p className="mt-2 max-w-2xl text-[0.96rem] leading-6 text-white/72 sm:text-[1rem]">
+            <p className={`mt-2 max-w-2xl text-[0.96rem] leading-6 text-white/72 sm:text-[1rem] ${centered && !hasPanel ? "mx-auto" : ""}`}>
               {description}
             </p>
 
             {highlights.length > 0 && (
-              <div className="mt-5 flex flex-wrap gap-3">
+              <div className={`mt-5 flex flex-wrap gap-3 ${centered && !hasPanel ? "justify-center" : ""}`}>
                 {highlights.map((item) => (
                   <Link
                     key={`${item.label}-${item.href}`}

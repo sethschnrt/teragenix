@@ -48,32 +48,27 @@ export default function AboutPage() {
         eyebrow="ABOUT TERAGENIX"
         detail="Premium research peptides"
         title="Where serious buyers go for premium peptides."
-        description="Teragenix exists for people who care what they buy, how it is presented, and whether the standards behind it actually hold up."
+        description="Teragenix exists for people who want compounds they can take seriously, backed by standards that hold up when the details matter most."
         variant="subpage"
+        centered
         highlights={[
           { label: "Browse peptides", href: "/shop" },
           { label: "View batch docs", href: "/coa" },
-        ]}
-        panelEyebrow="WHAT DEFINES TERAGENIX"
-        panelTitle="Premium compounds, tighter standards, less noise."
-        panelItems={[
-          { label: "Selective peptide lineup" },
-          { label: "Quality-first standards" },
-          { label: "Real documentation" },
-          { label: "Built for serious buyers" },
         ]}
       />
 
       <section className="bg-white py-10 sm:py-12 lg:py-14">
         <div className="mx-auto grid max-w-[1240px] gap-4 px-5 sm:px-8 lg:grid-cols-[1.02fr_0.98fr] lg:px-12 lg:gap-5">
-          <div className="relative min-h-[380px] overflow-hidden rounded-[2rem] bg-[#edf4ff] ring-1 ring-[#dbe6f5] sm:min-h-[460px]">
-            <Image
-              src={`${BASE_PATH}/images/generated/lifestyle-v1/quality-1-hero.png`}
-              alt="Scientist reviewing printed test results in a clean lab"
-              fill
-              sizes="(max-width: 1024px) 100vw, 52vw"
-              className="object-cover"
-            />
+          <div className="rounded-[2rem] bg-[#edf4ff] p-4 ring-1 ring-[#dbe6f5] sm:p-5">
+            <div className="relative aspect-[4/3] overflow-hidden rounded-[1.5rem] bg-white">
+              <Image
+                src={`${BASE_PATH}/images/generated/lifestyle-v1/quality-1-hero.png`}
+                alt="Scientist reviewing printed test results in a clean lab"
+                fill
+                sizes="(max-width: 1024px) 100vw, 52vw"
+                className="object-contain"
+              />
+            </div>
           </div>
           <div className="grid gap-4">
             <div className="rounded-[2rem] bg-[linear-gradient(180deg,_#f8fbff_0%,_#eef5ff_100%)] p-6 ring-1 ring-[#dbe6f5] sm:p-7">
@@ -87,14 +82,16 @@ export default function AboutPage() {
                 The focus is premium peptides, serious standards, and product detail that can stand up to scrutiny. That is the bar, and that is what belongs here.
               </p>
             </div>
-            <div className="relative min-h-[210px] overflow-hidden rounded-[2rem] bg-[#eef3f7] ring-1 ring-[#dbe6f5] sm:min-h-[260px]">
-              <Image
-                src={`${BASE_PATH}/images/generated/lifestyle-v1/quality-2-glassware.png`}
-                alt="Minimal lab glassware in soft natural light"
-                fill
-                sizes="(max-width: 1024px) 100vw, 32vw"
-                className="object-cover"
-              />
+            <div className="rounded-[2rem] bg-[#eef3f7] p-4 ring-1 ring-[#dbe6f5] sm:p-5">
+              <div className="relative aspect-[4/3] overflow-hidden rounded-[1.5rem] bg-white">
+                <Image
+                  src={`${BASE_PATH}/images/generated/lifestyle-v1/quality-2-glassware.png`}
+                  alt="Minimal lab glassware in soft natural light"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 32vw"
+                  className="object-contain"
+                />
+              </div>
             </div>
           </div>
         </div>
@@ -149,14 +146,16 @@ export default function AboutPage() {
           </div>
 
           <div className="rounded-[2rem] bg-[#f4f8f6] p-7 ring-1 ring-[#dce8de] sm:p-8">
-            <div className="relative min-h-[280px] overflow-hidden rounded-[1.5rem] bg-white ring-1 ring-[#dce8de]">
-              <Image
-                src={`${BASE_PATH}/images/generated/lifestyle-v1/recovery-2-trail-run.png`}
-                alt="Runner moving through a forest trail"
-                fill
-                sizes="(max-width: 1024px) 100vw, 32vw"
-                className="object-cover"
-              />
+            <div className="rounded-[1.5rem] bg-white p-4 ring-1 ring-[#dce8de] sm:p-5">
+              <div className="relative aspect-[4/3] overflow-hidden rounded-[1.1rem] bg-[#f7faf8]">
+                <Image
+                  src={`${BASE_PATH}/images/generated/lifestyle-v1/recovery-2-trail-run.png`}
+                  alt="Runner moving through a forest trail"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 32vw"
+                  className="object-contain"
+                />
+              </div>
             </div>
             <div className="mt-6">
               <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#4f8a67]">
