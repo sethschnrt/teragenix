@@ -25,9 +25,14 @@ export function Providers({ children }: { children: React.ReactNode }) {
 
   useEffect(() => {
     let cancelled = false;
+    let inFlight = false;
 
     const checkDeployFreshness = async () => {
+      if (inFlight) return;
+
       try {
+        inFlight = true;
+
         const clientBuildId = document.documentElement.dataset.buildId;
         if (!clientBuildId) return;
 
@@ -51,13 +56,35 @@ export function Providers({ children }: { children: React.ReactNode }) {
         window.location.reload();
       } catch {
         // Ignore deploy freshness probe failures.
+      } finally {
+        inFlight = false;
       }
     };
 
     void checkDeployFreshness();
 
+    const intervalId = window.setInterval(() => {
+      void checkDeployFreshness();
+    }, 15000);
+
+    const handleVisibilityChange = () => {
+      if (document.visibilityState === "visible") {
+        void checkDeployFreshness();
+      }
+    };
+
+    const handleWindowFocus = () => {
+      void checkDeployFreshness();
+    };
+
+    document.addEventListener("visibilitychange", handleVisibilityChange);
+    window.addEventListener("focus", handleWindowFocus);
+
     return () => {
       cancelled = true;
+      window.clearInterval(intervalId);
+      document.removeEventListener("visibilitychange", handleVisibilityChange);
+      window.removeEventListener("focus", handleWindowFocus);
     };
   }, [normalizedPath]);
 
