@@ -5,7 +5,6 @@ import { FeaturedProducts } from "@/components/featured-products";
 import { HowItWorks } from "@/components/how-it-works";
 import { WhyChoose } from "@/components/why-choose";
 import { Guarantee } from "@/components/guarantee";
-import { DisclaimerBanner } from "@/components/disclaimer-banner";
 import { Footer } from "@/components/footer";
 
 // Brand blue accents (all sections stay within Teragenix blue family)
@@ -80,7 +79,6 @@ export default function Home() {
       <HowItWorks />
       <WhyChoose />
       <Guarantee />
-      <DisclaimerBanner />
       <Footer />
     </main>
   );

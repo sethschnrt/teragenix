@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, BookOpenText } from "lucide-react";
-import { DisclaimerBanner } from "@/components/disclaimer-banner";
 import { Footer } from "@/components/footer";
 import { getAllBlogPosts } from "@/content/blog-posts";
 
@@ -125,7 +124,6 @@ export default function BlogHubPage() {
         </div>
       </section>
 
-      <DisclaimerBanner />
       <Footer />
     </main>
   );

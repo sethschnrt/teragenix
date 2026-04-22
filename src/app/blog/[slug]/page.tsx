@@ -5,7 +5,6 @@ import { notFound } from "next/navigation";
 import type { ReactNode } from "react";
 import { CheckCircle2, ChevronRight } from "lucide-react";
 import { BlogProgressNav } from "@/components/blog-progress-nav";
-import { DisclaimerBanner } from "@/components/disclaimer-banner";
 import { Footer } from "@/components/footer";
 import { getAllBlogPosts, getBlogPostBySlug } from "@/content/blog-posts";
 
@@ -331,7 +330,6 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         </div>
       </section>
 
-      <DisclaimerBanner />
       <Footer />
     </main>
   );

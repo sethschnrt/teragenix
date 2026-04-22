@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { PageHero } from "@/components/page-hero";
 import { Footer } from "@/components/footer";
-import { DisclaimerBanner } from "@/components/disclaimer-banner";
 import {
   Microscope,
   FileCheck2,
@@ -253,7 +252,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <DisclaimerBanner />
       <Footer />
     </main>
   );

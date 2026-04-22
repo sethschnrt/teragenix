@@ -1,5 +1,4 @@
 import { Footer } from "@/components/footer";
-import { DisclaimerBanner } from "@/components/disclaimer-banner";
 import { HelpCircle } from "lucide-react";
 import { FaqAccordion } from "./faq-accordion";
 import { PageHero } from "@/components/page-hero";
@@ -30,7 +29,6 @@ export default function FaqPage() {
 
       <FaqAccordion />
 
-      <DisclaimerBanner />
       <Footer />
     </main>
   );

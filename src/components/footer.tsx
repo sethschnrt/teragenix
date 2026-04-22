@@ -1,6 +1,6 @@
 import { Logo } from "./logo";
 import Link from "next/link";
-import { RegulatoryDisclaimer } from "./regulatory-disclaimer";
+import { DisclaimerBanner } from "./disclaimer-banner";
 
 const footerLinks = {
   Shop: [
@@ -79,6 +79,8 @@ export function Footer() {
         </div>
       </section>
 
+      <DisclaimerBanner />
+
       <footer className="relative overflow-hidden bg-[linear-gradient(166deg,_#1e4a9e_0%,_#0d262d_100%)] text-white">
         {/* faint sage glow */}
         <div className="pointer-events-none absolute -left-32 top-0 h-[420px] w-[420px] rounded-full bg-[#2d5bbf]/18 blur-[120px]" />
@@ -91,8 +93,6 @@ export function Footer() {
         </div>
 
         <div className="relative mx-auto max-w-[1240px] px-5 pb-16 pt-5 sm:px-8 sm:pb-18 sm:pt-6 lg:px-12 lg:pb-20 lg:pt-7">
-          <RegulatoryDisclaimer variant="dark" className="mb-10" />
-
           <div className="grid gap-14 lg:grid-cols-[1.2fr_0.95fr_0.95fr_1.05fr]">
             {/* Brand column */}
             <div className="md:col-span-1">

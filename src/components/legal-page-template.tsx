@@ -1,5 +1,4 @@
 import type { LucideIcon } from "lucide-react";
-import { DisclaimerBanner } from "@/components/disclaimer-banner";
 import { Footer } from "@/components/footer";
 import { PageHero } from "@/components/page-hero";
 
@@ -108,7 +107,6 @@ export function LegalPageTemplate({
         </div>
       </section>
 
-      <DisclaimerBanner />
       <Footer />
     </main>
   );

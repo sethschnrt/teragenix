@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
 import { PageHero } from "@/components/page-hero";
-import { DisclaimerBanner } from "@/components/disclaimer-banner";
 import { Footer } from "@/components/footer";
 import { getHeroCategoryLabel, getHeroCategoryTagClasses, getHeroCategoryTheme, products } from "@/data/products";
 import {
@@ -190,7 +189,6 @@ export default function CoaPage() {
         </div>
       </section>
 
-      <DisclaimerBanner />
       <Footer />
     </main>
   );
