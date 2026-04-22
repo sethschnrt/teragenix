@@ -55,6 +55,13 @@ export default function RootLayout({
           }}
         />
         <Script
+          id="teragenix-hover-fallback"
+          strategy="beforeInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `(function(){var selector='.tg-link-pill,.tg-link-card,.tg-hero-card';function closestTarget(node){return node&&node.closest?node.closest(selector):null}function setActive(el,active){if(!el)return;el.classList.toggle('tg-hover-active',active)}document.addEventListener('mouseover',function(event){var el=closestTarget(event.target);if(!el)return;var related=closestTarget(event.relatedTarget);if(related===el)return;setActive(el,true)},true);document.addEventListener('mouseout',function(event){var el=closestTarget(event.target);if(!el)return;var related=closestTarget(event.relatedTarget);if(related===el)return;setActive(el,false)},true);document.addEventListener('focusin',function(event){var el=closestTarget(event.target);if(el)setActive(el,true)},true);document.addEventListener('focusout',function(event){var el=closestTarget(event.target);if(el)setActive(el,false)},true);window.addEventListener('blur',function(){document.querySelectorAll(selector+'.tg-hover-active').forEach(function(el){el.classList.remove('tg-hover-active')})});})();`,
+          }}
+        />
+        <Script
           id="teragenix-deploy-sync"
           strategy="beforeInteractive"
           dangerouslySetInnerHTML={{
