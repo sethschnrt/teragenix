@@ -54,7 +54,7 @@ export default async function AccountPage() {
         </CardHeader>
         <CardContent className="pt-5">
           <div className="grid gap-3 md:grid-cols-3">
-            <Link href="/account/orders" className="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-4 transition hover:border-slate-300 hover:bg-white">
+            <Link href="/account/orders" className="tg-link-card rounded-2xl border border-slate-200 bg-slate-50 px-4 py-4">
               <div className="flex items-center gap-2 text-slate-950">
                 <PackageSearch className="h-4 w-4 text-[#173f85]" />
                 <span className="text-sm font-semibold">Orders</span>
@@ -63,7 +63,7 @@ export default async function AccountPage() {
               <p className="mt-1 text-sm text-slate-600">View order history</p>
             </Link>
 
-            <Link href="/account/settings" className="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-4 transition hover:border-slate-300 hover:bg-white">
+            <Link href="/account/settings" className="tg-link-card rounded-2xl border border-slate-200 bg-slate-50 px-4 py-4">
               <div className="flex items-center gap-2 text-slate-950">
                 <Settings2 className="h-4 w-4 text-[#173f85]" />
                 <span className="text-sm font-semibold">Settings</span>
@@ -72,7 +72,7 @@ export default async function AccountPage() {
               <p className="mt-1 text-sm text-slate-600">Saved addresses and details</p>
             </Link>
 
-            <Link href="/shop" className="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-4 transition hover:border-slate-300 hover:bg-white">
+            <Link href="/shop" className="tg-link-card rounded-2xl border border-slate-200 bg-slate-50 px-4 py-4">
               <div className="flex items-center gap-2 text-slate-950">
                 <ShoppingBag className="h-4 w-4 text-[#173f85]" />
                 <span className="text-sm font-semibold">Shop</span>
@@ -91,7 +91,7 @@ export default async function AccountPage() {
               <CardTitle className="text-slate-950">Recent orders</CardTitle>
               <CardDescription>Your latest purchases and current status.</CardDescription>
             </div>
-            <Link href="/account/orders" className="text-sm font-medium text-[#173f85] hover:text-[#102e5d]">
+            <Link href="/account/orders" className="tg-link-text text-sm font-medium text-[#173f85] hover:text-[#102e5d]">
               View all
             </Link>
           </CardHeader>
@@ -101,7 +101,7 @@ export default async function AccountPage() {
                 <Link
                   key={order.id}
                   href={`/account/orders/${order.id}`}
-                  className="flex items-center justify-between gap-4 rounded-2xl border border-slate-200 px-4 py-4 transition hover:border-slate-300 hover:bg-slate-50"
+                  className="tg-link-card flex items-center justify-between gap-4 rounded-2xl border border-slate-200 px-4 py-4"
                 >
                   <div className="min-w-0">
                     <p className="truncate text-sm font-semibold text-slate-950">{order.orderNumber}</p>
@@ -120,9 +120,9 @@ export default async function AccountPage() {
                 </div>
                 <p className="mt-4 text-base font-medium text-slate-950">No orders yet</p>
                 <p className="mt-2 text-sm leading-6 text-slate-600">When you place an order, it will show up here.</p>
-                <Link href="/shop" className="mt-4 inline-flex items-center gap-2 rounded-full bg-[#173f85] px-4 py-2.5 text-sm font-medium text-white hover:bg-[#102e5d]">
+                <Link href="/shop" className="tg-link-pill mt-4 inline-flex items-center gap-2 rounded-full bg-[#173f85] px-4 py-2.5 text-sm font-medium text-white hover:bg-[#102e5d]">
                   Shop peptides
-                  <ArrowRight className="h-4 w-4" />
+                  <ArrowRight className="tg-link-pill-icon h-4 w-4" />
                 </Link>
               </div>
             )}
@@ -148,9 +148,9 @@ export default async function AccountPage() {
                 <p className="text-xs font-semibold uppercase tracking-[0.14em] text-slate-500">Phone</p>
                 <p className="mt-1 font-medium text-slate-950">{user?.phone || "Not saved yet"}</p>
               </div>
-              <Link href="/account/settings" className="inline-flex items-center gap-2 text-sm font-medium text-[#173f85] hover:text-[#102e5d]">
+              <Link href="/account/settings" className="tg-link-text inline-flex items-center gap-2 text-sm font-medium text-[#173f85] hover:text-[#102e5d]">
                 Open settings
-                <ArrowRight className="h-4 w-4" />
+                <ArrowRight className="tg-link-pill-icon h-4 w-4" />
               </Link>
             </CardContent>
           </Card>

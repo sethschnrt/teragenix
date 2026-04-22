@@ -56,7 +56,7 @@ export default function CartPage() {
                 <button
                   type="button"
                   onClick={clearCart}
-                  className="text-sm font-medium text-[#64748b] hover:text-[#173f85]"
+                  className="tg-link-text text-sm font-medium text-[#64748b] hover:text-[#173f85]"
                 >
                   Clear cart
                 </button>
@@ -106,10 +106,10 @@ export default function CartPage() {
                           <p className="mt-1 text-sm text-[#475967]">${item.price.toFixed(2)} each</p>
                           <Link
                             href={`/shop/${item.slug}`}
-                            className="mt-2 inline-flex items-center text-sm font-medium text-[#3b6ed6] hover:text-[#173f85]"
+                            className="tg-link-text mt-2 inline-flex items-center text-sm font-medium text-[#3b6ed6] hover:text-[#173f85]"
                           >
                             View product
-                            <ArrowUpRight className="ml-1 h-3.5 w-3.5" />
+                            <ArrowUpRight className="tg-link-pill-icon ml-1 h-3.5 w-3.5" />
                           </Link>
                         </div>
                       </div>
@@ -145,7 +145,7 @@ export default function CartPage() {
                         <button
                           type="button"
                           onClick={() => removeItem(item.slug)}
-                          className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white text-[#64748b] ring-1 ring-[#dbe6f5] hover:text-[#173f85]"
+                          className="tg-link-pill inline-flex h-10 w-10 items-center justify-center rounded-full bg-white text-[#64748b] ring-1 ring-[#dbe6f5] hover:text-[#173f85]"
                           aria-label={`Remove ${item.name}`}
                         >
                           <Trash2 className="h-4 w-4" />
@@ -194,7 +194,7 @@ export default function CartPage() {
                   href="/shop"
                   className="tg-link-pill inline-flex h-12 items-center justify-center rounded-full border border-[#dbe6f5] bg-white px-6 text-sm font-semibold text-[#173f85]"
                 >
-                  <ArrowLeft className="mr-2 h-4 w-4" />
+                  <ArrowLeft className="tg-link-pill-icon mr-2 h-4 w-4" />
                   Keep shopping
                 </Link>
               </div>

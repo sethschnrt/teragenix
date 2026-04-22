@@ -273,7 +273,7 @@ export function ShopPageClient() {
               </p>
               <Button
                 variant="outline"
-                className="mt-4 transition-none hover:bg-background hover:text-foreground"
+                className="tg-link-pill mt-4 hover:bg-background hover:text-foreground"
                 onClick={() => setActiveCategory("All")}
               >
                 <ArrowLeft className="mr-2 h-4 w-4" />

@@ -54,10 +54,10 @@ export default async function AccountOrdersPage() {
               <p className="mt-2 text-sm leading-6 text-slate-600">When you place your first order, it will show up here with status and total.</p>
               <Link
                 href="/shop"
-                className="mt-4 inline-flex items-center gap-2 rounded-full bg-[#173f85] px-4 py-2.5 text-sm font-medium text-white hover:bg-[#102e5d]"
+                className="tg-link-pill mt-4 inline-flex items-center gap-2 rounded-full bg-[#173f85] px-4 py-2.5 text-sm font-medium text-white hover:bg-[#102e5d]"
               >
                 Go to shop
-                <ArrowUpRight className="h-4 w-4" />
+                <ArrowUpRight className="tg-link-pill-icon h-4 w-4" />
               </Link>
             </div>
           ) : (
@@ -65,7 +65,7 @@ export default async function AccountOrdersPage() {
               <Link
                 key={order.id}
                 href={`/account/orders/${order.id}`}
-                className="flex items-center justify-between gap-4 rounded-2xl border border-slate-200 px-4 py-4 transition hover:border-slate-300 hover:bg-slate-50"
+                className="tg-link-card flex items-center justify-between gap-4 rounded-2xl border border-slate-200 px-4 py-4"
               >
                 <div className="min-w-0">
                   <p className="truncate text-sm font-semibold text-slate-950">{order.orderNumber}</p>
