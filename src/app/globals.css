@@ -302,8 +302,8 @@
 
   .tg-link-card:hover,
   .tg-link-card.tg-hover-active {
-    transform: translateY(-4px);
-    box-shadow: 0 28px 48px -32px rgba(13, 38, 45, 0.28) !important;
+    transform: translateY(-6px);
+    box-shadow: 0 34px 56px -30px rgba(13, 38, 45, 0.34) !important;
     border-color: rgba(59, 110, 214, 0.22);
   }
 
@@ -316,41 +316,41 @@
 
   .tg-hero-card:hover .tg-hero-card-surface,
   .tg-hero-card.tg-hover-active .tg-hero-card-surface {
-    transform: translateY(-3px);
-    box-shadow: 0 18px 32px -24px rgba(13, 38, 45, 0.28);
+    transform: translateY(-5px);
+    box-shadow: 0 24px 38px -24px rgba(13, 38, 45, 0.32);
   }
 
   .tg-hero-card:hover .tg-hero-card-panel,
   .tg-hero-card.tg-hover-active .tg-hero-card-panel {
-    transform: translateY(-3px);
-    box-shadow: 0 16px 28px -24px rgba(13, 38, 45, 0.18);
+    transform: translateY(-4px);
+    box-shadow: 0 20px 34px -24px rgba(13, 38, 45, 0.22);
   }
 
   .tg-hero-card:hover .tg-hero-card-action,
   .tg-hero-card.tg-hover-active .tg-hero-card-action {
-    transform: translateY(-2px);
+    transform: translateY(-3px);
     background-color: rgba(255, 255, 255, 0.72);
-    box-shadow: 0 14px 24px -22px rgba(13, 38, 45, 0.22);
+    box-shadow: 0 18px 28px -20px rgba(13, 38, 45, 0.24);
   }
 
   .tg-link-card:hover .tg-link-card-media,
   .tg-link-card.tg-hover-active .tg-link-card-media {
-    transform: scale(1.035);
+    transform: scale(1.05);
   }
 
   .tg-link-card.tg-hero-card:hover .tg-hero-card-media,
   .tg-link-card.tg-hero-card.tg-hover-active .tg-hero-card-media {
-    transform: scale(1.035) translateY(-2px);
+    transform: scale(1.05) translateY(-4px);
   }
 
   .tg-link-pill:hover,
   .tg-link-pill.tg-hover-active {
-    transform: translateY(-1px);
-    box-shadow: 0 16px 28px -22px rgba(59, 110, 214, 0.55);
+    transform: translateY(-2px);
+    box-shadow: 0 22px 34px -22px rgba(59, 110, 214, 0.58);
   }
 
   .tg-link-pill:hover .tg-link-pill-icon,
   .tg-link-pill.tg-hover-active .tg-link-pill-icon {
-    transform: translate3d(2px, -1px, 0);
+    transform: translate3d(3px, -2px, 0);
   }
 }
