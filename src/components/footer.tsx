@@ -29,57 +29,7 @@ const footerLinks = {
 
 export function Footer() {
   return (
-    <>
-      <section className="bg-white pb-0 pt-10 sm:pt-12 lg:pt-14">
-        <div className="mx-auto max-w-[1240px] px-5 sm:px-8 lg:px-12">
-          <div className="flex flex-col items-center justify-between gap-6 rounded-[40px] bg-[linear-gradient(166deg,_#3b6ed6_0%,_#0d262d_100%)] px-10 py-14 sm:flex-row sm:px-16 sm:py-16 lg:px-20">
-            <div className="text-center sm:text-left">
-              <p
-                className="tg-eyebrow mb-4"
-                style={{ color: "#4a8dd9" }}
-              >
-                READY TO SHOP
-              </p>
-              <h3
-                className="max-w-xl"
-                style={{
-                  fontSize: "38px",
-                  lineHeight: "44px",
-                  fontWeight: 600,
-                  color: "#ffffff",
-                  letterSpacing: "-0.76px",
-                }}
-              >
-                Shop the peptides built for your goal.
-              </h3>
-            </div>
-            <Link
-              href="/shop"
-              className="tg-link-pill inline-flex h-14 shrink-0 items-center rounded-full bg-white px-8 text-[#0d262d] hover:bg-[#eef4fc]"
-              style={{
-                fontSize: "15px",
-                fontWeight: 600,
-                letterSpacing: "-0.3px",
-              }}
-            >
-              Shop peptides
-              <svg
-                className="tg-link-pill-icon ml-2.5 h-4 w-4"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <path d="M5 12h14M13 5l7 7-7 7" />
-              </svg>
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      <footer className="relative overflow-hidden bg-[linear-gradient(166deg,_#1e4a9e_0%,_#0d262d_100%)] text-white">
+    <footer className="relative overflow-hidden bg-[linear-gradient(166deg,_#1e4a9e_0%,_#0d262d_100%)] text-white">
         {/* faint sage glow */}
         <div className="pointer-events-none absolute -left-32 top-0 h-[420px] w-[420px] rounded-full bg-[#2d5bbf]/18 blur-[120px]" />
 
@@ -90,7 +40,54 @@ export function Footer() {
           </span>
         </div>
 
-        <div className="relative mx-auto max-w-[1240px] px-5 py-20 sm:px-8 lg:px-12">
+        <div className="relative mx-auto max-w-[1240px] px-5 py-16 sm:px-8 sm:py-18 lg:px-12 lg:py-20">
+          <div className="mb-8 sm:mb-10">
+            <div className="flex flex-col items-center justify-between gap-6 rounded-[32px] bg-[linear-gradient(166deg,_#3b6ed6_0%,_#0d262d_100%)] px-8 py-10 sm:flex-row sm:px-12 sm:py-12 lg:px-14 lg:py-12">
+              <div className="text-center sm:text-left">
+                <p
+                  className="tg-eyebrow mb-3"
+                  style={{ color: "#4a8dd9" }}
+                >
+                  READY TO SHOP
+                </p>
+                <h3
+                  className="max-w-xl"
+                  style={{
+                    fontSize: "34px",
+                    lineHeight: "40px",
+                    fontWeight: 600,
+                    color: "#ffffff",
+                    letterSpacing: "-0.68px",
+                  }}
+                >
+                  Shop the peptides built for your goal.
+                </h3>
+              </div>
+              <Link
+                href="/shop"
+                className="tg-link-pill inline-flex h-14 shrink-0 items-center rounded-full bg-white px-8 text-[#0d262d] hover:bg-[#eef4fc]"
+                style={{
+                  fontSize: "15px",
+                  fontWeight: 600,
+                  letterSpacing: "-0.3px",
+                }}
+              >
+                Shop peptides
+                <svg
+                  className="tg-link-pill-icon ml-2.5 h-4 w-4"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="M5 12h14M13 5l7 7-7 7" />
+                </svg>
+              </Link>
+            </div>
+          </div>
+
           <RegulatoryDisclaimer variant="dark" className="mb-10" />
 
           <div className="grid gap-14 lg:grid-cols-[1.2fr_0.95fr_0.95fr_1.05fr]">
@@ -139,6 +136,5 @@ export function Footer() {
           </div>
         </div>
       </footer>
-    </>
   );
 }
