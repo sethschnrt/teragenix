@@ -10,6 +10,12 @@ const poppins = Poppins({
   weight: ["300", "400", "500", "600", "700", "800", "900"],
 });
 
+const teragenixBuildId =
+  process.env.VERCEL_DEPLOYMENT_ID ??
+  process.env.VERCEL_GIT_COMMIT_SHA ??
+  process.env.NEXT_PUBLIC_VERCEL_GIT_COMMIT_SHA ??
+  "dev";
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://teragenix.vercel.app"),
   title: "Teragenix | Research Grade Peptides",
@@ -36,7 +42,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" data-build-id={teragenixBuildId}>
       <body
         className={`${poppins.variable} antialiased`}
         style={{ fontFamily: "var(--font-sans), system-ui, sans-serif" }}

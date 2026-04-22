@@ -28,26 +28,23 @@ export function Providers({ children }: { children: React.ReactNode }) {
 
     const checkDeployFreshness = async () => {
       try {
-        const clientDpl = document.documentElement.dataset.dplId;
-        if (!clientDpl) return;
+        const clientBuildId = document.documentElement.dataset.buildId;
+        if (!clientBuildId) return;
 
-        const response = await fetch(window.location.href, {
+        const response = await fetch(`/api/deploy-version?ts=${Date.now()}`, {
           cache: "no-store",
           credentials: "same-origin",
-          headers: {
-            Accept: "text/html",
-          },
         });
 
         if (!response.ok) return;
 
-        const html = await response.text();
+        const payload = (await response.json()) as { buildId?: string };
         if (cancelled) return;
 
-        const serverDpl = html.match(/data-dpl-id="([^"]+)"/)?.[1];
-        if (!serverDpl || serverDpl === clientDpl) return;
+        const serverBuildId = payload.buildId;
+        if (!serverBuildId || serverBuildId === clientBuildId) return;
 
-        const reloadKey = `teragenix-dpl-refresh:${serverDpl}:${normalizedPath}`;
+        const reloadKey = `teragenix-build-refresh:${serverBuildId}:${normalizedPath}`;
         if (window.sessionStorage.getItem(reloadKey) === "done") return;
 
         window.sessionStorage.setItem(reloadKey, "done");
