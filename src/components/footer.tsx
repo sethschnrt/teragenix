@@ -30,7 +30,7 @@ const footerLinks = {
 export function Footer() {
   return (
     <>
-      <section className="bg-white pt-10 pb-8 sm:pt-12 sm:pb-10 lg:pt-14 lg:pb-12">
+      <section className="bg-white pt-8 pb-8 sm:pt-10 sm:pb-10 lg:pt-12 lg:pb-12">
         <div className="mx-auto max-w-[1240px] px-5 sm:px-8 lg:px-12">
           <div className="flex flex-col items-center justify-between gap-6 rounded-[32px] bg-[linear-gradient(166deg,_#3b6ed6_0%,_#0d262d_100%)] px-8 py-10 sm:flex-row sm:px-12 sm:py-12 lg:px-14 lg:py-12">
             <div className="text-center sm:text-left">
