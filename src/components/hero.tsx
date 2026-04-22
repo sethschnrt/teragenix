@@ -50,7 +50,7 @@ const heroTiles: HeroTile[] = [
     title: "Longevity",
     href: "/shop?category=longevity",
     image: "/images/generated/life-benefits-v13-cutout/active-life-pickleball-centered.webp",
-    desktopImage: "/images/generated/life-benefits-v13-cutout/active-life-pickleball-desktop-bottom.webp",
+    desktopImage: "/images/generated/life-benefits-v13-cutout/active-life-pickleball-centered.webp",
     tone: "#eee7fb",
     mobileImageAlign: "center",
     desktopImageAlign: "bottom",
