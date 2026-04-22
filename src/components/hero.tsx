@@ -49,13 +49,13 @@ const heroTiles: HeroTile[] = [
   {
     title: "Longevity",
     href: "/shop?category=longevity",
-    image: "/images/generated/hero-cards-v2-cutout/longevity-woman-43.png",
-    desktopImage: "/images/generated/hero-cards-v2-cutout/longevity-woman-43.png",
+    image: "/images/generated/life-benefits-v13-cutout/active-life-pickleball-centered.webp",
+    desktopImage: "/images/generated/life-benefits-v13-cutout/active-life-pickleball-centered.webp",
     tone: "#eee7fb",
-    mobileImageAlign: "bottom",
+    mobileImageAlign: "center",
     desktopImageAlign: "bottom",
-    mobileImageClass: "h-[100%] w-auto max-w-[138%] object-contain",
-    desktopImageClass: "h-[220px] max-w-[95%] lg:h-[158px] lg:max-w-[95%] lg:translate-y-0",
+    mobileImageClass: "h-[98%] w-auto max-w-[110%] object-contain",
+    desktopImageClass: "h-[184px] max-w-[90%] lg:h-[150px] lg:max-w-[98%]",
   },
 ];
 
