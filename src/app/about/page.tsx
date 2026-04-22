@@ -3,103 +3,81 @@ import { PageHero } from "@/components/page-hero";
 import { Footer } from "@/components/footer";
 import {
   Microscope,
-  FileCheck2,
   ArrowUpRight,
-  Beaker,
   Shield,
   ScanSearch,
-  CheckCircle2,
+  FileCheck2,
   Layers3,
   Route,
+  CheckCircle2,
 } from "lucide-react";
 
-const proofPillars = [
+const fixCards = [
   {
     icon: ScanSearch,
-    eyebrow: "01 · VISIBLE SPECS",
-    title: "The important product details should be obvious fast.",
-    body:
-      "Compound, quantity, format, storage guidance, and included prep essentials should be visible before a buyer has to work for them.",
+    title: "Show the useful stuff first",
+    body: "Specs, quantity, format, and storage guidance should not be buried under fluff.",
   },
   {
     icon: FileCheck2,
-    eyebrow: "02 · PROOF CLOSE BY",
-    title: "Documentation should sit close to the product, not in a maze.",
-    body:
-      "Batch status, support pages, and research-use framing should be one or two clicks away from the page where they matter.",
+    title: "Keep proof close by",
+    body: "Documentation status, FAQ, and policy pages should sit near the product, not off in a maze.",
   },
   {
     icon: Shield,
-    eyebrow: "03 · CLEANER FRAMING",
-    title: "Trust should come from clarity, not louder claims.",
-    body:
-      "Teragenix is designed to feel easier to evaluate, easier to compare, and less padded with vague filler copy.",
+    title: "Make trust feel earned",
+    body: "Confidence should come from clarity and visible proof, not louder marketing language.",
   },
-];
-
-const compareRows = [
-  {
-    problem: "Loose catalogs make people hunt for the right peptide first, then decode the listing.",
-    solution: "Teragenix starts with outcome-driven categories so buyers can narrow the field before comparing products.",
-  },
-  {
-    problem: "A lot of peptide sites bury the useful details under generic marketing copy.",
-    solution: "Teragenix keeps specs, quantity, storage context, and supporting pages close to the product where they help decision-making.",
-  },
-  {
-    problem: "Documentation often feels bolted on after the fact.",
-    solution: "The system is built so proof, support pages, and research-use language reinforce the catalog instead of living off to the side.",
-  },
-];
-
-const qualityPoints = [
-  "Visible quantity, format, and product specs",
-  "Batch-linked documentation status",
-  "Storage guidance shown before checkout",
-  "Research-use framing kept explicit",
-  "Support pages linked from the buying flow",
-  "Cleaner product detail without catalog clutter",
 ];
 
 const categoryCards = [
   {
     title: "Fat loss",
-    body: "Start with the outcome, then compare compounds built around body-composition research.",
+    body: "Get into body-comp products fast, then compare specifics.",
     href: "/shop?category=fat-loss",
     tone: "#e8f3ec",
   },
   {
     title: "Recovery",
-    body: "Move straight into recovery-focused products without digging through unrelated listings.",
+    body: "Keep recovery compounds together instead of mixed into everything else.",
     href: "/shop?category=recovery",
     tone: "#e9f6f8",
   },
   {
     title: "Longevity",
-    body: "Keep resilience, cognition, and longer-horizon compounds grouped together in one lane.",
+    body: "Browse resilience and longer-horizon products in one clean lane.",
     href: "/shop?category=longevity",
     tone: "#f1edfd",
   },
   {
     title: "Aesthetics",
-    body: "Browse appearance-oriented products in a separate track instead of mixing them into everything else.",
+    body: "Separate appearance-focused products so the catalog stays easier to read.",
     href: "/shop?category=aesthetics",
     tone: "#f8efe6",
   },
 ];
 
+const qualityPoints = [
+  "Visible quantity, format, and specs",
+  "Batch-linked documentation status",
+  "Storage guidance before checkout",
+  "Research-use framing kept explicit",
+  "Support pages linked from the flow",
+  "Cleaner product detail without clutter",
+];
+
 const flowSteps = [
   {
-    title: "Start with the category",
-    body: "Use the category system to get into the right lane before comparing individual peptides.",
+    title: "Pick the lane",
+    body: "Start with the category so you narrow the field before comparing products.",
   },
   {
-    title: "Open the product page",
-    body: "Confirm the peptide, quantity, format, and storage guidance without fighting the layout.",
+    title: "Open the product",
+    body: "Check the peptide, quantity, format, and storage guidance without fighting the page.",
   },
   {
-    title: "Check the supporting proof",
-    body: "Use documentation status, FAQ, and policy pages to validate what matters before purchase.",
+    title: "Verify the proof",
+    body: "Use docs, FAQ, and policy pages to validate the details before purchase.",
   },
 ];
 
@@ -109,134 +87,118 @@ export default function AboutPage() {
       <PageHero
         icon={Microscope}
         eyebrow="ABOUT TERAGENIX"
-        detail="How the catalog is structured and why"
-        title="A cleaner way to evaluate premium peptides."
-        description="Teragenix is built around a simple idea: better peptide buying starts with clearer product pages, visible proof, and less wasted motion between category, product, and documentation."
+        detail="Why the catalog feels different"
+        title="Built to make premium peptides easier to trust."
+        description="Teragenix is designed to reduce noise between category, product page, and proof, so buyers can get to conviction faster."
         variant="subpage"
         highlights={[
-          { label: "Browse the catalog", href: "/shop" },
+          { label: "Browse peptides", href: "/shop" },
           { label: "View batch docs", href: "/coa" },
-        ]}
-        panelEyebrow="WHAT THIS PAGE EXPLAINS"
-        panelTitle="The system behind the catalog."
-        panelItems={[
-          { label: "Category structure", value: "Outcome-first browsing" },
-          { label: "Product pages", value: "Specs shown up front" },
-          { label: "Documentation", value: "Proof kept close by" },
-          { label: "Support path", value: "FAQ + policy pages", href: "/faq" },
         ]}
       />
 
-      <section className="bg-white py-12 sm:py-14 lg:py-16">
-        <div className="mx-auto grid max-w-[1240px] gap-6 px-5 sm:px-8 lg:grid-cols-[0.92fr_1.08fr] lg:px-12 lg:gap-8">
-          <div className="rounded-[2rem] bg-[#f4f8ff] p-7 ring-1 ring-[#dbe6f5] sm:p-8">
-            <p className="tg-eyebrow">WHY IT FEELS DIFFERENT</p>
-            <h2 className="mt-3 text-[2rem] font-semibold leading-tight tracking-[-0.03em] text-[#0d262d] sm:text-[2.55rem]">
-              The goal is not more claims. It is a faster path to conviction.
+      <section className="bg-white py-10 sm:py-12 lg:py-14">
+        <div className="mx-auto grid max-w-[1240px] gap-5 px-5 sm:px-8 lg:grid-cols-[0.95fr_1.05fr] lg:px-12 lg:gap-6">
+          <div className="rounded-[2rem] bg-[linear-gradient(160deg,_#173f85_0%,_#102e5d_42%,_#0d262d_100%)] p-7 text-white sm:p-8">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#a8c5f5]">
+              THE CORE IDEA
+            </p>
+            <h2 className="mt-3 text-[2rem] font-semibold leading-tight tracking-[-0.03em] text-white sm:text-[2.45rem]">
+              The site should feel easier to evaluate at every step.
             </h2>
-            <div className="mt-5 space-y-4 text-[15px] leading-7 text-[#475967] sm:text-[16px]">
+            <div className="mt-5 space-y-4 text-[15px] leading-7 text-white/74 sm:text-[16px]">
               <p>
-                Most peptide catalogs make people do too much work. You hunt for the right product, open a listing, then keep hunting for the details that should have been obvious from the start.
+                Most peptide catalogs make people do too much work. First they hunt for the right product, then they hunt again for the details that should have been obvious from the start.
               </p>
               <p>
-                Teragenix is designed to cut that friction down. Start with the outcome, get into the right category, open the product, and verify the proof without bouncing through a messy site architecture.
-              </p>
-              <p>
-                That is the actual job of the brand and the site, not just to look premium, but to make evaluation feel cleaner and faster.
+                Teragenix is built to cut that friction down. Start with the outcome, open the product, verify the proof, move forward.
               </p>
             </div>
           </div>
 
-          <div className="rounded-[2rem] bg-white p-4 ring-1 ring-[#e3e8ef] sm:p-5">
-            <div className="grid gap-3">
-              {compareRows.map((row) => (
-                <div
-                  key={row.problem}
-                  className="grid gap-3 rounded-[1.5rem] bg-[#fafbfc] p-4 ring-1 ring-[#e8edf3] sm:grid-cols-[1fr_1fr] sm:p-5"
-                >
-                  <div>
-                    <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#7b8794]">
-                      Typical problem
-                    </p>
-                    <p className="mt-2 text-sm leading-6 text-[#475967]">{row.problem}</p>
-                  </div>
-                  <div>
-                    <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#3b6ed6]">
-                      Teragenix answer
-                    </p>
-                    <p className="mt-2 text-sm leading-6 text-[#173f85]">{row.solution}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-[#fafbfc] py-12 sm:py-14 lg:py-16">
-        <div className="mx-auto max-w-[1240px] px-5 sm:px-8 lg:px-12">
-          <div className="max-w-2xl">
-            <p className="tg-eyebrow">HOW TRUST IS EARNED</p>
-            <h2 className="mt-3 text-[2rem] font-semibold leading-tight tracking-[-0.03em] text-[#0d262d] sm:text-[2.55rem]">
-              Three things the site has to do well.
-            </h2>
-          </div>
-
-          <div className="mt-6 grid gap-4 lg:grid-cols-3">
-            {proofPillars.map((pillar) => (
+          <div className="grid gap-4 sm:grid-cols-3">
+            {fixCards.map((card) => (
               <div
-                key={pillar.title}
-                className="rounded-[1.75rem] bg-white p-6 ring-1 ring-[#e3e8ef]"
+                key={card.title}
+                className="rounded-[1.6rem] bg-[#f4f8ff] p-5 ring-1 ring-[#dbe6f5]"
               >
-                <div className="flex h-12 w-12 items-center justify-center rounded-[1rem] bg-[#e9f0fc]">
-                  <pillar.icon className="h-5 w-5 text-[#3b6ed6]" />
+                <div className="flex h-11 w-11 items-center justify-center rounded-[1rem] bg-white ring-1 ring-[#dbe6f5]">
+                  <card.icon className="h-5 w-5 text-[#3b6ed6]" />
                 </div>
-                <p className="mt-5 text-[11px] font-semibold uppercase tracking-[0.18em] text-[#3b6ed6]">
-                  {pillar.eyebrow}
-                </p>
-                <h3 className="mt-3 text-[1.35rem] font-semibold leading-tight tracking-[-0.025em] text-[#0d262d]">
-                  {pillar.title}
+                <h3 className="mt-5 text-[1.12rem] font-semibold leading-snug text-[#0d262d]">
+                  {card.title}
                 </h3>
-                <p className="mt-4 text-sm leading-6 text-[#475967]">{pillar.body}</p>
+                <p className="mt-3 text-sm leading-6 text-[#475967]">{card.body}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section id="quality-promise" className="py-12 sm:py-14 lg:py-16">
+      <section className="bg-[#fafbfc] py-10 sm:py-12 lg:py-14">
         <div className="mx-auto max-w-[1240px] px-5 sm:px-8 lg:px-12">
-          <div className="rounded-[2.2rem] bg-[linear-gradient(160deg,_#173f85_0%,_#102e5d_42%,_#0d262d_100%)] p-6 text-white sm:p-8 lg:p-10">
-            <div className="grid gap-8 lg:grid-cols-[0.88fr_1.12fr] lg:gap-10">
+          <div className="mb-6 max-w-2xl">
+            <p className="tg-eyebrow">HOW THE CATALOG IS ORGANIZED</p>
+            <h2 className="mt-3 text-[2rem] font-semibold leading-tight tracking-[-0.03em] text-[#0d262d] sm:text-[2.45rem]">
+              Start broad, then get specific.
+            </h2>
+          </div>
+
+          <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+            {categoryCards.map((card) => (
+              <Link
+                key={card.title}
+                href={card.href}
+                className="tg-link-card rounded-[1.7rem] p-6 ring-1 ring-[#dbe6f5]"
+                style={{ backgroundColor: card.tone }}
+              >
+                <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#3b6ed6]">
+                  CATEGORY
+                </p>
+                <h3 className="mt-3 text-[1.35rem] font-semibold tracking-[-0.02em] text-[#0d262d]">
+                  {card.title}
+                </h3>
+                <p className="mt-3 text-sm leading-6 text-[#475967]">{card.body}</p>
+                <span className="mt-6 inline-flex items-center text-sm font-semibold text-[#173f85]">
+                  Browse category
+                  <ArrowUpRight className="tg-link-pill-icon ml-2 h-4 w-4" />
+                </span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="quality-promise" className="py-10 sm:py-12 lg:py-14">
+        <div className="mx-auto max-w-[1240px] px-5 sm:px-8 lg:px-12">
+          <div className="rounded-[2.1rem] bg-[#0d262d] p-6 text-white sm:p-8 lg:p-10">
+            <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:gap-10">
               <div>
-                <div className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 ring-1 ring-white/14">
-                  <Shield className="h-4 w-4 text-[#a8c5f5]" />
-                  <span className="text-[11px] font-medium tracking-[0.18em] text-white/82">
-                    QUALITY PROMISE
-                  </span>
-                </div>
-                <h2 className="mt-5 text-[2rem] font-semibold leading-tight tracking-[-0.03em] text-white sm:text-[2.55rem]">
+                <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#a8c5f5]">
+                  QUALITY PROMISE
+                </p>
+                <h2 className="mt-3 text-[2rem] font-semibold leading-tight tracking-[-0.03em] text-white sm:text-[2.45rem]">
                   Quality should read clearly before checkout.
                 </h2>
-                <p className="mt-5 max-w-xl text-[15px] leading-7 text-white/72 sm:text-[16px]">
-                  Teragenix is built to make quality easier to assess through visible specs, cleaner documentation language, and a catalog flow that does not hide the useful stuff.
+                <p className="mt-5 text-[15px] leading-7 text-white/72 sm:text-[16px]">
+                  The trust layer is simple: visible specs, documentation status, cleaner product pages, and explicit research-use framing.
                 </p>
 
                 <div className="mt-6 grid gap-3 sm:grid-cols-2">
                   <div className="rounded-[1.3rem] bg-white/8 p-4 ring-1 ring-white/12">
                     <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-white/58">
-                      Catalog structure
+                      Catalog behavior
                     </p>
                     <p className="mt-2 text-[0.98rem] font-medium text-white/92">
-                      Outcome-first categories, then product-level proof
+                      Less hype, less hiding, less guesswork
                     </p>
                   </div>
                   <div className="rounded-[1.3rem] bg-white/8 p-4 ring-1 ring-white/12">
                     <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-white/58">
-                      Page behavior
+                      Proof behavior
                     </p>
                     <p className="mt-2 text-[0.98rem] font-medium text-white/92">
-                      Less fluff, less hiding, less guesswork
+                      Product page first, docs close behind
                     </p>
                   </div>
                 </div>
@@ -246,7 +208,7 @@ export default function AboutPage() {
                 {qualityPoints.map((item) => (
                   <div
                     key={item}
-                    className="rounded-[1.35rem] bg-white/8 p-4 ring-1 ring-white/12 backdrop-blur-sm"
+                    className="rounded-[1.3rem] bg-white/8 p-4 ring-1 ring-white/12"
                   >
                     <div className="flex items-start gap-3">
                       <CheckCircle2 className="mt-0.5 h-4.5 w-4.5 shrink-0 text-[#a8c5f5]" />
@@ -260,95 +222,70 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="bg-[#fafbfc] py-12 sm:py-14 lg:py-16">
-        <div className="mx-auto max-w-[1240px] px-5 sm:px-8 lg:px-12">
-          <div className="grid gap-6 lg:grid-cols-[1.04fr_0.96fr] lg:gap-8">
-            <div className="rounded-[2rem] bg-white p-7 ring-1 ring-[#e3e8ef] sm:p-8">
-              <div className="flex items-center gap-3">
-                <div className="flex h-11 w-11 items-center justify-center rounded-[1rem] bg-[#e9f0fc]">
-                  <Layers3 className="h-5 w-5 text-[#3b6ed6]" />
-                </div>
-                <div>
-                  <p className="tg-eyebrow">HOW THE CATALOG IS BUILT</p>
-                </div>
+      <section className="bg-[#fafbfc] py-10 sm:py-12 lg:py-14">
+        <div className="mx-auto grid max-w-[1240px] gap-5 px-5 sm:px-8 lg:grid-cols-[1.02fr_0.98fr] lg:px-12 lg:gap-6">
+          <div className="rounded-[2rem] bg-white p-7 ring-1 ring-[#e3e8ef] sm:p-8">
+            <div className="flex items-center gap-3">
+              <div className="flex h-11 w-11 items-center justify-center rounded-[1rem] bg-[#e9f0fc]">
+                <Layers3 className="h-5 w-5 text-[#3b6ed6]" />
               </div>
-              <h2 className="mt-4 text-[1.95rem] font-semibold leading-tight tracking-[-0.03em] text-[#0d262d] sm:text-[2.4rem]">
-                Start broad, then get specific.
-              </h2>
-              <p className="mt-4 max-w-2xl text-[15px] leading-7 text-[#475967] sm:text-[16px]">
-                The category system is there to reduce noise first. Once buyers are in the right lane, the product page takes over and does the job of helping them verify details quickly.
-              </p>
+              <p className="tg-eyebrow">WHAT THE PAGE FLOW SHOULD DO</p>
+            </div>
+            <h2 className="mt-4 text-[1.95rem] font-semibold leading-tight tracking-[-0.03em] text-[#0d262d] sm:text-[2.35rem]">
+              Reduce friction before buyers ever hit checkout.
+            </h2>
+            <div className="mt-5 grid gap-3">
+              {[
+                "Get people into the right category faster.",
+                "Make product details readable at a glance.",
+                "Keep documentation and support paths close to the product.",
+              ].map((item) => (
+                <div key={item} className="rounded-[1.25rem] bg-[#f4f8ff] p-4 ring-1 ring-[#dbe6f5]">
+                  <p className="text-sm leading-6 text-[#475967]">{item}</p>
+                </div>
+              ))}
+            </div>
+          </div>
 
-              <div className="mt-6 grid gap-4 sm:grid-cols-2">
-                {categoryCards.map((card) => (
-                  <Link
-                    key={card.title}
-                    href={card.href}
-                    className="tg-link-card rounded-[1.5rem] p-5 ring-1 ring-[#dbe6f5]"
-                    style={{ backgroundColor: card.tone }}
-                  >
-                    <h3 className="text-[1.2rem] font-semibold tracking-[-0.02em] text-[#0d262d]">
-                      {card.title}
-                    </h3>
-                    <p className="mt-3 text-sm leading-6 text-[#475967]">{card.body}</p>
-                    <span className="mt-5 inline-flex items-center text-sm font-semibold text-[#173f85]">
-                      Browse category
-                      <ArrowUpRight className="tg-link-pill-icon ml-2 h-4 w-4" />
-                    </span>
-                  </Link>
-                ))}
+          <div className="rounded-[2rem] bg-white p-7 ring-1 ring-[#e3e8ef] sm:p-8">
+            <div className="flex items-center gap-3">
+              <div className="flex h-11 w-11 items-center justify-center rounded-[1rem] bg-[#e9f0fc]">
+                <Route className="h-5 w-5 text-[#3b6ed6]" />
               </div>
+              <p className="tg-eyebrow">HOW TO USE TERAGENIX</p>
             </div>
 
-            <div className="rounded-[2rem] bg-white p-7 ring-1 ring-[#e3e8ef] sm:p-8">
-              <div className="flex items-center gap-3">
-                <div className="flex h-11 w-11 items-center justify-center rounded-[1rem] bg-[#e9f0fc]">
-                  <Route className="h-5 w-5 text-[#3b6ed6]" />
-                </div>
-                <p className="tg-eyebrow">WHAT HAPPENS AFTER THE CLICK</p>
-              </div>
-
-              <div className="mt-5 space-y-4">
-                {flowSteps.map((step, index) => (
-                  <div
-                    key={step.title}
-                    className="flex gap-4 rounded-[1.4rem] bg-[#f4f8ff] p-4 ring-1 ring-[#dbe6f5]"
-                  >
-                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white text-sm font-semibold text-[#3b6ed6] ring-1 ring-[#dbe6f5]">
-                      0{index + 1}
-                    </div>
-                    <div>
-                      <h3 className="text-[1rem] font-semibold text-[#0d262d]">{step.title}</h3>
-                      <p className="mt-2 text-sm leading-6 text-[#475967]">{step.body}</p>
-                    </div>
+            <div className="mt-5 space-y-4">
+              {flowSteps.map((step, index) => (
+                <div
+                  key={step.title}
+                  className="flex gap-4 rounded-[1.4rem] bg-[#f4f8ff] p-4 ring-1 ring-[#dbe6f5]"
+                >
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white text-sm font-semibold text-[#3b6ed6] ring-1 ring-[#dbe6f5]">
+                    0{index + 1}
                   </div>
-                ))}
-              </div>
-
-              <div className="mt-6 rounded-[1.5rem] bg-[#f8fbff] p-5 ring-1 ring-[#dbe6f5]">
-                <div className="flex items-start gap-3">
-                  <Beaker className="mt-0.5 h-5 w-5 shrink-0 text-[#3b6ed6]" />
-                  <p className="text-sm leading-6 text-[#475967]">
-                    Teragenix products are presented for in-vitro research and laboratory use only. That framing stays explicit across the buying flow.
-                  </p>
+                  <div>
+                    <h3 className="text-[1rem] font-semibold text-[#0d262d]">{step.title}</h3>
+                    <p className="mt-2 text-sm leading-6 text-[#475967]">{step.body}</p>
+                  </div>
                 </div>
-              </div>
+              ))}
             </div>
           </div>
         </div>
       </section>
 
-      <section className="py-12 sm:py-14 lg:py-16">
+      <section className="py-10 sm:py-12 lg:py-14">
         <div className="mx-auto max-w-[1240px] px-5 sm:px-8 lg:px-12">
           <div className="rounded-[2rem] bg-white p-7 ring-1 ring-[#e3e8ef] sm:p-8 lg:p-10">
             <div className="grid gap-6 lg:grid-cols-[1fr_auto] lg:items-end">
               <div className="max-w-2xl">
                 <p className="tg-eyebrow">START IN THE CATALOG</p>
-                <h2 className="mt-3 text-[2rem] font-semibold leading-tight tracking-[-0.03em] text-[#0d262d] sm:text-[2.55rem]">
-                  The About page should make the shopping logic obvious. The catalog proves it.
+                <h2 className="mt-3 text-[2rem] font-semibold leading-tight tracking-[-0.03em] text-[#0d262d] sm:text-[2.45rem]">
+                  The About page should set the logic. The catalog should prove it.
                 </h2>
                 <p className="mt-4 text-[15px] leading-7 text-[#475967] sm:text-[16px]">
-                  If you want to understand Teragenix fast, open the catalog, compare a category, then check one product page and the supporting proof next to it.
+                  The fastest way to understand Teragenix is still to browse a category, open a product, and check the proof next to it.
                 </p>
               </div>
 
@@ -361,10 +298,10 @@ export default function AboutPage() {
                   <ArrowUpRight className="tg-link-pill-icon ml-2 h-4 w-4" />
                 </Link>
                 <Link
-                  href="/coa"
+                  href="/faq"
                   className="tg-link-pill inline-flex items-center justify-center rounded-full border border-[#dbe6f5] bg-[#f4f8ff] px-6 py-3.5 text-sm font-semibold text-[#173f85]"
                 >
-                  View batch docs
+                  Read the FAQ
                 </Link>
               </div>
             </div>
