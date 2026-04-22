@@ -21,6 +21,24 @@ const defaultSettings: AccessibilitySettings = {
   focusHighlight: false,
 };
 
+function coerceBoolean(value: unknown) {
+  return value === true || value === "true";
+}
+
+function normalizeSettings(settings?: Partial<AccessibilitySettings> | null): AccessibilitySettings {
+  const textSize =
+    settings?.textSize === "large" || settings?.textSize === "xlarge" || settings?.textSize === "default"
+      ? settings.textSize
+      : defaultSettings.textSize;
+
+  return {
+    textSize,
+    contrast: coerceBoolean(settings?.contrast),
+    reduceMotion: coerceBoolean(settings?.reduceMotion),
+    focusHighlight: coerceBoolean(settings?.focusHighlight),
+  };
+}
+
 function applySettings(settings: AccessibilitySettings) {
   const root = document.documentElement;
   root.dataset.textSize = settings.textSize;
@@ -43,18 +61,16 @@ export function AccessibilityWidget() {
       if (!raw) return defaultSettings;
 
       const parsed = JSON.parse(raw) as Partial<AccessibilitySettings>;
-      return {
-        ...defaultSettings,
-        ...parsed,
-      } satisfies AccessibilitySettings;
+      return normalizeSettings(parsed);
     } catch {
       return defaultSettings;
     }
   });
 
   useEffect(() => {
-    applySettings(settings);
-    window.localStorage.setItem(STORAGE_KEY, JSON.stringify(settings));
+    const normalized = normalizeSettings(settings);
+    applySettings(normalized);
+    window.localStorage.setItem(STORAGE_KEY, JSON.stringify(normalized));
   }, [settings]);
 
   useEffect(() => {
