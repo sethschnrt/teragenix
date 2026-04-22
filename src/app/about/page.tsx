@@ -16,28 +16,28 @@ const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 const differenceCards = [
   {
     icon: Layers3,
-    title: "Cleaner catalog",
-    body: "A tighter category structure makes it easier to find the right product path fast.",
+    title: "Selective lineup",
+    body: "Teragenix is built around premium peptides that earn their place through quality, consistency, and demand from serious buyers.",
   },
   {
     icon: FileCheck2,
-    title: "Clearer product pages",
-    body: "Specs, format, and storage guidance are easier to read without digging through noise.",
+    title: "Documentation that matters",
+    body: "Batch documentation, product specifics, and the details behind each compound should hold up when people look closer.",
   },
   {
     icon: HeartHandshake,
-    title: "Closer documentation",
-    body: "COA, FAQ, and policy pages feel connected to the buying flow instead of detached from it.",
+    title: "Standards over hype",
+    body: "Teragenix is for people who want the best peptides on the market, not whatever happens to be loudest that week.",
   },
 ];
 
 const practicalSignals = [
-  "Compound and quantity shown clearly",
-  "Format and storage guidance upfront",
-  "Batch documentation flow nearby",
-  "FAQ and policy pages easy to reach",
-  "Research-use framing kept explicit",
-  "A more polished, less cluttered browse experience",
+  "Clear compound identity and quantity",
+  "Format and storage guidance",
+  "Batch documentation availability",
+  "Serious product-level detail",
+  "Research-use standards kept explicit",
+  "Peptides chosen for quality, not novelty",
 ];
 
 export default function AboutPage() {
@@ -46,21 +46,21 @@ export default function AboutPage() {
       <PageHero
         icon={Microscope}
         eyebrow="ABOUT TERAGENIX"
-        detail="What makes it different"
-        title="A clearer way to shop premium peptides."
-        description="Teragenix is designed to feel more organized, more readable, and more considered from the first click to the product detail page."
+        detail="Premium research peptides"
+        title="Where serious buyers go for premium peptides."
+        description="Teragenix exists for people who care what they buy, how it is presented, and whether the standards behind it actually hold up."
         variant="subpage"
         highlights={[
           { label: "Browse peptides", href: "/shop" },
           { label: "View batch docs", href: "/coa" },
         ]}
-        panelEyebrow="WHY IT FEELS DIFFERENT"
-        panelTitle="Built for clarity, not chaos."
+        panelEyebrow="WHAT DEFINES TERAGENIX"
+        panelTitle="Premium compounds, tighter standards, less noise."
         panelItems={[
-          { label: "Cleaner category paths" },
-          { label: "Readable product detail" },
-          { label: "Docs close to the product" },
-          { label: "Premium without the noise" },
+          { label: "Selective peptide lineup" },
+          { label: "Quality-first standards" },
+          { label: "Real documentation" },
+          { label: "Built for serious buyers" },
         ]}
       />
 
@@ -81,10 +81,10 @@ export default function AboutPage() {
                 WHAT MAKES TERAGENIX DIFFERENT
               </p>
               <h2 className="mt-3 text-[1.55rem] font-semibold leading-tight tracking-[-0.03em] text-[#173f85] sm:text-[1.85rem]">
-                Most sites in this category feel either messy or cold.
+                Teragenix is not built around average compounds.
               </h2>
               <p className="mt-4 text-[15px] leading-7 text-[#516370] sm:text-[16px]">
-                Teragenix is meant to land somewhere better: structured enough to feel credible, polished enough to feel premium, and simple enough to keep the focus on the product itself.
+                The focus is premium peptides, serious standards, and product detail that can stand up to scrutiny. That is the bar, and that is what belongs here.
               </p>
             </div>
             <div className="relative min-h-[210px] overflow-hidden rounded-[2rem] bg-[#eef3f7] ring-1 ring-[#dbe6f5] sm:min-h-[260px]">
@@ -128,12 +128,12 @@ export default function AboutPage() {
       <section id="quality-promise" className="bg-white py-10 sm:py-12 lg:py-14">
         <div className="mx-auto grid max-w-[1240px] gap-6 px-5 sm:px-8 lg:grid-cols-[1.02fr_0.98fr] lg:px-12 lg:gap-8">
           <div className="rounded-[2rem] bg-[linear-gradient(180deg,_#f8fbff_0%,_#eef5ff_100%)] p-7 ring-1 ring-[#dbe6f5] sm:p-8">
-            <p className="tg-eyebrow text-[#3b6ed6]">WHAT YOU CAN SEE IMMEDIATELY</p>
+            <p className="tg-eyebrow text-[#3b6ed6]">WHAT MATTERS MOST</p>
             <h2 className="mt-3 text-[2rem] font-semibold leading-tight tracking-[-0.035em] text-[#0d262d] sm:text-[2.45rem]">
-              The difference is mostly in how cleanly the details are presented.
+              The best peptides earn confidence through the details.
             </h2>
             <p className="mt-4 max-w-xl text-[15px] leading-7 text-[#516370] sm:text-[16px]">
-              Better structure, better readability, and better proximity between product information and supporting pages.
+              That means the compound, the quantity, the format, the handling guidance, and the documentation all need to make sense together.
             </p>
 
             <div className="mt-6 grid gap-3 sm:grid-cols-2">
@@ -160,13 +160,13 @@ export default function AboutPage() {
             </div>
             <div className="mt-6">
               <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#4f8a67]">
-                THE BRAND FEEL
+                WHY PEOPLE CHOOSE TERAGENIX
               </p>
               <h3 className="mt-3 text-[1.45rem] font-semibold leading-tight text-[#0d262d] sm:text-[1.7rem]">
-                Softer, sharper, and more considered.
+                Because they want more than a label and a promise.
               </h3>
               <p className="mt-3 text-[15px] leading-7 text-[#516370] sm:text-[16px]">
-                The visual language matters too. This category does not need more clutter, more aggression, or more fake authority. It needs better taste and better organization.
+                They want peptides chosen with discipline, backed by real detail, and serious enough to belong in a premium lineup.
               </p>
             </div>
           </div>
@@ -178,12 +178,12 @@ export default function AboutPage() {
           <div className="rounded-[2rem] bg-[linear-gradient(180deg,_#f8fbff_0%,_#f3f8ff_100%)] p-7 ring-1 ring-[#dbe6f5] sm:p-8 lg:p-10">
             <div className="grid gap-6 lg:grid-cols-[1fr_auto] lg:items-end">
               <div className="max-w-2xl">
-                <p className="tg-eyebrow text-[#3b6ed6]">SEE IT IN THE CATALOG</p>
+                <p className="tg-eyebrow text-[#3b6ed6]">FOR PEOPLE WHO WANT THE BEST</p>
                 <h2 className="mt-3 text-[2rem] font-semibold leading-tight tracking-[-0.035em] text-[#173f85] sm:text-[2.5rem]">
-                  The best way to understand the brand is to browse the product experience itself.
+                  Teragenix is where you go when average is not good enough.
                 </h2>
                 <p className="mt-4 text-[15px] leading-7 text-[#516370] sm:text-[16px]">
-                  Open a category, compare products, and look at how the details are handled. That is the real point of difference.
+                  Explore the lineup, look at the details, and judge the compounds by the standard they deserve.
                 </p>
               </div>
 
