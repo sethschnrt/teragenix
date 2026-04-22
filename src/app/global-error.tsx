@@ -23,7 +23,7 @@ export default function GlobalError({ reset }: { error: Error & { digest?: strin
               <button
                 type="button"
                 onClick={reset}
-                className="mt-6 inline-flex h-11 items-center justify-center rounded-[1rem] bg-white px-5 text-sm font-medium text-[#0d262d] hover:bg-[#eef4fc]"
+                className="tg-link-pill mt-6 inline-flex h-11 items-center justify-center rounded-[1rem] bg-white px-5 text-sm font-medium text-[#0d262d] hover:bg-[#eef4fc]"
               >
                 Reload
               </button>

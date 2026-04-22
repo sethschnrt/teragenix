@@ -40,9 +40,9 @@ export function AccountShell({
         <button
           type="button"
           onClick={() => router.back()}
-          className="mb-6 inline-flex items-center gap-2 text-sm font-medium text-[#173f85] transition hover:text-[#102e5d]"
+          className="tg-link-text mb-6 inline-flex items-center gap-2 text-sm font-medium text-[#173f85] hover:text-[#102e5d]"
         >
-          <ArrowLeft className="h-4 w-4" />
+          <ArrowLeft className="tg-link-pill-icon h-4 w-4" />
           Back
         </button>
 
@@ -69,7 +69,7 @@ export function AccountShell({
                     <Link
                       key={item.href}
                       href={item.href}
-                      className={`flex items-center gap-3 rounded-2xl px-4 py-3 text-sm font-medium transition ${
+                      className={`tg-link-card flex items-center gap-3 rounded-2xl px-4 py-3 text-sm font-medium ${
                         active
                           ? "bg-[#173f85] text-white shadow-[0_10px_30px_-18px_rgba(23,63,133,0.6)]"
                           : "text-slate-700 hover:bg-slate-50"
@@ -84,10 +84,10 @@ export function AccountShell({
 
               <Button
                 variant="outline"
-                className="mt-4 w-full justify-center border-slate-200 bg-white text-slate-700 hover:bg-slate-50"
+                className="tg-link-pill mt-4 w-full justify-center border-slate-200 bg-white text-slate-700 hover:bg-slate-50"
                 onClick={() => signOut({ callbackUrl: "/login" })}
               >
-                <LogOut className="mr-2 h-4 w-4" />
+                <LogOut className="tg-link-pill-icon mr-2 h-4 w-4" />
                 Sign out
               </Button>
             </div>
@@ -100,9 +100,9 @@ export function AccountShell({
               </p>
               <Link
                 href="/faq"
-                className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-[#173f85] hover:text-[#102e5d]"
+                className="tg-link-text mt-4 inline-flex items-center gap-2 text-sm font-medium text-[#173f85] hover:text-[#102e5d]"
               >
-                <LifeBuoy className="h-4 w-4" />
+                <LifeBuoy className="tg-link-pill-icon h-4 w-4" />
                 Visit FAQ
               </Link>
             </div>

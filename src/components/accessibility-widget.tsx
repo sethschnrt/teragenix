@@ -126,7 +126,7 @@ export function AccessibilityWidget() {
               ref={closeButtonRef}
               type="button"
               onClick={() => setOpen(false)}
-              className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-[#dbe6f5] text-[#0d262d] transition hover:bg-[#f4f8ff]"
+              className="tg-link-pill inline-flex h-9 w-9 items-center justify-center rounded-full border border-[#dbe6f5] text-[#0d262d] hover:bg-[#f4f8ff]"
               aria-label="Close accessibility settings"
             >
               <X className="h-4 w-4" />
@@ -144,7 +144,7 @@ export function AccessibilityWidget() {
                       key={option.value}
                       type="button"
                       onClick={() => setSettings((current) => ({ ...current, textSize: option.value }))}
-                      className={`rounded-full px-3 py-2 text-[13px] font-semibold transition ${
+                      className={`tg-link-pill rounded-full px-3 py-2 text-[13px] font-semibold ${
                         active
                           ? "bg-[#0d262d] text-white"
                           : "border border-[#dbe6f5] bg-white text-[#0d262d] hover:bg-[#f4f8ff]"
@@ -181,7 +181,7 @@ export function AccessibilityWidget() {
                   key={item.key}
                   type="button"
                   onClick={() => toggle(item.key as keyof Omit<AccessibilitySettings, "textSize">)}
-                  className="flex w-full items-center justify-between rounded-[18px] border border-[#dbe6f5] px-3 py-3 text-left transition hover:bg-[#f8fbff]"
+                  className="tg-link-card flex w-full items-center justify-between rounded-[18px] border border-[#dbe6f5] px-3 py-3 text-left hover:bg-[#f8fbff]"
                   aria-pressed={enabled}
                 >
                   <div className="pr-3">
@@ -204,9 +204,9 @@ export function AccessibilityWidget() {
           <button
             type="button"
             onClick={reset}
-            className="mt-4 inline-flex h-10 items-center gap-2 rounded-full border border-[#dbe6f5] px-4 text-[13px] font-semibold text-[#0d262d] transition hover:bg-[#f4f8ff]"
+            className="tg-link-pill mt-4 inline-flex h-10 items-center gap-2 rounded-full border border-[#dbe6f5] px-4 text-[13px] font-semibold text-[#0d262d] hover:bg-[#f4f8ff]"
           >
-            <RotateCcw className="h-4 w-4" />
+            <RotateCcw className="tg-link-pill-icon h-4 w-4" />
             Reset
           </button>
         </div>
@@ -216,7 +216,7 @@ export function AccessibilityWidget() {
         ref={launcherRef}
         type="button"
         onClick={() => setOpen((current) => !current)}
-        className="inline-flex h-12 items-center gap-2 rounded-full border-2 border-white bg-[#0d262d] px-4 text-sm font-semibold text-white shadow-[0_22px_45px_-22px_rgba(13,38,45,0.5)] transition hover:bg-[#143640]"
+        className="tg-link-pill inline-flex h-12 items-center gap-2 rounded-full border-2 border-white bg-[#0d262d] px-4 text-sm font-semibold text-white shadow-[0_22px_45px_-22px_rgba(13,38,45,0.5)] hover:bg-[#143640]"
         aria-label="Open accessibility settings"
         aria-haspopup="dialog"
         aria-expanded={open}

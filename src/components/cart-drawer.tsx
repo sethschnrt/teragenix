@@ -102,7 +102,7 @@ export function CartDrawer() {
                           <button
                             type="button"
                             onClick={() => removeItem(item.slug)}
-                            className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#f8fbff] text-[#64748b] ring-1 ring-[#dbe6f5] hover:text-[#173f85]"
+                            className="tg-link-pill inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#f8fbff] text-[#64748b] ring-1 ring-[#dbe6f5] hover:text-[#173f85]"
                             aria-label={`Remove ${item.name}`}
                           >
                             <Trash2 className="h-4 w-4" />
@@ -164,7 +164,7 @@ export function CartDrawer() {
                     onClick={closeCart}
                     className="tg-link-pill inline-flex h-12 items-center justify-center rounded-full border border-[#dbe6f5] bg-[#f8fbff] px-6 text-sm font-semibold text-[#173f85]"
                   >
-                    <ArrowLeft className="mr-2 h-4 w-4" />
+                    <ArrowLeft className="tg-link-pill-icon mr-2 h-4 w-4" />
                     View full cart
                   </Link>
                 </div>

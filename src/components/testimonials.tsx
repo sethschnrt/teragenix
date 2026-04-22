@@ -145,12 +145,12 @@ export function Testimonials() {
         <div className="mt-12 flex justify-center lg:mt-14">
           <Link
             href="/shop"
-            className="inline-flex h-12 items-center rounded-full bg-[#0d262d] px-7 text-white transition hover:bg-[#163741]"
+            className="tg-link-pill inline-flex h-12 items-center rounded-full bg-[#0d262d] px-7 text-white hover:bg-[#163741]"
             style={{ fontSize: "14px", fontWeight: 600, letterSpacing: "-0.02em" }}
           >
             Shop all peptides
             <svg
-              className="ml-2 h-4 w-4"
+              className="tg-link-pill-icon ml-2 h-4 w-4"
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"

@@ -182,7 +182,7 @@ export function ShopPageClient() {
                 <button
                   key={cat}
                   onClick={() => setActiveCategory(cat)}
-                  className="rounded-full px-4 py-1.5 text-sm font-medium transition-colors"
+                  className="tg-link-pill rounded-full px-4 py-1.5 text-sm font-medium"
                   style={
                     activeCategory === cat
                       ? {

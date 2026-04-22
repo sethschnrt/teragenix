@@ -56,14 +56,14 @@ export function AgeGate({ enabled = true }: AgeGateProps) {
           <button
             type="button"
             onClick={confirmAge}
-            className="inline-flex h-11 items-center justify-center rounded-full bg-[#3b6ed6] px-5 text-sm font-semibold text-white transition hover:bg-[#2d5bbf]"
+            className="tg-link-pill inline-flex h-11 items-center justify-center rounded-full bg-[#3b6ed6] px-5 text-sm font-semibold text-white hover:bg-[#2d5bbf]"
           >
             Enter site
           </button>
           <button
             type="button"
             onClick={leaveSite}
-            className="inline-flex h-11 items-center justify-center rounded-full border border-[#dbe6f5] bg-[#f8fbff] px-5 text-sm font-semibold text-[#173f85] transition hover:bg-[#eef4fc]"
+            className="tg-link-pill inline-flex h-11 items-center justify-center rounded-full border border-[#dbe6f5] bg-[#f8fbff] px-5 text-sm font-semibold text-[#173f85] hover:bg-[#eef4fc]"
           >
             Exit
           </button>
