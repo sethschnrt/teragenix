@@ -148,7 +148,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         </div>
       </section>
 
-      <section className="-mt-14 pb-10 sm:-mt-16 sm:pb-12 lg:pb-14">
+      <section className="relative z-10 pt-8 pb-10 sm:pt-10 sm:pb-12 lg:pt-12 lg:pb-14">
         <div className="mx-auto max-w-[980px] px-5 sm:px-8 lg:px-12">
           <article className="rounded-[2rem] bg-white p-7 ring-1 ring-[#e3e8ef] shadow-[0_24px_60px_rgba(13,38,45,0.08)] sm:p-9">
             <div className="rounded-[1.4rem] bg-[#f4f8ff] p-5 ring-1 ring-[#dbe6f5]">
