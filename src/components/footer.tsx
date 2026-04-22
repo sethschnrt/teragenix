@@ -29,65 +29,116 @@ const footerLinks = {
 
 export function Footer() {
   return (
-    <footer className="relative overflow-hidden bg-[linear-gradient(166deg,_#1e4a9e_0%,_#0d262d_100%)] text-white">
-      {/* faint sage glow */}
-      <div className="pointer-events-none absolute -left-32 top-0 h-[420px] w-[420px] rounded-full bg-[#2d5bbf]/18 blur-[120px]" />
+    <>
+      <section className="bg-white pb-0 pt-10 sm:pt-12 lg:pt-14">
+        <div className="mx-auto max-w-[1240px] px-5 sm:px-8 lg:px-12">
+          <div className="flex flex-col items-center justify-between gap-6 rounded-[40px] bg-[linear-gradient(166deg,_#3b6ed6_0%,_#0d262d_100%)] px-10 py-14 sm:flex-row sm:px-16 sm:py-16 lg:px-20">
+            <div className="text-center sm:text-left">
+              <p
+                className="tg-eyebrow mb-4"
+                style={{ color: "#4a8dd9" }}
+              >
+                READY TO SHOP
+              </p>
+              <h3
+                className="max-w-xl"
+                style={{
+                  fontSize: "38px",
+                  lineHeight: "44px",
+                  fontWeight: 600,
+                  color: "#ffffff",
+                  letterSpacing: "-0.76px",
+                }}
+              >
+                Shop the peptides built for your goal.
+              </h3>
+            </div>
+            <Link
+              href="/shop"
+              className="tg-link-pill inline-flex h-14 shrink-0 items-center rounded-full bg-white px-8 text-[#0d262d] hover:bg-[#eef4fc]"
+              style={{
+                fontSize: "15px",
+                fontWeight: 600,
+                letterSpacing: "-0.3px",
+              }}
+            >
+              Shop peptides
+              <svg
+                className="tg-link-pill-icon ml-2.5 h-4 w-4"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="M5 12h14M13 5l7 7-7 7" />
+              </svg>
+            </Link>
+          </div>
+        </div>
+      </section>
 
-      {/* decorative wordmark */}
-      <div className="pointer-events-none absolute inset-x-0 bottom-[-2rem] hidden justify-center overflow-hidden sm:flex lg:bottom-[-3rem]">
-        <span className="select-none whitespace-nowrap font-sans text-[8rem] font-extrabold leading-none tracking-[-0.05em] text-white/[0.04] lg:text-[12rem]">
-          teragenix
-        </span>
-      </div>
+      <footer className="relative overflow-hidden bg-[linear-gradient(166deg,_#1e4a9e_0%,_#0d262d_100%)] text-white">
+        {/* faint sage glow */}
+        <div className="pointer-events-none absolute -left-32 top-0 h-[420px] w-[420px] rounded-full bg-[#2d5bbf]/18 blur-[120px]" />
 
-      <div className="relative mx-auto max-w-[1240px] px-5 py-20 sm:px-8 lg:px-12">
-        <RegulatoryDisclaimer variant="dark" className="mb-10" />
+        {/* decorative wordmark */}
+        <div className="pointer-events-none absolute inset-x-0 bottom-[-2rem] hidden justify-center overflow-hidden sm:flex lg:bottom-[-3rem]">
+          <span className="select-none whitespace-nowrap font-sans text-[8rem] font-extrabold leading-none tracking-[-0.05em] text-white/[0.04] lg:text-[12rem]">
+            teragenix
+          </span>
+        </div>
 
-        <div className="grid gap-14 lg:grid-cols-[1.2fr_0.95fr_0.95fr_1.05fr]">
-          {/* Brand column */}
-          <div className="md:col-span-1">
-            <Logo size="md" theme="light" className="w-[112px] sm:w-[128px]" />
-            <p className="mt-5 max-w-xs text-[14px] leading-relaxed text-white/65">
-              Premium peptides for fat loss, recovery, longevity, and aesthetics, with visible specs and cleaner product detail.
-            </p>
-            <p className="mt-4 max-w-sm text-[12px] leading-6 text-white/48">
-              Pre-launch legal pages are live now and will be updated with final business details before checkout goes live.
-            </p>
+        <div className="relative mx-auto max-w-[1240px] px-5 py-20 sm:px-8 lg:px-12">
+          <RegulatoryDisclaimer variant="dark" className="mb-10" />
+
+          <div className="grid gap-14 lg:grid-cols-[1.2fr_0.95fr_0.95fr_1.05fr]">
+            {/* Brand column */}
+            <div className="md:col-span-1">
+              <Logo size="md" theme="light" className="w-[112px] sm:w-[128px]" />
+              <p className="mt-5 max-w-xs text-[14px] leading-relaxed text-white/65">
+                Premium peptides for fat loss, recovery, longevity, and aesthetics, with visible specs and cleaner product detail.
+              </p>
+              <p className="mt-4 max-w-sm text-[12px] leading-6 text-white/48">
+                Pre-launch legal pages are live now and will be updated with final business details before checkout goes live.
+              </p>
+            </div>
+
+            {/* Link columns */}
+            {Object.entries(footerLinks).map(([category, links]) => (
+              <div key={category}>
+                <h4 className="mb-5 font-sans text-[11px] font-medium uppercase tracking-[0.22em] text-[#a8c5f5]">
+                  {category}
+                </h4>
+                <ul className="space-y-3.5">
+                  {links.map((link) => (
+                    <li key={link.href}>
+                      <Link
+                        href={link.href}
+                        className="tg-link-text text-[14px] text-white/70 hover:text-white"
+                      >
+                        {link.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
           </div>
 
-          {/* Link columns */}
-          {Object.entries(footerLinks).map(([category, links]) => (
-            <div key={category}>
-              <h4 className="mb-5 font-sans text-[11px] font-medium uppercase tracking-[0.22em] text-[#a8c5f5]">
-                {category}
-              </h4>
-              <ul className="space-y-3.5">
-                {links.map((link) => (
-                  <li key={link.href}>
-                    <Link
-                      href={link.href}
-                      className="tg-link-text text-[14px] text-white/70 hover:text-white"
-                    >
-                      {link.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
+          <div className="mt-16 h-px w-full bg-white/12" />
 
-        <div className="mt-16 h-px w-full bg-white/12" />
-
-        <div className="mt-8 flex flex-col items-center justify-between gap-4 sm:flex-row">
-          <p className="text-[12px] text-white/45">
-            &copy; {new Date().getFullYear()} Teragenix Research. All rights reserved.
-          </p>
-          <p className="max-w-md text-center text-[12px] text-white/45 sm:text-right">
-            Research-use catalog with visible docs, policies, and support pages.
-          </p>
+          <div className="mt-8 flex flex-col items-center justify-between gap-4 sm:flex-row">
+            <p className="text-[12px] text-white/45">
+              &copy; {new Date().getFullYear()} Teragenix Research. All rights reserved.
+            </p>
+            <p className="max-w-md text-center text-[12px] text-white/45 sm:text-right">
+              Research-use catalog with visible docs, policies, and support pages.
+            </p>
+          </div>
         </div>
-      </div>
-    </footer>
+      </footer>
+    </>
   );
 }
