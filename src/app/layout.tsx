@@ -55,15 +55,6 @@ export default function RootLayout({
           }}
         />
         <Script
-          id="teragenix-hover-runtime"
-          strategy="beforeInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `(function(){var selector='.tg-link-pill,.tg-link-card,.tg-hero-card';function closestTarget(node){return node&&node.closest?node.closest(selector):null}function setStyles(el,active){if(!el)return;var media=el.querySelector('.tg-link-card-media');var heroSurface=el.querySelector('.tg-hero-card-surface');var heroPanel=el.querySelector('.tg-hero-card-panel');var heroAction=el.querySelector('.tg-hero-card-action');var heroMedia=el.querySelector('.tg-hero-card-media');var pillIcon=el.querySelector('.tg-link-pill-icon');if(active){el.classList.add('tg-hover-active')}else{el.classList.remove('tg-hover-active')}if(el.classList.contains('tg-link-pill')){el.style.transform=active?'translate3d(0,-4px,0)':'';el.style.boxShadow=active?'0 26px 40px -20px rgba(59,110,214,0.62)':'';if(pillIcon){pillIcon.style.transform=active?'translate3d(4px,-3px,0)':''}}if(el.classList.contains('tg-link-card')&&!el.classList.contains('tg-hero-card')){el.style.transform=active?'translate3d(0,-8px,0)':'';el.style.boxShadow=active?'0 38px 60px -28px rgba(13,38,45,0.38)':'';el.style.borderColor=active?'rgba(59,110,214,0.24)':'';if(media){media.style.transform=active?'scale(1.08)':''}}if(el.classList.contains('tg-hero-card')){el.style.transform='';el.style.boxShadow='';el.style.borderColor='';if(heroSurface){heroSurface.style.transform=active?'translate3d(0,-8px,0)':'';heroSurface.style.boxShadow=active?'0 28px 44px -24px rgba(13,38,45,0.34)':''}if(heroPanel){heroPanel.style.transform=active?'translate3d(0,-6px,0)':'';heroPanel.style.boxShadow=active?'0 22px 36px -24px rgba(13,38,45,0.24)':''}if(heroAction){heroAction.style.transform=active?'translate3d(0,-4px,0)':'';heroAction.style.backgroundColor=active?'rgba(255,255,255,0.78)':'';heroAction.style.boxShadow=active?'0 18px 28px -20px rgba(13,38,45,0.24)':''}if(heroMedia){heroMedia.style.transform=active?'scale(1.08) translateY(-6px)':''}}}
-function clearAll(){document.querySelectorAll(selector).forEach(function(el){setStyles(el,false)})}
-document.addEventListener('mouseover',function(event){var el=closestTarget(event.target);if(!el)return;var related=closestTarget(event.relatedTarget);if(related===el)return;setStyles(el,true)},true);document.addEventListener('mouseout',function(event){var el=closestTarget(event.target);if(!el)return;var related=closestTarget(event.relatedTarget);if(related===el)return;setStyles(el,false)},true);document.addEventListener('focusin',function(event){var el=closestTarget(event.target);if(el)setStyles(el,true)},true);document.addEventListener('focusout',function(event){var el=closestTarget(event.target);if(el)setStyles(el,false)},true);document.addEventListener('touchstart',clearAll,{passive:true});window.addEventListener('blur',clearAll);})();`,
-          }}
-        />
-        <Script
           id="teragenix-deploy-sync"
           strategy="beforeInteractive"
           dangerouslySetInnerHTML={{
