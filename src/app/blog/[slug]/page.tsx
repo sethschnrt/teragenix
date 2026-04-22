@@ -191,7 +191,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-[#3b6ed6]">More from the blog</p>
               <h2 className="mt-2 text-[1.65rem] font-semibold tracking-[-0.03em] text-[#0d262d]">Keep reading</h2>
             </div>
-            <Link href="/blog" className="text-sm font-semibold text-[#173f85] hover:text-[#0d262d]">
+            <Link href="/blog" className="tg-link-pill inline-flex h-10 items-center rounded-full border border-[#dbe6f5] bg-white px-4 text-sm font-semibold text-[#173f85] hover:bg-[#f8fbff]">
               View all
             </Link>
           </div>
@@ -201,7 +201,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               <Link
                 key={relatedPost.slug}
                 href={`/blog/${relatedPost.slug}`}
-                className="group overflow-hidden rounded-[1.6rem] bg-white ring-1 ring-[#e3e8ef] transition hover:-translate-y-0.5 hover:shadow-[0_18px_44px_rgba(13,38,45,0.08)]"
+                className="tg-link-card group overflow-hidden rounded-[1.6rem] bg-white ring-1 ring-[#e3e8ef]"
               >
                 <div className="relative aspect-[16/10] bg-[#e8eef7]">
                   <Image
@@ -209,7 +209,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                     alt={relatedPost.imageAlt}
                     fill
                     sizes="(min-width: 768px) 50vw, 100vw"
-                    className="object-cover transition duration-300 group-hover:scale-[1.02]"
+                    className="tg-link-card-media object-cover"
                   />
                 </div>
                 <div className="p-6">
