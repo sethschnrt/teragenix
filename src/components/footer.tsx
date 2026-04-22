@@ -30,7 +30,7 @@ const footerLinks = {
 export function Footer() {
   return (
     <>
-      <section className="bg-white pt-10 sm:pt-12 lg:pt-14">
+      <section className="bg-white pt-10 pb-4 sm:pt-12 sm:pb-5 lg:pt-14 lg:pb-6">
         <div className="mx-auto max-w-[1240px] px-5 sm:px-8 lg:px-12">
           <div className="flex flex-col items-center justify-between gap-6 rounded-[32px] bg-[linear-gradient(166deg,_#3b6ed6_0%,_#0d262d_100%)] px-8 py-10 sm:flex-row sm:px-12 sm:py-12 lg:px-14 lg:py-12">
             <div className="text-center sm:text-left">
@@ -90,7 +90,7 @@ export function Footer() {
           </span>
         </div>
 
-        <div className="relative mx-auto max-w-[1240px] px-5 py-16 sm:px-8 sm:py-18 lg:px-12 lg:py-20">
+        <div className="relative mx-auto max-w-[1240px] px-5 pb-16 pt-5 sm:px-8 sm:pb-18 sm:pt-6 lg:px-12 lg:pb-20 lg:pt-7">
           <RegulatoryDisclaimer variant="dark" className="mb-10" />
 
           <div className="grid gap-14 lg:grid-cols-[1.2fr_0.95fr_0.95fr_1.05fr]">
