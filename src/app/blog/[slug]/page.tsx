@@ -99,47 +99,45 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
         <div className="relative mx-auto max-w-[1180px] px-5 sm:px-8 lg:px-12">
           <div className="mx-auto max-w-3xl text-center">
-            <div className="rounded-[2rem] bg-[#0b1f38]/58 px-5 py-6 ring-1 ring-white/8 sm:px-8 sm:py-8">
-              <nav aria-label="Breadcrumb" className="flex flex-wrap items-center justify-center gap-2 text-[12px] text-white/68">
-                <Link href="/" className="tg-link-text hover:text-white">
-                  Home
-                </Link>
-                <ChevronRight className="h-3.5 w-3.5 text-white/40" />
-                <Link href="/blog" className="tg-link-text hover:text-white">
-                  Blog
-                </Link>
-                <ChevronRight className="h-3.5 w-3.5 text-white/40" />
-                <span className="max-w-full truncate text-white/88">{post.title}</span>
-              </nav>
+            <nav aria-label="Breadcrumb" className="flex flex-wrap items-center justify-center gap-2 text-[12px] text-white/68">
+              <Link href="/" className="tg-link-text hover:text-white">
+                Home
+              </Link>
+              <ChevronRight className="h-3.5 w-3.5 text-white/40" />
+              <Link href="/blog" className="tg-link-text hover:text-white">
+                Blog
+              </Link>
+              <ChevronRight className="h-3.5 w-3.5 text-white/40" />
+              <span className="max-w-full truncate text-white/88">{post.title}</span>
+            </nav>
 
-              <div className="mt-5 flex flex-wrap items-center justify-center gap-2.5">
-                <span className="inline-flex items-center rounded-full bg-white/10 px-3 py-1.5 text-[10px] font-medium tracking-[0.16em] text-white/88 ring-1 ring-white/12">
-                  {post.category}
-                </span>
-                <span className="text-[12px] text-white/62">{post.heroDetail}</span>
+            <div className="mt-5 flex flex-wrap items-center justify-center gap-2.5">
+              <span className="inline-flex items-center rounded-full bg-white/10 px-3 py-1.5 text-[10px] font-medium tracking-[0.16em] text-white/88 ring-1 ring-white/12">
+                {post.category}
+              </span>
+              <span className="text-[12px] text-white/62">{post.heroDetail}</span>
+            </div>
+
+            <h1 className="mx-auto mt-4 max-w-4xl text-[2.15rem] font-semibold leading-[0.98] tracking-[-0.04em] text-white sm:text-[2.9rem]">
+              {post.title}
+            </h1>
+
+            <p className="mx-auto mt-4 max-w-2xl text-[1rem] leading-7 text-white/82 sm:text-[1.05rem]">
+              {post.description}
+            </p>
+
+            <div className="mt-6 flex flex-wrap items-center justify-center gap-2.5 text-left">
+              <div className="rounded-full bg-white/10 px-3.5 py-2 ring-1 ring-white/12">
+                <span className="text-[10px] font-medium uppercase tracking-[0.16em] text-white/56">Published</span>
+                <span className="ml-2 text-[13px] font-medium text-white/92">{formatBlogDate(post.publishedAt)}</span>
               </div>
-
-              <h1 className="mx-auto mt-4 max-w-4xl text-[2.15rem] font-semibold leading-[0.98] tracking-[-0.04em] text-white sm:text-[2.9rem]">
-                {post.title}
-              </h1>
-
-              <p className="mx-auto mt-4 max-w-2xl text-[1rem] leading-7 text-white/82 sm:text-[1.05rem]">
-                {post.description}
-              </p>
-
-              <div className="mt-6 flex flex-wrap items-center justify-center gap-2.5 text-left">
-                <div className="rounded-full bg-white/10 px-3.5 py-2 ring-1 ring-white/12">
-                  <span className="text-[10px] font-medium uppercase tracking-[0.16em] text-white/56">Published</span>
-                  <span className="ml-2 text-[13px] font-medium text-white/92">{formatBlogDate(post.publishedAt)}</span>
-                </div>
-                <div className="rounded-full bg-white/10 px-3.5 py-2 ring-1 ring-white/12">
-                  <span className="text-[10px] font-medium uppercase tracking-[0.16em] text-white/56">Read time</span>
-                  <span className="ml-2 text-[13px] font-medium text-white/92">{post.readingMinutes} min read</span>
-                </div>
-                <div className="rounded-full bg-white/10 px-3.5 py-2 ring-1 ring-white/12">
-                  <span className="text-[10px] font-medium uppercase tracking-[0.16em] text-white/56">Author</span>
-                  <span className="ml-2 text-[13px] font-medium text-white/92">{post.author}</span>
-                </div>
+              <div className="rounded-full bg-white/10 px-3.5 py-2 ring-1 ring-white/12">
+                <span className="text-[10px] font-medium uppercase tracking-[0.16em] text-white/56">Read time</span>
+                <span className="ml-2 text-[13px] font-medium text-white/92">{post.readingMinutes} min read</span>
+              </div>
+              <div className="rounded-full bg-white/10 px-3.5 py-2 ring-1 ring-white/12">
+                <span className="text-[10px] font-medium uppercase tracking-[0.16em] text-white/56">Author</span>
+                <span className="ml-2 text-[13px] font-medium text-white/92">{post.author}</span>
               </div>
             </div>
           </div>
