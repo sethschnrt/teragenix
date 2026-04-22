@@ -21,6 +21,15 @@ const defaultSettings: AccessibilitySettings = {
   focusHighlight: false,
 };
 
+function isDefaultSettings(settings: AccessibilitySettings) {
+  return (
+    settings.textSize === defaultSettings.textSize &&
+    settings.contrast === defaultSettings.contrast &&
+    settings.reduceMotion === defaultSettings.reduceMotion &&
+    settings.focusHighlight === defaultSettings.focusHighlight
+  );
+}
+
 function coerceBoolean(value: unknown) {
   return value === true || value === "true";
 }
@@ -70,8 +79,39 @@ export function AccessibilityWidget() {
   useEffect(() => {
     const normalized = normalizeSettings(settings);
     applySettings(normalized);
+
+    if (isDefaultSettings(normalized)) {
+      window.localStorage.removeItem(STORAGE_KEY);
+      return;
+    }
+
     window.localStorage.setItem(STORAGE_KEY, JSON.stringify(normalized));
   }, [settings]);
+
+  useEffect(() => {
+    const syncFromStorage = (event: StorageEvent) => {
+      if (event.key !== STORAGE_KEY) return;
+
+      if (!event.newValue) {
+        setSettings(defaultSettings);
+        applySettings(defaultSettings);
+        return;
+      }
+
+      try {
+        const parsed = JSON.parse(event.newValue) as Partial<AccessibilitySettings>;
+        const normalized = normalizeSettings(parsed);
+        setSettings(normalized);
+        applySettings(normalized);
+      } catch {
+        setSettings(defaultSettings);
+        applySettings(defaultSettings);
+      }
+    };
+
+    window.addEventListener("storage", syncFromStorage);
+    return () => window.removeEventListener("storage", syncFromStorage);
+  }, []);
 
   useEffect(() => {
     if (!open) return;
@@ -104,7 +144,11 @@ export function AccessibilityWidget() {
     setSettings((current) => ({ ...current, [key]: !current[key] }));
   };
 
-  const reset = () => setSettings(defaultSettings);
+  const reset = () => {
+    window.localStorage.removeItem(STORAGE_KEY);
+    applySettings(defaultSettings);
+    setSettings({ ...defaultSettings });
+  };
 
   return (
     <div className="fixed bottom-[calc(env(safe-area-inset-bottom,0px)+5.5rem)] right-4 z-[105] sm:bottom-5 sm:right-5" data-site-chrome="accessibility-widget">
