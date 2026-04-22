@@ -215,12 +215,6 @@ export function ShopPageClient() {
               >
                 {/* Product image */}
                 <div className="relative aspect-square flex items-center justify-center overflow-hidden" style={{ backgroundColor: productTheme.heroTone }}>
-                  <div
-                    className="absolute inset-0 opacity-60"
-                    style={{
-                      backgroundImage: `radial-gradient(circle at 50% 18%, ${productTheme.soft} 0%, transparent 44%)`,
-                    }}
-                  />
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src={`${BASE_PATH}${product.image}`}

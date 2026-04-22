@@ -48,13 +48,6 @@ export function FeaturedProducts() {
                 className="tg-link-card group relative flex flex-col overflow-hidden rounded-[1.75rem] bg-white ring-1 ring-[#e3e8ef]"
               >
                 <div className="relative aspect-square overflow-hidden" style={{ backgroundColor: theme.heroTone }}>
-                  <div
-                    className="absolute inset-0 opacity-35"
-                    style={{
-                      backgroundImage: `radial-gradient(circle at 50% 20%, ${theme.soft} 0%, transparent 46%)`,
-                    }}
-                  />
-
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src={`${BASE_PATH}${product.image}`}

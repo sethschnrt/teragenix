@@ -441,10 +441,6 @@ export function ProductDetail({ product, relatedProducts }: ProductDetailProps) 
                     className="tg-link-card group relative flex flex-col overflow-hidden rounded-[1.6rem] bg-white ring-1 ring-[#e3e8ef]"
                   >
                     <div className="relative aspect-square overflow-hidden" style={{ backgroundColor: relatedTheme.heroTone }}>
-                      <div
-                        className="absolute inset-0 opacity-60"
-                        style={{ backgroundImage: `radial-gradient(circle at 50% 18%, ${relatedTheme.soft} 0%, transparent 44%)` }}
-                      />
                       {/* eslint-disable-next-line @next/next/no-img-element */}
                       <img
                         src={`${BASE_PATH}${rp.image}`}
