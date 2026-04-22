@@ -88,7 +88,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             priority
           />
         </div>
-        <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,_rgba(7,18,36,0.78)_0%,_rgba(8,20,40,0.9)_38%,_rgba(8,20,40,0.96)_100%)]" />
+        <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(162deg,_#173f85_0%,_#0d262d_100%)] opacity-[0.96]" />
         <div
           className="pointer-events-none absolute inset-0"
           style={{
