@@ -88,19 +88,19 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             priority
           />
         </div>
-        <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(162deg,_#173f85_0%,_#0d262d_100%)] opacity-[0.92]" />
+        <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,_rgba(7,18,36,0.78)_0%,_rgba(8,20,40,0.9)_38%,_rgba(8,20,40,0.96)_100%)]" />
         <div
           className="pointer-events-none absolute inset-0"
           style={{
             backgroundImage:
-              "radial-gradient(circle at 76% 18%, rgba(168,197,245,0.22), transparent 28%), radial-gradient(circle at 18% 18%, rgba(255,255,255,0.06), transparent 24%)",
+              "radial-gradient(circle at 50% 12%, rgba(59,110,214,0.16), transparent 26%)",
           }}
         />
 
         <div className="relative mx-auto max-w-[1180px] px-5 sm:px-8 lg:px-12">
-          <div className="max-w-2xl">
-            <div className="rounded-[2rem] bg-white/6 p-6 ring-1 ring-white/12 backdrop-blur-[3px] sm:p-7">
-              <nav aria-label="Breadcrumb" className="flex flex-wrap items-center gap-2 text-[12px] text-white/70">
+          <div className="mx-auto max-w-3xl text-center">
+            <div className="rounded-[2rem] bg-[#0b1f38]/58 px-5 py-6 ring-1 ring-white/8 sm:px-8 sm:py-8">
+              <nav aria-label="Breadcrumb" className="flex flex-wrap items-center justify-center gap-2 text-[12px] text-white/68">
                 <Link href="/" className="tg-link-text hover:text-white">
                   Home
                 </Link>
@@ -109,36 +109,36 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                   Blog
                 </Link>
                 <ChevronRight className="h-3.5 w-3.5 text-white/40" />
-                <span className="text-white">{post.title}</span>
+                <span className="max-w-full truncate text-white/88">{post.title}</span>
               </nav>
 
-              <div className="mt-5 flex flex-wrap items-center gap-3">
-                <span className="inline-flex items-center rounded-full bg-white/10 px-3 py-1.5 text-[11px] font-medium tracking-[0.18em] text-white/84 ring-1 ring-white/14 backdrop-blur-sm">
+              <div className="mt-5 flex flex-wrap items-center justify-center gap-2.5">
+                <span className="inline-flex items-center rounded-full bg-white/10 px-3 py-1.5 text-[10px] font-medium tracking-[0.16em] text-white/88 ring-1 ring-white/12">
                   {post.category}
                 </span>
-                <span className="text-[12px] text-white/60">{post.heroDetail}</span>
+                <span className="text-[12px] text-white/62">{post.heroDetail}</span>
               </div>
 
-              <h1 className="mt-4 max-w-4xl text-[2.15rem] font-semibold leading-[0.98] tracking-[-0.04em] text-white sm:text-[2.9rem]">
+              <h1 className="mx-auto mt-4 max-w-4xl text-[2.15rem] font-semibold leading-[0.98] tracking-[-0.04em] text-white sm:text-[2.9rem]">
                 {post.title}
               </h1>
 
-              <p className="mt-4 max-w-2xl text-[1rem] leading-7 text-white/72 sm:text-[1.05rem]">
+              <p className="mx-auto mt-4 max-w-2xl text-[1rem] leading-7 text-white/82 sm:text-[1.05rem]">
                 {post.description}
               </p>
 
-              <div className="mt-6 grid gap-3 sm:grid-cols-3">
-                <div className="rounded-[1.15rem] bg-white/10 p-4 ring-1 ring-white/14 backdrop-blur-sm">
-                  <span className="text-[11px] font-medium uppercase tracking-[0.18em] text-white/58">Published</span>
-                  <span className="mt-2 block text-sm font-medium text-white/92">{formatBlogDate(post.publishedAt)}</span>
+              <div className="mt-6 flex flex-wrap items-center justify-center gap-2.5 text-left">
+                <div className="rounded-full bg-white/10 px-3.5 py-2 ring-1 ring-white/12">
+                  <span className="text-[10px] font-medium uppercase tracking-[0.16em] text-white/56">Published</span>
+                  <span className="ml-2 text-[13px] font-medium text-white/92">{formatBlogDate(post.publishedAt)}</span>
                 </div>
-                <div className="rounded-[1.15rem] bg-white/10 p-4 ring-1 ring-white/14 backdrop-blur-sm">
-                  <span className="text-[11px] font-medium uppercase tracking-[0.18em] text-white/58">Read time</span>
-                  <span className="mt-2 block text-sm font-medium text-white/92">{post.readingMinutes} min read</span>
+                <div className="rounded-full bg-white/10 px-3.5 py-2 ring-1 ring-white/12">
+                  <span className="text-[10px] font-medium uppercase tracking-[0.16em] text-white/56">Read time</span>
+                  <span className="ml-2 text-[13px] font-medium text-white/92">{post.readingMinutes} min read</span>
                 </div>
-                <div className="rounded-[1.15rem] bg-white/10 p-4 ring-1 ring-white/14 backdrop-blur-sm">
-                  <span className="text-[11px] font-medium uppercase tracking-[0.18em] text-white/58">Author</span>
-                  <span className="mt-2 block text-sm font-medium text-white/92">{post.author}</span>
+                <div className="rounded-full bg-white/10 px-3.5 py-2 ring-1 ring-white/12">
+                  <span className="text-[10px] font-medium uppercase tracking-[0.16em] text-white/56">Author</span>
+                  <span className="ml-2 text-[13px] font-medium text-white/92">{post.author}</span>
                 </div>
               </div>
             </div>
