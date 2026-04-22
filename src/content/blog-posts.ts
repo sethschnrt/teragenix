@@ -44,7 +44,7 @@ export const blogPosts: BlogPost[] = [
       {
         heading: "What a trustworthy peptide product page should show right away",
         paragraphs: [
-          "A good peptide product page should reduce uncertainty fast. You should be able to identify the compound, quantity, format, storage basics, and the next supporting document without digging through tabs or hype-heavy copy.",
+          "A good [peptide product page](/shop) should reduce uncertainty fast. You should be able to identify the compound, quantity, format, storage basics, and the next supporting document without digging through tabs or hype-heavy copy.",
           "That does not mean every page needs to feel clinical or dense. It means the important information should be obvious enough that a buyer can compare one listing against another in a few minutes instead of guessing from design cues alone.",
         ],
         bullets: [
@@ -57,7 +57,7 @@ export const blogPosts: BlogPost[] = [
       {
         heading: "Red flag 1: no batch-specific documentation path",
         paragraphs: [
-          "One of the easiest ways to lose confidence in a peptide product page is when the listing talks about quality but gives no clean path to a batch document, lot reference, or supporting analytical context. Buyers do not need every document on the product page itself, but they do need a believable way to trace the claim back to something real.",
+          "One of the easiest ways to lose confidence in a peptide product page is when the listing talks about quality but gives no clean path to a [batch document or COA](/coa), lot reference, or supporting analytical context. Buyers do not need every document on the product page itself, but they do need a believable way to trace the claim back to something real.",
           "Lot and batch identifiers matter because traceability is how quality systems stay useful once products move through handling, packaging, and support workflows. If a listing talks about testing but gives no lot-level anchor, the buyer is being asked to trust the headline more than the process behind it.",
         ],
       },
@@ -77,7 +77,7 @@ export const blogPosts: BlogPost[] = [
         heading: "Red flag 3: vague or missing storage guidance",
         paragraphs: [
           "Storage is not a small detail for peptides. Light, heat, moisture, handling, and post-reconstitution conditions can all affect stability, so a page that says nothing about storage is leaving out information that materially changes confidence.",
-          "A good listing does not need to promise exact shelf life for every scenario. It should at least tell the buyer whether the site takes handling seriously and whether the support path covers clean storage basics without forcing them to guess.",
+          "A good listing does not need to promise exact shelf life for every scenario. It should at least tell the buyer whether the site takes handling seriously and whether the support path covers clean [storage basics](/blog/peptide-storage-mistakes-that-ruin-product-quality) without forcing them to guess.",
         ],
       },
       {
@@ -97,7 +97,7 @@ export const blogPosts: BlogPost[] = [
       {
         heading: "Red flag 6: no real support or policy path",
         paragraphs: [
-          "A product page does not stand alone. Buyers judge a site by how easily they can reach FAQ, refund, shipping, research disclaimer, and quality pages from the product context.",
+          "A product page does not stand alone. Buyers judge a site by how easily they can reach the [FAQ](/faq), refund, shipping, research disclaimer, and [quality pages](/coa) from the product context.",
           "If those pages are missing, hard to find, or obviously generic, trust drops even when the product card itself looks polished. Credibility is built by the surrounding support path, not just the main image and price box.",
         ],
       },
@@ -163,7 +163,7 @@ export const blogPosts: BlogPost[] = [
       {
         heading: "What a useful COA should help you verify",
         paragraphs: [
-          "A COA is not valuable just because it exists. It becomes valuable when it helps the buyer connect a result to a specific product context instead of forcing them to assume the file belongs to whatever is currently in stock.",
+          "A [COA](/coa) is not valuable just because it exists. It becomes valuable when it helps the buyer connect a result to a specific product context instead of forcing them to assume the file belongs to whatever is currently in stock.",
           "At minimum, buyers want enough information to compare the document with the listing and confirm they are not looking at a generic file being reused for every item. Batch-specific relevance matters more than the presence of a PDF icon.",
         ],
       },
@@ -177,7 +177,7 @@ export const blogPosts: BlogPost[] = [
       {
         heading: "What buyers should compare beyond purity",
         paragraphs: [
-          "Purity should be read together with quantity, format, storage guidance, and the overall quality of the support path. That combination gives you a fuller picture of how carefully the product is presented and how easy it will be to verify claims without guesswork.",
+          "Purity should be read together with quantity, format, [storage guidance](/blog/peptide-storage-mistakes-that-ruin-product-quality), and the overall quality of the [support path](/faq). That combination gives you a fuller picture of how carefully the product is presented and how easy it will be to verify claims without guesswork.",
           "A page that shows a purity number but hides everything else is still a weak page. A page that pairs a smaller amount of marketing language with stronger documentation and cleaner context is usually the better buy signal.",
         ],
         bullets: [
@@ -191,7 +191,7 @@ export const blogPosts: BlogPost[] = [
         heading: "A better way to judge purity claims",
         paragraphs: [
           "The cleaner move is to stop asking whether a purity number sounds high and start asking whether the page makes that claim easy to trust. If the surrounding evidence is weak, the headline figure should not carry the whole decision.",
-          "Better buying comes from comparison, not awe. Use the number, but keep it in its lane.",
+          "Better buying comes from [comparison](/blog/how-to-compare-peptide-vendors-without-falling-for-hype), not awe. Use the number, but keep it in its lane.",
         ],
       },
     ],
@@ -218,7 +218,7 @@ export const blogPosts: BlogPost[] = [
         heading: "Why storage affects peptide quality in the first place",
         paragraphs: [
           "Peptides are not just labels and numbers. Their stability can change under different temperature, moisture, and handling conditions, especially once a product is reconstituted or repeatedly exposed to avoidable stress.",
-          "Published stability work on peptide and protein formulations shows the same broad lesson again and again: storage conditions matter, and reconstituted products can behave very differently from lyophilized ones. That is why good handling guidance belongs in the buying conversation, not only in support tickets after the fact.",
+          "Published stability work on peptide and protein formulations shows the same broad lesson again and again: storage conditions matter, and reconstituted products can behave very differently from lyophilized ones. That is why good handling guidance belongs in the [buying conversation](/blog/the-7-biggest-red-flags-on-a-peptide-product-page), not only in support tickets after the fact.",
         ],
       },
       {
@@ -265,10 +265,10 @@ export const blogPosts: BlogPost[] = [
         heading: "A simple storage checklist for cleaner handling",
         paragraphs: [
           "Most storage quality comes down to being organized, not dramatic. Buyers do not need a perfect lab. They need fewer careless moments.",
-          "If a product page or FAQ helps you reduce those mistakes before you buy, that support path is doing real work.",
+          "If a [product page](/shop) or [FAQ](/faq) helps you reduce those mistakes before you buy, that support path is doing real work.",
         ],
         bullets: [
-          "Keep storage guidance easy to reference",
+          "Keep [storage guidance](/faq) easy to reference",
           "Treat reconstituted handling as a separate discipline from unopened storage",
           "Reduce avoidable heat, light, and moisture exposure",
           "Label clearly and track dates instead of relying on memory",
@@ -298,20 +298,20 @@ export const blogPosts: BlogPost[] = [
         heading: "Start with the signals you can verify",
         paragraphs: [
           "A lot of vendor comparisons go wrong because buyers start with the loudest promise instead of the cleanest evidence. A better approach is to compare the few trust signals that can actually be checked across multiple sites in the same sitting.",
-          "That means documentation, product-page clarity, storage guidance, support pages, and overall tone. These are not the only variables that matter, but they are some of the easiest to compare without getting dragged into hype.",
+          "That means documentation, product-page clarity, [storage guidance](/blog/peptide-storage-mistakes-that-ruin-product-quality), support pages, and overall tone. These are not the only variables that matter, but they are some of the easiest to compare without getting dragged into hype.",
         ],
       },
       {
         heading: "Compare documentation before branding",
         paragraphs: [
-          "The first thing to compare is how each site handles proof. Does the vendor make batch or analytical context easy to reach, or do they just gesture at quality with broad claims and premium design language?",
+          "The first thing to compare is how each site handles proof. Does the vendor make [batch or analytical context](/coa) easy to reach, or do they just gesture at quality with broad claims and premium design language?",
           "The cleaner vendor is usually the one that makes verification faster. If branding is strong but the documentation path is weak, the brand is doing more work than the evidence.",
         ],
       },
       {
         heading: "Compare product-page clarity before pricing",
         paragraphs: [
-          "Price matters, but product-page clarity should come first. If one site makes the compound, quantity, format, and storage basics obvious while another hides the same information behind tabs and filler, that difference matters before the first discount badge ever enters the picture.",
+          "Price matters, but product-page clarity should come first. If one site makes the compound, quantity, format, and [storage basics](/shop) obvious while another hides the same information behind tabs and filler, that difference matters before the first discount badge ever enters the picture.",
           "Cheap confusion is not a value. A clear listing saves time and reduces the chance that the buyer is making assumptions where the site should be providing answers.",
         ],
         bullets: [
@@ -323,7 +323,7 @@ export const blogPosts: BlogPost[] = [
       {
         heading: "Compare support and policy pages before checkout",
         paragraphs: [
-          "The FAQ, refund, shipping, and research-disclaimer pages tell you a lot about how a site behaves once the main product card is out of the spotlight. Strong vendors build trust across these surrounding pages instead of treating them as an afterthought.",
+          "The [FAQ](/faq), refund, shipping, and research-disclaimer pages tell you a lot about how a site behaves once the main product card is out of the spotlight. Strong vendors build trust across these surrounding pages instead of treating them as an afterthought.",
           "Weak vendors often do the opposite. The product page looks expensive, but the support path feels thin, generic, or incomplete once you click away from the hero section.",
         ],
       },
@@ -331,7 +331,7 @@ export const blogPosts: BlogPost[] = [
         heading: "Compare tone, claims, and pressure tactics",
         paragraphs: [
           "Tone is a quality signal because it shows what the seller thinks will move the buyer. FDA warning letters to peptide and related sellers repeatedly show how quickly aggressive claims can become a real problem once product pages drift into treatment language or unsupported certainty.",
-          "A restrained site is usually easier to trust than one that tries to close the sale with disease language, guaranteed-outcome energy, or constant urgency. Calm pages often communicate more confidence than loud ones.",
+          "A restrained site is usually easier to trust than one that tries to close the sale with disease language, guaranteed-outcome energy, or constant urgency. Calm pages often communicate more confidence than loud ones, which is one reason the [red flags on a product page](/blog/the-7-biggest-red-flags-on-a-peptide-product-page) are worth learning early.",
         ],
       },
       {

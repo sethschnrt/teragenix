@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import type { ReactNode } from "react";
 import { CheckCircle2, ChevronRight } from "lucide-react";
 import { BlogProgressNav } from "@/components/blog-progress-nav";
 import { DisclaimerBanner } from "@/components/disclaimer-banner";
@@ -23,6 +24,46 @@ function formatBlogDate(value: string) {
 
 function getSectionId(index: number) {
   return `section-${index + 1}`;
+}
+
+function renderInlineLinks(text: string) {
+  const nodes: Array<string | ReactNode> = [];
+  const pattern = /\[([^\]]+)\]\(([^)]+)\)/g;
+  let lastIndex = 0;
+
+  for (const match of text.matchAll(pattern)) {
+    const start = match.index ?? 0;
+    const [fullMatch, label, href] = match;
+
+    if (start > lastIndex) {
+      nodes.push(text.slice(lastIndex, start));
+    }
+
+    const key = `${href}-${start}`;
+    const className = "font-medium text-[#173f85] underline decoration-[#9cb8ef] underline-offset-3 transition hover:text-[#0f2f67]";
+
+    if (href.startsWith("http://") || href.startsWith("https://")) {
+      nodes.push(
+        <a key={key} href={href} target="_blank" rel="noreferrer" className={className}>
+          {label}
+        </a>,
+      );
+    } else {
+      nodes.push(
+        <Link key={key} href={href} className={className}>
+          {label}
+        </Link>,
+      );
+    }
+
+    lastIndex = start + fullMatch.length;
+  }
+
+  if (lastIndex < text.length) {
+    nodes.push(text.slice(lastIndex));
+  }
+
+  return nodes;
 }
 
 export function generateStaticParams() {
@@ -178,7 +219,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           <article className="min-w-0 rounded-[2rem] bg-white p-7 ring-1 ring-[#e3e8ef] shadow-[0_24px_60px_rgba(13,38,45,0.08)] sm:p-9 xl:max-w-[780px]">
             <div className="rounded-[1.45rem] bg-[linear-gradient(180deg,#f4f8ff_0%,#eef5ff_100%)] p-5 ring-1 ring-[#dbe6f5]">
               <p className="text-[11px] font-medium uppercase tracking-[0.2em] text-[#3b6ed6]">Summary</p>
-              <p className="mt-3 text-[15px] leading-7 text-[#475967] sm:text-[16px]">{post.excerpt}</p>
+              <p className="mt-3 text-[15px] leading-7 text-[#475967] sm:text-[16px]">{renderInlineLinks(post.excerpt)}</p>
             </div>
 
             <div className="mt-10 space-y-6">
@@ -208,13 +249,13 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
                       <div className={`mt-5 rounded-[1.1rem] px-4 py-3.5 ring-1 ${theme.takeaway}`}>
                         <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-[#3b6ed6]">Key takeaway</p>
-                        <p className="mt-1.5 text-[15px] leading-7 text-[#30465b] sm:text-[16px]">{leadParagraph}</p>
+                        <p className="mt-1.5 text-[15px] leading-7 text-[#30465b] sm:text-[16px]">{renderInlineLinks(leadParagraph)}</p>
                       </div>
 
                       {detailParagraphs.length ? (
                         <div className="mt-5 space-y-4 text-[15px] leading-7 text-[#475967] sm:text-[16px]">
                           {detailParagraphs.map((paragraph) => (
-                            <p key={paragraph}>{paragraph}</p>
+                            <p key={paragraph}>{renderInlineLinks(paragraph)}</p>
                           ))}
                         </div>
                       ) : null}
@@ -227,7 +268,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                               className={`flex items-start gap-3 rounded-[1rem] px-4 py-3 text-sm leading-6 text-[#475967] ring-1 ${theme.bullet}`}
                             >
                               <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-[#3b6ed6]" />
-                              <span>{bullet}</span>
+                              <span>{renderInlineLinks(bullet)}</span>
                             </li>
                           ))}
                         </ul>

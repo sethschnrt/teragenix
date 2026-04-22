@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 
 type BlogProgressNavProps = {
@@ -90,6 +91,13 @@ export function BlogProgressNav({ sections }: BlogProgressNavProps) {
         })}
         </ul>
       </div>
+
+      <Link
+        href="/shop"
+        className="tg-link-pill mt-5 inline-flex h-10 w-full items-center justify-center rounded-full bg-[#173f85] px-4 text-sm font-semibold text-white"
+      >
+        Shop peptides
+      </Link>
     </aside>
   );
 }
