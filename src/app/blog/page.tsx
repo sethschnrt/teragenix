@@ -81,12 +81,12 @@ export default function BlogHubPage() {
 
       <section className="bg-[#f7f9fc] py-8 sm:py-10 lg:py-12">
         <div className="mx-auto max-w-[1240px] px-5 sm:px-8 lg:px-12">
-          <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+          <div className="grid items-start gap-4 md:grid-cols-2 xl:grid-cols-3">
             {posts.map((post) => (
               <Link
                 key={post.slug}
                 href={`/blog/${post.slug}`}
-                className="tg-link-card group flex h-full flex-col overflow-hidden rounded-[1.7rem] bg-white ring-1 ring-[#e3e8ef]"
+                className="tg-link-card group flex flex-col overflow-hidden rounded-[1.7rem] bg-white ring-1 ring-[#e3e8ef]"
               >
                 <div className="relative aspect-[16/10] overflow-hidden bg-[#e8eef7]">
                   <Image
@@ -98,7 +98,7 @@ export default function BlogHubPage() {
                   />
                 </div>
 
-                <div className="flex h-full flex-col p-6">
+                <div className="flex flex-col p-6">
                   <div className="flex flex-wrap items-center gap-2 text-[11px] font-medium uppercase tracking-[0.18em] text-[#3b6ed6]">
                     <span>{post.category}</span>
                     <span className="text-[#c5cfdb]">•</span>
@@ -111,7 +111,7 @@ export default function BlogHubPage() {
 
                   <p className="mt-3 text-sm leading-6 text-[#475967]">{post.excerpt}</p>
 
-                  <div className="mt-auto flex items-center justify-between pt-6">
+                  <div className="mt-5 flex items-center justify-between pt-1">
                     <span className="text-[12px] text-[#64748b]">{post.readingMinutes} min read</span>
                     <span className="inline-flex items-center text-sm font-semibold text-[#173f85]">
                       Read article
