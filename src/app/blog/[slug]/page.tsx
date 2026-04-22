@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ChevronRight } from "lucide-react";
+import { CheckCircle2, ChevronRight, Sparkles } from "lucide-react";
+import { BlogProgressNav } from "@/components/blog-progress-nav";
 import { DisclaimerBanner } from "@/components/disclaimer-banner";
 import { Footer } from "@/components/footer";
 import { getAllBlogPosts, getBlogPostBySlug } from "@/content/blog-posts";
@@ -18,6 +19,16 @@ function formatBlogDate(value: string) {
     year: "numeric",
     timeZone: "UTC",
   }).format(new Date(`${value}T00:00:00Z`));
+}
+
+function getSectionId(index: number) {
+  return `section-${index + 1}`;
+}
+
+function getLeadSentence(paragraph: string) {
+  const trimmed = paragraph.trim();
+  const match = trimmed.match(/^.*?[.!?](?:\s|$)/);
+  return match ? match[0].trim() : trimmed;
 }
 
 export function generateStaticParams() {
@@ -74,6 +85,31 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   }
 
   const relatedPosts = getAllBlogPosts().filter((entry) => entry.slug !== post.slug).slice(0, 2);
+  const articleSections = post.sections.map((section, index) => ({
+    ...section,
+    id: getSectionId(index),
+  }));
+  const quickLearn = articleSections.slice(0, 3);
+  const sectionThemes = [
+    {
+      shell: "border-[#dbe6f5] bg-[linear-gradient(180deg,#ffffff_0%,#f7fbff_100%)]",
+      badge: "bg-[#eaf2ff] text-[#173f85] ring-[#dbe6f5]",
+      takeaway: "bg-[#f4f8ff] ring-[#dbe6f5]",
+      bullet: "bg-white ring-[#dbe6f5]",
+    },
+    {
+      shell: "border-[#dceee8] bg-[linear-gradient(180deg,#ffffff_0%,#f6fcfa_100%)]",
+      badge: "bg-[#e6f6f1] text-[#14655b] ring-[#d2ece4]",
+      takeaway: "bg-[#eefaf6] ring-[#dceee8]",
+      bullet: "bg-white ring-[#dceee8]",
+    },
+    {
+      shell: "border-[#ece2f8] bg-[linear-gradient(180deg,#ffffff_0%,#fbf7ff_100%)]",
+      badge: "bg-[#f1e9fb] text-[#6f42a8] ring-[#e5d7f6]",
+      takeaway: "bg-[#f8f2ff] ring-[#ece2f8]",
+      bullet: "bg-white ring-[#ece2f8]",
+    },
+  ] as const;
 
   return (
     <main className="bg-[#f7f9fc]">
@@ -145,38 +181,106 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       </section>
 
       <section className="relative z-10 pt-8 pb-10 sm:pt-10 sm:pb-12 lg:pt-12 lg:pb-14">
-        <div className="mx-auto max-w-[980px] px-5 sm:px-8 lg:px-12">
-          <article className="rounded-[2rem] bg-white p-7 ring-1 ring-[#e3e8ef] shadow-[0_24px_60px_rgba(13,38,45,0.08)] sm:p-9">
-            <div className="rounded-[1.4rem] bg-[#f4f8ff] p-5 ring-1 ring-[#dbe6f5]">
-              <p className="text-[11px] font-medium uppercase tracking-[0.2em] text-[#3b6ed6]">Summary</p>
-              <p className="mt-3 text-[15px] leading-7 text-[#475967] sm:text-[16px]">{post.excerpt}</p>
+        <div className="mx-auto max-w-[1180px] px-5 sm:px-8 lg:px-12 xl:grid xl:grid-cols-[260px_minmax(0,1fr)] xl:gap-8">
+          <div className="hidden xl:block">
+            <BlogProgressNav sections={articleSections.map((section) => ({ id: section.id, title: section.heading }))} />
+          </div>
+
+          <article className="min-w-0 rounded-[2rem] bg-white p-7 ring-1 ring-[#e3e8ef] shadow-[0_24px_60px_rgba(13,38,45,0.08)] sm:p-9">
+            <div className="grid gap-3 sm:grid-cols-[1.3fr_1fr] lg:grid-cols-[1.45fr_1fr]">
+              <div className="rounded-[1.45rem] bg-[linear-gradient(180deg,#f4f8ff_0%,#eef5ff_100%)] p-5 ring-1 ring-[#dbe6f5]">
+                <p className="text-[11px] font-medium uppercase tracking-[0.2em] text-[#3b6ed6]">Summary</p>
+                <p className="mt-3 text-[15px] leading-7 text-[#475967] sm:text-[16px]">{post.excerpt}</p>
+              </div>
+
+              <div className="rounded-[1.45rem] bg-[linear-gradient(180deg,#ffffff_0%,#f9fbfe_100%)] p-5 ring-1 ring-[#e3e8ef]">
+                <div className="flex items-center gap-2 text-[11px] font-medium uppercase tracking-[0.18em] text-[#3b6ed6]">
+                  <Sparkles className="h-3.5 w-3.5" />
+                  What you&apos;ll learn
+                </div>
+                <div className="mt-4 space-y-3">
+                  {quickLearn.map((section, index) => (
+                    <div key={section.id} className="rounded-[1rem] bg-white px-4 py-3 ring-1 ring-[#e9eef5]">
+                      <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-[#7b8aa0]">Part {index + 1}</p>
+                      <p className="mt-1 text-sm font-semibold leading-6 text-[#0d262d]">{section.heading}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
 
-            <div className="mt-10 space-y-10">
-              {post.sections.map((section) => (
-                <section key={section.heading}>
-                  <h2 className="text-[1.5rem] font-semibold leading-tight tracking-[-0.03em] text-[#0d262d] sm:text-[1.7rem]">
-                    {section.heading}
-                  </h2>
-                  <div className="mt-4 space-y-4 text-[15px] leading-7 text-[#475967] sm:text-[16px]">
-                    {section.paragraphs.map((paragraph) => (
-                      <p key={paragraph}>{paragraph}</p>
-                    ))}
-                  </div>
-                  {section.bullets?.length ? (
-                    <ul className="mt-5 space-y-3">
-                      {section.bullets.map((bullet) => (
-                        <li
-                          key={bullet}
-                          className="rounded-[1.15rem] bg-[#f8fbff] px-4 py-3 text-sm leading-6 text-[#475967] ring-1 ring-[#dbe6f5]"
+            <div className="mt-10 space-y-6">
+              {articleSections.map((section, index) => {
+                const theme = sectionThemes[index % sectionThemes.length];
+                const [leadParagraph, ...detailParagraphs] = section.paragraphs;
+
+                return (
+                  <div key={section.heading} className="space-y-6">
+                    <section
+                      id={section.id}
+                      className={`scroll-mt-32 rounded-[1.7rem] border p-6 sm:p-7 ${theme.shell}`}
+                    >
+                      <div className="flex items-start gap-4">
+                        <span
+                          className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-sm font-semibold ring-1 ${theme.badge}`}
                         >
-                          {bullet}
-                        </li>
-                      ))}
-                    </ul>
-                  ) : null}
-                </section>
-              ))}
+                          {String(index + 1).padStart(2, "0")}
+                        </span>
+                        <div className="min-w-0">
+                          <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-[#7b8aa0]">Section {index + 1}</p>
+                          <h2 className="mt-2 text-[1.45rem] font-semibold leading-tight tracking-[-0.03em] text-[#0d262d] sm:text-[1.7rem]">
+                            {section.heading}
+                          </h2>
+                        </div>
+                      </div>
+
+                      <div className={`mt-5 rounded-[1.25rem] p-5 ring-1 ${theme.takeaway}`}>
+                        <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-[#3b6ed6]">Key takeaway</p>
+                        <p className="mt-2 text-[15px] leading-7 text-[#30465b] sm:text-[16px]">{leadParagraph}</p>
+                      </div>
+
+                      {detailParagraphs.length ? (
+                        <div className="mt-5 space-y-4 text-[15px] leading-7 text-[#475967] sm:text-[16px]">
+                          {detailParagraphs.map((paragraph) => (
+                            <p key={paragraph}>{paragraph}</p>
+                          ))}
+                        </div>
+                      ) : null}
+
+                      {section.bullets?.length ? (
+                        <ul className="mt-5 grid gap-3 sm:grid-cols-2">
+                          {section.bullets.map((bullet) => (
+                            <li
+                              key={bullet}
+                              className={`flex items-start gap-3 rounded-[1.15rem] px-4 py-3 text-sm leading-6 text-[#475967] ring-1 ${theme.bullet}`}
+                            >
+                              <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-[#3b6ed6]" />
+                              <span>{bullet}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      ) : null}
+                    </section>
+
+                    {(index + 1) % 3 === 0 && index < articleSections.length - 1 ? (
+                      <div className="rounded-[1.5rem] bg-[linear-gradient(135deg,#173f85_0%,#2859b6_100%)] p-5 text-white ring-1 ring-[#2e63ca]">
+                        <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-white/68">Quick reset</p>
+                        <p className="mt-2 text-[1.05rem] font-semibold tracking-[-0.02em] text-white">
+                          Here’s the short version before you keep going.
+                        </p>
+                        <div className="mt-4 grid gap-3 sm:grid-cols-3">
+                          {articleSections.slice(index - 2, index + 1).map((item) => (
+                            <div key={item.id} className="rounded-[1rem] bg-white/10 px-4 py-3 ring-1 ring-white/12">
+                              <p className="text-[10px] font-medium uppercase tracking-[0.16em] text-white/56">Main point</p>
+                              <p className="mt-1 text-sm leading-6 text-white/92">{getLeadSentence(item.paragraphs[0])}</p>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    ) : null}
+                  </div>
+                );
+              })}
             </div>
           </article>
         </div>
