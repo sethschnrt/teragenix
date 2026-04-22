@@ -55,6 +55,13 @@ export default function RootLayout({
             __html: `(function(){var selector='.tg-link-pill,.tg-link-card,.tg-hero-card';function closestTarget(node){return node&&node.closest?node.closest(selector):null}function addHover(el){if(el)el.classList.add('tg-hover-active')}function removeHover(el){if(el)el.classList.remove('tg-hover-active')}document.addEventListener('mouseover',function(event){var el=closestTarget(event.target);if(!el)return;var related=closestTarget(event.relatedTarget);if(related===el)return;addHover(el)},true);document.addEventListener('mouseout',function(event){var el=closestTarget(event.target);if(!el)return;var related=closestTarget(event.relatedTarget);if(related===el)return;removeHover(el)},true);document.addEventListener('touchstart',function(){document.querySelectorAll('.tg-hover-active').forEach(function(el){el.classList.remove('tg-hover-active')})},{passive:true});window.addEventListener('blur',function(){document.querySelectorAll('.tg-hover-active').forEach(function(el){el.classList.remove('tg-hover-active')})});})();`,
           }}
         />
+        <Script
+          id="teragenix-deploy-sync"
+          strategy="beforeInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var root=document.documentElement;var current=root&&root.dataset?root.dataset.dplId:'';if(!current)return;var key='teragenix-dpl-sync:'+current;var links=[].slice.call(document.querySelectorAll('link[rel="stylesheet"][href*="dpl="],script[src*="dpl="]'));var stale=links.some(function(node){var raw=node.getAttribute('href')||node.getAttribute('src')||'';var match=raw.match(/[?&]dpl=([^&]+)/);return match&&match[1]&&match[1]!==current});if(stale&&window.sessionStorage.getItem(key)!=='done'){window.sessionStorage.setItem(key,'done');window.location.reload();}}catch(e){}})();`,
+          }}
+        />
         <Providers>{children}</Providers>
       </body>
     </html>
