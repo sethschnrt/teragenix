@@ -58,18 +58,7 @@ export default function AboutPage() {
       />
 
       <section className="bg-white py-10 sm:py-12 lg:py-14">
-        <div className="mx-auto grid max-w-[1240px] gap-4 px-5 sm:px-8 lg:grid-cols-[1.02fr_0.98fr] lg:items-stretch lg:px-12 lg:gap-5">
-          <div className="rounded-[2rem] bg-[#edf4ff] p-4 ring-1 ring-[#dbe6f5] sm:p-5">
-            <div className="relative h-[260px] overflow-hidden rounded-[1.5rem] bg-white sm:h-[320px] lg:h-full lg:min-h-[420px] xl:min-h-[450px]">
-              <Image
-                src={`${BASE_PATH}/images/generated/lifestyle-v1/quality-1-hero.png`}
-                alt="Scientist reviewing printed test results in a clean lab"
-                fill
-                sizes="(max-width: 1024px) 100vw, 52vw"
-                className="object-cover object-[center_28%]"
-              />
-            </div>
-          </div>
+        <div className="mx-auto grid max-w-[1240px] gap-4 px-5 sm:px-8 lg:grid-cols-[0.98fr_1.02fr] lg:items-stretch lg:px-12 lg:gap-5">
           <div className="rounded-[2rem] bg-[linear-gradient(180deg,_#f8fbff_0%,_#eef5ff_100%)] p-6 ring-1 ring-[#dbe6f5] sm:p-7 lg:flex lg:min-h-[452px] lg:flex-col lg:justify-center xl:min-h-[482px]">
             <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#3b6ed6]">
               WHAT MAKES TERAGENIX DIFFERENT
@@ -89,6 +78,17 @@ export default function AboutPage() {
                 <p className="text-sm font-medium text-[#173f85]">Documentation close by</p>
                 <p className="mt-1 text-sm leading-6 text-[#516370]">Product detail and supporting docs stay easy to evaluate.</p>
               </div>
+            </div>
+          </div>
+          <div className="rounded-[2rem] bg-[#edf4ff] p-4 ring-1 ring-[#dbe6f5] sm:p-5">
+            <div className="relative h-[260px] overflow-hidden rounded-[1.5rem] bg-white sm:h-[320px] lg:h-full lg:min-h-[420px] xl:min-h-[450px]">
+              <Image
+                src={`${BASE_PATH}/images/generated/lifestyle-v1/quality-1-hero.png`}
+                alt="Scientist reviewing printed test results in a clean lab"
+                fill
+                sizes="(max-width: 1024px) 100vw, 52vw"
+                className="object-cover object-[center_28%]"
+              />
             </div>
           </div>
         </div>
