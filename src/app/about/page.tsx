@@ -58,9 +58,9 @@ export default function AboutPage() {
       />
 
       <section className="bg-white py-10 sm:py-12 lg:py-14">
-        <div className="mx-auto grid max-w-[1240px] gap-4 px-5 sm:px-8 lg:grid-cols-[1.02fr_0.98fr] lg:px-12 lg:gap-5">
+        <div className="mx-auto grid max-w-[1240px] gap-4 px-5 sm:px-8 lg:grid-cols-[1.02fr_0.98fr] lg:items-stretch lg:px-12 lg:gap-5">
           <div className="rounded-[2rem] bg-[#edf4ff] p-4 ring-1 ring-[#dbe6f5] sm:p-5">
-            <div className="relative h-[260px] overflow-hidden rounded-[1.5rem] bg-white sm:h-[320px] lg:h-[400px] xl:h-[440px]">
+            <div className="relative h-[260px] overflow-hidden rounded-[1.5rem] bg-white sm:h-[320px] lg:h-full lg:min-h-[420px] xl:min-h-[450px]">
               <Image
                 src={`${BASE_PATH}/images/generated/lifestyle-v1/quality-1-hero.png`}
                 alt="Scientist reviewing printed test results in a clean lab"
@@ -70,27 +70,24 @@ export default function AboutPage() {
               />
             </div>
           </div>
-          <div className="grid gap-4">
-            <div className="rounded-[2rem] bg-[linear-gradient(180deg,_#f8fbff_0%,_#eef5ff_100%)] p-6 ring-1 ring-[#dbe6f5] sm:p-7">
-              <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#3b6ed6]">
-                WHAT MAKES TERAGENIX DIFFERENT
-              </p>
-              <h2 className="mt-3 text-[1.55rem] font-semibold leading-tight tracking-[-0.03em] text-[#173f85] sm:text-[1.85rem]">
-                Teragenix is not built around average compounds.
-              </h2>
-              <p className="mt-4 text-[15px] leading-7 text-[#516370] sm:text-[16px]">
-                The focus is premium peptides, serious standards, and product detail that can stand up to scrutiny. That is the bar, and that is what belongs here.
-              </p>
-            </div>
-            <div className="rounded-[2rem] bg-[#eef3f7] p-4 ring-1 ring-[#dbe6f5] sm:p-5">
-              <div className="relative h-[200px] overflow-hidden rounded-[1.5rem] bg-white sm:h-[220px] lg:h-[240px] xl:h-[260px]">
-                <Image
-                  src={`${BASE_PATH}/images/generated/lifestyle-v1/quality-2-glassware.png`}
-                  alt="Minimal lab glassware in soft natural light"
-                  fill
-                  sizes="(max-width: 1024px) 100vw, 32vw"
-                  className="object-cover object-center"
-                />
+          <div className="rounded-[2rem] bg-[linear-gradient(180deg,_#f8fbff_0%,_#eef5ff_100%)] p-6 ring-1 ring-[#dbe6f5] sm:p-7 lg:flex lg:min-h-[452px] lg:flex-col lg:justify-center xl:min-h-[482px]">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#3b6ed6]">
+              WHAT MAKES TERAGENIX DIFFERENT
+            </p>
+            <h2 className="mt-3 max-w-[16ch] text-[1.55rem] font-semibold leading-tight tracking-[-0.03em] text-[#173f85] sm:text-[1.85rem]">
+              Teragenix is not built around average compounds.
+            </h2>
+            <p className="mt-4 max-w-[54ch] text-[15px] leading-7 text-[#516370] sm:text-[16px]">
+              The focus is premium peptides, serious standards, and product detail that can stand up to scrutiny. That is the bar, and that is what belongs here.
+            </p>
+            <div className="mt-6 grid gap-3 sm:grid-cols-2">
+              <div className="rounded-[1.2rem] bg-white p-4 ring-1 ring-[#dbe6f5]">
+                <p className="text-sm font-medium text-[#173f85]">Selective lineup</p>
+                <p className="mt-1 text-sm leading-6 text-[#516370]">A tighter catalog built around serious compounds, not filler.</p>
+              </div>
+              <div className="rounded-[1.2rem] bg-white p-4 ring-1 ring-[#dbe6f5]">
+                <p className="text-sm font-medium text-[#173f85]">Documentation close by</p>
+                <p className="mt-1 text-sm leading-6 text-[#516370]">Product detail and supporting docs stay easy to evaluate.</p>
               </div>
             </div>
           </div>
