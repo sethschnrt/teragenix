@@ -58,8 +58,8 @@ export default function AboutPage() {
       />
 
       <section className="bg-white py-10 sm:py-12 lg:py-14">
-        <div className="mx-auto grid max-w-[1240px] gap-4 px-5 sm:px-8 lg:grid-cols-[1.02fr_0.98fr] lg:px-12 lg:gap-5">
-          <div className="rounded-[2rem] bg-[#edf4ff] p-4 ring-1 ring-[#dbe6f5] sm:p-5">
+        <div className="mx-auto grid max-w-[1240px] items-start gap-4 px-5 sm:px-8 lg:grid-cols-[0.84fr_1.16fr] lg:px-12 lg:gap-5">
+          <div className="mx-auto w-full max-w-[26rem] rounded-[2rem] bg-[#edf4ff] p-4 ring-1 ring-[#dbe6f5] sm:max-w-[28rem] sm:p-5 lg:max-w-[24rem] xl:max-w-[26rem]">
             <div className="overflow-hidden rounded-[1.5rem] bg-white">
               <Image
                 src={`${BASE_PATH}/images/generated/lifestyle-v1/quality-1-hero.png`}
@@ -83,7 +83,7 @@ export default function AboutPage() {
                 The focus is premium peptides, serious standards, and product detail that can stand up to scrutiny. That is the bar, and that is what belongs here.
               </p>
             </div>
-            <div className="rounded-[2rem] bg-[#eef3f7] p-4 ring-1 ring-[#dbe6f5] sm:p-5">
+            <div className="mx-auto w-full max-w-[22rem] rounded-[2rem] bg-[#eef3f7] p-4 ring-1 ring-[#dbe6f5] sm:max-w-[24rem] sm:p-5 lg:mx-0 lg:max-w-[19rem] xl:max-w-[21rem]">
               <div className="overflow-hidden rounded-[1.5rem] bg-white">
                 <Image
                   src={`${BASE_PATH}/images/generated/lifestyle-v1/quality-2-glassware.png`}
@@ -125,7 +125,7 @@ export default function AboutPage() {
       </section>
 
       <section id="quality-promise" className="bg-white py-10 sm:py-12 lg:py-14">
-        <div className="mx-auto grid max-w-[1240px] gap-6 px-5 sm:px-8 lg:grid-cols-[1.02fr_0.98fr] lg:px-12 lg:gap-8">
+        <div className="mx-auto grid max-w-[1240px] items-start gap-6 px-5 sm:px-8 lg:grid-cols-[1.12fr_0.88fr] lg:px-12 lg:gap-8">
           <div className="rounded-[2rem] bg-[linear-gradient(180deg,_#f8fbff_0%,_#eef5ff_100%)] p-7 ring-1 ring-[#dbe6f5] sm:p-8">
             <p className="tg-eyebrow text-[#3b6ed6]">WHAT MATTERS MOST</p>
             <h2 className="mt-3 text-[2rem] font-semibold leading-tight tracking-[-0.035em] text-[#0d262d] sm:text-[2.45rem]">
@@ -147,7 +147,7 @@ export default function AboutPage() {
             </div>
           </div>
 
-          <div className="rounded-[2rem] bg-[#f4f8f6] p-7 ring-1 ring-[#dce8de] sm:p-8">
+          <div className="mx-auto w-full max-w-[24rem] rounded-[2rem] bg-[#f4f8f6] p-7 ring-1 ring-[#dce8de] sm:max-w-[26rem] sm:p-8 lg:max-w-[22rem] xl:max-w-[24rem]">
             <div className="rounded-[1.5rem] bg-white p-4 ring-1 ring-[#dce8de] sm:p-5">
               <div className="overflow-hidden rounded-[1.1rem] bg-[#f7faf8]">
                 <Image
