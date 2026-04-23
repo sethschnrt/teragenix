@@ -58,16 +58,16 @@ export default function AboutPage() {
       />
 
       <section className="bg-white py-10 sm:py-12 lg:py-14">
-        <div className="mx-auto grid max-w-[1240px] items-start gap-4 px-5 sm:px-8 lg:grid-cols-[0.84fr_1.16fr] lg:px-12 lg:gap-5">
-          <div className="mx-auto w-full max-w-[26rem] rounded-[2rem] bg-[#edf4ff] p-4 ring-1 ring-[#dbe6f5] sm:max-w-[28rem] sm:p-5 lg:max-w-[24rem] xl:max-w-[26rem]">
-            <div className="overflow-hidden rounded-[1.5rem] bg-white">
+        <div className="mx-auto grid max-w-[1240px] gap-4 px-5 sm:px-8 lg:grid-cols-[1.02fr_0.98fr] lg:px-12 lg:gap-5">
+          <div className="rounded-[2rem] bg-[#edf4ff] p-4 ring-1 ring-[#dbe6f5] sm:p-5">
+            <div className="flex justify-center overflow-hidden rounded-[1.5rem] bg-white py-3 sm:py-4">
               <Image
                 src={`${BASE_PATH}/images/generated/lifestyle-v1/quality-1-hero.png`}
                 alt="Scientist reviewing printed test results in a clean lab"
                 width={928}
                 height={1152}
-                sizes="(max-width: 1024px) 100vw, 52vw"
-                className="h-auto w-full"
+                sizes="(max-width: 640px) 78vw, (max-width: 1024px) 44vw, 320px"
+                className="h-auto w-full max-w-[17rem] sm:max-w-[18rem] lg:max-w-[19rem] xl:max-w-[20rem]"
               />
             </div>
           </div>
@@ -83,15 +83,15 @@ export default function AboutPage() {
                 The focus is premium peptides, serious standards, and product detail that can stand up to scrutiny. That is the bar, and that is what belongs here.
               </p>
             </div>
-            <div className="mx-auto w-full max-w-[22rem] rounded-[2rem] bg-[#eef3f7] p-4 ring-1 ring-[#dbe6f5] sm:max-w-[24rem] sm:p-5 lg:mx-0 lg:max-w-[19rem] xl:max-w-[21rem]">
-              <div className="overflow-hidden rounded-[1.5rem] bg-white">
+            <div className="rounded-[2rem] bg-[#eef3f7] p-4 ring-1 ring-[#dbe6f5] sm:p-5">
+              <div className="flex justify-center overflow-hidden rounded-[1.5rem] bg-white py-3 sm:py-4">
                 <Image
                   src={`${BASE_PATH}/images/generated/lifestyle-v1/quality-2-glassware.png`}
                   alt="Minimal lab glassware in soft natural light"
                   width={1024}
                   height={1024}
-                  sizes="(max-width: 1024px) 100vw, 32vw"
-                  className="h-auto w-full"
+                  sizes="(max-width: 640px) 62vw, (max-width: 1024px) 34vw, 240px"
+                  className="h-auto w-full max-w-[12rem] sm:max-w-[13rem] lg:max-w-[14rem] xl:max-w-[15rem]"
                 />
               </div>
             </div>
@@ -125,7 +125,7 @@ export default function AboutPage() {
       </section>
 
       <section id="quality-promise" className="bg-white py-10 sm:py-12 lg:py-14">
-        <div className="mx-auto grid max-w-[1240px] items-start gap-6 px-5 sm:px-8 lg:grid-cols-[1.12fr_0.88fr] lg:px-12 lg:gap-8">
+        <div className="mx-auto grid max-w-[1240px] gap-6 px-5 sm:px-8 lg:grid-cols-[1.02fr_0.98fr] lg:px-12 lg:gap-8">
           <div className="rounded-[2rem] bg-[linear-gradient(180deg,_#f8fbff_0%,_#eef5ff_100%)] p-7 ring-1 ring-[#dbe6f5] sm:p-8">
             <p className="tg-eyebrow text-[#3b6ed6]">WHAT MATTERS MOST</p>
             <h2 className="mt-3 text-[2rem] font-semibold leading-tight tracking-[-0.035em] text-[#0d262d] sm:text-[2.45rem]">
@@ -147,16 +147,16 @@ export default function AboutPage() {
             </div>
           </div>
 
-          <div className="mx-auto w-full max-w-[24rem] rounded-[2rem] bg-[#f4f8f6] p-7 ring-1 ring-[#dce8de] sm:max-w-[26rem] sm:p-8 lg:max-w-[22rem] xl:max-w-[24rem]">
+          <div className="rounded-[2rem] bg-[#f4f8f6] p-7 ring-1 ring-[#dce8de] sm:p-8">
             <div className="rounded-[1.5rem] bg-white p-4 ring-1 ring-[#dce8de] sm:p-5">
-              <div className="overflow-hidden rounded-[1.1rem] bg-[#f7faf8]">
+              <div className="flex justify-center overflow-hidden rounded-[1.1rem] bg-[#f7faf8] py-2 sm:py-3">
                 <Image
                   src={`${BASE_PATH}/images/generated/lifestyle-v1/recovery-2-trail-run.png`}
                   alt="Runner moving through a forest trail"
                   width={1024}
                   height={1024}
-                  sizes="(max-width: 1024px) 100vw, 32vw"
-                  className="h-auto w-full"
+                  sizes="(max-width: 640px) 62vw, (max-width: 1024px) 34vw, 240px"
+                  className="h-auto w-full max-w-[12rem] sm:max-w-[13rem] lg:max-w-[14rem] xl:max-w-[15rem]"
                 />
               </div>
             </div>
