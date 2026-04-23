@@ -60,13 +60,14 @@ export default function AboutPage() {
       <section className="bg-white py-10 sm:py-12 lg:py-14">
         <div className="mx-auto grid max-w-[1240px] gap-4 px-5 sm:px-8 lg:grid-cols-[1.02fr_0.98fr] lg:px-12 lg:gap-5">
           <div className="rounded-[2rem] bg-[#edf4ff] p-4 ring-1 ring-[#dbe6f5] sm:p-5">
-            <div className="relative aspect-[4/3] overflow-hidden rounded-[1.5rem] bg-white">
+            <div className="overflow-hidden rounded-[1.5rem] bg-white">
               <Image
                 src={`${BASE_PATH}/images/generated/lifestyle-v1/quality-1-hero.png`}
                 alt="Scientist reviewing printed test results in a clean lab"
-                fill
+                width={928}
+                height={1152}
                 sizes="(max-width: 1024px) 100vw, 52vw"
-                className="object-contain"
+                className="h-auto w-full"
               />
             </div>
           </div>
@@ -83,13 +84,14 @@ export default function AboutPage() {
               </p>
             </div>
             <div className="rounded-[2rem] bg-[#eef3f7] p-4 ring-1 ring-[#dbe6f5] sm:p-5">
-              <div className="relative aspect-[4/3] overflow-hidden rounded-[1.5rem] bg-white">
+              <div className="overflow-hidden rounded-[1.5rem] bg-white">
                 <Image
                   src={`${BASE_PATH}/images/generated/lifestyle-v1/quality-2-glassware.png`}
                   alt="Minimal lab glassware in soft natural light"
-                  fill
+                  width={1024}
+                  height={1024}
                   sizes="(max-width: 1024px) 100vw, 32vw"
-                  className="object-contain"
+                  className="h-auto w-full"
                 />
               </div>
             </div>
@@ -147,13 +149,14 @@ export default function AboutPage() {
 
           <div className="rounded-[2rem] bg-[#f4f8f6] p-7 ring-1 ring-[#dce8de] sm:p-8">
             <div className="rounded-[1.5rem] bg-white p-4 ring-1 ring-[#dce8de] sm:p-5">
-              <div className="relative aspect-[4/3] overflow-hidden rounded-[1.1rem] bg-[#f7faf8]">
+              <div className="overflow-hidden rounded-[1.1rem] bg-[#f7faf8]">
                 <Image
                   src={`${BASE_PATH}/images/generated/lifestyle-v1/recovery-2-trail-run.png`}
                   alt="Runner moving through a forest trail"
-                  fill
+                  width={1024}
+                  height={1024}
                   sizes="(max-width: 1024px) 100vw, 32vw"
-                  className="object-contain"
+                  className="h-auto w-full"
                 />
               </div>
             </div>
