@@ -1,9 +1,7 @@
 import Image from "next/image";
-import Link from "next/link";
 import { Footer } from "@/components/footer";
 import { PageHero } from "@/components/page-hero";
 import {
-  ArrowUpRight,
   CheckCircle2,
   FileCheck2,
   HeartHandshake,
@@ -164,40 +162,6 @@ export default function AboutPage() {
               <p className="mt-3 text-[15px] leading-7 text-[#516370] sm:text-[16px]">
                 They want peptides chosen with discipline, backed by real detail, and serious enough to belong in a premium lineup.
               </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-10 sm:py-12 lg:py-14">
-        <div className="mx-auto max-w-[1240px] px-5 sm:px-8 lg:px-12">
-          <div className="rounded-[2rem] bg-[linear-gradient(180deg,_#f8fbff_0%,_#f3f8ff_100%)] p-7 ring-1 ring-[#dbe6f5] sm:p-8 lg:p-10">
-            <div className="grid gap-6 lg:grid-cols-[1fr_auto] lg:items-end">
-              <div className="max-w-2xl">
-                <p className="tg-eyebrow text-[#3b6ed6]">FOR PEOPLE WHO WANT THE BEST</p>
-                <h2 className="mt-3 text-[2rem] font-semibold leading-tight tracking-[-0.035em] text-[#173f85] sm:text-[2.5rem]">
-                  Teragenix is where you go when average is not good enough.
-                </h2>
-                <p className="mt-4 text-[15px] leading-7 text-[#516370] sm:text-[16px]">
-                  Explore the lineup, look at the details, and judge the compounds by the standard they deserve.
-                </p>
-              </div>
-
-              <div className="flex flex-col gap-3 sm:flex-row lg:flex-col">
-                <Link
-                  href="/shop"
-                  className="tg-link-pill inline-flex items-center justify-center rounded-full bg-[#3b6ed6] px-6 py-3.5 text-sm font-semibold text-white"
-                >
-                  Browse peptides
-                  <ArrowUpRight className="tg-link-pill-icon ml-2 h-4 w-4" />
-                </Link>
-                <Link
-                  href="/faq"
-                  className="tg-link-pill inline-flex items-center justify-center rounded-full border border-[#dbe6f5] bg-white px-6 py-3.5 text-sm font-semibold text-[#173f85]"
-                >
-                  Read the FAQ
-                </Link>
-              </div>
             </div>
           </div>
         </div>
