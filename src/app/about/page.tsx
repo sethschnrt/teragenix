@@ -60,14 +60,13 @@ export default function AboutPage() {
       <section className="bg-white py-10 sm:py-12 lg:py-14">
         <div className="mx-auto grid max-w-[1240px] gap-4 px-5 sm:px-8 lg:grid-cols-[1.02fr_0.98fr] lg:px-12 lg:gap-5">
           <div className="rounded-[2rem] bg-[#edf4ff] p-4 ring-1 ring-[#dbe6f5] sm:p-5">
-            <div className="flex justify-center overflow-hidden rounded-[1.5rem] bg-white py-3 sm:py-4">
+            <div className="relative h-[260px] overflow-hidden rounded-[1.5rem] bg-white sm:h-[320px] lg:h-[400px] xl:h-[440px]">
               <Image
                 src={`${BASE_PATH}/images/generated/lifestyle-v1/quality-1-hero.png`}
                 alt="Scientist reviewing printed test results in a clean lab"
-                width={928}
-                height={1152}
-                sizes="(max-width: 640px) 78vw, (max-width: 1024px) 44vw, 320px"
-                className="h-auto w-full max-w-[17rem] sm:max-w-[18rem] lg:max-w-[19rem] xl:max-w-[20rem]"
+                fill
+                sizes="(max-width: 1024px) 100vw, 52vw"
+                className="object-cover object-[center_28%]"
               />
             </div>
           </div>
@@ -84,14 +83,13 @@ export default function AboutPage() {
               </p>
             </div>
             <div className="rounded-[2rem] bg-[#eef3f7] p-4 ring-1 ring-[#dbe6f5] sm:p-5">
-              <div className="flex justify-center overflow-hidden rounded-[1.5rem] bg-white py-3 sm:py-4">
+              <div className="relative h-[200px] overflow-hidden rounded-[1.5rem] bg-white sm:h-[220px] lg:h-[240px] xl:h-[260px]">
                 <Image
                   src={`${BASE_PATH}/images/generated/lifestyle-v1/quality-2-glassware.png`}
                   alt="Minimal lab glassware in soft natural light"
-                  width={1024}
-                  height={1024}
-                  sizes="(max-width: 640px) 62vw, (max-width: 1024px) 34vw, 240px"
-                  className="h-auto w-full max-w-[12rem] sm:max-w-[13rem] lg:max-w-[14rem] xl:max-w-[15rem]"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 32vw"
+                  className="object-cover object-center"
                 />
               </div>
             </div>
@@ -149,14 +147,13 @@ export default function AboutPage() {
 
           <div className="rounded-[2rem] bg-[#f4f8f6] p-7 ring-1 ring-[#dce8de] sm:p-8">
             <div className="rounded-[1.5rem] bg-white p-4 ring-1 ring-[#dce8de] sm:p-5">
-              <div className="flex justify-center overflow-hidden rounded-[1.1rem] bg-[#f7faf8] py-2 sm:py-3">
+              <div className="relative h-[220px] overflow-hidden rounded-[1.1rem] bg-[#f7faf8] sm:h-[240px] lg:h-[260px] xl:h-[280px]">
                 <Image
                   src={`${BASE_PATH}/images/generated/lifestyle-v1/recovery-2-trail-run.png`}
                   alt="Runner moving through a forest trail"
-                  width={1024}
-                  height={1024}
-                  sizes="(max-width: 640px) 62vw, (max-width: 1024px) 34vw, 240px"
-                  className="h-auto w-full max-w-[12rem] sm:max-w-[13rem] lg:max-w-[14rem] xl:max-w-[15rem]"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 32vw"
+                  className="object-cover object-center"
                 />
               </div>
             </div>
