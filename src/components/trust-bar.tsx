@@ -52,23 +52,25 @@ function TrustItem({ label, icon }: (typeof tickerItems)[number]) {
   );
 }
 
+function TrustTickerGroup({ copy }: { copy: "a" | "b" }) {
+  return (
+    <div className="flex min-w-full shrink-0 items-center justify-around" aria-hidden={copy === "b"}>
+      {tickerItems.map((item) => (
+        <TrustItem key={`${copy}-${item.label}`} {...item} />
+      ))}
+    </div>
+  );
+}
+
 export function TrustBar() {
   return (
     <section className="relative overflow-hidden bg-white pb-4 pt-9 lg:pb-3 lg:pt-7">
       <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-10 bg-linear-to-r from-white to-transparent lg:w-16" />
       <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-10 bg-linear-to-l from-white to-transparent lg:w-16" />
 
-      <div className="tg-marquee flex w-max whitespace-nowrap">
-        <div className="flex shrink-0 items-center">
-          {tickerItems.map((item) => (
-            <TrustItem key={`a-${item.label}`} {...item} />
-          ))}
-        </div>
-        <div className="flex shrink-0 items-center" aria-hidden="true">
-          {tickerItems.map((item) => (
-            <TrustItem key={`b-${item.label}`} {...item} />
-          ))}
-        </div>
+      <div className="tg-marquee flex w-max min-w-full whitespace-nowrap">
+        <TrustTickerGroup copy="a" />
+        <TrustTickerGroup copy="b" />
       </div>
     </section>
   );
