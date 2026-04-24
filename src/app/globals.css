@@ -208,7 +208,7 @@
     to { transform: translateX(-50%); }
   }
   .tg-marquee {
-    animation: tg-marquee 24s linear infinite;
+    animation: tg-marquee 144s linear infinite;
     will-change: transform;
   }
 
