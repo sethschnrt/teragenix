@@ -1,16 +1,37 @@
 import { NextResponse } from "next/server";
 import { z } from "zod";
 
+import { parseJsonRequest, rateLimitRequest, requireSameOrigin } from "@/lib/api-security";
 import { prisma } from "@/lib/db";
 import { hashPassword } from "@/lib/password";
 
 const bootstrapSchema = z.object({
-  email: z.string().email().trim().toLowerCase(),
-  password: z.string().min(8),
+  email: z.string().email().trim().toLowerCase().max(254),
+  password: z.string().min(12).max(128),
 });
 
 export async function POST(request: Request) {
   try {
+    const originError = requireSameOrigin(request);
+    if (originError) {
+      return originError;
+    }
+
+    const rateLimitError = rateLimitRequest(request, {
+      namespace: "admin-bootstrap",
+      limit: 5,
+      windowMs: 10 * 60_000,
+    });
+    if (rateLimitError) {
+      return rateLimitError;
+    }
+    const bootstrapToken = process.env.ADMIN_BOOTSTRAP_TOKEN;
+    const providedToken = request.headers.get("x-admin-bootstrap-token");
+
+    if (!bootstrapToken || providedToken !== bootstrapToken) {
+      return NextResponse.json({ error: "Unauthorized." }, { status: 401 });
+    }
+
     const adminCount = await prisma.user.count({
       where: { role: "ADMIN" },
     });
@@ -22,8 +43,12 @@ export async function POST(request: Request) {
       );
     }
 
-    const json = await request.json();
-    const parsed = bootstrapSchema.safeParse(json);
+    const json = await parseJsonRequest(request, 8_192);
+    if (!json.ok) {
+      return json.response;
+    }
+
+    const parsed = bootstrapSchema.safeParse(json.data);
 
     if (!parsed.success) {
       return NextResponse.json(

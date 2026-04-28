@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { z } from "zod";
 
-import { getServerAuthSession } from "@/lib/auth";
+import { parseJsonRequest, requireSameOrigin, requireStaffSession } from "@/lib/api-security";
 import { prisma } from "@/lib/db";
 
 const updateRecurringExpenseSchema = z.object({
@@ -13,13 +13,22 @@ export async function PATCH(
   request: Request,
   context: { params: Promise<{ expenseId: string }> },
 ) {
-  const session = await getServerAuthSession();
-
-  if (!session?.user || !["ADMIN", "SALES"].includes(session.user.role)) {
-    return NextResponse.json({ error: "Unauthorized." }, { status: 401 });
+  const originError = requireSameOrigin(request);
+  if (originError) {
+    return originError;
   }
 
-  const parsed = updateRecurringExpenseSchema.safeParse(await request.json());
+  const sessionResult = await requireStaffSession();
+  if (!sessionResult.ok) {
+    return sessionResult.response;
+  }
+
+  const json = await parseJsonRequest(request, 8_192);
+  if (!json.ok) {
+    return json.response;
+  }
+
+  const parsed = updateRecurringExpenseSchema.safeParse(json.data);
 
   if (!parsed.success) {
     return NextResponse.json({ error: "Invalid recurring expense update." }, { status: 400 });
@@ -42,4 +51,3 @@ export async function PATCH(
     return NextResponse.json({ error: "Could not update recurring expense." }, { status: 500 });
   }
 }
-

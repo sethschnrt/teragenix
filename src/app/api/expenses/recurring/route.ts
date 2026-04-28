@@ -2,26 +2,35 @@ import { NextResponse } from "next/server";
 import { ExpenseFrequency } from "@prisma/client";
 import { z } from "zod";
 
-import { getServerAuthSession } from "@/lib/auth";
+import { parseJsonRequest, requireSameOrigin, requireStaffSession } from "@/lib/api-security";
 import { prisma } from "@/lib/db";
 
 const createRecurringExpenseSchema = z.object({
-  vendor: z.string().trim().min(1),
-  category: z.string().trim().min(1),
+  vendor: z.string().trim().min(1).max(120),
+  category: z.string().trim().min(1).max(80),
   amount: z.coerce.number().positive(),
   frequency: z.nativeEnum(ExpenseFrequency),
   nextDueDate: z.coerce.date(),
-  notes: z.string().trim().optional(),
+  notes: z.string().trim().max(2_000).optional(),
 });
 
 export async function POST(request: Request) {
-  const session = await getServerAuthSession();
-
-  if (!session?.user || !["ADMIN", "SALES"].includes(session.user.role)) {
-    return NextResponse.json({ error: "Unauthorized." }, { status: 401 });
+  const originError = requireSameOrigin(request);
+  if (originError) {
+    return originError;
   }
 
-  const parsed = createRecurringExpenseSchema.safeParse(await request.json());
+  const sessionResult = await requireStaffSession();
+  if (!sessionResult.ok) {
+    return sessionResult.response;
+  }
+
+  const json = await parseJsonRequest(request, 16_384);
+  if (!json.ok) {
+    return json.response;
+  }
+
+  const parsed = createRecurringExpenseSchema.safeParse(json.data);
 
   if (!parsed.success) {
     return NextResponse.json({ error: "Invalid recurring expense payload." }, { status: 400 });
@@ -45,4 +54,3 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "Could not create recurring expense." }, { status: 500 });
   }
 }
-

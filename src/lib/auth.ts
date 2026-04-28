@@ -19,7 +19,61 @@ type AuthUser = {
   role: UserRole;
 };
 
+type LoginAttemptBucket = {
+  count: number;
+  resetAt: number;
+};
+
+const LOGIN_WINDOW_MS = 5 * 60_000;
+const MAX_LOGIN_ATTEMPTS = 10;
+
+const globalLoginAttempts = globalThis as typeof globalThis & {
+  __teragenixLoginAttempts?: Map<string, LoginAttemptBucket>;
+};
+
+const loginAttempts = globalLoginAttempts.__teragenixLoginAttempts ?? new Map<string, LoginAttemptBucket>();
+globalLoginAttempts.__teragenixLoginAttempts = loginAttempts;
+
+function normalizeLoginKey(email: string) {
+  return email.trim().toLowerCase();
+}
+
+function isLoginBlocked(email: string) {
+  const now = Date.now();
+  const key = normalizeLoginKey(email);
+  const bucket = loginAttempts.get(key);
+
+  if (!bucket) {
+    return false;
+  }
+
+  if (bucket.resetAt <= now) {
+    loginAttempts.delete(key);
+    return false;
+  }
+
+  return bucket.count >= MAX_LOGIN_ATTEMPTS;
+}
+
+function recordFailedLogin(email: string) {
+  const now = Date.now();
+  const key = normalizeLoginKey(email);
+  const bucket = loginAttempts.get(key);
+
+  if (!bucket || bucket.resetAt <= now) {
+    loginAttempts.set(key, { count: 1, resetAt: now + LOGIN_WINDOW_MS });
+    return;
+  }
+
+  bucket.count += 1;
+}
+
+function clearFailedLogins(email: string) {
+  loginAttempts.delete(normalizeLoginKey(email));
+}
+
 export const authOptions: NextAuthOptions = {
+  secret: process.env.NEXTAUTH_SECRET,
   session: {
     strategy: "jwt",
   },
@@ -41,19 +95,27 @@ export const authOptions: NextAuthOptions = {
           return null;
         }
 
+        if (isLoginBlocked(parsed.data.email)) {
+          return null;
+        }
+
         const user = await prisma.user.findUnique({
           where: { email: parsed.data.email },
         });
 
         if (!user?.passwordHash) {
+          recordFailedLogin(parsed.data.email);
           return null;
         }
 
         const isValid = await verifyPassword(parsed.data.password, user.passwordHash);
 
         if (!isValid) {
+          recordFailedLogin(parsed.data.email);
           return null;
         }
+
+        clearFailedLogins(parsed.data.email);
 
         const name = [user.firstName, user.lastName].filter(Boolean).join(" ").trim();
 
@@ -89,4 +151,3 @@ export const authOptions: NextAuthOptions = {
 export function getServerAuthSession() {
   return getServerSession(authOptions);
 }
-

@@ -2,17 +2,17 @@ import { NextResponse } from "next/server";
 import { ProcurementStatus } from "@prisma/client";
 import { z } from "zod";
 
-import { getServerAuthSession } from "@/lib/auth";
+import { parseJsonRequest, requireSameOrigin, requireStaffSession } from "@/lib/api-security";
 import { prisma } from "@/lib/db";
 
 const updateProcurementSchema = z.object({
-  vendor: z.string().optional(),
+  vendor: z.string().trim().max(120).optional(),
   status: z.nativeEnum(ProcurementStatus).optional(),
   actualCost: z.union([z.coerce.number().nonnegative(), z.null()]).optional(),
-  orderedAt: z.string().optional(),
-  receivedAt: z.string().optional(),
-  itemUrl: z.string().optional(),
-  notes: z.string().optional(),
+  orderedAt: z.string().max(40).optional(),
+  receivedAt: z.string().max(40).optional(),
+  itemUrl: z.string().url().max(2_048).optional(),
+  notes: z.string().trim().max(2_000).optional(),
 });
 
 function optionalString(value: string | undefined) {
@@ -35,13 +35,22 @@ export async function PATCH(
   request: Request,
   context: { params: Promise<{ itemId: string }> },
 ) {
-  const session = await getServerAuthSession();
-
-  if (!session?.user || !["ADMIN", "SALES"].includes(session.user.role)) {
-    return NextResponse.json({ error: "Unauthorized." }, { status: 401 });
+  const originError = requireSameOrigin(request);
+  if (originError) {
+    return originError;
   }
 
-  const parsed = updateProcurementSchema.safeParse(await request.json());
+  const sessionResult = await requireStaffSession();
+  if (!sessionResult.ok) {
+    return sessionResult.response;
+  }
+
+  const json = await parseJsonRequest(request, 16_384);
+  if (!json.ok) {
+    return json.response;
+  }
+
+  const parsed = updateProcurementSchema.safeParse(json.data);
 
   if (!parsed.success) {
     return NextResponse.json({ error: "Invalid purchasing update." }, { status: 400 });

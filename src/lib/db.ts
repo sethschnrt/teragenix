@@ -5,10 +5,15 @@ declare global {
   var __prisma: PrismaClient | undefined;
 }
 
-const connectionString =
-  process.env.DATABASE_URL ?? "postgresql://postgres:postgres@localhost:5432/teragenix";
+const connectionString = process.env.DATABASE_URL;
 
-const adapter = new PrismaPg({ connectionString });
+if (process.env.VERCEL === "1" && !connectionString) {
+  throw new Error("DATABASE_URL is required in Vercel deployments.");
+}
+
+const adapter = new PrismaPg({
+  connectionString: connectionString ?? "postgresql://postgres:postgres@localhost:5432/teragenix",
+});
 
 export const prisma =
   global.__prisma ??

@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import { FulfillmentStatus, OrderStatus, PaymentStatus } from "@prisma/client";
 import { z } from "zod";
 
-import { getServerAuthSession } from "@/lib/auth";
+import { parseJsonRequest, requireSameOrigin, requireStaffSession } from "@/lib/api-security";
 import { updateOrderStatuses } from "@/lib/orders";
 
 const updateSchema = z.object({
@@ -15,14 +15,23 @@ export async function PATCH(
   request: Request,
   context: { params: Promise<{ orderId: string }> },
 ) {
-  const session = await getServerAuthSession();
+  const originError = requireSameOrigin(request);
+  if (originError) {
+    return originError;
+  }
 
-  if (!session?.user || !["ADMIN", "SALES"].includes(session.user.role)) {
-    return NextResponse.json({ error: "Unauthorized." }, { status: 401 });
+  const sessionResult = await requireStaffSession();
+  if (!sessionResult.ok) {
+    return sessionResult.response;
   }
 
   const { orderId } = await context.params;
-  const parsed = updateSchema.safeParse(await request.json());
+  const json = await parseJsonRequest(request, 8_192);
+  if (!json.ok) {
+    return json.response;
+  }
+
+  const parsed = updateSchema.safeParse(json.data);
 
   if (!parsed.success) {
     return NextResponse.json({ error: "Invalid order update." }, { status: 400 });
@@ -31,7 +40,7 @@ export async function PATCH(
   try {
     const order = await updateOrderStatuses({
       orderId,
-      actorUserId: session.user.id,
+      actorUserId: sessionResult.session.user.id,
       ...parsed.data,
     });
 
@@ -41,4 +50,3 @@ export async function PATCH(
     return NextResponse.json({ error: "Could not update order." }, { status: 500 });
   }
 }
-

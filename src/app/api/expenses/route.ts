@@ -1,28 +1,37 @@
 import { NextResponse } from "next/server";
 import { z } from "zod";
 
-import { getServerAuthSession } from "@/lib/auth";
+import { parseJsonRequest, requireSameOrigin, requireStaffSession } from "@/lib/api-security";
 import { prisma } from "@/lib/db";
 
 const createExpenseSchema = z.object({
-  vendor: z.string().trim().min(1),
-  category: z.string().trim().min(1),
+  vendor: z.string().trim().min(1).max(120),
+  category: z.string().trim().min(1).max(80),
   amount: z.coerce.number().positive(),
   expenseDate: z.coerce.date(),
-  paymentMethod: z.string().trim().optional(),
-  notes: z.string().trim().optional(),
-  relatedOrderId: z.string().trim().optional(),
-  procurementItemId: z.string().trim().optional(),
+  paymentMethod: z.string().trim().max(80).optional(),
+  notes: z.string().trim().max(2_000).optional(),
+  relatedOrderId: z.string().trim().max(80).optional(),
+  procurementItemId: z.string().trim().max(80).optional(),
 });
 
 export async function POST(request: Request) {
-  const session = await getServerAuthSession();
-
-  if (!session?.user || !["ADMIN", "SALES"].includes(session.user.role)) {
-    return NextResponse.json({ error: "Unauthorized." }, { status: 401 });
+  const originError = requireSameOrigin(request);
+  if (originError) {
+    return originError;
   }
 
-  const parsed = createExpenseSchema.safeParse(await request.json());
+  const sessionResult = await requireStaffSession();
+  if (!sessionResult.ok) {
+    return sessionResult.response;
+  }
+
+  const json = await parseJsonRequest(request, 16_384);
+  if (!json.ok) {
+    return json.response;
+  }
+
+  const parsed = createExpenseSchema.safeParse(json.data);
 
   if (!parsed.success) {
     return NextResponse.json({ error: "Invalid expense payload." }, { status: 400 });
@@ -39,7 +48,7 @@ export async function POST(request: Request) {
         notes: parsed.data.notes || null,
         relatedOrderId: parsed.data.relatedOrderId || null,
         procurementItemId: parsed.data.procurementItemId || null,
-        createdById: session.user.id,
+        createdById: sessionResult.session.user.id,
       },
     });
 

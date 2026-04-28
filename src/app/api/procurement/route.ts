@@ -2,19 +2,19 @@ import { NextResponse } from "next/server";
 import { ProcurementType } from "@prisma/client";
 import { z } from "zod";
 
-import { getServerAuthSession } from "@/lib/auth";
+import { parseJsonRequest, requireSameOrigin, requireStaffSession } from "@/lib/api-security";
 import { prisma } from "@/lib/db";
 
 const createProcurementSchema = z.object({
-  title: z.string().trim().min(1),
-  vendor: z.string().optional(),
-  category: z.string().trim().min(1),
+  title: z.string().trim().min(1).max(160),
+  vendor: z.string().trim().max(120).optional(),
+  category: z.string().trim().min(1).max(80),
   type: z.nativeEnum(ProcurementType),
-  quantity: z.coerce.number().int().min(1),
+  quantity: z.coerce.number().int().min(1).max(100_000),
   estimatedCost: z.union([z.coerce.number().nonnegative(), z.null()]).optional(),
-  neededBy: z.string().optional(),
-  itemUrl: z.string().optional(),
-  notes: z.string().optional(),
+  neededBy: z.string().max(40).optional(),
+  itemUrl: z.string().url().max(2_048).optional(),
+  notes: z.string().trim().max(2_000).optional(),
 });
 
 function optionalString(value: string | undefined) {
@@ -34,13 +34,22 @@ function optionalDate(value: string | undefined) {
 }
 
 export async function POST(request: Request) {
-  const session = await getServerAuthSession();
-
-  if (!session?.user || !["ADMIN", "SALES"].includes(session.user.role)) {
-    return NextResponse.json({ error: "Unauthorized." }, { status: 401 });
+  const originError = requireSameOrigin(request);
+  if (originError) {
+    return originError;
   }
 
-  const parsed = createProcurementSchema.safeParse(await request.json());
+  const sessionResult = await requireStaffSession();
+  if (!sessionResult.ok) {
+    return sessionResult.response;
+  }
+
+  const json = await parseJsonRequest(request, 16_384);
+  if (!json.ok) {
+    return json.response;
+  }
+
+  const parsed = createProcurementSchema.safeParse(json.data);
 
   if (!parsed.success) {
     return NextResponse.json({ error: "Invalid purchasing payload." }, { status: 400 });
@@ -58,7 +67,7 @@ export async function POST(request: Request) {
         neededBy: optionalDate(parsed.data.neededBy),
         itemUrl: optionalString(parsed.data.itemUrl),
         notes: optionalString(parsed.data.notes),
-        createdById: session.user.id,
+        createdById: sessionResult.session.user.id,
       },
     });
 

@@ -47,13 +47,6 @@ export function ContentSystemSection() {
                   See the system
                   <ArrowUpRight className="tg-link-pill-icon ml-2 h-4 w-4" />
                 </Link>
-                <Link
-                  href="/docs/teragenix-ad-ops-v1.md"
-                  className="tg-link-pill inline-flex h-12 items-center rounded-full border border-white/18 px-6 text-sm font-semibold text-white hover:bg-white/10"
-                >
-                  Read the framework
-                  <ArrowUpRight className="tg-link-pill-icon ml-2 h-4 w-4" />
-                </Link>
               </div>
             </div>
 

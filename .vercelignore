@@ -1,0 +1,9 @@
+.env*
+.artifacts/
+.tmp/
+.tmp_vial_history/
+test-results/
+docs/
+public/docs/
+*.log
+.DS_Store
