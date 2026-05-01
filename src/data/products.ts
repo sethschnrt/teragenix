@@ -96,7 +96,7 @@ export const products: Product[] = [
     category: "Metabolic",
     heroCategory: "Metabolic",
     price: 129,
-    originalPrice: 239.99,
+    originalPrice: 149,
     description:
       "10mg Retatrutide for metabolic and body-composition research.",
     longDescription:
@@ -130,7 +130,7 @@ export const products: Product[] = [
     category: "Melanocortin",
     heroCategory: "Melanocortin",
     price: 89,
-    originalPrice: 199.99,
+    originalPrice: 109,
     description:
       "10mg Tesamorelin for longevity and body-composition research.",
     longDescription:
@@ -164,7 +164,7 @@ export const products: Product[] = [
     category: "Antioxidant",
     heroCategory: "Antioxidant",
     price: 65,
-    originalPrice: 99.99,
+    originalPrice: 79,
     description:
       "10mg BPC-157 for recovery-focused research.",
     longDescription:
@@ -198,7 +198,7 @@ export const products: Product[] = [
     category: "Melanocortin",
     heroCategory: "Melanocortin",
     price: 109,
-    originalPrice: 159.99,
+    originalPrice: 129,
     description:
       "10mg CJC / Ipamorelin blend for recovery and longevity research, with prep essentials included.",
     longDescription:
@@ -232,7 +232,7 @@ export const products: Product[] = [
     category: "Antioxidant",
     heroCategory: "Antioxidant",
     price: 129,
-    originalPrice: 149.99,
+    originalPrice: 149,
     description:
       "1000mg NAD+ for energy and resilience research.",
     longDescription:
@@ -264,7 +264,7 @@ export const products: Product[] = [
     category: "Antioxidant",
     heroCategory: "Antioxidant",
     price: 89,
-    originalPrice: 99.99,
+    originalPrice: 109,
     description:
       "1500mg Glutathione for recovery-focused research.",
     longDescription:
@@ -296,7 +296,7 @@ export const products: Product[] = [
     category: "Melanocortin",
     heroCategory: "Melanocortin",
     price: 79,
-    originalPrice: 109.99,
+    originalPrice: 89,
     description:
       "10mg Semax for focus and resilience research.",
     longDescription:
@@ -328,7 +328,7 @@ export const products: Product[] = [
     category: "Melanocortin",
     heroCategory: "Melanocortin",
     price: 79,
-    originalPrice: 109.99,
+    originalPrice: 89,
     description:
       "10mg Selank for calm and clarity research.",
     longDescription:
@@ -360,7 +360,7 @@ export const products: Product[] = [
     category: "Cosmetic",
     heroCategory: "Cosmetic",
     price: 129,
-    originalPrice: 179.99,
+    originalPrice: 149,
     description:
       "70mg Glow-70 for aesthetics-focused research.",
     longDescription:
@@ -394,7 +394,7 @@ export const products: Product[] = [
     category: "Cosmetic",
     heroCategory: "Cosmetic",
     price: 55,
-    originalPrice: 89.99,
+    originalPrice: 69,
     description:
       "10mg Melanotan II / MT-2 for pigmentation-focused research.",
     longDescription:
