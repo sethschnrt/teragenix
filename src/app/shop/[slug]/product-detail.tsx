@@ -459,7 +459,7 @@ export function ProductDetail({ product, relatedProducts }: ProductDetailProps) 
                       <p className="flex-1 text-[13px] leading-6 text-[#0d262d]/62">{rp.description}</p>
                       <div className="flex items-end justify-between gap-3 pt-3">
                         <div className="min-w-0">
-                          <span className="block pt-0.5 font-sans text-[1.18rem] font-bold leading-[1.28] tracking-[-0.01em] text-[#0d262d] sm:text-[1.38rem]">${rp.price}</span>
+                          <span className="block pt-0.5 font-sans text-[1.18rem] font-semibold leading-[1.28] tracking-[-0.01em] text-[#0d262d] sm:text-[1.38rem]">${rp.price}</span>
                           <span className="mt-1 block text-xs text-[#0d262d]/38 line-through sm:mt-0">${rp.originalPrice}</span>
                         </div>
                         <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full sm:h-9 sm:w-9" style={{ backgroundColor: relatedTheme.softAlt, color: relatedTheme.accent }}>

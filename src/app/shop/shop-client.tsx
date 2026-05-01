@@ -243,7 +243,7 @@ export function ShopPageClient() {
                   {/* Price + cart */}
                   <div className="flex items-end justify-between gap-3 pt-3">
                     <div className="min-w-0">
-                      <span className="block pt-0.5 font-sans text-[1.18rem] font-bold leading-[1.28] tracking-[-0.01em] text-foreground sm:text-[1.38rem]">
+                      <span className="block pt-0.5 font-sans text-[1.18rem] font-semibold leading-[1.28] tracking-[-0.01em] text-foreground sm:text-[1.38rem]">
                         ${product.price}
                       </span>
                       <span className="mt-1 block text-xs text-muted-foreground line-through sm:mt-0 sm:text-sm">

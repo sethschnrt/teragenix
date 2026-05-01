@@ -87,7 +87,7 @@ export function FeaturedProducts() {
 
                   <div className="mt-auto flex items-end justify-between gap-3 pt-4">
                     <div className="min-w-0">
-                      <span className="block pt-0.5 font-sans text-[1.35rem] font-bold leading-[1.28] tracking-[-0.01em] text-[#0d262d] sm:text-[1.5rem]">
+                      <span className="block pt-0.5 font-sans text-[1.35rem] font-semibold leading-[1.28] tracking-[-0.01em] text-[#0d262d] sm:text-[1.5rem]">
                         ${product.price}
                       </span>
                       <span className="mt-1 block text-xs text-[#0d262d]/40 line-through sm:mt-0">
