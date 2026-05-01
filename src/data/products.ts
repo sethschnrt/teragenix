@@ -98,7 +98,7 @@ export const products: Product[] = [
     price: 129,
     originalPrice: 149,
     description:
-      "10mg Retatrutide for metabolic and body-composition research.",
+      "Metabolic research for appetite signaling, glucose pathways, and body composition.",
     longDescription:
       "Retatrutide is presented for metabolic and body-composition research, with visible specs, storage guidance, and documentation context kept easy to review.",
     badge: "Popular",
@@ -132,7 +132,7 @@ export const products: Product[] = [
     price: 89,
     originalPrice: 109,
     description:
-      "10mg Tesamorelin for longevity and body-composition research.",
+      "GH-axis research for body composition, recovery markers, and lean-mass models.",
     longDescription:
       "Tesamorelin is presented for longevity and body-composition research, with visible specs, storage guidance, and documentation context kept easy to review.",
     badge: "Best Seller",
@@ -166,7 +166,7 @@ export const products: Product[] = [
     price: 65,
     originalPrice: 79,
     description:
-      "10mg BPC-157 for recovery-focused research.",
+      "Recovery research for soft-tissue models, inflammation response, and gut integrity.",
     longDescription:
       "BPC-157 is presented for recovery-focused research, with visible specs, storage guidance, and documentation context kept easy to review.",
     badge: "New",
@@ -200,7 +200,7 @@ export const products: Product[] = [
     price: 109,
     originalPrice: 129,
     description:
-      "10mg CJC / Ipamorelin blend for recovery and longevity research, with prep essentials included.",
+      "GH-pulse blend for recovery, sleep-quality markers, and lean-mass research.",
     longDescription:
       "CJC / Ipamorelin is presented for recovery and longevity research, with visible specs, storage guidance, and documentation context kept easy to review.",
     badge: "Trending",
@@ -234,7 +234,7 @@ export const products: Product[] = [
     price: 129,
     originalPrice: 149,
     description:
-      "1000mg NAD+ for energy and resilience research.",
+      "Cellular-energy research for mitochondrial function, repair pathways, and aging models.",
     longDescription:
       "NAD+ is presented for energy and resilience research, with visible specs, storage guidance, and documentation context kept easy to review.",
     image: "/images/vials/approved/nad-plus.png",
@@ -266,7 +266,7 @@ export const products: Product[] = [
     price: 89,
     originalPrice: 109,
     description:
-      "1500mg Glutathione for recovery-focused research.",
+      "Antioxidant research for oxidative stress, detox pathways, and cellular defense.",
     longDescription:
       "Glutathione is presented for recovery-focused research, with visible specs, storage guidance, and documentation context kept easy to review.",
     image: "/images/vials/approved/glutathione.png",
@@ -298,7 +298,7 @@ export const products: Product[] = [
     price: 79,
     originalPrice: 89,
     description:
-      "10mg Semax for focus and resilience research.",
+      "Cognitive research for focus, stress resilience, and neuro-signaling models.",
     longDescription:
       "Semax is presented for focus and resilience research, with visible specs, storage guidance, and documentation context kept easy to review.",
     image: "/images/vials/approved/semax.png",
@@ -330,7 +330,7 @@ export const products: Product[] = [
     price: 79,
     originalPrice: 89,
     description:
-      "10mg Selank for calm and clarity research.",
+      "Calm-and-clarity research for stress response, mood markers, and cognition.",
     longDescription:
       "Selank is presented for calm and clarity research, with visible specs, storage guidance, and documentation context kept easy to review.",
     image: "/images/vials/approved/selank.png",
@@ -362,7 +362,7 @@ export const products: Product[] = [
     price: 129,
     originalPrice: 149,
     description:
-      "70mg Glow-70 for aesthetics-focused research.",
+      "Aesthetic research blend for skin quality, collagen, hair, and glow-focused models.",
     longDescription:
       "Glow-70 Stack is presented for aesthetics-focused research, with visible specs, storage guidance, and documentation context kept easy to review.",
     badge: "Trending",
@@ -396,7 +396,7 @@ export const products: Product[] = [
     price: 55,
     originalPrice: 69,
     description:
-      "10mg Melanotan II / MT-2 for pigmentation-focused research.",
+      "Pigmentation research for melanocortin pathways, tanning response, and skin-tone models.",
     longDescription:
       "Melanotan II (MT-2) is presented for pigmentation-focused research, with visible specs, storage guidance, and documentation context kept easy to review.",
     image: "/images/vials/approved/mt-2.png",
