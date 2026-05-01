@@ -73,7 +73,7 @@ export function FeaturedProducts() {
 
                 {/* Info */}
                 <div className="flex flex-1 flex-col gap-3 px-5 pb-5 pt-5">
-                  <h3 className="text-[1.05rem] font-semibold leading-snug tracking-tight text-[#0d262d]">
+                  <h3 className="text-[1.08rem] font-semibold leading-[1.18] tracking-[-0.015em] text-[#0d262d] sm:text-[1.15rem]">
                     {product.name}
                   </h3>
 

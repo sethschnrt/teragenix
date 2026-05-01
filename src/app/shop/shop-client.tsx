@@ -231,7 +231,7 @@ export function ShopPageClient() {
                 {/* Info section */}
                 <div className="flex flex-col flex-1 gap-2.5 px-5 pb-5 pt-4">
                   <div>
-                    <h3 className="text-sm sm:text-base font-semibold text-foreground leading-tight">
+                    <h3 className="text-[0.98rem] font-semibold leading-[1.18] tracking-[-0.015em] text-foreground sm:text-[1.08rem]">
                       {product.name}
                     </h3>
                   </div>

@@ -455,7 +455,7 @@ export function ProductDetail({ product, relatedProducts }: ProductDetailProps) 
                     </div>
 
                     <div className="flex flex-1 flex-col gap-2.5 px-5 pb-5 pt-4">
-                      <h3 className="text-base font-semibold leading-tight text-[#0d262d]">{rp.name}</h3>
+                      <h3 className="text-[1.02rem] font-semibold leading-[1.18] tracking-[-0.015em] text-[#0d262d] sm:text-[1.1rem]">{rp.name}</h3>
                       <p className="flex-1 text-[13px] leading-6 text-[#0d262d]/62">{rp.description}</p>
                       <div className="flex items-end justify-between gap-3 pt-3">
                         <div className="min-w-0">
