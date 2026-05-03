@@ -95,8 +95,8 @@ export const products: Product[] = [
     shortName: "Retatrutide",
     category: "Metabolic",
     heroCategory: "Metabolic",
-    price: 129,
-    originalPrice: 149,
+    price: 104,
+    originalPrice: 129,
     description:
       "Metabolic research for appetite signaling, glucose pathways, and body composition.",
     longDescription:
@@ -129,8 +129,8 @@ export const products: Product[] = [
     shortName: "Tesamorelin",
     category: "Melanocortin",
     heroCategory: "Melanocortin",
-    price: 89,
-    originalPrice: 109,
+    price: 72,
+    originalPrice: 89,
     description:
       "GH-axis research for body composition, recovery markers, and lean-mass models.",
     longDescription:
@@ -163,8 +163,8 @@ export const products: Product[] = [
     shortName: "BPC-157",
     category: "Antioxidant",
     heroCategory: "Antioxidant",
-    price: 65,
-    originalPrice: 79,
+    price: 52,
+    originalPrice: 65,
     description:
       "Recovery research for soft-tissue models, inflammation response, and gut integrity.",
     longDescription:
@@ -197,8 +197,8 @@ export const products: Product[] = [
     shortName: "CJC / Ipamorelin",
     category: "Melanocortin",
     heroCategory: "Melanocortin",
-    price: 109,
-    originalPrice: 129,
+    price: 88,
+    originalPrice: 109,
     description:
       "GH-pulse blend for recovery, sleep-quality markers, and lean-mass research.",
     longDescription:
@@ -231,8 +231,8 @@ export const products: Product[] = [
     shortName: "NAD+",
     category: "Antioxidant",
     heroCategory: "Antioxidant",
-    price: 129,
-    originalPrice: 149,
+    price: 104,
+    originalPrice: 129,
     description:
       "Cellular-energy research for mitochondrial function, repair pathways, and aging models.",
     longDescription:
@@ -263,8 +263,8 @@ export const products: Product[] = [
     shortName: "Glutathione",
     category: "Antioxidant",
     heroCategory: "Antioxidant",
-    price: 89,
-    originalPrice: 109,
+    price: 72,
+    originalPrice: 89,
     description:
       "Antioxidant research for oxidative stress, detox pathways, and cellular defense.",
     longDescription:
@@ -295,8 +295,8 @@ export const products: Product[] = [
     shortName: "Semax",
     category: "Melanocortin",
     heroCategory: "Melanocortin",
-    price: 79,
-    originalPrice: 89,
+    price: 64,
+    originalPrice: 79,
     description:
       "Cognitive research for focus, stress resilience, and neuro-signaling models.",
     longDescription:
@@ -327,8 +327,8 @@ export const products: Product[] = [
     shortName: "Selank",
     category: "Melanocortin",
     heroCategory: "Melanocortin",
-    price: 79,
-    originalPrice: 89,
+    price: 64,
+    originalPrice: 79,
     description:
       "Calm-and-clarity research for stress response, mood markers, and cognition.",
     longDescription:
@@ -359,8 +359,8 @@ export const products: Product[] = [
     shortName: "Glow-70 Stack",
     category: "Cosmetic",
     heroCategory: "Cosmetic",
-    price: 129,
-    originalPrice: 149,
+    price: 104,
+    originalPrice: 129,
     description:
       "Aesthetic research blend for skin quality, collagen, hair, and glow-focused models.",
     longDescription:
@@ -393,8 +393,8 @@ export const products: Product[] = [
     shortName: "MT-2",
     category: "Cosmetic",
     heroCategory: "Cosmetic",
-    price: 55,
-    originalPrice: 69,
+    price: 44,
+    originalPrice: 55,
     description:
       "Pigmentation research for melanocortin pathways, tanning response, and skin-tone models.",
     longDescription:
